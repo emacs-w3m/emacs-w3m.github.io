@@ -87,7 +87,7 @@ references
 [<a rel="next" href="$MSG(TNEXT)$">Thread Next</a>]
 </TNextButton>
 
-<!-- 各記事の先頭に表示されるリンクを調節 -->
+<!-- 個別の記事の先頭に表示されるリンクを調節 -->
 <TopLinks>
 <hr>
 $BUTTON(PREV)$$BUTTON(NEXT)$$BUTTON(TPREV)$$BUTTON(TNEXT)$[<a href="$IDXFNAME$#$MSGNUM$">Date Index</a>][<a rel="contents" href="$TIDXFNAME$#$MSGNUM$">Thread Index</a>]
@@ -100,7 +100,7 @@ $BUTTON(PREV)$$BUTTON(NEXT)$$BUTTON(TPREV)$$BUTTON(TNEXT)$[<a href="$IDXFNAME$#$
 <li><form method="GET" action="namazu.cgi">Namazu Search:
 <input type="text" name="key" size="30">
 <input type="submit" value="Find">
-[<a href="namazu.cgi">Advanced Search</a>]
+[<a href="namazu.cgi">Help</a>]
 </form></li>
 </ul>
 <p>$PGLINK(PREV)$$PGLINK(NEXT)$</p>
@@ -115,13 +115,24 @@ $BUTTON(PREV)$$BUTTON(NEXT)$$BUTTON(TPREV)$$BUTTON(TNEXT)$[<a href="$IDXFNAME$#$
 <li><form method="GET" action="namazu.cgi">Namazu Search:
 <input type="text" name="key" size="30">
 <input type="submit" value="Find">
-[<a href="namazu.cgi">Advanced Search</a>]
+[<a href="namazu.cgi">Help</a>]
 </form></li>
 </ul>
 $PGLINK(TPREV)$$PGLINK(TNEXT)$
 <hr>
 <ul>
 </THead>
+
+<!-- 個別の記事の末尾に namazu を呼び出す form を追加 -->
+<MsgFoot>
+<ul>
+<li><form method="GET" action="namazu.cgi">Namazu Search:
+<input type="text" name="key" size="30">
+<input type="submit" value="Find">
+[<a href="namazu.cgi">Help</a>]
+</form></li>
+</ul>
+</MsgFoot>
 
 <IdxFName>
 index.html
