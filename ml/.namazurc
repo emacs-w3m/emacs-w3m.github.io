@@ -63,6 +63,7 @@ Replace     /storage/emacs-w3m/www/htdocs/ml/ http://emacs-w3m.namazu.org/ml/
 ## and use a proper message catalog for `de'.
 ##
 Lang          ja
+ContentType   "text/html; charset=euc-jp"
 
 
 ##
