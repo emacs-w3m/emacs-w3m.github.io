@@ -1,6 +1,13 @@
-DefaultType "text/plain; charset=euc-jp"
-AddType "text/html; charset=ISO-2022-JP" html
-AddType "text/plain; charset=euc-jp" txt
+Options +Multiviews
+AddHandler type-map var
+AddLanguage ja .ja
+AddLanguage en .en
+LanguagePriority en ja
+
+<Files index-ja.html>
+  ForceType "text/html; charset=ISO-2022-JP"
+</Files>
+
 <Files CVS>
   Order deny,allow
   Deny from all

@@ -1,0 +1,216 @@
+<!doctype html public "-//W3C//DTD HTML 3.2//EN">
+<html>
+<head>
+<title>Text browser works on emacs</title>
+</head>
+<body bgcolor="#EEEEEE">
+<p align="right">[ English / <a href="index-ja.html">Japanese</a> ]</p>
+
+<h1>emacs-w3m, an simple interface program of w3m, which works on Emacs.</h1>
+
+<p>
+<a href="http://www.cs.indiana.edu/elisp/w3/docs.html">W3</a>
+is known as the most popular WEB browser works on Emacs,
+but it works so slow that we want a simple and speedy alternative.
+</p>
+<p>
+<a href="http://ei5nazha.yz.yamagata-u.ac.jp/~aito/w3m/">w3m</a>
+is a pager with WWW capability, developed by Akinori ITO.
+It is a pager, but it can be used as a text-mode WWW browser.
+Then we developed its simple interface program, which works on Emacs.
+</p>
+<img src="w3m-el.png" alt="Screen shot of working emacs-w3m." width="384" height="333">
+
+
+<ul>
+ <li><a href="#download">Download</a>
+ <li><a href="#installation">Installation</a>
+ <li><a href="#version">Version of w3m</a>
+ <li><a href="#link">Links</a>
+ <li><a href="#contact">Contact</a>
+</ul>
+
+
+<hr>
+<h2><a name="download">Download</a></h2>
+<ul>
+ <li>Stable version: <code><a href="w3m_el-1.0.tar.gz">w3m_el-1.0.tar.gz</a></code>
+ <li>Unstable version: <code><a href="w3m_el-1.2rc4.tar.gz">w3m_el-1.2rc4.tar.gz</a></code>
+</ul>
+<p>
+Anyone wanting to checkout the latest version of emacs-w3m is welcome to
+use the anonymous CVS server to grab the most current code.
+</p>
+<blockquote>
+<pre>
+% cvs -d :pserver:anonymous@cvs.namazu.org:/storage/cvsroot login
+CVS password:   # There is no password, just hit return
+% cvs -d :pserver:anonymous@cvs.namazu.org:/storage/cvsroot co emacs-w3m
+</pre>
+</blockquote>
+<p>
+Source code access with <a href="http://cvs.namazu.org/emacs-w3m/">ViewCVS</a>
+is also available.
+</p>
+
+
+<hr>
+<h2><a name="installation">Installation</a></h2>
+<ol type="a">
+ <li><p>This package requires the latest version of <a
+     href="http://ei5nazha.yz.yamagata-u.ac.jp/~aito/w3m/">w3m</a> (See
+     <a href="#version">Version of w3m</a>), please install it in the
+     first step.
+     </p>
+ <li><p>
+     In addition, if you are using XEmacs 21.x, you should install the
+     program <a href="http://www.lcdf.org/gifsicle/">gifsicle</a>.
+     There is a known bug in the whole XEmacs 21.x series so far that it
+     won't display optimized animated gifs correctly or it may crash
+     when some kind of an interlaced gif image is displayed.  emacs-w3m
+     will use it to convert gif data to be suitable for XEmacs 21.x.
+     </p>
+ <li><p>
+     If you use XEmacs or Mule-2.3, you have to install <a
+     href="ftp://ftp.m17n.org/pub/mule/apel/">APEL</a> before installing
+     Emacs-w3m.
+     </p>
+     <p>
+     Also, Emacs-w3m requires "new custom". If you use Mule-2.3, you
+     have to install it before installing emacs-w3m. For more detail,
+     see <code>README.en</code> distributed with APEL.
+     </p>
+ <li><p>
+     Emacs-w3m requires the module <code>regexp-opt.el(c)</code> which
+     might not be provided in the old Emacsen (e.g. Mule-2.3).  If you
+     are using such versions of Emacs, you have to install the module
+     <code>regexp-opt.el(c)</code> before installing emacs-w3m as
+     follows:
+     </p>
+<blockquote>
+<pre>
+% cp attic/regexp-opt.el /usr/local/share/mule/site-lisp
+% cd /usr/local/share/mule/site-lisp
+% mule -q -no-site-file -batch -f batch-byte-compile regexp-opt.el
+</pre>
+</blockquote>
+ <li><p>
+     If you want to use shimbun library of Emacs-w3m, you have to
+     install <a href="ftp://ftp.m17n.org/pub/mule/flim/">FLIM</a>
+     package.
+     </p>
+     <p>
+     Since FLIM depends on APEL, you have to install APEL in the way
+     described in c) above, even if you use one of Emacsen other than
+     XEmacs/Mule-2.3 (you have to install APEL, and succeedingly FLIM).
+     </p>
+ <li><p>
+     Run <code>configure</code> script.
+     </p>
+<blockquote>
+<pre>
+% ./configure
+</pre>
+</blockquote>
+     <p>
+     If you have installed modules such as APEL and FLIM into unstandard
+     directories, you will have to use <i>--with-addpath</i> option in
+     order to specify them.
+     </p>
+<blockquote>
+<pre>
+% ./configure --with-addpath=/opt/share/apel:/opt/share/flim
+</pre>
+</blockquote>
+ <li><p>
+     Execute these commands to put emacs-lisp programs of this package
+     to an appropriate directory.
+     </p>
+<blockquote>
+<pre>
+% make
+% make install
+</pre>
+</blockquote>
+     <p>
+     In addition, you can install some image files used to the icons for
+     XEmacs or Emacs 21 as follows.
+     </p>
+<blockquote>
+<pre>
+% make install-icons
+</pre>
+</blockquote>
+     <p>
+     You can also install program files as an XEmacs package using
+     <i>install-package</i> target instead of <i>install</i> target.
+     </p>
+<blockquote>
+<pre>
+% make
+% make install-package
+</pre>
+</blockquote>
+     <p>
+     In this case, you have no need to execute command for
+     <i>install-icons</i> target.
+     </p>
+ <li><p>
+     Put these lines into your <code>~/.emacs</code>.
+     </p>
+<blockquote>
+<pre>
+(autoload 'w3m "w3m" "Interface for w3m on Emacs." t)
+(autoload 'w3m-find-file "w3m" "w3m interface function for local file." t)
+(autoload 'w3m-browse-url "w3m" "Ask a WWW browser to show a URL." t)
+(autoload 'w3m-search "w3m-search" "Search QUERY using SEARCH-ENGINE." t)
+(autoload 'w3m-weather "w3m-weather" "Display weather report." t)
+(autoload 'w3m-antenna "w3m-antenna" "Report change of WEB sites." t)
+</pre>
+</blockquote>
+ <li>Just type M-x <i>w3m</i>, and you can use emacs-w3m.
+</ol>
+
+
+<hr>
+<h2><a name="version">Version of w3m</a></h2>
+<p>
+Because this program is sensitive to version of w3m, the latest version
+of w3m should be used.  Its latest official version is 0.2.1, which is
+released at Mar 23th, 2001.  Its source can be downloaded from:
+</p>
+<ul>
+ <li><code><a href="ftp://ei5nazha.yz.yamagata-u.ac.jp/w3m/">ftp://ei5nazha.yz.yamagata-u.ac.jp/w3m/w3m-0.2.1.tar.gz</a></code>
+</ul>
+<p>
+In order to use this package, it is highly recommended to use the w3m
+which is applied the last version of <a
+href="http://mi.med.tohoku.ac.jp/~satodai/w3m/inusrc/index.html">w3m-0.2.1-inu-patch</a>
+maintained by Dai Sato.
+</p>
+
+
+<hr>
+<h2><a name="link">Links</a></h2>
+<ul>
+ <li><a href="http://ei5nazha.yz.yamagata-u.ac.jp/~aito/w3m/">w3m</a>
+     <ul>
+      <li><a href="http://mi.med.tohoku.ac.jp/~satodai/w3m/inusrc/index.html">w3m-0.2.1-inu-patch</a>
+      <li><a href="http://www2u.biglobe.ne.jp/~hsaka/w3m/index-ja.html">w3m-m17n</a>
+      <li><a href="http://pub.ks-and-ks.ne.jp/prog/w3mmee/">w3mmee</a>
+     </ul>
+ <li><a href="http://www.cs.indiana.edu/elisp/w3/docs.html">W3</a>
+ <li><a href="ftp://ftp.m17n.org/pub/mule/apel/">APEL</a>
+ <li><a href="ftp://ftp.m17n.org/pub/mule/flim/">FLIM</a>
+</ul>
+
+
+<hr>
+<h2><a name="contact">Contact</a></h2>
+<p>
+In order to contact us, please send a mail to &lt;emacs-w3m@namazu.org&gt;.
+</p>
+
+
+</body>
+</html>

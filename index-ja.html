@@ -1,0 +1,269 @@
+<!doctype html public "-//W3C//DTD HTML 3.2//EN">
+<html>
+<head>
+<title>Text browser works on emacs</title>
+<meta http-equiv="Content-Type" content="text/html; charset=ISO-2022-JP">
+</head>
+<body bgcolor="#EEEEEE">
+<p align="right">[ <a href="index-en.html">English</a> / Japanese ]</p>
+
+
+<h1>Emacs 上で w3m を動かそう</h1>
+
+
+<p>
+Emacs 上で動作するブラウザと言えば，普通
+<a href="http://www.cs.indiana.edu/elisp/w3/docs.html">W3</a>
+のことですが，動作が非常に遅いので，なかなか常用しようという気になれません．
+</p>
+<p>
+それに対して，<a href="http://ei5nazha.yz.yamagata-u.ac.jp/~aito/w3m/">w3m</a>
+というテキストベースで動作するブラウザがあり，
+非常に軽快に動作するので重宝しているのですが，
+端末に移動しなければいけないのが面倒です．
+</p>
+<p>
+そこで，w3m を HTML の rendering engine として使用し，表示とインタフェースのみを
+Emacs で動かすようにすればいいんじゃないだろうか，ということを考えました．
+</p>
+
+<ul>
+ <li><a href="#download">ダウンロード</a>
+ <li><a href="#install">インストール</a>
+ <li><a href="#mailing_list">メーリングリスト</a>
+ <li><a href="#link">リンク集</a>
+</ul>
+
+
+<img src="w3m-el.png" alt="emacs-w3m の動作例" width="384" height="333">
+
+
+<p>
+XEmacs または Emacs21 では画像のインライン表示が可能です．
+<a href="w3m-vs-w3.png">どちらが本物か</a>見比べてみてください．
+動作する様子を具体的に見てみたい方は，<a
+href="http://namazu.org/~satoru/x11rec/">x11rec</a> で撮影した<a
+href="video.gif">ビデオ</a>をご覧ください．
+</p>
+
+
+<hr>
+<h2><a name="download">ダウンロード</a></h2>
+<ul>
+ <li>安定版 <code><a href="w3m_el-1.0.tar.gz">w3m_el-1.0.tar.gz</a></code>
+ <li>開発版 <code><a href="w3m_el-1.2rc4.tar.gz">w3m_el-1.2rc4.tar.gz</a></code>
+</ul>
+<p>
+<code>emacs-w3m</code>は，CVSを使って共同開発しているので，以下の手順で最新版が入手できます．
+</p>
+<blockquote>
+<pre>
+% cvs -d :pserver:anonymous@cvs.namazu.org:/storage/cvsroot login
+CVS password:   # Enter/Returnキーを叩く
+% cvs -d :pserver:anonymous@cvs.namazu.org:/storage/cvsroot co emacs-w3m
+</pre>
+</blockquote>
+<p>
+また，<a href="http://cvs.namazu.org/emacs-w3m/">ViewCVS</a>
+でソースを閲覧することもできます．
+</p>
+
+
+<hr>
+<h2><a name="install">インストール</a></h2>
+<ol>
+ <li><p>
+     最新版の <a href="http://ei5nazha.yz.yamagata-u.ac.jp/~aito/w3m/">w3m</a>
+     をインストールしてください(詳細については「<a href="#version">w3m
+     のバージョン</a>」を参照)．
+     </p>
+ <li><p>
+     もしあなたが XEmacs 21.x お使いならば，必ず
+     <a href="http://www.lcdf.org/gifsicle/">gifsicle</a>
+     プログラムをインストールして下さい．
+     現在すべての XEmacs 21.x にオプティマイズされたアニメーション gif
+     が正常に表示されなかったりある種のインターレース gif
+     を表示しようとするとクラッシュしてしまうバグがあります．emacs-w3m
+     ではこれを使って gif データを XEmacs 21.x で扱える形式に変換します．
+     </p>
+ <li><p>
+     もしあなたが，XEmacs または Mule-2.3 をお使いならば，
+     <a href="ftp://ftp.m17n.org/pub/mule/apel/">APEL</a>
+     を先にインストールしておく必要があります．
+     </p>
+     <p>
+     また，emacs-w3m は「新しい custom」が必要です．
+     もしあなたが Mule-2.3 をお使いならば，emacs-w3m
+     をインストールする前にそれをインストールしなければなりません．
+     詳細は APEL に附属の <code>README.ja</code> をご覧下さい．
+     </p>
+ <li><p>
+     Emacs-w3m は <code>regexp-opt.el(c)</code> モジュールを必要としますが，
+     古い Emacsen (例えば Mule 2) にはありません．
+     もしあなたがそんなバージョンの Emacs を使っているのならば，
+     emacs-w3m をインストールする前に以下のように
+     <code>regexp-opt.el(c)</code> モジュールをインストールしなければなりません．
+     </p>
+<blockquote>
+<pre>
+% cp attic/regexp-opt.el /usr/local/share/mule/site-lisp
+% cd /usr/local/share/mule/site-lisp
+% mule -q -no-site-file -batch -f batch-byte-compile regexp-opt.el
+</pre>
+</blockquote>
+ <li><p>
+     もしあなたが，emacs-w3m の shimbun
+     ライブラリを使いたいとお思いならば，FLIM パッケージが必要です．
+     </p>
+     <p>
+     <a href="ftp://ftp.m17n.org/pub/mule/flim/">FLIM</a>
+     は APEL に依存していますので，XEmacs/Mule-2.3
+     以外のユーザの方であっても APEL が必要になります．
+     </p>
+ <li><p>
+     <code>configure</code> スクリプトを実行してください．
+     </p>
+<blockquote>
+<pre>
+% ./configure
+</pre>
+</blockquote>
+     <p>
+     APEL や FLIM などの必要なモジュールが，
+     標準的ではないディレクトリにインストールされている場合には，
+     <i>--with-addpath</i>
+     オプションを使って，そのディレクトリを指定する必要があります．
+     </p>
+<blockquote>
+<pre>
+% ./configure --with-addpath=/opt/share/apel:/opt/share/flim
+</pre>
+</blockquote>
+ <li><p>
+     同梱されている emacs-lisp
+     のソースファイルを適当なディレクトリにインストールするため，
+     次のコマンドを実行してください．
+     </p>
+<blockquote>
+<pre>
+% make
+% make install
+</pre>
+</blockquote>
+     <p>
+     加えて，XEmacs や Emacs21
+     用のアイコンを，以下のようにインストールすることができます．
+     </p>
+<blockquote>
+<pre>
+% make install-icons
+</pre>
+</blockquote>
+     <p>
+     <i>install</i> の代わりに <i>install-package</i> を使うと，XEmacs の
+     package としてインストールすることもできます．
+     </p>
+<blockquote>
+<pre>
+% make
+% make install-package
+</pre>
+</blockquote>
+     <p>
+     この場合 <i>install-icons</i> を実行する必要はありません．
+     </p>
+ <li>以下の設定を <code>~/.emacs</code> に追加してください．
+<blockquote>
+<pre>
+(autoload 'w3m "w3m" "Interface for w3m on Emacs." t)
+(autoload 'w3m-find-file "w3m" "w3m interface function for local file." t)
+(autoload 'w3m-browse-url "w3m" "Ask a WWW browser to show a URL." t)
+(autoload 'w3m-search "w3m-search" "Search QUERY using SEARCH-ENGINE." t)
+(autoload 'w3m-weather "w3m-weather" "Display weather report." t)
+(autoload 'w3m-antenna "w3m-antenna" "Report chenge of WEB sites." t)
+</pre>
+</blockquote>
+ <li>後は，M-x <i>w3m</i> とすれば起動します．
+</ol>
+
+
+<hr>
+<h2><a name="version">w3m のバージョンについて</a></h2>
+<p>
+このプログラムは，w3m のバージョンに強く依存していますので，
+なるべく最新の w3m を使うようにしてください．
+最新は2001年3月23日に公開された w3m-0.2.1 で，
+そのソースは以下の場所から入手できます．
+</p>
+<ul>
+ <li><code><a href="ftp://ei5nazha.yz.yamagata-u.ac.jp/w3m/">ftp://ei5nazha.yz.yamagata-u.ac.jp/w3m/w3m-0.2.1.tar.gz</a></code>
+</ul>
+<p>
+なお，本パッケージの全ての機能を利用するためには，
+佐藤大さんによって公開されている最新の
+<a href="http://mi.med.tohoku.ac.jp/~satodai/w3m/inusrc/index.html">w3m-0.2.1-inu-patch</a>
+を適用しておく必要があります．
+</p>
+
+
+<hr>
+<h2><a name="mailing_list">メーリングリスト</a></h2>
+<p>
+emacs-w3m についての情報交換を行うためのメーリングリストを開設しています．
+参加を希望される方は，<code>emacs-w3m-ctl@namazu.org</code>
+宛に以下のような内容のメールを送ってください．
+<blockquote>
+<pre>
+subscribe ANATANO Namae
+</pre>
+</blockquote>
+<p>
+上記サンプル中の「ANATANO Namae」という部分は，実際の名前に置き換えてください．
+メーリングリスト本体のアドレスは，<code>emacs-w3m@namazu.org</code> です．
+また，メーリングリストの過去記事も<a href="ml/">公開されています</a>．
+</p>
+
+
+<hr>
+<h2><a name="link">リンク集</a></h2>
+<ul>
+ <li><a href="http://ei5nazha.yz.yamagata-u.ac.jp/~aito/w3m/">w3m</a>
+     <ul>
+      <li><a href="http://mi.med.tohoku.ac.jp/~satodai/w3m/inusrc/index.html">w3m-0.2.1-inu-patch</a>
+      <li><a href="http://www2u.biglobe.ne.jp/~hsaka/w3m/index-ja.html">w3m-m17n</a>
+      <li><a href="http://pub.ks-and-ks.ne.jp/prog/w3mmee/">w3mmee</a>
+     </ul>
+ <li><a href="http://www.cs.indiana.edu/elisp/w3/docs.html">W3</a>
+ <li><a href="ftp://ftp.m17n.org/pub/mule/apel/">APEL</a>
+ <li><a href="ftp://ftp.m17n.org/pub/mule/flim/">FLIM</a>
+</ul>
+
+
+<hr>
+<h2><a name="members">開発者</a></h2>
+(50音順)
+<ul>
+ <li><a href="http://www.nijino.com/ari/">有沢 明宏</a>
+ <li><a href="http://www.taiyo.co.jp/~gotoh/">後藤 俊一</a>
+ <li><a href="http://www.netlaputa.ne.jp/~hshirai/">白井 秀行</a>
+ <li><a href="http://namazu.org/~satoru/">高林 哲</a>
+ <li><a href="http://www-nagao.kuee.kyoto-u.ac.jp/member/tsuchiya/">土屋 雅稔</a>
+ <li><a href="http://www.gohome.org/teranisi/">寺西 裕一</a>
+ <li>西田 圭介
+ <li>山岡 克美
+</ul>
+
+
+<hr>
+<h2><a name="report">連絡先</a></h2>
+<p>
+不具合報告などは <code>emacs-w3m@namazu.org</code> 宛にお願いします．
+</p>
+
+
+</body>
+</html>
+<!-- Local Variables: -->
+<!-- use-kuten-for-period: nil -->
+<!-- use-touten-for-comma: nil -->
+<!-- End: -->
