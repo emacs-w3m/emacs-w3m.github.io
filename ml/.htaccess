@@ -5,3 +5,7 @@ AddType "text/plain; charset=ISO-2022-JP" txt
 RewriteEngine on
 RewriteCond %{REQUEST_URI} /CVS/ [NC]
 RewriteRule . - [F]
+
+<Files "x">
+    SetHandler cgi-script
+</Files>

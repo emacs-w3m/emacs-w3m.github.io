@@ -1,0 +1,45 @@
+#!/usr/bin/perl
+
+use strict;
+use CGI qw(path_info);
+use lib "/usr/share/namazu/pl";
+require 'nmzidx.pl';
+
+my $INDEXDIR = "/storage/emacs-w3m/www/index/";
+my @REPLACE = ('/storage/emacs-w3m/www/htdocs/ml/',
+	       'http://emacs-w3m.namazu.org/ml/');
+my $uri = 'http://emacs-w3m.namazu.org/ml/';
+
+my $q = new CGI;
+my $x_ml_count = int(substr($q->path_info(), 1));
+
+if ($x_ml_count > 0) {
+    my $nmz = new nmzidx($INDEXDIR, 's');
+
+    ### Retrieve line number from 'NMZ.field.x-ml-count'
+    my $nmz_field = $nmz->open_field('x-ml-count');
+    my $fh = $nmz_field->{'x-ml-count'}->{'body'};
+    my $line = -1;
+    while (<$fh>) {
+	chomp;
+	if ($_ == $x_ml_count) {
+	    $line = $fh->input_line_number() - 1;
+	    last;
+	}
+    }
+
+    if ($line >= 0) {
+	### Retrieve uri from 'NMZ.field.uri'
+	$nmz->open_field('uri');
+	$nmz_field->{'uri'}->seek($line);
+	$uri = $nmz_field->{'uri'}->getline;
+	$uri =~ s|$REPLACE[0]|$REPLACE[1]|;
+    }
+
+    $nmz_field->close();
+    $nmz->close();
+}
+
+#print "Content-Type: text/plain\r\n";
+print "Location: $uri\r\n";
+print "\r\n";
