@@ -12,7 +12,8 @@
 <p>
 Emacs $B>e$GF0:n$9$k%V%i%&%6$H8@$($P!$IaDL(B
 <a href="http://www.cs.indiana.edu/elisp/w3/docs.html">W3</a>
-$B$N$3$H$G$9$,!$F0:n$,Hs>o$KCY$$$N$G!$$J$+$J$+>oMQ$7$h$&$H$$$&5$$K$J$l$^$;$s!%(B
+$B$N$3$H$G$9$,!$F0:n$,Hs>o$KCY$$$N$G!$$J$+$J$+>oMQ$7$h$&$H$$$&5$$K$J$l$^(B
+$B$;$s!%(B
 </p>
 <p>
 $B$=$l$KBP$7$F!$(B<a href="http://w3m.sourceforge.net/">w3m</a>
@@ -21,13 +22,14 @@ Emacs $B>e$GF0:n$9$k%V%i%&%6$H8@$($P!$IaDL(B
 $BC<Kv$K0\F0$7$J$1$l$P$$$1$J$$$N$,LLE]$G$9!%(B
 </p>
 <p>
-$B$=$3$G!$(Bw3m $B$r(B HTML $B$N(B rendering engine $B$H$7$F;HMQ$7!$I=<($H%$%s%?%U%'!<%9$N$_$r(B
-Emacs $B$GF0$+$9$h$&$K$9$l$P$$$$$s$8$c$J$$$@$m$&$+!$$H$$$&$3$H$r9M$($^$7$?!%(B
+$B$=$3$G!$(Bw3m $B$r(B HTML $B$N(B rendering engine $B$H$7$F;HMQ$7!$I=<($H%$%s%?%U%'!<(B
+$B%9$N$_$r(B Emacs $B$GF0$+$9$h$&$K$9$l$P$$$$$s$8$c$J$$$@$m$&$+!$$H$$$&$3$H(B
+$B$r9M$($^$7$?!%(B
 </p>
 
 <ul>
  <li><a href="#download">$B%@%&%s%m!<%I(B</a>
- <li><a href="#requirement">$BF0:n4D6-(B</a>
+ <li><a href="#requirements">$BF0:n4D6-(B</a>
  <li><a href="#install">$B%$%s%9%H!<%k(B</a>
  <li><a href="#config">$B@_Dj(B</a>
  <li><a href="#mailing_list">$B%a!<%j%s%0%j%9%H(B</a>
@@ -43,9 +45,9 @@ Emacs $B$GF0$+$9$h$&$K$9$l$P$$$$$s$8$c$J$$$@$m$&$+!$$H$$$&$3$H$r9M$($^$7$?!%(B
 <p>
 XEmacs $B$^$?$O(B Emacs21 $B$G$O2hA|$N%$%s%i%$%sI=<($,2DG=$G$9!%(B
 <a href="w3m-vs-w3.png">$B$I$A$i$,K\J*$+(B</a>$B8+Hf$Y$F$_$F$/$@$5$$!%(B
-$BF0:n$9$kMM;R$r6qBNE*$K8+$F$_$?$$J}$O!$(B<a
-href="http://namazu.org/~satoru/x11rec/">x11rec</a> $B$G;#1F$7$?(B<a
-href="video.gif">$B%S%G%*(B</a>$B$r$4Mw$/$@$5$$!%(B
+$BF0:n$9$kMM;R$r6qBNE*$K8+$F$_$?$$J}$O!$(B
+<a href="http://namazu.org/~satoru/x11rec/">x11rec</a> $B$G;#1F$7$?(B
+<a href="video.gif">$B%S%G%*(B</a>$B$r$4Mw$/$@$5$$!%(B
 </p>
 
 
@@ -74,13 +76,14 @@ href="video.gif">$B%S%G%*(B</a>$B$r$4Mw$/$@$5$$!%(B
      </ul>
 </ul>
 <p>
-emacs-w3m $B$O!$(BCVS $B$r;H$C$F6&F13+H/$7$F$$$k$N$G!$(B
-$B0J2<$N<j=g$G:G?7$N3+H/HG$,F~<j$G$-$^$9!%(B
+emacs-w3m $B$O!$(BCVS $B$r;H$C$F6&F13+H/$7$F$$$k$N$G!$0J2<$N<j=g$G:G?7$N3+H/(B
+$BHG$,F~<j$G$-$^$9!%(B
 </p>
 <blockquote>
 <pre>
 % cvs -d :pserver:anonymous@cvs.namazu.org:/storage/cvsroot login
-CVS password: # $B%Q%9%o!<%I$O@_Dj$5$l$F$$$^$;$s!%C1$K(B Enter/Return $B%-!<$r2!$7$F$/$@$5$$!%(B
+CVS password:
+# $B%Q%9%o!<%I$O@_Dj$5$l$F$$$^$;$s!%C1$K(B Enter/Return $B%-!<$r2!$7$F2<$5$$!%(B
 % cvs -d :pserver:anonymous@cvs.namazu.org:/storage/cvsroot co emacs-w3m
 </pre>
 </blockquote>
@@ -91,7 +94,7 @@ CVS password: # $B%Q%9%o!<%I$O@_Dj$5$l$F$$$^$;$s!%C1$K(B Enter/Return $B%-!<$
 
 
 <hr>
-<h2><a name="requirement">$BF0:n4D6-(B</a></h2>
+<h2><a name="requirements">$BF0:n4D6-(B</a></h2>
 <p>
 emacs-w3m $B$rF0$+$9$K$O:G?7$N(B w3m ($B%P!<%8%g%s(B 0.3.1 $B0J>e(B) $B$,I,MW$G$9!%(B
 $B$3$N%W%m%0%i%`$O(B w3m $B$N%P!<%8%g%s$K6/$/0MB8$7$F$$$k$N$G!$4{$K(B w3m $B$r%$(B
@@ -103,78 +106,87 @@ emacs-w3m $B$rF0$+$9$K$O:G?7$N(B w3m ($B%P!<%8%g%s(B 0.3.1 $B0J>e(B) $B$,
  <li><code><a href="http://prdownloads.sourceforge.net/w3m/">http://prdownloads.sourceforge.net/w3m/</a></code>
 </ul>
 <p>
-emacs-w3m $B$KF1:-$7$FG[I[$5$l$F$$$k(B shimbun $B%i%$%V%i%j$rMxMQ$9$k$?$a$K$O!$(B
-FLIM $B$rA0$b$C$F%$%s%9%H!<%k$7$F$*$/I,MW$,$"$j$^$9!%>\:Y$K$D$$$F$O!$(B
-<code><a href="http://cvs.namazu.org/emacs-w3m/README.shimbun.ja?rev=1.35&content-type=text/plain">README.shimbun.ja</a></code> $B$r3NG'$7$F$/$@$5$$!%(B
+emacs-w3m $B$KF1:-$7$FG[I[$5$l$F$$$k(B shimbun $B%i%$%V%i%j$rMxMQ$9$k$?$a$K(B
+$B$O!$(BFLIM $B$rA0$b$C$F%$%s%9%H!<%k$7$F$*$/I,MW$,$"$j$^$9!%>\:Y$K$D$$$F$O!$(B
+<code><a href="http://cvs.namazu.org/emacs-w3m/README.shimbun.ja?rev=1.35&content-type=text/plain">README.shimbun.ja</a></code>
+$B$r3NG'$7$F$/$@$5$$!%(B
 </p>
 <dl>
  <dt>a) Emacs 21.x
  <dd><p>
-     emacs-w3m $B$rF0$+$9$?$a$K!$M>J,$K%$%s%9%H!<%k$,I,MW$J%b%8%e!<%k$O$"$j$^$;$s!%(B
+     emacs-w3m $B$rF0$+$9$?$a$KM>J,$K%$%s%9%H!<%k$,I,MW$J%b%8%e!<%k$O$"(B
+     $B$j$^$;$s!%(B
      </p>
  <dt>b) Emacs 20.x
  <dd><p>
-     emacs-w3m $B$rF0$+$9$?$a$K!$M>J,$K%$%s%9%H!<%k$,I,MW$J%b%8%e!<%k$O$"$j$^$;$s!%(B
+     emacs-w3m $B$rF0$+$9$?$a$KM>J,$K%$%s%9%H!<%k$,I,MW$J%b%8%e!<%k$O$"(B
+     $B$j$^$;$s!%(B
      </p>
      <p>
-     BITMAP-MULE $B%Q%C%1!<%8$r%$%s%9%H!<%k$7$F$*$/$H!$(B
-     WEB $B%Z!<%8$N%$%s%i%$%s2hA|$rGr9uI=<($5$;$k$3$H$,$G$-$^$9!%(B
+     <code><a href="ftp://ftp.jpl.org/pub/elisp/bitmap/">BITMAP-MULE</a></code>
+     $B%Q%C%1!<%8$r%$%s%9%H!<%k$7$F$*$/$H!$(BWEB $B%Z!<%8$N%$%s%i%$%s2hA|$r(B
+     $BGr9uI=<($5$;$k$3$H$,$G$-$^$9!%(B
      </p>
  <dt>c) XEmacs
  <dd><p>
-     APEL $B$rA0$b$C$F%$%s%9%H!<%k$7$F$*$/I,MW$,$"$j$^$9!%(B
+     <code>
+     <a href="ftp://ftp.m17n.org/pub/mule/apel/apel-10.4.tar.gz">APEL</a>
+     </code>
+     $B$rA0$b$C$F%$%s%9%H!<%k$7$F$*$/I,MW$,$"$j$^$9!%(B
      </p>
      <blockquote>
       <strong>$BCm0U(B:</strong>
-      $B%P!<%8%g%s(B 1.23 $B0J9_$N(B XEmacs $BMQ(B APEL $B%Q%C%1!<%8$,!$(B
-      MULE $B$"$j(B/$B$J$7N>J}$N(B XEmacs $B$G(B emacs-w3m $B$rF0:n$5$;$k$?$a$K;H$&$3$H$,$G$-$^$9!%(B
-      $B$7$+$7$=$l$i$N%Q%C%1!<%8$O(B std11 $B%b%8%e!<%k$N$?$a$K(B FLIM
-      $B$H(B($B$=$7$F$*$=$i$/B>$N%Q%C%1!<%8!$Nc$($P(B
-      Wanderlust $B$d(B T-gnus $B$H$b(B)$BAj@-$,NI$/$"$j$^$;$s!%(B
-      $B$G$9$+$i!$%*%j%8%J%k$N(B APEL $B$r%$%s%9%H!<%k$9$k$3$H$r$*4+$a$7$^$9!%(B
+      $B%P!<%8%g%s(B 1.23 $B0J9_$N(B XEmacs $BMQ(B APEL $B%Q%C%1!<%8$,!$(BMULE $B$"$j(B/$B$J(B
+      $B$7N>J}$N(B XEmacs $B$G(B emacs-w3m $B$rF0:n$5$;$k$?$a$K;H$&$3$H$,$G$-$^(B
+      $B$9!%$7$+$7$=$l$i$N%Q%C%1!<%8$O(B std11 $B%b%8%e!<%k$N$?$a$K(B FLIM $B$H(B
+      ($B$=$7$F$*$=$i$/B>$N%Q%C%1!<%8!$Nc$($P(B Wanderlust $B$d(B T-gnus $B$H$b(B)
+      $BAj@-$,NI$/$"$j$^$;$s!%$G$9$+$i!$>e5-$N%j%s%/$K<($7$?(B APEL $B$r%$%s(B
+      $B%9%H!<%k$9$k$3$H$r$*4+$a$7$^$9!%(B
      </blockquote>
      <p>
      XEmacs 21.x $B$K(B emacs-w3m $B$r%$%s%9%H!<%k$9$k>l9g$O!$I,$:(B
      <code><a href="http://www.lcdf.org/gifsicle/">gifsicle</a></code>
-     $B%W%m%0%i%`$b%$%s%9%H!<%k$7$F2<$5$$!%(B
-     $B8=:_$9$Y$F$N(B XEmacs 21.x $B$K$O%*%W%F%#%^%$%:$5$l$?%"%K%a!<%7%g%s(B gif 
-     $B$,@5>o$KI=<($5$l$J$+$C$?$j$"$k<o$N%$%s%?!<%l!<%9(B gif
-     $B$rI=<($7$h$&$H$9$k$H%/%i%C%7%e$7$F$7$^$&%P%0$,$"$j$^$9!%(Bemacs-w3m 
-     $B$O(B <code>gifsicle</code> $B$rMxMQ$7$F!$(Bgif $B%G!<%?$r(BXEmacs 21.x
-     $B$G07$($k7A<0$KJQ49$7$^$9!%(B
+     $B%W%m%0%i%`$b%$%s%9%H!<%k$7$F2<$5$$!%8=:_$9$Y$F$N(B XEmacs 21.x $B$K$O(B
+     $B%*%W%F%#%^%$%:$5$l$?%"%K%a!<%7%g%s(B gif $B$,@5>o$KI=<($5$l$J$+$C$?$j(B
+     $B$"$k<o$N%$%s%?!<%l!<%9(B gif $B$rI=<($7$h$&$H$9$k$H%/%i%C%7%e$7$F$7$^(B
+     $B$&%P%0$,$"$j$^$9!%(Bemacs-w3m $B$O(B <code>gifsicle</code> $B$rMxMQ$7$F!$(B
+     gif $B%G!<%?$r(B XEmacs 21.x $B$G07$($k7A<0$KJQ49$7$^$9!%(B
      </p>
  <dt>d) Mule 2.3 (based on Emacs 19.34)
  <dd><p>
      APEL $B$H!V(B<strong>$B?7$7$$(B custom</strong>$B!W$H(B
-     <code>regexp-opt.el(c)</code> $B%b%8%e!<%k$,I,MW$G$9!%>\$7$/$O!$<!$N(B
-     <a href="#requirement_emacs_19.34">Emacs 19.34 $B$K$D$$$F$N@bL@(B</a>$B$r;2>H$7$F$/$@$5$$!%(B
+     <code>regexp-opt.el(c)</code> $B%b%8%e!<%k$,I,MW$G$9!%>\$7$/$O!$<!(B
+     $B$N(B
+     <a href="#requirements_emacs_19.34">Emacs 19.34 $B$K$D$$$F$N@bL@(B</a>
+     $B$r;2>H$7$F$/$@$5$$!%(B
      </p>
      <p>
-     BITMAP-MULE $B%Q%C%1!<%8$rMQ$$$F(B WEB
-     $B%Z!<%8$N%$%s%i%$%s2hA|$rGr9uI=<($5$;$k>l9g$K$O!$(B
-     $BIUB0$N%Q%C%A(B(<code><a href="http://cvs.namazu.org/emacs-w3m/patches/mule-2.3@19.34.patch?rev=1.1&content-type=text/plain">patches/mule-2.3@19.34.patch</a></code>)$B$rE,MQ$7$F(B
-     Mule $B$r:n$jD>$9$3$H$r6/$/$*4+$a$7$^$9!%(B
-     $B$=$&$7$J$$$H!$9b$$3NN($G(B Mule $B$,8G$^$C$F$7$^$$!$(BMule $B$r(B
-     kill $B$;$6$k$rF@$J$/$J$k$G$7$g$&!%(B
+     BITMAP-MULE $B%Q%C%1!<%8$rMQ$$$F(B WEB $B%Z!<%8$N%$%s%i%$%s2hA|$rGr9uI=(B
+     $B<($5$;$k>l9g$K$O!$IUB0$N%Q%C%A(B
+     (<code><a href="http://cvs.namazu.org/emacs-w3m/patches/mule-2.3@19.34.patch?rev=1.1&content-type=text/plain">patches/mule-2.3@19.34.patch</a></code>)
+     $B$rE,MQ$7$F(B Mule $B$r:n$jD>$9$3$H$r6/$/$*4+$a$7$^$9!%$=$&$7$J$$$H!$(B
+     $B9b$$3NN($G(B Mule $B$,8G$^$C$F$7$^$$!$(BMule $B$r(B kill $B$;$6$k$rF@$J$/$J$k(B
+     $B$G$7$g$&!%(B
      </p>
- <dt><a name="requirement_emacs_19.34">e) Emacs 19.34 (without MULE)</a>
+ <dt><a name="requirements_emacs_19.34">e) Emacs 19.34 (without MULE)</a>
  <dd><p>
      APEL $B$rA0$b$C$F%$%s%9%H!<%k$7$F$*$/I,MW$,$"$j$^$9!%(B
      </p>
      <p>
-     emacs-w3m $B$O!V(B<strong><a href="http://www.dina.kvl.dk/~abraham/custom/">$B?7$7$$(B
-     custom</a></strong>$B!W%Q%C%1!<%8$rI,MW$H$7$^$9!%(B
-     Emacs 19.34 $B$^$?$O(B Mule 2.3 $B$r;H$C$F$$$k>l9g$O!$(Bemacs-w3m
-     $B$r%$%s%9%H!<%k$9$kA0$K$=$l$r%$%s%9%H!<%k$7$J$1$l$P$J$j$^$;$s!%(B
-     $BFC$K(B Mule 2.3 $B$r;H$&>l9g$O!$(BAPEL $B$KImB0$7$F$$$k(B
+     emacs-w3m $B$O(B
+    $B!V(B<strong><a href="http://www.dina.kvl.dk/~abraham/custom/">$B?7$7$$(B custom</a></strong>$B!W(B
+     $B%Q%C%1!<%8$rI,MW$H$7$^$9!%(BEmacs 19.34 $B$^$?$O(B Mule 2.3 $B$r;H$C$F$$(B
+     $B$k>l9g$O!$(Bemacs-w3m $B$r%$%s%9%H!<%k$9$kA0$K$=$l$r%$%s%9%H!<%k$7$J(B
+     $B$1$l$P$J$j$^$;$s!%FC$K(B Mule 2.3 $B$r;H$&>l9g$O!$(BAPEL $B$KImB0$7$F$$$k(B
      <code><a href="http://cvs.m17n.org/cgi-bin/viewcvs/apel/README.ja?rev=HEAD&content-type=text/plain">README.ja</a></code>
      $B$bI,$:D4$Y$F2<$5$$!%(B
      </p>
      <p>
-     $B$^$?!$(Bemacs-w3m $B$O(B <code>regexp-opt.el(c)</code> $B%b%8%e!<%k$rI,MW$H$7$^$9$,!$(B
-     Emacs 19.34 $B$d(B Mule 2.3 $B$J$I$N8E$$(B Emacsen $B$K$O4^$^$l$F$$$^$;$s!%(B
-     $B$"$J$?$,;H$C$F$$$k(B Emacs $B$,3:Ev$9$k>l9g$O!$A0$b$C$F!$0J2<$N$h$&$K(B
-     <code>regexp-opt.el(c)</code> $B%b%8%e!<%k$r%$%s%9%H!<%k$9$kI,MW$,$"$j$^$9!%(B
+     $B$^$?!$(Bemacs-w3m $B$O(B <code>regexp-opt.el(c)</code> $B%b%8%e!<%k$rI,MW(B
+     $B$H$7$^$9$,!$(BEmacs 19.34 $B$d(B Mule 2.3 $B$J$I$N8E$$(B Emacsen $B$K$O4^$^$l(B
+     $B$F$$$^$;$s!%$"$J$?$,;H$C$F$$$k(B Emacs $B$,3:Ev$9$k>l9g$O!$A0$b$C$F!$(B
+     $B0J2<$N$h$&$K(B <code>regexp-opt.el(c)</code> $B%b%8%e!<%k$r%$%s%9%H!<(B
+     $B%k$9$kI,MW$,$"$j$^$9!%(B
      </p>
 <blockquote>
 <pre>
@@ -192,12 +204,13 @@ FLIM $B$rA0$b$C$F%$%s%9%H!<%k$7$F$*$/I,MW$,$"$j$^$9!%>\:Y$K$D$$$F$O!$(B
 <hr>
 <h2><a name="install">$B%$%s%9%H!<%k(B</a></h2>
 <p>
-$B:G=i$K!$(Bemacs-w3m
-$B$rMxMQ$9$k$?$a$K(B<a href="#requirement">$BI,MW$J>r7o(B</a>$B$,K~$?$5$l$F$$$k$+3NG'$7$F$/$@$5$$!%(B
+$B:G=i$K!$(Bemacs-w3m $B$rMxMQ$9$k$?$a$K(B
+<a href="#requirements">$BI,MW$J>r7o(B</a>
+$B$,K~$?$5$l$F$$$k$+3NG'$7$F$/$@$5$$!%(B
 </p>
 
 <dl>
- <dt><h3><a name="install_unix">$B0lHLE*$J(B UNIX $B4D6-$K%$%s%9%H!<%k$9$k>l9g(B</a></h3>
+ <dt><h3><a name="install_unix">UNIX $B7O$N4D6-$G%$%s%9%H!<%k$9$k>l9g(B</a></h3>
  <dd><p>
      $B:G=i$K!$(B<code>configure</code> $B%9%/%j%W%H$r<B9T$7$F$/$@$5$$!%(B
      </p>
@@ -207,10 +220,9 @@ FLIM $B$rA0$b$C$F%$%s%9%H!<%k$7$F$*$/I,MW$,$"$j$^$9!%>\:Y$K$D$$$F$O!$(B
 </pre>
 </blockquote>
      <p>
-     APEL $B$d(B FLIM $B$J$I$NI,MW$J%b%8%e!<%k$,!$(B
-     $BI8=`E*$G$O$J$$%G%#%l%/%H%j$K%$%s%9%H!<%k$5$l$F$$$k>l9g$K$O!$(B
-     <em>--with-addpath</em>
-     $B%*%W%7%g%s$r;H$C$F!$$=$N%G%#%l%/%H%j$r;XDj$9$kI,MW$,$"$j$^$9!%(B
+     APEL $B$d(B FLIM $B$J$I$NI,MW$J%b%8%e!<%k$,!$I8=`E*$G$O$J$$%G%#%l%/%H%j(B
+     $B$K%$%s%9%H!<%k$5$l$F$$$k>l9g$K$O!$(B<em>--with-addpath</em> $B%*%W%7%g(B
+     $B%s$r;H$C$F!$$=$l$i$N%G%#%l%/%H%j$r;XDj$9$kI,MW$,$"$j$^$9!%(B
      </p>
 <blockquote>
 <pre>
@@ -218,9 +230,8 @@ FLIM $B$rA0$b$C$F%$%s%9%H!<%k$7$F$*$/I,MW$,$"$j$^$9!%>\:Y$K$D$$$F$O!$(B
 </pre>
 </blockquote>
      <p>
-     $B<!$K!$F1:-$5$l$F$$$k(B emacs-lisp
-     $B$N%W%m%0%i%`$rE,Ev$J%G%#%l%/%H%j$K%$%s%9%H!<%k$9$k$?$a!$(B
-     $B<!$N%3%^%s%I$r<B9T$7$F$/$@$5$$!%(B
+     $B<!$K!$(Bemacs-w3m $B$rE,Ev$J%G%#%l%/%H%j$K%$%s%9%H!<%k$9$k$?$a!$<!$N(B
+     $B%3%^%s%I$r<B9T$7$F$/$@$5$$!%(B
      </p>
 <blockquote>
 <pre>
@@ -229,8 +240,8 @@ FLIM $B$rA0$b$C$F%$%s%9%H!<%k$7$F$*$/I,MW$,$"$j$^$9!%>\:Y$K$D$$$F$O!$(B
 </pre>
 </blockquote>
      <p>
-     $B2C$($F!$(BXEmacs $B$d(B Emacs21
-     $BMQ$N%"%$%3%s$r!$0J2<$N$h$&$K%$%s%9%H!<%k$9$k$3$H$,$G$-$^$9!%(B
+     Emacs 21 $B$^$?$O(B XEmacs $B$r;H$C$F$$$k$J$i$P!"%"%$%3%s2hA|$N%U%!%$%k(B
+     $B$r%$%s%9%H!<%k$7$?J}$,NI$$$G$7$g$&!#$=$l$r9T$J$&$K$O(B:
      </p>
 <blockquote>
 <pre>
@@ -238,8 +249,8 @@ FLIM $B$rA0$b$C$F%$%s%9%H!<%k$7$F$*$/I,MW$,$"$j$^$9!%>\:Y$K$D$$$F$O!$(B
 </pre>
 </blockquote>
      <p>
-     <em>install</em> $B$NBe$o$j$K(B <em>install-package</em> $B$r;H$&$H!$(BXEmacs $B$N(B
-     package $B$H$7$F%$%s%9%H!<%k$9$k$3$H$b$G$-$^$9!%(B
+     <em>install</em> $B$NBe$o$j$K(B <em>install-package</em> $B$r;H$&$H!$(B
+     XEmacs $B$N%Q%C%1!<%8$H$7$F%$%s%9%H!<%k$9$k$3$H$b$G$-$^$9!%(B
      </p>
 <blockquote>
 <pre>
@@ -250,11 +261,11 @@ FLIM $B$rA0$b$C$F%$%s%9%H!<%k$7$F$*$/I,MW$,$"$j$^$9!%>\:Y$K$D$$$F$O!$(B
      <p>
      $B$3$N>l9g(B <em>install-icons</em> $B$r<B9T$9$kI,MW$O$"$j$^$;$s!%(B
      </p>
- <dt><h3><a name="install_nonunix">$BHs(B UNIX $B4D6-$K%$%s%9%H!<%k$9$k>l9g(B</a></h3>
+ <dt><h3><a name="install_nonunix">$BHs(B UNIX $B7O$N4D6-$G%$%s%9%H!<%k$9$k>l9g(B</a></h3>
  <dd><p>
-     <code>configure</code> $B%9%/%j%W%H$r<B9T$G$-$J$$!$(B
-     $B$^$?$O(B <code>make</code> $B%3%^%s%I$,B8:_$7$J$$4D6-$N>l9g$O!$(B
-     $B0J2<$N%3%^%s%I$r<B9T$7$F$/$@$5$$!%(B
+     <code>configure</code> $B%9%/%j%W%H$r<B9T$G$-$J$$$+!$(B
+     <code>make</code> $B%3%^%s%I$,MxMQ$G$-$J$$>l9g$O!$0J2<$N%3%^%s%I$r(B
+     $B<B9T$7$F$/$@$5$$!%(B
      </p>
 <blockquote>
 <pre>
@@ -262,9 +273,9 @@ FLIM $B$rA0$b$C$F%$%s%9%H!<%k$7$F$*$/I,MW$,$"$j$^$9!%>\:Y$K$D$$$F$O!$(B
 </pre>
 </blockquote>
      <p>
-     APEL $B$d(B FLIM $B$J$I$NI,MW$J%b%8%e!<%k$,!$(B
-     $BI8=`E*$G$O$J$$%G%#%l%/%H%j$K%$%s%9%H!<%k$5$l$F$$$k>l9g$K$O!$(B
-     $B0J2<$N$h$&$K$=$N%G%#%l%/%H%j$r;XDj$9$kI,MW$,$"$j$^$9!%(B
+     APEL $B$d(B FLIM $B$J$I$NI,MW$J%b%8%e!<%k$,!$I8=`E*$G$O$J$$%G%#%l%/%H%j(B
+     $B$K%$%s%9%H!<%k$5$l$F$$$k>l9g$K$O!$0J2<$N$h$&$K$=$N%G%#%l%/%H%j$r(B
+     $B;XDj$9$kI,MW$,$"$j$^$9!%(B
      </p>
 <blockquote>
 <pre>
