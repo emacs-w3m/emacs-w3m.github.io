@@ -88,7 +88,7 @@ recommend you visit the official w3m web page to check whether a newer
 version of w3m has been released:
 </p>
 <ul>
- <li><code><a href="http://prdownloads.sourceforge.net/w3m/">http://prdownloads.sourceforge.net/w3m/</a></code>.
+ <li><code><a href="http://prdownloads.sourceforge.net/w3m/">http://prdownloads.sourceforge.net/w3m/</a></code>
 </ul>
 <p>
 In order to use the shimbun library which is included in the emacs-w3m
@@ -123,18 +123,18 @@ about the shimbun library, see
       install APEL which is linked above.
      </blockquote>
      <p>
-     If you are using XEmacs 21.x, you should install the program
-     <code><a href="http://www.lcdf.org/gifsicle/">gifsicle</a></code>.
-     There is a known bug in all XEmacs 21.x series that it won't let
-     it display optimized animated gifs correctly or may make it crash
-     when some kind of an interlaced gif image is displayed.  Emacs-w3m
-     uses the gifsicle program to convert gif data in order to make it
-     possible to be handled by XEmacs 21.x.
+     If you are using XEmacs 21.x, you should install the
+     <code><a href="http://www.lcdf.org/gifsicle/">gifsicle</a></code>
+     program.  There is a known bug in all XEmacs 21.x series that it
+     won't let it display optimized animated gifs correctly or may make
+     it crash when some kind of an interlaced gif image is displayed.
+     Emacs-w3m uses the gifsicle program to convert gif data in order to
+     make it possible to be handled by XEmacs 21.x.
      </p>
  <dt>d) Mule 2.3 (based on Emacs 19.34)
  <dd><p>
      APEL package, <strong>the new custom</strong> package, and the
-     module <code>regexp-opt.el(c)</code> are required.  For more
+     <code>regexp-opt.el(c)</code> module are required.  For more
      detail, see carefully <a href="#requirements_emacs_19.34">the next
      section</a> about Emacs 19.34.
      </p>
@@ -150,7 +150,7 @@ about the shimbun library, see
  <dt><a name="requirements_emacs_19.34">e) Emacs 19.34 (without MULE)</a>
  <dd><p>
      APEL package, <strong>the new custom</strong> package, and the
-     module <code>regexp-opt.el(c)</code> are required.
+     <code>regexp-opt.el(c)</code> module are required.
      </p>
      <p>
      Emacs-w3m requires
@@ -164,10 +164,10 @@ about the shimbun library, see
      file which is included in the APEL distribution.
      </p>
      <p>
-     Emacs-w3m also requires the module <code>regexp-opt.el(c)</code>
+     Emacs-w3m also requires the <code>regexp-opt.el(c)</code> module
      which might not be provided in the old Emacsen such as Emacs 19.34
      and Mule 2.3.  If you are using such versions of Emacs, you have to
-     install the module regexp-opt.el(c) before installing emacs-w3m as
+     install the regexp-opt.el(c) module before installing emacs-w3m as
      follows:
      </p>
 <blockquote>
@@ -272,7 +272,7 @@ meets <a href="#requirements">the requirements</a>.
 <hr>
 <h2><a name="configuration">Configuration</a></h2>
 <p>
-Put this line into your <code>~/.emacs</code>.
+Put this line into your <code>~/.emacs</code> file:
 </p>
 <blockquote>
 <pre>
@@ -285,21 +285,22 @@ Just type <i>M-x w3m</i>, and you can use emacs-w3m.
 <p>
 If you want to use other contributed programs, some additional settings
 are required.  Please see comments of those programs for more details.
-If unsure, put these lines into your <code>~/.emacs</code>.
+If unsure, put these lines into your <code>~/.emacs</code> file:
 </p>
 <blockquote>
 <pre>
-(autoload 'w3m-find-file "w3m" "w3m interface function for local file." t)
+(autoload 'w3m-find-file "w3m" "Find a local file using emacs-w3m." t)
 (autoload 'w3m-browse-url "w3m" "Ask a WWW browser to show a URL." t)
-(autoload 'w3m-search "w3m-search" "Search QUERY using SEARCH-ENGINE." t)
-(autoload 'w3m-weather "w3m-weather" "Display weather report." t)
-(autoload 'w3m-antenna "w3m-antenna" "Report change of WEB sites." t)
+(autoload 'w3m-search "w3m-search" "Search words using emacs-w3m." t)
+(autoload 'w3m-weather "w3m-weather" "Display a weather report." t)
+(autoload 'w3m-antenna "w3m-antenna" "Report changes of web sites." t)
+(autoload 'w3m-namazu "w3m-namazu" "Search files with Namazu." t)
 </pre>
 </blockquote>
 <p>
 In order to handle text/html part with emacs-w3m under SEMI MUAs such as
 T-gnus and Wanderlust, you have to put the following line in your
-<code>~/.emacs</code>.
+<code>~/.emacs</code> file:
 </p>
 <blockquote>
 <pre>

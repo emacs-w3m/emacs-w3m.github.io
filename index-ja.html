@@ -158,7 +158,7 @@ FLIM を前もってインストールしておく必要があります．詳細については，
  <dd><p>
      APEL と「<strong>新しい custom</strong>」と
      <code>regexp-opt.el(c)</code> モジュールが必要です．詳しくは，
-     次の<a href="#requirements_emacs_19.34">Emacs 19.34
+     次の <a href="#requirements_emacs_19.34">Emacs 19.34
      についての説明</a>を参照してください．
      </p>
      <p>
@@ -292,7 +292,7 @@ FLIM を前もってインストールしておく必要があります．詳細については，
 <hr>
 <h2><a name="config">設定</a></h2>
 <p>
-最初に，以下の設定を <code>~/.emacs</code> に追加してください．
+最初に，以下の設定を <code>~/.emacs</code> ファイルに追加してください．
 </p>
 <blockquote>
 <pre>
@@ -307,21 +307,22 @@ FLIM を前もってインストールしておく必要があります．詳細については，
 詳細については，
 個々の付属プログラムのソースファイルの先頭に記載されているコメントを参照してください．
 良く分からない場合は，とりあえず，以下の設定を <code>~/.emacs</code>
-に追加しておいてください．
+ファイルに追加しておいてください．
 </p>
 <blockquote>
 <pre>
-(autoload 'w3m-find-file "w3m" "w3m interface function for local file." t)
+(autoload 'w3m-find-file "w3m" "Find a local file using emacs-w3m." t)
 (autoload 'w3m-browse-url "w3m" "Ask a WWW browser to show a URL." t)
-(autoload 'w3m-search "w3m-search" "Search QUERY using SEARCH-ENGINE." t)
-(autoload 'w3m-weather "w3m-weather" "Display weather report." t)
-(autoload 'w3m-antenna "w3m-antenna" "Report change of WEB sites." t)
+(autoload 'w3m-search "w3m-search" "Search words using emacs-w3m." t)
+(autoload 'w3m-weather "w3m-weather" "Display a weather report." t)
+(autoload 'w3m-antenna "w3m-antenna" "Report changes of web sites." t)
+(autoload 'w3m-namazu "w3m-namazu" "Search files with Namazu." t)
 </pre>
 </blockquote>
 <p>
 また，T-gnus や Wanderlust などの SEMI MUA 上で，メッセージ中の text/html
 パートを emacs-w3m を使って表示させるには，以下の設定を
-<code>~/.emacs</code> に追加する必要があります．
+<code>~/.emacs</code> ファイルに追加する必要があります．
 </p>
 <blockquote>
 <pre>
