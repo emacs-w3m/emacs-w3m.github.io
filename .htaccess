@@ -12,3 +12,5 @@ LanguagePriority en ja
   Order deny,allow
   Deny from all
 </Files>
+
+Redirect w3m_el-1.3.2.tar.gz emacs-w3m-1.3.2.tar.gz
