@@ -112,7 +112,7 @@ $BUTTON(PREV)$$BUTTON(NEXT)$$BUTTON(TPREV)$$BUTTON(TNEXT)$[<a href="$IDXFNAME$#$
 <THead>
 <ul>
 <li><a href="$IDXFNAME$">Date Index</a></li>
-<li><form method="GET" action="namazu.cgi">Namazu Search:
+<li><form method="GET" action="namazu.cgi" accept-charset="euc-jp,ascii">Namazu Search:
 <input type="text" name="key" size="30">
 <input type="submit" value="Find">
 [<a href="namazu.cgi">Help</a>]
@@ -126,7 +126,7 @@ $PGLINK(TPREV)$$PGLINK(TNEXT)$
 <!-- 個別の記事の末尾に namazu を呼び出す form を追加 -->
 <MsgFoot>
 <ul>
-<li><form method="GET" action="namazu.cgi">Namazu Search:
+<li><form method="GET" action="namazu.cgi" accept-charset="euc-jp,ascii">Namazu Search:
 <input type="text" name="key" size="30">
 <input type="submit" value="Find">
 [<a href="namazu.cgi">Help</a>]
