@@ -62,7 +62,10 @@ Replace     /storage/emacs-w3m/www/htdocs/ml/ http://emacs-w3m.namazu.org/ml/
 ## NMZ.(head|foot|body|tips|results).de for displaying results 
 ## and use a proper message catalog for `de'.
 ##
-Lang          ja
+# The following line is commented out because content negotiation
+# patch <URL:http://namazu.org/ml/namazu-devel-ja/msg03495.html> is
+# applied to namazu.cgi.
+#Lang          ja
 ContentType   "text/html; charset=euc-jp"
 
 
