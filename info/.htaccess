@@ -1,0 +1,8 @@
+Options +Multiviews
+AddHandler type-map var
+AddLanguage ja .ja
+AddLanguage en .en
+LanguagePriority en ja
+
+AddType "text/html; charset=euc-jp" html
+AddType "text/plain; charset=euc-jp" texi
