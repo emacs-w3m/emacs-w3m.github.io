@@ -93,9 +93,9 @@ library, see
 (sorry, Japanese only).
 </p>
 <dl>
- <dt>a) Emacs-21.x
+ <dt>a) Emacs 21.x
  <dd><p>No additional package is required.</p>
- <dt>b) Emacs-20.x
+ <dt>b) Emacs 20.x
  <dd><p>No additional package is required.</p>
      <p>
      When BITMAP-MULE package is installed, emacs-w3m converts inline
@@ -103,20 +103,28 @@ library, see
      </p>
  <dt>c) XEmacs
  <dd><p>APEL package is required.</p>
+     <blockquote>
+      <strong>Note:</strong>
+      The XEmacs APEL package version 1.23 and later can be used for
+      both XEmacs with Mule and non-Mule XEmacs.  However, those
+      packages aren't suitable for FLIM (and possibly Wanderlust or
+      T-gnus) because of the std11 modules.  So, we recommend you
+      install the original APEL.
+     </blockquote>
      <p>
-     If you are using XEmacs-21.x, you should install the program
+     If you are using XEmacs 21.x, you should install the program
      <code><a href="http://www.lcdf.org/gifsicle/">gifsicle</a></code>.
-     There is a known bug in the whole XEmacs-21.x series so far that it
+     There is a known bug in the whole XEmacs 21.x series so far that it
      won't display optimized animated gifs correctly or it may crash
      when some kind of an interlaced gif image is displayed.  Emacs-w3m
-     will use it to convert gif data to be suitable for XEmacs-21.x.
+     will use it to convert gif data to be suitable for XEmacs 21.x.
      </p>
- <dt>d) Mule-2.3 (based on Emacs-19.34)
+ <dt>d) Mule 2.3 (based on Emacs 19.34)
  <dd><p>
      APEL package, <strong>new custom</strong> package, and the module
      <code>regexp-opt.el(c)</code> are required.  For more detail,
      please check <a href="#requirement_emacs_19.34">the next
-     section</a> about Emacs-19.34.
+     section</a> about Emacs 19.34.
      </p>
      <p>
      If you wish to use BITMAP-MULE package to show black and white
@@ -126,7 +134,7 @@ library, see
      you don't accept our recommendation, Mule might be stuck.  And you
      wouldn't get out of the difficulty except kill Mule.
      </p>
- <dt><a name="requirement_emacs_19.34">e) Emacs-19.34 (without MULE)</a>
+ <dt><a name="requirement_emacs_19.34">e) Emacs 19.34 (without MULE)</a>
  <dd><p>
      APEL package, <strong>new custom</strong> package, and the module
      <code>regexp-opt.el(c)</code> are required.
@@ -134,25 +142,29 @@ library, see
      <p>
      Emacs-w3m requires
      <strong><a href="http://www.dina.kvl.dk/~abraham/custom/">new custom</a></strong>
-     package. If you use Emacs-19.34 or Mule-2.3, you have to install it
+     package. If you use Emacs 19.34 or Mule 2.3, you have to install it
      before installing emacs-w3m.
-     When you use Mule-2.3 especially, see also
+     When you use Mule 2.3 especially, see also
      <code><a href="http://cvs.m17n.org/cgi-bin/viewcvs/apel/README.en?rev=HEAD&content-type=text/plain">README.en</a></code>
      distributed with APEL.
      </p>
      <p>
      Emacs-w3m also requires the module <code>regexp-opt.el(c)</code>
-     which might not be provided in the old Emacsen such as Emacs-19.34
-     and Mule-2.3.  If you are using such versions of Emacs, you have to
+     which might not be provided in the old Emacsen such as Emacs 19.34
+     and Mule 2.3.  If you are using such versions of Emacs, you have to
      install the module regexp-opt.el(c) before installing emacs-w3m as
      follows:
      </p>
 <blockquote>
 <pre>
-% cp attic/regexp-opt.el /usr/local/share/mule/site-lisp
-% cd /usr/local/share/mule/site-lisp
-% mule -q -no-site-file -batch -f batch-byte-compile regexp-opt.el
+% cp attic/regexp-opt.el /usr/local/share/emacs/site-lisp
+% cd /usr/local/share/emacs/site-lisp
+% emacs -q -no-site-file -batch -f batch-byte-compile regexp-opt.el
 </pre>
+     <p>
+     (You will likely need to say `mule' instead of `emacs' for the path
+     name and the executable name if you are using Mule.)
+     </p>
 </blockquote>
 </dl>
 
@@ -196,7 +208,7 @@ meets <a href="#requirement">the requirement</a>.
 </blockquote>
      <p>
      In addition, you can install some image files which are used as the
-     icons for XEmacs or Emacs-21.x as follows.
+     icons for XEmacs or Emacs 21.x as follows.
      </p>
 <blockquote>
 <pre>
@@ -323,7 +335,28 @@ in the body of the mail to <code>emacs-w3m-ctl@namazu.org</code>.
  <li><a href="http://www.cs.indiana.edu/elisp/w3/docs.html">W3</a>
  <li><a href="ftp://ftp.m17n.org/pub/mule/apel/">APEL</a>
  <li><a href="ftp://ftp.m17n.org/pub/mule/flim/">FLIM</a>
+ <li><a href="ftp://ftp.jpl.org/pub/elisp/bitmap/">BITMAP-MULE</a>
+ <li><a href="http://www.lcdf.org/gifsicle/">gifsicle</a>
+ <li><a href=http://www.dina.kvl.dk/~abraham/custom/">New custom</a>
 </ul>
+
+
+<hr>
+<h2><a name="members">Authors</a></h2>
+(alphabetical order in the family names)
+<ul>
+ <li><a href="http://www.nijino.com/ari/">Akihiro Arisawa</a>
+ <li><a href="http://www.taiyo.co.jp/~gotoh/">Shun-ichi GOTO</a>
+ <li>Keisuke Nishida
+ <li><a href="http://www.netlaputa.ne.jp/~hshirai/">Hideyuki SHIRAI</a>
+ <li><a href="http://namazu.org/~satoru/">Satoru Takabayashi</a>
+ <li><a href="http://www.gohome.org/teranisi/">Yuuichi Teranishi</a>
+ <li><a href="http://www-nagao.kuee.kyoto-u.ac.jp/member/tsuchiya/">TSUCHIYA Masatoshi</a>
+ <li><a href="http://www.jpl.org/">Katsumi Yamaoka</a>
+</ul>
+<p>
+Thanks to many of the other people for the great contributions.
+</p>
 
 
 <hr>

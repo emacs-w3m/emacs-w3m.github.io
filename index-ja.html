@@ -107,11 +107,11 @@ FLIM を前もってインストールしておく必要があります．詳細については，
 <code><a href="http://cvs.namazu.org/emacs-w3m/README.shimbun.ja?rev=1.35&content-type=text/plain">README.shimbun.ja</a></code> を確認してください．
 </p>
 <dl>
- <dt>a) Emacs-21.x
+ <dt>a) Emacs 21.x
  <dd><p>
      emacs-w3m を動かすために，余分にインストールが必要なモジュールはありません．
      </p>
- <dt>b) Emacs-20.x
+ <dt>b) Emacs 20.x
  <dd><p>
      emacs-w3m を動かすために，余分にインストールが必要なモジュールはありません．
      </p>
@@ -133,20 +133,20 @@ FLIM を前もってインストールしておく必要があります．詳細については，
       ですから，オリジナルの APEL をインストールすることをお勧めします．
      </blockquote>
      <p>
-     XEmacs-21.x に emacs-w3m をインストールする場合は，必ず
+     XEmacs 21.x に emacs-w3m をインストールする場合は，必ず
      <code><a href="http://www.lcdf.org/gifsicle/">gifsicle</a></code>
      プログラムもインストールして下さい．
-     現在すべての XEmacs-21.x にはオプティマイズされたアニメーション gif 
+     現在すべての XEmacs 21.x にはオプティマイズされたアニメーション gif 
      が正常に表示されなかったりある種のインターレース gif
      を表示しようとするとクラッシュしてしまうバグがあります．emacs-w3m 
      は <code>gifsicle</code> を利用して，gif データをXEmacs 21.x
      で扱える形式に変換します．
      </p>
- <dt>d) Mule-2.3 (based on Emacs-19.34)
+ <dt>d) Mule 2.3 (based on Emacs 19.34)
  <dd><p>
      APEL と「<strong>新しい custom</strong>」と
      <code>regexp-opt.el(c)</code> モジュールが必要です．詳しくは，次の
-     <a href="#requirement_emacs_19.34">Emacs-19.34 についての説明</a>を参照してください．
+     <a href="#requirement_emacs_19.34">Emacs 19.34 についての説明</a>を参照してください．
      </p>
      <p>
      BITMAP-MULE パッケージを用いて WEB
@@ -156,31 +156,35 @@ FLIM を前もってインストールしておく必要があります．詳細については，
      そうしないと，高い確率で Mule が固まってしまい，Mule を
      kill せざるを得なくなるでしょう．
      </p>
- <dt><a name="requirement_emacs_19.34">e) Emacs-19.34 (without MULE)</a>
+ <dt><a name="requirement_emacs_19.34">e) Emacs 19.34 (without MULE)</a>
  <dd><p>
      APEL を前もってインストールしておく必要があります．
      </p>
      <p>
      emacs-w3m は「<strong><a href="http://www.dina.kvl.dk/~abraham/custom/">新しい
      custom</a></strong>」パッケージを必要とします．
-     Emacs-19.34 または Mule-2.3 を使っている場合は，emacs-w3m
+     Emacs 19.34 または Mule 2.3 を使っている場合は，emacs-w3m
      をインストールする前にそれをインストールしなければなりません．
-     特に Mule-2.3 を使う場合は，APEL に附属している
+     特に Mule 2.3 を使う場合は，APEL に附属している
      <code><a href="http://cvs.m17n.org/cgi-bin/viewcvs/apel/README.ja?rev=HEAD&content-type=text/plain">README.ja</a></code>
      も必ず調べて下さい．
      </p>
      <p>
      また，emacs-w3m は <code>regexp-opt.el(c)</code> モジュールを必要としますが，
-     Emacs-19.34 や Mule-2.3 などの古い Emacsen には含まれていません．
+     Emacs 19.34 や Mule 2.3 などの古い Emacsen には含まれていません．
      あなたが使っている Emacs が該当する場合は，前もって，以下のように
      <code>regexp-opt.el(c)</code> モジュールをインストールする必要があります．
      </p>
 <blockquote>
 <pre>
-% cp attic/regexp-opt.el /usr/local/share/mule/site-lisp
-% cd /usr/local/share/mule/site-lisp
-% mule -q -no-site-file -batch -f batch-byte-compile regexp-opt.el
+% cp attic/regexp-opt.el /usr/local/share/emacs/site-lisp
+% cd /usr/local/share/emacs/site-lisp
+% emacs -q -no-site-file -batch -f batch-byte-compile regexp-opt.el
 </pre>
+     <p>
+     (もし Mule をお使いならば，おそらくパス名やコマンド名として `emacs'
+     の代わりに `mule' と言う必要があるでしょう．)
+     </p>
 </blockquote>
 </dl>
 
@@ -339,6 +343,9 @@ subscribe ANATANO Namae
  <li><a href="http://www.cs.indiana.edu/elisp/w3/docs.html">W3</a>
  <li><a href="ftp://ftp.m17n.org/pub/mule/apel/">APEL</a>
  <li><a href="ftp://ftp.m17n.org/pub/mule/flim/">FLIM</a>
+ <li><a href="ftp://ftp.jpl.org/pub/elisp/bitmap/">BITMAP-MULE</a>
+ <li><a href="http://www.lcdf.org/gifsicle/">gifsicle</a>
+ <li><a href=http://www.dina.kvl.dk/~abraham/custom/">New custom</a>
 </ul>
 
 
@@ -353,8 +360,11 @@ subscribe ANATANO Namae
  <li><a href="http://www-nagao.kuee.kyoto-u.ac.jp/member/tsuchiya/">土屋 雅稔</a>
  <li><a href="http://www.gohome.org/teranisi/">寺西 裕一</a>
  <li>西田 圭介
- <li>山岡 克美
+ <li><a href="http://www.jpl.org/">山岡 克美</a>
 </ul>
+<p>
+他の多くのみなさんの多大な貢献に感謝します．
+</p>
 
 
 <hr>
