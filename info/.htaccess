@@ -14,3 +14,7 @@ AddType "text/plain" texi
 <Files emacs-w3m-ja.texi>
   ForceType "text/plain; charset=euc-jp"
 </Files>
+
+RewriteEngine on
+RewriteCond %{REQUEST_URI} /CVS/ [NC]
+RewriteRule . - [F]

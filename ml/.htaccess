@@ -1,3 +1,7 @@
 DefaultType "text/html; charset=ISO-2022-JP"
 AddType "text/html; charset=ISO-2022-JP" html
 AddType "text/plain; charset=ISO-2022-JP" txt
+
+RewriteEngine on
+RewriteCond %{REQUEST_URI} /CVS/ [NC]
+RewriteRule . - [F]
