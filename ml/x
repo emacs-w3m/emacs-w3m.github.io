@@ -5,8 +5,8 @@ use CGI qw(path_info);
 use lib "/usr/share/namazu/pl";
 require 'nmzidx.pl';
 
-my $INDEXDIR = "/storage/emacs-w3m/www/index/";
-my @REPLACE = ('/storage/emacs-w3m/www/htdocs/ml/',
+my $INDEXDIR = "/var/www/emacs-w3m.namazu.org/ml/";
+my @REPLACE = ('/var/www/emacs-w3m.namazu.org/ml/',
 	       'http://emacs-w3m.namazu.org/ml/');
 my $uri = 'http://emacs-w3m.namazu.org/ml/';
 
