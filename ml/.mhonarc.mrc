@@ -96,7 +96,7 @@ $BUTTON(PREV)$$BUTTON(NEXT)$$BUTTON(TPREV)$$BUTTON(TNEXT)$[<a href="$IDXFNAME$#$
 <!-- namazu.cgi を呼び出す form を宣言 -->
 <DefineVar chop>
 SEARCH-FORM
-<form method="GET" action="/cgi-bin/namazu.cgi">Namazu Search:
+<form method="GET" action="namazu.cgi">Namazu Search:
 <input type="text" name="key" size="30">
 <input type="submit" value="Find"></form>
 </DefineVar>
