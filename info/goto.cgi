@@ -2,9 +2,35 @@
 
 use strict;
 use CGI::Carp qw/ fatalsToBrowser set_message /;
-use CGI::Carp;
 use CGI_Lite qw/ url_decode /;
 use DB_File;
+
+=head1 NAME
+
+goto.cgi - ノード名に基づく request を redirect する
+
+=head1 SYNOPSIS
+
+CGI として利用する．
+
+=head1 DESCRIPTION
+
+F<texi2html> によって生成された HTML ファイルと，F<makedb> によって生
+成された F<node.db> と同じディレクトリに置いて，CGI として使用する．
+
+    goto.cgi?file=emacs-w3m&node=Introduction
+
+というような request を受け取り，実際に Introduction 節が含まれている
+ファイルの URI を返す．
+
+C<file> を省略すると，
+
+    goto.cgi?node=Introduction
+
+Content negotiation に基づいて，C<emacs-w3m> または C<emacs-w3m-ja> か
+ら適切な方を選ぶ．
+
+=cut
 
 BEGIN {
     sub handle_errors {
@@ -73,3 +99,32 @@ Content-Type: text/plain
 Unknown node "(%s)%s" is specified.
 __unknown__
 }
+
+=head1 AUTHOR
+
+=over 4
+
+=item TSUCHIYA Masatoshi <tsuchiya@namazu.org>
+
+=back
+
+=head1 COPYRIGHT
+
+This program is free software; you can redistribute it and/or modify
+it under the terms of the GNU General Public License as published by
+the Free Software Foundation; either version 2, or (at your option)
+any later version.
+
+This program is distributed in the hope that it will be useful,
+but WITHOUT ANY WARRANTY; without even the implied warranty of
+MERCHANTABILITY or FITNESS FOR A PARTICULAR PURPOSE.  See the
+GNU General Public License for more details.
+
+You should have received a copy of the GNU General Public License
+along with this program; if not, you can either send email to this
+program's maintainer or write to: The Free Software Foundation,
+Inc.; 59 Temple Place, Suite 330; Boston, MA 02111-1307, USA.
+
+Last Update: $Date$
+
+=cut
