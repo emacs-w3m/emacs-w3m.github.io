@@ -1,0 +1,90 @@
+<!doctype html public "-//W3C//DTD HTML 3.2//EN">
+<html>
+<head>
+<title>Text browther works on emacs</title>
+<meta http-equiv="Content-Type" content="text/html; charset=ISO-2022-JP">
+</head>
+<body bgcolor="#EEEEEE">
+
+<h1>Emacs 上で w3m を動かそう</h1>
+
+<p>
+Emacs 上で動作するブラウザと言えば、普通
+<a href="http://www.cs.indiana.edu/elisp/w3/docs.html">W3</a>
+のことですが、動作が非常に遅いので、なかなか常用しようという気になれません。
+</p>
+<p>
+それに対して、<a href="http://ei5nazha.yz.yamagata-u.ac.jp/~aito/w3m/">w3m</a>
+というテキストベースで動作するブラウザがあり、
+非常に軽快に動作するので重宝しているのですが、
+端末に移動しなければいけないのが面倒です。
+</p>
+<p>
+そこで、w3m を HTML の rendering engine として使用し、表示とインタフェースのみを
+Emacs で動かすようにすればいいんじゃないだろうか、ということを考えました。
+</p>
+
+<ul>
+ <li><a href="#download">ダウンロード</a>
+ <li><a href="#install">インストール</a>
+ <li><a href="#mailing_list">メーリングリスト</a>
+ <li><a href="#link">リンク集</a>
+</ul>
+
+
+<img src="w3m-el.png" alt="w3m.el の動作例" width="384" height="333">
+
+
+<hr>
+<h3><a name="download">ダウンロード</a></h3>
+<ul>
+ <li>安定版 <code><a href="w3m_el-0.1.36.tar.gz">w3m_el-0.1.36.tar.gz</a></code>
+ <li>開発版 <code><a href="w3m_el-0.2.17.tar.gz">w3m_el-0.2.17.tar.gz</a></code>
+</ul>
+
+
+<hr>
+<h3><a name="install">インストール</a></h3>
+<p>
+何を置いても、<code>w3m</code> 本体が必要です。
+<a href="http://ei5nazha.yz.yamagata-u.ac.jp/~aito/w3m/">本家のページ</a>などから取得してインストールします。
+</p>
+<p>
+次に、適当なディレクトリに <code>w3m.el</code> を置いて、以下の設定を
+<code>~/.emacs</code> に追加してください。
+</p>
+<blockquote>
+<pre>
+(autoload 'w3m "w3m" "Interface for w3m on Emacs." t)
+</pre>
+</blockquote>
+<p>
+後は、M-x <i>w3m</i> とすれば起動します。
+</p>
+
+
+<hr>
+<h3><a name="mailing_list">メーリングリスト</a></h3>
+<p>
+<code>w3m.el</code> についての情報交換を行うためのメーリングリストがあります。
+参加を希望される方は、<a
+href="http://www.egroups.co.jp/group/emacs-w3m/">グループのページ</a>を参照してください。
+</p>
+
+
+<hr>
+<h3><a name="link">リンク集</a></h3>
+<ul>
+ <li><a href="http://ei5nazha.yz.yamagata-u.ac.jp/~aito/w3m/">w3m</a>
+ <li><a href="http://www.cs.indiana.edu/elisp/w3/docs.html">W3</a>
+</ul>
+
+
+<hr>
+<p>
+[<a href="index.html">先頭に戻る</a>]
+[<a href="../elisp/">Emacs Lisp Tips 集に戻る</a>]
+[<a href="../index.html">Home に戻る</a>]
+</p>
+</body>
+</html>
