@@ -93,19 +93,13 @@ references
 $BUTTON(PREV)$$BUTTON(NEXT)$$BUTTON(TPREV)$$BUTTON(TNEXT)$[<a href="$IDXFNAME$#$MSGNUM$">Date Index</a>][<a rel="contents" href="$TIDXFNAME$#$MSGNUM$">Thread Index</a>]
 </TopLinks>
 
-<!-- namazu.cgi を呼び出す form を宣言 -->
-<DefineVar chop>
-SEARCH-FORM
-<form method="GET" action="namazu.cgi">Namazu Search:
-<input type="text" name="key" size="30">
-<input type="submit" value="Find"></form>
-</DefineVar>
-
 <!-- date index の先頭に namazu を呼び出す form を追加 -->
 <ListBegin>
 <ul>
 <li><a href="$TIDXFNAME$">Thread Index</a></li>
-<li>$SEARCH-FORM$</li>
+<li><form method="GET" action="namazu.cgi">Namazu Search:
+<input type="text" name="key" size="30">
+<input type="submit" value="Find"></form></li>
 </ul>
 <p>$PGLINK(PREV)$$PGLINK(NEXT)$</p>
 <hr>
@@ -116,7 +110,9 @@ SEARCH-FORM
 <THead>
 <ul>
 <li><a href="$IDXFNAME$">Date Index</a></li>
-<li>$SEARCH-FORM$
+<li><form method="GET" action="namazu.cgi">Namazu Search:
+<input type="text" name="key" size="30">
+<input type="submit" value="Find"></form></li>
 </ul>
 $PGLINK(TPREV)$$PGLINK(TNEXT)$
 <hr>
