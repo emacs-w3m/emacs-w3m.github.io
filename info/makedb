@@ -1,0 +1,34 @@
+#!/usr/bin/perl
+
+use strict;
+use DB_File;
+use DirHandle;
+use FileHandle;
+use File::Basename qw/ basename /;
+
+&main( @ARGV );
+
+sub main {
+    my( $target ) = @_;
+
+    my %table;
+    tie( %table, 'DB_File', $target, O_CREAT )
+	or die "Can't create file($target): $!\n";
+
+    my $dir = DirHandle->new( "." ) or die;
+    for my $file ( grep( /\.html\Z/, $dir->read ) ) {
+	my $name = &basename( $file );
+	$name =~ s/(_(abt|fot|ovr|toc|\d+))?\.html\Z//;
+	my $fh = FileHandle->new( $file, "r" ) or die;
+	while ( <$fh> ) {
+	    if ( m/^<META NAME="x-info-node" CONTENT="(.*?)">$/ ) {
+		print "$file:\t($name)$1\n";
+		$table{$name,$1} = $file;
+		last;
+	    }
+	}
+	$fh->close;
+    }
+
+    untie %table;
+}
