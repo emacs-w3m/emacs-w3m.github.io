@@ -97,7 +97,7 @@ $BUTTON(PREV)$$BUTTON(NEXT)$$BUTTON(TPREV)$$BUTTON(TNEXT)$[<a href="$IDXFNAME$#$
 <ListBegin>
 <ul>
 <li><a href="$TIDXFNAME$">Thread Index</a></li>
-<li><form method="GET" action="namazu.cgi">Namazu Search:
+<li><form method="GET" action="namazu.cgi" accept-charset="euc-jp,ascii">Namazu Search:
 <input type="text" name="key" size="30">
 <input type="submit" value="Find">
 [<a href="namazu.cgi">Help</a>]
