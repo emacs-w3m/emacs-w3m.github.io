@@ -1,7 +1,11 @@
+.mhonarc.db
 bin*.bin
 gif*.gif
-jpg*.jpg
-msg*.html
-mail*.html
-thrd*.html
 index.html
+jpg*.jpg
+mail*.html
+msg*.html
+NMZ.*
+png*.png
+thrd*.html
+threads.html

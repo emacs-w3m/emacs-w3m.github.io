@@ -1,11 +1,10 @@
-Options +Multiviews
-AddHandler type-map var
-AddLanguage ja .ja
-AddLanguage en .en
-LanguagePriority en ja
+Options +ExecCGI
 
-AddType "text/html" html
 AddType "text/plain" texi
+
+RewriteEngine on
+RewriteCond %{REQUEST_URI} /CVS/ [NC]
+RewriteRule . - [F]
 
 <Files emacs-w3m-ja*.html>
   ForceType "text/html; charset=euc-jp"
@@ -15,6 +14,6 @@ AddType "text/plain" texi
   ForceType "text/plain; charset=euc-jp"
 </Files>
 
-RewriteEngine on
-RewriteCond %{REQUEST_URI} /CVS/ [NC]
-RewriteRule . - [F]
+<Files goto.cgi>
+  SetHandler cgi-script
+</Files>

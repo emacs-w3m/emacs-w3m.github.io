@@ -42,7 +42,7 @@ Template	/var/www/emacs-w3m.namazu.org/ml
 ## If you do not want to do the processing on command line use, 
 ## run namazu with -U option.
 ##
-Replace     /storage/emacs-w3m/www/htdocs/ml/ http://emacs-w3m.namazu.org/ml/
+Replace     /var/www/emacs-w3m.namazu.org/ml/ http://emacs-w3m.namazu.org/ml/
 
 ##
 ## Logging: Set OFF to turn off keyword logging to NMZ.slog. 

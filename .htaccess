@@ -1,5 +1,4 @@
-Options +Multiviews +ExecCGI
-AddHandler cgi-script .cgi
+Options +Multiviews
 AddHandler type-map var
 AddLanguage ja .ja
 AddLanguage en .en

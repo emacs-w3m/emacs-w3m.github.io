@@ -1,7 +1,8 @@
 #!/usr/bin/perl
 
 use strict;
-use CGI qw(path_info);
+use CGI::Carp qw/ fatalsToBrowser /;
+use CGI qw/ path_info /;
 use lib "/usr/share/namazu/pl";
 require 'nmzidx.pl';
 
