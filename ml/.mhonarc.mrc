@@ -40,7 +40,7 @@ references
 </FieldOrder>
 
 <!-- SPAM 対策 -->
-<!-- SpamMode -->
+<SPAMMODE>
 
 <!-- shimbun ライブラリから参照する場合の後方互換性を保つために文字列を微調節 -->
 <LiTemplate>
