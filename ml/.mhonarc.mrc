@@ -44,7 +44,7 @@ references
 
 <!-- shimbun ライブラリから参照する場合の後方互換性を保つために文字列を微調節 -->
 <LiTemplate>
-<li><strong>$SUBJECT$</strong> <em>$FROM$</em></li>
+<li><strong>$SUBJECT$</strong> <em>$FROMNAME$</em></li>
 </LiTemplate>
 <PrevPgLink chop>
 [<A REL="previous" HREF="$PG(PREV)$">Prev Index</A>]
