@@ -8,5 +8,10 @@ RewriteRule . - [F]
 RewriteRule ^([0-9][0-9]*)$ x/$1
 
 <Files "x">
-    SetHandler cgi-script
+  SetHandler cgi-script
 </Files>
+
+<FilesMatch "^NMZ\.">
+  Order deny,allow
+  Deny from all
+</FilesMatch>

@@ -11,14 +11,14 @@
 ##
 ## Index: Specify the default directory.
 ## 
-Index		/storage/emacs-w3m/www/index
+Index		/var/www/emacs-w3m.namazu.org/ml
 
 
 ##
 ## Template: Set the template directory containing
 ## NMZ.{head,foot,body,tips,result} files.
 ##
-Template	/storage/emacs-w3m/www/index
+Template	/var/www/emacs-w3m.namazu.org/ml
 
 
 ##
