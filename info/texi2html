@@ -871,7 +871,7 @@ sub T2H_DEFAULT_print_misc
 {
   my $fh = shift;
   local $T2H_BUTTONS = \@T2H_MISC_BUTTONS;
-  &$T2H_print_misc_header($fh);
+  &$T2H_print_misc_header($fh, "no link tags");
   print $fh "<H1>$T2H_NAME{This}</H1>\n";
   t2h_print_lines($fh);
   &$T2H_print_misc_footer($fh);
@@ -949,12 +949,16 @@ sub T2H_DEFAULT_print_page_head
   my $fh = shift; 
   my $longtitle = "$T2H_THISDOC{title}: $T2H_NAME{This}";
   # Add <link> tags to help document navigation.
-  my $link = sprintf( <<'__link_tags__', $T2H_HREF{Contents}, $T2H_HREF{Index}, $T2H_HREF{Forward} || $T2H_HREF{FastForward} || $T2H_HREF{First}, $T2H_HREF{Back} || $T2H_HREF{FastBack} || $T2H_HREF{Last} || $T2H_HREF{Top} );
+  my $link = "";
+  unless( shift ){ # When 2nd optional argument is given, add no <link> tag.
+      $link = sprintf( <<'__link_tags__', $T2H_NODE{This} || "Top", $T2H_HREF{Contents}, $T2H_HREF{Index}, $T2H_HREF{Forward} || $T2H_HREF{FastForward} || $T2H_HREF{First}, $T2H_HREF{Back} || $T2H_HREF{FastBack} || $T2H_HREF{Last} || $T2H_HREF{Top} );
+<META NAME="x-info-node" CONTENT="%s">
 <LINK REL="contents" HREF="%s">
 <LINK REL="index" HREF="%s">
 <LINK REL="next" HREF="%s">
 <LINK REL="prev" HREF="%s">
 __link_tags__
+  }
   print $fh <<EOT;
 $T2H_DOCTYPE
 <HTML>
