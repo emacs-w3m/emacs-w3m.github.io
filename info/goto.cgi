@@ -87,7 +87,8 @@ tie( %table, 'DB_File', $dbfile, O_RDONLY )
 if( defined $table{$file,$node} ){
     my $uri = URI->new_abs( $table{$file,$node}, $ENV{'REQUEST_URI'} );
     $uri->scheme( "http" );
-    $uri->host( $ENV{'SERVER_NAME'} );
+    # $uri->host( $ENV{'SERVER_NAME'} );
+    $uri->host( "emacs-w3m.namazu.org" );
     printf( <<'__redirect__', $uri->as_string );
 Status: 302 Found Node
 Location: %s
