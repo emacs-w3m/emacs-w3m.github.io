@@ -99,7 +99,9 @@ $BUTTON(PREV)$$BUTTON(NEXT)$$BUTTON(TPREV)$$BUTTON(TNEXT)$[<a href="$IDXFNAME$#$
 <li><a href="$TIDXFNAME$">Thread Index</a></li>
 <li><form method="GET" action="namazu.cgi">Namazu Search:
 <input type="text" name="key" size="30">
-<input type="submit" value="Find"></form></li>
+<input type="submit" value="Find">
+[<a href="namazu.cgi">Advanced Search</a>]
+</form></li>
 </ul>
 <p>$PGLINK(PREV)$$PGLINK(NEXT)$</p>
 <hr>
@@ -112,7 +114,9 @@ $BUTTON(PREV)$$BUTTON(NEXT)$$BUTTON(TPREV)$$BUTTON(TNEXT)$[<a href="$IDXFNAME$#$
 <li><a href="$IDXFNAME$">Date Index</a></li>
 <li><form method="GET" action="namazu.cgi">Namazu Search:
 <input type="text" name="key" size="30">
-<input type="submit" value="Find"></form></li>
+<input type="submit" value="Find">
+[<a href="namazu.cgi">Advanced Search</a>]
+</form></li>
 </ul>
 $PGLINK(TPREV)$$PGLINK(TNEXT)$
 <hr>
