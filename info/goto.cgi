@@ -4,6 +4,7 @@ use strict;
 use CGI::Carp qw/ fatalsToBrowser set_message /;
 use CGI_Lite qw/ url_decode /;
 use DB_File;
+use URI;
 
 =head1 NAME
 
@@ -84,9 +85,10 @@ tie( %table, 'DB_File', $dbfile, O_RDONLY )
     or die "Can't open node index.\n";
 
 if( defined $table{$file,$node} ){
-    my $uri = $ENV{'SCRIPT_NAME'};
-    $uri =~ s![^/]+\Z!$table{$file,$node}!;
-    printf( <<'__redirect__', $uri );
+    my $uri = URI->new_abs( $table{$file,$node}, $ENV{'REQUEST_URI'} );
+    $uri->scheme( "http" );
+    $uri->host( $ENV{'SERVER_NAME'} );
+    printf( <<'__redirect__', $uri->as_string );
 Status: 302 Found Node
 Location: %s
 
