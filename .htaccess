@@ -1,0 +1,7 @@
+DefaultType "text/plain; charset=euc-jp"
+AddType "text/html; charset=ISO-2022-JP" html
+AddType "text/plain; charset=euc-jp" txt
+<Files CVS>
+  Order deny,allow
+  Deny from all
+</Files>
