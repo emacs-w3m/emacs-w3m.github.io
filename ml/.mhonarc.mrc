@@ -46,6 +46,14 @@ references
 <LiTemplate>
 <li><strong>$SUBJECT$</strong> <em>$FROMNAME$</em></li>
 </LiTemplate>
+
+<!-- 微調節によって変更された日付順索引のスタイルとスレッド索引のスタイルを合わせる -->
+<TLiTxt>
+<li><strong>$SUBJECT$</strong> <em>$FROMNAME$</em>
+</TLiTxt>
+
+<!-- link タグを活用 -->
+<!-- date index の場合は，直前・直後の index page を使う -->
 <PrevPgLink chop>
 [<A REL="previous" HREF="$PG(PREV)$">Prev Index</A>]
 </PrevPgLink>
@@ -58,11 +66,7 @@ references
 <NextPgLinkIA chop>
 [Next Index]
 </NextPgLinkIA>
-
-<!-- 微調節によって変更された日付順索引のスタイルとスレッド索引のスタイルを合わせる -->
-<TLiTxt>
-<li><strong>$SUBJECT$</strong> <em>$FROMNAME$</em>
-</TLiTxt>
+<!-- thread index の場合は，直前・直後の index page を使う -->
 <TPrevPgLink chop>
 [<A REL="previous" HREF="$PG(TPREV)$">Prev Index</A>]
 </TPrevPgLink>
@@ -75,18 +79,49 @@ references
 <TNextPgLinkIA chop>
 [Next Index]
 </TNextPgLinkIA>
-
-<!-- link タグを活用 -->
+<!-- 個別の記事の場合は，thread 上で直前・直後の記事を使う -->
 <TPrevButton chop>
 [<a rel="previous" href="$MSG(TPREV)$">Thread Prev</a>]
 </TPrevButton>
 <TNextButton chop>
 [<a rel="next" href="$MSG(TNEXT)$">Thread Next</a>]
 </TNextButton>
+
+<!-- 各記事の先頭に表示されるリンクを調節 -->
 <TopLinks>
 <hr>
 $BUTTON(PREV)$$BUTTON(NEXT)$$BUTTON(TPREV)$$BUTTON(TNEXT)$[<a href="$IDXFNAME$#$MSGNUM$">Date Index</a>][<a rel="contents" href="$TIDXFNAME$#$MSGNUM$">Thread Index</a>]
 </TopLinks>
+
+<!-- namazu.cgi を呼び出す form を宣言 -->
+<DefineVar chop>
+SEARCH-FORM
+<form method="GET" action="/cgi-bin/namazu.cgi">Namazu Search:
+<input type="text" name="key" size="30">
+<input type="submit" value="Find"></form>
+</DefineVar>
+
+<!-- date index の先頭に namazu を呼び出す form を追加 -->
+<ListBegin>
+<ul>
+<li><a href="$TIDXFNAME$">Thread Index</a></li>
+<li>$SEARCH-FORM$</li>
+</ul>
+<p>$PGLINK(PREV)$$PGLINK(NEXT)$</p>
+<hr>
+<ul>
+</ListBegin>
+
+<!-- thread index の先頭に namazu を呼び出す form を追加 -->
+<THead>
+<ul>
+<li><a href="$IDXFNAME$">Date Index</a></li>
+<li>$SEARCH-FORM$
+</ul>
+$PGLINK(TPREV)$$PGLINK(TNEXT)$
+<hr>
+<ul>
+</THead>
 
 <IdxFName>
 index.html
