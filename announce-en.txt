@@ -1,0 +1,26 @@
+-----BEGIN PGP SIGNED MESSAGE-----
+Hash: SHA1
+
+	Compromise of karin.namazu.org server
+
+We are very sad to inform you that karin.namazu.org, which provided
+web, ftp, mailing lists, and CVS was cracked at 2004/05/23 02:00 JST,
+and was forced to shut down at 2004/05/25 02:49 JST.
+
+Fortunately, the file "emacs-w3m-1.4.tar.gz" and older tarballs which
+had been already released were not affected by this incident, and
+users can continuously use them without any problems.
+
+The project members are in the process of reconstructing all of the
+services, and we kindly ask for your patience until everything is
+restored.
+
+Further information will be provided at http://emacs-w3m.namazu.org/.
+
+-----BEGIN PGP SIGNATURE-----
+Version: GnuPG v1.2.4 (GNU/Linux)
+
+iD8DBQFAueJU+Iw/tfZVWLIRAvgTAKC0DfHmHL2vwzmByBn5QhxrAu43dgCZAfGa
+NspP7hUKK7hRFa2JLOe22Oc=
+=0UEY
+-----END PGP SIGNATURE-----

@@ -1,0 +1,26 @@
+-----BEGIN PGP SIGNED MESSAGE-----
+Hash: SHA1
+
+	Compromise of karin.namazu.org server
+
+誠に残念な報告をしなければなりません．Web, FTP, メーリングリスト, CVS 
+を提供していた，karin.namazu.org が日本時間2004年5月23日午前2時頃に何
+者かに侵入されていたことが発覚し，5月25日午前2時49分頃にマシンを停止し
+ました．
+
+運良く，リリース済みの emacs-w3m-1.4.tar.gz および全ての tarball につ
+いてはこの問題の影響を受けていませんので，これをインストールされている
+方はそのまま問題なく利用を継続していただけます．
+
+現在我々プロジェクトメンバはサービスの再構築を行っています．完全復帰ま
+で，いましばらくお待ちください．
+
+今後も情報を http://emacs-w3m.namazu.org/ で提供する予定です．
+
+-----BEGIN PGP SIGNATURE-----
+Version: GnuPG v1.2.4 (GNU/Linux)
+
+iD8DBQFAueIK+Iw/tfZVWLIRAhuPAJ4vec7/SVIVCetSloQisC5swS0p6ACfV9l6
+877azula2/KXX8iwArJu88Q=
+=B+ZM
+-----END PGP SIGNATURE-----
