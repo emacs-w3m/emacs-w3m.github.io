@@ -65,30 +65,39 @@ CVS password:   # Enter/Returnキーを叩く
 
 <hr>
 <h3><a name="install">インストール</a></h3>
-<p>
-何を置いても、<code>w3m</code> 本体が必要です。
-<a href="http://ei5nazha.yz.yamagata-u.ac.jp/~aito/w3m/">w3m
-のページ</a>などから取得してインストールしてください。
-ただし、現時点(2001年3月7日)の正式な最新版は w3m-0.1.10 ですが、
-この版の w3m は w3m.el によって仮定されている動作をしないため、一部の機能が使えません。
-そのため、岡部さんによって公開されている<a
-href="http://www4.ocn.ne.jp/~okabek/w3m.html">パッチ</a>を適用した
-w3m を使うことを強くお勧めします。
-具体的な手順については、<a
-href="http://www4.ocn.ne.jp/~okabek/w3m.html">岡部さんのページ</a>を参照してください。
-</p>
-<p>
-次に、適当なディレクトリに <code>w3m.el</code> を置いて、以下の設定を
-<code>~/.emacs</code> に追加してください。
-</p>
+<ol>
+ <li>最新版の <a href="http://ei5nazha.yz.yamagata-u.ac.jp/~aito/w3m/">w3m</a>
+     をインストールしてください。
+ <li>同梱されている emacs-lisp
+     のソースファイルを適当なディレクトリにインストールするため、
+     次のコマンドを実行してください。
 <blockquote>
 <pre>
-(autoload 'w3m "w3m" "Interface for w3m on Emacs." t)
+% ./configure
+% make
+% make install
 </pre>
 </blockquote>
-<p>
-後は、M-x <i>w3m</i> とすれば起動します。
-</p>
+     加えて、XEmacs や Emacs 21
+     用のアイコンを，以下のようにインストールすることができます．
+<blockquote>
+<pre>
+% make install-icons
+</pre>
+</blockquote>
+ <li>以下の設定を <code>~/.emacs</code> に追加してください。
+<blockquote>
+<pre>
+(autoload 'w3m "w3m" "*Interface for w3m on Emacs." t)
+(autoload 'w3m-find-file "w3m" "*w3m interface function for local file." t)
+(autoload 'w3m-browse-url "w3m" "Ask a WWW browser to show a URL." t)
+(autoload 'w3m-search "w3m-search" "*Search QUERY using SEARCH-ENGINE." t)
+(autoload 'w3m-weather "w3m-weather" "*Display weather report." t)
+(autoload 'w3m-antenna "w3m-antenna" "*Report chenge of WEB sites." t)
+</pre>
+</blockquote>
+ <li>後は、M-x <i>w3m</i> とすれば起動します。
+</ol>
 
 
 <hr>
