@@ -56,11 +56,7 @@ XEmacs または Emacs21 では画像のインライン表示が可能です．
 <ul>
  <li>安定版
      <ul>
-      <li><code><a href="emacs-w3m-1.3.6.tar.gz">emacs-w3m-1.3.6.tar.gz</a></code> (2003年7月18日)
-     </ul>
- <li>開発版
-     <ul>
-      <li><code><a href="emacs-w3m-1.3.90.tar.gz">emacs-w3m-1.3.90.tar.gz</a></code> (2004年4月20日)
+      <li><code><a href="emacs-w3m-1.4.tar.gz">emacs-w3m-1.4.tar.gz</a></code> (2004年4月29日)
      </ul>
  <li>旧版
      <ul>
@@ -80,6 +76,7 @@ XEmacs または Emacs21 では画像のインライン表示が可能です．
       <li><code><a href="emacs-w3m-1.3.3.tar.gz">emacs-w3m-1.3.3.tar.gz</a></code> (2002年10月25日)
       <li><code><a href="emacs-w3m-1.3.4.tar.gz">emacs-w3m-1.3.4.tar.gz</a></code> (2003年6月18日)
       <li><code><a href="emacs-w3m-1.3.5.tar.gz">emacs-w3m-1.3.5.tar.gz</a></code> (2003年7月5日)
+      <li><code><a href="emacs-w3m-1.3.6.tar.gz">emacs-w3m-1.3.6.tar.gz</a></code> (2003年7月18日)
      </ul>
 </ul>
 <p>
@@ -296,33 +293,16 @@ CVS head の Emacs を使う場合，それは
 <hr>
 <h2><a name="config">設定</a></h2>
 <p>
-最初に，以下の設定を <code>~/.emacs</code> ファイルに追加してください．
+以下の設定を <code>~/.emacs</code> ファイルに追加してください．
 </p>
 <blockquote>
 <pre>
-(autoload 'w3m "w3m" "Interface for w3m on Emacs." t)
+(require 'w3m-load)
 </pre>
 </blockquote>
 <p>
 後は，<i>M-x w3m</i> とすれば起動するはずです．
 </p>
-<p>
-他の付属プログラムを使用するには，追加の設定が必要な場合があります．
-詳細については，
-個々の付属プログラムのソースファイルの先頭に記載されているコメントを参照してください．
-良く分からない場合は，とりあえず，以下の設定を <code>~/.emacs</code>
-ファイルに追加しておいてください．
-</p>
-<blockquote>
-<pre>
-(autoload 'w3m-find-file "w3m" "Find a local file using emacs-w3m." t)
-(autoload 'w3m-browse-url "w3m" "Ask a WWW browser to show a URL." t)
-(autoload 'w3m-search "w3m-search" "Search words using emacs-w3m." t)
-(autoload 'w3m-weather "w3m-weather" "Display a weather report." t)
-(autoload 'w3m-antenna "w3m-antenna" "Report changes of web sites." t)
-(autoload 'w3m-namazu "w3m-namazu" "Search files with Namazu." t)
-</pre>
-</blockquote>
 <p>
 また，T-gnus や Wanderlust などの SEMI MUA 上で，メッセージ中の text/html
 パートを emacs-w3m を使って表示させるには，以下の設定を
