@@ -949,7 +949,7 @@ sub T2H_DEFAULT_print_page_head
   my $fh = shift; 
   my $longtitle = "$T2H_THISDOC{title}: $T2H_NAME{This}";
   # Add <link> tags to help document navigation.
-  my $link = sprintf( <<'__link_tags__', $T2H_HREF{Contents}, $T2H_HREF{Index}, $T2H_HREF{Forward} || $T2H_HREF{FastForward} || $T2H_HREF{Top}, $T2H_HREF{Back} || $T2H_HREF{FastBack} || $T2H_HREF{Last} || $T2H_HREF{First} );
+  my $link = sprintf( <<'__link_tags__', $T2H_HREF{Contents}, $T2H_HREF{Index}, $T2H_HREF{Forward} || $T2H_HREF{FastForward} || $T2H_HREF{First}, $T2H_HREF{Back} || $T2H_HREF{FastBack} || $T2H_HREF{Last} || $T2H_HREF{Top} );
 <LINK REL="contents" HREF="%s">
 <LINK REL="index" HREF="%s">
 <LINK REL="next" HREF="%s">
