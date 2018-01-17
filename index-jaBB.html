@@ -1,87 +1,88 @@
 <!DOCTYPE HTML PUBLIC "-//W3C//DTD HTML 4.01 Transitional//EN">
 <html lang="en">
 <head>
-<meta http-equiv="Content-Type" content="text/html; charset=us-ascii">
+<meta http-equiv="Content-Type" content="text/html; charset=utf-8">
 <title>Text browser works on Emacs</title>
 </head>
 <body bgcolor="#EEEEEE">
-<p align="right">[English / <a href="index-jaBB.html">Japanese</a>]</p>
+<p align="right">[<a href="index-enBB.html">English</a> / Japanese]</p>
 
-<h1>Emacs-w3m, a simple Emacs interface to w3m.</h1>
+<h1>Emacs-w3m、シンプルな w3m への Emacs インターフェース</h1>
 
-Use emacs as a full-featured and secure internet browser! (Does not
-support javascript).
+Emacs を使う完全装備で安全なインターネットブラウザです (Javascript
+には対応しません)。
 
-<p><img src="screenshot-enBB.png" alt="Screenshot of how emacs-w3m works">
+<p><img src="screenshot-jaBB.png" alt="emacs-w3m の動作例">
 
 <p>
 <ul>
- <li><a href="#features">Features</a>
- <li><a href="#history">History</a>
- <li><a href="#download">Download</a>
- <li><a href="#requirements">Requirements</a>
- <li><a href="#installation">Installation</a>
- <li><a href="#configuration">Configuration</a>
- <li><a href="info/emacs-w3m.html">Usage</a>
- <li><a href="#mailing_list">Mailing List</a>
- <li><a href="#link">Links</a>
- <li><a href="#contact">Contact</a>
+ <li><a href="#features">機能</a>
+ <li><a href="#history">歴史</a>
+ <li><a href="#download">ダウンロード</a>
+ <li><a href="#requirements">動作環境</a>
+ <li><a href="#installation">インストール</a>
+ <li><a href="#configuration">設定</a>
+ <li><a href="info/emacs-w3m.html">使い方</a>
+ <li><a href="#mailing_list">メーリングリスト</a>
+ <li><a href="#link">リンク集</a>
+ <li><a href="#contact">連絡先</a>
 </ul>
 
 
 <hr>
-<h2><a name="features">Features</a></h2>
+<h2><a name="features">機能</a></h2>
 <ul>
- <li>Tabs</li>
- <li>Images</li>
- <li>HTTPS preferred</li>
- <li>Bookmark management</li>
- <li>Cookie management</li>
- <li>Session management</li>
- <li>History management</li>
- <li>Asynchronous operations</li>
- <li>Greasemonkey-type filtering</li>
- <li>Quick-search</li>
- <li>Elisp scripting</li>
- <li>More ...</li>
+ <li>タブ</li>
+ <li>画像</li>
+ <li>HTTPS 優先</li>
+ <li>ブックマーク管理</li>
+ <li>クッキー管理</li>
+ <li>セッション管理</li>
+ <li>履歴の管理</li>
+ <li>非同期動作</li>
+ <li>Greasemonkey 風フィルタ</li>
+ <li>クイック検索</li>
+ <li>Elisp スクリプト</li>
+ <li>もっと ...</li>
 </ul>
 
 <hr>
-<h2><a name="history">History</a></h2>
+<h2><a name="history">歴史</a></h2>
 
-This project has been in active development continuously since the
-1990's.
+このプロジェクトでは 1990年代から活発に開発が続けられています。
+<p>
+かつて Emacs/W3 という独自のプロジェクトがあり、その時代の Emacs
+で最も人気のあるウェブ・ブラウザだったのですが、
+その遅い動作に苦しめられました。そこで、伊藤彰則さんによる WWW
+の機能があるテキストモードのペイジャー
+<a href="http://w3m.sourceforge.net/index.en.html">w3m</a>
+を使って代替品を作ろうということになったのです。
 
-Originally, there had been a separate project <i>Emacs/W3</i> which in its
-time was the most popular web browser on Emacs, but it sufered from
-slow operation. The decision was made to create this alternative,
-based upon <b>Akinori Ito</b>'s
-<a href="http://w3m.sourceforge.net/index.en.html">w3m</a> text-mode
-pager which had WWW capability.
-
-As of 2018, the project has been actively developed and supported for
-over twenty years, but since 2005 it has been releasing updates in
-"rolling" manner, directly from it CVS repository (although
-un-official third-party mirrors exist on <a href=https://melpa.org/#/w3m>MELPA</a>
-and <a href=https://github.com/ecbrown/emacs-w3m>github</a>). Here's
-the history of the old milestones under the prior system of issuing
-'<i>stable</i>' releases:
-</p>
+2018年現在、プロジェクトは活発に開発を続け、
+20年以上に渡って持続していますが、2005年からは CVS
+リポジトリーから直接
+<a href="https://ja.wikipedia.org/wiki/ローリング・リリース">
+ローリング・リリース</a> による更新を行なっています
+(もっとも第三者による非公式なミラーが
+<a href=https://melpa.org/#/w3m>MELPA</a> と
+<a href=https://github.com/ecbrown/emacs-w3m>github</a> にありますが)。
+以下は過去に<i>安定</i>版のリリースが行なわれた経過点の歴史です:
 <ul>
- <li>CVS rolling release, from 2005 to 2018+
- <li><a href="ml/7990">Emacs-w3m-1.4.4 was released</a> on March 25th, 2005.
- <li><a href="ml/7039">Emacs-w3m-1.4.3 was released</a> on August 17th, 2004.
- <li><a href="ml/7004">Emacs-w3m-1.4.2 was released</a> on July 14th, 2004.
- <li><a href="ml/6989">Emacs-w3m-1.4.1 was released</a> on July 7th, 2004.
- <li>All services were restored on June 23rd, 2004.
-      All contents of this site and CVS repository had been throughly inspected.
- <li><a href="announce-en.txt">This site was cracked</a> on May 23rd, 2004.
- <li><a href="ml/6759">Emacs-w3m-1.4 was released</a> on April 29th, 2004.
+ <li>CVS ローリング・リリース (2005年〜2018年およびそれ以降)
+
+ <li><a href="ml/7990">emacs-w3m-1.4.4 公開</a> (2005年3月25日)
+ <li><a href="ml/7039">emacs-w3m-1.4.3 公開</a> (2004年8月17日)
+ <li><a href="ml/7004">emacs-w3m-1.4.2 公開</a> (2004年7月14日)
+ <li><a href="ml/6989">emacs-w3m-1.4.1 公開</a> (2004年7月7日)
+ <li>サービスの復旧が完了 (2004年6月23日)<br>
+     全てのコンテンツおよび CVS レポジトリの正当性は検証済み
+ <li><a href="announce-ja.txt">クラックされる</a> (2004年05月23日)
+ <li><a href="ml/6759">emacs-w3m-1.4 公開</a> (2004年4月29日)
 </ul>
 
 
 <hr>
-<h2><a name="download">Download</a></h2>
+<h2><a name="download">ダウンロード</a></h2>
 
 The official current version is always available from our own CVS
 repository. However, we recognize that it may be more convenient for
@@ -140,7 +141,7 @@ is also available.
 <p>
 
 <hr>
-<h2><a name="requirements">Requirements</a></h2>
+<h2><a name="requirements">必要なもの</a></h2>
 <ul>
 <li>All emacs versions<p>
 <ul>
@@ -244,7 +245,7 @@ library</a> included in the emacs-w3m distribution, the emacs package
   </ul>
 
 <hr>
-<h2><a name="installation">Installation</a></h2>
+<h2><a name="installation">インストール</a></h2>
 If you are installing from the un-official third-party MELPA
 repository, the install process follows the standard MELPA procedure.
 The rest of this section describes how to install manually from source.
@@ -332,7 +333,7 @@ meets <a href="#requirements">the requirements</a>.
 
 
 <hr>
-<h2><a name="configuration">Configuration</a></h2>
+<h2><a name="configuration">設定</a></h2>
 <p>
 Emacs-w3m has many configuration options, but the minimum that is required
 is just to put this line into your <code>~/.emacs</code> file:
@@ -361,7 +362,7 @@ or browse the emacs-w3m customization group within emacs.
 </p>
 
 <hr>
-<h2><a name="mailing_list">Mailing List</a></h2>
+<h2><a name="mailing_list">メーリングリスト</a></h2>
 <p>
 The project mailing list, <code>emacs-w3m&#64;namazu.org</code>, is
 bi-lingual Japanese / English. It is open to the public, and its
@@ -396,7 +397,7 @@ in the body to <code>emacs-w3m-ctl&#64;namazu.org</code>.
 
 
 <hr>
-<h2><a name="link">Related Links</a></h2>
+<h2><a name="link">リンク集</a></h2>
 <ul>
  <li><a href="http://w3m.sourceforge.net/index.en.html">w3m</a>
      <ul>
@@ -409,9 +410,9 @@ in the body to <code>emacs-w3m-ctl&#64;namazu.org</code>.
  <li><a href="http://www.lcdf.org/gifsicle/">gifsicle</a>
  <li><a href="http://www.dina.kvl.dk/~abraham/custom/">New custom</a>
  <li><a href="https://github.com/vermiculus/sx.el">sx.el</a>,
-  StackExchange interface for emacs
+ StackExchange の Emacs インターフェース
  <li><a href="https://github.com/vermiculus/magithub">magithub</a>,
- Github interface for emacs
+ Github の Emacs インターフェース
 </ul>
 
 
