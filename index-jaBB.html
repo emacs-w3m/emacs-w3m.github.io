@@ -84,58 +84,61 @@ Emacs を使う完全装備で安全なインターネットブラウザです (
 <hr>
 <h2><a name="download">ダウンロード</a></h2>
 
-The official current version is always available from our own CVS
-repository. However, we recognize that it may be more convenient for
-users to download and update the package using the un-official
-third-party mirrors that exist on
-<a href=https://melpa.org/#/w3m>MELPA</a> and
-<a href=https://github.com/ecbrown/emacs-w3m>github</a>. We need to
-say that those mirrors are not controlled by this project and we have
-no way of knowing or guaranteeing their reliability or integrity.
+公式の最新版が、いつでも CVS リポジトリから利用することができます。
+もっとも、
+ダウンロードと更新をユーザーにとってもっと便利に行なうことができる、
+第三者による非公式なミラーが、
+<a href=https://melpa.org/#/w3m>MELPA</a> および
+<a href=https://github.com/ecbrown/emacs-w3m>github</a>
+として存在することを確認していますが。<br>
+(ひとつ言っておかなければなりません。
+それらのミラーはこのプロジェクトの管理下にないので、
+その信頼性または問題がないことを、私たちは知る由がありません。)
 <p>
-This project uses the
+このプロジェクトは
 <a href=http://www.nongnu.org/cvs/>cvs</a><font size=1>[<a href=https://en.wikipedia.org/wiki/Concurrent_Versions_System>1</a>]</font>
-version control system, so in order to download the current version
-from the official source, you need to have cvs installed.
-
+バージョン管理システムを使っているので、
+公式な供給元から最新版をダウンロードするためには、
+cvs をインストールしておかなければなりません。
 </p>
 <blockquote>
 <pre>
 % cvs -d :pserver:anonymous@cvs.namazu.org:/storage/cvsroot login
-CVS password: # No password is set.  Just hit Enter/Return key.
+CVS password:
+# パスワードは設定されていません．単に Enter/Return キーを押して下さい。
 % cvs -d :pserver:anonymous@cvs.namazu.org:/storage/cvsroot co emacs-w3m
 </pre>
 </blockquote>
 <p>
-Source code access with <a href="http://cvs.namazu.org/Development/emacs-w3m/">ViewCVS</a>
-is also available.
+<a href="http://cvs.namazu.org/Development/emacs-w3m/">ViewVC</a>
+でソースを見ることもできます。
 </p>
 
 <ul>
- <li>Historical versions:
+ <li>過去のバージョン:
      <ul>
-      <li><code><a href="emacs-w3m-1.4.4.tar.gz">emacs-w3m-1.4.4.tar.gz</a></code> (March 25th, 2005)
-      <li><code><a href="emacs-w3m-1.4.3.tar.gz">emacs-w3m-1.4.3.tar.gz</a></code> (August 17th, 2004)
-      <li><code><a href="emacs-w3m-1.4.2.tar.gz">emacs-w3m-1.4.2.tar.gz</a></code> (July 14th, 2004)
-      <li><code><a href="emacs-w3m-1.4.1.tar.gz">emacs-w3m-1.4.1.tar.gz</a></code> (July 7th, 2004)
-      <li><code><a href="emacs-w3m-1.4.tar.gz">emacs-w3m-1.4.tar.gz</a></code> (April 29th, 2004)
-      <li><code><a href="emacs-w3m-1.3.6.tar.gz">emacs-w3m-1.3.6.tar.gz</a></code> (July 18th, 2003)
-      <li><code><a href="emacs-w3m-1.3.5.tar.gz">emacs-w3m-1.3.5.tar.gz</a></code> (July 5th, 2003)
-      <li><code><a href="emacs-w3m-1.3.4.tar.gz">emacs-w3m-1.3.4.tar.gz</a></code> (June 18th, 2003)
-      <li><code><a href="emacs-w3m-1.3.3.tar.gz">emacs-w3m-1.3.3.tar.gz</a></code> (October 25th, 2002)
-      <li><code><a href="emacs-w3m-1.3.2.tar.gz">emacs-w3m-1.3.2.tar.gz</a></code> (September 3rd, 2002)
-      <li><code><a href="w3m_el-1.3.1.tar.gz">w3m_el-1.3.1.tar.gz</a></code> (July 17th, 2002)
-      <li><code><a href="w3m_el-1.3.tar.gz">w3m_el-1.3.tar.gz</a></code> (July 7th, 2002)
-      <li><code><a href="w3m_el-1.2.8.tar.gz">w3m_el-1.2.8.tar.gz</a></code> (June 20th, 2002)
-      <li><code><a href="w3m_el-1.2.7.tar.gz">w3m_el-1.2.7.tar.gz</a></code> (June 3rd, 2002)
-      <li><code><a href="w3m_el-1.2.6.tar.gz">w3m_el-1.2.6.tar.gz</a></code> (March 12th, 2002)
-      <li><code><a href="w3m_el-1.2.5.tar.gz">w3m_el-1.2.5.tar.gz</a></code> (March 2nd, 2002)
-      <li><code><a href="w3m_el-1.2.4.tar.gz">w3m_el-1.2.4.tar.gz</a></code> (January 8th, 2002)
-      <li><code><a href="w3m_el-1.2.3.tar.gz">w3m_el-1.2.3.tar.gz</a></code> (December 21st, 2001)
-      <li><code><a href="w3m_el-1.2.2.tar.gz">w3m_el-1.2.2.tar.gz</a></code> (December 6th, 2001)
-      <li><code><a href="w3m_el-1.2.1.tar.gz">w3m_el-1.2.1.tar.gz</a></code> (November 12th, 2001)
-      <li><code><a href="w3m_el-1.2.tar.gz">w3m_el-1.2.tar.gz</a></code> (November 6th, 2001)
-      <li><code><a href="w3m_el-1.0.tar.gz">w3m_el-1.0.tar.gz</a></code> (May 9th, 2001)
+      <li><code><a href="emacs-w3m-1.4.4.tar.gz">emacs-w3m-1.4.4.tar.gz</a></code> (2005年3月25日)
+      <li><code><a href="emacs-w3m-1.4.3.tar.gz">emacs-w3m-1.4.3.tar.gz</a></code> (2004年8月17日)
+      <li><code><a href="emacs-w3m-1.4.2.tar.gz">emacs-w3m-1.4.2.tar.gz</a></code> (2004年7月14日)
+      <li><code><a href="emacs-w3m-1.4.1.tar.gz">emacs-w3m-1.4.1.tar.gz</a></code> (2004年7月7日)
+      <li><code><a href="emacs-w3m-1.4.tar.gz">emacs-w3m-1.4.tar.gz</a></code> (2004年4月29日)
+      <li><code><a href="emacs-w3m-1.3.6.tar.gz">emacs-w3m-1.3.6.tar.gz</a></code> (2003年7月18日)
+      <li><code><a href="emacs-w3m-1.3.5.tar.gz">emacs-w3m-1.3.5.tar.gz</a></code> (2003年7月5日)
+      <li><code><a href="emacs-w3m-1.3.4.tar.gz">emacs-w3m-1.3.4.tar.gz</a></code> (2003年6月18日)
+      <li><code><a href="emacs-w3m-1.3.3.tar.gz">emacs-w3m-1.3.3.tar.gz</a></code> (2002年10月25日)
+      <li><code><a href="emacs-w3m-1.3.2.tar.gz">emacs-w3m-1.3.2.tar.gz</a></code> (2002年9月3日)
+      <li><code><a href="w3m_el-1.3.1.tar.gz">w3m_el-1.3.1.tar.gz</a></code> (2002年7月17日)
+      <li><code><a href="w3m_el-1.3.tar.gz">w3m_el-1.3.tar.gz</a></code> (2002年7月7日)
+      <li><code><a href="w3m_el-1.2.8.tar.gz">w3m_el-1.2.8.tar.gz</a></code> (2002年6月20日)
+      <li><code><a href="w3m_el-1.2.7.tar.gz">w3m_el-1.2.7.tar.gz</a></code> (2002年6月3日)
+      <li><code><a href="w3m_el-1.2.6.tar.gz">w3m_el-1.2.6.tar.gz</a></code> (2002年3月12日)
+      <li><code><a href="w3m_el-1.2.5.tar.gz">w3m_el-1.2.5.tar.gz</a></code> (2002年3月2日)
+      <li><code><a href="w3m_el-1.2.4.tar.gz">w3m_el-1.2.4.tar.gz</a></code> (2002年1月8日)
+      <li><code><a href="w3m_el-1.2.3.tar.gz">w3m_el-1.2.3.tar.gz</a></code> (2001年12月21日)
+      <li><code><a href="w3m_el-1.2.2.tar.gz">w3m_el-1.2.2.tar.gz</a></code> (2001年12月6日)
+      <li><code><a href="w3m_el-1.2.1.tar.gz">w3m_el-1.2.1.tar.gz</a></code> (2001年11月12日)
+      <li><code><a href="w3m_el-1.2.tar.gz">w3m_el-1.2.tar.gz</a></code> (2001年11月6日)
+      <li><code><a href="w3m_el-1.0.tar.gz">w3m_el-1.0.tar.gz</a></code> (2001年5月9日)
      </ul>
 </ul>
 <p>
