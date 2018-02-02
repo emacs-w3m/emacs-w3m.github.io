@@ -241,24 +241,26 @@ CVS password:
 % emacs -q -no-site-file -batch -f batch-byte-compile regexp-opt.el
 </pre>
      <p>
-       (もし Mule をお使いならば，おそらくパス名やコマンド名として `emacs'
-       の代わりに `mule' と言う必要があるでしょう．)
+       (もし Mule を使っているならば、おそらくパス名やコマンド名として
+       `emacs' の代わりに `mule' と言う必要があるでしょう。)
      </p></ul>
   </ul>
 
 <hr>
 <h2><a name="installation">インストール</a></h2>
-If you are installing from the un-official third-party MELPA
-repository, the install process follows the standard MELPA procedure.
-The rest of this section describes how to install manually from source.
+もし (非公式な第三者の) MELPA からインストールするのであれば、
+インストールの手順は標準の MELPA のやり方に従ってください。
+この章の後半では、
+どのように手作業でソースからインストールするかを説明します。
 <p>
-Before installing emacs-w3m, check whether your environment
-meets <a href="#requirements">the requirements</a>.
+Emacs-w3m をインストールする前に、あなたのシステムが
+<a href="#requirements">動作環境</a>
+に見合うかどうかを確認してください。
 </p>
 <dl>
- <dt><h3><a name="installation_unix">Installing emacs-w3m on UNIX-like systems</a></h3>
+ <dt><h3><a name="installation_unix">UNIX 系の環境でインストールする</a></h3>
  <dd><p>
-     At the first, run the <code>configure</code> script.
+     初めに <code>configure</code> スクリプトを実行してください。
      </p>
 <blockquote>
 <pre>
@@ -266,10 +268,10 @@ meets <a href="#requirements">the requirements</a>.
 </pre>
 </blockquote>
      <p>
-     If you've installed APEL, FLIM or something in non-standard
-     directories other than the default <code>load-path</code>, you
-     must specify them using the <em>--with-addpath</em> option as
-     follows:
+     APEL や FLIM などがデフォルトの <code>load-path</code>
+     以外の標準的ではないディレクトリにインストールされている場合は、
+     次のように <em>--with-addpath</em> オプションを使って、
+     それらを指定しなければなりません。
      </p>
 <blockquote>
 <pre>
@@ -277,8 +279,8 @@ meets <a href="#requirements">the requirements</a>.
 </pre>
 </blockquote>
      <p>
-     Next, execute the following commands to install emacs-w3m to an
-     appropriate directory.
+     次に emacs-w3m を適当なディレクトリにインストールするため、
+     以下ののコマンドを実行してください。
      </p>
 <blockquote>
 <pre>
@@ -287,8 +289,9 @@ meets <a href="#requirements">the requirements</a>.
 </pre>
 </blockquote>
      <p>
-     If you are using Emacs 21.1 and newer or XEmacs, it is
-     recommended to install icon image files. To do this:
+     Emacs 21.1 以上、または XEmacs を使っているならば、
+     アイコン画像のファイルをインストールした方が良いでしょう。
+     それを行なうには:
      </p>
 <blockquote>
 <pre>
@@ -296,8 +299,8 @@ meets <a href="#requirements">the requirements</a>.
 </pre>
 </blockquote>
      <p>
-     You can also install emacs-w3m as an XEmacs package using
-     <em>make install-package</em> instead of <em>make install</em>.
+     <em>install</em> の代わりに <em>install-package</em> を使うと、
+     XEmacs のパッケージとしてインストールすることもできます。
      </p>
 <blockquote>
 <pre>
@@ -306,14 +309,14 @@ meets <a href="#requirements">the requirements</a>.
 </pre>
 </blockquote>
      <p>
-     In this case, you don't have to execute <em>make
-     install-icons</em>.
+     この場合 <em>install-icons</em> を実行する必要はありません。
      </p>
- <dt><h3><a name="installation_nonunix">Installing on non-UNIX-like systems</a></h3>
+ <dt><h3><a name="installation_nonunix">非 UNIX 系の環境でインストールする</a></h3>
  <dd><p>
-     If you cannot execute the <code>configure</code> script on your
-     system, or if no <code>make</code> command is available, execute
-     the following command:
+     あなたのシステムで <code>configure</code>
+     スクリプトを実行できないか、または
+     <code>make</code> コマンドが利用できない場合は、
+     以下のコマンドを実行してください。
      </p>
 <blockquote>
 <pre>
@@ -321,10 +324,11 @@ meets <a href="#requirements">the requirements</a>.
 </pre>
 </blockquote>
      <p>
-     If APEL, FLIM (or any other library) aren't installed in the
-     ordinary places, the installer will leave them out.  In such a
-     case, it is necessary to tell those places to the installer as
-     shown below:
+     APEL や FLIM など (または他のどんなライブラリでも)
+     が通常の場所にインストールされていないと、
+     インストーラはそれらを無視してしまいます。そのような場合は
+     以下に示すように、
+     それらの場所をインストーラに教えてあげることが必要です。
      </p>
 <blockquote>
 <pre>
