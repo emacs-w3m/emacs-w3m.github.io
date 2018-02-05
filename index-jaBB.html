@@ -53,7 +53,7 @@ Emacs を使う完全装備で安全なインターネットブラウザです (
 <p>
 かつて Emacs/W3 という独自のプロジェクトがあり、その時代の Emacs
 で最も人気のあるウェブ・ブラウザだったのですが、
-その遅い動作に苦しめられました。そこで、伊藤彰則さんによる WWW
+その遅い動作に苦しめられました。そこで、<b>伊藤彰則さん</b>による WWW
 の機能があるテキストモードのペイジャー
 <a href="http://w3m.sourceforge.net/index.en.html">w3m</a>
 を使って代替品を作ろうということになったのです。
@@ -66,7 +66,7 @@ Emacs を使う完全装備で安全なインターネットブラウザです (
 (もっとも第三者による非公式なミラーが
 <a href=https://melpa.org/#/w3m>MELPA</a> と
 <a href=https://github.com/ecbrown/emacs-w3m>github</a> にありますが)。
-以下は過去に<i>安定</i>版のリリースが行なわれた経過点の歴史です:
+以下は過去に<i>安定版</i>のリリースが行なわれた経過点の歴史です:
 <ul>
  <li>CVS ローリング・リリース (2005年〜2018年およびそれ以降)
 
@@ -146,105 +146,30 @@ CVS password:
 <hr>
 <h2><a name="requirements">動作環境</a></h2>
 <ul>
-<li>すべてのバージョンの Emacs (<font color="red">FIXME</font>)<p>
-<ul>
-<li>Emacs-w3m を動かすには最新の
-  <a href="http://prdownloads.sourceforge.net/w3m/">w3m</a>
-  (バージョン 0.5.3) が必要です。<p>
+<li>Emacs のバージョン
+  <p>Emacs-w3m は Emacs の最新の安定版のメジャーバージョンと、その
+    1つ前のメジャーバージョン (つまり、もし Emacs 26.1 が最新の安定版なら
+    26.1, 25.3, 25.2, および 25.1) で動作することを公式に保証します。</p>
+  <p>ときどき追い付いていないかもしれないし公式ではありませんが、
+    emacs-w3m が開発中の Emacs で動作することを期待してもよいです。
+    しかしそれは往々にして古いコードが序々に削除され、古い
+    Emacs のサポートが序々に消えていくことを意味します。</p>
+    
+<li>w3m
+  <p>Emacs-w3m には最新版の
+    <a href="https://salsa.debian.org/debian/w3m">w3m</a>
+    が必要です。</p>
 
-<li>もし
-  <a href="http://pub.ks-and-ks.ne.jp/prog/w3mmee/index.shtml.en">w3mmee</a>
-  を使うのならば configure オプション `<code>-lang=many</code>'
-  で作られたものでなければなりません。また、これを動かすためには前もって
-  <a href="http://pub.ks-and-ks.ne.jp/prog/libmoe/">libmoe</a>
-  パッケージをインストールしておかなければなりません。その w3mmee
-  が使えるかどうかを知るには、これを実行して、
-  <blockquote>
-    <code>w3mmee&nbsp;-version<br></code>
-  </blockquote>
-  その結果に '<code>moe-VERSION</code>' と `<code>lang=many</code>'
-  というものが表れることを確認してください。
-<p>
-<li>Emacs-w3m の配布に含まれている
-  <a href="info/goto.cgi?file=emacs-w3m&node=Shimbun+Library">shimbun
-    ライブラリー</a>
-  を使うには Emacs パッケージ `<code>FLIM</code>'
-  をインストールする必要があります。
-</p>
+<li>APEL and FLIM
+  <p>もし emacs-w3m の配布に含まれている
+    <a href="info/goto.cgi?file=emacs-w3m&node=Shimbun+Library">
+      新聞ライブラリ</a>
+    を使いたいならば、Emacs パッケージ
+    <a href="https://github.com/wanderlust/apel">APEL</a> と
+    <a href="https://github.com/wanderlust/flim">FLIM</a>
+    をインストールしなければなりません。
+  </p>
 </ul>
-<li>Emacs 21.1 以上 (<font color="red">FIXME</font>)<p>
- <ul><li>他にインストールが必要なモジュールはありません。</p></ul>
- <li>Emacs 20.x (<font color="red">FIXME</font>)<p><ul>
- <li>他にインストールが必要なモジュールはありません。</p>
- <li><code><a href="ftp://ftp.jpl.org/pub/elisp/bitmap/">BITMAP-MULE</a></code>
-   パッケージをインストールしておくと、
-   WEB ページのインライン画像を白黒表示させることができます。</p></ul>
- <li>XEmacs (<font color="red">FIXME</font>)<p>
- <ul><li>APEL パッケージが必要です。
-     <code><a href="http://kanji.zinbun.kyoto-u.ac.jp/~tomo/lemi/dist/apel/">
-	 ここ (<font color="red">FIXME</font>)</a></code>
-     にある最新のものを使ってください。
-   </p>
-   <blockquote>
-     <strong>注意:</strong>
-     APEL XEmacs パッケージ (SUMO に含まれています) のバージョン 1.32
-     より古いものは使えません。
-     もしすでにそのような版のパッケージがインストールされているならば、
-     それを更新するか、または上記のリンクで示した APEL
-     で置き換えなければなりません。
-   </blockquote>
-   <p>もし XEmacs 21.x を使っているのであれば
-     <code><a href="http://www.lcdf.org/gifsicle/">gifsicle</a></code>
-     プログラムをインストールして下さい。現在すべての XEmacs 21.x
-     にはオプティマイズされたアニメーション gif
-     を正常に表示しなかったり、ある種のインターレース gif
-     を表示するとクラッシュしてしまうバグがあります。
-     Emacs-w3m は gif データを XEmacs 21.x
-     で扱うことができる形式に変換するために <code>gifsicle</code>
-     を利用します。
-   </p></ul>
- <li>Mule 2.3 (based on Emacs 19.34) (<font color="red">FIXME</font>)<p>
- <ul><li>
-     <p>APEL パッケージ、「<strong>新しい custom</strong>」パッケージ、
-       および <code>regexp-opt.el(c)</code> モジュールが必要です。
-       詳しくは次の <a href="#requirements_emacs_19.34">Emacs 19.34
-	 についての説明</a> を注意して参照してください。</p>
-     <p>BITMAP-MULE パッケージを用いて
-       WEB ページのインライン画像を白黒表示させる場合には、パッチ
-       (<code><a href="http://cvs.namazu.org/emacs-w3m/patches/mule-2.3@19.34.patch?rev=1.1&content-type=text/plain">patches/mule-2.3@19.34.patch</a></code>)
-       を適用して Mule を作り直すことを強くお勧めします。
-       パッチは emacs-w3m の配布に含まれています。そうしないと Mule
-       が固まってしまい、Mule を kill せざるを得なくなるでしょう。
- </p></ul>
- <li><a name="requirements_emacs_19.34">Emacs 19.34 (without MULE)
-     (<font color="red">FIXME</font>)</a><p>
- <ul><li>
-     <p>APEL パッケージ、「<strong>新しい custom</strong>」パッケージ、
-       および <code>regexp-opt.el(c)</code> モジュールが必要です。</p>
-     <p>Emacs-w3m は
-       <nobr>「<strong><a href="http://www.dina.kvl.dk/~abraham/custom/">新しい
-	     custom</a></strong>」</nobr>パッケージを必要とします。
-       Emacs 19.34 または Mule 2.3 を使っている場合は、emacs-w3m
-       をインストールする前にそれをインストールしなければなりません。
-       特に Mule 2.3 を使う場合は、APEL に附属している README.ja
-       ファイルも必ず参照して下さい。</p>
-     <p>さらに、emacs-w3m は <code>regexp-opt.el(c)</code>
-       モジュールを必要としますが、Emacs 19.34 や Mule 2.3 のような古い
-       Emacsen には含まれていません。そのようなバージョンの Emacs
-       を使っている場合は、あらかじめ以下のように
-       <code>regexp-opt.el(c)</code>
-       モジュールをインストールする必要があります。
-     </p>
-<pre>
-% cp attic/regexp-opt.el /usr/local/share/emacs/site-lisp
-% cd /usr/local/share/emacs/site-lisp
-% emacs -q -no-site-file -batch -f batch-byte-compile regexp-opt.el
-</pre>
-     <p>
-       (もし Mule を使っているならば、おそらくパス名やコマンド名として
-       `emacs' の代わりに `mule' と言う必要があるでしょう。)
-     </p></ul>
-  </ul>
 
 <hr>
 <h2><a name="installation">インストール</a></h2>
@@ -288,29 +213,7 @@ Emacs-w3m をインストールする前に、あなたのシステムが
 # make install
 </pre>
 </blockquote>
-     <p>
-     Emacs 21.1 以上、または XEmacs を使っているならば、
-     アイコン画像のファイルをインストールした方が良いでしょう。
-     それを行なうには:
-     </p>
-<blockquote>
-<pre>
-# make install-icons
-</pre>
-</blockquote>
-     <p>
-     <em>install</em> の代わりに <em>install-package</em> を使うと、
-     XEmacs のパッケージとしてインストールすることもできます。
-     </p>
-<blockquote>
-<pre>
-% make
-# make install-package
-</pre>
-</blockquote>
-     <p>
-     この場合 <em>install-icons</em> を実行する必要はありません。
-     </p>
+
  <dt><h3><a name="installation_nonunix">非 UNIX 系の環境でインストールする</a></h3>
  <dd><p>
      あなたのシステムで <code>configure</code>
@@ -408,15 +311,8 @@ subscribe Your Name
 <h2><a name="link">リンク集</a></h2>
 <ul>
  <li><a href="http://w3m.sourceforge.net/index.en.html">w3m</a>
-     <ul>
-      <li><a href="http://www2u.biglobe.ne.jp/~hsaka/w3m/index.html">w3m-m17n</a>
-      <li><a href="http://pub.ks-and-ks.ne.jp/prog/w3mmee/index.shtml.en">w3mmee</a>
-     </ul>
- <li><a href="http://kanji.zinbun.kyoto-u.ac.jp/~tomo/lemi/dist/apel/">APEL</a>
- <li><a href="http://kanji.zinbun.kyoto-u.ac.jp/~tomo/lemi/dist/flim/flim-1.14/">FLIM</a>
- <li><a href="ftp://ftp.jpl.org/pub/elisp/bitmap/">BITMAP-MULE</a>
- <li><a href="http://www.lcdf.org/gifsicle/">gifsicle</a>
- <li><a href="http://www.dina.kvl.dk/~abraham/custom/">New custom</a>
+ <li><a href="https://github.com/wanderlust/apel">APEL</a>
+ <li><a href="https://github.com/wanderlust/flim">FLIM</a>
  <li><a href="https://github.com/vermiculus/sx.el">sx.el</a>,
  StackExchange の Emacs インターフェース
  <li><a href="https://github.com/vermiculus/magithub">magithub</a>,
@@ -428,23 +324,23 @@ subscribe Your Name
 <h2><a name="members">開発者</a></h2>
 (50音順)
 <ul>
- <li><a href="http://nijino.homelinux.net/">有沢&nbsp;明宏</a>
+ <li>有沢&nbsp;明宏
  <li>大橋&nbsp;彰
  <li>大場&nbsp;光一郎
- <li><a href="http://www.taiyo.co.jp/~gotoh/">後藤&nbsp;俊一</a>
+ <li>後藤&nbsp;俊一
  <li>是枝&nbsp;和義
- <li><a href="http://www.meadowy.org/~shirai/">白井&nbsp;秀行</a>
+ <li>白井&nbsp;秀行
  <li>菅原&nbsp;泰樹
  <li><a href="http://namazu.org/~satoru/">高林&nbsp;哲</a>
  <li><a href="http://namazu.org/~tsuchiya/">土屋&nbsp;雅稔</a>
- <li><a href="http://www.gohome.org/teranisi/">寺西&nbsp;裕一</a>
+ <li>寺西&nbsp;裕一
  <li>長&nbsp;毅
  <li>中島&nbsp;幹夫
  <li>中山&nbsp;洋一
  <li>西田&nbsp;圭介
  <li>野宮&nbsp;賢
- <li><a href="http://miyoshi.meadowy.org/">三好&nbsp;雅則</a>
- <li><a href="http://www.yamaoka.cc/">山岡&nbsp;克美</a>
+ <li>三好&nbsp;雅則
+ <li><a href="https://www.yamaoka.cc/">山岡&nbsp;克美</a>
 </ul>
 <p>
 他の多くのみなさんの多大な貢献に感謝します。

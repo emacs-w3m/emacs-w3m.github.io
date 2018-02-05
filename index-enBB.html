@@ -142,106 +142,26 @@ is also available.
 <hr>
 <h2><a name="requirements">Requirements</a></h2>
 <ul>
-<li>All emacs versions<p>
-<ul>
-<li>Emacs-w3m requires the latest version of <a href="http://prdownloads.sourceforge.net/w3m/">w3m</a> (version 0.5.3).<p>
+<li>Emacs versions
+  <p>Emacs-w3m officially guarantees to work with the Emacs of the major
+    versions that are the latest stable one and the one before it (i.e.,
+    Emacs 26.1, 25.3, 25.2, and 25.1 if 26.1 is the latest stable one).</p>
+  <p>Even if it might not be keeping up sometimes and is unofficial,
+    you can expect the forefront emacs-w3m to work with the Emacs devel.
+    But it will likely mean some old codes are gradually deleted, and
+    supporting old Emacsen will gradually fade away.</p>
+    
+<li>w3m
+  <p>Emacs-w3m requires the latest version of <a href="https://salsa.debian.org/debian/w3m">w3m</a>.</p>
 
-<li>
-If you use
-<a href="http://pub.ks-and-ks.ne.jp/prog/w3mmee/index.shtml.en">w3mmee</a>,
-it has to have been built with the configure option <code>`-lang=many</code>'.
-For this to work, you will need to first install package
-<a href="http://pub.ks-and-ks.ne.jp/prog/libmoe/">libmoe</a>. You can
-verify whether your copy of w3mmee already meets this requirement by
-checking for the presence of `<code>moe-VERSION</code>' and
-`<code>lang=many</code>' in response to performing:<br>
-<blockquote>
-<code>w3mmee&nbsp;-version<br></code>
-</blockquote>
-<p>
-<li>In order to use
-the <a href="info/goto.cgi?file=emacs-w3m&node=Shimbun+Library">shimbun
-library</a> included in the emacs-w3m distribution, the emacs package
-`FLIM' must be installed.
-</p>
+<li>APEL and FLIM
+  <p>If you would like to use
+    the <a href="info/goto.cgi?file=emacs-w3m&node=Shimbun+Library">shimbun
+      library</a> included in the emacs-w3m distribution, you have to install
+    the emacs packages
+    <a href="https://github.com/wanderlust/apel">APEL</a> and
+    <a href="https://github.com/wanderlust/flim">FLIM</a>.</p>
 </ul>
-<li> Emacs 21.1 and newer<p>
- <ul><li>No additional packages are required.</p></ul>
- <li>Emacs 20.x<p><ul>
- <li>No additional packages are required.</p>
- <li>When <code><a href="ftp://ftp.jpl.org/pub/elisp/bitmap/">BITMAP-MULE</a></code>
-     package is installed, you can see monochrome bitmap images inline
-     on an Emacs frame.</p></ul>
- <li>XEmacs<p>
- <ul><li>The APEL package is required.  Use the latest one available
-     <code>
-     <a href="http://kanji.zinbun.kyoto-u.ac.jp/~tomo/lemi/dist/apel/">here</a>.
-     </code>
-     </p>
-     <blockquote>
-      <strong>Note:</strong>
-      You must not use the APEL XEmacs package (which is contained in
-      SUMO) of the versions older than 1.32.  If you have already
-      installed such a version, you should upgrade it or replace it with
-      APEL which is linked above.
-     </blockquote>
-     <p>
-     If you are using XEmacs 21.x, you should install the
-     <code><a href="http://www.lcdf.org/gifsicle/">gifsicle</a></code>
-     program.  There is a known bug in all XEmacs 21.x series that it
-     won't let it display optimized animated gifs correctly or may make
-     it crash when some kind of an interlaced gif image is displayed.
-     Emacs-w3m uses the gifsicle program to convert gif data in order to
-     make it possible to be handled by XEmacs 21.x.
-     </p></ul>
- <li>Mule 2.3 (based on Emacs 19.34)<p>
- <ul><li>
-     APEL package, <strong>the new custom</strong> package, and the
-     <code>regexp-opt.el(c)</code> module are required.  For more
-     detail, see carefully <a href="#requirements_emacs_19.34">the next
-     section</a> about Emacs 19.34.
-     </p>
-     <p>
-     If you wish to use BITMAP-MULE package to show monochrome images
-     inline on the web pages, we strongly recommend you apply
-     <a href="http://cvs.namazu.org/emacs-w3m/patches/mule-2.3@19.34.patch?rev=1.1&content-type=text/plain">the
-     patch</a> and rebuild Mule.  The patch is included in the
-     emacs-w3m distribution.  If you don't accept our recommendation,
-     Mule might be stuck.  And you wouldn't get out of the difficulty
-     except killing Mule.
-     </p></ul>
- <li><a name="requirements_emacs_19.34">Emacs 19.34 (without MULE)</a><p>
- <ul><li>
-     APEL package, <strong>the new custom</strong> package, and the
-     <code>regexp-opt.el(c)</code> module are required.
-     </p>
-     <p>
-     Emacs-w3m requires
-     <strong>
-     <a href="http://www.dina.kvl.dk/~abraham/custom/">the new custom</a>
-     </strong>
-     package.  If you use Emacs 19.34 or Mule 2.3, you have to install it
-     before installing emacs-w3m.
-     When you use Mule 2.3 especially, see also the README.en file which
-     is included in the APEL distribution.
-     </p>
-     <p>
-     Emacs-w3m also requires the <code>regexp-opt.el(c)</code> module
-     which might not be provided in the old Emacsen such as Emacs 19.34
-     and Mule 2.3.  If you are using such versions of Emacs, you have to
-     install the regexp-opt.el(c) module before installing emacs-w3m as
-     follows:
-     </p>
-<pre>
-% cp attic/regexp-opt.el /usr/local/share/emacs/site-lisp
-% cd /usr/local/share/emacs/site-lisp
-% emacs -q -no-site-file -batch -f batch-byte-compile regexp-opt.el
-</pre>
-     <p>
-     (You will likely need to say `mule' instead of `emacs' for the path
-     name and the executable name if you are using Mule.)
-     </p></ul>
-  </ul>
 
 <hr>
 <h2><a name="installation">Installation</a></h2>
@@ -283,29 +203,7 @@ meets <a href="#requirements">the requirements</a>.
 # make install
 </pre>
 </blockquote>
-     <p>
-     If you are using Emacs 21.1 and newer or XEmacs, it is
-     recommended to install icon image files. To do this:
-     </p>
-<blockquote>
-<pre>
-# make install-icons
-</pre>
-</blockquote>
-     <p>
-     You can also install emacs-w3m as an XEmacs package using
-     <em>make install-package</em> instead of <em>make install</em>.
-     </p>
-<blockquote>
-<pre>
-% make
-# make install-package
-</pre>
-</blockquote>
-     <p>
-     In this case, you don't have to execute <em>make
-     install-icons</em>.
-     </p>
+
  <dt><h3><a name="installation_nonunix">Installing on non-UNIX-like systems</a></h3>
  <dd><p>
      If you cannot execute the <code>configure</code> script on your
@@ -399,15 +297,8 @@ in the body to <code>emacs-w3m-ctl&#64;namazu.org</code>.
 <h2><a name="link">Related Links</a></h2>
 <ul>
  <li><a href="http://w3m.sourceforge.net/index.en.html">w3m</a>
-     <ul>
-      <li><a href="http://www2u.biglobe.ne.jp/~hsaka/w3m/index.html">w3m-m17n</a>
-      <li><a href="http://pub.ks-and-ks.ne.jp/prog/w3mmee/index.shtml.en">w3mmee</a>
-     </ul>
- <li><a href="http://kanji.zinbun.kyoto-u.ac.jp/~tomo/lemi/dist/apel/">APEL</a>
- <li><a href="http://kanji.zinbun.kyoto-u.ac.jp/~tomo/lemi/dist/flim/flim-1.14/">FLIM</a>
- <li><a href="ftp://ftp.jpl.org/pub/elisp/bitmap/">BITMAP-MULE</a>
- <li><a href="http://www.lcdf.org/gifsicle/">gifsicle</a>
- <li><a href="http://www.dina.kvl.dk/~abraham/custom/">New custom</a>
+ <li><a href="https://github.com/wanderlust/apel">APEL</a>
+ <li><a href="https://github.com/wanderlust/flim">FLIM</a>
  <li><a href="https://github.com/vermiculus/sx.el">sx.el</a>,
   StackExchange interface for emacs
  <li><a href="https://github.com/vermiculus/magithub">magithub</a>,
@@ -419,23 +310,23 @@ in the body to <code>emacs-w3m-ctl&#64;namazu.org</code>.
 <h2><a name="members">Authors</a></h2>
 (alphabetical order in the family names)
 <ul>
- <li><a href="http://nijino.homelinux.net/">Akihiro Arisawa</a>
+ <li>Akihiro Arisawa
  <li>Tsuyoshi CHO
- <li><a href="http://www.taiyo.co.jp/~gotoh/">Shun-ichi GOTO</a>
+ <li>Shun-ichi GOTO
  <li>Kazuyoshi KOREEDA
- <li><a href="http://miyoshi.meadowy.org/">MIYOSHI Masanori</a>
+ <li>MIYOSHI Masanori
  <li>Mikio NAKAJIMA
  <li>Yoichi NAKAYAMA
  <li>Keisuke Nishida
  <li>Masaru Nomiya
  <li>OHASHI Akira
  <li>Koichiro Ohba
- <li><a href="http://www.meadowy.org/~shirai/">Hideyuki SHIRAI</a>
+ <li>Hideyuki SHIRAI
  <li>Taiki SUGAWARA
  <li><a href="http://namazu.org/~satoru/">Satoru Takabayashi</a>
- <li><a href="http://www.gohome.org/teranisi/">Yuuichi Teranishi</a>
+ <li>Yuuichi Teranishi
  <li><a href="http://namazu.org/~tsuchiya/">TSUCHIYA Masatoshi</a>
- <li><a href="http://www.yamaoka.cc/">Katsumi Yamaoka</a>
+ <li><a href="https://www.yamaoka.cc/">Katsumi Yamaoka</a>
 </ul>
 <p>
 Thanks to many of the other people for the great contributions.
