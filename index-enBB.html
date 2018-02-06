@@ -3,6 +3,7 @@
 <head>
 <meta http-equiv="Content-Type" content="text/html; charset=us-ascii">
 <title>Text browser works on Emacs</title>
+<style> * {max-width: 40em;} </style>
 </head>
 <body bgcolor="#EEEEEE">
 <p align="right">[English / <a href="index-jaBB.html">Japanese</a>]</p>
@@ -34,6 +35,7 @@ support javascript).
 <ul>
  <li>Tabs</li>
  <li>Images</li>
+ <li>Forms</li>
  <li>HTTPS preferred</li>
  <li>Bookmark management</li>
  <li>Cookie management</li>
@@ -49,23 +51,23 @@ support javascript).
 <hr>
 <h2><a name="history">History</a></h2>
 
-This project has been in active development continuously since the
-1990's.
-
+This project has been in active development continuously since 2000.
+<p>
 Originally, there had been a separate project <i>Emacs/W3</i> which in its
 time was the most popular web browser on Emacs, but it sufered from
 slow operation. The decision was made to create this alternative,
 based upon <b>Akinori Ito</b>'s
 <a href="http://w3m.sourceforge.net/index.en.html">w3m</a> text-mode
 pager which had WWW capability.
-
+<p>
 As of 2018, the project has been actively developed and supported for
 over twenty years, but since 2005 it has been releasing updates in
 "rolling" manner, directly from it CVS repository (although
 un-official third-party mirrors exist on <a href=https://melpa.org/#/w3m>MELPA</a>
-and <a href=https://github.com/ecbrown/emacs-w3m>github</a>). Here's
-the history of the old milestones under the prior system of issuing
-'<i>stable</i>' releases:
+and <a href=https://github.com/ecbrown/emacs-w3m>github</a>).
+<p>
+ Here's the history of the old milestones under the prior system of
+issuing '<i>stable</i>' releases:
 </p>
 <ul>
  <li>CVS rolling release, from 2005 to 2018+
@@ -143,24 +145,33 @@ is also available.
 <h2><a name="requirements">Requirements</a></h2>
 <ul>
 <li>Emacs versions
-  <p>Emacs-w3m officially guarantees to work with the Emacs of the major
-    versions that are the latest stable one and the one before it (i.e.,
-    Emacs 26.1, 25.3, 25.2, and 25.1 if 26.1 is the latest stable one).</p>
-  <p>Even if it might not be keeping up sometimes and is unofficial,
-    you can expect the forefront emacs-w3m to work with the Emacs devel.
-    But it will likely mean some old codes are gradually deleted, and
-    supporting old Emacsen will gradually fade away.</p>
-    
+  <p>Emacs-w3m supports the latest two major stable versions of Emacs.
+     Thus, when the latest stable Emacs was 26.1, Emacs-w3m was
+     supporting versions 26.1, 25.3, 25.2, and 25.1.</p>
+
+  <p>Older versions of emacs may still be able to successfully use the
+    current version of emacs-w3m, but as the current versions of
+    emacs or elisp themselves change, deprecate, or remove features,
+    the latest version of emacs-w3m can be expected to keep pace,
+    and thus will gradually lose functionality when run in older
+    emacs versions.</p>
+
+  <p>Pre-release versions of emacs and even development snapshots are
+    unofficially supported, as we do try to keep the code up-to-date,
+    so if you are using a "bleeding edge" emacs version and do
+    experience a problem, please do file a bug report by contacting
+    us on our mailing list!</p>
+
 <li>w3m
   <p>Emacs-w3m requires the latest version of <a href="https://salsa.debian.org/debian/w3m">w3m</a>.</p>
+</ul>
 
-<li>APEL and FLIM
-  <p>If you would like to use
-    the <a href="info/goto.cgi?file=emacs-w3m&node=Shimbun+Library">shimbun
-      library</a> included in the emacs-w3m distribution, you have to install
-    the emacs packages
-    <a href="https://github.com/wanderlust/apel">APEL</a> and
-    <a href="https://github.com/wanderlust/flim">FLIM</a>.</p>
+Optionally, if you would like to use
+the <a href="info/goto.cgi?file=emacs-w3m&node=Shimbun+Library">shimbun
+library</a> included in the emacs-w3m distribution, you have to
+install the emacs
+packages <a href="https://github.com/wanderlust/apel">APEL</a> and
+<a href="https://github.com/wanderlust/flim">FLIM</a>.</p>
 </ul>
 
 <hr>
@@ -175,7 +186,7 @@ meets <a href="#requirements">the requirements</a>.
 <dl>
  <dt><h3><a name="installation_unix">Installing emacs-w3m on UNIX-like systems</a></h3>
  <dd><p>
-     At the first, run the <code>configure</code> script.
+     First, run the <code>configure</code> script.
      </p>
 <blockquote>
 <pre>
@@ -183,10 +194,9 @@ meets <a href="#requirements">the requirements</a>.
 </pre>
 </blockquote>
      <p>
-     If you've installed APEL, FLIM or something in non-standard
-     directories other than the default <code>load-path</code>, you
-     must specify them using the <em>--with-addpath</em> option as
-     follows:
+     However, if you've installed APEL and FLIM in non-standard directories
+     other than the default <code>load-path</code>, you must specify them
+     using the <em>--with-addpath</em> option as follows:
      </p>
 <blockquote>
 <pre>
@@ -218,7 +228,7 @@ meets <a href="#requirements">the requirements</a>.
      <p>
      If APEL, FLIM (or any other library) aren't installed in the
      ordinary places, the installer will leave them out.  In such a
-     case, it is necessary to tell those places to the installer as
+     case, it is necessary to tell the installer where they are, as
      shown below:
      </p>
 <blockquote>
