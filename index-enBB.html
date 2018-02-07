@@ -2,7 +2,10 @@
 <html lang="en">
 <head>
 <meta http-equiv="Content-Type" content="text/html; charset=us-ascii">
-<title>Text browser works on Emacs</title>
+<meta name="description" content="emacs internet web browser
+                                  full-featured modern
+                                  2018 images secure">
+<title>Emacs internet web browser, modern, full-featured and secure (2018) | emacs-w3m</title>
 <style> * {max-width: 40em;} </style>
 </head>
 <body bgcolor="#EEEEEE">
@@ -10,7 +13,7 @@
 
 <h1>Emacs-w3m, a simple Emacs interface to w3m.</h1>
 
-Use emacs as a full-featured and secure internet browser! (Does not
+Use Emacs as a full-featured and secure internet browser! (Does not
 support javascript).
 
 <p><img src="screenshot-enBB.png" alt="Screenshot of how emacs-w3m works">
@@ -44,7 +47,7 @@ support javascript).
  <li>Asynchronous operations</li>
  <li>Greasemonkey-type filtering</li>
  <li>Quick-search</li>
- <li>Elisp scripting</li>
+ <li>ELisp scripting</li>
  <li>More ...</li>
 </ul>
 
@@ -54,7 +57,7 @@ support javascript).
 This project has been in active development continuously since 2000.
 <p>
 Originally, there had been a separate project <i>Emacs/W3</i> which in its
-time was the most popular web browser on Emacs, but it sufered from
+time was the most popular web browser on Emacs, but it suffered from
 slow operation. The decision was made to create this alternative,
 based upon <b>Akinori Ito</b>'s
 <a href="http://w3m.sourceforge.net/index.en.html">w3m</a> text-mode
@@ -149,16 +152,16 @@ is also available.
      Thus, when the latest stable Emacs was 26.1, Emacs-w3m was
      supporting versions 26.1, 25.3, 25.2, and 25.1.</p>
 
-  <p>Older versions of emacs may still be able to successfully use the
+  <p>Older versions of Emacs may still be able to successfully use the
     current version of emacs-w3m, but as the current versions of
-    emacs or elisp themselves change, deprecate, or remove features,
+    Emacs or ELisp themselves change, deprecate, or remove features,
     the latest version of emacs-w3m can be expected to keep pace,
     and thus will gradually lose functionality when run in older
-    emacs versions.</p>
+    Emacs versions.</p>
 
-  <p>Pre-release versions of emacs and even development snapshots are
+  <p>Pre-release versions of Emacs and even development snapshots are
     unofficially supported, as we do try to keep the code up-to-date,
-    so if you are using a "bleeding edge" emacs version and do
+    so if you are using a "bleeding edge" Emacs version and do
     experience a problem, please do file a bug report by contacting
     us on our mailing list!</p>
 
@@ -169,7 +172,7 @@ is also available.
 Optionally, if you would like to use
 the <a href="info/goto.cgi?file=emacs-w3m&node=Shimbun+Library">shimbun
 library</a> included in the emacs-w3m distribution, you have to
-install the emacs
+install the Emacs
 packages <a href="https://github.com/wanderlust/apel">APEL</a> and
 <a href="https://github.com/wanderlust/flim">FLIM</a>.</p>
 </ul>
@@ -194,13 +197,14 @@ meets <a href="#requirements">the requirements</a>.
 </pre>
 </blockquote>
      <p>
-     However, if you've installed APEL and FLIM in non-standard directories
-     other than the default <code>load-path</code>, you must specify them
+     However, if you've installed APEL and FLIM in non-standard
+     directories (ie. somewhere not on the <b>default</b>
+     <code>load-path</code>), you must specify them
      using the <em>--with-addpath</em> option as follows:
      </p>
 <blockquote>
 <pre>
-% ./configure --with-addpath=/opt/share/apel:/opt/share/flim
+% ./configure --with-addpath=/your/path/to//apel:/your/path/to/flim
 </pre>
 </blockquote>
      <p>
@@ -226,14 +230,15 @@ meets <a href="#requirements">the requirements</a>.
 </pre>
 </blockquote>
      <p>
-     If APEL, FLIM (or any other library) aren't installed in the
-     ordinary places, the installer will leave them out.  In such a
+     However, if APEL, FLIM (or any other library) are installed in
+     non-standard directories (ie. somewhere not on the <b>default</b>
+     <code>load-path</code>), the installer won't find them.  In such a
      case, it is necessary to tell the installer where they are, as
      shown below:
      </p>
 <blockquote>
 <pre>
-# emacs -batch -q -no-site-file -l w3mhack.el //c/share/apel://c/share/flim -f w3mhack-nonunix-install
+# emacs -batch -q -no-site-file -l w3mhack.el //c/your/path/to/apel://c/your/path/to/flim -f w3mhack-nonunix-install
 </pre>
 </blockquote>
 </dl>
@@ -265,7 +270,7 @@ Wanderlust, put the following line in your
 </blockquote>
 <p>
 For more details, see <a href="info/emacs-w3m.html">Info manual</a>,
-or browse the emacs-w3m customization group within emacs.
+or browse the emacs-w3m customization group within Emacs.
 </p>
 
 <hr>
@@ -310,9 +315,9 @@ in the body to <code>emacs-w3m-ctl&#64;namazu.org</code>.
  <li><a href="https://github.com/wanderlust/apel">APEL</a>
  <li><a href="https://github.com/wanderlust/flim">FLIM</a>
  <li><a href="https://github.com/vermiculus/sx.el">sx.el</a>,
-  StackExchange interface for emacs
+  StackExchange interface for Emacs
  <li><a href="https://github.com/vermiculus/magithub">magithub</a>,
- Github interface for emacs
+ Github interface for Emacs
 </ul>
 
 
