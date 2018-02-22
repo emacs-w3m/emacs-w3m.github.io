@@ -1,8 +1,12 @@
 <!DOCTYPE HTML PUBLIC "-//W3C//DTD HTML 4.01 Transitional//EN">
-<html lang="en">
+<html lang="ja">
 <head>
 <meta http-equiv="Content-Type" content="text/html; charset=utf-8">
-<title>Text browser works on Emacs</title>
+<meta name="description" content="emacs internet web browser
+                                  full-featured modern
+                                  2018 images secure">
+<title>Emacs-w3m | 現代的かつ完全装備で安全なEmacsインターネットブラウザ(2018)</title>
+<style> * {max-width: 40em;} </style>
 </head>
 <body bgcolor="#EEEEEE">
 <p align="right">[<a href="index-enBB.html">English</a> / Japanese]</p>
@@ -55,17 +59,17 @@ Emacs を使う完全装備で安全なインターネットブラウザです (
 <hr>
 <h2><a name="history">歴史</a></h2>
 
-このプロジェクトでは 1990年代から活発に開発が続けられています。
+このプロジェクトは 2000年から活発に開発を続けています。
 <p>
 かつて Emacs/W3 という独自のプロジェクトがあり、その時代の Emacs
 で最も人気のあるウェブ・ブラウザだったのですが、
 その遅い動作に苦しめられました。そこで、<b>伊藤彰則さん</b>による WWW
 の機能があるテキストモードのペイジャー
-<a href="http://w3m.sourceforge.net/index.en.html">w3m</a>
+<a href="http://w3m.sourceforge.net/index.ja.html">w3m</a>
 を使って代替品を作ろうということになったのです。
 
 2018年現在、プロジェクトは活発に開発を続け、
-20年以上に渡って持続していますが、2005年からは CVS
+20年近くに渡って持続していますが、2005年からは CVS
 リポジトリーから直接
 <a href="https://ja.wikipedia.org/wiki/ローリング・リリース">
 ローリング・リリース</a> による更新を行なっています
@@ -82,7 +86,7 @@ Emacs を使う完全装備で安全なインターネットブラウザです (
  <li><a href="ml/6989">emacs-w3m-1.4.1 公開</a> (2004年7月7日)
  <li>サービスの復旧が完了 (2004年6月23日)<br>
      全てのコンテンツおよび CVS レポジトリの正当性は検証済み
- <li><a href="announce-ja.txt">クラックされる</a> (2004年05月23日)
+ <li><a href="announce-ja.txt">このサイトがクラックされる</a> (2004年05月23日)
  <li><a href="ml/6759">emacs-w3m-1.4 公開</a> (2004年4月29日)
 </ul>
 
@@ -153,13 +157,21 @@ CVS password:
 <h2><a name="requirements">動作環境</a></h2>
 <ul>
 <li>Emacs のバージョン
-  <p>Emacs-w3m は Emacs の最新の安定版のメジャーバージョンと、その
-    1つ前のメジャーバージョン (つまり、もし Emacs 26.1 が最新の安定版なら
-    26.1, 25.3, 25.2, および 25.1) で動作することを公式に保証します。</p>
-  <p>ときどき追い付いていないかもしれないし公式ではありませんが、
-    emacs-w3m が開発中の Emacs で動作することを期待してもよいです。
-    しかしそれは往々にして古いコードが序々に削除され、古い
-    Emacs のサポートが序々に消えていくことを意味します。</p>
+  <p>Emacs-w3m は安定版で最新の 2つのメジャーバージョンの Emacs
+    をサポートします。つまり、もし最新の安定版の Emacs が 26.1
+    であるならば、emacs-w3m は 26.1、25.3、25.2、および 25.1
+    をサポートするということです。</p>
+
+  <p>古いバージョンの Emacs でも、まだ現行版の emacs-w3m
+    を問題なく使うことができるかもしれません。しかし最新の emacs-w3m
+    は、最新の Emacs や Elisp 自体がいろいろな機能について行なう変更や、
+    非推奨にしたり削除することを追いかけているでしょうから、古いバージョンの
+    Emacs で走らせていると、序々に機能しなくなっていくでしょう。</p>
+
+  <p>コードを最新の状態に維持しようとしているので、リリース前の
+    Emacs や開発中のもののスナップショットでさえも非公式にサポートしています。
+    したがって最先端の Emacs を使っていて問題にぶつかったら、
+    そのバグをメーリングリストで知らせてください。</p>
     
 <li>w3m
   <p>Emacs-w3m には最新版の
