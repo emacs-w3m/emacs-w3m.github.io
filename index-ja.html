@@ -1,252 +1,207 @@
 <!DOCTYPE HTML PUBLIC "-//W3C//DTD HTML 4.01 Transitional//EN">
 <html lang="ja">
 <head>
-<meta http-equiv="Content-Type" content="text/html; charset=ISO-2022-JP">
-<title>Text browser works on Emacs</title>
+<meta http-equiv="Content-Type" content="text/html; charset=utf-8">
+<meta name="description" content="emacs internet web browser
+                                  full-featured modern
+                                  2018 images secure">
+<title>Emacs-w3m | 現代的かつ完全装備で安全なEmacsインターネットブラウザ(2018)</title>
+<style> * {max-width: 40em;} </style>
 </head>
 <body bgcolor="#EEEEEE">
 <p align="right">[<a href="index-en.html">English</a> / Japanese]</p>
 
-<h1>Emacs $B>e$G(B w3m $B$rF0$+$=$&(B</h1>
+<h1>Emacs-w3m、シンプルな w3m への Emacs インターフェース</h1>
+
+Emacs を使う完全装備で安全なインターネットブラウザです (Javascript
+には対応しません)。
+
+<p>Emacs-w3m の動作例:
+  <a href="image/screenshot-ja.html">
+    <img src="image/ss-icon.gif" alt="*" style="vertical-align:bottom">
+  </a>
+</p>
 
 <p>
-Emacs $B>e$GF0:n$9$k%V%i%&%6$H8@$($P!$$+$D$F$O(B Emacs/W3 $B$N$3$H$G$7$?$,!$(B
-$BF0:n$,Hs>o$KCY$$$N$G!$$J$+$J$+>oMQ$7$h$&$H$$$&5$$K$J$l$^$;$s$G$7$?!%(B
-</p>
-<p>
-$B$=$l$KBP$7$F(B <a href="http://w3m.sourceforge.net/index.ja.html">w3m</a>
-$B$H$$$&%F%-%9%H%Y!<%9$GF0:n$9$k%V%i%&%6$,$"$j!$(B
-$BHs>o$K7Z2w$KF0:n$9$k$N$G=EJu$7$F$$$k$N$G$9$,!$(B
-$BC<Kv$K0\F0$7$J$1$l$P$$$1$J$$$N$,LLE]$G$9!%(B
-</p>
-<p>
-$B$=$3$G!$(Bw3m $B$r(B HTML $B$N(B rendering engine $B$H$7$F;HMQ$7!$(B
-$BI=<($H%$%s%?%U%'!<%9$N$_$r(B Emacs $B$GF0$+$9$h$&$K$9$l$P$$$$$s$8$c$J$$$@$m$&$+!$(B
-$B$H$$$&$3$H$r9M$($^$7$?!%(B
-</p>
-
 <ul>
- <li><a href="#news">$B%K%e!<%9(B</a>
- <li><a href="#download">$B%@%&%s%m!<%I(B</a>
- <li><a href="#requirements">$BF0:n4D6-(B</a>
- <li><a href="#install">$B%$%s%9%H!<%k(B</a>
- <li><a href="#config">$B@_Dj(B</a>
- <li><a href="info/emacs-w3m-ja.html">$B;H$$J}(B</a>
- <li><a href="#mailing_list">$B%a!<%j%s%0%j%9%H(B</a>
- <li><a href="#link">$B%j%s%/=8(B</a>
- <li><a href="#members">$B3+H/<T(B</a>
- <li><a href="#report">$BO"Mm@h(B</a>
-</ul>
-
-
-<img src="screenshot-ja.png" alt="emacs-w3m $B$NF0:nNc(B" width="396" height="308">
-
-
-<p>
-Emacs 21.1 $B0J>e!$$^$?$O(B XEmacs $B$G$O2hA|$N%$%s%i%$%sI=<($,2DG=$G$9!%(B
-<a href="w3m-vs-w3.png">$B$I$A$i$,K\J*$+(B</a>$B8+Hf$Y$F$_$F$/$@$5$$!%(B
-$BF0:n$9$kMM;R$r6qBNE*$K8+$F$_$?$$J}$O!$(B
-<a href="http://namazu.org/~satoru/x11rec/">x11rec</a>
-$B$G;#1F$7$?(B<a href="video.gif">$B%S%G%*(B</a>$B$r$4Mw$/$@$5$$!%(B
-</p>
-
-
-<hr>
-<h2><a name="news">NEWS</a></h2>
-<ul>
- <li><a href="ml/7990">emacs-w3m-1.4.4 $B$r8x3+$7$^$7$?(B</a>$B!%(B(2005$BG/(B3$B7n(B25$BF|(B)
- <li><a href="ml/7039">emacs-w3m-1.4.3 $B$r8x3+$7$^$7$?(B</a>$B!%(B(2004$BG/(B8$B7n(B17$BF|(B)
- <li><a href="ml/7004">emacs-w3m-1.4.2 $B$r8x3+$7$^$7$?(B</a>$B!%(B(2004$BG/(B7$B7n(B14$BF|(B)
- <li><a href="ml/6989">emacs-w3m-1.4.1 $B$r8x3+$7$^$7$?(B</a>$B!%(B(2004$BG/(B7$B7n(B7$BF|(B)
- <li>$BA4$F$N%5!<%S%9$NI|5l$,40N;$7$^$7$?!%(B
-      $BA4$F$N%3%s%F%s%D$*$h$S(B CVS $B%l%]%8%H%j$N@5Ev@-$O8!>Z:Q$_$G$9!%(B(2004$BG/(B6$B7n(B23$BF|(B)
- <li><a href="announce-ja.txt">$B%/%i%C%/$5$l$^$7$?(B</a>$B!%(B(2004$BG/(B05$B7n(B23$BF|(B)
- <li><a href="ml/6759">emacs-w3m-1.4 $B$r8x3+$7$^$7$?(B</a>$B!%(B(2004$BG/(B4$B7n(B29$BF|(B)
+ <li><a href="#features">機能</a>
+ <li><a href="#history">歴史</a>
+ <li><a href="#download">ダウンロード</a>
+ <li><a href="#requirements">動作環境</a>
+ <li><a href="#installation">インストール</a>
+ <li><a href="#configuration">設定</a>
+ <li><a href="info/emacs-w3m.html">使い方</a>
+ <li><a href="#mailing_list">メーリングリスト</a>
+ <li><a href="#link">リンク集</a>
+ <li><a href="#contact">連絡先</a>
 </ul>
 
 
 <hr>
-<h2><a name="download">$B%@%&%s%m!<%I(B</a></h2>
+<h2><a name="features">機能</a></h2>
 <ul>
- <li>$B0BDjHG(B
-     <ul>
-      <li><code><a href="emacs-w3m-1.4.4.tar.gz">emacs-w3m-1.4.4.tar.gz</a></code> (2005$BG/(B3$B7n(B25$BF|(B)
-     </ul>
- <li>$B5lHG(B
-     <ul>
-      <li><code><a href="w3m_el-1.0.tar.gz">w3m_el-1.0.tar.gz</a></code> (2001$BG/(B5$B7n(B9$BF|(B)
-      <li><code><a href="w3m_el-1.2.tar.gz">w3m_el-1.2.tar.gz</a></code> (2001$BG/(B11$B7n(B6$BF|(B)
-      <li><code><a href="w3m_el-1.2.1.tar.gz">w3m_el-1.2.1.tar.gz</a></code> (2001$BG/(B11$B7n(B12$BF|(B)
-      <li><code><a href="w3m_el-1.2.2.tar.gz">w3m_el-1.2.2.tar.gz</a></code> (2001$BG/(B12$B7n(B6$BF|(B)
-      <li><code><a href="w3m_el-1.2.3.tar.gz">w3m_el-1.2.3.tar.gz</a></code> (2001$BG/(B12$B7n(B21$BF|(B)
-      <li><code><a href="w3m_el-1.2.4.tar.gz">w3m_el-1.2.4.tar.gz</a></code> (2002$BG/(B1$B7n(B8$BF|(B)
-      <li><code><a href="w3m_el-1.2.5.tar.gz">w3m_el-1.2.5.tar.gz</a></code> (2002$BG/(B3$B7n(B2$BF|(B)
-      <li><code><a href="w3m_el-1.2.6.tar.gz">w3m_el-1.2.6.tar.gz</a></code> (2002$BG/(B3$B7n(B12$BF|(B)
-      <li><code><a href="w3m_el-1.2.7.tar.gz">w3m_el-1.2.7.tar.gz</a></code> (2002$BG/(B6$B7n(B3$BF|(B)
-      <li><code><a href="w3m_el-1.2.8.tar.gz">w3m_el-1.2.8.tar.gz</a></code> (2002$BG/(B6$B7n(B20$BF|(B)
-      <li><code><a href="w3m_el-1.3.tar.gz">w3m_el-1.3.tar.gz</a></code> (2002$BG/(B7$B7n(B7$BF|(B)
-      <li><code><a href="w3m_el-1.3.1.tar.gz">w3m_el-1.3.1.tar.gz</a></code> (2002$BG/(B7$B7n(B17$BF|(B)
-      <li><code><a href="emacs-w3m-1.3.2.tar.gz">emacs-w3m-1.3.2.tar.gz</a></code> (2002$BG/(B9$B7n(B3$BF|(B)
-      <li><code><a href="emacs-w3m-1.3.3.tar.gz">emacs-w3m-1.3.3.tar.gz</a></code> (2002$BG/(B10$B7n(B25$BF|(B)
-      <li><code><a href="emacs-w3m-1.3.4.tar.gz">emacs-w3m-1.3.4.tar.gz</a></code> (2003$BG/(B6$B7n(B18$BF|(B)
-      <li><code><a href="emacs-w3m-1.3.5.tar.gz">emacs-w3m-1.3.5.tar.gz</a></code> (2003$BG/(B7$B7n(B5$BF|(B)
-      <li><code><a href="emacs-w3m-1.3.6.tar.gz">emacs-w3m-1.3.6.tar.gz</a></code> (2003$BG/(B7$B7n(B18$BF|(B)
-      <li><code><a href="emacs-w3m-1.4.tar.gz">emacs-w3m-1.4.tar.gz</a></code> (2004$BG/(B4$B7n(B29$BF|(B)
-      <li><code><a href="emacs-w3m-1.4.1.tar.gz">emacs-w3m-1.4.1.tar.gz</a></code> (2004$BG/(B7$B7n(B7$BF|(B)
-      <li><code><a href="emacs-w3m-1.4.2.tar.gz">emacs-w3m-1.4.2.tar.gz</a></code> (2004$BG/(B7$B7n(B14$BF|(B)
-      <li><code><a href="emacs-w3m-1.4.3.tar.gz">emacs-w3m-1.4.3.tar.gz</a></code> (2004$BG/(B8$B7n(B17$BF|(B)
-     </ul>
+ <li>タブ</li>
+ <li>画像</li>
+ <li>HTTPS 優先</li>
+ <li>ブックマーク管理</li>
+ <li>クッキー管理</li>
+ <li>セッション管理</li>
+ <li>履歴の管理</li>
+ <li>非同期動作</li>
+ <li>Greasemonkey 風フィルタ</li>
+ <li>クイック検索</li>
+ <li>Elisp スクリプト</li>
+ <li>もっと ...</li>
 </ul>
+
+<hr>
+<h2><a name="history">歴史</a></h2>
+
+このプロジェクトは 2000年から活発に開発を続けています。
 <p>
-emacs-w3m $B$O!$(BCVS $B$r;H$C$F6&F13+H/$7$F$$$k$N$G!$(B
-$B0J2<$N<j=g$G:G?7$N3+H/HG$,F~<j$G$-$^$9!%(B
+かつて Emacs/W3 という独自のプロジェクトがあり、その時代の Emacs
+で最も人気のあるウェブ・ブラウザだったのですが、
+その遅い動作に苦しめられました。そこで、<b>伊藤彰則さん</b>による WWW
+の機能があるテキストモードのペイジャー
+<a href="http://w3m.sourceforge.net/index.ja.html">w3m</a>
+を使って代替品を作ろうということになったのです。
+
+2018年現在、プロジェクトは活発に開発を続け、
+20年近くに渡って持続していますが、2005年からは CVS
+リポジトリーから直接
+<a href="https://ja.wikipedia.org/wiki/ローリング・リリース">
+ローリング・リリース</a> による更新を行なっています
+(もっとも第三者による非公式なミラーが
+<a href=https://melpa.org/#/w3m>MELPA</a> と
+<a href=https://github.com/ecbrown/emacs-w3m>github</a> にありますが)。
+以下は過去に<i>安定版</i>のリリースが行なわれた経過点の歴史です:
+<ul>
+ <li>CVS ローリング・リリース (2005年〜2018年およびそれ以降)
+
+ <li><a href="ml/7990">emacs-w3m-1.4.4 公開</a> (2005年3月25日)
+ <li><a href="ml/7039">emacs-w3m-1.4.3 公開</a> (2004年8月17日)
+ <li><a href="ml/7004">emacs-w3m-1.4.2 公開</a> (2004年7月14日)
+ <li><a href="ml/6989">emacs-w3m-1.4.1 公開</a> (2004年7月7日)
+ <li>サービスの復旧が完了 (2004年6月23日)<br>
+     全てのコンテンツおよび CVS レポジトリの正当性は検証済み
+ <li><a href="announce-ja.txt">このサイトがクラックされる</a> (2004年05月23日)
+ <li><a href="ml/6759">emacs-w3m-1.4 公開</a> (2004年4月29日)
+</ul>
+
+
+<hr>
+<h2><a name="download">ダウンロード</a></h2>
+
+公式の最新版が、いつでも CVS リポジトリから利用することができます。
+もっとも、
+ダウンロードと更新をユーザーにとってもっと便利に行なうことができる、
+第三者による非公式なミラーが、
+<a href=https://melpa.org/#/w3m>MELPA</a> および
+<a href=https://github.com/ecbrown/emacs-w3m>github</a>
+として存在することを確認していますが。<br>
+(ひとつ言っておかなければなりません。
+それらのミラーはこのプロジェクトの管理下にないので、
+その信頼性または問題がないことを、私たちは知る由がありません。)
+<p>
+このプロジェクトは
+<a href=http://www.nongnu.org/cvs/>cvs</a><font size=1>[<a href=https://en.wikipedia.org/wiki/Concurrent_Versions_System>1</a>]</font>
+バージョン管理システムを使っているので、
+公式な供給元から最新版をダウンロードするためには、
+cvs をインストールしておかなければなりません。
 </p>
 <blockquote>
 <pre>
 % cvs -d :pserver:anonymous@cvs.namazu.org:/storage/cvsroot login
 CVS password:
-# $B%Q%9%o!<%I$O@_Dj$5$l$F$$$^$;$s!%C1$K(B Enter/Return $B%-!<$r2!$7$F2<$5$$!%(B
+# パスワードは設定されていません．単に Enter/Return キーを押して下さい。
 % cvs -d :pserver:anonymous@cvs.namazu.org:/storage/cvsroot co emacs-w3m
 </pre>
 </blockquote>
 <p>
-$B$^$?!$(B<a href="http://cvs.namazu.org/Development/emacs-w3m/">ViewCVS</a>
-$B$G%=!<%9$r1\Mw$9$k$3$H$b$G$-$^$9!%(B
+<a href="http://cvs.namazu.org/Development/emacs-w3m/">ViewVC</a>
+でソースを見ることもできます。
 </p>
 
-
-<hr>
-<h2><a name="requirements">$BF0:n4D6-(B</a></h2>
-<p>
-emacs-w3m $B$rF0$+$9$K$O:G?7$N(B w3m ($B%P!<%8%g%s(B 0.3.1 $B0J>e(B) $B$,I,MW$G$9!%(B
-$B$3$N%W%m%0%i%`$O(B w3m $B$N%P!<%8%g%s$K6/$/0MB8$7$F$$$k$N$G!$4{$K(B
-w3m $B$r%$%s%9%H!<%k$7$F$"$k>l9g$O!$$=$l$r3NG'$7$F2<$5$$!%$^$?!$(B
-w3m $B$N$h$j?7$7$$%P!<%8%g%s$,%j%j!<%9$5$l$F$$$k$+$I$&$+$r%A%'%C%/$9$k$?$a$K!$(B
-$B8x<0$N(B w3m $B%&%'%V%Z!<%8$rK,Ld$9$k$3$H$r$*4+$a$7$^$9(B:
-</p>
 <ul>
- <li><code><a href="http://prdownloads.sourceforge.net/w3m/">http://prdownloads.sourceforge.net/w3m/</a></code>
+ <li>過去のバージョン:
+     <ul>
+      <li><code><a href="emacs-w3m-1.4.4.tar.gz">emacs-w3m-1.4.4.tar.gz</a></code> (2005年3月25日)
+      <li><code><a href="emacs-w3m-1.4.3.tar.gz">emacs-w3m-1.4.3.tar.gz</a></code> (2004年8月17日)
+      <li><code><a href="emacs-w3m-1.4.2.tar.gz">emacs-w3m-1.4.2.tar.gz</a></code> (2004年7月14日)
+      <li><code><a href="emacs-w3m-1.4.1.tar.gz">emacs-w3m-1.4.1.tar.gz</a></code> (2004年7月7日)
+      <li><code><a href="emacs-w3m-1.4.tar.gz">emacs-w3m-1.4.tar.gz</a></code> (2004年4月29日)
+      <li><code><a href="emacs-w3m-1.3.6.tar.gz">emacs-w3m-1.3.6.tar.gz</a></code> (2003年7月18日)
+      <li><code><a href="emacs-w3m-1.3.5.tar.gz">emacs-w3m-1.3.5.tar.gz</a></code> (2003年7月5日)
+      <li><code><a href="emacs-w3m-1.3.4.tar.gz">emacs-w3m-1.3.4.tar.gz</a></code> (2003年6月18日)
+      <li><code><a href="emacs-w3m-1.3.3.tar.gz">emacs-w3m-1.3.3.tar.gz</a></code> (2002年10月25日)
+      <li><code><a href="emacs-w3m-1.3.2.tar.gz">emacs-w3m-1.3.2.tar.gz</a></code> (2002年9月3日)
+      <li><code><a href="w3m_el-1.3.1.tar.gz">w3m_el-1.3.1.tar.gz</a></code> (2002年7月17日)
+      <li><code><a href="w3m_el-1.3.tar.gz">w3m_el-1.3.tar.gz</a></code> (2002年7月7日)
+      <li><code><a href="w3m_el-1.2.8.tar.gz">w3m_el-1.2.8.tar.gz</a></code> (2002年6月20日)
+      <li><code><a href="w3m_el-1.2.7.tar.gz">w3m_el-1.2.7.tar.gz</a></code> (2002年6月3日)
+      <li><code><a href="w3m_el-1.2.6.tar.gz">w3m_el-1.2.6.tar.gz</a></code> (2002年3月12日)
+      <li><code><a href="w3m_el-1.2.5.tar.gz">w3m_el-1.2.5.tar.gz</a></code> (2002年3月2日)
+      <li><code><a href="w3m_el-1.2.4.tar.gz">w3m_el-1.2.4.tar.gz</a></code> (2002年1月8日)
+      <li><code><a href="w3m_el-1.2.3.tar.gz">w3m_el-1.2.3.tar.gz</a></code> (2001年12月21日)
+      <li><code><a href="w3m_el-1.2.2.tar.gz">w3m_el-1.2.2.tar.gz</a></code> (2001年12月6日)
+      <li><code><a href="w3m_el-1.2.1.tar.gz">w3m_el-1.2.1.tar.gz</a></code> (2001年11月12日)
+      <li><code><a href="w3m_el-1.2.tar.gz">w3m_el-1.2.tar.gz</a></code> (2001年11月6日)
+      <li><code><a href="w3m_el-1.0.tar.gz">w3m_el-1.0.tar.gz</a></code> (2001年5月9日)
+     </ul>
 </ul>
-<blockquote>
-$B$b$7(B <a href="http://pub.ks-and-ks.ne.jp/prog/w3mmee/">w3mmee<a>
-$B$r;H$&$N$J$i$P!$(Bconfigure $B%*%W%7%g%s(B `-lang=many'
-$B$G:n$i$l$?$b$N$G$J$1$l$P$J$j$^$;$s!%A0$b$C$F(B
-<a href="http://pub.ks-and-ks.ne.jp/prog/libmoe/">libmoe</a>
-$B$r%$%s%9%H!<%k$7$J$1$l$P$J$i$J$$$3$H$KCm0U$7$F$/$@$5$$!%(B
-$B$9$G$K%$%s%9%H!<%k$5$l$F$$$k(B w3mmee $B$,E,@Z$J$b$N$G$"$k$+$I$&$+$r!$(B
-$B0J2<$r<B9T$9$k$3$H$K$h$C$F3N$+$a$k$3$H$,$G$-$^$9(B:<br>
-<br>
-w3mmee&nbsp;-version<br>
-<br>
-`moe-VERSION' $B$H(B `lang=many' $B$N$h$&$J$b$N$,$"$j$^$9$+(B?
-</blockquote>
 <p>
-emacs-w3m $B$KF1:-$7$FG[I[$5$l$F$$$k(B shimbun $B%i%$%V%i%j$rMxMQ$9$k$?$a$K$O!$(B
-FLIM $B$rA0$b$C$F%$%s%9%H!<%k$7$F$*$/I,MW$,$"$j$^$9!%>\:Y$K$D$$$F$O!$(BInfo $B$N(B
-<nobr>$B!V(B<a href="info/goto.cgi?file=emacs-w3m-ja&node=Shimbun+Library">Shimbun
-Library</a>$B!W(B</nobr>$B@a$r;2>H$7$F$/$@$5$$!%(B
-</p>
-<dl>
- <dt>a) Emacs 21.1 $B0J>e(B
- <dd><p>
-     emacs-w3m $B$rF0$+$9$?$a$KM>J,$K%$%s%9%H!<%k$,I,MW$J%b%8%e!<%k$O$"$j$^$;$s!%(B
-CVS head $B$N(B Emacs $B$r;H$&>l9g!$$=$l$O(B
-2004$BG/(B3$B7n0J9_$N%P!<%8%g%s$G$"$kI,MW$,$"$j$^$9!%(B
-     </p>
- <dt>b) Emacs 20.x
- <dd><p>
-     emacs-w3m $B$rF0$+$9$?$a$KM>J,$K%$%s%9%H!<%k$,I,MW$J%b%8%e!<%k$O$"$j$^$;$s!%(B
-     </p>
-     <p>
-     <code><a href="ftp://ftp.jpl.org/pub/elisp/bitmap/">BITMAP-MULE</a></code>
-     $B%Q%C%1!<%8$r%$%s%9%H!<%k$7$F$*$/$H!$(B
-     WEB $B%Z!<%8$N%$%s%i%$%s2hA|$rGr9uI=<($5$;$k$3$H$,$G$-$^$9!%(B
-     </p>
- <dt>c) XEmacs
- <dd><p>
-     APEL $B$rA0$b$C$F%$%s%9%H!<%k$7$F$*$/I,MW$,$"$j$^$9!%(B
-     <code>
-     <nobr>$B!V(B<a href="http://kanji.zinbun.kyoto-u.ac.jp/~tomo/lemi/dist/apel/">$B$3$3(B</a>$B!W(B</nobr>
-     </code>
-     $B$K$"$k:G?7$N$b$N$r;H$C$F2<$5$$!%(B
-     </p>
-     <blockquote>
-      <strong>$BCm0U(B:</strong>
-      APEL XEmacs $B%Q%C%1!<%8(B (SUMO $B$K4^$^$l$F$$$^$9(B) $B$N%P!<%8%g%s(B 1.32
-      $B$h$j8E$$$b$N$O;H$($^$;$s!%$b$7$9$G$K$=$N$h$&$JHG$N%Q%C%1!<%8$,%$(B
-      $B%s%9%H!<%k$5$l$F$$$k$J$i$P!$$=$l$r99?7$9$k$+!$$^$?$O>e5-$N%j%s%/(B
-      $B$G<($7$?(B APEL $B$GCV$-49$($J$1$l$P$J$j$^$;$s!%(B
-     </blockquote>
-     <p>
-     XEmacs 21.x $B$K(B emacs-w3m $B$r%$%s%9%H!<%k$9$k>l9g$O!$I,$:(B
-     <code><a href="http://www.lcdf.org/gifsicle/">gifsicle</a></code>
-     $B%W%m%0%i%`$b%$%s%9%H!<%k$7$F2<$5$$!%(B
-     $B8=:_$9$Y$F$N(B XEmacs 21.x $B$K$O%*%W%F%#%^%$%:$5$l$?%"%K%a!<%7%g%s(B gif
-     $B$,@5>o$KI=<($5$l$J$+$C$?$j!$$"$k<o$N%$%s%?!<%l!<%9(B gif
-     $B$rI=<($7$h$&$H$9$k$H%/%i%C%7%e$7$F$7$^$&%P%0$,$"$j$^$9!%(B
-     emacs-w3m $B$O(B <code>gifsicle</code> $B$rMxMQ$7$F!$(B
-     gif $B%G!<%?$r(B XEmacs 21.x $B$G07$($k7A<0$KJQ49$7$^$9!%(B
-     </p>
- <dt>d) Mule 2.3 (based on Emacs 19.34)
- <dd><p>
-     APEL $B$H!V(B<strong>$B?7$7$$(B custom</strong>$B!W$H(B
-     <code>regexp-opt.el(c)</code> $B%b%8%e!<%k$,I,MW$G$9!%>\$7$/$O!$(B
-     $B<!$N(B <a href="#requirements_emacs_19.34">Emacs 19.34
-     $B$K$D$$$F$N@bL@(B</a>$B$r;2>H$7$F$/$@$5$$!%(B
-     </p>
-     <p>
-     BITMAP-MULE $B%Q%C%1!<%8$rMQ$$$F(B
-     WEB $B%Z!<%8$N%$%s%i%$%s2hA|$rGr9uI=<($5$;$k>l9g$K$O!$IUB0$N%Q%C%A(B
-     (<code><a href="http://cvs.namazu.org/emacs-w3m/patches/mule-2.3@19.34.patch?rev=1.1&content-type=text/plain">patches/mule-2.3@19.34.patch</a></code>)
-     $B$rE,MQ$7$F(B Mule $B$r:n$jD>$9$3$H$r6/$/$*4+$a$7$^$9!%$=$&$7$J$$$H!$(B
-     $B9b$$3NN($G(B Mule $B$,8G$^$C$F$7$^$$!$(B
-     Mule $B$r(B kill $B$;$6$k$rF@$J$/$J$k$G$7$g$&!%(B
-     </p>
- <dt><a name="requirements_emacs_19.34">e) Emacs 19.34 (without MULE)</a>
- <dd><p>
-     APEL $B$rA0$b$C$F%$%s%9%H!<%k$7$F$*$/I,MW$,$"$j$^$9!%(B
-     </p>
-     <p>
-     emacs-w3m $B$O(B
-     <nobr>$B!V(B<strong><a href="http://www.dina.kvl.dk/~abraham/custom/">$B?7$7$$(B
-     custom</a></strong>$B!W(B</nobr>$B%Q%C%1!<%8$rI,MW$H$7$^$9!%(B
-     Emacs 19.34 $B$^$?$O(B Mule 2.3 $B$r;H$C$F$$$k>l9g$O!$(B
-     emacs-w3m $B$r%$%s%9%H!<%k$9$kA0$K$=$l$r%$%s%9%H!<%k$7$J$1$l$P$J$j$^$;$s!%(B
-     $BFC$K(B Mule 2.3 $B$r;H$&>l9g$O!$(BAPEL $B$KImB0$7$F$$$k(B README.ja $B%U%!%$%k$b!$(B
-     $BI,$:D4$Y$F2<$5$$!%(B
-     </p>
-     <p>
-     $B$^$?!$(Bemacs-w3m $B$O(B <code>regexp-opt.el(c)</code>
-     $B%b%8%e!<%k$rI,MW$H$7$^$9$,!$(B
-     Emacs 19.34 $B$d(B Mule 2.3 $B$J$I$N8E$$(B Emacsen $B$K$O4^$^$l$F$$$^$;$s!%(B
-     $B$"$J$?$,;H$C$F$$$k(B Emacs $B$,3:Ev$9$k>l9g$O!$A0$b$C$F!$0J2<$N$h$&$K(B
-     <code>regexp-opt.el(c)</code> $B%b%8%e!<%k$r%$%s%9%H!<%k$9$kI,MW$,$"$j$^$9!%(B
-     </p>
-<blockquote>
-<pre>
-% cp attic/regexp-opt.el /usr/local/share/emacs/site-lisp
-% cd /usr/local/share/emacs/site-lisp
-% emacs -q -no-site-file -batch -f batch-byte-compile regexp-opt.el
-</pre>
-     <p>
-     ($B$b$7(B Mule $B$r$*;H$$$J$i$P!$$*$=$i$/%Q%9L>$d%3%^%s%IL>$H$7$F(B `emacs'
-     $B$NBe$o$j$K(B `mule' $B$H8@$&I,MW$,$"$k$G$7$g$&!%(B)
-     </p>
-</blockquote>
-</dl>
 
 <hr>
-<h2><a name="install">$B%$%s%9%H!<%k(B</a></h2>
-<p>
-$B:G=i$K!$(Bemacs-w3m $B$rMxMQ$9$k$?$a$K(B
-<a href="#requirements">$BI,MW$J>r7o(B</a>
-$B$,K~$?$5$l$F$$$k$+3NG'$7$F$/$@$5$$!%(B
-</p>
+<h2><a name="requirements">動作環境</a></h2>
+<ul>
+<li>Emacs のバージョン
+  <p>Emacs-w3m は安定版で最新の 2つのメジャーバージョンの Emacs
+    をサポートします。つまり、もし最新の安定版の Emacs が 26.1
+    であるならば、emacs-w3m は 26.1、25.3、25.2、および 25.1
+    をサポートするということです。</p>
 
+  <p>古いバージョンの Emacs でも、まだ現行版の emacs-w3m
+    を問題なく使うことができるかもしれません。しかし最新の emacs-w3m
+    は、最新の Emacs や Elisp 自体がいろいろな機能について行なう変更や、
+    非推奨にしたり削除することを追いかけているでしょうから、古いバージョンの
+    Emacs で走らせていると、序々に機能しなくなっていくでしょう。</p>
+
+  <p>コードを最新の状態に維持しようとしているので、リリース前の
+    Emacs や開発中のもののスナップショットでさえも非公式にサポートしています。
+    したがって最先端の Emacs を使っていて問題にぶつかったら、
+    そのバグをメーリングリストで知らせてください。</p>
+    
+<li>w3m
+  <p>Emacs-w3m には最新版の
+    <a href="https://salsa.debian.org/debian/w3m">w3m</a>
+    が必要です。</p>
+
+<li>APEL and FLIM
+  <p>もし emacs-w3m の配布に含まれている
+    <a href="info/goto.cgi?file=emacs-w3m&node=Shimbun+Library">
+      新聞ライブラリ</a>
+    を使いたいならば、Emacs パッケージ
+    <a href="https://github.com/wanderlust/apel">APEL</a> と
+    <a href="https://github.com/wanderlust/flim">FLIM</a>
+    をインストールしなければなりません。
+  </p>
+</ul>
+
+<hr>
+<h2><a name="installation">インストール</a></h2>
+もし (非公式な第三者の) MELPA からインストールするのであれば、
+インストールの手順は標準の MELPA のやり方に従ってください。
+この章の後半では、
+どのように手作業でソースからインストールするかを説明します。
+<p>
+Emacs-w3m をインストールする前に、あなたのシステムが
+<a href="#requirements">動作環境</a>
+に見合うかどうかを確認してください。
+</p>
 <dl>
- <dt><h3><a name="install_unix">UNIX $B7O$N4D6-$G%$%s%9%H!<%k$9$k>l9g(B</a></h3>
+ <dt><h3><a name="installation_unix">UNIX 系の環境でインストールする</a></h3>
  <dd><p>
-     $B:G=i$K!$(B<code>configure</code> $B%9%/%j%W%H$r<B9T$7$F$/$@$5$$!%(B
+     初めに <code>configure</code> スクリプトを実行してください。
      </p>
 <blockquote>
 <pre>
@@ -254,10 +209,10 @@ CVS head $B$N(B Emacs $B$r;H$&>l9g!$$=$l$O(B
 </pre>
 </blockquote>
      <p>
-     APEL $B$d(B FLIM $B$J$I$NI,MW$J%b%8%e!<%k$,!$(B
-     $BI8=`E*$G$O$J$$%G%#%l%/%H%j$K%$%s%9%H!<%k$5$l$F$$$k>l9g$K$O!$(B
-     <em>--with-addpath</em> $B%*%W%7%g%s$r;H$C$F!$(B
-     $B$=$l$i$N%G%#%l%/%H%j$r;XDj$9$kI,MW$,$"$j$^$9!%(B
+     APEL や FLIM などがデフォルトの <code>load-path</code>
+     以外の標準的ではないディレクトリにインストールされている場合は、
+     次のように <em>--with-addpath</em> オプションを使って、
+     それらを指定しなければなりません。
      </p>
 <blockquote>
 <pre>
@@ -265,8 +220,8 @@ CVS head $B$N(B Emacs $B$r;H$&>l9g!$$=$l$O(B
 </pre>
 </blockquote>
      <p>
-     $B<!$K!$(Bemacs-w3m $B$rE,Ev$J%G%#%l%/%H%j$K%$%s%9%H!<%k$9$k$?$a!$(B
-     $B<!$N%3%^%s%I$r<B9T$7$F$/$@$5$$!%(B
+     次に emacs-w3m を適当なディレクトリにインストールするため、
+     以下ののコマンドを実行してください。
      </p>
 <blockquote>
 <pre>
@@ -274,34 +229,13 @@ CVS head $B$N(B Emacs $B$r;H$&>l9g!$$=$l$O(B
 # make install
 </pre>
 </blockquote>
-     <p>
-     Emacs 21.1 $B0J>e!$$^$?$O(B XEmacs $B$r;H$C$F$$$k$J$i$P!$(B
-     $B%"%$%3%s2hA|$N%U%!%$%k$r%$%s%9%H!<%k$7$?J}$,NI$$$G$7$g$&!%(B
-     $B$=$l$r9T$J$&$K$O(B:
-     </p>
-<blockquote>
-<pre>
-# make install-icons
-</pre>
-</blockquote>
-     <p>
-     <em>install</em> $B$NBe$o$j$K(B <em>install-package</em> $B$r;H$&$H!$(B
-     XEmacs $B$N%Q%C%1!<%8$H$7$F%$%s%9%H!<%k$9$k$3$H$b$G$-$^$9!%(B
-     </p>
-<blockquote>
-<pre>
-% make
-# make install-package
-</pre>
-</blockquote>
-     <p>
-     $B$3$N>l9g(B <em>install-icons</em> $B$r<B9T$9$kI,MW$O$"$j$^$;$s!%(B
-     </p>
- <dt><h3><a name="install_nonunix">$BHs(B UNIX $B7O$N4D6-$G%$%s%9%H!<%k$9$k>l9g(B</a></h3>
+
+ <dt><h3><a name="installation_nonunix">非 UNIX 系の環境でインストールする</a></h3>
  <dd><p>
-     <code>configure</code> $B%9%/%j%W%H$r<B9T$G$-$J$$$+!$(B
-     <code>make</code> $B%3%^%s%I$,MxMQ$G$-$J$$>l9g$O!$(B
-     $B0J2<$N%3%^%s%I$r<B9T$7$F$/$@$5$$!%(B
+     あなたのシステムで <code>configure</code>
+     スクリプトを実行できないか、または
+     <code>make</code> コマンドが利用できない場合は、
+     以下のコマンドを実行してください。
      </p>
 <blockquote>
 <pre>
@@ -309,9 +243,11 @@ CVS head $B$N(B Emacs $B$r;H$&>l9g!$$=$l$O(B
 </pre>
 </blockquote>
      <p>
-     APEL $B$d(B FLIM $B$J$I$NI,MW$J%b%8%e!<%k$,!$(B
-     $BI8=`E*$G$O$J$$%G%#%l%/%H%j$K%$%s%9%H!<%k$5$l$F$$$k>l9g$K$O!$(B
-     $B0J2<$N$h$&$K$=$N%G%#%l%/%H%j$r;XDj$9$kI,MW$,$"$j$^$9!%(B
+     APEL や FLIM など (または他のどんなライブラリでも)
+     が通常の場所にインストールされていないと、
+     インストーラはそれらを無視してしまいます。そのような場合は
+     以下に示すように、
+     それらの場所をインストーラに教えてあげることが必要です。
      </p>
 <blockquote>
 <pre>
@@ -322,9 +258,10 @@ CVS head $B$N(B Emacs $B$r;H$&>l9g!$$=$l$O(B
 
 
 <hr>
-<h2><a name="config">$B@_Dj(B</a></h2>
+<h2><a name="configuration">設定</a></h2>
 <p>
-$B0J2<$N@_Dj$r(B <code>~/.emacs</code> $B%U%!%$%k$KDI2C$7$F$/$@$5$$!%(B
+Emacs-w3m にはたくさんの設定オプションがありますが、最低限度必要なのはこの行を
+<code>~/.emacs</code> ファイルに、ただ置いてこくことです。
 </p>
 <blockquote>
 <pre>
@@ -332,12 +269,12 @@ CVS head $B$N(B Emacs $B$r;H$&>l9g!$$=$l$O(B
 </pre>
 </blockquote>
 <p>
-$B8e$O!$(B<i>M-x w3m</i> $B$H$9$l$P5/F0$9$k$O$:$G$9!%(B
+これで単に <i>M-x w3m</i> とタイプすれば、emacs-w3m を使うことができます。
 </p>
 <p>
-$B$^$?!$(BWanderlust $B$J$I$N(B SEMI MUA $B>e$G!$%a%C%;!<%8Cf$N(B text/html $B%Q!<%H$r(B
-emacs-w3m $B$r;H$C$FI=<($5$;$k$K$O!$0J2<$N@_Dj$r(B
-<code>~/.emacs</code> $B%U%!%$%k$KDI2C$9$kI,MW$,$"$j$^$9!%(B
+Wanderlust のような SEMI MUA に text/html
+パートを扱うことができるようにするには、以下の行を
+<code>~/.emacs</code> ファイルに追加してください。
 </p>
 <blockquote>
 <pre>
@@ -345,94 +282,98 @@ emacs-w3m $B$r;H$C$FI=<($5$;$k$K$O!$0J2<$N@_Dj$r(B
 </pre>
 </blockquote>
 <p>
-$B>\$7$/$O!$(B<a href="info/emacs-w3m-ja.html">Info</a> $B$r;2>H$7$F$/$@$5$$!%(B
+詳しくは <a href="info/emacs-w3m-ja.html">Info</a> を参照するか、Emacs
+でカスタマイズの emacs-w3m グループを眺めてみてください。
 </p>
 
-
 <hr>
-<h2><a name="mailing_list">$B%a!<%j%s%0%j%9%H(B</a></h2>
+<h2><a name="mailing_list">メーリングリスト</a></h2>
 <p>
-emacs-w3m $B$K$D$$$F$N>pJs8r49$r9T$&$?$a$N%a!<%j%s%0%j%9%H$r3+@_$7$F$$$^$9!%(B
-$B;22C$r4uK>$5$l$kJ}$O!$(B
-<a href="http://www.namazu.org/disclaimer.html.ja">$BLH@U;v9`(B</a>$B$r3NG'$7$F$+$i!$(B
-<code>emacs-w3m-ctl&#64;namazu.org</code>
-$B08$K0J2<$N$h$&$JFbMF$N%a!<%k$rAw$C$F$/$@$5$$!%(B
+プロジェクトのメーリングリスト <code>emacs-w3m&#64;namazu.org</code>
+は日本語と英語のバイリンガルです。
+これは一般に公開されていて、過去のメールは
+<a href="ml/index.html">emacs-w3m メーリングリスト アーカイブ</a>
+で読むことができます。
+また、このメーリングリストと双方向で接続している gmane.emacs.w3m
+ニュースグループを講読することもできます (nntp で news.gmane.org
+に接続してください)。
+</p>
+<p>
+このリストに参加したい場合は
+<a href="http://www.namazu.org/disclaimer.html.ja">免責事項</a>
+を確認してから、本文に
 </p>
 <blockquote>
 <pre>
-subscribe ANATANO Namae
+subscribe Your Name
 </pre>
 </blockquote>
 <p>
-$B>e5-%5%s%W%kCf$N!V(BANATANO Namae$B!W$H$$$&ItJ,$O!$<B:]$NL>A0$KCV$-49$($F$/$@$5$$!%(B
-$B%a!<%j%s%0%j%9%HK\BN$N%"%I%l%9$O!$(B<code>emacs-w3m&#64;namazu.org</code> $B$G$9!%(B
+(あなたのメールアドレスではありません) と書いたメールを
+<code>emacs-w3m-ctl&#64;namazu.org</code> に送ってください
+(上記サンプル中の「Your Name」という部分は実際の名前に置き換えてください)。
+退会するには、本文に
 </p>
+<blockquote>
+<pre>
+# bye
+</pre>
+</blockquote>
 <p>
-$B$3$N%a!<%j%s%0%j%9%H$N2a5n5-;v$O(B <a
-href="ml/index.html">emacs-w3m $B%a!<%j%s%0%j%9%H(B $B%"!<%+%$%V(B</a>
-$B$G8x3+$5$l$F$$$^$9!%(B
-$B$^$?!$$3$N%a!<%j%s%0%j%9%H$HAPJ}8~$G@\B3$7$F$$$k(B gmane.emacs.w3m
-$B%K%e!<%9%0%k!<%W$r9VFI$9$k$3$H$b$G$-$^$9(B (nntp $B$G(B news.gmane.org
-$B$K@\B3$7$F$/$@$5$$(B)$B!%(B
+とだけ書いて <code>emacs-w3m-ctl&#64;namazu.org</code> に送ってください。
 </p>
-
 
 <hr>
-<h2><a name="link">$B%j%s%/=8(B</a></h2>
+<h2><a name="link">リンク集</a></h2>
 <ul>
- <li><a href="http://w3m.sourceforge.net/index.ja.html">w3m</a>
-     <ul>
-      <li><a href="http://www2u.biglobe.ne.jp/~hsaka/w3m/index-ja.html">w3m-m17n</a>
-      <li><a href="http://pub.ks-and-ks.ne.jp/prog/w3mmee/index.shtml.ja">w3mmee</a>
-     </ul>
- <li><a href="http://kanji.zinbun.kyoto-u.ac.jp/~tomo/lemi/dist/apel/">APEL</a>
- <li><a href="http://kanji.zinbun.kyoto-u.ac.jp/~tomo/lemi/dist/flim/flim-1.14/">FLIM</a>
- <li><a href="ftp://ftp.jpl.org/pub/elisp/bitmap/">BITMAP-MULE</a>
- <li><a href="http://www.lcdf.org/gifsicle/">gifsicle</a>
- <li><a href="http://www.dina.kvl.dk/~abraham/custom/">New custom</a>
+ <li><a href="http://w3m.sourceforge.net/index.en.html">w3m</a>
+ <li><a href="https://github.com/wanderlust/apel">APEL</a>
+ <li><a href="https://github.com/wanderlust/flim">FLIM</a>
+ <li><a href="https://github.com/vermiculus/sx.el">sx.el</a>,
+ StackExchange の Emacs インターフェース
+ <li><a href="https://github.com/vermiculus/magithub">magithub</a>,
+ Github の Emacs インターフェース
 </ul>
 
 
 <hr>
-<h2><a name="members">$B3+H/<T(B</a></h2>
-(50$B2;=g(B)
+<h2><a name="members">開発者</a></h2>
+(50音順)
 <ul>
- <li><a href="http://nijino.homelinux.net/">$BM-Bt(B&nbsp;$BL@9((B</a>
- <li>$BBg66(B&nbsp;$B>4(B
- <li>$BBg>l(B&nbsp;$B8w0lO:(B
- <li><a href="http://www.taiyo.co.jp/~gotoh/">$B8eF#(B&nbsp;$B=S0l(B</a>
- <li>$B@';^(B&nbsp;$BOB5A(B
- <li><a href="http://www.meadowy.org/~shirai/">$BGr0f(B&nbsp;$B=(9T(B</a>
- <li>$B?{86(B&nbsp;$BBY<y(B
- <li><a href="http://namazu.org/~satoru/">$B9bNS(B&nbsp;$BE/(B</a>
- <li><a href="http://namazu.org/~tsuchiya/">$BEZ20(B&nbsp;$B2mL-(B</a>
- <li><a href="http://www.gohome.org/teranisi/">$B;{@>(B&nbsp;$BM50l(B</a>
- <li>$BD9(B&nbsp;$B5#(B
- <li>$BCfEg(B&nbsp;$B44IW(B
- <li>$BCf;3(B&nbsp;$BMN0l(B
- <li>$B@>ED(B&nbsp;$B7=2p(B
- <li>$BLn5\(B&nbsp;$B8-(B
- <li><a href="http://miyoshi.meadowy.org/">$B;09%(B&nbsp;$B2mB'(B</a>
- <li><a href="http://www.yamaoka.cc/">$B;32,(B&nbsp;$B9nH~(B</a>
+ <li>有沢&nbsp;明宏
+ <li>大橋&nbsp;彰
+ <li>大場&nbsp;光一郎
+ <li>後藤&nbsp;俊一
+ <li>是枝&nbsp;和義
+ <li>白井&nbsp;秀行
+ <li>菅原&nbsp;泰樹
+ <li><a href="http://namazu.org/~satoru/">高林&nbsp;哲</a>
+ <li><a href="http://namazu.org/~tsuchiya/">土屋&nbsp;雅稔</a>
+ <li>寺西&nbsp;裕一
+ <li>長&nbsp;毅
+ <li>中島&nbsp;幹夫
+ <li>中山&nbsp;洋一
+ <li>西田&nbsp;圭介
+ <li>野宮&nbsp;賢
+ <li>バラック&nbsp;バウム&nbsp;(Boruch&nbsp;Baum)
+ <li>三好&nbsp;雅則
+ <li><a href="https://www.yamaoka.cc/">山岡&nbsp;克美</a>
 </ul>
 <p>
-$BB>$NB?$/$N$_$J$5$s$NB?Bg$J9W8%$K46<U$7$^$9!%(B
+他の多くのみなさんの多大な貢献に感謝します。
 </p>
 
 
 <hr>
-<h2><a name="report">$BO"Mm@h(B</a></h2>
+<h2><a name="contact">連絡先</a></h2>
 <p>
-$BIT6q9gJs9p$J$I$O(B <code>emacs-w3m&#64;namazu.org</code> $B08$K$*4j$$$7$^$9!%(B
-$B$3$N(B<a href="#mailing_list">$B%a!<%j%s%0%j%9%H(B</a>$B$O(B gmane.emacs.w3m
-$B%K%e!<%9%0%k!<%W$HAPJ}8~$G@\B3$5$l$F$$$F!$(B
-$BEPO?%f!<%6!<0J30$N?M$+$iAw?.$5$l$?%a!<%k$b<u$1IU$1$^$9!%(B
+私たちに連絡したいときは <code>emacs-w3m&#64;namazu.org</code>
+にメールを送ってください。この
+<a href="#mailing_list">メーリングリスト</a>
+は gmane.emacs.w3m
+ニュースグループと双方向で接続されていて、
+登録ユーザー以外の人から送信されたメールも受け付けます。
 </p>
-
 
 </body>
 </html>
-<!-- Local Variables: -->
-<!-- use-kuten-for-period: nil -->
-<!-- use-touten-for-comma: nil -->
-<!-- End: -->
