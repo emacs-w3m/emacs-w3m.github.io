@@ -1,0 +1,205 @@
+<!DOCTYPE html PUBLIC "-//W3C//DTD HTML 4.01 Transitional//EN" "http://www.w3.org/TR/html401/loose.dtd">
+<html>
+<!-- Copyright C 2000-2014 TSUCHIYA Masatoshi
+
+Permission is granted to copy, distribute and/or modify this document
+under the terms of the GNU General Public License, Version 2 or any
+later version published by the Free Software Foundation.
+
+This document is distributed in the hope that it will be useful, but
+WITHOUT ANY WARRANTY; without even the implied warranty of
+MERCHANTABILITY or FITNESS FOR A PARTICULAR PURPOSE.  See the GNU
+General Public License for more details.
+
+You should have received a copy of the GNU General Public License along
+with this document; see the file COPYING.  If not, write to the Free
+Software Foundation, Inc., 51 Franklin Street, Fifth Floor, Boston, MA
+02110-1301, USA.
+
+ -->
+<!-- Created on January 30, 2019 by texi2html 1.82
+texi2html was written by: 
+            Lionel Cons <Lionel.Cons@cern.ch> (original author)
+            Karl Berry  <karl@freefriends.org>
+            Olaf Bachmann <obachman@mathematik.uni-kl.de>
+            and many others.
+Maintained by: Many creative people.
+Send bugs and suggestions to <texi2html-bug@nongnu.org>
+-->
+<head>
+<title>Emacs-w3m &ndash; an Emacs interface to w3m &ndash;: 3.3 Going back through time and space</title>
+
+<meta name="description" content="Emacs-w3m &ndash; an Emacs interface to w3m &ndash;: 3.3 Going back through time and space">
+<meta name="keywords" content="Emacs-w3m &ndash; an Emacs interface to w3m &ndash;: 3.3 Going back through time and space">
+<meta name="resource-type" content="document">
+<meta name="distribution" content="global">
+<meta name="Generator" content="texi2html 1.82">
+<meta http-equiv="Content-Type" content="text/html; charset=utf-8">
+<style type="text/css">
+<!--
+a.summary-letter {text-decoration: none}
+blockquote.smallquotation {font-size: smaller}
+pre.display {font-family: serif}
+pre.format {font-family: serif}
+pre.menu-comment {font-family: serif}
+pre.menu-preformatted {font-family: serif}
+pre.smalldisplay {font-family: serif; font-size: smaller}
+pre.smallexample {font-size: smaller}
+pre.smallformat {font-family: serif; font-size: smaller}
+pre.smalllisp {font-size: smaller}
+span.roman {font-family:serif; font-weight:normal;}
+span.sansserif {font-family:sans-serif; font-weight:normal;}
+ul.toc {list-style: none}
+-->
+</style>
+
+
+</head>
+
+<body lang="en" bgcolor="#FFFFFF" text="#000000" link="#0000FF" vlink="#800080" alink="#FF0000">
+
+<a name="Tracing-History"></a>
+<table cellpadding="1" cellspacing="1" border="0">
+<tr><td valign="middle" align="left">[<a href="emacs-w3m_11.html#Inline-Images" title="Previous section in reading order"> &lt; </a>]</td>
+<td valign="middle" align="left">[<a href="emacs-w3m_13.html#Managing-Bookmarks" title="Next section in reading order"> &gt; </a>]</td>
+<td valign="middle" align="left"> &nbsp; </td>
+<td valign="middle" align="left">[<a href="emacs-w3m_9.html#Basic-Usage" title="Beginning of this chapter or previous chapter"> &lt;&lt; </a>]</td>
+<td valign="middle" align="left">[<a href="emacs-w3m_9.html#Basic-Usage" title="Up section"> Up </a>]</td>
+<td valign="middle" align="left">[<a href="emacs-w3m_19.html#Pretty-Good-Features" title="Next chapter"> &gt;&gt; </a>]</td>
+<td valign="middle" align="left"> &nbsp; </td>
+<td valign="middle" align="left"> &nbsp; </td>
+<td valign="middle" align="left"> &nbsp; </td>
+<td valign="middle" align="left"> &nbsp; </td>
+<td valign="middle" align="left">[<a href="emacs-w3m.html#Top" title="Cover (top) of document">Top</a>]</td>
+<td valign="middle" align="left">[<a href="emacs-w3m_toc.html#SEC_Contents" title="Table of contents">Contents</a>]</td>
+<td valign="middle" align="left">[<a href="emacs-w3m_68.html#Index" title="Index">Index</a>]</td>
+<td valign="middle" align="left">[<a href="emacs-w3m_abt.html#SEC_About" title="About (help)"> ? </a>]</td>
+</tr></table>
+<a name="Going-back-through-time-and-space"></a>
+<h2 class="section">3.3 Going back through time and space</h2>
+<a name="index-Browsing-history"></a>
+<a name="index-Arrived-URLs"></a>
+
+<p>Emacs-w3m has several ways to present you with a list of all the pages
+you visited before.  The first way is simply called the &ldquo;emacs-w3m
+history&rdquo;, it is a list of the pages you visited in this session,
+presented hierarchically, that is: when you follow a link, the page
+you&rsquo;re leaving becomes the &ldquo;parent&rdquo; of the page you&rsquo;re going to.  It
+is a very nice to keep track of the pages you visited, and remember
+from where you came if the history gets too long.
+</p>
+<p>Here is an example of this feature in action, after a short visit to the
+GNU Project&rsquo;s homepage:
+</p>
+<table><tr><td>&nbsp;</td><td><pre class="example">GNU's Not Unix! - the GNU Project and the Free Software Foundation (FSF)
+  Philosophy of the GNU Project - Free Software Foundation (FSF)
+    GNU Emacs - GNU Project - Free Software Foundation (FSF)
+     Order from the Free Software Foundation (FSF)
+  Links to Other Free Software Sites - GNU Project - Free Software Fo...
+    EFF: Homepage
+</pre></td></tr></table>
+
+<p>(In fact, this example is slightly edited to fit in 72 columns; the
+URLs won&rsquo;t be cut in the actual emacs-w3m buffer.)
+</p>
+<p>You can get this kind of history using the <kbd>s</kbd> key (the <kbd>o</kbd> key
+for the &lsquo;<samp>Info-like</samp>&rsquo; keymap) in any emacs-w3m buffer.
+</p>
+<p>Please note that this history is buffer-local, i.e. specific to an
+emacs-w3m buffer.  But emacs-w3m has a unique feature: when you visit a
+new page, the history is copied over to the new buffer, so that you can
+still access the pages you visited so far.  This is different from the
+way Mozilla and others work; in these browsers the history always starts
+from scratch in new buffers.
+</p>
+<p>Emacs-w3m can do more than just record which pages you visited, it can
+also save specific locations in those pages, in case you want to go back
+to the exact same place in the page.  Press <kbd>C-c C-@</kbd>, and the
+location of the cursor will be stored in history.  In order to go back
+to that particular location within the page, press <kbd>C-c C-v</kbd> in
+the emacs-w3m buffer visiting the page.
+</p>
+<dl compact="compact">
+<dt> <kbd>s</kbd> (Lynx-like keymap)</dt>
+<dt> <kbd>C-u s</kbd> (Lynx-like keymap)</dt>
+<dt> <kbd>o</kbd> (Info-like keymap)</dt>
+<dt> <kbd>C-u o</kbd> (Info-like keymap)</dt>
+<dd><a name="index-s-_0028Lynx_002dlike-keymap_0029"></a>
+<a name="index-C_002du-s-_0028Lynx_002dlike-keymap_0029"></a>
+<a name="index-o-_0028Info_002dlike-keymap_0029"></a>
+<a name="index-C_002du-o-_0028Info_002dlike-keymap_0029"></a>
+<a name="index-w3m_002dhistory"></a>
+<p>Display the list of URLs visited in this session.  If called with a
+prefix argument (see below), show the list of arrived URLs instead
+(<code>w3m-history</code>).
+</p>
+</dd>
+<dt> <kbd>C-c C-@</kbd></dt>
+<dt> <kbd>C-c C-&lt;SPC&gt;</kbd></dt>
+<dd><a name="index-C_002dc-C_002d_0040"></a>
+<a name="index-C_002dc-C_002dSPC"></a>
+<a name="index-w3m_002dhistory_002dstore_002dposition"></a>
+<p>Record the position of the cursor in the page in history.
+</p>
+</dd>
+<dt> <kbd>C-c C-v</kbd></dt>
+<dd><a name="index-C_002dc-C_002dv"></a>
+<a name="index-w3m_002dhistory_002drestore_002dposition"></a>
+<p>Move to the position which has been marked with <kbd>C-c C-@</kbd>
+(<code>w3m-history-store-position</code>) in the currently displayed page.
+</p></dd>
+</dl>
+
+<p>The other way to have information about past pages is the &ldquo;arrived
+URLs&rdquo; list: it is a list of the last 500 URLs you have visited in
+emacs-w3m.  The list is ordered by date, the most recent coming first,
+and for each page the time of visit is displayed.  Here&rsquo;s an example
+(edited):
+</p>
+<table><tr><td>&nbsp;</td><td><pre class="example">Order from the Free Software Foundation (FSF)             22:53:25
+GNU Emacs - GNU Project - Free Software Foundation (FS    22:53:05
+Philosophy of the GNU Project - Free Software Foundati... 22:52:46
+Philosophy of the GNU Project - Free Software Foundati... 22:52:39
+EFF: Homepage                                             22:52:18
+Links to Other Free Software Sites - GNU Project - Fre... 22:52:07
+Links to Other Free Software Sites - GNU Project - Fre... 22:52:07
+GNU's Not Unix! - the GNU Project and the Free Softwar... 22:51:32
+Bookmarks                                                 22:51:02
+The DICT Development Group- upwards                       2003-01-08
+the monkey puzzle: new debian packages as an rss feed     2003-01-08
+new-debian-packages.rss                                   2003-01-07
+it's a miracle                                            2003-01-06
+</pre></td></tr></table>
+
+<p>You can get this history by passing a prefix argument to the previous
+command, i.e. using <kbd>C-u s</kbd> (<kbd>C-u o</kbd> for the
+&lsquo;<samp>Info-like</samp>&rsquo; keymap).  The number of URLs showed in this page is
+customizable, see the <code>w3m-keep-arrived-urls</code> variable.  It cannot
+exceed 500 by default.  See section <a href="emacs-w3m_30.html#Customizable-Variables">Customizable variables</a>.
+</p>
+<p>Of course, in all cases all the lines showed in the examples are links,
+you can go to any of the pages you visited previously just like if you
+were visiting a regular page, by following the link.
+</p>
+<p>Also see the <a href="emacs-w3m_10.html#Moving-over-pages">Moving from page to page</a> section, it explains how to move in
+the history with simple keybindings, i.e. the &ldquo;Back&rdquo; and &ldquo;Next&rdquo;
+features.
+</p>
+<hr size="6">
+<table cellpadding="1" cellspacing="1" border="0">
+<tr><td valign="middle" align="left">[<a href="emacs-w3m_11.html#Inline-Images" title="Previous section in reading order"> &lt; </a>]</td>
+<td valign="middle" align="left">[<a href="emacs-w3m_13.html#Managing-Bookmarks" title="Next section in reading order"> &gt; </a>]</td>
+<td valign="middle" align="left"> &nbsp; </td>
+<td valign="middle" align="left">[<a href="emacs-w3m_9.html#Basic-Usage" title="Beginning of this chapter or previous chapter"> &lt;&lt; </a>]</td>
+<td valign="middle" align="left">[<a href="emacs-w3m_9.html#Basic-Usage" title="Up section"> Up </a>]</td>
+<td valign="middle" align="left">[<a href="emacs-w3m_19.html#Pretty-Good-Features" title="Next chapter"> &gt;&gt; </a>]</td>
+</tr></table>
+<p>
+ <font size="-1">
+  This document was generated by <em>TSUCHIYA Masatoshi</em> on <em>January 30, 2019</em> using <a href="http://www.nongnu.org/texi2html/"><em>texi2html 1.82</em></a>.
+ </font>
+ <br>
+
+</p>
+</body>
+</html>

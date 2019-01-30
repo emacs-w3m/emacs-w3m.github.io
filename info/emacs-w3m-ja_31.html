@@ -1,0 +1,895 @@
+<!DOCTYPE html PUBLIC "-//W3C//DTD HTML 4.01 Transitional//EN" "http://www.w3.org/TR/html401/loose.dtd">
+<html>
+<!-- Copyright C 2000-2014 TSUCHIYA Masatoshi
+
+Permission is granted to copy, distribute and/or modify this document
+under the terms of the GNU General Public License, Version 2 or any
+later version published by the Free Software Foundation.
+
+この文書を、フリーソフトウェア財団によって発行された GNU 一般公衆利用許
+諾契約書第 2 版またはそれ以降の版のうちどれかの定める条件の下で複製、配
+布、あるいは変更することを許可します。
+
+This document is distributed in the hope that it will be useful, but
+WITHOUT ANY WARRANTY; without even the implied warranty of
+MERCHANTABILITY or FITNESS FOR A PARTICULAR PURPOSE.  See the GNU
+General Public License for more details.
+
+この文書は有用であることを願って頒布されますが、全くの無保証 です。
+商業可能性 の保証や 特定の目的への適合性 は、言外に示され
+たものも含め全く存在しません。詳しくは GNU 一般公衆利用許諾契約書をご覧
+ください。
+
+You should have received a copy of the GNU General Public License along
+with this document; see the file COPYING.  If not, write to the Free
+Software Foundation, Inc., 51 Franklin Street, Fifth Floor, Boston, MA
+02110-1301, USA.
+
+あなたはこの文書と共に、GNU 一般公衆利用許諾契約書の複製物を一部受け取っ
+たはずです。COPYING ファイルを参照してください。もし受け取っていなければ、
+フリーソフトウェア財団まで請求してください (宛先は the Free Software
+Foundation, Inc., 59 Temple Place, Suite 330, Boston, MA 02111-1307 USA)。
+
+ -->
+<!-- Created on 2019å¹´1ææ30æ¥ by texi2html 1.82
+texi2html was written by: 
+            Lionel Cons <Lionel.Cons@cern.ch> (original author)
+            Karl Berry  <karl@freefriends.org>
+            Olaf Bachmann <obachman@mathematik.uni-kl.de>
+            and many others.
+Maintained by: Many creative people.
+Send bugs and suggestions to <texi2html-bug@nongnu.org>
+-->
+<head>
+<title>Emacs-w3m &ndash; an Emacs interface to w3m &ndash;: 5.1 一般的な変数</title>
+
+<meta name="description" content="Emacs-w3m &ndash; an Emacs interface to w3m &ndash;: 5.1 一般的な変数">
+<meta name="keywords" content="Emacs-w3m &ndash; an Emacs interface to w3m &ndash;: 5.1 一般的な変数">
+<meta name="resource-type" content="document">
+<meta name="distribution" content="global">
+<meta name="Generator" content="texi2html 1.82">
+<meta http-equiv="Content-Type" content="text/html; charset=utf-8">
+<style type="text/css">
+<!--
+a.summary-letter {text-decoration: none}
+blockquote.smallquotation {font-size: smaller}
+pre.display {font-family: serif}
+pre.format {font-family: serif}
+pre.menu-comment {font-family: serif}
+pre.menu-preformatted {font-family: serif}
+pre.smalldisplay {font-family: serif; font-size: smaller}
+pre.smallexample {font-size: smaller}
+pre.smallformat {font-family: serif; font-size: smaller}
+pre.smalllisp {font-size: smaller}
+span.roman {font-family:serif; font-weight:normal;}
+span.sansserif {font-family:sans-serif; font-weight:normal;}
+ul.toc {list-style: none}
+-->
+</style>
+
+
+</head>
+
+<body lang="ja" bgcolor="#FFFFFF" text="#000000" link="#0000FF" vlink="#800080" alink="#FF0000">
+
+<a name="General-Variables"></a>
+<table cellpadding="1" cellspacing="1" border="0">
+<tr><td valign="middle" align="left">[<a href="emacs-w3m-ja_30.html#Customizable-Variables" title="Previous section in reading order"> &lt; </a>]</td>
+<td valign="middle" align="left">[<a href="emacs-w3m-ja_32.html#Image-Variables" title="Next section in reading order"> &gt; </a>]</td>
+<td valign="middle" align="left"> &nbsp; </td>
+<td valign="middle" align="left">[<a href="emacs-w3m-ja_30.html#Customizable-Variables" title="Beginning of this chapter or previous chapter"> &lt;&lt; </a>]</td>
+<td valign="middle" align="left">[<a href="emacs-w3m-ja_30.html#Customizable-Variables" title="Up section">ä¸</a>]</td>
+<td valign="middle" align="left">[<a href="emacs-w3m-ja_46.html#Hooking-into-MUAs" title="Next chapter"> &gt;&gt; </a>]</td>
+<td valign="middle" align="left"> &nbsp; </td>
+<td valign="middle" align="left"> &nbsp; </td>
+<td valign="middle" align="left"> &nbsp; </td>
+<td valign="middle" align="left"> &nbsp; </td>
+<td valign="middle" align="left">[<a href="emacs-w3m-ja.html#Top" title="Cover (top) of document">åé ­</a>]</td>
+<td valign="middle" align="left">[<a href="emacs-w3m-ja_toc.html#SEC_Contents" title="Table of contents">ç®æ¬¡</a>]</td>
+<td valign="middle" align="left">[<a href="emacs-w3m-ja_68.html#Index" title="è¦åºã">è¦åºã</a>]</td>
+<td valign="middle" align="left">[<a href="emacs-w3m-ja_abt.html#SEC_About" title="About (help)"> ? </a>]</td>
+</tr></table>
+<a name="Yi-Ban-De-naBian-Shu-"></a>
+<h2 class="section">5.1 一般的な変数</h2>
+<a name="index-Yi-Ban-De-naBian-Shu-"></a>
+
+<dl compact="compact">
+<dt> <code>w3m-accept-languages</code></dt>
+<dd><a name="index-w3m_002daccept_002dlanguages"></a>
+<p>受け入れ可能な言語を優先度により降順に並べたもリスト。デフォルト値
+は &lsquo;<samp>w3m</samp>&rsquo; の設定ファイル (通常
+は &lsquo;<tt>~/.w3m/config</tt>&rsquo;) の &lsquo;<samp>accept_language</samp>&rsquo; のエントリによって設
+定される。
+</p>
+</dd>
+<dt> <code>w3m-add-referer</code></dt>
+<dd><a name="index-w3m_002dadd_002dreferer"></a>
+
+<p>リファラの送りかた。5つの選択子がある。
+</p>
+<ol>
+<li>
+<code>nil</code>: 決してリファラを送らない。
+
+</li><li>
+<code>t</code>: 常にリファラを送る。
+
+</li><li>
+<code>lambda</code>: 移動元のページと移動先のページの両方が同じサーバにより提
+供されている時のみリファラを送る。
+
+</li><li>
+二つの正規表現のコンス・セル: 移動元のページの URL が 1つめの正規表現に
+マッチし、かつ、2つめの正規表現にマッチしない場合のみリファラを送る。
+<code>nil</code> が指定されるとすべての URL にマッチする。
+
+</li><li>
+関数: URL とリファラの 2つを引数にとる関数が non-<code>nil</code> を返せばリファ
+ラを送る。
+</li></ol>
+
+<p>ブラウジング履歴が洩れるのを心配するのなら、&lsquo;nil&rsquo; か &lsquo;lambda&rsquo; に設定して
+ください。あなたのコンピュータが秘密のネットワークに属しているのなら、以
+下のように 2つの正規表現を設定して、個人情報が洩れるのを防ぐといいでしょ
+う:
+</p>
+<table><tr><td>&nbsp;</td><td><pre class="lisp">(setq w3m-add-referer
+      '(&quot;\\`http:\&quot;
+        . &quot;\\`http://\\([^./]+\\.\\)*example\\.net/&quot;))
+</pre></td></tr></table>
+
+</dd>
+<dt> <code>w3m-add-user-agent</code></dt>
+<dd><a name="index-w3m_002dadd_002duser_002dagent"></a>
+<p>non-<code>nil</code> ならば、リクエストヘッダに User-Agent を含めます。
+<code>w3m-user-agent</code> の値が User-Agent として使われます。
+</p>
+</dd>
+<dt> <code>w3m-arrived-file</code></dt>
+<dd><a name="index-w3m_002darrived_002dfile"></a>
+<p>閲覧した <acronym>URL</acronym> のデータベースを保存するファイル名。
+</p>
+</dd>
+<dt> <code>w3m-auto-show</code></dt>
+<dd><a name="index-w3m_002dauto_002dshow"></a>
+<p>non-<code>nil</code> ならばウィンドウの水平スクロールを有効にする。point がウィ
+ンドウの両端の外に出た場合に自動的に水平スクロールするが、
+<code>truncate-lines</code> が <code>nil</code> ならば何も起こらない。
+</p>
+<p>この機能は特定の emacs-w3m のコードのみで使われる。すなわち、通
+常 <code>auto-hscroll-mode</code>、<code>automatic-hscrolling</code>、
+<code>auto-show-mode</code> および <code>hscroll-mode</code> はすべて emacs-w3m のバッ
+ファでは無効になるだろう。
+</p>
+</dd>
+<dt> <code>w3m-charset-coding-system-alist</code></dt>
+<dd><a name="index-w3m_002dcharset_002dcoding_002dsystem_002dalist"></a>
+<p><acronym>MIME</acronym> charset とコーディングシステムの連想配列。charset とコー
+ディングシステムの両方がシンボルでなければならない。
+</p>
+</dd>
+<dt> <code>w3m-coding-system</code></dt>
+<dd><a name="index-w3m_002dcoding_002dsystem"></a>
+<p>&lsquo;<samp>w3m</samp>&rsquo; コマンドと通信するために使うコーディングシステムのデフォルト
+値。
+</p>
+</dd>
+<dt> <code>w3m-coding-system-priority-list</code></dt>
+<dd><a name="index-w3m_002dcoding_002dsystem_002dpriority_002dlist"></a>
+<p>emacs-w3m で使われるコーディングシステムを優先度により並べたリスト。
+</p>
+</dd>
+<dt> <code>w3m-command</code></dt>
+<dd><a name="index-w3m_002dcommand"></a>
+<p>&lsquo;<samp>w3m</samp>&rsquo; コマンドの実行ファイル名。この値が nil ならば最初
+に emacs-w3m が存在する &lsquo;<samp>w3m</samp>&rsquo;、&lsquo;<samp>w3mmee</samp>&rsquo; また
+は &lsquo;<samp>w3m-m17n</samp>&rsquo; を (この順番に) <code>exec-path</code> ディレクトリから探索
+してくれるので、通常はこの値を設定する必要はない。
+</p>
+<p>他の &lsquo;<samp>w3m</samp>&rsquo; コマンドを使いたければ、.emacs でこの値を明示的に設定す
+るか、カスタマイズして保存してください。この場合、Emacs と emacs-w3m を
+再起動しなければいけません。今のところ、&lsquo;<tt>w3m.elc</tt>&rsquo; を読みこんだ後
+に &lsquo;<samp>w3m</samp>&rsquo; コマンドの変更を安全にすべての emacs-w3m プログラムに行な
+うことはできないからです。
+</p>
+</dd>
+<dt> <code>w3m-command-arguments</code></dt>
+<dd><p>&lsquo;<samp>w3m</samp>&rsquo; コマンドの引数のデフォルト値。
+<code>w3m-command-arguments-alist</code> も参照するとよい。
+</p>
+</dd>
+<dt> <code>w3m-command-arguments-alist</code></dt>
+<dd><a name="index-w3m_002dcommand_002darguments_002dalist"></a>
+<p>URL にマッチする正規表現と &lsquo;<samp>w3m</samp>&rsquo; に追加で渡される引数との連想配列。
+この変数は特定のホストへの接続にプロキシを用いるなどのことに使われます。
+最初にマッチした要素が適用されます。以下にどのようにこの変数を設定するか
+の例を示します。
+</p>
+<table><tr><td>&nbsp;</td><td><pre class="lisp">(setq w3m-command-arguments-alist
+      '(;; Don't use the proxy server to visit local web pages.
+        (&quot;^http://\\([^/]*\\.\\)*your-company\\.com\\(/\\|$\\)&quot;
+         &quot;-no-proxy&quot;)
+        ;; Use the proxy server to visit any foreign urls.
+        (&quot;&quot;
+         &quot;-o&quot; &quot;http_proxy=http://proxy.your-company.com:8080/&quot;)))
+</pre></td></tr></table>
+
+<p>この 1つめの要素は、スキームが &lsquo;<samp>http</samp>&rsquo; であり、ホスト名
+が &lsquo;<samp>your-company.com</samp>&rsquo; であるか、&lsquo;<samp>.your-company.com</samp>&rsquo; で終わる
+すべての URL にマッチします。これらのホストに接続するのにプロキシは用いら
+れません。あなたが正規表現の初心者であるのなら、
+<code>w3m-no-proxy-domains</code> を代わりに使ってください。
+</p>
+</dd>
+<dt> <code>w3m-command-environment</code></dt>
+<dd><a name="index-w3m_002dcommand_002denvironment"></a>
+<p>サブプロセスが継承する環境変数の連想配列。
+</p>
+</dd>
+<dt> <code>w3m-confirm-leaving-secure-page</code></dt>
+<dd><a name="index-w3m_002dconfirm_002dleaving_002dsecure_002dpage"></a>
+<p>non-<code>nil</code> ならば、セキュアなページを去る時に emacs-w3m は確認を求め
+ます。この変数には non-nil の値を <em>強く</em> おすすめします。このオプショ
+ンを切る前に <em>必ず</em> どういうことをしたいのかを完全に理解してくださ
+い。デフォルトでは、<code>t</code> になっています。
+</p>
+</dd>
+<dt> <code>w3m-content-type-alist</code></dt>
+<dd><a name="index-w3m_002dcontent_002dtype_002dalist"></a>
+<p>コンテントタイプと正規表現と表示するためのコマンドとフィルタとの連想配列。
+それぞれの要素は、以下のデータが構成するリストである。
+</p>
+<ol>
+<li>
+コンテントタイプ。
+
+</li><li>
+URL またはファイル名にマッチする正規表現。
+
+</li><li>
+ファイルを閲覧するための方法。以下の三つの種類が使われるでしょう。
+
+<ol>
+<li>
+閲覧する URL を引数にとる lisp の関数。
+</li><li>
+(&quot;<var>command</var>&quot; [<var>arg</var>&hellip;]) &ndash; &quot;<var>command</var>&quot; は外部コマンドで
+あり、<var>arg</var> は (あるならば) コマンドに渡す引数である。
+<code>file</code> と <code>url</code> のシンボルを <var>arg</var> として指定すると、それ
+ぞれ閲覧するファイルの内容を含んだテンポラリファイルのファイル名と、閲覧
+する URL とに置換えられる。
+</li><li>
+<code>nil</code> ならば、URL をローカルのファイルにダウンロードします。
+</li></ol>
+
+</li><li>
+<code>1. コンテントタイプ</code> で指定されたものを上書きするコンテントタイプ。
+以下の値も有効です。
+
+<ol>
+<li>
+<var>url</var> と <var>content-type</var> と <var>charset</var> の 3つの引数をとり、コ
+ンテントタイプを返す Lisp 関数。
+</li><li>
+コンテントタイプを示す文字列。
+</li><li>
+<code>nil</code> ならば、コンテントタイプを上書きしない。
+</li></ol>
+</li></ol>
+
+</dd>
+<dt> <code>w3m-correct-charset-alist</code></dt>
+<dd><a name="index-w3m_002dcorrect_002dcharset_002dalist"></a>
+<p>特殊な <acronym>MIME</acronym> 文字セットと標準の <acronym>MIME</acronym> 文字セットとの連
+想配列。
+</p>
+</dd>
+<dt> <code>w3m-db-history-display-size</code></dt>
+<dd><a name="index-w3m_002ddb_002dhistory_002ddisplay_002dsize"></a>
+<p>about://arived-db/ で一度に表示する <acronym>URL</acronym> の最大数。
+</p>
+</dd>
+<dt> <code>w3m-decoder-alist</code></dt>
+<dd><a name="index-w3m_002ddecoder_002dalist"></a>
+<p>エンコードの種類とデコーダと引数との連想配列。
+</p>
+</dd>
+<dt> <code>w3m-default-coding-system</code></dt>
+<dd><p>URL 文字列と POST されるデータとをエンコードするのにデフォルトで使われる
+コーディングシステム。
+</p>
+</dd>
+<dt> <code>w3m-default-content-type</code></dt>
+<dd><a name="index-w3m_002ddefault_002dcontent_002dtype"></a>
+<p>ローカルのファイルを参照する時にデフォルトで使われるコンテントタイプ。
+</p>
+</dd>
+<dt> <code>w3m-default-directory</code></dt>
+<dd><a name="index-w3m_002ddefault_002ddirectory"></a>
+<p>emacs-w3m のバッファにおいて、現在のディレクトリとして使われるディレクト
+リ。存在するディレクトリを示す文字列、その値が存在するディレクトリを示す
+シンボル、url を引数にとりディレクトリを返す関数、もしく
+は <code>nil</code> (デフォルト値)が有効な値となります。指定されたディレクトリ
+が存在しない場合や、<code>nil</code> が指定された場合
+は <code>w3m-profile-directory</code> の値が使われます。
+</p>
+<p>例外: ローカルのファイルや、リモートのファイルを ftp でアクセスしている
+場合はそのファイルのディレクトリが現在のディレクトリとして使われます。
+</p>
+</dd>
+<dt> <code>w3m-default-save-directory</code></dt>
+<dd><a name="index-w3m_002ddefault_002dsave_002ddirectory"></a>
+<p>ダウンロードしたファイルがデフォルトで保存されるディレクトリ。
+</p>
+</dd>
+<dt> <code>w3m-delete-duplicated-empty-lines</code></dt>
+<dd><a name="index-w3m_002ddelete_002dduplicated_002dempty_002dlines"></a>
+<p>non-<code>nil</code> ならば二行以上の連続した空白行を一行にまとめる。
+</p>
+</dd>
+<dt> <code>w3m-dirlist-cgi-program</code></dt>
+<dd><a name="index-w3m_002ddirlist_002dcgi_002dprogram"></a>
+<p>ローカルのディレクトリ列挙するのに使われる <acronym>CGI</acronym> プログラムの名
+前。<code>nil</code> ならば、&lsquo;<samp>w3m</samp>&rsquo; コマンドの dirlist.cgi のモジュールが
+使われる。
+</p>
+</dd>
+<dt> <code>w3m-doc-view-content-types</code></dt>
+<dd><a name="index-w3m_002ddoc_002dview_002dcontent_002dtypes"></a>
+<p>ファイルを閲覧するのに <code>doc-view-mode</code> を使うコンテントタイプのリス
+ト。この変数は <code>w3m-content-type-alist</code> の値を上書きする。
+</p>
+</dd>
+<dt> <code>w3m-edit-function</code></dt>
+<dd><a name="index-w3m_002dedit_002dfunction"></a>
+<p>ローカルのファイルを編集するための関数。<code>w3m-edit-current-url</code> また
+は <code>w3m-edit-this-url</code> のコマンドが呼ばれた時に使われます。
+</p>
+</dd>
+<dt> <code>w3m-edit-function-alist</code></dt>
+<dd><a name="index-w3m_002dedit_002dfunction_002dalist"></a>
+<p>ページを編集するために使う関数の連想配列。このオプションは、
+<code>w3m-edit-current-url</code> や <code>w3m-edit-this-url</code> のコマンドが呼ば
+れた時にどの関数でそのページを編集するかを決めるのに使われます。この連想
+配列から適当な関数が見つからなければ、<code>w3m-edit-function</code> が使われ
+ます。
+</p>
+</dd>
+<dt> <code>w3m-enable-feeling-searchy</code></dt>
+<dd><a name="index-w3m_002denable_002dfeeling_002dsearchy"></a>
+<p>non-<code>nil</code> ならば、url としてどんな単語も入力することができるように
+なります。その場合、emacs-w3m はその言葉を web 検索します。デフォルトで
+は <code>t</code> です。
+</p>
+</dd>
+<dt> <code>w3m-encoding-type-alist</code></dt>
+<dd><a name="index-w3m_002dencoding_002dtype_002dalist"></a>
+<p>ファイルの拡張子とファイルのエンコードの種類との連想配列。
+</p>
+</dd>
+<dt> <code>w3m-file-coding-system</code></dt>
+<dd><a name="index-w3m_002dfile_002dcoding_002dsystem"></a>
+<p>設定ファイルを書くために使われるコーディングシステム。この変数
+は <code>w3m-save-list</code> 関数で使われます。
+</p>
+</dd>
+<dt> <code>w3m-file-name-coding-system</code></dt>
+<dd><a name="index-w3m_002dfile_002dname_002dcoding_002dsystem"></a>
+<p>emacs-w3m がファイルにアクセスする時に、パス名を変換する先のコーディング
+システム。
+</p>
+</dd>
+<dt> <code>w3m-fill-column</code></dt>
+<dd><a name="index-w3m_002dfill_002dcolumn"></a>
+<p>emacs-w3m のバッファで <code>fill-column</code> として使われる数字。正の値なら
+ば、ページがその桁数で表示される。0 か負の値ならば、ウィンドウの幅からそ
+の数字をがページの最大幅として使われる。XEmacs ではこの設定が常に働くわ
+けではないということに注意してください。
+</p>
+</dd>
+<dt> <code>w3m-follow-redirection</code></dt>
+<dd><a name="index-w3m_002dfollow_002dredirection"></a>
+<p>emacs-w3m がリダイレクトを尊重しリダイレクト先を追いかける最大数。
+<code>nil</code> ならば、&lsquo;<samp>w3m</samp>&rsquo; コマンドがリダイレクトを処理します。クッキー
+がリダイレクトされるページ間で共有されることがありうるので、クッキーを許
+可するならば (つまり、<code>w3m-use-cookies</code> を non-<code>nil</code> にしてい
+るならば)、この変数を <code>nil</code> にしないでください。
+</p>
+</dd>
+<dt> <code>w3m-home-page</code></dt>
+<dd><p>emacs-w3m が起動した時に開く URL の文字列を指定します。某会社の略称になっ
+ちゃいますから HP とは言わないでくださいね。
+</p>
+</dd>
+<dt> <code>w3m-horizontal-scroll-columns</code></dt>
+<dd><p>ウィンドウを水平スクロールする時に、スクロールする文字数。
+</p>
+</dd>
+<dt> <code>w3m-horizontal-scroll-division</code></dt>
+<dd><a name="index-w3m_002dhorizontal_002dscroll_002ddivision"></a>
+<p>カーソル位置がきちんと表示されるようにするのに使われる数字。emacs-w3m の
+バッファでアンカーやフォームを移動していてカーソルがウィンドウの外に出て
+しまってもカーソルが見つからなくなることは決してありません。
+</p>
+<p>この変数の値を N とします。カーソルがウィンドウの左に出てしまう
+と emacs-w3m はウィンドウをスクロールし、カーソルがウィンドウの左からウィ
+ンドウの幅の 1/N の所に置かれるようにします。同様にカーソルがウィンドウ
+の右から出てしまうと、emacs-w3m はウィンドウをスクロールし、カーソルがウィ
+ンドウの右からウィンドウの幅の 1/N の所に置かれるようにします。
+</p>
+<p><code>w3m-auto-show</code> が <code>nil</code> ならばこの機能は動きません。値
+は 1 よりも大きい整数でなければいけません。
+</p>
+</dd>
+<dt> <code>w3m-horizontal-shift-columns</code></dt>
+<dd><p>ウィンドウを shifting する時に、スクロールする文字数。&lsquo;<samp>shifting</samp>&rsquo; と
+いうのは、スムーズなスクロールを意味します。
+</p>
+</dd>
+<dt> <code>w3m-imitate-widget-button</code></dt>
+<dd><a name="index-w3m_002dimitate_002dwidget_002dbutton"></a>
+<p>non-<code>nil</code> ならば、リンク (アンカー) ボタンでウィジェットのボタンの
+動作をします。これは <kbd>&lt;TAB&gt;</kbd> を使って Gnus の記事バッファの中を
+移動するのに便利です。真偽値を返す Lisp 関数を設定することもできます。
+</p>
+</dd>
+<dt> <code>w3m-init-file</code></dt>
+<dd><p>Your emacs-w3m startup file name.  If a file with the &lsquo;<samp>.el</samp>&rsquo; or
+&lsquo;<samp>.elc</samp>&rsquo; suffixes exists, it will be read instead.
+</p>
+<p>Note: This file is used as the startup configuration <em>NOT</em> for the
+&lsquo;<samp>w3m</samp>&rsquo; command but for emacs-w3m.  In order to modify configurations
+for the &lsquo;<samp>w3m</samp>&rsquo; command, edit the file named &lsquo;<tt>~/.w3m/config</tt>&rsquo;
+normally.
+</p>
+</dd>
+<dt> <code>w3m-input-coding-system</code></dt>
+<dd><a name="index-w3m_002dinput_002dcoding_002dsystem"></a>
+<p>Coding system used when writing to &lsquo;<samp>w3m</samp>&rsquo; processes.  It overrides
+<code>coding-system-for-write</code> if it is not <code>binary</code>.  Otherwise,
+the value of the <code>w3m-current-coding-system</code> variable is used
+instead.
+</p>
+</dd>
+<dt> <code>w3m-keep-arrived-urls</code></dt>
+<dd><a name="index-w3m_002dkeep_002darrived_002durls"></a>
+<p>Maximum number of <acronym>URL</acronym>s which the arrived <acronym>URL</acronym>s
+database keeps.
+</p>
+</dd>
+<dt> <code>w3m-keep-cache-size</code></dt>
+<dd><a name="index-w3m_002dkeep_002dcache_002dsize"></a>
+<p>Maximum number of pages to be cached in emacs-w3m.
+</p>
+</dd>
+<dt> <code>w3m-key-binding</code></dt>
+<dd><p>Type of key binding set used in emacs-w3m sessions.  The valid values
+include <code>info</code> which provides &lsquo;<samp>Info-like</samp>&rsquo; keys, and <code>nil</code>
+which provides &lsquo;<samp>Lynx-like</samp>&rsquo; keys.
+</p>
+</dd>
+<dt> <code>w3m-language</code></dt>
+<dd><a name="index-w3m_002dlanguage"></a>
+<p>Your preferred language used in emacs-w3m sessions.
+</p>
+</dd>
+<dt> <code>w3m-local-directory-view-method</code></dt>
+<dd><a name="index-w3m_002dlocal_002ddirectory_002dview_002dmethod"></a>
+<p>Symbol of the method to view a local directory tree.  The valid values
+include <code>w3m-cgi</code> using the <acronym>CGI</acronym> program specified by the
+<code>w3m-dirlist-cgi-program</code> variable (which see), and
+<code>w3m-dtree</code> using the w3m-dtree Lisp module.
+</p>
+</dd>
+<dt> <code>w3m-local-find-file-function</code></dt>
+<dd><a name="index-w3m_002dlocal_002dfind_002dfile_002dfunction"></a>
+<p>Function used to open local files.  If a url of the <code>file:</code> scheme
+in which you entered agrees with the rule of the
+<code>w3m-local-find-file-regexps</code> variable (which see), it is used to
+open the file.
+</p>
+<p>Function should take one argument, the string naming the local file.  It
+can also be any Lisp form returning a function.  Set this to <code>nil</code>
+if you want to always use emacs-w3m to see local files.
+</p>
+</dd>
+<dt> <code>w3m-local-find-file-regexps</code></dt>
+<dd><a name="index-w3m_002dlocal_002dfind_002dfile_002dregexps"></a>
+<p><code>Cons</code> of two regexps matching and not matching with local file
+names.  If a url of the <code>file:</code> scheme in which you entered matches
+the first form and does not match the latter form, it will be opened by
+the function specified by the <code>w3m-local-find-file-function</code>
+variable.  <code>Nil</code> for the regexp matches any file names.
+</p>
+<p>For instance, the value <code>(nil . &quot;\\.html?\\'&quot;)</code> allows
+&lsquo;<tt>file:///some/where/w3m.el</tt>&rsquo;, not
+&lsquo;<tt>file:///any/where/index.html</tt>&rsquo;, to open by the function specified
+by <code>w3m-local-find-file-function</code>.  The latter will be opened as a
+normal web page.  Furthermore, if you would like to view some types of
+contents in the local system using the viewers specified by the
+<code>w3m-content-type-alist</code> variable, you can add regexps matching
+those file names to the second element of this variable.  For example:
+</p>
+<table><tr><td>&nbsp;</td><td><pre class="lisp">(setq w3m-local-find-file-regexps
+      '(nil . &quot;\\.\\(?:[sx]?html?\\|dvi\\|ps\\|pdf\\)\\'&quot;))
+</pre></td></tr></table>
+
+<p>It is effective only when the <code>w3m-local-find-file-function</code>
+variable is set properly.
+</p>
+</dd>
+<dt> <code>w3m-mailto-url-function</code></dt>
+<dd><a name="index-w3m_002dmailto_002durl_002dfunction"></a>
+<p>Function used to handle the <code>mailto</code> urls.  Function is called with
+one argument, just a url.  If it is <code>nil</code>, a function specified by
+the <code>mail-user-agent</code> variable will be used for composing mail
+messages.
+</p>
+</dd>
+<dt> <code>w3m-mailto-url-popup-function-alist</code></dt>
+<dd><a name="index-w3m_002dmailto_002durl_002dpopup_002dfunction_002dalist"></a>
+<p>Alist of <code>(MAJOR-MODE . FUNCTION)</code> pairs used to pop a mail buffer
+up.  If a user clicks on a <code>mailto</code> url and a mail buffer is
+composed by <code>mail-user-agent</code> with the <code>MAJOR-MODE</code>,
+<code>FUNCTION</code> will be called with a mail buffer as an argument.  Note
+that the variables <code>special-display-buffer-names</code>,
+<code>special-display-regexps</code>, <code>same-window-buffer-names</code> and
+<code>same-window-regexps</code> will be bound to <code>nil</code> while popping to
+a buffer up.
+</p>
+</dd>
+<dt> <code>w3m-make-new-session</code></dt>
+<dd><a name="index-w3m_002dmake_002dnew_002dsession"></a>
+<p>Non-<code>nil</code> means making new emacs-w3m buffers when visiting new
+pages.  If it is non-<code>nil</code> and there are already emacs-w3m buffers,
+the <code>w3m</code> command makes a new emacs-w3m buffer if a user specifies
+a url string in the minibuffer, and the <code>w3m-safe-view-this-url</code>
+command also makes a new buffer if a user invokes it in a buffer not
+being running the <code>w3m-mode</code>.  The default value is <code>nil</code>.
+</p>
+</dd>
+<dt> <code>w3m-mbconv-command</code></dt>
+<dd><a name="index-w3m_002dmbconv_002dcommand"></a>
+<p>Name of the &lsquo;<samp>mbconv</samp>&rsquo; command provided by the &lsquo;<samp>libmoe</samp>&rsquo; package.
+The &lsquo;<samp>libmoe</samp>&rsquo; package is used when you use the &lsquo;<samp>w3mmee</samp>&rsquo; command
+instead of the &lsquo;<samp>w3m</samp>&rsquo; command.  See also <code>w3m-command</code>.
+</p>
+</dd>
+<dt> <code>w3m-no-proxy-domains</code></dt>
+<dd><p>List of domain names for which emacs-w3m will not use a proxy server.
+Each element should be exactly a domain name which means the latter
+common part of the host names, not a regexp.
+</p>
+</dd>
+<dt> <code>w3m-output-coding-system</code></dt>
+<dd><a name="index-w3m_002doutput_002dcoding_002dsystem"></a>
+<p>Coding system used when reading from &lsquo;<samp>w3m</samp>&rsquo; processes.
+</p>
+</dd>
+<dt> <code>w3m-pop-up-frames</code></dt>
+<dd><a name="index-w3m_002dpop_002dup_002dframes"></a>
+<p>Non-<code>nil</code> means pop to a new frame up for an emacs-w3m session.
+This variable is similar to <code>pop-up-frames</code> and does override
+<code>w3m-pop-up-windows</code>.  If <code>w3m-use-tab</code> is non-<code>nil</code> or
+there is the buffers selection window (for the <code>w3m-select-buffer</code>
+feature), this variable is ignored when creating the second or more
+emacs-w3m session.
+</p>
+</dd>
+<dt> <code>w3m-pop-up-windows</code></dt>
+<dd><a name="index-w3m_002dpop_002dup_002dwindows"></a>
+<p>Non-<code>nil</code> means split the windows when a new emacs-w3m session is
+created.  This variable is similar to <code>pop-up-windows</code> and quite
+overridden by <code>w3m-pop-up-frames</code> as if <code>pop-up-frames</code>
+influences.  Furthermore, if <code>w3m-use-tab</code> is non-<code>nil</code> or
+there is the buffers selection window (for the <code>w3m-select-buffer</code>
+feature), this variable is ignored when creating the second or more
+emacs-w3m session.
+</p>
+</dd>
+<dt> <code>w3m-popup-frame-parameters</code></dt>
+<dd><a name="index-w3m_002dpopup_002dframe_002dparameters"></a>
+<p>Alist of frame parameters used when creating a new emacs-w3m frame.  It
+allows not only the alist form but also XEmacs&rsquo;s plist form.
+</p>
+</dd>
+<dt> <code>w3m-prefer-cache</code></dt>
+<dd><a name="index-w3m_002dprefer_002dcache"></a>
+<p>Non-<code>nil</code> means that cached contents are used without checking
+headers.
+</p>
+</dd>
+<dt> <code>w3m-profile-directory</code></dt>
+<dd><a name="index-w3m_002dprofile_002ddirectory"></a>
+<p>Directory where emacs-w3m config files are loaded from or saved to.
+</p>
+</dd>
+<dt> <code>w3m-quick-start</code></dt>
+<dd><p>Non-<code>nil</code> means let emacs-w3m start quickly w/o requiring
+confirmation.  When you invoke the <code>w3m</code> command, it attempts to
+visit the page of a string like url around the cursor or the value of
+<code>w3m-home-page</code>.  You won&rsquo;t be asked for the confirmation then if
+this value is non-<code>nil</code>.  Otherwise, you will be prompted for that
+url with the editing form.
+</p>
+</dd>
+<dt> <code>w3m-redirect-with-get</code></dt>
+<dd><a name="index-w3m_002dredirect_002dwith_002dget"></a>
+<p>If non-<code>nil</code>, use the GET method after redirection.  It controls
+how emacs-w3m works when a server responds the code 301 or 302.  Here is
+an extract from RFC2616:
+</p>
+<p>Note: RFC 1945 and RFC 2068 specify that the client is not allowed to
+change the method on the redirected request.  However, most existing
+user agent implementations treat 302 as if it were a 303 response,
+performing a GET on the Location field-value regardless of the original
+request method.
+</p>
+</dd>
+<dt> <code>w3m-relationship-estimate-rules</code></dt>
+<dd><a name="index-w3m_002drelationship_002destimate_002drules"></a>
+<p>Rules to estimate relationships between a retrieved page and others.
+</p>
+</dd>
+<dt> <code>w3m-select-buffer-horizontal-window</code></dt>
+<dd><a name="index-w3m_002dselect_002dbuffer_002dhorizontal_002dwindow"></a>
+<p>Non-<code>nil</code> means split windows horizontally to open the selection
+window.
+</p>
+</dd>
+<dt> <code>w3m-select-buffer-window-ratio</code></dt>
+<dd><a name="index-w3m_002dselect_002dbuffer_002dwindow_002dratio"></a>
+<p>The percentage of the selection window to the whole frame.  The car is
+used when splitting windows horizontally and the cdr is for splitting
+windows vertically.
+</p>
+</dd>
+<dt> <code>w3m-use-title-buffer-name</code></dt>
+<dd><a name="index-w3m_002duse_002dtitle_002dbuffer_002dname"></a>
+<p>Non-<code>nil</code> means use name of buffer included current title.
+</p>
+</dd>
+<dt> <code>w3m-show-error-information</code></dt>
+<dd><a name="index-w3m_002dshow_002derror_002dinformation"></a>
+<p>Non-<code>nil</code> means show an error information as a web page.  Page is
+made when the foreign server doesn&rsquo;t respond to a request to retrieve
+data.
+</p>
+</dd>
+<dt> <code>w3m-space-before-favicon</code></dt>
+<dd><a name="index-w3m_002dspace_002dbefore_002dfavicon"></a>
+<p>String of space char(s) to be put in front of favicon in the mode-line.
+It may be better to use two or more spaces if you are using oblique or
+italic font in the modeline.
+</p>
+</dd>
+<dt> <code>w3m-space-before-modeline-icon</code></dt>
+<dd><a name="index-w3m_002dspace_002dbefore_002dmodeline_002dicon"></a>
+<p>String of space character(s) to be put in front of the modeline icon.
+It may be better to use one or more spaces if you are using oblique or
+italic font in the modeline.
+</p>
+</dd>
+<dt> <code>w3m-terminal-coding-system</code></dt>
+<dd><a name="index-w3m_002dterminal_002dcoding_002dsystem"></a>
+<p>Default coding system used when writing to &lsquo;<samp>w3m</samp>&rsquo; processes.  It is
+just a default value to set process&rsquo; coding system initially.  (This
+variable name is analogically derived from the behavior of the
+&lsquo;<samp>w3m</samp>&rsquo; command which accepts data from Emacs just like reads from
+the terminal.)
+</p>
+</dd>
+<dt> <code>w3m-touch-command</code></dt>
+<dd><a name="index-w3m_002dtouch_002dcommand"></a>
+<p>Name of the executable file of the touch command.  Note that the command
+is required to be able to modify file&rsquo;s timestamp with the &lsquo;<samp>-t</samp>&rsquo;
+option.
+</p>
+</dd>
+<dt> <code>w3m-track-mouse</code></dt>
+<dd><a name="index-w3m_002dtrack_002dmouse"></a>
+<p>Whether to track the mouse and message the url under the mouse.  See
+also <code>show-help-function</code> if you are using GNU Emacs.
+</p>
+<p>A tip for XEmacs users:
+</p>
+<p>You can also use the <code>balloon-help</code> feature by the
+<kbd>M-x balloon-help-mode</kbd> command with arg 1.  If the window
+manager decorates the balloon-help frame, and that is not to your taste,
+you may strip it off with the following directives:
+</p>
+<table><tr><td>&nbsp;</td><td><pre class="example">For ol[v]wm use this in .Xdefaults:
+   olvwm.NoDecor: balloon-help
+     or
+   olwm.MinimalDecor: balloon-help
+
+For fvwm version 1 use this in your .fvwmrc:
+   NoTitle balloon-help
+or
+   Style &quot;balloon-help&quot; NoTitle, NoHandles, BorderWidth 0
+
+For twm use this in your .twmrc:
+   NoTitle { &quot;balloon-help&quot; }
+</pre></td></tr></table>
+
+<p>See the &lsquo;<tt>balloon-help.el</tt>&rsquo; file for more information.
+</p>
+</dd>
+<dt> <code>w3m-uri-replace-alist</code></dt>
+<dd><p>Alist of regexps matching <acronym>URI</acronym>s, and some types of
+replacements.  It can be used universally to replace <acronym>URI</acronym>
+strings in the local rule to the valid forms in the Internet.
+</p>
+<p>Each element looks like the <code>(REGEXP FUNCTION OPTIONS...)</code> form.
+<code>FUNCTION</code> takes one or more arguments, a uri and <code>OPTIONS</code>.
+You can use the grouping constructs &lsquo;<samp>\\(...\\)</samp>&rsquo; in <code>REGEXP</code>,
+and they can be referred by the &lsquo;<samp>\N</samp>&rsquo; forms in a replacement (which
+is one of <code>OPTIONS</code>).
+</p>
+<p>Here are some predefined functions which can be used for those ways:
+</p>
+<dl compact="compact">
+<dt> <code>w3m-pattern-uri-replace</code></dt>
+<dd><a name="index-w3m_002dpattern_002duri_002dreplace"></a>
+<p>Replace a <acronym>URI</acronym> using PATTERN (which is just an <code>OPTION</code>).
+It is allowed that PATTERN contains the &lsquo;<samp>\N</samp>&rsquo; forms in the same
+manner of <code>replace-match</code>.
+</p>
+</dd>
+<dt> <code>w3m-search-uri-replace</code></dt>
+<dd><a name="index-w3m_002dsearch_002duri_002dreplace"></a>
+<p>Generate valid URLs to query words on some specified search engines.
+For example, the element
+</p>
+<table><tr><td>&nbsp;</td><td><pre class="lisp">(&quot;\\`gg:&quot; w3m-search-uri-replace &quot;google&quot;)
+</pre></td></tr></table>
+
+<p>makes it possible to replace the <acronym>URI</acronym> &lsquo;<samp>gg:emacs</samp>&rsquo; to a
+query for the word &lsquo;<samp>emacs</samp>&rsquo; on the Google search engine.
+</p></dd>
+</dl>
+
+</dd>
+<dt> <code>w3m-url-local-directory-alist</code></dt>
+<dd><a name="index-w3m_002durl_002dlocal_002ddirectory_002dalist"></a>
+<p>Alist of <acronym>URL</acronym>s and local directories.  If directory names of a
+given <acronym>URL</acronym> and the car of an element are the same, emacs-w3m
+assumes that the file exists in the local directory where the cdr of an
+element points to.  The default value will be set to a value of the
+<code>yahtml-path-url-alist</code> variable which exchanged the car and the
+cdr in each element if it is available.
+</p>
+</dd>
+<dt> <code>w3m-use-ange-ftp</code></dt>
+<dd><a name="index-w3m_002duse_002dange_002dftp"></a>
+<p>Non-<code>nil</code> means that <code>ange-ftp</code> or <code>efs</code> is used to
+access FTP servers.
+</p>
+</dd>
+<dt> <code>w3m-use-cygdrive</code></dt>
+<dd><a name="index-w3m_002duse_002dcygdrive"></a>
+<p>If non-<code>nil</code>, use the &lsquo;<samp>/cygdrive/</samp>&rsquo; rule when performing
+<code>expand-file-name</code>.
+</p>
+</dd>
+<dt> <code>w3m-use-filter</code></dt>
+<dd><a name="index-w3m_002duse_002dfilter"></a>
+<p>Non-<code>nil</code> means use filter programs to convert web contents.  See
+also <code>w3m-filter-rules</code> (the &lsquo;<tt>w3m-filter.elc</tt>&rsquo; module provides
+it but might have never been loaded.  In that case, to see the default
+value and the documentation of <code>w3m-filter-rules</code>, type
+<kbd>M-x load-library &lt;RET&gt; w3m-filter &lt;RET&gt;</kbd>).
+</p>
+</dd>
+<dt> <code>w3m-use-form</code></dt>
+<dd><a name="index-w3m_002duse_002dform"></a>
+<p>Non-<code>nil</code> means make it possible to use form
+extensions. <em>(EXPERIMENTAL)</em>
+</p>
+</dd>
+<dt> <code>w3m-submit-form-safety-check</code></dt>
+<dd><a name="index-w3m_002dsubmit_002dform_002dsafety_002dcheck"></a>
+<p>Non-<code>nil</code> means ask you for confirmation when submitting a form.
+The default value is <code>nil</code>.
+</p>
+</dd>
+<dt> <code>w3m-use-header-line</code></dt>
+<dd><a name="index-w3m_002duse_002dheader_002dline"></a>
+<p>Non-<code>nil</code> means display the header line.
+</p>
+</dd>
+<dt> <code>w3m-use-header-line-title</code></dt>
+<dd><a name="index-w3m_002duse_002dheader_002dline_002dtitle"></a>
+<p>Non-<code>nil</code> means display the current title at the header line. This
+variable is effective only when <code>w3m-use-tab</code> is <code>nil</code>.
+</p>
+</dd>
+<dt> <code>w3m-use-mule-ucs</code></dt>
+<dd><a name="index-w3m_002duse_002dmule_002ducs"></a>
+<p>Non-<code>nil</code> means use the multi-script support with Mule-UCS.
+</p>
+</dd>
+<dt> <code>w3m-use-refresh</code></dt>
+<dd><a name="index-w3m_002duse_002drefresh"></a>
+<p>Non-<code>nil</code> means honor the REFRESH attribute in META tags.
+Emacs-w3m arbitrarily takes you to a url specified by that attribute.
+Note that they may be malicious traps.
+</p>
+</dd>
+<dt> <code>w3m-refresh-minimum-interval</code></dt>
+<dd><a name="index-w3m_002drefresh_002dminimum_002dinterval"></a>
+<p>history-back, history-next でページを見た時に最低限 refresh を待つ秒数。
+</p>
+</dd>
+<dt> <code>w3m-use-symbol</code></dt>
+<dd><a name="index-w3m_002duse_002dsymbol"></a>
+<p>Non-<code>nil</code> means replace symbols that the &lsquo;<samp>&lt;_SYMBOL&gt;</samp>&rsquo; tags lead
+into.  It is meaningful only when the &lsquo;<samp>w3m-m17n</samp>&rsquo; command is used
+and (X)Emacs handles unicode charsets.
+</p>
+</dd>
+<dt> <code>w3m-menu-on-forefront</code></dt>
+<dd><a name="index-w3m_002dmenu_002don_002dforefront"></a>
+<p>Non-<code>nil</code> means place the emacs-w3m menus on the forefront of the
+menu bar.  The default value is <code>nil</code>.
+</p>
+</dd>
+<dt> <code>w3m-use-tab</code></dt>
+<dd><p>Non-<code>nil</code> means make emacs-w3m a tab browser.  It makes it possible
+to show all emacs-w3m buffers in a single window with the tabs line, and
+you can choose one by clicking a mouse on it.  See also
+<code>w3m-use-tab-menubar</code>.
+</p>
+</dd>
+<dt> <code>w3m-use-tab-menubar</code></dt>
+<dd><a name="index-w3m_002duse_002dtab_002dmenubar"></a>
+<p>Non-<code>nil</code> means use the TAB pull-down menu in the menubar.  It
+makes it possible to show all emacs-w3m buffers in a single window, and
+you can choose one by clicking a mouse on it.  This feature requires
+that Emacs has been built to be able to display multilingual text in the
+menubar if you often visit web sites written in non-ascii text.  See
+also <code>w3m-use-tab</code>.
+</p>
+</dd>
+<dt> <code>w3m-use-toolbar</code></dt>
+<dd><a name="index-w3m_002duse_002dtoolbar"></a>
+<p>Non-<code>nil</code> activates toolbar of &lsquo;<samp>w3m</samp>&rsquo;.
+</p>
+</dd>
+<dt> <code>w3m-user-agent</code></dt>
+<dd><a name="index-w3m_002duser_002dagent"></a>
+<p>String used for the User-Agent field.  See also
+<code>w3m-add-user-agent</code>.
+</p>
+</dd>
+<dt> <code>w3m-new-session-in-background</code></dt>
+<dd><a name="index-w3m_002dnew_002dsession_002din_002dbackground"></a>
+<p>Say whether not to focus on a new tab or a new session in target.
+It influences only when a new emacs-w3m buffer is created.
+</p>
+</dd>
+<dt> <code>w3m-do-cleanup-temp-files</code></dt>
+<dd><a name="index-w3m_002ddo_002dcleanup_002dtemp_002dfiles"></a>
+<p>非<code>nil</code> ならば、 emacs-w3m は自動的に削除しそこなった一時ファイルを
+削除します。 デフォルトは <code>nil</code> です。
+</p></dd>
+</dl>
+
+<hr size="6">
+<table cellpadding="1" cellspacing="1" border="0">
+<tr><td valign="middle" align="left">[<a href="emacs-w3m-ja_30.html#Customizable-Variables" title="Previous section in reading order"> &lt; </a>]</td>
+<td valign="middle" align="left">[<a href="emacs-w3m-ja_32.html#Image-Variables" title="Next section in reading order"> &gt; </a>]</td>
+<td valign="middle" align="left"> &nbsp; </td>
+<td valign="middle" align="left">[<a href="emacs-w3m-ja_30.html#Customizable-Variables" title="Beginning of this chapter or previous chapter"> &lt;&lt; </a>]</td>
+<td valign="middle" align="left">[<a href="emacs-w3m-ja_30.html#Customizable-Variables" title="Up section">ä¸</a>]</td>
+<td valign="middle" align="left">[<a href="emacs-w3m-ja_46.html#Hooking-into-MUAs" title="Next chapter"> &gt;&gt; </a>]</td>
+</tr></table>
+<p>
+ <font size="-1">
+  ãã®ææ¸ã¯<em>TSUCHIYA Masatoshi</em>ã«ãã£ã¦<em>2019å¹´1ææ30æ¥</em>ã«<a href="http://www.nongnu.org/texi2html/"><em>texi2html 1.82</em></a>ãç¨ãã¦çæããã¾ããã
+ </font>
+ <br>
+
+</p>
+</body>
+</html>

@@ -1,0 +1,781 @@
+<!DOCTYPE html PUBLIC "-//W3C//DTD HTML 4.01 Transitional//EN" "http://www.w3.org/TR/html401/loose.dtd">
+<html>
+<!-- Copyright C 2000-2014 TSUCHIYA Masatoshi
+
+Permission is granted to copy, distribute and/or modify this document
+under the terms of the GNU General Public License, Version 2 or any
+later version published by the Free Software Foundation.
+
+This document is distributed in the hope that it will be useful, but
+WITHOUT ANY WARRANTY; without even the implied warranty of
+MERCHANTABILITY or FITNESS FOR A PARTICULAR PURPOSE.  See the GNU
+General Public License for more details.
+
+You should have received a copy of the GNU General Public License along
+with this document; see the file COPYING.  If not, write to the Free
+Software Foundation, Inc., 51 Franklin Street, Fifth Floor, Boston, MA
+02110-1301, USA.
+
+ -->
+<!-- Created on January 30, 2019 by texi2html 1.82
+texi2html was written by: 
+            Lionel Cons <Lionel.Cons@cern.ch> (original author)
+            Karl Berry  <karl@freefriends.org>
+            Olaf Bachmann <obachman@mathematik.uni-kl.de>
+            and many others.
+Maintained by: Many creative people.
+Send bugs and suggestions to <texi2html-bug@nongnu.org>
+-->
+<head>
+<title>Emacs-w3m &ndash; an Emacs interface to w3m &ndash;: 3.1 Let's go netsurfing!</title>
+
+<meta name="description" content="Emacs-w3m &ndash; an Emacs interface to w3m &ndash;: 3.1 Let's go netsurfing!">
+<meta name="keywords" content="Emacs-w3m &ndash; an Emacs interface to w3m &ndash;: 3.1 Let's go netsurfing!">
+<meta name="resource-type" content="document">
+<meta name="distribution" content="global">
+<meta name="Generator" content="texi2html 1.82">
+<meta http-equiv="Content-Type" content="text/html; charset=utf-8">
+<style type="text/css">
+<!--
+a.summary-letter {text-decoration: none}
+blockquote.smallquotation {font-size: smaller}
+pre.display {font-family: serif}
+pre.format {font-family: serif}
+pre.menu-comment {font-family: serif}
+pre.menu-preformatted {font-family: serif}
+pre.smalldisplay {font-family: serif; font-size: smaller}
+pre.smallexample {font-size: smaller}
+pre.smallformat {font-family: serif; font-size: smaller}
+pre.smalllisp {font-size: smaller}
+span.roman {font-family:serif; font-weight:normal;}
+span.sansserif {font-family:sans-serif; font-weight:normal;}
+ul.toc {list-style: none}
+-->
+</style>
+
+
+</head>
+
+<body lang="en" bgcolor="#FFFFFF" text="#000000" link="#0000FF" vlink="#800080" alink="#FF0000">
+
+<a name="Browsing-Web-Pages"></a>
+<table cellpadding="1" cellspacing="1" border="0">
+<tr><td valign="middle" align="left">[<a href="emacs-w3m_9.html#Basic-Usage" title="Previous section in reading order"> &lt; </a>]</td>
+<td valign="middle" align="left">[<a href="#Key-Binding" title="Next section in reading order"> &gt; </a>]</td>
+<td valign="middle" align="left"> &nbsp; </td>
+<td valign="middle" align="left">[<a href="emacs-w3m_9.html#Basic-Usage" title="Beginning of this chapter or previous chapter"> &lt;&lt; </a>]</td>
+<td valign="middle" align="left">[<a href="emacs-w3m_9.html#Basic-Usage" title="Up section"> Up </a>]</td>
+<td valign="middle" align="left">[<a href="emacs-w3m_19.html#Pretty-Good-Features" title="Next chapter"> &gt;&gt; </a>]</td>
+<td valign="middle" align="left"> &nbsp; </td>
+<td valign="middle" align="left"> &nbsp; </td>
+<td valign="middle" align="left"> &nbsp; </td>
+<td valign="middle" align="left"> &nbsp; </td>
+<td valign="middle" align="left">[<a href="emacs-w3m.html#Top" title="Cover (top) of document">Top</a>]</td>
+<td valign="middle" align="left">[<a href="emacs-w3m_toc.html#SEC_Contents" title="Table of contents">Contents</a>]</td>
+<td valign="middle" align="left">[<a href="emacs-w3m_68.html#Index" title="Index">Index</a>]</td>
+<td valign="middle" align="left">[<a href="emacs-w3m_abt.html#SEC_About" title="About (help)"> ? </a>]</td>
+</tr></table>
+<a name="Let_0027s-go-netsurfing_0021"></a>
+<h2 class="section">3.1 Let&rsquo;s go netsurfing!</h2>
+
+<p>You can, by the keys, let emacs-w3m do all the web browsing operations.
+Emacs-w3m uses the &lsquo;<samp>Lynx-like</samp>&rsquo; keymap (see section <a href="#Key-Binding">There are two types of the key bindings</a>) by
+default.  Of course, you can use the mouse buttons, too.
+</p>
+<table class="menu" border="0" cellspacing="0">
+<tr><td align="left" valign="top"><a href="#Key-Binding">3.1.1 There are two types of the key bindings</a></td><td>&nbsp;&nbsp;</td><td align="left" valign="top"></td></tr>
+<tr><td align="left" valign="top"><a href="#Launching-and-Jumping">3.1.2 Go ahead, just try it</a></td><td>&nbsp;&nbsp;</td><td align="left" valign="top"></td></tr>
+<tr><td align="left" valign="top"><a href="#Moving-in-a-page">3.1.3 Moving from place to place in a page</a></td><td>&nbsp;&nbsp;</td><td align="left" valign="top"></td></tr>
+<tr><td align="left" valign="top"><a href="#Moving-over-pages">3.1.4 Moving from page to page</a></td><td>&nbsp;&nbsp;</td><td align="left" valign="top"></td></tr>
+<tr><td align="left" valign="top"><a href="#Browsing-with-Mouse-Operations">3.1.5 Surfing using the mouse</a></td><td>&nbsp;&nbsp;</td><td align="left" valign="top"></td></tr>
+<tr><td align="left" valign="top"><a href="#Going-Back-to-Daily-Hacking-and_002for-Daily-Writing">3.1.6 Return to an Ordinary Life</a></td><td>&nbsp;&nbsp;</td><td align="left" valign="top"></td></tr>
+</table>
+
+<hr size="6">
+<a name="Key-Binding"></a>
+<table cellpadding="1" cellspacing="1" border="0">
+<tr><td valign="middle" align="left">[<a href="#Browsing-Web-Pages" title="Previous section in reading order"> &lt; </a>]</td>
+<td valign="middle" align="left">[<a href="#Launching-and-Jumping" title="Next section in reading order"> &gt; </a>]</td>
+<td valign="middle" align="left"> &nbsp; </td>
+<td valign="middle" align="left">[<a href="emacs-w3m_9.html#Basic-Usage" title="Beginning of this chapter or previous chapter"> &lt;&lt; </a>]</td>
+<td valign="middle" align="left">[<a href="#Browsing-Web-Pages" title="Up section"> Up </a>]</td>
+<td valign="middle" align="left">[<a href="emacs-w3m_19.html#Pretty-Good-Features" title="Next chapter"> &gt;&gt; </a>]</td>
+<td valign="middle" align="left"> &nbsp; </td>
+<td valign="middle" align="left"> &nbsp; </td>
+<td valign="middle" align="left"> &nbsp; </td>
+<td valign="middle" align="left"> &nbsp; </td>
+<td valign="middle" align="left">[<a href="emacs-w3m.html#Top" title="Cover (top) of document">Top</a>]</td>
+<td valign="middle" align="left">[<a href="emacs-w3m_toc.html#SEC_Contents" title="Table of contents">Contents</a>]</td>
+<td valign="middle" align="left">[<a href="emacs-w3m_68.html#Index" title="Index">Index</a>]</td>
+<td valign="middle" align="left">[<a href="emacs-w3m_abt.html#SEC_About" title="About (help)"> ? </a>]</td>
+</tr></table>
+<a name="There-are-two-types-of-the-key-bindings"></a>
+<h3 class="subsection">3.1.1 There are two types of the key bindings</h3>
+<a name="index-Key-binding"></a>
+<a name="index-Lynx_002dlike-keymap"></a>
+<a name="index-Info_002dlike-keymap"></a>
+<a name="index-w3m_002dkey_002dbinding"></a>
+
+<p>Since emacs-w3m is a late-coming web browser in the history of Emacs web
+browsers, we offer two types of the key bindings in order that users can
+get used to the new web browser easily.  One is called the
+&lsquo;<samp>Lynx-like</samp>&rsquo; keymap, the other is the &lsquo;<samp>Info-like</samp>&rsquo; keymap.  You
+can see what they mean from those names, can&rsquo;t you?  The former is
+similar to that of &lsquo;<samp>Lynx</samp>&rsquo; which is the text-based web browser, and
+the later is similar to that of &lsquo;<samp>Info</samp>&rsquo; which is GNU&rsquo;s official
+document browser.  By default, the &lsquo;<samp>Lynx-like</samp>&rsquo; keymap is used.  If
+you would like to use the &lsquo;<samp>Info-like</samp>&rsquo; keymap, type
+</p>
+<table><tr><td>&nbsp;</td><td><pre class="example"><kbd>M-x customize-option &lt;RET&gt; w3m-key-binding &lt;RET&gt;</kbd>
+</pre></td></tr></table>
+
+<p>choose the &lsquo;<samp>Info-like</samp>&rsquo; keymap, and save the changed state.
+Otherwise, add the following snippet to your &lsquo;<tt>~/.emacs</tt>&rsquo; file, not
+&lsquo;<tt>~/.emacs-w3m.el</tt>&rsquo; file:
+</p>
+<table><tr><td>&nbsp;</td><td><pre class="lisp">(setq w3m-key-binding 'info)
+</pre></td></tr></table>
+
+<p>To change the key binding one by one, modify the <code>w3m-mode-map</code>
+variable in your &lsquo;<tt>~/.emacs-w3m.el</tt>&rsquo; file like the following:
+</p>
+<table><tr><td>&nbsp;</td><td><pre class="lisp">(define-key w3m-mode-map [up] 'previous-line)
+(define-key w3m-mode-map [down] 'next-line)
+(define-key w3m-mode-map [left] 'backward-char)
+(define-key w3m-mode-map [right] 'forward-char)
+</pre></td></tr></table>
+
+<hr size="6">
+<a name="Launching-and-Jumping"></a>
+<table cellpadding="1" cellspacing="1" border="0">
+<tr><td valign="middle" align="left">[<a href="#Key-Binding" title="Previous section in reading order"> &lt; </a>]</td>
+<td valign="middle" align="left">[<a href="#Moving-in-a-page" title="Next section in reading order"> &gt; </a>]</td>
+<td valign="middle" align="left"> &nbsp; </td>
+<td valign="middle" align="left">[<a href="emacs-w3m_9.html#Basic-Usage" title="Beginning of this chapter or previous chapter"> &lt;&lt; </a>]</td>
+<td valign="middle" align="left">[<a href="#Browsing-Web-Pages" title="Up section"> Up </a>]</td>
+<td valign="middle" align="left">[<a href="emacs-w3m_19.html#Pretty-Good-Features" title="Next chapter"> &gt;&gt; </a>]</td>
+<td valign="middle" align="left"> &nbsp; </td>
+<td valign="middle" align="left"> &nbsp; </td>
+<td valign="middle" align="left"> &nbsp; </td>
+<td valign="middle" align="left"> &nbsp; </td>
+<td valign="middle" align="left">[<a href="emacs-w3m.html#Top" title="Cover (top) of document">Top</a>]</td>
+<td valign="middle" align="left">[<a href="emacs-w3m_toc.html#SEC_Contents" title="Table of contents">Contents</a>]</td>
+<td valign="middle" align="left">[<a href="emacs-w3m_68.html#Index" title="Index">Index</a>]</td>
+<td valign="middle" align="left">[<a href="emacs-w3m_abt.html#SEC_About" title="About (help)"> ? </a>]</td>
+</tr></table>
+<a name="Go-ahead_002c-just-try-it"></a>
+<h3 class="subsection">3.1.2 Go ahead, just try it</h3>
+
+<p>You can invoke emacs-w3m using three different commands, listed below.
+Try one of these commands: a web page is displayed in an Emacs buffer
+named &ldquo;*w3m*&rdquo;, meaning that it is an emacs-w3m buffer.  As you will
+probably notice, the major mode for an emacs-w3m buffer is
+<code>w3m-mode</code>, there are also minor modes (see section <a href="emacs-w3m_13.html#Managing-Bookmarks">That&rsquo;s a favorite with me!</a>).
+</p>
+<p>This section explains the most fundamental usage of these commands, see
+<a href="emacs-w3m_65.html#Emacs_002dw3m-Functions">Details of some emacs-w3m functions</a> for more information on them.  See also
+<a href="emacs-w3m_30.html#Customizable-Variables">Customizable variables</a> for variables you can use to customize
+emacs-w3m&rsquo;s behavior.
+</p>
+<dl compact="compact">
+<dt> <code>w3m</code></dt>
+<dd><a name="index-w3m-1"></a>
+<a name="index-w3m_002dhome_002dpage"></a>
+<a name="index-w3m_002dquick_002dstart"></a>
+<a name="index-Using-emacs_002dw3m-as-a-batch-command"></a>
+<p>Start emacs-w3m, displaying the homepage specified in the
+<code>w3m-home-page</code> variable.  The default value for
+<code>w3m-home-page</code> is &ldquo;about:&rdquo;.  Set the <code>w3m-quick-start</code>
+variable to <code>nil</code> if you want to input a target URL every time you
+start emacs-w3m.
+</p>
+<p>You can also use this as an argument when starting emacs.  Examples:
+</p>
+<table><tr><td>&nbsp;</td><td><pre class="example">% emacs -f w3m
+</pre></td></tr></table>
+
+<p>To specify a URL, you could also use:
+</p>
+<table><tr><td>&nbsp;</td><td><pre class="example">% emacs -f w3m http://emacs-w3m.namazu.org/
+</pre></td></tr></table>
+
+</dd>
+<dt> <code>w3m-find-file</code></dt>
+<dd><a name="index-w3m_002dfind_002dfile"></a>
+<p>Prompt for a local file name in the minibuffer, and display it in
+emacs-w3m.
+</p>
+</dd>
+<dt> <code>w3m-browse-url</code></dt>
+<dd><a name="index-w3m_002dbrowse_002durl"></a>
+<p>Prompt for a URL in the minibuffer, and display it in emacs-w3m.  This
+command is provided, if anything, in order to start emacs-w3m from other
+application programs.
+</p></dd>
+</dl>
+
+<p>Moving in an emacs-w3m buffer won&rsquo;t be painful if you&rsquo;re an Emacs user
+already, since many of the standard keys work as intended.  For
+instance, <kbd>C-n</kbd>, <kbd>C-v</kbd> and <kbd>C-s</kbd> (which are commonly used to
+move down one line, one page, or search downwards for a word) are valid
+keys in an emacs-w3m buffer.
+</p>
+<p>To follow a link, use the <kbd>&lt;RET&gt;</kbd> key.  You have to move the
+point to a link to do this; links are easily recognizable in a buffer
+because they are not displayed like ordinary text: they can be
+underlined, or have a different color.  The face <code>w3m-anchor</code>
+controls how they are to be displayed (see section <a href="emacs-w3m_30.html#Customizable-Variables">Customizable variables</a>).
+</p>
+<dl compact="compact">
+<dt> <kbd>&lt;RET&gt;</kbd></dt>
+<dt> <kbd>&lt;right&gt;</kbd> (Lynx-like keymap only)</dt>
+<dd><a name="index-RET"></a>
+<a name="index-right-_0028Lynx_002dlike-keymap_0029"></a>
+<a name="index-w3m_002dview_002dthis_002durl"></a>
+<p>Display the page pointed by the link under point
+(<code>w3m-view-this-url</code>).
+</p>
+<p>The exact behavior of this command depends on the properties of the link
+under point, and on whether you give it a prefix argument or not.  See
+<a href="emacs-w3m_65.html#Emacs_002dw3m-Functions">Details of some emacs-w3m functions</a> for details.
+</p></dd>
+</dl>
+
+<p>As mentioned above, you can be prompted for a URL when you use the
+command <kbd>M-x w3m</kbd>, by setting the <code>w3m-quick-start</code>
+variable to <code>nil</code>.  In an emacs-w3m buffer, there are also two
+popular ways to go to new pages by entering their URLs, see below.
+</p>
+<dl compact="compact">
+<dt> <kbd>&lt;RET&gt;</kbd></dt>
+<dd><a name="index-RET-1"></a>
+<a name="index-w3m_002dview_002dthis_002durl-1"></a>
+<p>In an emacs-w3m buffer, you can be prompted for a URL in the minibuffer
+and make emacs-w3m display the corresponding page by hitting
+<kbd>&lt;RET&gt;</kbd> after moving the point to the URL displayed in the
+&lsquo;<samp>header-line</samp>&rsquo;.  This feature will feel familiar to you if you are
+used to GUI-based web browsers like Mozilla.  Detailed explanations
+about this can be found in <a href="emacs-w3m_65.html#Emacs_002dw3m-Functions">Details of some emacs-w3m functions</a>
+(<code>w3m-view-this-url</code>).
+</p>
+</dd>
+<dt> <kbd>g</kbd></dt>
+<dd><a name="index-g"></a>
+<a name="index-w3m_002dgoto_002durl"></a>
+<p>Prompt for a URL in the minibuffer and make emacs-w3m display the
+corresponding page (independently of the position of the point) in an
+emacs-w3m buffer.  This binding will be familiar to you if you already
+use Gnus or Mew (<code>w3m-goto-url</code>).
+</p>
+</dd>
+<dt> <kbd>G</kbd></dt>
+<dd><a name="index-G"></a>
+<a name="index-w3m_002dgoto_002durl_002dnew_002dsession"></a>
+<p>Prompt for a URL in the minibuffer, and display it in a new session.
+This function works just like <kbd>g</kbd> (<kbd>M-x w3m-goto-url</kbd>)),
+except that it opens a new session.  Unless you are using emacs-w3m on
+the character terminal, opening a new session means displaying the page
+in a new tab.  For more information about tabs, please refer to
+<a href="emacs-w3m_14.html#Using-Tabs">Everybody likes tabs</a> (<code>w3m-goto-url-new-session</code>).
+</p>
+</dd>
+<dt> <kbd>c</kbd> (Lynx-like keymap)</dt>
+<dt> <kbd>y</kbd> (Info-like keymap)</dt>
+<dd><a name="index-c-_0028Lynx_002dlike-keymap_0029"></a>
+<a name="index-y-_0028Info_002dlike-keymap_0029"></a>
+<a name="index-w3m_002dprint_002dcurrent_002durl"></a>
+<p>Display the URL of the page being displayed in the echo area and put it
+in the <code>kill-ring</code> (<code>w3m-print-current-url</code>).
+</p>
+</dd>
+<dt> <kbd>u</kbd> (Lynx-like keymap)</dt>
+<dt> <kbd>Y</kbd> (Info-like keymap)</dt>
+<dd><a name="index-u-_0028Lynx_002dlike-keymap_0029"></a>
+<a name="index-Y-_0028Info_002dlike-keymap_0029"></a>
+<a name="index-w3m_002dprint_002dthis_002durl"></a>
+<p>Display the target URL of the link under point in the echo area and put
+it in the <code>kill-ring</code> (<code>w3m-print-this-url</code>).
+</p></dd>
+</dl>
+
+<p>If the page you&rsquo;re reading is today&rsquo;s news or someone&rsquo;s diary, it may
+have been updated since you loaded it.  You can refresh the page using
+the following command.  (This command can also be useful to force a full
+redisplay of the page if it looks broken.)
+</p>
+<dl compact="compact">
+<dt> <kbd>R</kbd></dt>
+<dt> <kbd>C-S-l</kbd> (Info-like keymap only)</dt>
+<dd><a name="index-R"></a>
+<a name="index-C_002dS_002dl-_0028Info_002dlike-keymap_0029"></a>
+<a name="index-w3m_002dreload_002dthis_002dpage"></a>
+<p>Reload the page (<code>w3m-reload-this-page</code>).
+</p></dd>
+</dl>
+
+<hr size="6">
+<a name="Moving-in-a-page"></a>
+<table cellpadding="1" cellspacing="1" border="0">
+<tr><td valign="middle" align="left">[<a href="#Launching-and-Jumping" title="Previous section in reading order"> &lt; </a>]</td>
+<td valign="middle" align="left">[<a href="#Moving-over-pages" title="Next section in reading order"> &gt; </a>]</td>
+<td valign="middle" align="left"> &nbsp; </td>
+<td valign="middle" align="left">[<a href="emacs-w3m_9.html#Basic-Usage" title="Beginning of this chapter or previous chapter"> &lt;&lt; </a>]</td>
+<td valign="middle" align="left">[<a href="#Browsing-Web-Pages" title="Up section"> Up </a>]</td>
+<td valign="middle" align="left">[<a href="emacs-w3m_19.html#Pretty-Good-Features" title="Next chapter"> &gt;&gt; </a>]</td>
+<td valign="middle" align="left"> &nbsp; </td>
+<td valign="middle" align="left"> &nbsp; </td>
+<td valign="middle" align="left"> &nbsp; </td>
+<td valign="middle" align="left"> &nbsp; </td>
+<td valign="middle" align="left">[<a href="emacs-w3m.html#Top" title="Cover (top) of document">Top</a>]</td>
+<td valign="middle" align="left">[<a href="emacs-w3m_toc.html#SEC_Contents" title="Table of contents">Contents</a>]</td>
+<td valign="middle" align="left">[<a href="emacs-w3m_68.html#Index" title="Index">Index</a>]</td>
+<td valign="middle" align="left">[<a href="emacs-w3m_abt.html#SEC_About" title="About (help)"> ? </a>]</td>
+</tr></table>
+<a name="Moving-from-place-to-place-in-a-page"></a>
+<h3 class="subsection">3.1.3 Moving from place to place in a page</h3>
+<a name="index-Moving-in-a-page"></a>
+
+<p>Being able to use familiar Emacs movement bindings while browsing a web
+page probably fascinates you already.  Believe it or not, there is
+more!  Since we value your time, we have added keys to move the point,
+scroll the page or find links in a very fast way.  When you master
+them, you will understand how handy they are.
+</p>
+<p>The keys are assigned so that scroll commands can be called using
+shorter keystrokes than standard Emacs key bindings.  And since places
+where you can input text are pretty specific in web pages
+(see section <a href="emacs-w3m_17.html#Submitting-Forms">Filling in HTML forms</a>), most keys have special meanings and aren&rsquo;t
+assigned to <code>self-insert-command</code> anymore.
+</p>
+<dl compact="compact">
+<dt> <kbd>&lt;SPC&gt;</kbd></dt>
+<dd><a name="index-SPC"></a>
+<a name="index-w3m_002dscroll_002dup_002dor_002dnext_002durl"></a>
+<p>Scroll downwards.  You may be used to this binding if you use the
+&lsquo;<samp>more</samp>&rsquo; or &lsquo;<samp>less</samp>&rsquo; commands, or Emacs&rsquo;s <code>view-mode</code>
+(<code>w3m-scroll-up-or-next-url</code>).
+</p>
+</dd>
+<dt> <kbd>&lt;DEL&gt;</kbd></dt>
+<dt> <kbd>b</kbd></dt>
+<dt> <kbd>&lt;backspace&gt;</kbd></dt>
+<dt> <kbd>S-&lt;SPC&gt;</kbd></dt>
+<dt> <kbd>C-?</kbd></dt>
+<dd><a name="index-DEL"></a>
+<a name="index-b"></a>
+<a name="index-backspace"></a>
+<a name="index-S_002dSPC"></a>
+<a name="index-C_002d_003f"></a>
+<a name="index-w3m_002dscroll_002ddown_002dor_002dprevious_002durl"></a>
+<p>Scroll upwards.  You may be used to this binding if you use the
+&lsquo;<samp>less</samp>&rsquo; command or Emacs&rsquo;s <code>view-mode</code>
+(<code>w3m-scroll-down-or-previous-url</code>).
+</p>
+</dd>
+<dt> <kbd>&gt;</kbd></dt>
+<dd><a name="index-_003e"></a>
+<a name="index-w3m_002dscroll_002dleft"></a>
+<a name="index-w3m_002dhorizontal_002dscroll_002dcolumns"></a>
+<p>Scroll to the left.  The scroll step is given by the
+<code>w3m-horizontal-scroll-columns</code> variable, default 10
+(<code>w3m-scroll-left</code>).
+</p>
+</dd>
+<dt> <kbd>&lt;</kbd></dt>
+<dd><a name="index-_003c"></a>
+<a name="index-w3m_002dscroll_002dright"></a>
+<a name="index-w3m_002dhorizontal_002dscroll_002dcolumns-1"></a>
+<p>Scroll to the right.  The scroll step is given by the
+<code>w3m-horizontal-scroll-columns</code> variable, default 10
+(<code>w3m-scroll-right</code>).
+</p>
+</dd>
+<dt> <kbd>.</kbd> (Lynx-like keymap)</dt>
+<dt> <kbd>S-&lt;left&gt;</kbd> (Info-like keymap)</dt>
+<dd><a name="index-_002e-_0028Lynx_002dlike-keymap_0029"></a>
+<a name="index-S_002dleft-_0028Info_002dlike-keymap_0029"></a>
+<a name="index-w3m_002dshift_002dleft"></a>
+<a name="index-w3m_002dhorizontal_002dshift_002dcolumns"></a>
+<p>Shift to the left (a fine level horizontal scrolling).  The shift step
+is given by the <code>w3m-horizontal-shift-columns</code> variable, default 2
+(<code>w3m-shift-left</code>).
+</p>
+</dd>
+<dt> <kbd>,</kbd> (Lynx-like keymap)</dt>
+<dt> <kbd>S-&lt;right&gt;</kbd> (Info-like keymap)</dt>
+<dd><a name="index-_002c-_0028Lynx_002dlike-keymap_0029"></a>
+<a name="index-S_002dright-_0028Info_002dlike-keymap_0029"></a>
+<a name="index-w3m_002dshift_002dright"></a>
+<a name="index-w3m_002dhorizontal_002dshift_002dcolumns-1"></a>
+<p>Shift to the right (a fine level horizontal scrolling).  The shift step
+is given by the <code>w3m-horizontal-shift-columns</code> variable, default 2
+(<code>w3m-shift-right</code>).
+</p>
+</dd>
+<dt> <kbd>M-l</kbd></dt>
+<dd><a name="index-M_002dl"></a>
+<a name="index-w3m_002dhorizontal_002drecenter"></a>
+<p>Scroll horizontally so that the current position is centered
+(<code>w3m-horizontal-recenter</code>).
+</p></dd>
+</dl>
+
+<p>The <code>w3m-mode</code> major mode defines commands to move to various kinds
+of things; namely links, forms, and images (whether they are displayed
+or not).
+</p>
+<p>Let&rsquo;s consider this simple example: suppose we want to search for a word
+on the widely-known Google search engine.  Step one: open
+<a href="http://www.google.com">http://www.google.com</a> in emacs-w3m.  Step two: once the page is
+loaded, hit <kbd>]</kbd>.  Tadaa!  The point has moved to the first form
+input in the page, you can now hit <kbd>&lt;RET&gt;</kbd> to enter something in
+it, and then <kbd>C-c C-c</kbd> to submit.  Without this command, you
+would have had to move into the page using <kbd>C-n</kbd>, <kbd>C-f</kbd> and so
+forth, it would have been a real pain.
+</p>
+<dl compact="compact">
+<dt> <kbd>&lt;TAB&gt;</kbd></dt>
+<dt> <kbd>&lt;down&gt;</kbd> (Lynx-like keymap only)</dt>
+<dd><a name="index-TAB"></a>
+<a name="index-down-_0028Lynx_002dlike-keymap_0029"></a>
+<a name="index-w3m_002dnext_002danchor"></a>
+<p>Move the point to the next link (an &ldquo;anchor&rdquo; in emacs-w3m lingo).
+More strictly speaking, move the point forwards to the nearest anchor.
+</p>
+</dd>
+<dt> <kbd>M-&lt;TAB&gt;</kbd></dt>
+<dt> <kbd>S-&lt;TAB&gt;</kbd></dt>
+<dt> <kbd>&lt;backtab&gt;</kbd></dt>
+<dt> <kbd>&lt;up&gt;</kbd> (Lynx-like keymap only)</dt>
+<dd><a name="index-M_002dTAB"></a>
+<a name="index-S_002dTAB"></a>
+<a name="index-backtab"></a>
+<a name="index-up-_0028Lynx_002dlike-keymap_0029"></a>
+<a name="index-w3m_002dprevious_002danchor"></a>
+<p>Move the point to the previous anchor.  More strictly speaking, move the
+point backwards to the nearest anchor (<code>w3m-previous-anchor</code>).
+</p>
+</dd>
+<dt> <kbd>]</kbd></dt>
+<dd><a name="index-_005d"></a>
+<a name="index-w3m_002dnext_002dform"></a>
+<p>Move the point to the next form.  More strictly speaking, move the point
+forwards to the nearest form (<code>w3m-next-form</code>).
+</p>
+</dd>
+<dt> <kbd>[</kbd></dt>
+<dd><a name="index-_005b"></a>
+<a name="index-w3m_002dprevious_002dform"></a>
+<p>Move the point to the previous form.  More strictly speaking, move the
+point backwards to the nearest form (<code>w3m-previous-form</code>).
+</p>
+</dd>
+<dt> <kbd>}</kbd></dt>
+<dd><a name="index-_007d"></a>
+<a name="index-w3m_002dnext_002dimage"></a>
+<p>Move the point to the next image.  More strictly speaking, move the
+point forwards to the nearest image (<code>w3m-next-image</code>).
+</p>
+</dd>
+<dt> <kbd>{</kbd></dt>
+<dd><a name="index-_007b"></a>
+<a name="index-w3m_002dprevious_002dimage"></a>
+<p>Move the point to the previous image.  More strictly speaking, move the
+point backwards to the nearest image (<code>w3m-previous-image</code>).
+</p></dd>
+</dl>
+
+<hr size="6">
+<a name="Moving-over-pages"></a>
+<table cellpadding="1" cellspacing="1" border="0">
+<tr><td valign="middle" align="left">[<a href="#Moving-in-a-page" title="Previous section in reading order"> &lt; </a>]</td>
+<td valign="middle" align="left">[<a href="#Browsing-with-Mouse-Operations" title="Next section in reading order"> &gt; </a>]</td>
+<td valign="middle" align="left"> &nbsp; </td>
+<td valign="middle" align="left">[<a href="emacs-w3m_9.html#Basic-Usage" title="Beginning of this chapter or previous chapter"> &lt;&lt; </a>]</td>
+<td valign="middle" align="left">[<a href="#Browsing-Web-Pages" title="Up section"> Up </a>]</td>
+<td valign="middle" align="left">[<a href="emacs-w3m_19.html#Pretty-Good-Features" title="Next chapter"> &gt;&gt; </a>]</td>
+<td valign="middle" align="left"> &nbsp; </td>
+<td valign="middle" align="left"> &nbsp; </td>
+<td valign="middle" align="left"> &nbsp; </td>
+<td valign="middle" align="left"> &nbsp; </td>
+<td valign="middle" align="left">[<a href="emacs-w3m.html#Top" title="Cover (top) of document">Top</a>]</td>
+<td valign="middle" align="left">[<a href="emacs-w3m_toc.html#SEC_Contents" title="Table of contents">Contents</a>]</td>
+<td valign="middle" align="left">[<a href="emacs-w3m_68.html#Index" title="Index">Index</a>]</td>
+<td valign="middle" align="left">[<a href="emacs-w3m_abt.html#SEC_About" title="About (help)"> ? </a>]</td>
+</tr></table>
+<a name="Moving-from-page-to-page"></a>
+<h3 class="subsection">3.1.4 Moving from page to page</h3>
+
+<p>This section explains how to move from page to page, but not by
+following links or inputing URLs (these ways of moving are explained in
+<a href="#Launching-and-Jumping">Go ahead, just try it</a>).
+</p>
+<p>This includes commands to move backwards and forwards in history (the
+familiar &ldquo;Back&rdquo; and &ldquo;Forward&rdquo; from other browsers), and the
+obligatory &ldquo;Go to the home page&rdquo; feature.  You will probably
+understand this better after reading the <a href="emacs-w3m_12.html#Tracing-History">Going back through time and space</a> section.
+</p>
+<dl compact="compact">
+<dt> <kbd>B</kbd> (Lynx-like keymap)</dt>
+<dt> <kbd>&lt;left&gt;</kbd> (Lynx-like keymap)</dt>
+<dt> <kbd>l</kbd> (Info-like keymap)</dt>
+<dt> <kbd>p</kbd> (Info-like keymap)</dt>
+<dd><a name="index-B-_0028Lynx_002dlike-keymap_0029"></a>
+<a name="index-left-_0028Lynx_002dlike-keymap_0029"></a>
+<a name="index-l-_0028Info_002dlike-keymap_0029"></a>
+<a name="index-p-_0028Info_002dlike-keymap_0029"></a>
+<a name="index-w3m_002dview_002dprevious_002dpage"></a>
+<p>Move back one page in history (<code>w3m-view-previous-page</code>).  With a
+numeric argument ARG, move back ARG pages.  This is the preferred way to
+go back in time.
+</p>
+</dd>
+<dt> <kbd>N</kbd> (Lynx-like keymap)</dt>
+<dt> <kbd>n</kbd> (Info-like keymap)</dt>
+<dd><a name="index-N-_0028Lynx_002dlike-keymap_0029"></a>
+<a name="index-n-_0028Info_002dlike-keymap_0029"></a>
+<a name="index-w3m_002dview_002dnext_002dpage"></a>
+<p>Move forward one page in history (<code>w3m-view-next-page</code>).  Of
+course, this will work only if you&rsquo;ve used <kbd>B</kbd> (<kbd>l</kbd> for the
+&lsquo;<samp>Info-like</samp>&rsquo; keymap) to move back in history.  If called with a
+numeric argument ARG, move forward ARG pages. This command actually
+allows you to go back to the future!
+</p>
+</dd>
+<dt> <kbd>H</kbd></dt>
+<dd><a name="index-H"></a>
+<a name="index-w3m_002dgohome"></a>
+<a name="index-w3m_002dquick_002dstart-1"></a>
+<p>Move to the home page (<code>w3m-gohome</code>).  You can specify the URL of
+the home page by customizing the <code>w3m-home-page</code> variable
+(&ldquo;about:&rdquo; by default).
+</p></dd>
+</dl>
+
+<p>These commands are exclusive features of emacs-w3m, we were able to
+obtain patents on them, so you won&rsquo;t find them anywhere else.  That&rsquo;s
+why you must learn to use them today!  (Just kidding.)
+</p>
+<dl compact="compact">
+<dt> <kbd>^</kbd></dt>
+<dt> <kbd>u</kbd> (Info-like keymap only)</dt>
+<dd><a name="index-_005e"></a>
+<a name="index-u-_0028Info_002dlike-keymap_0029"></a>
+<a name="index-w3m_002dview_002dparent_002dpage"></a>
+<p>Attempt to move to the parent directory of the page currently displayed.
+For instance, it will attempt to move to &ldquo;http://foo/bar/&rdquo; when
+&ldquo;http://foo/bar/baz&rdquo; is displayed.  This function has been implemented
+because of the following observation: users of web browsers often have
+to move up one level of directories because the information they&rsquo;re
+looking for isn&rsquo;t displayed on the current page (either because it has
+been deleted, or because a search engine took them to the wrong page).
+</p>
+<p>When you use another web browser, you usually need to remove the last
+component from the URL by using the <kbd>&lt;DEL&gt;</kbd> key, etc. several
+times manually.  In emacs-w3m, this operation can be performed in only
+one keystroke, by typing <kbd>^</kbd>!
+</p>
+<p>Also, you type this command with prefix as &ldquo;2 ^&rdquo;, you visit the upper
+directory according to input number. you type &ldquo;0 ^&rdquo;, you visit the top
+of this site.
+</p></dd>
+</dl>
+
+<dl compact="compact">
+<dt> <kbd>&lt;SPC&gt;</kbd></dt>
+<dd><a name="index-SPC-1"></a>
+<a name="index-w3m_002dscroll_002dup_002dor_002dnext_002durl-1"></a>
+<p>When the current point is located at the end of the buffer and you
+cannot scroll down further, hit the <kbd>&lt;SPC&gt;</kbd> key to go on to the
+&ldquo;next page&rdquo; (<code>w3m-scroll-up-or-next-url</code>).  Here, &ldquo;next page&rdquo;
+means the page referred to in the special &ldquo;next&rdquo; header of the current
+page (read on).  This feature has nothing to do with the history.
+</p>
+<p>You probably noticed that some websites split their contents over
+several small pages, partly because it&rsquo;s not comfortable for users to
+wait for huge contents to transfer in one go.  For example, search
+results of search engines often appear like that.  On such sites, users
+often need to follow links manually from one page to the next in order
+the access all the information.
+</p>
+<p>Hopefully emacs-w3m attempts to enable you to browse a series of
+contents over pages as if you were viewing them as a single page, by
+combining two operations: explicitly following links and scrolling.
+</p>
+<p>That&rsquo;s how it works: these kinds of websites often have fields such as
+&ldquo;next&rdquo;, &ldquo;prev&rdquo; or &ldquo;previous&rdquo; in the headers of their web pages.
+These fields contain information about links between divided pages.
+Emacs-w3m uses these fields to know what to follow.
+</p>
+<p>Let&rsquo;s take an example with Google again to explain how the two
+operations (following links and scrolling) are combined.  Open
+<a href="http://www.google.com">http://www.google.com</a> and search for a word.  If you search for a
+very common word (e.g. &ldquo;hamburger&rdquo;), you will get tons of search
+results.  Google returns the first page of search results, after having
+sorted them using its own algorithm and divided them into several pages.
+Use <kbd>&lt;SPC&gt;</kbd> to scroll through this first page.  Keep scrolling
+until you see the end of the web page in the window.  Here, a surprise
+is waiting for you.  If you use a web browser other than emacs-w3m and
+want to see the rest of the search results, you would have to click on
+any of the numbers listed under
+</p>
+<table><tr><td>&nbsp;</td><td><pre class="example">Gooooooogle
+</pre></td></tr></table>
+
+<table><tr><td>&nbsp;</td><td><pre class="example">1 2 3 4 5 6 7 8...
+</pre></td></tr></table>
+
+<p>to follow the link.  But with emacs-w3m, you can follow the link by just
+typing <kbd>&lt;SPC&gt;</kbd>, just as if you were scrolling!
+</p>
+</dd>
+<dt> <kbd>&lt;DEL&gt;</kbd></dt>
+<dt> <kbd>b</kbd></dt>
+<dt> <kbd>&lt;backspace&gt;</kbd></dt>
+<dt> <kbd>S-&lt;SPC&gt;</kbd></dt>
+<dt> <kbd>C-?</kbd></dt>
+<dd><a name="index-DEL-1"></a>
+<a name="index-b-1"></a>
+<a name="index-backspace-1"></a>
+<a name="index-S_002dSPC-1"></a>
+<a name="index-C_002d_003f-1"></a>
+<a name="index-w3m_002dscroll_002ddown_002dor_002dprevious_002durl-1"></a>
+<p>When the point is located at the beginning of the buffer and you cannot
+scroll upward, hit the <kbd>&lt;DEL&gt;</kbd> to go to the &ldquo;previous&rdquo; page
+(<code>w3m-scroll-down-or-previous-url</code>).  Here, the &ldquo;previous&rdquo; page
+means the page which is assigned to the &ldquo;prev&rdquo; or &ldquo;previous&rdquo; fields
+in the header of the current page.  This function has nothing to do with
+the history, and works like <kbd>&lt;SPC&gt;</kbd> (w3m-scroll-up-or-next-url).
+</p></dd>
+</dl>
+
+<hr size="6">
+<a name="Browsing-with-Mouse-Operations"></a>
+<table cellpadding="1" cellspacing="1" border="0">
+<tr><td valign="middle" align="left">[<a href="#Moving-over-pages" title="Previous section in reading order"> &lt; </a>]</td>
+<td valign="middle" align="left">[<a href="#Going-Back-to-Daily-Hacking-and_002for-Daily-Writing" title="Next section in reading order"> &gt; </a>]</td>
+<td valign="middle" align="left"> &nbsp; </td>
+<td valign="middle" align="left">[<a href="emacs-w3m_9.html#Basic-Usage" title="Beginning of this chapter or previous chapter"> &lt;&lt; </a>]</td>
+<td valign="middle" align="left">[<a href="#Browsing-Web-Pages" title="Up section"> Up </a>]</td>
+<td valign="middle" align="left">[<a href="emacs-w3m_19.html#Pretty-Good-Features" title="Next chapter"> &gt;&gt; </a>]</td>
+<td valign="middle" align="left"> &nbsp; </td>
+<td valign="middle" align="left"> &nbsp; </td>
+<td valign="middle" align="left"> &nbsp; </td>
+<td valign="middle" align="left"> &nbsp; </td>
+<td valign="middle" align="left">[<a href="emacs-w3m.html#Top" title="Cover (top) of document">Top</a>]</td>
+<td valign="middle" align="left">[<a href="emacs-w3m_toc.html#SEC_Contents" title="Table of contents">Contents</a>]</td>
+<td valign="middle" align="left">[<a href="emacs-w3m_68.html#Index" title="Index">Index</a>]</td>
+<td valign="middle" align="left">[<a href="emacs-w3m_abt.html#SEC_About" title="About (help)"> ? </a>]</td>
+</tr></table>
+<a name="Surfing-using-the-mouse"></a>
+<h3 class="subsection">3.1.5 Surfing using the mouse</h3>
+
+<p>The emacs-w3m developers went to some trouble to ensure that normal
+people who aren&rsquo;t Emacs otaku can also use emacs-w3m.  You can perform
+most web browsing operations using only the mouse except for entering
+text, e.g. URL, forms, etc.  Note that sometimes you might still need to
+use modifier keys since the emacs-w3m developers are all Emacs
+otaku&hellip;
+</p>
+<p>Use <kbd>mouse-2</kbd> to &ldquo;follow links&rdquo; (the first basic of web browsing).
+Under Emacs 22.1 and newer, you can also follow links using
+<kbd>mouse-1</kbd>, depending of the value of
+<code>mouse-1-click-follows-link</code>.
+</p>
+<dl compact="compact">
+<dt> <kbd>mouse-2</kbd></dt>
+<dd><a name="index-mouse_002d2"></a>
+<a name="index-w3m_002dmouse_002dview_002dthis_002durl"></a>
+<p>Follow the link under the mouse pointer
+(<code>w3m-mouse-view-this-url</code>).
+</p>
+</dd>
+<dt> <kbd>S-&lt;mouse-2&gt;</kbd></dt>
+<dd><a name="index-S_002dmouse_002d2"></a>
+<a name="index-w3m_002dmouse_002dview_002dthis_002durl_002dnew_002dsession"></a>
+<p>Follow the link under the mouse pointer in a new session
+(<code>w3m-mouse-view-this-url-new-session</code>).
+</p></dd>
+</dl>
+
+<p>Scrollbar, menubar and toolbar are helpful in emacs-w3m when you use a
+mouse (your Emacs must support them, and you must have enabled them).
+You can scroll an emacs-w3m window using the scrollbar.  You can invoke
+many emacs-w3m commands described in this manual from the &ldquo;w3m&rdquo; menu
+which appears at the top of the Emacs frame.  Note: it&rsquo;s not necessary
+to use the menubar for most emacs-w3m commands, you can use the toolbar
+icons instead.
+</p>
+<p>To switch between buffers in an emacs-w3m window using &ldquo;Tabs&rdquo;
+(see section <a href="emacs-w3m_14.html#Using-Tabs">Everybody likes tabs</a>), click on the topmost line in an emacs-w3m window
+directory using <kbd>mouse-2</kbd> or choose one from the &ldquo;Tab&rdquo; menu which
+appears next but one to the &ldquo;w3m&rdquo; menu.
+</p>
+<hr size="6">
+<a name="Going-Back-to-Daily-Hacking-and_002for-Daily-Writing"></a>
+<table cellpadding="1" cellspacing="1" border="0">
+<tr><td valign="middle" align="left">[<a href="#Browsing-with-Mouse-Operations" title="Previous section in reading order"> &lt; </a>]</td>
+<td valign="middle" align="left">[<a href="emacs-w3m_11.html#Inline-Images" title="Next section in reading order"> &gt; </a>]</td>
+<td valign="middle" align="left"> &nbsp; </td>
+<td valign="middle" align="left">[<a href="emacs-w3m_9.html#Basic-Usage" title="Beginning of this chapter or previous chapter"> &lt;&lt; </a>]</td>
+<td valign="middle" align="left">[<a href="#Browsing-Web-Pages" title="Up section"> Up </a>]</td>
+<td valign="middle" align="left">[<a href="emacs-w3m_19.html#Pretty-Good-Features" title="Next chapter"> &gt;&gt; </a>]</td>
+<td valign="middle" align="left"> &nbsp; </td>
+<td valign="middle" align="left"> &nbsp; </td>
+<td valign="middle" align="left"> &nbsp; </td>
+<td valign="middle" align="left"> &nbsp; </td>
+<td valign="middle" align="left">[<a href="emacs-w3m.html#Top" title="Cover (top) of document">Top</a>]</td>
+<td valign="middle" align="left">[<a href="emacs-w3m_toc.html#SEC_Contents" title="Table of contents">Contents</a>]</td>
+<td valign="middle" align="left">[<a href="emacs-w3m_68.html#Index" title="Index">Index</a>]</td>
+<td valign="middle" align="left">[<a href="emacs-w3m_abt.html#SEC_About" title="About (help)"> ? </a>]</td>
+</tr></table>
+<a name="Return-to-an-Ordinary-Life"></a>
+<h3 class="subsection">3.1.6 Return to an Ordinary Life</h3>
+
+<p>Think back.  You probably didn&rsquo;t start Emacs to browse the web, but to,
+say, replace some editor&rsquo;s built-in interpreter with scheme, write Info
+documentation or put into print your opinion on software patents&hellip;
+who knows?  While you were using Emacs, you ran into the need to browse
+the web for your work.  But you happened to be able to see the web page
+without leaving Emacs at all.  Wow.
+</p>
+<p>Now the time has come to return to work.  Keep it up or the world won&rsquo;t
+change!  Type <kbd>q</kbd> if you think you might need to browse the web
+again.  Type <kbd>Q</kbd> if you don&rsquo;t have any intention to go back to
+emacs-w3m for a while.
+</p>
+<dl compact="compact">
+<dt> <kbd>q</kbd></dt>
+<dd><a name="index-q"></a>
+<a name="index-w3m_002dclose_002dwindow"></a>
+<p>Close an emacs-w3m window and select the other buffer
+(<code>w3m-close-window</code>).
+</p>
+</dd>
+<dt> <kbd>Q</kbd></dt>
+<dd><a name="index-Q"></a>
+<a name="index-w3m_002dquit"></a>
+<p>Save the &ldquo;arrived URLs&rdquo; list to disk (see section <a href="emacs-w3m_12.html#Tracing-History">Going back through time and space</a>), save
+cookies (see section <a href="emacs-w3m_34.html#Cookie-Variables">Variables related to cookies</a>) and really quit emacs-w3m
+(<code>w3m-quit</code>).
+</p></dd>
+</dl>
+
+<hr size="6">
+<table cellpadding="1" cellspacing="1" border="0">
+<tr><td valign="middle" align="left">[<a href="#Browsing-with-Mouse-Operations" title="Previous section in reading order"> &lt; </a>]</td>
+<td valign="middle" align="left">[<a href="emacs-w3m_11.html#Inline-Images" title="Next section in reading order"> &gt; </a>]</td>
+<td valign="middle" align="left"> &nbsp; </td>
+<td valign="middle" align="left">[<a href="emacs-w3m_9.html#Basic-Usage" title="Beginning of this chapter or previous chapter"> &lt;&lt; </a>]</td>
+<td valign="middle" align="left">[<a href="#Browsing-Web-Pages" title="Up section"> Up </a>]</td>
+<td valign="middle" align="left">[<a href="emacs-w3m_19.html#Pretty-Good-Features" title="Next chapter"> &gt;&gt; </a>]</td>
+</tr></table>
+<p>
+ <font size="-1">
+  This document was generated by <em>TSUCHIYA Masatoshi</em> on <em>January 30, 2019</em> using <a href="http://www.nongnu.org/texi2html/"><em>texi2html 1.82</em></a>.
+ </font>
+ <br>
+
+</p>
+</body>
+</html>

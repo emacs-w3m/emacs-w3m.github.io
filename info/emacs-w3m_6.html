@@ -1,0 +1,217 @@
+<!DOCTYPE html PUBLIC "-//W3C//DTD HTML 4.01 Transitional//EN" "http://www.w3.org/TR/html401/loose.dtd">
+<html>
+<!-- Copyright C 2000-2014 TSUCHIYA Masatoshi
+
+Permission is granted to copy, distribute and/or modify this document
+under the terms of the GNU General Public License, Version 2 or any
+later version published by the Free Software Foundation.
+
+This document is distributed in the hope that it will be useful, but
+WITHOUT ANY WARRANTY; without even the implied warranty of
+MERCHANTABILITY or FITNESS FOR A PARTICULAR PURPOSE.  See the GNU
+General Public License for more details.
+
+You should have received a copy of the GNU General Public License along
+with this document; see the file COPYING.  If not, write to the Free
+Software Foundation, Inc., 51 Franklin Street, Fifth Floor, Boston, MA
+02110-1301, USA.
+
+ -->
+<!-- Created on January 30, 2019 by texi2html 1.82
+texi2html was written by: 
+            Lionel Cons <Lionel.Cons@cern.ch> (original author)
+            Karl Berry  <karl@freefriends.org>
+            Olaf Bachmann <obachman@mathematik.uni-kl.de>
+            and many others.
+Maintained by: Many creative people.
+Send bugs and suggestions to <texi2html-bug@nongnu.org>
+-->
+<head>
+<title>Emacs-w3m &ndash; an Emacs interface to w3m &ndash;: 2.4 Installing emacs-w3m</title>
+
+<meta name="description" content="Emacs-w3m &ndash; an Emacs interface to w3m &ndash;: 2.4 Installing emacs-w3m">
+<meta name="keywords" content="Emacs-w3m &ndash; an Emacs interface to w3m &ndash;: 2.4 Installing emacs-w3m">
+<meta name="resource-type" content="document">
+<meta name="distribution" content="global">
+<meta name="Generator" content="texi2html 1.82">
+<meta http-equiv="Content-Type" content="text/html; charset=utf-8">
+<style type="text/css">
+<!--
+a.summary-letter {text-decoration: none}
+blockquote.smallquotation {font-size: smaller}
+pre.display {font-family: serif}
+pre.format {font-family: serif}
+pre.menu-comment {font-family: serif}
+pre.menu-preformatted {font-family: serif}
+pre.smalldisplay {font-family: serif; font-size: smaller}
+pre.smallexample {font-size: smaller}
+pre.smallformat {font-family: serif; font-size: smaller}
+pre.smalllisp {font-size: smaller}
+span.roman {font-family:serif; font-weight:normal;}
+span.sansserif {font-family:sans-serif; font-weight:normal;}
+ul.toc {list-style: none}
+-->
+</style>
+
+
+</head>
+
+<body lang="en" bgcolor="#FFFFFF" text="#000000" link="#0000FF" vlink="#800080" alink="#FF0000">
+
+<a name="Installing-Emacs_002dw3m"></a>
+<table cellpadding="1" cellspacing="1" border="0">
+<tr><td valign="middle" align="left">[<a href="emacs-w3m_5.html#Other-Requirements" title="Previous section in reading order"> &lt; </a>]</td>
+<td valign="middle" align="left">[<a href="emacs-w3m_7.html#Non_002dUNIX_002dlike-systems" title="Next section in reading order"> &gt; </a>]</td>
+<td valign="middle" align="left"> &nbsp; </td>
+<td valign="middle" align="left">[<a href="emacs-w3m_2.html#Getting-Started" title="Beginning of this chapter or previous chapter"> &lt;&lt; </a>]</td>
+<td valign="middle" align="left">[<a href="emacs-w3m_2.html#Getting-Started" title="Up section"> Up </a>]</td>
+<td valign="middle" align="left">[<a href="emacs-w3m_9.html#Basic-Usage" title="Next chapter"> &gt;&gt; </a>]</td>
+<td valign="middle" align="left"> &nbsp; </td>
+<td valign="middle" align="left"> &nbsp; </td>
+<td valign="middle" align="left"> &nbsp; </td>
+<td valign="middle" align="left"> &nbsp; </td>
+<td valign="middle" align="left">[<a href="emacs-w3m.html#Top" title="Cover (top) of document">Top</a>]</td>
+<td valign="middle" align="left">[<a href="emacs-w3m_toc.html#SEC_Contents" title="Table of contents">Contents</a>]</td>
+<td valign="middle" align="left">[<a href="emacs-w3m_68.html#Index" title="Index">Index</a>]</td>
+<td valign="middle" align="left">[<a href="emacs-w3m_abt.html#SEC_About" title="About (help)"> ? </a>]</td>
+</tr></table>
+<a name="Installing-emacs_002dw3m"></a>
+<h2 class="section">2.4 Installing emacs-w3m</h2>
+<a name="index-Installing-emacs_002dw3m"></a>
+
+<p>See the official page <a href="http://emacs-w3m.namazu.org/">http://emacs-w3m.namazu.org/</a> for
+instructions on how to get the latest emacs-w3m.  Is everything ready?
+Now, let&rsquo;s begin.
+</p>
+<p>In order to install emacs-w3m on non-UNIX-like systems (or any system
+lacking the ability to execute the &lsquo;<samp>configure</samp>&rsquo; script or has no
+&lsquo;<samp>make</samp>&rsquo; command), skip this section and go to the next section
+See section <a href="emacs-w3m_7.html#Non_002dUNIX_002dlike-systems">Installing on non-UNIX-like systems</a>.
+</p>
+<ol>
+<li>
+First, extract a tarball of the emacs-w3m distribution and enter the top
+directory as follows:
+
+<table><tr><td>&nbsp;</td><td><pre class="example">% tar zxf emacs-w3m-No value for VERSION.tar.gz
+% cd emacs-w3m-No value for VERSION
+</pre></td></tr></table>
+
+<p>If you&rsquo;ve checked out emacs-w3m from CVS, you have to run
+&lsquo;<samp>autoconf</samp>&rsquo; with no argument to generate the &lsquo;<samp>configure</samp>&rsquo;
+script.
+</p>
+</li><li>
+Run the &lsquo;<samp>configure</samp>&rsquo; script.
+
+<table><tr><td>&nbsp;</td><td><pre class="example">% ./configure
+</pre></td></tr></table>
+
+<p><em>Important notice to Gnus users</em>:
+</p>
+<p>If multiple versions of Gnus are installed on your system (it is likely
+that there are the released version and the development version of
+Gnus), make sure that the <code>load-path</code> contains the directory where
+the version you use is installed (check for the &lsquo;<tt>gnus.elc</tt>&rsquo; file).
+You can ensure that with the &lsquo;<samp>--with-addpath</samp>&rsquo; option as follows:
+</p>
+<table><tr><td>&nbsp;</td><td><pre class="example">% ./configure --with-addpath=/usr/local/share/emacs/site-lisp/gnus
+</pre></td></tr></table>
+
+<p>If you&rsquo;ve installed <acronym>APEL</acronym>, <acronym>FLIM</acronym> or something in
+</p>
+<p>non-standard directories other than the default <code>load-path</code>, you
+must specify them using the &lsquo;<samp>--with-addpath</samp>&rsquo; option as follows (you
+may also include the Gnus directory in it separated with &lsquo;<samp>:</samp>&rsquo;):
+</p>
+<table><tr><td>&nbsp;</td><td><pre class="example">% ./configure --with-addpath=/opt/share/apel:/opt/share/flim
+</pre></td></tr></table>
+
+<p>By default, the installer (i.e. &lsquo;<samp>make install</samp>&rsquo;) will compress the
+Lisp source files and info files by gzip in the installation directories.
+If you don&rsquo;t want those files to be compressed, use the configure option
+&lsquo;<samp>--without-compress-install</samp>&rsquo;.
+</p>
+</li><li>
+Just run &lsquo;<samp>make</samp>&rsquo; and &lsquo;<samp>make install</samp>&rsquo;.  See also the next step if
+you are using XEmacs.
+
+<table><tr><td>&nbsp;</td><td><pre class="example">% make
+% make install
+</pre></td></tr></table>
+
+<p>All Lisp and info files will be installed in the appropriate
+directories.  Now, how do you know what files will go where?  To know it
+beforehand, use this:
+</p>
+<table><tr><td>&nbsp;</td><td><pre class="example">% make what-where
+</pre></td></tr></table>
+
+<p>If you are using Emacs or XEmacs capable of displaying images, you had
+better install icon image files.  To do this:
+</p>
+<table><tr><td>&nbsp;</td><td><pre class="example">% make install-icons
+</pre></td></tr></table>
+
+<p>or
+</p>
+<table><tr><td>&nbsp;</td><td><pre class="example">% make install-icons30
+</pre></td></tr></table>
+
+<p>The later is for using the slightly larger icon images.
+</p>
+</li><li>
+You can also install emacs-w3m as an XEmacs package using &lsquo;<samp>make
+install-package</samp>&rsquo; instead of &lsquo;<samp>make install</samp>&rsquo; as follows:
+
+<table><tr><td>&nbsp;</td><td><pre class="example">% make
+% make install-package
+</pre></td></tr></table>
+
+<p>In this case, you don&rsquo;t have to execute &lsquo;<samp>make install-icons</samp>&rsquo; nor
+&lsquo;<samp>make install-icons30</samp>&rsquo;.
+</p>
+<p>If you need to specify the package directory, there are two ways to do
+that:
+</p>
+<ul>
+<li>
+Use the &lsquo;<samp>configure</samp>&rsquo; option &lsquo;<samp>--with-packagedir=</samp>&rsquo;.  For example:
+
+<table><tr><td>&nbsp;</td><td><pre class="example">% ./configure --with-packagedir=/opt/xemacs/xemacs-packages
+% make what-where
+% make
+% make install-package
+</pre></td></tr></table>
+
+</li><li>
+Use the &lsquo;<samp>PACKAGEDIR</samp>&rsquo; variable.  For example:
+
+<table><tr><td>&nbsp;</td><td><pre class="example">% ./configure
+% make what-where PACKAGEDIR=/opt/xemacs/xemacs-packages
+% make
+% make install-package PACKAGEDIR=/opt/xemacs/xemacs-packages
+</pre></td></tr></table>
+
+</li></ul>
+
+</li></ol>
+
+<hr size="6">
+<table cellpadding="1" cellspacing="1" border="0">
+<tr><td valign="middle" align="left">[<a href="emacs-w3m_5.html#Other-Requirements" title="Previous section in reading order"> &lt; </a>]</td>
+<td valign="middle" align="left">[<a href="emacs-w3m_7.html#Non_002dUNIX_002dlike-systems" title="Next section in reading order"> &gt; </a>]</td>
+<td valign="middle" align="left"> &nbsp; </td>
+<td valign="middle" align="left">[<a href="emacs-w3m_2.html#Getting-Started" title="Beginning of this chapter or previous chapter"> &lt;&lt; </a>]</td>
+<td valign="middle" align="left">[<a href="emacs-w3m_2.html#Getting-Started" title="Up section"> Up </a>]</td>
+<td valign="middle" align="left">[<a href="emacs-w3m_9.html#Basic-Usage" title="Next chapter"> &gt;&gt; </a>]</td>
+</tr></table>
+<p>
+ <font size="-1">
+  This document was generated by <em>TSUCHIYA Masatoshi</em> on <em>January 30, 2019</em> using <a href="http://www.nongnu.org/texi2html/"><em>texi2html 1.82</em></a>.
+ </font>
+ <br>
+
+</p>
+</body>
+</html>

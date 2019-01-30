@@ -1,0 +1,236 @@
+<!DOCTYPE html PUBLIC "-//W3C//DTD HTML 4.01 Transitional//EN" "http://www.w3.org/TR/html401/loose.dtd">
+<html>
+<!-- Copyright C 2000-2014 TSUCHIYA Masatoshi
+
+Permission is granted to copy, distribute and/or modify this document
+under the terms of the GNU General Public License, Version 2 or any
+later version published by the Free Software Foundation.
+
+この文書を、フリーソフトウェア財団によって発行された GNU 一般公衆利用許
+諾契約書第 2 版またはそれ以降の版のうちどれかの定める条件の下で複製、配
+布、あるいは変更することを許可します。
+
+This document is distributed in the hope that it will be useful, but
+WITHOUT ANY WARRANTY; without even the implied warranty of
+MERCHANTABILITY or FITNESS FOR A PARTICULAR PURPOSE.  See the GNU
+General Public License for more details.
+
+この文書は有用であることを願って頒布されますが、全くの無保証 です。
+商業可能性 の保証や 特定の目的への適合性 は、言外に示され
+たものも含め全く存在しません。詳しくは GNU 一般公衆利用許諾契約書をご覧
+ください。
+
+You should have received a copy of the GNU General Public License along
+with this document; see the file COPYING.  If not, write to the Free
+Software Foundation, Inc., 51 Franklin Street, Fifth Floor, Boston, MA
+02110-1301, USA.
+
+あなたはこの文書と共に、GNU 一般公衆利用許諾契約書の複製物を一部受け取っ
+たはずです。COPYING ファイルを参照してください。もし受け取っていなければ、
+フリーソフトウェア財団まで請求してください (宛先は the Free Software
+Foundation, Inc., 59 Temple Place, Suite 330, Boston, MA 02111-1307 USA)。
+
+ -->
+<!-- Created on 2019å¹´1ææ30æ¥ by texi2html 1.82
+texi2html was written by: 
+            Lionel Cons <Lionel.Cons@cern.ch> (original author)
+            Karl Berry  <karl@freefriends.org>
+            Olaf Bachmann <obachman@mathematik.uni-kl.de>
+            and many others.
+Maintained by: Many creative people.
+Send bugs and suggestions to <texi2html-bug@nongnu.org>
+-->
+<head>
+<title>Emacs-w3m &ndash; an Emacs interface to w3m &ndash;: ç®æ¬¡</title>
+
+<meta name="description" content="Emacs-w3m &ndash; an Emacs interface to w3m &ndash;: ç®æ¬¡">
+<meta name="keywords" content="Emacs-w3m &ndash; an Emacs interface to w3m &ndash;: ç®æ¬¡">
+<meta name="resource-type" content="document">
+<meta name="distribution" content="global">
+<meta name="Generator" content="texi2html 1.82">
+<meta http-equiv="Content-Type" content="text/html; charset=utf-8">
+<style type="text/css">
+<!--
+a.summary-letter {text-decoration: none}
+blockquote.smallquotation {font-size: smaller}
+pre.display {font-family: serif}
+pre.format {font-family: serif}
+pre.menu-comment {font-family: serif}
+pre.menu-preformatted {font-family: serif}
+pre.smalldisplay {font-family: serif; font-size: smaller}
+pre.smallexample {font-size: smaller}
+pre.smallformat {font-family: serif; font-size: smaller}
+pre.smalllisp {font-size: smaller}
+span.roman {font-family:serif; font-weight:normal;}
+span.sansserif {font-family:sans-serif; font-weight:normal;}
+ul.toc {list-style: none}
+-->
+</style>
+
+
+</head>
+
+<body lang="ja" bgcolor="#FFFFFF" text="#000000" link="#0000FF" vlink="#800080" alink="#FF0000">
+
+<a name="SEC_Contents"></a>
+<table cellpadding="1" cellspacing="1" border="0">
+<tr><td valign="middle" align="left">[<a href="emacs-w3m-ja.html#Top" title="Cover (top) of document">åé ­</a>]</td>
+<td valign="middle" align="left">[<a href="#SEC_Contents" title="Table of contents">ç®æ¬¡</a>]</td>
+<td valign="middle" align="left">[<a href="emacs-w3m-ja_68.html#Index" title="è¦åºã">è¦åºã</a>]</td>
+<td valign="middle" align="left">[<a href="emacs-w3m-ja_abt.html#SEC_About" title="About (help)"> ? </a>]</td>
+</tr></table>
+<h1>ç®æ¬¡</h1>
+<div class="contents">
+
+<ul class="toc">
+  <li><a name="toc-hazimeni" href="emacs-w3m-ja_1.html#Introduction">1. はじめに</a></li>
+  <li><a name="toc-Emacs_002dw3m-woShi-iShi-merunohatotutemoJian-Dan-" href="emacs-w3m-ja_2.html#Getting-Started">2. Emacs-w3m を使い始めるのはとっても簡単</a>
+  <ul class="toc">
+    <li><a name="toc-donnabaziyonno-Emacs-deShi-eruno_003f" href="emacs-w3m-ja_3.html#Required-Emacs-Version">2.1 どんなバージョンの Emacs で使えるの?</a></li>
+    <li><a name="toc-w3m-woShi-imasu_003a-emacs_002dw3m-gaSu-iwake" href="emacs-w3m-ja_4.html#You-Need-w3m">2.2 w3m を使います: emacs-w3m が速いわけ</a></li>
+    <li><a name="toc-Emacs_002dw3m-woDong-Zuo-saserunoniBi-Yao-namono" href="emacs-w3m-ja_5.html#Other-Requirements">2.3 Emacs-w3m を動作させるのに必要なもの</a></li>
+    <li><a name="toc-Emacs_002dw3m-woinsutorusuru" href="emacs-w3m-ja_6.html#Installing-Emacs_002dw3m">2.4 Emacs-w3m をインストールする</a></li>
+    <li><a name="toc-Fei--UNIX-Xi-Huan-Jing-denoinsutoru" href="emacs-w3m-ja_7.html#Non_002dUNIX_002dlike-systems">2.5 非 UNIX 系環境でのインストール</a></li>
+    <li><a name="toc-She-Ding-sinakerebanaranaiZui-Di-Xian-nomono" href="emacs-w3m-ja_8.html#Minimal-Settings">2.6 設定しなければならない最低限のもの</a></li>
+  </ul></li>
+  <li><a name="toc-Ji-Ben-De-naShi-iFang-" href="emacs-w3m-ja_9.html#Basic-Usage">3. 基本的な使い方</a>
+  <ul class="toc">
+    <li><a name="toc-netutosahuinsiyou_0021" href="emacs-w3m-ja_10.html#Browsing-Web-Pages">3.1 ネットサーフィンしよう!</a>
+    <ul class="toc">
+      <li><a name="toc-Er-tunokibaindo" href="emacs-w3m-ja_10.html#Key-Binding">3.1.1 二つのキーバインド</a></li>
+      <li><a name="toc-tonikakuDong-kasitemiyou" href="emacs-w3m-ja_10.html#Launching-and-Jumping">3.1.2 とにかく動かしてみよう</a></li>
+      <li><a name="toc-peziNei-woFei-bimawaru" href="emacs-w3m-ja_10.html#Moving-in-a-page">3.1.3 ページ内を飛びまわる</a></li>
+      <li><a name="toc-peziJian-woDu-riBu-ku" href="emacs-w3m-ja_10.html#Moving-over-pages">3.1.4 ページ間を渡り歩く</a></li>
+      <li><a name="toc-mausuwoShi-tutesahuin" href="emacs-w3m-ja_10.html#Browsing-With-Mouse-Operations">3.1.5 マウスを使ってサーフィン</a></li>
+      <li><a name="toc-Pu-Duan-noSheng-Huo-niLi-runiha" href="emacs-w3m-ja_10.html#Going-back-to-daily-hacking-and_002for-daily-writing">3.1.6 普段の生活に戻るには</a></li>
+    </ul></li>
+    <li><a name="toc-Hua-Xiang-Biao-Shi-wo-ON_002fOFF-suru" href="emacs-w3m-ja_11.html#Inline-Images">3.2 画像表示を ON/OFF する</a></li>
+    <li><a name="toc-Shi-Kong-woSu-ru" href="emacs-w3m-ja_12.html#Tracing-History">3.3 時空を遡る</a></li>
+    <li><a name="toc-bokuno_002fwatasinooQi-niRu-ri" href="emacs-w3m-ja_13.html#Managing-Bookmarks">3.4 ぼくの/わたしのお気に入り</a>
+    <ul class="toc">
+      <li><a name="toc-oQi-niRu-rini-URL-woJia-eru" href="emacs-w3m-ja_13.html#Adding-Bookmarks">3.4.1 お気に入りに URL を加える</a></li>
+      <li><a name="toc-butukumakuwoYue-Lan-suru" href="emacs-w3m-ja_13.html#Consulting-Bookmarks">3.4.2 ブックマークを閲覧する</a></li>
+      <li><a name="toc-butukumakuwoBian-Geng-suruniha_003f" href="emacs-w3m-ja_13.html#Editing-Bookmarks">3.4.3 ブックマークを変更するには?</a></li>
+    </ul></li>
+    <li><a name="toc-minnatabugaHao-kidayone" href="emacs-w3m-ja_14.html#Using-Tabs">3.5 みんなタブが好きだよね</a></li>
+    <li><a name="toc-batuhuawoZuo-ru_002fXiao-su_002fYi-Dong-suru" href="emacs-w3m-ja_15.html#Working-with-buffers">3.6 バッファを作る/消す/移動する</a>
+    <ul class="toc">
+      <li><a name="toc-batuhuawoZuo-tutariXiao-sitari" href="emacs-w3m-ja_15.html#Creating-and-killing-buffers">3.6.1 バッファを作ったり消したり</a></li>
+      <li><a name="toc-batuhuaJian-noYi-Dong-" href="emacs-w3m-ja_15.html#Moving-across-buffers">3.6.2 バッファ間の移動</a></li>
+      <li><a name="toc-risutokarabatuhuawoXuan-bu" href="emacs-w3m-ja_15.html#Selecting-buffers">3.6.3 リストからバッファを選ぶ</a></li>
+    </ul></li>
+    <li><a name="toc-huairuwodaunrodosuru" href="emacs-w3m-ja_16.html#Downloading">3.7 ファイルをダウンロードする</a></li>
+    <li><a name="toc-HTML-huomuniJi-Ru-suru" href="emacs-w3m-ja_17.html#Submitting-Forms">3.8 HTML フォームに記入する</a></li>
+    <li><a name="toc-uebupeziZuo-ritohatukunooShou-Chuan-i" href="emacs-w3m-ja_18.html#HTML-File-Information">3.9 ウェブページ作りとハックのお手伝い</a></li>
+  </ul></li>
+  <li><a name="toc-takusannosuguremono" href="emacs-w3m-ja_19.html#Pretty-Good-Features">4. たくさんのすぐれもの</a>
+  <ul class="toc">
+    <li><a name="toc-Shi-iyasuiuebuJian-Suo-" href="emacs-w3m-ja_20.html#Using-Search-Engines">4.1 使いやすいウェブ検索</a>
+    <ul class="toc">
+      <li><a name="toc-Emacs_002dw3m-niyoruJian-Suo-noyariFang-" href="emacs-w3m-ja_20.html#The-Search-Interface">4.1.1 Emacs-w3m による検索のやり方</a></li>
+      <li><a name="toc-mouYi-tuno-_0028sositeSu-i_0029-uebuJian-Suo-" href="emacs-w3m-ja_20.html#Quick-Searching">4.1.2 もう一つの (そして速い) ウェブ検索</a></li>
+      <li><a name="toc-oQi-niRu-rinoenzinwoShi-uniha_003f" href="emacs-w3m-ja_20.html#Adding-New-Search-Engines">4.1.3 お気に入りのエンジンを使うには?</a></li>
+    </ul></li>
+    <li><a name="toc-Yi-tuno-URL-deFu-Shu-nouebupeziwoJian-ru" href="emacs-w3m-ja_21.html#Grouping-URLs">4.2 一つの URL で複数のウェブページを見る</a></li>
+    <li><a name="toc-Ming-Ri-noTian-Qi-haQing-redesiyou" href="emacs-w3m-ja_22.html#Weather-Information">4.3 明日の天気は晴れでしょう</a></li>
+    <li><a name="toc-antenawoZhang-riXun-rasou" href="emacs-w3m-ja_23.html#Using-Antenna">4.4 アンテナを張り巡らそう</a>
+    <ul class="toc">
+      <li><a name="toc-uebusaitowoantenaniJia-eruniha_003f" href="emacs-w3m-ja_23.html#Setting-up-Antenna">4.4.1 ウェブサイトをアンテナに加えるには?</a></li>
+      <li><a name="toc-antenadeBian-Hua-woZhui-Ji-suru" href="emacs-w3m-ja_23.html#Daily-web-tracking">4.4.2 アンテナで変化を追跡する</a></li>
+    </ul></li>
+    <li><a name="toc-deirekutorinoMu-Gou-Zao-woBiao-Shi-suru" href="emacs-w3m-ja_24.html#Showing-Directory-Tree">4.5 ディレクトリの木構造を表示する</a></li>
+    <li><a name="toc-Perl-nodokiyumentowoJian-ru" href="emacs-w3m-ja_25.html#Viewing-Perl-Documents">4.6 Perl のドキュメントを見る</a></li>
+    <li><a name="toc-Namazu-dehuairuwoJian-Suo-suru" href="emacs-w3m-ja_26.html#Using-Namazu">4.7 Namazu でファイルを検索する</a></li>
+    <li><a name="toc-application_002foctet_002dstream-detawoJian-ru" href="emacs-w3m-ja_27.html#Octet">4.8 application/octet-stream データを見る</a></li>
+    <li><a name="toc-Duo-Shu-nosetusiyonwohuremudegurupuFen-kesuru" href="emacs-w3m-ja_28.html#Frame-Local-Buffers">4.9 多数のセッションをフレームでグループ分けする</a></li>
+    <li><a name="toc-setusiyonnoBao-Cun-toDu-mikomi" href="emacs-w3m-ja_29.html#Session-Manager">4.10 セッションの保存と読みこみ</a></li>
+  </ul></li>
+  <li><a name="toc-dehuorutonomamademoJie-Gou-Liang-itoSi-ukeredo" href="emacs-w3m-ja_30.html#Customizable-Variables">5. デフォルトのままでも結構良いと思うけれど</a>
+  <ul class="toc">
+    <li><a name="toc-Yi-Ban-De-naBian-Shu-" href="emacs-w3m-ja_31.html#General-Variables">5.1 一般的な変数</a></li>
+    <li><a name="toc-Hua-Xiang-niGuan-Lian-sitaBian-Shu-" href="emacs-w3m-ja_32.html#Image-Variables">5.2 画像に関連した変数</a></li>
+    <li><a name="toc-huomuniGuan-Lian-sitaBian-Shu-" href="emacs-w3m-ja_33.html#Form-Variables">5.3 フォームに関連した変数</a></li>
+    <li><a name="toc-kutukiniGuan-Lian-sitaBian-Shu-" href="emacs-w3m-ja_34.html#Cookie-Variables">5.4 クッキーに関連した変数</a></li>
+    <li><a name="toc-butukumakuniGuan-Lian-sitaBian-Shu-" href="emacs-w3m-ja_35.html#Bookmark-Variables">5.5 ブックマークに関連した変数</a></li>
+    <li><a name="toc-uebuJian-Suo-niGuan-Lian-sitaBian-Shu-" href="emacs-w3m-ja_36.html#Search-Variables">5.6 ウェブ検索に関連した変数</a></li>
+    <li><a name="toc-Tian-Qi-Yu-Bao-niGuan-Lian-sitaBian-Shu-" href="emacs-w3m-ja_37.html#Weather-Variables">5.7 天気予報に関連した変数</a></li>
+    <li><a name="toc-dtree-niGuan-Lian-sitaBian-Shu-" href="emacs-w3m-ja_38.html#Dtree-Variables">5.8 dtree に関連した変数</a></li>
+    <li><a name="toc-antenaniGuan-Lian-sitaBian-Shu-" href="emacs-w3m-ja_39.html#Antenna-Variables">5.9 アンテナに関連した変数</a></li>
+    <li><a name="toc-Perldoc-niGuan-Lian-sitaBian-Shu-" href="emacs-w3m-ja_40.html#Perldoc-Variables">5.10 Perldoc に関連した変数</a></li>
+    <li><a name="toc-Namazu-niGuan-Lian-sitaBian-Shu-" href="emacs-w3m-ja_41.html#Namazu-Variables">5.11 Namazu に関連した変数</a></li>
+    <li><a name="toc-Octet-niGuan-Lian-sitaBian-Shu-" href="emacs-w3m-ja_42.html#Octet-Variables">5.12 Octet に関連した変数</a></li>
+    <li><a name="toc-setusiyonmaneziyaniGuan-Lian-sitaBian-Shu-" href="emacs-w3m-ja_43.html#Session-Manager-Variables">5.13 セッションマネージャに関連した変数</a></li>
+    <li><a name="toc-hutuku" href="emacs-w3m-ja_44.html#Hooks">5.14 フック</a></li>
+    <li><a name="toc-sonoTa-noBian-Shu-" href="emacs-w3m-ja_45.html#Other-Variables">5.15 その他の変数</a></li>
+  </ul></li>
+  <li><a name="toc-meru_002fniyusuridadeShi-u" href="emacs-w3m-ja_46.html#Hooking-into-MUAs">6. メール/ニュースリーダーで使う</a>
+  <ul class="toc">
+    <li><a name="toc-Gnus-de-HTML-meruwoDu-mu" href="emacs-w3m-ja_47.html#Gnus">6.1 Gnus で HTML メールを読む</a></li>
+    <li><a name="toc-Mew-de-HTML-meruwoDu-mu" href="emacs-w3m-ja_48.html#Mew">6.2 Mew で HTML メールを読む</a></li>
+    <li><a name="toc-SEMI-MUA-de-HTML-meruwoDu-mu" href="emacs-w3m-ja_49.html#SEMI-MUAs">6.3 <acronym>SEMI</acronym> MUA で HTML メールを読む</a></li>
+    <li><a name="toc-VM-_0028vieW-maiL_0029-ha-Wanderlust-niarazu" href="emacs-w3m-ja_50.html#VM">6.4 VM (vieW maiL) は Wanderlust にあらず</a></li>
+  </ul></li>
+  <li><a name="toc-Bi-zuDa-gaarutohaXian-ranai" href="emacs-w3m-ja_51.html#Frequently-Asked-Questions">7. 必ず答があるとは限らない</a>
+  <ul class="toc">
+    <li><a name="toc-Yi-Ban-De-naZhi-Wen-" href="emacs-w3m-ja_52.html#General-FAQ">7.1 一般的な質問</a></li>
+    <li><a name="toc-toraburu" href="emacs-w3m-ja_53.html#Trouble-FAQ">7.2 トラブル</a></li>
+    <li><a name="toc-Shimbun-niGuan-suruZhi-Wen-" href="emacs-w3m-ja_54.html#Shimbun-FAQ">7.3 Shimbun に関する質問</a></li>
+  </ul></li>
+  <li><a name="toc-anatanarakitutoJie-Jue-dekiru" href="emacs-w3m-ja_55.html#Known-Problems">8. あなたならきっと解決できる</a></li>
+  <li><a name="toc-uebuShang-noXin-Wen-woDu-mutamenoDao-Ju-" href="emacs-w3m-ja_56.html#Shimbun-Library">9. ウェブ上の新聞を読むための道具</a>
+  <ul class="toc">
+    <li><a name="toc-Gnus-wouebuburauzanisuru_0021" href="emacs-w3m-ja_57.html#Nnshimbun">9.1 Gnus をウェブブラウザにする!</a></li>
+    <li><a name="toc-Mew-deXin-Wen-woDu-mu" href="emacs-w3m-ja_58.html#Mew-Shimbun">9.2 Mew で新聞を読む</a></li>
+    <li><a name="toc-Wanderlust-deXin-Wen-woDu-mu" href="emacs-w3m-ja_59.html#Shimbun-with-Wanderlust">9.3 Wanderlust で新聞を読む</a></li>
+    <li><a name="toc-Xin-Wen-noQu-De-nisierusukuriputowoShi-u" href="emacs-w3m-ja_60.html#Shimbun-local-mode">9.4 新聞の取得にシェルスクリプトを使う</a></li>
+    <li><a name="toc-Xin-Wen-gaDu-merusaito" href="emacs-w3m-ja_61.html#Shimbun-Sites">9.5 新聞が読めるサイト</a>
+    <ul class="toc">
+      <li><a name="toc-Xin-Wen-She-" href="emacs-w3m-ja_61.html#Newspapers-Supported-by-Shimbun">9.5.1 新聞社</a></li>
+      <li><a name="toc-niyususaito" href="emacs-w3m-ja_61.html#News-Sites-Supported-by-Shimbun">9.5.2 ニュースサイト</a></li>
+      <li><a name="toc-meringurisuto" href="emacs-w3m-ja_61.html#Mailing-Lists-Supported-by-Shimbun">9.5.3 メーリングリスト</a></li>
+      <li><a name="toc-supotu" href="emacs-w3m-ja_61.html#Sport-Sites-Supported-by-Shimbun">9.5.4 スポーツ</a></li>
+      <li><a name="toc-sonoTa-" href="emacs-w3m-ja_61.html#Misc-Sites-Supported-by-Shimbun">9.5.5 その他</a></li>
+    </ul></li>
+    <li><a name="toc-Xin-Wen-moziyurunoZuo-riFang-" href="emacs-w3m-ja_62.html#Shimbun-Basics">9.6 新聞モジュールの作り方</a>
+    <ul class="toc">
+      <li><a name="toc-Gai-Lue-" href="emacs-w3m-ja_62.html#Overview">9.6.1 概略</a></li>
+      <li><a name="toc-uebupezinososuJi-bihetudaQing-Bao-woQu-De-suru" href="emacs-w3m-ja_62.html#Getting-web-page-and-header-information">9.6.2 ウェブページのソース及びヘッダ情報を取得する</a></li>
+      <li><a name="toc-Ji-Shi-noBiao-Shi-" href="emacs-w3m-ja_62.html#Displaying-an-article">9.6.3 記事の表示</a></li>
+      <li><a name="toc-Shimbun-moziyurunoJi-Cheng-" href="emacs-w3m-ja_62.html#Inheriting-shimbun-module">9.6.4 Shimbun モジュールの継承</a></li>
+      <li><a name="toc-text_002fplain-noJi-Shi-woZuo-runiha" href="emacs-w3m-ja_62.html#Making-text_002fplain-articles">9.6.5 text/plain の記事を作るには</a></li>
+      <li><a name="toc-Quan-Jiao-Wen-Zi-woBan-Jiao-Wen-Zi-niBian-Huan-suru" href="emacs-w3m-ja_62.html#Zenkaku-to-hankaku-conversion">9.6.6 全角文字を半角文字に変換する</a></li>
+      <li><a name="toc-Shimbun-raiburarinokodeinguGui-Yue-" href="emacs-w3m-ja_62.html#Coding-convention-of-Shimbun">9.6.7 Shimbun ライブラリのコーディング規約</a></li>
+    </ul>
+</li>
+  </ul></li>
+  <li><a name="toc-Emacs_002dw3m-woShi-uSa-Luo-taXiao-Wu-tati" href="emacs-w3m-ja_63.html#Tips">10. Emacs-w3m を使う洒落た小物たち</a></li>
+  <li><a name="toc-meringurisuto_002c-baguripoto" href="emacs-w3m-ja_64.html#Mailing-List">11. メーリングリスト、バグリポート</a></li>
+  <li><a name="toc-Emacs_002dw3m-noGuan-Shu-noXiang-siiShuo-Ming-" href="emacs-w3m-ja_65.html#Emacs_002dw3m-Functions">12. Emacs-w3m の関数の詳しい説明</a></li>
+  <li><a name="toc-oZhong-Jian-nopatukezitati" href="emacs-w3m-ja_66.html#External-Packages">13. お仲間のパッケージたち</a></li>
+  <li><a name="toc-konomaniyuaruwoShu-itaRen-tati" href="emacs-w3m-ja_67.html#Authors">14. このマニュアルを書いた人たち</a></li>
+  <li><a name="toc-Suo-Yin-" href="emacs-w3m-ja_68.html#Index">索引</a>
+  <ul class="toc">
+    <li><a name="toc-Gai-Nian-Suo-Yin-" href="emacs-w3m-ja_69.html#Concept-Index">概念索引</a></li>
+    <li><a name="toc-kibaindoSuo-Yin-" href="emacs-w3m-ja_70.html#Key-Index">キーバインド索引</a></li>
+    <li><a name="toc-Bian-Shu-Suo-Yin-" href="emacs-w3m-ja_71.html#Variable-Index">変数索引</a></li>
+    <li><a name="toc-Guan-Shu-Suo-Yin-" href="emacs-w3m-ja_72.html#Function-Index">関数索引</a></li>
+  </ul>
+</li>
+</ul>
+</div>
+<hr size="1">
+<table cellpadding="1" cellspacing="1" border="0">
+<tr><td valign="middle" align="left">[<a href="emacs-w3m-ja.html#Top" title="Cover (top) of document">åé ­</a>]</td>
+<td valign="middle" align="left">[<a href="#SEC_Contents" title="Table of contents">ç®æ¬¡</a>]</td>
+<td valign="middle" align="left">[<a href="emacs-w3m-ja_68.html#Index" title="è¦åºã">è¦åºã</a>]</td>
+<td valign="middle" align="left">[<a href="emacs-w3m-ja_abt.html#SEC_About" title="About (help)"> ? </a>]</td>
+</tr></table>
+<p>
+ <font size="-1">
+  ãã®ææ¸ã¯<em>TSUCHIYA Masatoshi</em>ã«ãã£ã¦<em>2019å¹´1ææ30æ¥</em>ã«<a href="http://www.nongnu.org/texi2html/"><em>texi2html 1.82</em></a>ãç¨ãã¦çæããã¾ããã
+ </font>
+ <br>
+
+</p>
+</body>
+</html>

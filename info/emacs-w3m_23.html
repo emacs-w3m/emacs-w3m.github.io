@@ -1,0 +1,216 @@
+<!DOCTYPE html PUBLIC "-//W3C//DTD HTML 4.01 Transitional//EN" "http://www.w3.org/TR/html401/loose.dtd">
+<html>
+<!-- Copyright C 2000-2014 TSUCHIYA Masatoshi
+
+Permission is granted to copy, distribute and/or modify this document
+under the terms of the GNU General Public License, Version 2 or any
+later version published by the Free Software Foundation.
+
+This document is distributed in the hope that it will be useful, but
+WITHOUT ANY WARRANTY; without even the implied warranty of
+MERCHANTABILITY or FITNESS FOR A PARTICULAR PURPOSE.  See the GNU
+General Public License for more details.
+
+You should have received a copy of the GNU General Public License along
+with this document; see the file COPYING.  If not, write to the Free
+Software Foundation, Inc., 51 Franklin Street, Fifth Floor, Boston, MA
+02110-1301, USA.
+
+ -->
+<!-- Created on January 30, 2019 by texi2html 1.82
+texi2html was written by: 
+            Lionel Cons <Lionel.Cons@cern.ch> (original author)
+            Karl Berry  <karl@freefriends.org>
+            Olaf Bachmann <obachman@mathematik.uni-kl.de>
+            and many others.
+Maintained by: Many creative people.
+Send bugs and suggestions to <texi2html-bug@nongnu.org>
+-->
+<head>
+<title>Emacs-w3m &ndash; an Emacs interface to w3m &ndash;: 4.4 Raise your antenna</title>
+
+<meta name="description" content="Emacs-w3m &ndash; an Emacs interface to w3m &ndash;: 4.4 Raise your antenna">
+<meta name="keywords" content="Emacs-w3m &ndash; an Emacs interface to w3m &ndash;: 4.4 Raise your antenna">
+<meta name="resource-type" content="document">
+<meta name="distribution" content="global">
+<meta name="Generator" content="texi2html 1.82">
+<meta http-equiv="Content-Type" content="text/html; charset=utf-8">
+<style type="text/css">
+<!--
+a.summary-letter {text-decoration: none}
+blockquote.smallquotation {font-size: smaller}
+pre.display {font-family: serif}
+pre.format {font-family: serif}
+pre.menu-comment {font-family: serif}
+pre.menu-preformatted {font-family: serif}
+pre.smalldisplay {font-family: serif; font-size: smaller}
+pre.smallexample {font-size: smaller}
+pre.smallformat {font-family: serif; font-size: smaller}
+pre.smalllisp {font-size: smaller}
+span.roman {font-family:serif; font-weight:normal;}
+span.sansserif {font-family:sans-serif; font-weight:normal;}
+ul.toc {list-style: none}
+-->
+</style>
+
+
+</head>
+
+<body lang="en" bgcolor="#FFFFFF" text="#000000" link="#0000FF" vlink="#800080" alink="#FF0000">
+
+<a name="Using-Antenna"></a>
+<table cellpadding="1" cellspacing="1" border="0">
+<tr><td valign="middle" align="left">[<a href="emacs-w3m_22.html#Weather-Information" title="Previous section in reading order"> &lt; </a>]</td>
+<td valign="middle" align="left">[<a href="#Setting-up-Antenna" title="Next section in reading order"> &gt; </a>]</td>
+<td valign="middle" align="left"> &nbsp; </td>
+<td valign="middle" align="left">[<a href="emacs-w3m_19.html#Pretty-Good-Features" title="Beginning of this chapter or previous chapter"> &lt;&lt; </a>]</td>
+<td valign="middle" align="left">[<a href="emacs-w3m_19.html#Pretty-Good-Features" title="Up section"> Up </a>]</td>
+<td valign="middle" align="left">[<a href="emacs-w3m_30.html#Customizable-Variables" title="Next chapter"> &gt;&gt; </a>]</td>
+<td valign="middle" align="left"> &nbsp; </td>
+<td valign="middle" align="left"> &nbsp; </td>
+<td valign="middle" align="left"> &nbsp; </td>
+<td valign="middle" align="left"> &nbsp; </td>
+<td valign="middle" align="left">[<a href="emacs-w3m.html#Top" title="Cover (top) of document">Top</a>]</td>
+<td valign="middle" align="left">[<a href="emacs-w3m_toc.html#SEC_Contents" title="Table of contents">Contents</a>]</td>
+<td valign="middle" align="left">[<a href="emacs-w3m_68.html#Index" title="Index">Index</a>]</td>
+<td valign="middle" align="left">[<a href="emacs-w3m_abt.html#SEC_About" title="About (help)"> ? </a>]</td>
+</tr></table>
+<a name="Raise-your-antenna"></a>
+<h2 class="section">4.4 Raise your antenna</h2>
+<a name="index-Antenna"></a>
+<a name="index-Tracking-changes-in-web-pages"></a>
+<a name="index-about_003a_002f_002fantenna_002f"></a>
+
+<p>Antenna is a tool to keep track of changes in web pages.  Using Antenna,
+you can periodically check if particular pages have been updated, and if
+they haven&rsquo;t, know the last time you saw them.
+</p>
+<p>You can start Antenna using the <kbd>A</kbd> key in any emacs-w3m buffer.
+Alternatively, you can go to the special URL <a href="about://antenna/">about://antenna/</a>; it
+does the same thing.
+</p>
+<table class="menu" border="0" cellspacing="0">
+<tr><td align="left" valign="top"><a href="#Setting-up-Antenna">4.4.1 How to add your web sites to Antenna</a></td><td>&nbsp;&nbsp;</td><td align="left" valign="top"></td></tr>
+<tr><td align="left" valign="top"><a href="#Daily-web-tracking">4.4.2 Tracking changes with Antenna</a></td><td>&nbsp;&nbsp;</td><td align="left" valign="top"></td></tr>
+</table>
+
+<hr size="6">
+<a name="Setting-up-Antenna"></a>
+<table cellpadding="1" cellspacing="1" border="0">
+<tr><td valign="middle" align="left">[<a href="#Using-Antenna" title="Previous section in reading order"> &lt; </a>]</td>
+<td valign="middle" align="left">[<a href="#Daily-web-tracking" title="Next section in reading order"> &gt; </a>]</td>
+<td valign="middle" align="left"> &nbsp; </td>
+<td valign="middle" align="left">[<a href="emacs-w3m_19.html#Pretty-Good-Features" title="Beginning of this chapter or previous chapter"> &lt;&lt; </a>]</td>
+<td valign="middle" align="left">[<a href="#Using-Antenna" title="Up section"> Up </a>]</td>
+<td valign="middle" align="left">[<a href="emacs-w3m_30.html#Customizable-Variables" title="Next chapter"> &gt;&gt; </a>]</td>
+<td valign="middle" align="left"> &nbsp; </td>
+<td valign="middle" align="left"> &nbsp; </td>
+<td valign="middle" align="left"> &nbsp; </td>
+<td valign="middle" align="left"> &nbsp; </td>
+<td valign="middle" align="left">[<a href="emacs-w3m.html#Top" title="Cover (top) of document">Top</a>]</td>
+<td valign="middle" align="left">[<a href="emacs-w3m_toc.html#SEC_Contents" title="Table of contents">Contents</a>]</td>
+<td valign="middle" align="left">[<a href="emacs-w3m_68.html#Index" title="Index">Index</a>]</td>
+<td valign="middle" align="left">[<a href="emacs-w3m_abt.html#SEC_About" title="About (help)"> ? </a>]</td>
+</tr></table>
+<a name="How-to-add-your-web-sites-to-Antenna"></a>
+<h3 class="subsection">4.4.1 How to add your web sites to Antenna</h3>
+<a name="index-w3m_002dantenna_002dsites"></a>
+
+<p>If you want to add the visiting web site to Antenna, type the <kbd>+</kbd>
+key.  You will be taken to the customization buffer of
+<code>w3m-antenna-sites</code>, with all fields already set up for you.  You
+just have to hit the buttons &ldquo;Save for future sessions&rdquo; and
+&ldquo;Finish&rdquo;.
+</p>
+<dl compact="compact">
+<dt> <kbd>+</kbd></dt>
+<dd><a name="index-_002b"></a>
+<a name="index-w3m_002dantenna_002dadd_002dcurrent_002durl"></a>
+<p>Add a URL to the Antenna database.  If called with a prefix argument,
+ask for a URL instead of adding the current page
+(<code>w3m-antenna-add-current-url</code>).
+</p></dd>
+</dl>
+
+<hr size="6">
+<a name="Daily-web-tracking"></a>
+<table cellpadding="1" cellspacing="1" border="0">
+<tr><td valign="middle" align="left">[<a href="#Setting-up-Antenna" title="Previous section in reading order"> &lt; </a>]</td>
+<td valign="middle" align="left">[<a href="emacs-w3m_24.html#Showing-Directory-Tree" title="Next section in reading order"> &gt; </a>]</td>
+<td valign="middle" align="left"> &nbsp; </td>
+<td valign="middle" align="left">[<a href="emacs-w3m_19.html#Pretty-Good-Features" title="Beginning of this chapter or previous chapter"> &lt;&lt; </a>]</td>
+<td valign="middle" align="left">[<a href="#Using-Antenna" title="Up section"> Up </a>]</td>
+<td valign="middle" align="left">[<a href="emacs-w3m_30.html#Customizable-Variables" title="Next chapter"> &gt;&gt; </a>]</td>
+<td valign="middle" align="left"> &nbsp; </td>
+<td valign="middle" align="left"> &nbsp; </td>
+<td valign="middle" align="left"> &nbsp; </td>
+<td valign="middle" align="left"> &nbsp; </td>
+<td valign="middle" align="left">[<a href="emacs-w3m.html#Top" title="Cover (top) of document">Top</a>]</td>
+<td valign="middle" align="left">[<a href="emacs-w3m_toc.html#SEC_Contents" title="Table of contents">Contents</a>]</td>
+<td valign="middle" align="left">[<a href="emacs-w3m_68.html#Index" title="Index">Index</a>]</td>
+<td valign="middle" align="left">[<a href="emacs-w3m_abt.html#SEC_About" title="About (help)"> ? </a>]</td>
+</tr></table>
+<a name="Tracking-changes-with-Antenna"></a>
+<h3 class="subsection">4.4.2 Tracking changes with Antenna</h3>
+<a name="index-The-Antenna-interface"></a>
+
+<p>On the Antenna page, you will see two sections: one called &ldquo;Updated&rdquo;
+and another called &ldquo;Visited&rdquo;.  In the &ldquo;Updated&rdquo; section, you will
+find websites which have changed since the last Antenna update, and in
+the &ldquo;Visited&rdquo; section, the websites which haven&rsquo;t.  In each section,
+each line stands for one website of the Antenna database, and has the
+following structure:
+</p>
+<p>&lsquo;<samp>  * 2002/12/15 16:43  (T)  My website</samp>&rsquo;
+</p>
+<p>The first part is the last time the website was updated, or if this
+information is not available, the last time Antenna noticed a change in
+this page.
+</p>
+<p>The &lsquo;<samp>(T)</samp>&rsquo; stands for &ldquo;Time&rdquo;, it means that the change was
+detected because the last modification time of that page has changed
+since the last Antenna update.  Another possible value here is &lsquo;<samp>S</samp>&rsquo;
+(for &ldquo;Size&rdquo;), which means that the change has been detected because
+the size of the page has changed.
+</p>
+<p>The last part of this line is the title you gave to this website when
+you added it to the database.
+</p>
+<p>Please note that the Antenna database doesn&rsquo;t get automatically updated,
+you have to update it each time you want to check if the sites have
+changed, either by hitting <kbd>R</kbd> in the Antenna page, or by passing a
+prefix argument to the command (start Antenna with <kbd>C-u A</kbd>, for
+example).
+</p>
+<a name="index-w3m_002dantenna_002drefresh_002dinterval"></a>
+<p>If you want to make the Antenna database get updated automatically, set
+the value of the <code>w3m-antenna-refresh-interval</code> variable to a
+positive integer which is an interval time in seconds.
+</p>
+<dl compact="compact">
+<dt> <kbd>A</kbd></dt>
+<dd><a name="index-A"></a>
+<a name="index-w3m_002dantenna"></a>
+<p>Visit the Antenna page.  If called with a prefix argument, update the
+Antenna database before displaying it (<code>w3m-antenna</code>).
+</p></dd>
+</dl>
+
+<hr size="6">
+<table cellpadding="1" cellspacing="1" border="0">
+<tr><td valign="middle" align="left">[<a href="#Setting-up-Antenna" title="Previous section in reading order"> &lt; </a>]</td>
+<td valign="middle" align="left">[<a href="emacs-w3m_24.html#Showing-Directory-Tree" title="Next section in reading order"> &gt; </a>]</td>
+<td valign="middle" align="left"> &nbsp; </td>
+<td valign="middle" align="left">[<a href="emacs-w3m_19.html#Pretty-Good-Features" title="Beginning of this chapter or previous chapter"> &lt;&lt; </a>]</td>
+<td valign="middle" align="left">[<a href="#Using-Antenna" title="Up section"> Up </a>]</td>
+<td valign="middle" align="left">[<a href="emacs-w3m_30.html#Customizable-Variables" title="Next chapter"> &gt;&gt; </a>]</td>
+</tr></table>
+<p>
+ <font size="-1">
+  This document was generated by <em>TSUCHIYA Masatoshi</em> on <em>January 30, 2019</em> using <a href="http://www.nongnu.org/texi2html/"><em>texi2html 1.82</em></a>.
+ </font>
+ <br>
+
+</p>
+</body>
+</html>

@@ -1,0 +1,217 @@
+<!DOCTYPE html PUBLIC "-//W3C//DTD HTML 4.01 Transitional//EN" "http://www.w3.org/TR/html401/loose.dtd">
+<html>
+<!-- Copyright C 2000-2014 TSUCHIYA Masatoshi
+
+Permission is granted to copy, distribute and/or modify this document
+under the terms of the GNU General Public License, Version 2 or any
+later version published by the Free Software Foundation.
+
+This document is distributed in the hope that it will be useful, but
+WITHOUT ANY WARRANTY; without even the implied warranty of
+MERCHANTABILITY or FITNESS FOR A PARTICULAR PURPOSE.  See the GNU
+General Public License for more details.
+
+You should have received a copy of the GNU General Public License along
+with this document; see the file COPYING.  If not, write to the Free
+Software Foundation, Inc., 51 Franklin Street, Fifth Floor, Boston, MA
+02110-1301, USA.
+
+ -->
+<!-- Created on January 30, 2019 by texi2html 1.82
+texi2html was written by: 
+            Lionel Cons <Lionel.Cons@cern.ch> (original author)
+            Karl Berry  <karl@freefriends.org>
+            Olaf Bachmann <obachman@mathematik.uni-kl.de>
+            and many others.
+Maintained by: Many creative people.
+Send bugs and suggestions to <texi2html-bug@nongnu.org>
+-->
+<head>
+<title>Emacs-w3m &ndash; an Emacs interface to w3m &ndash;: 6.1 Reading HTML mails in Gnus</title>
+
+<meta name="description" content="Emacs-w3m &ndash; an Emacs interface to w3m &ndash;: 6.1 Reading HTML mails in Gnus">
+<meta name="keywords" content="Emacs-w3m &ndash; an Emacs interface to w3m &ndash;: 6.1 Reading HTML mails in Gnus">
+<meta name="resource-type" content="document">
+<meta name="distribution" content="global">
+<meta name="Generator" content="texi2html 1.82">
+<meta http-equiv="Content-Type" content="text/html; charset=utf-8">
+<style type="text/css">
+<!--
+a.summary-letter {text-decoration: none}
+blockquote.smallquotation {font-size: smaller}
+pre.display {font-family: serif}
+pre.format {font-family: serif}
+pre.menu-comment {font-family: serif}
+pre.menu-preformatted {font-family: serif}
+pre.smalldisplay {font-family: serif; font-size: smaller}
+pre.smallexample {font-size: smaller}
+pre.smallformat {font-family: serif; font-size: smaller}
+pre.smalllisp {font-size: smaller}
+span.roman {font-family:serif; font-weight:normal;}
+span.sansserif {font-family:sans-serif; font-weight:normal;}
+ul.toc {list-style: none}
+-->
+</style>
+
+
+</head>
+
+<body lang="en" bgcolor="#FFFFFF" text="#000000" link="#0000FF" vlink="#800080" alink="#FF0000">
+
+<a name="Gnus"></a>
+<table cellpadding="1" cellspacing="1" border="0">
+<tr><td valign="middle" align="left">[<a href="emacs-w3m_46.html#Hooking-into-MUAs" title="Previous section in reading order"> &lt; </a>]</td>
+<td valign="middle" align="left">[<a href="emacs-w3m_48.html#Mew" title="Next section in reading order"> &gt; </a>]</td>
+<td valign="middle" align="left"> &nbsp; </td>
+<td valign="middle" align="left">[<a href="emacs-w3m_46.html#Hooking-into-MUAs" title="Beginning of this chapter or previous chapter"> &lt;&lt; </a>]</td>
+<td valign="middle" align="left">[<a href="emacs-w3m_46.html#Hooking-into-MUAs" title="Up section"> Up </a>]</td>
+<td valign="middle" align="left">[<a href="emacs-w3m_51.html#Frequently-Asked-Questions" title="Next chapter"> &gt;&gt; </a>]</td>
+<td valign="middle" align="left"> &nbsp; </td>
+<td valign="middle" align="left"> &nbsp; </td>
+<td valign="middle" align="left"> &nbsp; </td>
+<td valign="middle" align="left"> &nbsp; </td>
+<td valign="middle" align="left">[<a href="emacs-w3m.html#Top" title="Cover (top) of document">Top</a>]</td>
+<td valign="middle" align="left">[<a href="emacs-w3m_toc.html#SEC_Contents" title="Table of contents">Contents</a>]</td>
+<td valign="middle" align="left">[<a href="emacs-w3m_68.html#Index" title="Index">Index</a>]</td>
+<td valign="middle" align="left">[<a href="emacs-w3m_abt.html#SEC_About" title="About (help)"> ? </a>]</td>
+</tr></table>
+<a name="Reading-HTML-mails-in-Gnus"></a>
+<h2 class="section">6.1 Reading HTML mails in Gnus</h2>
+<a name="index-Reading-HTML-mails-in-Gnus"></a>
+<a name="index-mm_002dshr"></a>
+<a name="index-gnus_002darticle_002dhtml"></a>
+<a name="index-mm_002dinline_002dtext_002dhtml_002dwith_002dimages"></a>
+<a name="index-mm_002dinline_002dtext_002dhtml_002dwith_002dw3m_002dkeymap"></a>
+<a name="index-mm_002dtext_002dhtml_002drenderer"></a>
+<a name="index-w3m_002dminor_002dmode"></a>
+<a name="index-w3m_002dminor_002dmode_002dcommand_002dalist"></a>
+
+<p>First of all, if the user option <code>mm-text-html-renderer</code> defaults
+to <code>shr</code> or <code>gnus-w3m</code> (i.e., if the function <code>mm-shr</code> or
+<code>gnus-article-html</code> is available) and you are satisfied with that
+function that is Gnus&rsquo; built-in <acronym>HTML</acronym> renderer, you may not
+want to do anything.  See <a href="../emacs-mime/Display-Customization.html#Display-Customization">(emacs-mime)Display Customization</a> section &lsquo;Display Customization&rsquo; in <cite>The Emacs MIME Manual</cite>.  Also See <a href="../gnus/HTML.html#HTML">(gnus)HTML</a> section &lsquo;HTML&rsquo; in <cite>The Gnus Manual</cite>.
+</p>
+<p>But if Gnus you use is a bit old and neither the <code>mm-shr</code> function
+nor the <code>gnus-article-html</code> function is available, or if you&rsquo;d like
+to try emacs-w3m to render <acronym>HTML</acronym> articles, this section is just
+for you.
+</p>
+<ul>
+<li>
+What can you do with emacs-w3m?
+
+<p>You can convert HTML spam mails to be human-readable using emacs-w3m.
+Of course, it works for HTML ham (non-spam) mails as well, and for both
+emacs-w3m is probably faster than the default converter.  You don&rsquo;t need
+to perform any additional operation.  It will simply be displayed.
+</p>
+<p>On HTML parts of an article buffer, the <code>w3m-minor-mode</code> is turned
+on and you can use the same main keys as the keys of emacs-w3m, for
+instance, <kbd>&lt;RET&gt;</kbd> is for visiting a page which a link in the
+current position points to.  Those keys are defined in the
+<code>w3m-minor-mode-command-alist</code> variable.  Keep in mind that some
+commands are replaced by others similar to them, for security reasons
+(see below).
+</p>
+</li><li>
+What do you have to do?
+
+<p>Add this line to your &lsquo;<tt>~/.gnus.el</tt>&rsquo; file:
+</p>
+<table><tr><td>&nbsp;</td><td><pre class="lisp">(setq mm-text-html-renderer 'w3m)
+</pre></td></tr></table>
+
+<p>Also put the following line if you want to show images inline in article
+buffers:
+</p>
+<table><tr><td>&nbsp;</td><td><pre class="lisp">(setq mm-inline-text-html-with-images t)
+</pre></td></tr></table>
+
+<p>If you don&rsquo;t need to use emacs-w3m keys in article buffers, add the
+following line too:
+</p>
+<table><tr><td>&nbsp;</td><td><pre class="lisp">(setq mm-inline-text-html-with-w3m-keymap nil)
+</pre></td></tr></table>
+
+</li><li>
+Notes
+
+<p>The above description about spam and ham is not for kidding, it&rsquo;s just
+here to get your attention.  Some HTML mails might contain a nasty trick
+used by spammers, using the &lsquo;<samp>&lt;img&gt;</samp>&rsquo; tag which is far more evil than
+the &lsquo;<samp>Click Here!</samp>&rsquo; button.  It is most likely intended to check
+whether the ominous spam mail has reached your eyes or not, in which
+case the spammer knows for sure that your email address is valid.  It is
+done by embedding an identifier string into a URL that you might
+automatically retrieve when displaying the image.  If the
+<code>mm-w3m-safe-url-regexp</code> variable has not been changed from the
+default value, Gnus will never connect to the spammer&rsquo;s site
+arbitrarily.
+</p>
+<p>You can display images inline in an article buffer if you set
+<code>mm-inline-text-html-with-images</code> to <code>t</code>, can&rsquo;t you?  No, not
+exactly: you&rsquo;re still being protected.  If you don&rsquo;t care about leaking
+information (i.e. the fact that your mail address is reachable), set the
+<code>mm-w3m-safe-url-regexp</code> variable to <code>nil</code>.  The default value
+for <code>mm-w3m-safe-url-regexp</code> is &lsquo;<samp>&quot;\\`cid:&quot;</samp>&rsquo; which means we
+consider that images included in a mail with the &lsquo;<samp>cid:</samp>&rsquo; URL are
+safe (that is, you can display such images without modifying the
+<code>mm-w3m-safe-url-regexp</code> variable).
+</p>
+</li><li>
+Giveaway
+
+<p>Even when you are in the summary buffer, you can toggle displaying of
+images in the article buffer.  It is effective only when those images
+are displayed by emacs-w3m, though.  Here&rsquo;s an example:
+</p>
+<table><tr><td>&nbsp;</td><td><pre class="lisp">(defun gnus-summary-w3m-safe-toggle-inline-images (&amp;optional arg)
+  &quot;Toggle displaying of all images in the article buffer.
+If the prefix arg is given, force displaying of images.&quot;
+  (interactive &quot;P&quot;)
+  (with-current-buffer gnus-article-buffer
+    (let ((st (point-min))
+          (nd (point-max))
+          (w3m-async-exec w3m-async-exec))
+      (save-restriction
+        (widen)
+        (if (or (&gt; st (point-min)) (&lt; nd (point-max)))
+            (setq w3m-async-exec nil))
+        (article-goto-body)
+        (goto-char (or (text-property-not-all (point) (point-max)
+                                              'w3m-safe-url-regexp nil)
+                       (point)))
+        (if (interactive-p)
+            (call-interactively 'w3m-toggle-inline-images)
+          (w3m-toggle-inline-images arg))))))
+
+(eval-after-load &quot;gnus-sum&quot;
+  '(define-key gnus-summary-mode-map
+     &quot;vi&quot; 'gnus-summary-w3m-safe-toggle-inline-images))
+</pre></td></tr></table>
+
+<p>You can change the key <kbd>vi</kbd> into something another.  Also
+see <a href="../gnus/Summary-Buffer.html#Summary-Buffer">(gnus)Summary Buffer</a> section &lsquo;Summary Buffer&rsquo; in <cite>The Gnus Manual</cite>.
+</p></li></ul>
+
+<p>See also <a href="emacs-w3m_57.html#Nnshimbun">Turning Gnus into a web browser!</a>.
+</p>
+<hr size="6">
+<table cellpadding="1" cellspacing="1" border="0">
+<tr><td valign="middle" align="left">[<a href="emacs-w3m_46.html#Hooking-into-MUAs" title="Previous section in reading order"> &lt; </a>]</td>
+<td valign="middle" align="left">[<a href="emacs-w3m_48.html#Mew" title="Next section in reading order"> &gt; </a>]</td>
+<td valign="middle" align="left"> &nbsp; </td>
+<td valign="middle" align="left">[<a href="emacs-w3m_46.html#Hooking-into-MUAs" title="Beginning of this chapter or previous chapter"> &lt;&lt; </a>]</td>
+<td valign="middle" align="left">[<a href="emacs-w3m_46.html#Hooking-into-MUAs" title="Up section"> Up </a>]</td>
+<td valign="middle" align="left">[<a href="emacs-w3m_51.html#Frequently-Asked-Questions" title="Next chapter"> &gt;&gt; </a>]</td>
+</tr></table>
+<p>
+ <font size="-1">
+  This document was generated by <em>TSUCHIYA Masatoshi</em> on <em>January 30, 2019</em> using <a href="http://www.nongnu.org/texi2html/"><em>texi2html 1.82</em></a>.
+ </font>
+ <br>
+
+</p>
+</body>
+</html>

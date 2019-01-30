@@ -1,0 +1,396 @@
+<!DOCTYPE html PUBLIC "-//W3C//DTD HTML 4.01 Transitional//EN" "http://www.w3.org/TR/html401/loose.dtd">
+<html>
+<!-- Copyright C 2000-2014 TSUCHIYA Masatoshi
+
+Permission is granted to copy, distribute and/or modify this document
+under the terms of the GNU General Public License, Version 2 or any
+later version published by the Free Software Foundation.
+
+This document is distributed in the hope that it will be useful, but
+WITHOUT ANY WARRANTY; without even the implied warranty of
+MERCHANTABILITY or FITNESS FOR A PARTICULAR PURPOSE.  See the GNU
+General Public License for more details.
+
+You should have received a copy of the GNU General Public License along
+with this document; see the file COPYING.  If not, write to the Free
+Software Foundation, Inc., 51 Franklin Street, Fifth Floor, Boston, MA
+02110-1301, USA.
+
+ -->
+<!-- Created on January 30, 2019 by texi2html 1.82
+texi2html was written by: 
+            Lionel Cons <Lionel.Cons@cern.ch> (original author)
+            Karl Berry  <karl@freefriends.org>
+            Olaf Bachmann <obachman@mathematik.uni-kl.de>
+            and many others.
+Maintained by: Many creative people.
+Send bugs and suggestions to <texi2html-bug@nongnu.org>
+-->
+<head>
+<title>Emacs-w3m &ndash; an Emacs interface to w3m &ndash;: 9.1 Turning Gnus into a web browser!</title>
+
+<meta name="description" content="Emacs-w3m &ndash; an Emacs interface to w3m &ndash;: 9.1 Turning Gnus into a web browser!">
+<meta name="keywords" content="Emacs-w3m &ndash; an Emacs interface to w3m &ndash;: 9.1 Turning Gnus into a web browser!">
+<meta name="resource-type" content="document">
+<meta name="distribution" content="global">
+<meta name="Generator" content="texi2html 1.82">
+<meta http-equiv="Content-Type" content="text/html; charset=utf-8">
+<style type="text/css">
+<!--
+a.summary-letter {text-decoration: none}
+blockquote.smallquotation {font-size: smaller}
+pre.display {font-family: serif}
+pre.format {font-family: serif}
+pre.menu-comment {font-family: serif}
+pre.menu-preformatted {font-family: serif}
+pre.smalldisplay {font-family: serif; font-size: smaller}
+pre.smallexample {font-size: smaller}
+pre.smallformat {font-family: serif; font-size: smaller}
+pre.smalllisp {font-size: smaller}
+span.roman {font-family:serif; font-weight:normal;}
+span.sansserif {font-family:sans-serif; font-weight:normal;}
+ul.toc {list-style: none}
+-->
+</style>
+
+
+</head>
+
+<body lang="en" bgcolor="#FFFFFF" text="#000000" link="#0000FF" vlink="#800080" alink="#FF0000">
+
+<a name="Nnshimbun"></a>
+<table cellpadding="1" cellspacing="1" border="0">
+<tr><td valign="middle" align="left">[<a href="emacs-w3m_56.html#Shimbun-Library" title="Previous section in reading order"> &lt; </a>]</td>
+<td valign="middle" align="left">[<a href="emacs-w3m_58.html#Mew-Shimbun" title="Next section in reading order"> &gt; </a>]</td>
+<td valign="middle" align="left"> &nbsp; </td>
+<td valign="middle" align="left">[<a href="emacs-w3m_56.html#Shimbun-Library" title="Beginning of this chapter or previous chapter"> &lt;&lt; </a>]</td>
+<td valign="middle" align="left">[<a href="emacs-w3m_56.html#Shimbun-Library" title="Up section"> Up </a>]</td>
+<td valign="middle" align="left">[<a href="emacs-w3m_63.html#Tips" title="Next chapter"> &gt;&gt; </a>]</td>
+<td valign="middle" align="left"> &nbsp; </td>
+<td valign="middle" align="left"> &nbsp; </td>
+<td valign="middle" align="left"> &nbsp; </td>
+<td valign="middle" align="left"> &nbsp; </td>
+<td valign="middle" align="left">[<a href="emacs-w3m.html#Top" title="Cover (top) of document">Top</a>]</td>
+<td valign="middle" align="left">[<a href="emacs-w3m_toc.html#SEC_Contents" title="Table of contents">Contents</a>]</td>
+<td valign="middle" align="left">[<a href="emacs-w3m_68.html#Index" title="Index">Index</a>]</td>
+<td valign="middle" align="left">[<a href="emacs-w3m_abt.html#SEC_About" title="About (help)"> ? </a>]</td>
+</tr></table>
+<a name="Turning-Gnus-into-a-web-browser_0021"></a>
+<h2 class="section">9.1 Turning Gnus into a web browser!</h2>
+<a name="index-nnshimbun"></a>
+<a name="index-Web-Newspaper"></a>
+
+<p>&lsquo;<samp>Nnshimbun</samp>&rsquo; is a Gnus back end, but it is distributed with
+emacs-w3m, not Gnus, exceptionally.  &lsquo;<samp>Nnshimbun</samp>&rsquo; allows you to turn
+Gnus into an exceptionally useful web browser.  You can skim through the
+articles on a newspaper&rsquo;s web server without having to see all the
+advertisement.  You can read articles in mailing list archives as if you
+were subscribed to the list.  You can also read submissions in bulletin
+boards, etc...  Note that if you want to followup, you still need to use
+emacs-w3m as Gnus can&rsquo;t post via the web with &lsquo;<samp>nnshimbun</samp>&rsquo;.
+</p>
+<p>See also <a href="emacs-w3m_47.html#Gnus">Reading HTML mails in Gnus</a> for rendering HTML messages with emacs-w3m if you
+use Gnus.
+</p>
+<a name="index-gnus_002dgroup_002dmake_002dshimbun_002dgroup"></a>
+<p>The easiest way to get started with &lsquo;<samp>nnshimbun</samp>&rsquo; is to use
+something like the following in the Group buffer:
+</p>
+<p><kbd>M-x gnus-group-make-shimbun-group &lt;RET&gt; asahi &lt;RET&gt; national &lt;RET&gt;</kbd>
+</p>
+<p>Replace &lsquo;<samp>asahi</samp>&rsquo; and &lsquo;<samp>national</samp>&rsquo; with the keyword corresponding
+to the server you&rsquo;d like to connect to and the group you&rsquo;re interested
+in respectively.  You can complete both of those names by using
+<kbd>&lt;TAB&gt;</kbd> or <kbd>&lt;SPC&gt;</kbd>.
+</p>
+<p>You can also bind that to a key if there&rsquo;s enough room in the
+<code>gnus-group-mode-map</code> map, you can add something like the following
+in your &lsquo;<tt>~/.gnus.el</tt>&rsquo; file:
+</p>
+<table><tr><td>&nbsp;</td><td><pre class="lisp">(eval-after-load &quot;gnus-group&quot;
+  '(define-key gnus-group-mode-map &quot;Gn&quot;
+     'gnus-group-make-shimbun-group))
+</pre></td></tr></table>
+
+<p>Then, you can use <kbd>G n</kbd> instead of
+<kbd>M-x gnus-group-make-shimbun-group</kbd>.
+</p>
+<p><em>Could someone book this keystroke at the Gnus Tower?</em>
+</p>
+
+<a name="index-gnus_002dgroup_002dmake_002dshimbun_002dgroups"></a>
+<p>Besides this, you can use the <code>gnus-group-make-shimbun-groups</code>
+command in order to make all groups for the specified server.
+</p>
+<p>&lsquo;<samp>Nnshimbun</samp>&rsquo; simply fetches HTML contents from the web server and
+displays them as an article, but it will never save articles in the
+local file system, except if you use persistent articles
+(see <a href="../gnus/Persistent-Articles.html#Persistent-Articles">(gnus)Persistent Articles</a> section &lsquo;Persistent Articles&rsquo; in <cite>The Gnus Manual</cite>).  &lsquo;<samp>Nnshimbun</samp>&rsquo; uses <acronym>NOV</acronym> files for each
+&lsquo;<samp>nnshimbun</samp>&rsquo; group, and its back end is almost the same as
+&lsquo;<samp>nnml</samp>&rsquo;.
+</p>
+<p>The following &lsquo;<samp>nnshimbun</samp>&rsquo; variables can be customized:
+</p>
+<dl compact="compact">
+<dt> <code>nnshimbun-keep-backlog</code></dt>
+<dd><a name="index-nnshimbun_002dkeep_002dbacklog"></a>
+<a name="index-gnus_002dkeep_002dbacklog"></a>
+<p>This variable overrides the <code>gnus-keep-backlog</code> variable
+(see <a href="../gnus/Article-Backlog.html#Article-Backlog">(gnus)Article Backlog</a> section &lsquo;Article Backlog&rsquo; in <cite>The Gnus Manual</cite>) in
+&lsquo;<samp>nnshimbun</samp>&rsquo; groups.  If you set <code>nnshimbun-keep-backlog</code> to a
+number <var>n</var>, &lsquo;<samp>nnshimbun</samp>&rsquo; will store at most <var>n</var> old articles
+in a buffer for later re-fetching.  If this variable is non-<code>nil</code>
+and is not a number, &lsquo;<samp>nnshimbun</samp>&rsquo; will store <em>all</em> read
+articles (this is not a good idea).  The default value is 300.
+</p>
+<p>Note that smaller values may spoil the <code>prefetch-articles</code> feature
+(see below), since &lsquo;<samp>nnshimbun</samp>&rsquo; uses the backlog to keep the
+prefetched articles.
+</p>
+</dd>
+<dt> <code>nnshimbun-directory</code></dt>
+<dd><a name="index-nnshimbun_002ddirectory"></a>
+<p>Directory where &lsquo;<samp>nnshimbun</samp>&rsquo; saves <acronym>NOV</acronym> and marks files.
+The default value is &lsquo;<samp>~/News/shimbun/</samp>&rsquo;.  This is a server variable
+(see <a href="../gnus/Server-Variables.html#Server-Variables">(gnus)Server Variables</a> section &lsquo;Server Variables&rsquo; in <cite>The Gnus Manual</cite>).
+</p>
+</dd>
+<dt> <code>nnshimbun-default-group-level</code></dt>
+<dd><a name="index-nnshimbun_002ddefault_002dgroup_002dlevel"></a>
+<p>The default group level overriding <code>gnus-level-default-subscribed</code>.
+It will be applied to newly created &lsquo;<samp>nnshimbun</samp>&rsquo; groups.  The
+default value is <code>nil</code>.  This is a server variable (see <a href="../gnus/Server-Variables.html#Server-Variables">(gnus)Server Variables</a> section &lsquo;Server Variables&rsquo; in <cite>The Gnus Manual</cite>).
+</p></dd>
+</dl>
+
+<a name="index-group-parameters"></a>
+<p>You can use the specially made group parameter for &lsquo;<samp>nnshimbun</samp>&rsquo; in
+addition to the standard group parameters provided by Gnus<a name="DOCF5" href="emacs-w3m_fot.html#FOOT5">(5)</a>.
+Several parameters for &lsquo;<samp>nnshimbun</samp>&rsquo; are collected into the single
+group parameter <code>nnshimbun-group-parameters</code> which is a property
+list (the values can be different for every group).  Here&rsquo;s an example:
+</p>
+<table><tr><td>&nbsp;</td><td><pre class="lisp">'(index-range all prefetch-articles off encapsulate-images on
+              expiry-wait 6)
+</pre></td></tr></table>
+
+<p>Below is the documentation for those group parameters and related
+variables.
+</p>
+<dl compact="compact">
+<dt> <code>prefetch-articles</code></dt>
+<dd><a name="index-nnshimbun_002dpre_002dfetch_002darticle"></a>
+<p>In a group where this group parameter is set to something else than
+<code>off</code> or <code>nil</code>, &lsquo;<samp>nnshimbun</samp>&rsquo; not only checks for new
+articles, but also downloads them.  Though it will slow checking of new
+articles down, you won&rsquo;t be kept waiting when reading articles.  In the
+group where this group parameter is not set or its value is <code>nil</code>,
+the value of the <code>nnshimbun-pre-fetch-article</code> variable (<code>off</code>
+by default) is used instead.
+</p>
+</dd>
+<dt> <code>encapsulate-images</code></dt>
+<dd><a name="index-nnshimbun_002dencapsulate_002dimages"></a>
+<p>In a group where this group parameter is set to something else than
+<code>off</code> or <code>nil</code>, &lsquo;<samp>nnshimbun</samp>&rsquo; will put image data embedded
+in the original contents into an article as &lsquo;<samp>multipart/related</samp>&rsquo;
+parts of the MIME format.  In the group where this group parameter is
+not set or its value is <code>nil</code>, the value of the
+<code>nnshimbun-encapsulate-images</code> variable is used instead.  The
+default value for the <code>nnshimbun-encapsulate-images</code> variable is
+the value of the <code>shimbun-encapsulate-images</code> variable which is
+provided in the &lsquo;<samp>shimbun</samp>&rsquo; library (the default value is probably
+<code>t</code>).
+</p>
+</dd>
+<dt> <code>index-range</code></dt>
+<dd><a name="index-nnshimbun_002dindex_002drange"></a>
+<p>You can specify the range of articles to be fetched from the web server
+using the <code>index-range</code> group parameter.  To specify the range, use
+the following values:
+</p>
+<dl compact="compact">
+<dt> <code>nil</code></dt>
+<dt> <code>all</code></dt>
+<dd><p>all pages
+</p>
+</dd>
+<dt> <code>last</code></dt>
+<dd><p>only the latest page
+</p></dd>
+</dl>
+
+<dl compact="compact">
+<dt> &lsquo;<samp>integer N</samp>&rsquo;</dt>
+<dd><p>the latest N pages
+</p></dd>
+</dl>
+
+<p>&lsquo;<samp>Nnshimbun</samp>&rsquo; checks whether there are new articles by parsing the
+index page of the server.  It is possible that there are two or more
+index pages on the server.  For instance, in the case of the mailing
+list servers, index pages are generally classified according to the date
+on which the article was posted.  It would take a considerable amount of
+time to check all those huge index pages especially if you are
+connecting via a slow line.
+</p>
+<p>If it is possible, &lsquo;<samp>nnshimbun</samp>&rsquo; won&rsquo;t check index pages which have
+already been checked at the last connection.  If you want to save even
+more time, use <code>last</code>.  It makes &lsquo;<samp>nnshimbun</samp>&rsquo; refer to only the
+latest index page for checking new articles.
+</p>
+<p>In the group where the <code>index-range</code> group parameter is not set or
+its value is <code>nil</code>, the value of the <code>nnshimbun-index-range</code>
+variable (<code>2</code> by default) is used.
+</p>
+</dd>
+<dt> <code>nnshimbun-group-parameters-alist</code></dt>
+<dd><a name="index-nnshimbun_002dgroup_002dparameters_002dalist"></a>
+<p>This is an Emacs Lisp variable, an alist of regexp of group names and
+&lsquo;<samp>nnshimbun</samp>&rsquo; group parameters.  The default value is <code>nil</code>.
+Each element may have the form &lsquo;<samp>(REGEXP KEYWORD VALUE KEYWORD
+VALUE...)</samp>&rsquo;, for example:
+</p>
+<table><tr><td>&nbsp;</td><td><pre class="lisp">'(&quot;^nnshimbun\\+asahi:&quot; index-range all prefetch-articles off
+  encapsulate-images on expiry-wait 6)
+</pre></td></tr></table>
+
+<p>Since you can use this variable to specify the same &lsquo;<samp>nnshimbun</samp>&rsquo;
+group parameters for two or more groups which have similar names (i.e.,
+those groups are likely to have similar characteristics each other), it
+is useful that it can be used instead of specifying the &lsquo;<samp>nnshimbun</samp>&rsquo;
+group parameters to several groups respectively.  If the group parameter
+has already been set in a group, that takes precedence over this
+variable.
+</p></dd>
+</dl>
+
+<a name="index-article-expiry"></a>
+<a name="index-auto_002dexpire"></a>
+<a name="index-expiry_002dwait"></a>
+<a name="index-nnmail_002dexpiry_002dwait_002dfunction"></a>
+<a name="index-nnmail_002dexpiry_002dwait"></a>
+<p>You can instruct &lsquo;<samp>nnshimbun</samp>&rsquo; to expire articles<a name="DOCF6" href="emacs-w3m_fot.html#FOOT6">(6)</a>.
+Keep in mind that when an article is expired, it is not deleted from the
+remote server, it&rsquo;s still available there.  What is deleted is the line
+in your own <acronym>NOV</acronym> file for &lsquo;<samp>nnshimbun</samp>&rsquo;<a name="DOCF7" href="emacs-w3m_fot.html#FOOT7">(7)</a> corresponding to the
+article to be expired.  Then the article won&rsquo;t appear in the Summary
+buffer, forever and ever.
+</p>
+<p>If you don&rsquo;t expire articles in &lsquo;<samp>nnshimbun</samp>&rsquo; groups, the
+<acronym>NOV</acronym> files will continue to grow fat indefinitely and you may
+see very old articles in the Summary buffer as if they were existing (in
+fact, they might have expired three years ago on the remote server!).
+Even if you try to read such an article, nothing will appear in the
+article buffer.  On the other hand, most mailing list servers generally
+offer all the past articles.  You may not feel like expiring articles in
+such groups in order to look back with nostalgia to the good old days
+and to be able to read, eyes filled with tears, articles which you
+thought long gone.
+</p>
+<p>You can mark &lsquo;<samp>nnshimbun</samp>&rsquo; articles as expirable and specify the
+expiry period in each &lsquo;<samp>nnshimbun</samp>&rsquo; group as well as the other mail
+back ends.  However, there are a little differences between
+&lsquo;<samp>nnshimbun</samp>&rsquo; and the other mail back ends:
+</p>
+<ul>
+<li>
+First of all, the expiry period is determined with the following
+priorities.  Note that the default value might be different from group
+to group.
+
+<ol>
+<li>
+The value of the <code>expiry-wait</code> group parameter in a group.
+
+</li><li>
+The value produced by evaluating the <code>nnmail-expiry-wait-function</code>
+variable for a group.
+
+</li><li>
+The default value provided by the &lsquo;<samp>shimbun</samp>&rsquo; module corresponding to
+a group.
+
+</li><li>
+The value of the <code>nnmail-expiry-wait</code> variable.
+</li></ol>
+
+</li><li>
+Second of all, the argument to be passed to the function specified by
+the <code>nnmail-expiry-wait-function</code> variable will contain the names
+of the back end and the server like &ldquo;nnshimbun+asahi:national&rdquo;, while
+only the group name will be given in the case of the other mail
+back ends.  Here&rsquo;s an example:
+
+<table><tr><td>&nbsp;</td><td><pre class="lisp">(setq nnmail-expiry-wait-function
+      (lambda (group)
+        (cond ((string-equal group &quot;ding&quot;) 7)
+              ((string-equal group &quot;nnshimbun+ding:ding&quot;) 'never))))
+</pre></td></tr></table>
+
+<p>This means that there are two groups for the same ding mailing list; one
+is subscribed as a list member, the other is for reading from the
+mailing list archive at the Gnus Towers.  Ahem, isn&rsquo;t it clever?  The
+local mail files in the &ldquo;ding&rdquo; group will be expired in seven days and
+your local disk space will be saved, but you can read even the articles
+of the last century in the second group (if it is really needed,
+though).
+</p>
+</li><li>
+Third of all, and this is written down so that you can remember it when
+you&rsquo;re filled with doubt: even when all articles from a &lsquo;<samp>nnshimbun</samp>&rsquo;
+group should be expired, the most recent one will be kept.  This is not
+to satisfy your indecisive heart, it&rsquo;s because the next time you fetch
+new articles for this group, &lsquo;<samp>nnshimbun</samp>&rsquo; will know where to begin
+and not fetch all the articles all over again.
+</li></ul>
+
+<p>The group parameters and the variables related to expiring
+&lsquo;<samp>nnshimbun</samp>&rsquo; articles are:
+</p>
+<dl compact="compact">
+<dt> <code>expiry-wait</code></dt>
+<dd><a name="index-expiry_002dwait-1"></a>
+<p>Don&rsquo;t be confused, please.  The <code>expiry-wait</code> group parameter is
+provided as one of the elements of <code>nnshimbun-group-parameters</code>,
+the specially made group parameter for &lsquo;<samp>nnshimbun</samp>&rsquo;.  It has the
+same name and the same meaning as the standard group parameter.  You may
+use whichever you like.  If nnshimbun&rsquo;s one is set to non-<code>nil</code>
+value, it takes precedence over the standard one.  It is provided in
+order to concentrate things related to &lsquo;<samp>nnshimbun</samp>&rsquo; at one place of
+the &ldquo;Gnus Customize&rdquo; buffer (which will appear by typing <kbd>G c</kbd>
+in the group buffer) and to realize managing collectively by the
+<code>nnshimbun-group-parameters-alist</code> variable<a name="DOCF8" href="emacs-w3m_fot.html#FOOT8">(8)</a>.
+The values which can be used are a number of expiry period, <code>never</code>
+or <code>immediate</code> as well as the standard group parameter.
+</p>
+</dd>
+<dt> <code>nnshimbun-keep-unparsable-dated-articles</code></dt>
+<dd><a name="index-nnshimbun_002dkeep_002dunparsable_002ddated_002darticles"></a>
+<p>If this variable is non-<code>nil</code>, the articles of which the time of
+creation (or the time of arrival) is unknown will never be expired,
+since their age is unknown.  The default is <code>t</code>.  If you set this
+variable to <code>nil</code>, the articles of which the time is unknown will
+also be expired unconditionally when the time to expire has come.  Well,
+it might prove useful for a general cleaning at the end of a year.
+</p></dd>
+</dl>
+
+<hr size="6">
+<table cellpadding="1" cellspacing="1" border="0">
+<tr><td valign="middle" align="left">[<a href="emacs-w3m_56.html#Shimbun-Library" title="Previous section in reading order"> &lt; </a>]</td>
+<td valign="middle" align="left">[<a href="emacs-w3m_58.html#Mew-Shimbun" title="Next section in reading order"> &gt; </a>]</td>
+<td valign="middle" align="left"> &nbsp; </td>
+<td valign="middle" align="left">[<a href="emacs-w3m_56.html#Shimbun-Library" title="Beginning of this chapter or previous chapter"> &lt;&lt; </a>]</td>
+<td valign="middle" align="left">[<a href="emacs-w3m_56.html#Shimbun-Library" title="Up section"> Up </a>]</td>
+<td valign="middle" align="left">[<a href="emacs-w3m_63.html#Tips" title="Next chapter"> &gt;&gt; </a>]</td>
+</tr></table>
+<p>
+ <font size="-1">
+  This document was generated by <em>TSUCHIYA Masatoshi</em> on <em>January 30, 2019</em> using <a href="http://www.nongnu.org/texi2html/"><em>texi2html 1.82</em></a>.
+ </font>
+ <br>
+
+</p>
+</body>
+</html>

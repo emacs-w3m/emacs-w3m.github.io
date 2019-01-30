@@ -1,0 +1,322 @@
+<!DOCTYPE html PUBLIC "-//W3C//DTD HTML 4.01 Transitional//EN" "http://www.w3.org/TR/html401/loose.dtd">
+<html>
+<!-- Copyright C 2000-2014 TSUCHIYA Masatoshi
+
+Permission is granted to copy, distribute and/or modify this document
+under the terms of the GNU General Public License, Version 2 or any
+later version published by the Free Software Foundation.
+
+This document is distributed in the hope that it will be useful, but
+WITHOUT ANY WARRANTY; without even the implied warranty of
+MERCHANTABILITY or FITNESS FOR A PARTICULAR PURPOSE.  See the GNU
+General Public License for more details.
+
+You should have received a copy of the GNU General Public License along
+with this document; see the file COPYING.  If not, write to the Free
+Software Foundation, Inc., 51 Franklin Street, Fifth Floor, Boston, MA
+02110-1301, USA.
+
+ -->
+<!-- Created on January 30, 2019 by texi2html 1.82
+texi2html was written by: 
+            Lionel Cons <Lionel.Cons@cern.ch> (original author)
+            Karl Berry  <karl@freefriends.org>
+            Olaf Bachmann <obachman@mathematik.uni-kl.de>
+            and many others.
+Maintained by: Many creative people.
+Send bugs and suggestions to <texi2html-bug@nongnu.org>
+-->
+<head>
+<title>Emacs-w3m &ndash; an Emacs interface to w3m &ndash;: 9.2 Reading web newspapers with Mew</title>
+
+<meta name="description" content="Emacs-w3m &ndash; an Emacs interface to w3m &ndash;: 9.2 Reading web newspapers with Mew">
+<meta name="keywords" content="Emacs-w3m &ndash; an Emacs interface to w3m &ndash;: 9.2 Reading web newspapers with Mew">
+<meta name="resource-type" content="document">
+<meta name="distribution" content="global">
+<meta name="Generator" content="texi2html 1.82">
+<meta http-equiv="Content-Type" content="text/html; charset=utf-8">
+<style type="text/css">
+<!--
+a.summary-letter {text-decoration: none}
+blockquote.smallquotation {font-size: smaller}
+pre.display {font-family: serif}
+pre.format {font-family: serif}
+pre.menu-comment {font-family: serif}
+pre.menu-preformatted {font-family: serif}
+pre.smalldisplay {font-family: serif; font-size: smaller}
+pre.smallexample {font-size: smaller}
+pre.smallformat {font-family: serif; font-size: smaller}
+pre.smalllisp {font-size: smaller}
+span.roman {font-family:serif; font-weight:normal;}
+span.sansserif {font-family:sans-serif; font-weight:normal;}
+ul.toc {list-style: none}
+-->
+</style>
+
+
+</head>
+
+<body lang="en" bgcolor="#FFFFFF" text="#000000" link="#0000FF" vlink="#800080" alink="#FF0000">
+
+<a name="Mew-Shimbun"></a>
+<table cellpadding="1" cellspacing="1" border="0">
+<tr><td valign="middle" align="left">[<a href="emacs-w3m_57.html#Nnshimbun" title="Previous section in reading order"> &lt; </a>]</td>
+<td valign="middle" align="left">[<a href="emacs-w3m_59.html#Shimbun-with-Wanderlust" title="Next section in reading order"> &gt; </a>]</td>
+<td valign="middle" align="left"> &nbsp; </td>
+<td valign="middle" align="left">[<a href="emacs-w3m_56.html#Shimbun-Library" title="Beginning of this chapter or previous chapter"> &lt;&lt; </a>]</td>
+<td valign="middle" align="left">[<a href="emacs-w3m_56.html#Shimbun-Library" title="Up section"> Up </a>]</td>
+<td valign="middle" align="left">[<a href="emacs-w3m_63.html#Tips" title="Next chapter"> &gt;&gt; </a>]</td>
+<td valign="middle" align="left"> &nbsp; </td>
+<td valign="middle" align="left"> &nbsp; </td>
+<td valign="middle" align="left"> &nbsp; </td>
+<td valign="middle" align="left"> &nbsp; </td>
+<td valign="middle" align="left">[<a href="emacs-w3m.html#Top" title="Cover (top) of document">Top</a>]</td>
+<td valign="middle" align="left">[<a href="emacs-w3m_toc.html#SEC_Contents" title="Table of contents">Contents</a>]</td>
+<td valign="middle" align="left">[<a href="emacs-w3m_68.html#Index" title="Index">Index</a>]</td>
+<td valign="middle" align="left">[<a href="emacs-w3m_abt.html#SEC_About" title="About (help)"> ? </a>]</td>
+</tr></table>
+<a name="Reading-web-newspapers-with-Mew"></a>
+<h2 class="section">9.2 Reading web newspapers with Mew</h2>
+
+<p>Mew Shimbun is an Emacs Lisp program meant to be used with
+&lsquo;<samp>shimbun</samp>&rsquo; and Mew (version 2.1 and later).  The &lsquo;<tt>mew-shimbun</tt>&rsquo;
+module will be installed together with emacs-w3m if Mew, <acronym>APEL</acronym>,
+and <acronym>FLIM</acronym> are also installed.
+</p>
+<p>We recommend you also see <a href="emacs-w3m_48.html#Mew">Reading HTML mails in Mew</a>.
+</p>
+<ol>
+<li>
+Setting things up
+
+<p>Put the following lines in the last of the &lsquo;<tt>~/.mew.el</tt>&rsquo; file:
+</p>
+<table><tr><td>&nbsp;</td><td><pre class="format">;;; Loading mew-shimbun, defining keys.
+;; (setq mew-shimbun-use-unseen t)              ;;; <a name="DOCF9" href="emacs-w3m_fot.html#FOOT9">(9)</a>
+(require &rsquo;mew-shimbun)
+(define-key mew-summary-mode-map &quot;G&quot;  (make-sparse-keymap))
+(define-key mew-summary-mode-map &quot;Gg&quot; &rsquo;mew-shimbun-goto-folder)
+(define-key mew-summary-mode-map &quot;GG&quot; &rsquo;mew-shimbun-goto-unseen-folder)
+(define-key mew-summary-mode-map &quot;Gi&quot; &rsquo;mew-shimbun-retrieve)
+(define-key mew-summary-mode-map &quot;GI&quot; &rsquo;mew-shimbun-retrieve-all)
+(define-key mew-summary-mode-map &quot;Gr&quot; &rsquo;mew-shimbun-re-retrieve)
+(define-key mew-summary-mode-map &quot;GR&quot; &rsquo;mew-shimbun-re-retrieve-all)
+(define-key mew-summary-mode-map &quot;Ge&quot; &rsquo;mew-shimbun-expire)
+(define-key mew-summary-mode-map &quot;GE&quot; &rsquo;mew-shimbun-expire-all)
+
+;; Specifying &lsquo;<samp>shimbun</samp>&rsquo; servers and groups to be read with Mew in the
+;; <code>mew-shimbun-folder-groups</code> variable.  Each element has the form
+;; <code>(&quot;folder&quot; (&quot;server.group&quot; . range) ...)</code>.  You can use <code>all</code>,
+;; <code>last</code>, and a number for the <code>range</code> item.
+
+(setq mew-shimbun-folder-groups
+      &rsquo;(;; Fetching &lsquo;<samp>yomiuri.national</samp>&rsquo;, &lsquo;<samp>yomiuri.sports</samp>&rsquo;, etc.
+        ;; into the &lsquo;<samp>+shimbun/yomiuri</samp>&rsquo; folder collectively.
+        (&quot;yomiuri&quot;
+         (&quot;yomiuri.national&quot; . 2)
+         (&quot;yomiuri.sports&quot;. 2)
+         (&quot;yomiuri.world&quot;. 2))
+        ;; Fetching &lsquo;<samp>security-memo.memo</samp>&rsquo;
+        ;; into &lsquo;<samp>+shimbun/security-memo</samp>&rsquo;.
+        (&quot;security-memo&quot;
+         (&quot;security-memo.memo&quot; . 2))
+        (&quot;slashdot-jp&quot;
+         (&quot;slashdot-jp.story&quot; . last))
+        ;; You can read several groups in one folder (&lsquo;<samp>+shimbun/emacs</samp>&rsquo;)
+        ;; as follows even if each group comes from a different server.
+        (&quot;emacs&quot;
+         (&quot;airw.wl&quot; . last)
+         (&quot;emacs-w3m.emacs-w3m&quot; . last))
+        ;; Fetching diaries into &lsquo;<samp>+shimbun/hns/arisawa</samp>&rsquo; and
+        ;; &lsquo;<samp>+shimbun/hns/miyoshi</samp>&rsquo; respectively.
+        (&quot;hns/arisawa&quot;
+         (&quot;hns.arisawa&quot; . last))
+        (&quot;hns/miyoshi&quot;
+         (&quot;hns.miyoshi&quot; . last))))
+</pre></td></tr></table>
+
+<p>You did the fundamental setups.  For the other user definable variables,
+use <kbd>M-x customize-group</kbd> for the <code>mew-shimbun</code> group or
+see the source code.
+</p>
+</li><li>
+Reading &lsquo;<samp>shimbun</samp>&rsquo; messages
+
+<ol>
+<li>
+Getting started
+
+<p>Type <kbd>G I</kbd> (<code>mew-shimbun-retrieve-all</code>) first, after
+setting things up as mentioned above.  The &lsquo;<samp>shimbun</samp>&rsquo; folders
+specified by the <code>mew-shimbun-folder-groups</code> variable will be
+created under the &lsquo;<samp>+shimbun</samp>&rsquo; parent folder.  Typing <kbd>G I</kbd>
+is also useful when you have added new groups.  You can change the name
+of the parent folder (&lsquo;<samp>+shimbun</samp>&rsquo; by default) by customizing the
+<code>mew-shimbun-folder</code> variable.
+</p>
+</li><li>
+Moving into a &lsquo;<samp>shimbun</samp>&rsquo; folder
+
+<p>You can move to any folder (including &lsquo;<samp>shimbun</samp>&rsquo;) by typing <kbd>g</kbd>
+(<code>mew-summary-goto-folder</code>), but <kbd>G g</kbd>
+(<code>mew-shimbun-goto-folder</code>) is restricted to moving to only the
+&lsquo;<samp>shimbun</samp>&rsquo; folder.  In addition, folders which have new messages
+(in other words, folders which have not been scanned) will be displayed
+when using a prefix argument with <kbd>G g</kbd> (i.e.
+<kbd>C-u G g</kbd>).  A prefix argument similarly affects <kbd>G G</kbd>
+as well.
+</p>
+</li><li>
+Fetching messages in each folder
+
+<p>You can fetch new messages for the current folder exclusively by typing
+<kbd>G i</kbd> (<code>mew-shimbun-retrieve</code>) in a &lsquo;<samp>shimbun</samp>&rsquo; folder.
+</p>
+</li><li>
+Fetching updated messages
+
+<p>If you perform the <kbd>G r</kbd> command
+(<code>mew-shimbun-re-retrieve</code>) when a particular message is being
+displayed, the message will be updated if it is possible, and new
+messages will be fetched.  With a prefix argument (i.e.
+<kbd>C-u G r</kbd>), it will attempt to update messages which are marked
+with the mark specified by the <code>mew-shimbun-mark-re-retrieve</code>
+variable (&lsquo;<samp>@</samp>&rsquo; by default).  It would be useful for CNET, etc.
+</p>
+<p>The <kbd>G R</kbd> command (<code>mew-shimbun-re-retrieve-all</code>) checks
+the freshness of all messages and re-fetches the updated messages.  If a
+prefix argument is given (i.e. <kbd>C-u G R</kbd>), the messages within
+the region will be processed.  It is probably worthwhile if the site is
+running the hyper nikki system (&lsquo;<samp>nikki</samp>&rsquo; means &ldquo;diary&rdquo; in
+Japanese).
+</p></li></ol>
+
+</li><li>
+Managing unseen messages
+
+<p>If you have the following setting in the &lsquo;<tt>~/.mew.el</tt>&rsquo; file,
+</p>
+<table><tr><td>&nbsp;</td><td><pre class="lisp">(setq mew-shimbun-use-unseen t)
+</pre></td></tr></table>
+
+<p>newly fetched messages will be marked with the mark specified by the
+<code>mew-shimbun-mark-unseen</code> variable (&lsquo;<samp>*</samp>&rsquo; by default), and it
+will disappear automatically after reading the message.
+</p>
+<p>Normally, the unseen marks will not be saved in the &lsquo;<tt>.mew-cache</tt>&rsquo;
+file if scanning is not performed after adding or deleting marks in the
+Mew summary mode, but if you add the following line to the
+&lsquo;<tt>~/.mew.el</tt>&rsquo; file,
+</p>
+<table><tr><td>&nbsp;</td><td><pre class="lisp">(setq mew-shimbun-use-unseen-cache-save t)
+</pre></td></tr></table>
+
+<p>the unseen marks will be saved in the &lsquo;<tt>.mew-cache</tt>&rsquo; file
+automatically for the &lsquo;<samp>shimbun</samp>&rsquo; groups when exiting Mew or killing
+a folder (using <kbd>C-c C-q</kbd>).  However, it is not securely saved
+<a name="DOCF10" href="emacs-w3m_fot.html#FOOT10">(10)</a>.  To do this securely,
+you had better have the habit of performing the &lsquo;<samp>scan update</samp>&rsquo;
+command after reading the folder.
+</p>
+<p>If you don&rsquo;t like the &lsquo;<samp>*</samp>&rsquo; mark for unseen messages, customize
+the <code>mew-shimbun-mark-unseen</code> variable (see above).  By specifying
+the mark by <kbd>C-u N</kbd>, you will be able to lead a better life with
+taking care of unseen messages.
+</p>
+</li><li>
+Expiring messages
+
+<p>You can expire messages if you set the <code>mew-shimbun-expires</code>
+variable beforehand.  For example:
+</p>
+<table><tr><td>&nbsp;</td><td><pre class="lisp">(setq mew-shimbun-expires
+      '((&quot;yomiuri&quot; . 7)
+        (&quot;asahi&quot; . 1)
+        (&quot;slashdot-jp&quot; . 7)
+        (&quot;emacs&quot; . 7)))
+</pre></td></tr></table>
+
+<p>If you set this variable as shown above, you can specify the expiry
+period; 7 days for &lsquo;<samp>+shimbun/yomiuri</samp>&rsquo;, 1 day for
+&lsquo;<samp>+shimbun/asahi</samp>&rsquo;.  Messages in the &lsquo;<samp>shimbun</samp>&rsquo; folder where the
+expiry period is not specified will never be expired.  You can use the
+<kbd>G e</kbd> command (<code>mew-shimbun-expire</code>) to expire the
+expirable messages in the current folder.  The <kbd>G E</kbd> command
+(<code>mew-shimbun-expire-all</code>) is for expiring the expirable messages
+in all the &lsquo;<samp>shimbun</samp>&rsquo; folders.  Note that once the messages have
+been expired, you cannot recover them.
+</p>
+</li><li>
+How to mark messages with &lsquo;<samp>$</samp>&rsquo; as unseen
+
+<p>Put the following lines in the &lsquo;<tt>~/.mew.el</tt>&rsquo; file in order to define
+the &lsquo;<samp>$</samp>&rsquo; mark and use &lsquo;<samp>$</samp>&rsquo; for the mark of unseen.  See
+<a href="http://www.mew.org/ml/mew-dist-2.0/msg01251.html">http://www.mew.org/ml/mew-dist-2.0/msg01251.html</a> if you would
+like to replace the &lsquo;<samp>$</samp>&rsquo; mark with another.
+</p>
+<table><tr><td>&nbsp;</td><td><pre class="format">;;&mdash;&mdash;&mdash;&mdash;&mdash;&mdash;&mdash;&mdash;&mdash;&mdash;&mdash;&mdash;&mdash;&mdash;&mdash;&mdash;&mdash;&mdash;&mdash;&mdash;&mdash;&mdash;&mdash;-
+;;; Code for using &lsquo;<samp>$</samp>&rsquo; as the unseen mark.
+(setq mew-mark-unseen ?$)
+(setq mew-shimbun-mark-unseen mew-mark-unseen)
+(setq mew-mark-show-list (cons mew-mark-unseen mew-mark-show-list))
+(setq mew-mark-afterstep-spec
+      (cons (cons mew-mark-unseen &rsquo;(1 0 1 0 0 0 0))
+            mew-mark-afterstep-spec))
+(setq mew-mark-spec
+      (cons (list mew-mark-unseen &quot;unseen&quot; 0 nil nil nil nil nil)
+            mew-mark-spec))
+(setq mew-highlight-mark-keywords
+      (cons
+       (cons mew-mark-unseen &rsquo;mew-face-mark-unseen)
+       mew-highlight-mark-keywords))
+(defface mew-face-mark-unseen
+  &rsquo;((((class color) (type tty))
+     (:foreground &quot;green&quot;))
+    (((class color) (background light))
+     (:foreground &quot;deep pink&quot; :bold t :italic t))
+    (((class color) (background dark))
+     (:foreground &quot;thistle&quot;))
+    (t (:bold t)))
+  &quot;*Face to highlight the unseen mark&quot;
+  :group &rsquo;mew-highlight)
+(defun mew-summary-unseen (&amp;optional count)
+  &quot;Put the unseen mark(default is &rsquo;$&rsquo;) in COUNT times.&quot;
+  (interactive &quot;P&quot;)
+  (mew-mark-put-mark-loop (function mew-summary-unseen-one) count nil))
+(defun mew-summary-unseen-one (&amp;optional no-msg)
+  &quot;Put the unseen mark(default is &rsquo;$&rsquo;) on this message.&quot;
+  (mew-mark-put-mark mew-mark-unseen no-msg))
+(defun mew-summary-mark-unseen ()
+  &quot;Change the &rsquo;*&rsquo; mark into the &rsquo;$&rsquo; mark.&quot;
+  (interactive)
+  (mew-summary-exchange-mark mew-mark-review mew-mark-unseen))
+(defun mew-thread-mark-unseen ()
+  &quot;Put the &rsquo;$&rsquo; mark on all messages of the current sub-thread.&quot;
+  (interactive)
+  (mew-thread-mark mew-mark-unseen))
+
+(define-key mew-summary-mode-map &quot;$&quot;  &rsquo;mew-summary-unseen)
+(define-key mew-summary-mode-map &quot;m$&quot; &rsquo;mew-summary-mark-unseen)
+(define-key mew-summary-mode-map &quot;t$&quot; &rsquo;mew-thread-mark-unseen)
+;;&mdash;&mdash;&mdash;&mdash;&mdash;&mdash;&mdash;&mdash;&mdash;&mdash;&mdash;&mdash;&mdash;&mdash;&mdash;&mdash;&mdash;&mdash;&mdash;&mdash;&mdash;&mdash;&mdash;-
+</pre></td></tr></table>
+</li></ol>
+
+<hr size="6">
+<table cellpadding="1" cellspacing="1" border="0">
+<tr><td valign="middle" align="left">[<a href="emacs-w3m_57.html#Nnshimbun" title="Previous section in reading order"> &lt; </a>]</td>
+<td valign="middle" align="left">[<a href="emacs-w3m_59.html#Shimbun-with-Wanderlust" title="Next section in reading order"> &gt; </a>]</td>
+<td valign="middle" align="left"> &nbsp; </td>
+<td valign="middle" align="left">[<a href="emacs-w3m_56.html#Shimbun-Library" title="Beginning of this chapter or previous chapter"> &lt;&lt; </a>]</td>
+<td valign="middle" align="left">[<a href="emacs-w3m_56.html#Shimbun-Library" title="Up section"> Up </a>]</td>
+<td valign="middle" align="left">[<a href="emacs-w3m_63.html#Tips" title="Next chapter"> &gt;&gt; </a>]</td>
+</tr></table>
+<p>
+ <font size="-1">
+  This document was generated by <em>TSUCHIYA Masatoshi</em> on <em>January 30, 2019</em> using <a href="http://www.nongnu.org/texi2html/"><em>texi2html 1.82</em></a>.
+ </font>
+ <br>
+
+</p>
+</body>
+</html>

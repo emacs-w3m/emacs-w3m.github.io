@@ -1,0 +1,217 @@
+<!DOCTYPE html PUBLIC "-//W3C//DTD HTML 4.01 Transitional//EN" "http://www.w3.org/TR/html401/loose.dtd">
+<html>
+<!-- Copyright C 2000-2014 TSUCHIYA Masatoshi
+
+Permission is granted to copy, distribute and/or modify this document
+under the terms of the GNU General Public License, Version 2 or any
+later version published by the Free Software Foundation.
+
+This document is distributed in the hope that it will be useful, but
+WITHOUT ANY WARRANTY; without even the implied warranty of
+MERCHANTABILITY or FITNESS FOR A PARTICULAR PURPOSE.  See the GNU
+General Public License for more details.
+
+You should have received a copy of the GNU General Public License along
+with this document; see the file COPYING.  If not, write to the Free
+Software Foundation, Inc., 51 Franklin Street, Fifth Floor, Boston, MA
+02110-1301, USA.
+
+ -->
+<!-- Created on January 30, 2019 by texi2html 1.82
+texi2html was written by: 
+            Lionel Cons <Lionel.Cons@cern.ch> (original author)
+            Karl Berry  <karl@freefriends.org>
+            Olaf Bachmann <obachman@mathematik.uni-kl.de>
+            and many others.
+Maintained by: Many creative people.
+Send bugs and suggestions to <texi2html-bug@nongnu.org>
+-->
+<head>
+<title>Emacs-w3m &ndash; an Emacs interface to w3m &ndash;: 2.3 Things required to run emacs-w3m</title>
+
+<meta name="description" content="Emacs-w3m &ndash; an Emacs interface to w3m &ndash;: 2.3 Things required to run emacs-w3m">
+<meta name="keywords" content="Emacs-w3m &ndash; an Emacs interface to w3m &ndash;: 2.3 Things required to run emacs-w3m">
+<meta name="resource-type" content="document">
+<meta name="distribution" content="global">
+<meta name="Generator" content="texi2html 1.82">
+<meta http-equiv="Content-Type" content="text/html; charset=utf-8">
+<style type="text/css">
+<!--
+a.summary-letter {text-decoration: none}
+blockquote.smallquotation {font-size: smaller}
+pre.display {font-family: serif}
+pre.format {font-family: serif}
+pre.menu-comment {font-family: serif}
+pre.menu-preformatted {font-family: serif}
+pre.smalldisplay {font-family: serif; font-size: smaller}
+pre.smallexample {font-size: smaller}
+pre.smallformat {font-family: serif; font-size: smaller}
+pre.smalllisp {font-size: smaller}
+span.roman {font-family:serif; font-weight:normal;}
+span.sansserif {font-family:sans-serif; font-weight:normal;}
+ul.toc {list-style: none}
+-->
+</style>
+
+
+</head>
+
+<body lang="en" bgcolor="#FFFFFF" text="#000000" link="#0000FF" vlink="#800080" alink="#FF0000">
+
+<a name="Other-Requirements"></a>
+<table cellpadding="1" cellspacing="1" border="0">
+<tr><td valign="middle" align="left">[<a href="emacs-w3m_4.html#You-Need-w3m" title="Previous section in reading order"> &lt; </a>]</td>
+<td valign="middle" align="left">[<a href="emacs-w3m_6.html#Installing-Emacs_002dw3m" title="Next section in reading order"> &gt; </a>]</td>
+<td valign="middle" align="left"> &nbsp; </td>
+<td valign="middle" align="left">[<a href="emacs-w3m_2.html#Getting-Started" title="Beginning of this chapter or previous chapter"> &lt;&lt; </a>]</td>
+<td valign="middle" align="left">[<a href="emacs-w3m_2.html#Getting-Started" title="Up section"> Up </a>]</td>
+<td valign="middle" align="left">[<a href="emacs-w3m_9.html#Basic-Usage" title="Next chapter"> &gt;&gt; </a>]</td>
+<td valign="middle" align="left"> &nbsp; </td>
+<td valign="middle" align="left"> &nbsp; </td>
+<td valign="middle" align="left"> &nbsp; </td>
+<td valign="middle" align="left"> &nbsp; </td>
+<td valign="middle" align="left">[<a href="emacs-w3m.html#Top" title="Cover (top) of document">Top</a>]</td>
+<td valign="middle" align="left">[<a href="emacs-w3m_toc.html#SEC_Contents" title="Table of contents">Contents</a>]</td>
+<td valign="middle" align="left">[<a href="emacs-w3m_68.html#Index" title="Index">Index</a>]</td>
+<td valign="middle" align="left">[<a href="emacs-w3m_abt.html#SEC_About" title="About (help)"> ? </a>]</td>
+</tr></table>
+<a name="Things-required-to-run-emacs_002dw3m"></a>
+<h2 class="section">2.3 Things required to run emacs-w3m</h2>
+<a name="index-APEL-package"></a>
+<a name="index-Gifsicle-program"></a>
+<a name="index-ImageMagick-package"></a>
+<a name="index-FLIM-package"></a>
+<a name="index-Mule_002dUCS-package"></a>
+<a name="index-codepage_002dex"></a>
+<a name="index-rfc2368_002eel"></a>
+
+<p>Depending on the Emacs version you&rsquo;re using, third party packages may be
+required.  This section provides resources to help you find and install
+them.
+</p>
+<dl compact="compact">
+<dt> &lsquo;<samp><acronym>APEL</acronym></samp>&rsquo;</dt>
+<dd><p>Indispensable to XEmacs.  You should install <acronym>APEL</acronym> before
+building emacs-w3m.  <acronym>APEL</acronym> is available at:
+</p>
+<p><a href="http://kanji.zinbun.kyoto-u.ac.jp/~tomo/lemi/dist/apel/">http://kanji.zinbun.kyoto-u.ac.jp/~tomo/lemi/dist/apel/</a>
+</p>
+<p>Note that you must not use the <acronym>APEL</acronym> XEmacs package (which is
+contained in SUMO) of the versions older than 1.32.  If you have already
+installed such a version, you should upgrade it or use the following
+directives to replace it with <acronym>APEL</acronym> which is linked above (you
+can also use the same directives in order to newly install
+<acronym>APEL</acronym>):
+</p>
+<table><tr><td>&nbsp;</td><td><pre class="example">% rm -fr /usr/local/lib/xemacs/xemacs-packages/lisp/apel
+% cd apel-10.7
+% make install-package XEMACS=xemacs-21.4.x\
+  PACKAGEDIR=/usr/local/lib/xemacs/xemacs-packages
+</pre></td></tr></table>
+
+</dd>
+<dt> &lsquo;<samp>gifsicle</samp>&rsquo;</dt>
+<dd><p>Indispensable to XEmacs.  There is a known bug in all XEmacs 21.x series
+that won&rsquo;t let it display optimized animated gifs correctly or may make
+it crash when some kind of an interlaced gif image is displayed.
+Emacs-w3m uses the &lsquo;<samp>gifsicle</samp>&rsquo; program to convert gif data in order
+to make it possible to be handled by XEmacs 21.x.  It is available at:
+</p>
+<p><a href="http://www.lcdf.org/gifsicle/">http://www.lcdf.org/gifsicle/</a>
+</p>
+</dd>
+<dt> &lsquo;<samp>ImageMagick</samp>&rsquo;</dt>
+<dd><p>If the &lsquo;<samp>convert</samp>&rsquo; program bundled with the ImageMagick package is
+available on your system, emacs-w3m will use it to resize images or to
+convert &lsquo;<samp>favicon</samp>&rsquo; images into a format Emacs can handle.
+Emacs-w3m will work without ImageMagick, but installing it will improve
+your surfing experience.  You can get the ImageMagick package from:
+</p>
+<p><a href="ftp://ftp.imagemagick.org/pub/ImageMagick/">ftp://ftp.imagemagick.org/pub/ImageMagick/</a>
+</p>
+<p>To manipulate &lsquo;<samp>favicon</samp>&rsquo; images, we recommend version 5.4.0-5 and
+later, previous versions may work but we didn&rsquo;t check them thoroughly.
+</p>
+</dd>
+<dt> &lsquo;<samp><acronym>FLIM</acronym></samp>&rsquo;</dt>
+<dd><p>The <acronym>FLIM</acronym> package is required to use the &lsquo;<samp>shimbun</samp>&rsquo;
+library.  The &lsquo;<samp>shimbun</samp>&rsquo; library is a collection of tools for
+reading web newspapers, you can use it with Gnus, Mew or Wanderlust.
+See section <a href="emacs-w3m_56.html#Shimbun-Library">A tool for reading a newspaper</a>.
+</p>
+<p>Note that the <acronym>FLIM</acronym> package requires the <acronym>APEL</acronym> package
+regardless of the version of Emacs you are using.  Therefore, you must
+install both <acronym>APEL</acronym> and <acronym>FLIM</acronym> if you would like to use
+the &lsquo;<samp>shimbun</samp>&rsquo; library.  The <acronym>FLIM</acronym> package is available at:
+</p>
+<p><a href="http://kanji.zinbun.kyoto-u.ac.jp/~tomo/lemi/dist/flim/flim-1.14/">http://kanji.zinbun.kyoto-u.ac.jp/~tomo/lemi/dist/flim/flim-1.14/</a>
+</p>
+</dd>
+<dt> &lsquo;<samp>Mule-UCS</samp>&rsquo;</dt>
+<dd><p>If you use XEmacs 21.4, or need to read Chinese text, Japanese text,
+Korean text, etc. using Emacs 21, we recommend you install the Mule-UCS
+Emacs Lisp package so as to enable emacs-w3m to display pages encoded by
+UTF-8, which is the typical coding system of the Unicode system.  Note
+that Emacs 21 supports the Unicode system partially (e.g., for Latin
+text) and Emacs 22 or greater fully supports it.  The Mule-UCS Emacs
+Lisp package is available at:
+</p>
+<p><a href="http://unit.aist.go.jp/itri/itri-gist/ftp.m17n.org/pub/mule/Mule-UCS/test/Mule-UCS-current.tar.gz">http://unit.aist.go.jp/itri/itri-gist/ftp.m17n.org/pub/mule/Mule-UCS/test/Mule-UCS-current.tar.gz</a>
+</p>
+<p>(The official page for Mule-UCS will open in the near future in
+<a href="http://www.meadowy.org/">http://www.meadowy.org/</a>.)
+</p>
+<p>If you use it with Emacs 21.2, it is necessary to apply
+<a href="http://www.m17n.org/mlarchive/mule/200203/msg00000.html">this patch</a> before installation.
+</p>
+<p>If you are an XEmacs 21.4 user, the compiled package is here:
+</p>
+<p><a href="ftp://ftp.xemacs.org/xemacs/packages/mule-ucs-1.14-pkg.tar.gz">ftp://ftp.xemacs.org/xemacs/packages/mule-ucs-1.14-pkg.tar.gz</a>
+</p>
+<p>(You don&rsquo;t need to install it in addition to Mule SUMO, that contains
+it.)
+</p>
+</dd>
+<dt> &lsquo;<samp>codepage-ex</samp>&rsquo;</dt>
+<dd><p>Some web sites in Europe specify a &lsquo;<samp>charset=ISO-8859-1</samp>&rsquo; encoding,
+but really use <code>windows-1252</code>.  Since <code>iso-8859-1</code> is
+insufficient to decode that, emacs-w3m uses <code>windows-1252</code> as a
+superset of <code>iso-8859-1</code> if it is available.  The
+<code>windows-1252</code> coding system is built-in since Emacs 22.  Even in
+Emacs 21, you can enable to use it using the module called
+<code>codepage-ex</code>.  See the following page:
+</p>
+<p><a href="http://nijino.homelinux.net/emacs/codepage-ex.html">http://nijino.homelinux.net/emacs/codepage-ex.html</a>
+</p>
+</dd>
+<dt> &lsquo;<samp>rfc2368.el</samp>&rsquo;</dt>
+<dd><p>Install it if you&rsquo;d like to enable emacs-w3m running with XEmacs to
+parse &lsquo;<samp>mailto</samp>&rsquo; urls properly.  You can find the &lsquo;<tt>rfc2368.el</tt>&rsquo;
+module which can be used with XEmacs in the &lsquo;<tt>attic</tt>&rsquo; directory in
+the emacs-w3m distribution.  To install it, copy the &lsquo;<tt>rfc2368.el</tt>&rsquo;
+file to the directory belonging to the <code>load-path</code>, and perform the
+following command:
+</p>
+<table><tr><td>&nbsp;</td><td><pre class="example">% xemacs -batch -vanilla -f batch-byte-compile rfc2368.el
+</pre></td></tr></table>
+</dd>
+</dl>
+
+<hr size="6">
+<table cellpadding="1" cellspacing="1" border="0">
+<tr><td valign="middle" align="left">[<a href="emacs-w3m_4.html#You-Need-w3m" title="Previous section in reading order"> &lt; </a>]</td>
+<td valign="middle" align="left">[<a href="emacs-w3m_6.html#Installing-Emacs_002dw3m" title="Next section in reading order"> &gt; </a>]</td>
+<td valign="middle" align="left"> &nbsp; </td>
+<td valign="middle" align="left">[<a href="emacs-w3m_2.html#Getting-Started" title="Beginning of this chapter or previous chapter"> &lt;&lt; </a>]</td>
+<td valign="middle" align="left">[<a href="emacs-w3m_2.html#Getting-Started" title="Up section"> Up </a>]</td>
+<td valign="middle" align="left">[<a href="emacs-w3m_9.html#Basic-Usage" title="Next chapter"> &gt;&gt; </a>]</td>
+</tr></table>
+<p>
+ <font size="-1">
+  This document was generated by <em>TSUCHIYA Masatoshi</em> on <em>January 30, 2019</em> using <a href="http://www.nongnu.org/texi2html/"><em>texi2html 1.82</em></a>.
+ </font>
+ <br>
+
+</p>
+</body>
+</html>

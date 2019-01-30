@@ -1,0 +1,213 @@
+<!DOCTYPE html PUBLIC "-//W3C//DTD HTML 4.01 Transitional//EN" "http://www.w3.org/TR/html401/loose.dtd">
+<html>
+<!-- Copyright C 2000-2014 TSUCHIYA Masatoshi
+
+Permission is granted to copy, distribute and/or modify this document
+under the terms of the GNU General Public License, Version 2 or any
+later version published by the Free Software Foundation.
+
+この文書を、フリーソフトウェア財団によって発行された GNU 一般公衆利用許
+諾契約書第 2 版またはそれ以降の版のうちどれかの定める条件の下で複製、配
+布、あるいは変更することを許可します。
+
+This document is distributed in the hope that it will be useful, but
+WITHOUT ANY WARRANTY; without even the implied warranty of
+MERCHANTABILITY or FITNESS FOR A PARTICULAR PURPOSE.  See the GNU
+General Public License for more details.
+
+この文書は有用であることを願って頒布されますが、全くの無保証 です。
+商業可能性 の保証や 特定の目的への適合性 は、言外に示され
+たものも含め全く存在しません。詳しくは GNU 一般公衆利用許諾契約書をご覧
+ください。
+
+You should have received a copy of the GNU General Public License along
+with this document; see the file COPYING.  If not, write to the Free
+Software Foundation, Inc., 51 Franklin Street, Fifth Floor, Boston, MA
+02110-1301, USA.
+
+あなたはこの文書と共に、GNU 一般公衆利用許諾契約書の複製物を一部受け取っ
+たはずです。COPYING ファイルを参照してください。もし受け取っていなければ、
+フリーソフトウェア財団まで請求してください (宛先は the Free Software
+Foundation, Inc., 59 Temple Place, Suite 330, Boston, MA 02111-1307 USA)。
+
+ -->
+<!-- Created on 2019å¹´1ææ30æ¥ by texi2html 1.82
+texi2html was written by: 
+            Lionel Cons <Lionel.Cons@cern.ch> (original author)
+            Karl Berry  <karl@freefriends.org>
+            Olaf Bachmann <obachman@mathematik.uni-kl.de>
+            and many others.
+Maintained by: Many creative people.
+Send bugs and suggestions to <texi2html-bug@nongnu.org>
+-->
+<head>
+<title>Emacs-w3m &ndash; an Emacs interface to w3m &ndash;: 3.2 画像表示を ON/OFF する</title>
+
+<meta name="description" content="Emacs-w3m &ndash; an Emacs interface to w3m &ndash;: 3.2 画像表示を ON/OFF する">
+<meta name="keywords" content="Emacs-w3m &ndash; an Emacs interface to w3m &ndash;: 3.2 画像表示を ON/OFF する">
+<meta name="resource-type" content="document">
+<meta name="distribution" content="global">
+<meta name="Generator" content="texi2html 1.82">
+<meta http-equiv="Content-Type" content="text/html; charset=utf-8">
+<style type="text/css">
+<!--
+a.summary-letter {text-decoration: none}
+blockquote.smallquotation {font-size: smaller}
+pre.display {font-family: serif}
+pre.format {font-family: serif}
+pre.menu-comment {font-family: serif}
+pre.menu-preformatted {font-family: serif}
+pre.smalldisplay {font-family: serif; font-size: smaller}
+pre.smallexample {font-size: smaller}
+pre.smallformat {font-family: serif; font-size: smaller}
+pre.smalllisp {font-size: smaller}
+span.roman {font-family:serif; font-weight:normal;}
+span.sansserif {font-family:sans-serif; font-weight:normal;}
+ul.toc {list-style: none}
+-->
+</style>
+
+
+</head>
+
+<body lang="ja" bgcolor="#FFFFFF" text="#000000" link="#0000FF" vlink="#800080" alink="#FF0000">
+
+<a name="Inline-Images"></a>
+<table cellpadding="1" cellspacing="1" border="0">
+<tr><td valign="middle" align="left">[<a href="emacs-w3m-ja_10.html#Going-back-to-daily-hacking-and_002for-daily-writing" title="Previous section in reading order"> &lt; </a>]</td>
+<td valign="middle" align="left">[<a href="emacs-w3m-ja_12.html#Tracing-History" title="Next section in reading order"> &gt; </a>]</td>
+<td valign="middle" align="left"> &nbsp; </td>
+<td valign="middle" align="left">[<a href="emacs-w3m-ja_9.html#Basic-Usage" title="Beginning of this chapter or previous chapter"> &lt;&lt; </a>]</td>
+<td valign="middle" align="left">[<a href="emacs-w3m-ja_9.html#Basic-Usage" title="Up section">ä¸</a>]</td>
+<td valign="middle" align="left">[<a href="emacs-w3m-ja_19.html#Pretty-Good-Features" title="Next chapter"> &gt;&gt; </a>]</td>
+<td valign="middle" align="left"> &nbsp; </td>
+<td valign="middle" align="left"> &nbsp; </td>
+<td valign="middle" align="left"> &nbsp; </td>
+<td valign="middle" align="left"> &nbsp; </td>
+<td valign="middle" align="left">[<a href="emacs-w3m-ja.html#Top" title="Cover (top) of document">åé ­</a>]</td>
+<td valign="middle" align="left">[<a href="emacs-w3m-ja_toc.html#SEC_Contents" title="Table of contents">ç®æ¬¡</a>]</td>
+<td valign="middle" align="left">[<a href="emacs-w3m-ja_68.html#Index" title="è¦åºã">è¦åºã</a>]</td>
+<td valign="middle" align="left">[<a href="emacs-w3m-ja_abt.html#SEC_About" title="About (help)"> ? </a>]</td>
+</tr></table>
+<a name="Hua-Xiang-Biao-Shi-wo-ON_002fOFF-suru"></a>
+<h2 class="section">3.2 画像表示を ON/OFF する</h2>
+<a name="index-Displaying-images"></a>
+
+<p>あなたが使っているバージョンの Emacs がバッファに画像を表示することがで
+きるならば、あたかも Mozilla のような「グラフィカル」ブラウザのように、
+emacs-w3m はウェブページにそれらを表示することができます。下記のコマンド
+のどれかを使おうとする前に、あなたの Emacs が正しく画像表示に使えること
+を確かめてください (see section <a href="emacs-w3m-ja_3.html#Required-Emacs-Version">どんなバージョンの Emacs で使えるの?</a>)。
+</p>
+<p>現在のバッファにおける画像の表示を切り替えるには <kbd>T</kbd>
+(&lsquo;<samp>Info-like</samp>&rsquo; キーマップの場合は <kbd>I</kbd>) を使ってください。それによっ
+て emacs-w3m はサーバから画像を取ってきて、しかる後にそれらを「グラフィ
+カル」ブラウザとしてそうなるであろうバッファの位置に表示します。もう一度
+キーを叩くと、画像はバッファから消え去ります。
+</p>
+<p>デフォルトでは emacs-w3m は画像を表示しませんが、その振る舞いを変更して
+常に画像表示することを選ぶのは可能で、それには変
+数 <code>w3m-default-display-inline-images</code> をカスタマイズして、その値
+を <code>nil</code> から <code>t</code> に変更する必要があります。
+See section <a href="emacs-w3m-ja_30.html#Customizable-Variables">デフォルトのままでも結構良いと思うけれど</a>.
+</p>
+<p>さらに emacs-w3m には、画像の拡大縮小、ファイルへのセーブ、または外部ビュー
+ワで見る、といった気の利いた機能が付属しています。
+</p>
+<dl compact="compact">
+<dt> <kbd>T</kbd> (Lynx-like キーマップ)</dt>
+<dt> <kbd>I</kbd> (Info-like キーマップ)</dt>
+<dd><a name="index-T-_0028Lynx_002dlike-kimatupu_0029"></a>
+<a name="index-I-_0028Info_002dlike-kimatupu_0029"></a>
+<a name="index-w3m_002dtoggle_002dinline_002dimages"></a>
+<p>現在のバッファにあるすべてのインライン画像の表示をトグルで切り替えま
+す (<code>w3m-toggle-inline-images</code>)。
+<code>transient-mark-mode</code> が on で、かつ領域が設定されている場合に限っ
+て、その領域内にある画像だけが on になります。
+</p>
+<p>注1: 初めて訪れたページで最初からインライン画像を表示するかどうかは、前
+述の通り変数 <code>w3m-default-display-inline-images</code> の値で制御されま
+す (デフォルトは off です)。しかし、そのバッファを起点にして訪れるバッファ
+で画像を表示するかどうかは、
+<code>w3m-toggle-inline-images-permanently</code> が <code>nil</code> ではない値 (デ
+フォルトは <code>t</code>) だった場合は、そのバッファで画像を表示していたかど
+うかの最後の状態を継承します。
+<code>w3m-toggle-inline-images-permanently</code> が <code>nil</code> だったら、常
+に <code>w3m-default-display-inline-images</code> がそれを制御します。
+</p>
+<p>注2: このコマンドは領域を不活性にします。したがって、再び特定の領域にあ
+る画像だけを表示したいならば、もう一度その領域を設定しなければなりません。
+</p>
+</dd>
+<dt> <kbd>t</kbd> (Lynx-like キーマップ)</dt>
+<dt> <kbd>i</kbd> (Info-like キーマップ)</dt>
+<dd><a name="index-t-_0028Lynx_002dlike-kimatupu_0029"></a>
+<a name="index-i-_0028Info_002dlike-kimatupu_0029"></a>
+<a name="index-w3m_002dtoggle_002dinline_002dimage"></a>
+<p>カーソルの場所にある単一の画像の表示をトグルで切り替えま
+す (<code>w3m-toggle-inline-image</code>)。<code>transient-mark-mode</code> が on で、
+かつ領域が設定されている場合に限って、その領域内にある画像だけが on にな
+ります。&lsquo;<samp>Info-like</samp>&rsquo; キーマップについては、もし Emacs が画像表示をサ
+ポートしないならば、このキーは外部ビューワを起動するコマン
+ド (<code>w3m-view-image</code>) にバインドされます。
+</p>
+</dd>
+<dt> <kbd>M-S-t</kbd> (Lynx-like キーマップ)</dt>
+<dt> <kbd>M-S-i</kbd> (Info-like キーマップ)</dt>
+<dd><a name="index-M_002dT-_0028Lynx_002dlike-kimatupu_0029"></a>
+<a name="index-M_002dI-_0028Info_002dlike-kimatupu_0029"></a>
+<a name="index-w3m_002dturnoff_002dinline_002dimages"></a>
+<p>現在のバッファにあるすべてのインライン画像の表示を取り止めます。
+(<code>w3m-turnoff-inline-images</code>)。
+</p>
+</dd>
+<dt> <kbd>I</kbd> (Lynx-like キーマップ)</dt>
+<dd><a name="index-I-_0028Lynx_002dlike-kimatupu_0029"></a>
+<a name="index-w3m_002dview_002dimage"></a>
+<a name="index-Viewing-images"></a>
+<p>ポイントの下にある画像を外部ビューワで見ます (<code>w3m-view-image</code>)。
+</p>
+</dd>
+<dt> <kbd>M-i</kbd></dt>
+<dd><a name="index-M_002di"></a>
+<a name="index-w3m_002dsave_002dimage"></a>
+<a name="index-Saving-images"></a>
+<p>ポイントの下にある画像を外部ファイルにセーブします。デフォルトの名前はそ
+の画像の元の名前です。それ故に、ほとんどの場合
+に <kbd>M-i &lt;RET&gt;</kbd> は正しい名前で画像をセーブするでしょ
+う (<code>w3m-save-image</code>)。
+</p>
+<a name="index-Zooming-images"></a>
+</dd>
+<dt> <kbd>M-[</kbd></dt>
+<dd><a name="index-M_002d_005b"></a>
+<a name="index-w3m_002dzoom_002dout_002dimage"></a>
+<p>ポイントの下にある画像を縮小 (zoom out) しま
+す (<code>w3m-zoom-out-image</code>)。
+</p>
+</dd>
+<dt> <kbd>M-]</kbd></dt>
+<dd><a name="index-M_002d_005d"></a>
+<a name="index-w3m_002dzoom_002din_002dimage"></a>
+<p>ポイントの下にある画像を拡大 (zoom in) します (<code>w3m-zoom-in-image</code>)。
+</p></dd>
+</dl>
+
+<hr size="6">
+<table cellpadding="1" cellspacing="1" border="0">
+<tr><td valign="middle" align="left">[<a href="emacs-w3m-ja_10.html#Going-back-to-daily-hacking-and_002for-daily-writing" title="Previous section in reading order"> &lt; </a>]</td>
+<td valign="middle" align="left">[<a href="emacs-w3m-ja_12.html#Tracing-History" title="Next section in reading order"> &gt; </a>]</td>
+<td valign="middle" align="left"> &nbsp; </td>
+<td valign="middle" align="left">[<a href="emacs-w3m-ja_9.html#Basic-Usage" title="Beginning of this chapter or previous chapter"> &lt;&lt; </a>]</td>
+<td valign="middle" align="left">[<a href="emacs-w3m-ja_9.html#Basic-Usage" title="Up section">ä¸</a>]</td>
+<td valign="middle" align="left">[<a href="emacs-w3m-ja_19.html#Pretty-Good-Features" title="Next chapter"> &gt;&gt; </a>]</td>
+</tr></table>
+<p>
+ <font size="-1">
+  ãã®ææ¸ã¯<em>TSUCHIYA Masatoshi</em>ã«ãã£ã¦<em>2019å¹´1ææ30æ¥</em>ã«<a href="http://www.nongnu.org/texi2html/"><em>texi2html 1.82</em></a>ãç¨ãã¦çæããã¾ããã
+ </font>
+ <br>
+
+</p>
+</body>
+</html>

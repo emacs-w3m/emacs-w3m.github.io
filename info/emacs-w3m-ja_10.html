@@ -1,0 +1,799 @@
+<!DOCTYPE html PUBLIC "-//W3C//DTD HTML 4.01 Transitional//EN" "http://www.w3.org/TR/html401/loose.dtd">
+<html>
+<!-- Copyright C 2000-2014 TSUCHIYA Masatoshi
+
+Permission is granted to copy, distribute and/or modify this document
+under the terms of the GNU General Public License, Version 2 or any
+later version published by the Free Software Foundation.
+
+この文書を、フリーソフトウェア財団によって発行された GNU 一般公衆利用許
+諾契約書第 2 版またはそれ以降の版のうちどれかの定める条件の下で複製、配
+布、あるいは変更することを許可します。
+
+This document is distributed in the hope that it will be useful, but
+WITHOUT ANY WARRANTY; without even the implied warranty of
+MERCHANTABILITY or FITNESS FOR A PARTICULAR PURPOSE.  See the GNU
+General Public License for more details.
+
+この文書は有用であることを願って頒布されますが、全くの無保証 です。
+商業可能性 の保証や 特定の目的への適合性 は、言外に示され
+たものも含め全く存在しません。詳しくは GNU 一般公衆利用許諾契約書をご覧
+ください。
+
+You should have received a copy of the GNU General Public License along
+with this document; see the file COPYING.  If not, write to the Free
+Software Foundation, Inc., 51 Franklin Street, Fifth Floor, Boston, MA
+02110-1301, USA.
+
+あなたはこの文書と共に、GNU 一般公衆利用許諾契約書の複製物を一部受け取っ
+たはずです。COPYING ファイルを参照してください。もし受け取っていなければ、
+フリーソフトウェア財団まで請求してください (宛先は the Free Software
+Foundation, Inc., 59 Temple Place, Suite 330, Boston, MA 02111-1307 USA)。
+
+ -->
+<!-- Created on 2019å¹´1ææ30æ¥ by texi2html 1.82
+texi2html was written by: 
+            Lionel Cons <Lionel.Cons@cern.ch> (original author)
+            Karl Berry  <karl@freefriends.org>
+            Olaf Bachmann <obachman@mathematik.uni-kl.de>
+            and many others.
+Maintained by: Many creative people.
+Send bugs and suggestions to <texi2html-bug@nongnu.org>
+-->
+<head>
+<title>Emacs-w3m &ndash; an Emacs interface to w3m &ndash;: 3.1 ネットサーフィンしよう!</title>
+
+<meta name="description" content="Emacs-w3m &ndash; an Emacs interface to w3m &ndash;: 3.1 ネットサーフィンしよう!">
+<meta name="keywords" content="Emacs-w3m &ndash; an Emacs interface to w3m &ndash;: 3.1 ネットサーフィンしよう!">
+<meta name="resource-type" content="document">
+<meta name="distribution" content="global">
+<meta name="Generator" content="texi2html 1.82">
+<meta http-equiv="Content-Type" content="text/html; charset=utf-8">
+<style type="text/css">
+<!--
+a.summary-letter {text-decoration: none}
+blockquote.smallquotation {font-size: smaller}
+pre.display {font-family: serif}
+pre.format {font-family: serif}
+pre.menu-comment {font-family: serif}
+pre.menu-preformatted {font-family: serif}
+pre.smalldisplay {font-family: serif; font-size: smaller}
+pre.smallexample {font-size: smaller}
+pre.smallformat {font-family: serif; font-size: smaller}
+pre.smalllisp {font-size: smaller}
+span.roman {font-family:serif; font-weight:normal;}
+span.sansserif {font-family:sans-serif; font-weight:normal;}
+ul.toc {list-style: none}
+-->
+</style>
+
+
+</head>
+
+<body lang="ja" bgcolor="#FFFFFF" text="#000000" link="#0000FF" vlink="#800080" alink="#FF0000">
+
+<a name="Browsing-Web-Pages"></a>
+<table cellpadding="1" cellspacing="1" border="0">
+<tr><td valign="middle" align="left">[<a href="emacs-w3m-ja_9.html#Basic-Usage" title="Previous section in reading order"> &lt; </a>]</td>
+<td valign="middle" align="left">[<a href="#Key-Binding" title="Next section in reading order"> &gt; </a>]</td>
+<td valign="middle" align="left"> &nbsp; </td>
+<td valign="middle" align="left">[<a href="emacs-w3m-ja_9.html#Basic-Usage" title="Beginning of this chapter or previous chapter"> &lt;&lt; </a>]</td>
+<td valign="middle" align="left">[<a href="emacs-w3m-ja_9.html#Basic-Usage" title="Up section">ä¸</a>]</td>
+<td valign="middle" align="left">[<a href="emacs-w3m-ja_19.html#Pretty-Good-Features" title="Next chapter"> &gt;&gt; </a>]</td>
+<td valign="middle" align="left"> &nbsp; </td>
+<td valign="middle" align="left"> &nbsp; </td>
+<td valign="middle" align="left"> &nbsp; </td>
+<td valign="middle" align="left"> &nbsp; </td>
+<td valign="middle" align="left">[<a href="emacs-w3m-ja.html#Top" title="Cover (top) of document">åé ­</a>]</td>
+<td valign="middle" align="left">[<a href="emacs-w3m-ja_toc.html#SEC_Contents" title="Table of contents">ç®æ¬¡</a>]</td>
+<td valign="middle" align="left">[<a href="emacs-w3m-ja_68.html#Index" title="è¦åºã">è¦åºã</a>]</td>
+<td valign="middle" align="left">[<a href="emacs-w3m-ja_abt.html#SEC_About" title="About (help)"> ? </a>]</td>
+</tr></table>
+<a name="netutosahuinsiyou_0021"></a>
+<h2 class="section">3.1 ネットサーフィンしよう!</h2>
+
+<p>すべてのウェブ・ブラウズの操作は、キーで行うことができます。Emacs-w3m は
+デフォルトで &lsquo;<samp>Lynx-like</samp>&rsquo; キーマップ (see section <a href="#Key-Binding">二つのキーバインド</a>) というも
+のを使います。もちろんマウスを使うこともできます。
+</p>
+<table class="menu" border="0" cellspacing="0">
+<tr><td align="left" valign="top"><a href="#Key-Binding">3.1.1 二つのキーバインド</a></td><td>&nbsp;&nbsp;</td><td align="left" valign="top"></td></tr>
+<tr><td align="left" valign="top"><a href="#Launching-and-Jumping">3.1.2 とにかく動かしてみよう</a></td><td>&nbsp;&nbsp;</td><td align="left" valign="top"></td></tr>
+<tr><td align="left" valign="top"><a href="#Moving-in-a-page">3.1.3 ページ内を飛びまわる</a></td><td>&nbsp;&nbsp;</td><td align="left" valign="top"></td></tr>
+<tr><td align="left" valign="top"><a href="#Moving-over-pages">3.1.4 ページ間を渡り歩く</a></td><td>&nbsp;&nbsp;</td><td align="left" valign="top"></td></tr>
+<tr><td align="left" valign="top"><a href="#Browsing-With-Mouse-Operations">3.1.5 マウスを使ってサーフィン</a></td><td>&nbsp;&nbsp;</td><td align="left" valign="top"></td></tr>
+<tr><td align="left" valign="top"><a href="#Going-back-to-daily-hacking-and_002for-daily-writing">3.1.6 普段の生活に戻るには</a></td><td>&nbsp;&nbsp;</td><td align="left" valign="top"></td></tr>
+</table>
+
+<hr size="6">
+<a name="Key-Binding"></a>
+<table cellpadding="1" cellspacing="1" border="0">
+<tr><td valign="middle" align="left">[<a href="#Browsing-Web-Pages" title="Previous section in reading order"> &lt; </a>]</td>
+<td valign="middle" align="left">[<a href="#Launching-and-Jumping" title="Next section in reading order"> &gt; </a>]</td>
+<td valign="middle" align="left"> &nbsp; </td>
+<td valign="middle" align="left">[<a href="emacs-w3m-ja_9.html#Basic-Usage" title="Beginning of this chapter or previous chapter"> &lt;&lt; </a>]</td>
+<td valign="middle" align="left">[<a href="#Browsing-Web-Pages" title="Up section">ä¸</a>]</td>
+<td valign="middle" align="left">[<a href="emacs-w3m-ja_19.html#Pretty-Good-Features" title="Next chapter"> &gt;&gt; </a>]</td>
+<td valign="middle" align="left"> &nbsp; </td>
+<td valign="middle" align="left"> &nbsp; </td>
+<td valign="middle" align="left"> &nbsp; </td>
+<td valign="middle" align="left"> &nbsp; </td>
+<td valign="middle" align="left">[<a href="emacs-w3m-ja.html#Top" title="Cover (top) of document">åé ­</a>]</td>
+<td valign="middle" align="left">[<a href="emacs-w3m-ja_toc.html#SEC_Contents" title="Table of contents">ç®æ¬¡</a>]</td>
+<td valign="middle" align="left">[<a href="emacs-w3m-ja_68.html#Index" title="è¦åºã">è¦åºã</a>]</td>
+<td valign="middle" align="left">[<a href="emacs-w3m-ja_abt.html#SEC_About" title="About (help)"> ? </a>]</td>
+</tr></table>
+<a name="Er-tunokibaindo"></a>
+<h3 class="subsection">3.1.1 二つのキーバインド</h3>
+<a name="index-Key-binding"></a>
+<a name="index-Lynx_002dlike-keymap"></a>
+<a name="index-Info_002dlike-keymap"></a>
+<a name="index-w3m_002dkey_002dbinding"></a>
+
+<p>Emacs-w3m は Emacs ウェブ・ブラウザの歴史の中では後発のブラウザなので、
+ユーザが新しいウェブ・ブラウザに容易に慣れることができるようにするために、
+二種類のキーバインドを用意しました。一つは &lsquo;<samp>Lynx-like</samp>&rsquo; キーマップと
+呼ばれ、もう一つは &lsquo;<samp>Info-like</samp>&rsquo; キーマップです。これらの名前から、そ
+れらが何を意味するかは分かりますね?  前者はテキスト版のウェブ・ブラウザ
+である &lsquo;<samp>Lynx</samp>&rsquo; のものに似ています。そして後者は  GNU の公式ドキュメ
+ント・ブラウザである &lsquo;<samp>Info</samp>&rsquo; のものに似ています。デフォルトで
+は &lsquo;<samp>Lynx-like</samp>&rsquo; キーマップが使われます。&lsquo;<samp>Info-like</samp>&rsquo; キーマップ
+を使いたいのならば、
+</p>
+<table><tr><td>&nbsp;</td><td><pre class="example"><kbd>M-x customize-option &lt;RET&gt; w3m-key-binding &lt;RET&gt;</kbd>
+</pre></td></tr></table>
+
+<p>とタイプして &lsquo;<samp>Info-like</samp>&rsquo; キーマップを選び、変更をセーブしてください。
+あるいは以下の断片を &lsquo;<tt>~/.emacs</tt>&rsquo; ファイル (&lsquo;<tt>~/.emacs-w3m.el</tt>&rsquo; ファ
+イルではありません) に加えてください:
+</p>
+<table><tr><td>&nbsp;</td><td><pre class="lisp">(setq w3m-key-binding 'info)
+</pre></td></tr></table>
+
+<p>キーバインドを一つずつ変更するには、&lsquo;<tt>~/.emacs-w3m.el</tt>&rsquo; ファイルで以
+下のように <code>w3m-mode-map</code> 変数をいじってください:
+</p>
+<table><tr><td>&nbsp;</td><td><pre class="lisp">(define-key w3m-mode-map [up] 'previous-line)
+(define-key w3m-mode-map [down] 'next-line)
+(define-key w3m-mode-map [left] 'backward-char)
+(define-key w3m-mode-map [right] 'forward-char)
+</pre></td></tr></table>
+
+<hr size="6">
+<a name="Launching-and-Jumping"></a>
+<table cellpadding="1" cellspacing="1" border="0">
+<tr><td valign="middle" align="left">[<a href="#Key-Binding" title="Previous section in reading order"> &lt; </a>]</td>
+<td valign="middle" align="left">[<a href="#Moving-in-a-page" title="Next section in reading order"> &gt; </a>]</td>
+<td valign="middle" align="left"> &nbsp; </td>
+<td valign="middle" align="left">[<a href="emacs-w3m-ja_9.html#Basic-Usage" title="Beginning of this chapter or previous chapter"> &lt;&lt; </a>]</td>
+<td valign="middle" align="left">[<a href="#Browsing-Web-Pages" title="Up section">ä¸</a>]</td>
+<td valign="middle" align="left">[<a href="emacs-w3m-ja_19.html#Pretty-Good-Features" title="Next chapter"> &gt;&gt; </a>]</td>
+<td valign="middle" align="left"> &nbsp; </td>
+<td valign="middle" align="left"> &nbsp; </td>
+<td valign="middle" align="left"> &nbsp; </td>
+<td valign="middle" align="left"> &nbsp; </td>
+<td valign="middle" align="left">[<a href="emacs-w3m-ja.html#Top" title="Cover (top) of document">åé ­</a>]</td>
+<td valign="middle" align="left">[<a href="emacs-w3m-ja_toc.html#SEC_Contents" title="Table of contents">ç®æ¬¡</a>]</td>
+<td valign="middle" align="left">[<a href="emacs-w3m-ja_68.html#Index" title="è¦åºã">è¦åºã</a>]</td>
+<td valign="middle" align="left">[<a href="emacs-w3m-ja_abt.html#SEC_About" title="About (help)"> ? </a>]</td>
+</tr></table>
+<a name="tonikakuDong-kasitemiyou"></a>
+<h3 class="subsection">3.1.2 とにかく動かしてみよう</h3>
+
+<p>以下に挙げる三つの違うコマンドを使って emacs-w3m を起動することができま
+す。それらのコマンドの一つを試してください。ウェブページが &ldquo;*w3m*&rdquo; と
+いう名前の Emacs のバッファ (emacs-w3m のバッファのこと) に表示されます。
+おそらく気付くでしょうけれども、emacs-w3m のバッファのメジャーモード
+は <code>w3m-mode</code> です。他にマイナーモード (see section <a href="emacs-w3m-ja_13.html#Managing-Bookmarks">ぼくの/わたしのお気に入り</a>) もあります。
+</p>
+<p>ここでは、それらのコマンドの最も基本的な使い方だけを説明します。それらに
+ついてもっと詳しく知りたい場合は、<a href="emacs-w3m-ja_65.html#Emacs_002dw3m-Functions">Emacs-w3m の関数の詳しい説明</a> を参照してく
+ださい。また、emacs-w3m の動作をカスタマイズするために使うことができる変
+数群を、<a href="emacs-w3m-ja_30.html#Customizable-Variables">デフォルトのままでも結構良いと思うけれど</a> で参照してください。
+</p>
+<dl compact="compact">
+<dt> <code>w3m</code></dt>
+<dd><a name="index-w3m-1"></a>
+<a name="index-w3m_002dhome_002dpage"></a>
+<a name="index-w3m_002dquick_002dstart"></a>
+<a name="index-Using-emacs_002dw3m-as-a-batch-command"></a>
+<p>Emacs-w3m を起動して、<code>w3m-home-page</code> という変数で指定されたホーム
+ページを表示します。<code>w3m-home-page</code> のデフォルトの値
+は &ldquo;about:&rdquo; です。Emacs-w3m を起動したときに毎回 URL を入力できるよう
+にしたい場合は、変数 <code>w3m-quick-start</code> の値を <code>nil</code> にしてくだ
+さい (see section <a href="emacs-w3m-ja_30.html#Customizable-Variables">デフォルトのままでも結構良いと思うけれど</a>)。
+</p>
+<p>これは Emacs を起動するときに引数として使うこともできます。例です:
+</p>
+<table><tr><td>&nbsp;</td><td><pre class="example">% emacs -f w3m
+</pre></td></tr></table>
+
+<p>URL を指定して、このように使うこともできます:
+</p>
+<table><tr><td>&nbsp;</td><td><pre class="example">% emacs -f w3m http://emacs-w3m.namazu.org/
+</pre></td></tr></table>
+
+</dd>
+<dt> <code>w3m-find-file</code></dt>
+<dd><a name="index-w3m_002dfind_002dfile"></a>
+<p>ローカルファイル名をミニバッファで入力して、それを emacs-w3m で表示しま
+す。
+</p>
+</dd>
+<dt> <code>w3m-browse-url</code></dt>
+<dd><a name="index-w3m_002dbrowse_002durl"></a>
+<p>URL をミニバッファで入力して、それを emacs-w3m で表示します。このコマン
+ドは、どちらかと言えば他のアプリケーションプログラムから emacs-w3m を起
+動するために用意されています。
+</p></dd>
+</dl>
+
+<p>あなたがすでに Emacs のユーザならば、emacs-w3m のバッファの中で移動する
+のに苦労は無いでしょう。多くの標準のキーがそのまま使えるのですから。例え
+ば <kbd>C-n</kbd>、<kbd>C-v</kbd> それに <kbd>C-s</kbd> は emacs-w3m バッファで有効なキー
+です (これらは一行下降、一ページ送り、または後方単語検索として共通に使わ
+れます)。
+</p>
+<p>リンクをたどるには <kbd>&lt;RET&gt;</kbd> キーを使ってください。それにはポイン
+トをリンクの場所に移動しなければなりません。リンクは普通のテキストとは違っ
+て表示されているので、簡単に見分けることができます。それらは下線付き、ま
+たは違う色になっているはずです。それらの見栄えは <code>w3m-anchor</code> とい
+うフェースによって決まります (see section <a href="emacs-w3m-ja_30.html#Customizable-Variables">デフォルトのままでも結構良いと思うけれど</a>)。
+</p>
+<dl compact="compact">
+<dt> <kbd>&lt;RET&gt;</kbd></dt>
+<dt> <kbd>&lt;right&gt;</kbd> (Lynx-like キーマップのみ)</dt>
+<dd><a name="index-RET"></a>
+<a name="index-right-_0028Lynx_002dlike-kimatupu_0029"></a>
+<a name="index-w3m_002dview_002dthis_002durl"></a>
+<p>現在位置のリンクが指し示すページを表示します (<code>w3m-view-this-url</code>)。
+</p>
+<p>このコマンドの振る舞いは、厳密には現在位置のリンクの性質によって、または
+接頭引数を与えるかどうかに依存します。詳細
+は <a href="emacs-w3m-ja_65.html#Emacs_002dw3m-Functions">Emacs-w3m の関数の詳しい説明</a> を参照してください。
+</p></dd>
+</dl>
+
+<p>前述のように、変数 <code>w3m-quick-start</code> の値を <code>nil</code> に設定するこ
+とによって、<kbd>M-x w3m</kbd> コマンドを使ったときに URL を指定すること
+が可能です。Emacs-w3m のバッファでは、入力した新しい URL のページに行く
+ための一般的な方法が、さらに以下の二つあります。
+</p>
+<dl compact="compact">
+<dt> <kbd>&lt;RET&gt;</kbd></dt>
+<dd><a name="index-RET-1"></a>
+<a name="index-w3m_002dview_002dthis_002durl-1"></a>
+<p>Emacs-w3m のバッファにおいて、ヘッダラインに表示されている URL の位置に
+ポイントを移動させてから <kbd>&lt;RET&gt;</kbd> を叩くことによって、ミニバッファ
+から URL を入力して、そのページを表示させることができます。Mozilla など
+の GUI ベースのウェブブラウザに慣れている人にとって、この機能はおなじみ
+ですよね。これに関する詳しい説明が <a href="emacs-w3m-ja_65.html#Emacs_002dw3m-Functions">Emacs-w3m の関数の詳しい説明</a> で見つかる
+はずです (<code>w3m-view-this-url</code>)。
+</p>
+</dd>
+<dt> <kbd>g</kbd></dt>
+<dd><a name="index-g"></a>
+<a name="index-w3m_002dgoto_002durl"></a>
+<p>ミニバッファで URL の入力をうながして、emacs-w3m にそのページを表示させ
+ることができます (ポイントの位置とは無関係です)。このキーの割り当ては、
+すでに Gnus や Mew を利用している人にはおなじみでしょ
+う (<code>w3m-goto-url</code>)。
+</p>
+</dd>
+<dt> <kbd>G</kbd></dt>
+<dd><a name="index-G"></a>
+<a name="index-w3m_002dgoto_002durl_002dnew_002dsession"></a>
+<p>ミニバッファで URL の入力をうながして、それを新しいセッションで表示しま
+す。これはちょうど <kbd>g</kbd> (&lt;M-x w3m-goto-url&gt;) のように動作しま
+すが、新しいセッションを開くところが違います。文字端末で emacs-w3m を使っ
+ているのでない限り、新しいセッションを開くということは、そのページを新し
+いタブで表示することを意味します。タブについてのもっと詳しいことは、
+<a href="emacs-w3m-ja_14.html#Using-Tabs">みんなタブが好きだよね</a> を参照してください (<code>w3m-goto-url-new-session</code>)。
+</p>
+</dd>
+<dt> <kbd>c</kbd> (Lynx-like キーマップ)</dt>
+<dt> <kbd>y</kbd> (Info-like キーマップ)</dt>
+<dd><a name="index-c-_0028Lynx_002dlike-kimatupu_0029"></a>
+<a name="index-y-_0028Info_002dlike-kimatupu_0029"></a>
+<a name="index-w3m_002dprint_002dcurrent_002durl"></a>
+<p>表示しているページの URL をエコーエリアに表示するとともに、
+<code>kill-ring</code> に URL を挿入します (<code>w3m-print-current-url</code>)。
+</p>
+</dd>
+<dt> <kbd>u</kbd> (Lynx-like キーマップ)</dt>
+<dt> <kbd>Y</kbd> (Info-like キーマップ)</dt>
+<dd><a name="index-u-_0028Lynx_002dlike-kimatupu_0029"></a>
+<a name="index-Y-_0028Info_002dlike-kimatupu_0029"></a>
+<a name="index-w3m_002dprint_002dthis_002durl"></a>
+<p>現在位置のリンクが指し示す対象の URL をエコーエリアに表示するとともに、
+<code>kill-ring</code> に URL を挿入します (<code>w3m-print-this-url</code>)。
+</p></dd>
+</dl>
+
+<p>さて、あなたが読んでいるページが今日の時事ニュースかだれかの日記だったら、
+それを取り込んだ後で新しい内容で置き換えられているかもしれません。次のコ
+マンドを使うと、同じページの最新の内容に更新することができます。(このコ
+マンドは、ページが壊れているように見える場合に、全画面の再描画を強制させ
+るためにも役立てることができます。)
+</p>
+<dl compact="compact">
+<dt> <kbd>R</kbd></dt>
+<dt> <kbd>C-S-l</kbd> (Info-like キーマップのみ)</dt>
+<dd><a name="index-R"></a>
+<a name="index-C_002dS_002dl-_0028Info_002dlike-kimatupu_0029"></a>
+<a name="index-w3m_002dreload_002dthis_002dpage"></a>
+<p>ページを読み込み直します (<code>w3m-reload-this-page</code>)。
+</p></dd>
+</dl>
+
+<hr size="6">
+<a name="Moving-in-a-page"></a>
+<table cellpadding="1" cellspacing="1" border="0">
+<tr><td valign="middle" align="left">[<a href="#Launching-and-Jumping" title="Previous section in reading order"> &lt; </a>]</td>
+<td valign="middle" align="left">[<a href="#Moving-over-pages" title="Next section in reading order"> &gt; </a>]</td>
+<td valign="middle" align="left"> &nbsp; </td>
+<td valign="middle" align="left">[<a href="emacs-w3m-ja_9.html#Basic-Usage" title="Beginning of this chapter or previous chapter"> &lt;&lt; </a>]</td>
+<td valign="middle" align="left">[<a href="#Browsing-Web-Pages" title="Up section">ä¸</a>]</td>
+<td valign="middle" align="left">[<a href="emacs-w3m-ja_19.html#Pretty-Good-Features" title="Next chapter"> &gt;&gt; </a>]</td>
+<td valign="middle" align="left"> &nbsp; </td>
+<td valign="middle" align="left"> &nbsp; </td>
+<td valign="middle" align="left"> &nbsp; </td>
+<td valign="middle" align="left"> &nbsp; </td>
+<td valign="middle" align="left">[<a href="emacs-w3m-ja.html#Top" title="Cover (top) of document">åé ­</a>]</td>
+<td valign="middle" align="left">[<a href="emacs-w3m-ja_toc.html#SEC_Contents" title="Table of contents">ç®æ¬¡</a>]</td>
+<td valign="middle" align="left">[<a href="emacs-w3m-ja_68.html#Index" title="è¦åºã">è¦åºã</a>]</td>
+<td valign="middle" align="left">[<a href="emacs-w3m-ja_abt.html#SEC_About" title="About (help)"> ? </a>]</td>
+</tr></table>
+<a name="peziNei-woFei-bimawaru"></a>
+<h3 class="subsection">3.1.3 ページ内を飛びまわる</h3>
+<a name="index-Moving-in-a-page"></a>
+
+<p>Emacs で移動用に割り当てられている馴染み深いキーがウェブページの閲覧中に
+使えることは、おそらくすでにあなたを魅了しているでしょう。信じてもらえな
+いかもしれませんが、もっとあるのです!  私たちはあなたの時間を大切にした
+いので、ポイントの移動、ページのスクロール、あるいはとても速いやり方でリ
+ンクを見つけるためのキーを追加しました。それらをマスターすれば、それらが
+どんなに便利かを分かってもらえるでしょう。
+</p>
+<p>Emacs の標準キーバインドに比べて <code>w3m-mode</code> では、より短いキースト
+ロークでスクロールコマンド群を呼び出せるようにキーが割り当てられています。
+ウェブページ内でテキストを入力できる個所はかなり特別なの
+で (see section <a href="emacs-w3m-ja_17.html#Submitting-Forms">HTML フォームに記入する</a>)、たいていのキーは特別な意味を持っていて、
+そこでは <code>self-insert-command</code> に割り当てられていません。
+</p>
+<dl compact="compact">
+<dt> <kbd>&lt;SPC&gt;</kbd></dt>
+<dd><a name="index-SPC"></a>
+<a name="index-w3m_002dscroll_002dup_002dor_002dnext_002durl"></a>
+<p>下に向かってスクロールします。&lsquo;<samp>more</samp>&rsquo; や &lsquo;<samp>less</samp>&rsquo; コマンド、ある
+いは Emacs の <code>view-mode</code> を使ったことがあれば、覚えるまでもないキー
+ですよね (<code>w3m-scroll-up-or-next-url</code>)。
+</p>
+</dd>
+<dt> <kbd>&lt;DEL&gt;</kbd></dt>
+<dt> <kbd>b</kbd></dt>
+<dt> <kbd>&lt;backspace&gt;</kbd></dt>
+<dt> <kbd>S-&lt;SPC&gt;</kbd></dt>
+<dt> <kbd>C-?</kbd></dt>
+<dd><a name="index-DEL"></a>
+<a name="index-b"></a>
+<a name="index-backspace"></a>
+<a name="index-S_002dSPC"></a>
+<a name="index-C_002d_003f"></a>
+<a name="index-w3m_002dscroll_002ddown_002dor_002dprevious_002durl"></a>
+<p>上に向かってスクロールします。&lsquo;<samp>less</samp>&rsquo; コマンド
+や Emacs の <code>view-mode</code> に馴れ親しんでいるあなたの手は、自然にこの
+キーを叩くでしょう (<code>w3m-scroll-down-or-previous-url</code>)。
+</p>
+</dd>
+<dt> <kbd>&gt;</kbd></dt>
+<dd><a name="index-_003e"></a>
+<a name="index-w3m_002dscroll_002dleft"></a>
+<a name="index-w3m_002dhorizontal_002dscroll_002dcolumns"></a>
+<p>左にスクロールします。スクロールの量
+は <code>w3m-horizontal-scroll-columns</code> で与え、デフォルト値は 10 で
+す (<code>w3m-scroll-left</code>)。
+</p>
+</dd>
+<dt> <kbd>&lt;</kbd></dt>
+<dd><a name="index-_003c"></a>
+<a name="index-w3m_002dscroll_002dright"></a>
+<a name="index-w3m_002dhorizontal_002dscroll_002dcolumns-1"></a>
+<p>右にスクロールします。スクロールの量
+は <code>w3m-horizontal-scroll-columns</code> で与え、デフォルト値は 10 で
+す (<code>w3m-scroll-right</code>)。
+</p>
+</dd>
+<dt> <kbd>.</kbd> (Lynx-like キーマップ)</dt>
+<dt> <kbd>S-&lt;left&gt;</kbd> (Info-like キーマップ)</dt>
+<dd><a name="index-_002e-_0028Lynx_002dlike-kimatupu_0029"></a>
+<a name="index-S_002dleft-_0028Info_002dlike-kimatupu_0029"></a>
+<a name="index-w3m_002dshift_002dleft"></a>
+<a name="index-w3m_002dhorizontal_002dshift_002dcolumns"></a>
+<p>左にシフトします (小刻みな水平スクロール)。シフトの量
+は <code>w3m-horizontal-shift-columns</code> で与え、デフォルト値は 2 で
+す (<code>w3m-shift-left</code>)。
+</p>
+</dd>
+<dt> <kbd>,</kbd> (Lynx-like キーマップ)</dt>
+<dt> <kbd>S-&lt;right&gt;</kbd> (Info-like キーマップ)</dt>
+<dd><a name="index-_002c-_0028Lynx_002dlike-kimatupu_0029"></a>
+<a name="index-S_002dright-_0028Info_002dlike-kimatupu_0029"></a>
+<a name="index-w3m_002dshift_002dright"></a>
+<a name="index-w3m_002dhorizontal_002dshift_002dcolumns-1"></a>
+<p>右にシフトします (小刻みに水平スクロールです)。シフトの量
+は <code>w3m-horizontal-shift-columns</code> で与え、デフォルト値は 2 で
+す (<code>w3m-shift-right</code>)。
+</p>
+</dd>
+<dt> <kbd>M-l</kbd></dt>
+<dd><a name="index-M_002dl"></a>
+<a name="index-w3m_002dhorizontal_002drecenter"></a>
+<p>現在ポイントがある位置のテキストが、水平方向に関して中心になるように
+スクロールします (<code>w3m-horizontal-recenter</code>)。
+</p></dd>
+</dl>
+
+<p><code>w3m-mode</code> メジャーモードでは、いろいろな種類の移動コマンドが定義さ
+れています。すなわち、リンク、フォーム、それに画像 (それが表示されていて
+もいなくても) です。
+</p>
+<p>簡単な例を挙げてみます。広く知られている Google 検索エンジンで単語を調べ
+たいのだとしましょう。ステップ１:
+emacs-w3m で <a href="http://www.google.com">http://www.google.com</a> を開きます。ステップ２: いった
+んページが読み込まれたら <kbd>]</kbd> を叩いてください。
+ぐわしっ! <a name="DOCF1" href="emacs-w3m-ja_fot.html#FOOT1">(1)</a> ポイントが
+ページの最初の入力フォームに移動しましたね。今や <kbd>&lt;RET&gt;</kbd> を叩い
+てそこに何かを入力して、<kbd>C-c C-c</kbd> で送ることができます。このコマ
+ンド無しでは、そのページに <kbd>C-n</kbd> や <kbd>C-f</kbd> などを打ち込んで移動し
+なければならなくて、まったく骨折りなことだったでしょう。
+</p>
+<dl compact="compact">
+<dt> <kbd>&lt;TAB&gt;</kbd></dt>
+<dt> <kbd>&lt;down&gt;</kbd> (Lynx-like キーマップのみ)</dt>
+<dd><a name="index-TAB"></a>
+<a name="index-down-_0028Lynx_002dlike-kimatupu_0029"></a>
+<a name="index-w3m_002dnext_002danchor"></a>
+<p>次のリンク (emacs-w3m の用語では &ldquo;アンカー&rdquo;) へポイントを移動します。
+より厳密には、順方向で最も近いアンカーへ移動します。
+</p>
+</dd>
+<dt> <kbd>M-&lt;TAB&gt;</kbd></dt>
+<dt> <kbd>S-&lt;TAB&gt;</kbd></dt>
+<dt> <kbd>&lt;backtab&gt;</kbd></dt>
+<dt> <kbd>&lt;up&gt;</kbd> (Lynx-like キーマップのみ)</dt>
+<dd><a name="index-M_002dTAB"></a>
+<a name="index-S_002dTAB"></a>
+<a name="index-backtab"></a>
+<a name="index-up-_0028Lynx_002dlike-kimatupu_0029"></a>
+<a name="index-w3m_002dprevious_002danchor"></a>
+<p>前のアンカーへポイントを移動します。より厳密には、逆方向で最も近いアンカー
+へ移動します (<code>w3m-previous-anchor</code>)。
+</p>
+</dd>
+<dt> <kbd>]</kbd></dt>
+<dd><a name="index-_005d"></a>
+<a name="index-w3m_002dnext_002dform"></a>
+<p>次のフォームへポイントを移動します。より厳密には、順方向で最も近いフォー
+ムへ移動します (<code>w3m-next-form</code>)。
+</p>
+</dd>
+<dt> <kbd>[</kbd></dt>
+<dd><a name="index-_005b"></a>
+<a name="index-w3m_002dprevious_002dform"></a>
+<p>前のフォームへポイントを移動します。より厳密には、逆方向で最も近いフォー
+ムへ移動します (<code>w3m-previous-form</code>)。
+</p>
+</dd>
+<dt> <kbd>}</kbd></dt>
+<dd><a name="index-_007d"></a>
+<a name="index-w3m_002dnext_002dimage"></a>
+<p>次の画像へポイントを移動します。より厳密には、順方向で最も近い画像へ移動
+します (<code>w3m-next-image</code>)。
+</p>
+</dd>
+<dt> <kbd>{</kbd></dt>
+<dd><a name="index-_007b"></a>
+<a name="index-w3m_002dprevious_002dimage"></a>
+<p>前の画像へポイントを移動します。より厳密には、逆方向で最も近い画像へ移動
+します (<code>w3m-previous-image</code>)。
+</p></dd>
+</dl>
+
+<hr size="6">
+<a name="Moving-over-pages"></a>
+<table cellpadding="1" cellspacing="1" border="0">
+<tr><td valign="middle" align="left">[<a href="#Moving-in-a-page" title="Previous section in reading order"> &lt; </a>]</td>
+<td valign="middle" align="left">[<a href="#Browsing-With-Mouse-Operations" title="Next section in reading order"> &gt; </a>]</td>
+<td valign="middle" align="left"> &nbsp; </td>
+<td valign="middle" align="left">[<a href="emacs-w3m-ja_9.html#Basic-Usage" title="Beginning of this chapter or previous chapter"> &lt;&lt; </a>]</td>
+<td valign="middle" align="left">[<a href="#Browsing-Web-Pages" title="Up section">ä¸</a>]</td>
+<td valign="middle" align="left">[<a href="emacs-w3m-ja_19.html#Pretty-Good-Features" title="Next chapter"> &gt;&gt; </a>]</td>
+<td valign="middle" align="left"> &nbsp; </td>
+<td valign="middle" align="left"> &nbsp; </td>
+<td valign="middle" align="left"> &nbsp; </td>
+<td valign="middle" align="left"> &nbsp; </td>
+<td valign="middle" align="left">[<a href="emacs-w3m-ja.html#Top" title="Cover (top) of document">åé ­</a>]</td>
+<td valign="middle" align="left">[<a href="emacs-w3m-ja_toc.html#SEC_Contents" title="Table of contents">ç®æ¬¡</a>]</td>
+<td valign="middle" align="left">[<a href="emacs-w3m-ja_68.html#Index" title="è¦åºã">è¦åºã</a>]</td>
+<td valign="middle" align="left">[<a href="emacs-w3m-ja_abt.html#SEC_About" title="About (help)"> ? </a>]</td>
+</tr></table>
+<a name="peziJian-woDu-riBu-ku"></a>
+<h3 class="subsection">3.1.4 ページ間を渡り歩く</h3>
+
+<p>この項ではページからページに移動するやり方を説明します。リンクをたどった
+り URL を入力する方法はここにはありません (それら二つの方法
+は <a href="#Launching-and-Jumping">とにかく動かしてみよう</a> で説明されています)。
+</p>
+<p>ここには、以前に訪問したページの履歴を後ろに、および前に移動する (他のブ
+ラウザでは「戻る」「進む」としておなじみの) コマンドと、仮にもブラウザた
+るものが義務として提供すべき「ホームページへ移動する」機能があります。あ
+らかじめ <a href="emacs-w3m-ja_12.html#Tracing-History">時空を遡る</a> の項を読んでおいた方が、たぶん理解しやす
+いでしょう。
+</p>
+<dl compact="compact">
+<dt> <kbd>B</kbd> (Lynx-like キーマップ)</dt>
+<dt> <kbd>&lt;left&gt;</kbd> (Lynx-like キーマップ)</dt>
+<dt> <kbd>l</kbd> (Info-like キーマップ)</dt>
+<dt> <kbd>p</kbd> (Info-like キーマップ)</dt>
+<dd><a name="index-B-_0028Lynx_002dlike-kimatupu_0029"></a>
+<a name="index-left-_0028Lynx_002dlike-kimatupu_0029"></a>
+<a name="index-l-_0028Info_002dlike-kimatupu_0029"></a>
+<a name="index-p-_0028Info_002dlike-kimatupu_0029"></a>
+<a name="index-w3m_002dview_002dprevious_002dpage"></a>
+<p>以前に訪問したページの履歴を１ページ戻りま
+す (<code>w3m-view-previous-page</code>)。数の引数 N が与えられると N ページ戻
+ります。これは過去に戻るためのお勧めの方法です。
+</p>
+</dd>
+<dt> <kbd>N</kbd> (Lynx-like キーマップ)</dt>
+<dt> <kbd>n</kbd> (Info-like キーマップ)</dt>
+<dd><a name="index-N-_0028Lynx_002dlike-kimatupu_0029"></a>
+<a name="index-n-_0028Info_002dlike-kimatupu_0029"></a>
+<a name="index-w3m_002dview_002dnext_002dpage"></a>
+<p>以前に訪問したページの履歴を１ページ進みます (<code>w3m-view-next-page</code>)。
+もちろん <kbd>B</kbd> (&lsquo;<samp>Info-like</samp>&rsquo; キーマップの場合は <kbd>l</kbd>) で履歴を
+戻った後でなければ働きません。数の引数 N が与えられると N ページ進みます。
+このコマンドは、まさに back to the future を実現します!
+</p>
+</dd>
+<dt> <kbd>H</kbd></dt>
+<dd><a name="index-H"></a>
+<a name="index-w3m_002dgohome"></a>
+<a name="index-w3m_002dquick_002dstart-1"></a>
+<p>ホームページへ移動します (<code>w3m-gohome</code>)。ホームページ
+の URL は <code>w3m-home-page</code> という変数で指定しま
+す (see section <a href="emacs-w3m-ja_30.html#Customizable-Variables">デフォルトのままでも結構良いと思うけれど</a>)。<code>w3m-home-page</code> のデフォルト
+の値は &ldquo;about:&rdquo; です。
+</p></dd>
+</dl>
+
+<p>以下のコマンドは、他には無い emacs-w3m の特長です。私たちはそれらの特許
+を得ることができました。従って、他のいかなる場所でも見つからないでしょう。
+そのため、今日それらを使うことを学ばなければなりません! (真に受けないで
+くださいね。ただの冗談ですから。)
+</p>
+<dl compact="compact">
+<dt> <kbd>^</kbd></dt>
+<dt> <kbd>u</kbd> (Info-like キーマップのみ)</dt>
+<dd><a name="index-_005e"></a>
+<a name="index-u-_0028Info_002dlike-kimatupu_0029"></a>
+<a name="index-w3m_002dview_002dparent_002dpage"></a>
+<p>現在表示されているページの親ディレクトリへの移動を試みます。例えば、
+&ldquo;http://foo/bar/baz&rdquo; が表示されている場合は &ldquo;http://foo/bar/&rdquo; に移動
+しようとします。この機能は次の観察に基づいて実装されました: ウェブブラウ
+ザのユーザは、しばしば一段階上のディレクトリに移動しなければなりません。
+彼らが捜している情報が、現在のページに表示されないから (それが削除された
+ので、あるいは検索エンジンが間違っているページに連れて行ったため) です。
+</p>
+<p>他のウェブブラウザを使う場合、一般には、URL から <kbd>&lt;DEL&gt;</kbd> キー等
+を複数回使って、手作業で末尾のコンポーネントを削除する手間が必要です。
+Emacs-w3m では、この操作を <kbd>^</kbd> のたった一押し! で行なうことができま
+す。
+</p>
+<p>また、&ldquo;2 ^&rdquo; と数字を付けてコマンドを実行すると、その数字の分だけ親のディ
+レクトリに移動します。&ldquo;0 ^&rdquo; と &ldquo;0&rdquo; を付けて実行するとそのサイトの最
+上位まで移動します。
+</p></dd>
+</dl>
+
+<dl compact="compact">
+<dt> <kbd>&lt;SPC&gt;</kbd></dt>
+<dd><a name="index-SPC-1"></a>
+<a name="index-w3m_002dscroll_002dup_002dor_002dnext_002durl-1"></a>
+<p>現在のポイント位置がバッファの末尾付近にあり、下方向にスクロールできない
+場合に <kbd>&lt;SPC&gt;</kbd> を押すと「次」のページへ移動しま
+す (<code>w3m-scroll-up-or-next-url</code>)。ここで「次のページ」とは、現在読
+んでいるページのヘッダ内の特別な &ldquo;next&rdquo; フィールドが指し示しているペー
+ジのことです。この機能は訪問したページの履歴とは関係ありません。
+</p>
+<p>一度に巨大なコンテンツを転送するのを待つことが、ユーザにとって快適ではな
+いなどの理由で、いくつかのウェブサイトがそれらのコンテンツを小さな複数の
+ページに分割していることに、おそらく気付いているでしょう。例えば、検索エ
+ンジンの検索結果は、しばしばそのように現われます。そんなサイトでは、ユー
+ザはすべての情報にアクセスするために、しばしば一つのページから次のページ
+に、手動でリンクをたどらなければなりません。
+</p>
+<p>Emacs-w3m は、可能であればこのリンクを明示的にたどる操作をスクロール操作
+と統合して、複数のページに分割されて提供されるコンテンツを、できれば一枚
+のウェブページとして閲覧できるよう試みます。
+</p>
+<p>それはこうして働きます: そのようなウェブサイトでは、分割したウェブページ
+間のつながりをページのヘッダ内の &ldquo;next&rdquo;、&ldquo;prev&rdquo; あるい
+は &ldquo;previous&rdquo; フィールドに記載してある場合があります。Emacs-w3m は何を
+たどるかを知るために、このフィールドを利用しています。
+</p>
+<p>二つの操作 (リンクをたどる + スクロール) が Emacs-w3m 上でどのように統合
+されているのかを、再び Google を例に説明しましょう。
+<a href="http://www.google.com">http://www.google.com</a> を開き、ある単語を検索します。もし、あまり
+にもありふれた単語 (例えば「牛丼」) を検索すると、大量の検索結果を得るこ
+とになるでしょう。Google は、その基準を使ってソートした検索結果を複数の
+ウェブページに分割した上で、まず最初のページを返します。
+<kbd>&lt;SPC&gt;</kbd> を使って最初のページをスクロールさせながら眺めてください。
+そして、そのページの最後がそのウィンドウで見えるまで、スクロールし続けて
+ください。そこでは、あなたをびっくりさせるしかけが待っています。
+Emacs-w3m 以外のブラウザを使って残りの検索結果を見たいと思ったならば、
+</p>
+<table><tr><td>&nbsp;</td><td><pre class="example">Gooooooogle
+</pre></td></tr></table>
+
+<p>の下にならぶ数字のどれか
+</p>
+<table><tr><td>&nbsp;</td><td><pre class="example">1 2 3 4 5 6 7 8...
+</pre></td></tr></table>
+
+<p>をクリックする必要があります。しかし emacs-w3m ならば、単
+に <kbd>&lt;SPC&gt;</kbd> を押すというスクロールと同じ操作で、リンクをたどるこ
+とができるのです。
+</p>
+</dd>
+<dt> <kbd>&lt;DEL&gt;</kbd></dt>
+<dt> <kbd>b</kbd></dt>
+<dt> <kbd>&lt;backspace&gt;</kbd></dt>
+<dt> <kbd>S-&lt;SPC&gt;</kbd></dt>
+<dt> <kbd>C-?</kbd></dt>
+<dd><a name="index-DEL-1"></a>
+<a name="index-b-1"></a>
+<a name="index-backspace-1"></a>
+<a name="index-S_002dSPC-1"></a>
+<a name="index-C_002d_003f-1"></a>
+<a name="index-w3m_002dscroll_002ddown_002dor_002dprevious_002durl-1"></a>
+<p>ポイント位置がバッファの先頭付近にあり、上方向にスクロールできない場合
+に <kbd>&lt;DEL&gt;</kbd> を押すと、「前」のページへ移動しま
+す (<code>w3m-scroll-down-or-previous-url</code>)。ここで「前」のページとは、
+現在表示されているページのヘッダ内の &ldquo;prev&rdquo; あるいは &ldquo;previous&rdquo; フィー
+ルドに指定されているページのことです。この機能は訪問したページの履歴とは
+関係ありません。<kbd>&lt;SPC&gt;</kbd> (<code>w3m-scroll-up-or-next-url</code>) と同
+様、ただし逆の動きになります。
+</p></dd>
+</dl>
+
+<hr size="6">
+<a name="Browsing-With-Mouse-Operations"></a>
+<table cellpadding="1" cellspacing="1" border="0">
+<tr><td valign="middle" align="left">[<a href="#Moving-over-pages" title="Previous section in reading order"> &lt; </a>]</td>
+<td valign="middle" align="left">[<a href="#Going-back-to-daily-hacking-and_002for-daily-writing" title="Next section in reading order"> &gt; </a>]</td>
+<td valign="middle" align="left"> &nbsp; </td>
+<td valign="middle" align="left">[<a href="emacs-w3m-ja_9.html#Basic-Usage" title="Beginning of this chapter or previous chapter"> &lt;&lt; </a>]</td>
+<td valign="middle" align="left">[<a href="#Browsing-Web-Pages" title="Up section">ä¸</a>]</td>
+<td valign="middle" align="left">[<a href="emacs-w3m-ja_19.html#Pretty-Good-Features" title="Next chapter"> &gt;&gt; </a>]</td>
+<td valign="middle" align="left"> &nbsp; </td>
+<td valign="middle" align="left"> &nbsp; </td>
+<td valign="middle" align="left"> &nbsp; </td>
+<td valign="middle" align="left"> &nbsp; </td>
+<td valign="middle" align="left">[<a href="emacs-w3m-ja.html#Top" title="Cover (top) of document">åé ­</a>]</td>
+<td valign="middle" align="left">[<a href="emacs-w3m-ja_toc.html#SEC_Contents" title="Table of contents">ç®æ¬¡</a>]</td>
+<td valign="middle" align="left">[<a href="emacs-w3m-ja_68.html#Index" title="è¦åºã">è¦åºã</a>]</td>
+<td valign="middle" align="left">[<a href="emacs-w3m-ja_abt.html#SEC_About" title="About (help)"> ? </a>]</td>
+</tr></table>
+<a name="mausuwoShi-tutesahuin"></a>
+<h3 class="subsection">3.1.5 マウスを使ってサーフィン</h3>
+
+<p>Emacs-w3m の開発者達は、Emacs ギーク<a name="DOCF2" href="emacs-w3m-ja_fot.html#FOOT2">(2)</a> でない普通の人にも emacs-w3m を使ってもらえるように、少し骨を折り
+ました。例えば URL やフォームのテキストの入力を除くほとんどのウェブブラ
+ウズ操作を、マウスだけで行なうことができます。それでもなお修飾キーとして
+シフトキーが必要になる場合があることに注意してください。Emacs-w3m の開発
+者がみんな Emacs ギークなので&hellip;
+</p>
+<p>ウェブ閲覧の最初の基本となる「リンクをたどる操作」には <kbd>mouse-2</kbd> を
+使ってください。Emacs 22.1 以上では、<kbd>mouse-1</kbd> で
+も <code>mouse-1-click-follows-link</code> の値に応じた、リンクをたどる操作を
+行なうことができます。
+</p>
+<dl compact="compact">
+<dt> <kbd>mouse-2</kbd></dt>
+<dd><a name="index-mouse_002d2"></a>
+<a name="index-w3m_002dmouse_002dview_002dthis_002durl"></a>
+<p>マウスカーソルの下にあるリンクをたどりま
+す (<code>w3m-mouse-view-this-url</code>)。
+</p>
+</dd>
+<dt> <kbd>S-&lt;mouse-2&gt;</kbd></dt>
+<dd><a name="index-S_002dmouse_002d2"></a>
+<a name="index-w3m_002dmouse_002dview_002dthis_002durl_002dnew_002dsession"></a>
+<p>新しいセッション (see section <a href="emacs-w3m-ja_12.html#Tracing-History">時空を遡る</a>) のもとでマウスカーソルの下に
+あるリンクをたどります (<code>w3m-mouse-view-this-url-new-session</code>)。
+</p></dd>
+</dl>
+
+<p>Emacs-w3m のスクロールバー、メニュー及びツールバーは、マウスを使う場合に
+役立ちます。ただし Emacs がそれらをサポートしていることが必要で、かつそ
+れらを有効にしていなければなりません。言うまでもないですが、スクロールバー
+を動かして表示をスクロールさせることができます。Emacs フレームの一番上に
+ある「w3m」メニューから、この info ドキュメントで紹介してい
+る emacs-w3m の様々な機能を呼び出すことができます。主要な機能については
+メニューアイテムを選ぶまでもないことに注意してください。代わりにツール
+バー・アイコンを使うことができます。
+</p>
+<p>タブ (see section <a href="emacs-w3m-ja_14.html#Using-Tabs">みんなタブが好きだよね</a>) を使って emacs-w3m のバッファを切り替えるには、
+ウィンドウのてっぺんの行を <kbd>mouse-2</kbd> で直接クリックするか、または
+「w3m」メニューの一つおいて隣にある「Tab」メニューから一つを選んでくださ
+い。
+</p>
+<hr size="6">
+<a name="Going-back-to-daily-hacking-and_002for-daily-writing"></a>
+<table cellpadding="1" cellspacing="1" border="0">
+<tr><td valign="middle" align="left">[<a href="#Browsing-With-Mouse-Operations" title="Previous section in reading order"> &lt; </a>]</td>
+<td valign="middle" align="left">[<a href="emacs-w3m-ja_11.html#Inline-Images" title="Next section in reading order"> &gt; </a>]</td>
+<td valign="middle" align="left"> &nbsp; </td>
+<td valign="middle" align="left">[<a href="emacs-w3m-ja_9.html#Basic-Usage" title="Beginning of this chapter or previous chapter"> &lt;&lt; </a>]</td>
+<td valign="middle" align="left">[<a href="#Browsing-Web-Pages" title="Up section">ä¸</a>]</td>
+<td valign="middle" align="left">[<a href="emacs-w3m-ja_19.html#Pretty-Good-Features" title="Next chapter"> &gt;&gt; </a>]</td>
+<td valign="middle" align="left"> &nbsp; </td>
+<td valign="middle" align="left"> &nbsp; </td>
+<td valign="middle" align="left"> &nbsp; </td>
+<td valign="middle" align="left"> &nbsp; </td>
+<td valign="middle" align="left">[<a href="emacs-w3m-ja.html#Top" title="Cover (top) of document">åé ­</a>]</td>
+<td valign="middle" align="left">[<a href="emacs-w3m-ja_toc.html#SEC_Contents" title="Table of contents">ç®æ¬¡</a>]</td>
+<td valign="middle" align="left">[<a href="emacs-w3m-ja_68.html#Index" title="è¦åºã">è¦åºã</a>]</td>
+<td valign="middle" align="left">[<a href="emacs-w3m-ja_abt.html#SEC_About" title="About (help)"> ? </a>]</td>
+</tr></table>
+<a name="Pu-Duan-noSheng-Huo-niLi-runiha"></a>
+<h3 class="subsection">3.1.6 普段の生活に戻るには</h3>
+
+<p>思い出してください。おそらくあなたはウェブを見るために Emacs を始めたの
+ではありません。エディタの内蔵インタープリタを scheme に置き換えたり、ソ
+フトウェアの info ドキュメントを作成したり、ソフトウェアの特許に対する自
+分の考えを印刷したり&hellip;するためだったのではありませんか?  Emacs を使っ
+ていた間に、仕事のためにウェブを見る必要に迫られ、しかしたまた
+ま Emacs から離れずにウェブを見ることができてしまったのです。
+</p>
+<p>さぁ、本来の作業に戻る時が来ました。あなたががんばらないと世界は変りませ
+ん!  すぐにまたウェブを閲覧する必要があるかもしれないなら <kbd>q</kbd> を、し
+ばらく emacs-w3m に戻ってくるつもりがないなら <kbd>Q</kbd> を使ってください。
+</p>
+<dl compact="compact">
+<dt> <kbd>q</kbd></dt>
+<dd><a name="index-q"></a>
+<a name="index-w3m_002dclose_002dwindow"></a>
+<p>Emacs-w3m のウィンドウと閉じて、他のバッファを選択しま
+す (<code>w3m-close-window</code>)。
+</p>
+</dd>
+<dt> <kbd>Q</kbd></dt>
+<dd><a name="index-Q"></a>
+<a name="index-w3m_002dquit"></a>
+<p>Arrived URLs (閲覧履歴, see section <a href="emacs-w3m-ja_12.html#Tracing-History">時空を遡る</a> 参照) のリストとクッ
+キー (see section <a href="emacs-w3m-ja_34.html#Cookie-Variables">クッキーに関連した変数</a>) をディスクに保存して、本当
+に emacs-w3m を終了します (<code>w3m-quit</code>)。
+</p></dd>
+</dl>
+
+<hr size="6">
+<table cellpadding="1" cellspacing="1" border="0">
+<tr><td valign="middle" align="left">[<a href="#Browsing-With-Mouse-Operations" title="Previous section in reading order"> &lt; </a>]</td>
+<td valign="middle" align="left">[<a href="emacs-w3m-ja_11.html#Inline-Images" title="Next section in reading order"> &gt; </a>]</td>
+<td valign="middle" align="left"> &nbsp; </td>
+<td valign="middle" align="left">[<a href="emacs-w3m-ja_9.html#Basic-Usage" title="Beginning of this chapter or previous chapter"> &lt;&lt; </a>]</td>
+<td valign="middle" align="left">[<a href="#Browsing-Web-Pages" title="Up section">ä¸</a>]</td>
+<td valign="middle" align="left">[<a href="emacs-w3m-ja_19.html#Pretty-Good-Features" title="Next chapter"> &gt;&gt; </a>]</td>
+</tr></table>
+<p>
+ <font size="-1">
+  ãã®ææ¸ã¯<em>TSUCHIYA Masatoshi</em>ã«ãã£ã¦<em>2019å¹´1ææ30æ¥</em>ã«<a href="http://www.nongnu.org/texi2html/"><em>texi2html 1.82</em></a>ãç¨ãã¦çæããã¾ããã
+ </font>
+ <br>
+
+</p>
+</body>
+</html>

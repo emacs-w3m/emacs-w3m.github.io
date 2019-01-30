@@ -1,0 +1,127 @@
+<!DOCTYPE html PUBLIC "-//W3C//DTD HTML 4.01 Transitional//EN" "http://www.w3.org/TR/html401/loose.dtd">
+<html>
+<!-- Copyright C 2000-2014 TSUCHIYA Masatoshi
+
+Permission is granted to copy, distribute and/or modify this document
+under the terms of the GNU General Public License, Version 2 or any
+later version published by the Free Software Foundation.
+
+This document is distributed in the hope that it will be useful, but
+WITHOUT ANY WARRANTY; without even the implied warranty of
+MERCHANTABILITY or FITNESS FOR A PARTICULAR PURPOSE.  See the GNU
+General Public License for more details.
+
+You should have received a copy of the GNU General Public License along
+with this document; see the file COPYING.  If not, write to the Free
+Software Foundation, Inc., 51 Franklin Street, Fifth Floor, Boston, MA
+02110-1301, USA.
+
+ -->
+<!-- Created on January 30, 2019 by texi2html 1.82
+texi2html was written by: 
+            Lionel Cons <Lionel.Cons@cern.ch> (original author)
+            Karl Berry  <karl@freefriends.org>
+            Olaf Bachmann <obachman@mathematik.uni-kl.de>
+            and many others.
+Maintained by: Many creative people.
+Send bugs and suggestions to <texi2html-bug@nongnu.org>
+-->
+<head>
+<title>Emacs-w3m &ndash; an Emacs interface to w3m &ndash;: 2.1 What version of Emacs can be used?</title>
+
+<meta name="description" content="Emacs-w3m &ndash; an Emacs interface to w3m &ndash;: 2.1 What version of Emacs can be used?">
+<meta name="keywords" content="Emacs-w3m &ndash; an Emacs interface to w3m &ndash;: 2.1 What version of Emacs can be used?">
+<meta name="resource-type" content="document">
+<meta name="distribution" content="global">
+<meta name="Generator" content="texi2html 1.82">
+<meta http-equiv="Content-Type" content="text/html; charset=utf-8">
+<style type="text/css">
+<!--
+a.summary-letter {text-decoration: none}
+blockquote.smallquotation {font-size: smaller}
+pre.display {font-family: serif}
+pre.format {font-family: serif}
+pre.menu-comment {font-family: serif}
+pre.menu-preformatted {font-family: serif}
+pre.smalldisplay {font-family: serif; font-size: smaller}
+pre.smallexample {font-size: smaller}
+pre.smallformat {font-family: serif; font-size: smaller}
+pre.smalllisp {font-size: smaller}
+span.roman {font-family:serif; font-weight:normal;}
+span.sansserif {font-family:sans-serif; font-weight:normal;}
+ul.toc {list-style: none}
+-->
+</style>
+
+
+</head>
+
+<body lang="en" bgcolor="#FFFFFF" text="#000000" link="#0000FF" vlink="#800080" alink="#FF0000">
+
+<a name="Required-Emacs-Version"></a>
+<table cellpadding="1" cellspacing="1" border="0">
+<tr><td valign="middle" align="left">[<a href="emacs-w3m_2.html#Getting-Started" title="Previous section in reading order"> &lt; </a>]</td>
+<td valign="middle" align="left">[<a href="emacs-w3m_4.html#You-Need-w3m" title="Next section in reading order"> &gt; </a>]</td>
+<td valign="middle" align="left"> &nbsp; </td>
+<td valign="middle" align="left">[<a href="emacs-w3m_2.html#Getting-Started" title="Beginning of this chapter or previous chapter"> &lt;&lt; </a>]</td>
+<td valign="middle" align="left">[<a href="emacs-w3m_2.html#Getting-Started" title="Up section"> Up </a>]</td>
+<td valign="middle" align="left">[<a href="emacs-w3m_9.html#Basic-Usage" title="Next chapter"> &gt;&gt; </a>]</td>
+<td valign="middle" align="left"> &nbsp; </td>
+<td valign="middle" align="left"> &nbsp; </td>
+<td valign="middle" align="left"> &nbsp; </td>
+<td valign="middle" align="left"> &nbsp; </td>
+<td valign="middle" align="left">[<a href="emacs-w3m.html#Top" title="Cover (top) of document">Top</a>]</td>
+<td valign="middle" align="left">[<a href="emacs-w3m_toc.html#SEC_Contents" title="Table of contents">Contents</a>]</td>
+<td valign="middle" align="left">[<a href="emacs-w3m_68.html#Index" title="Index">Index</a>]</td>
+<td valign="middle" align="left">[<a href="emacs-w3m_abt.html#SEC_About" title="About (help)"> ? </a>]</td>
+</tr></table>
+<a name="What-version-of-Emacs-can-be-used_003f"></a>
+<h2 class="section">2.1 What version of Emacs can be used?</h2>
+<a name="index-Possible-Emacs-versions"></a>
+
+<p>You can run emacs-w3m in various versions of Emacsen listed below:
+</p>
+<dl compact="compact">
+<dt> &lsquo;<samp>Emacs 21.1 or greater</samp>&rsquo;</dt>
+<dd><p>No additional packages are required.
+</p>
+</dd>
+<dt> &lsquo;<samp>XEmacs 21.x</samp>&rsquo;</dt>
+<dd><p>First of all, you should note that emacs-w3m supports only XEmacs
+21.4.17 and later and XEmacs 21.5-b19 and later.  In addition, you need
+to have installed the latest xemacs-base package including the
+&lsquo;<tt>timer-funcs.el</tt>&rsquo; module.
+</p>
+<p>The <acronym>APEL</acronym> package and the &lsquo;<samp>gifsicle</samp>&rsquo; program are required.
+In addition, it would be better to have installed the &lsquo;<tt>rfc2368.el</tt>&rsquo;
+module which parses &lsquo;<samp>mailto</samp>&rsquo; urls (see section <a href="emacs-w3m_5.html#Other-Requirements">Things required to run emacs-w3m</a>).
+</p>
+</dd>
+<dt> &lsquo;<samp>Emacs 20.x, Emacs 19.34 (including Mule 2.3)</samp>&rsquo;</dt>
+<dd><p>Emacs-w3m no longer supports those Emacs versions.
+</p>
+</dd>
+</dl>
+
+<p>If you use the development version of GNU Emacs, perhaps you should run
+the CVS version of emacs-w3m on it.  In that case, it is strongly
+recommended that you join the <a href="emacs-w3m_64.html#Mailing-List">Mailing list and submitting bug reports</a>.
+</p>
+<hr size="6">
+<table cellpadding="1" cellspacing="1" border="0">
+<tr><td valign="middle" align="left">[<a href="emacs-w3m_2.html#Getting-Started" title="Previous section in reading order"> &lt; </a>]</td>
+<td valign="middle" align="left">[<a href="emacs-w3m_4.html#You-Need-w3m" title="Next section in reading order"> &gt; </a>]</td>
+<td valign="middle" align="left"> &nbsp; </td>
+<td valign="middle" align="left">[<a href="emacs-w3m_2.html#Getting-Started" title="Beginning of this chapter or previous chapter"> &lt;&lt; </a>]</td>
+<td valign="middle" align="left">[<a href="emacs-w3m_2.html#Getting-Started" title="Up section"> Up </a>]</td>
+<td valign="middle" align="left">[<a href="emacs-w3m_9.html#Basic-Usage" title="Next chapter"> &gt;&gt; </a>]</td>
+</tr></table>
+<p>
+ <font size="-1">
+  This document was generated by <em>TSUCHIYA Masatoshi</em> on <em>January 30, 2019</em> using <a href="http://www.nongnu.org/texi2html/"><em>texi2html 1.82</em></a>.
+ </font>
+ <br>
+
+</p>
+</body>
+</html>

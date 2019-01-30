@@ -1,0 +1,164 @@
+<!DOCTYPE html PUBLIC "-//W3C//DTD HTML 4.01 Transitional//EN" "http://www.w3.org/TR/html401/loose.dtd">
+<html>
+<!-- Copyright C 2000-2014 TSUCHIYA Masatoshi
+
+Permission is granted to copy, distribute and/or modify this document
+under the terms of the GNU General Public License, Version 2 or any
+later version published by the Free Software Foundation.
+
+This document is distributed in the hope that it will be useful, but
+WITHOUT ANY WARRANTY; without even the implied warranty of
+MERCHANTABILITY or FITNESS FOR A PARTICULAR PURPOSE.  See the GNU
+General Public License for more details.
+
+You should have received a copy of the GNU General Public License along
+with this document; see the file COPYING.  If not, write to the Free
+Software Foundation, Inc., 51 Franklin Street, Fifth Floor, Boston, MA
+02110-1301, USA.
+
+ -->
+<!-- Created on January 30, 2019 by texi2html 1.82
+texi2html was written by: 
+            Lionel Cons <Lionel.Cons@cern.ch> (original author)
+            Karl Berry  <karl@freefriends.org>
+            Olaf Bachmann <obachman@mathematik.uni-kl.de>
+            and many others.
+Maintained by: Many creative people.
+Send bugs and suggestions to <texi2html-bug@nongnu.org>
+-->
+<head>
+<title>Emacs-w3m &ndash; an Emacs interface to w3m &ndash;: 6.3 Reading HTML mails in SEMI MUAs</title>
+
+<meta name="description" content="Emacs-w3m &ndash; an Emacs interface to w3m &ndash;: 6.3 Reading HTML mails in SEMI MUAs">
+<meta name="keywords" content="Emacs-w3m &ndash; an Emacs interface to w3m &ndash;: 6.3 Reading HTML mails in SEMI MUAs">
+<meta name="resource-type" content="document">
+<meta name="distribution" content="global">
+<meta name="Generator" content="texi2html 1.82">
+<meta http-equiv="Content-Type" content="text/html; charset=utf-8">
+<style type="text/css">
+<!--
+a.summary-letter {text-decoration: none}
+blockquote.smallquotation {font-size: smaller}
+pre.display {font-family: serif}
+pre.format {font-family: serif}
+pre.menu-comment {font-family: serif}
+pre.menu-preformatted {font-family: serif}
+pre.smalldisplay {font-family: serif; font-size: smaller}
+pre.smallexample {font-size: smaller}
+pre.smallformat {font-family: serif; font-size: smaller}
+pre.smalllisp {font-size: smaller}
+span.roman {font-family:serif; font-weight:normal;}
+span.sansserif {font-family:sans-serif; font-weight:normal;}
+ul.toc {list-style: none}
+-->
+</style>
+
+
+</head>
+
+<body lang="en" bgcolor="#FFFFFF" text="#000000" link="#0000FF" vlink="#800080" alink="#FF0000">
+
+<a name="SEMI-MUAs"></a>
+<table cellpadding="1" cellspacing="1" border="0">
+<tr><td valign="middle" align="left">[<a href="emacs-w3m_48.html#Mew" title="Previous section in reading order"> &lt; </a>]</td>
+<td valign="middle" align="left">[<a href="emacs-w3m_50.html#VM" title="Next section in reading order"> &gt; </a>]</td>
+<td valign="middle" align="left"> &nbsp; </td>
+<td valign="middle" align="left">[<a href="emacs-w3m_46.html#Hooking-into-MUAs" title="Beginning of this chapter or previous chapter"> &lt;&lt; </a>]</td>
+<td valign="middle" align="left">[<a href="emacs-w3m_46.html#Hooking-into-MUAs" title="Up section"> Up </a>]</td>
+<td valign="middle" align="left">[<a href="emacs-w3m_51.html#Frequently-Asked-Questions" title="Next chapter"> &gt;&gt; </a>]</td>
+<td valign="middle" align="left"> &nbsp; </td>
+<td valign="middle" align="left"> &nbsp; </td>
+<td valign="middle" align="left"> &nbsp; </td>
+<td valign="middle" align="left"> &nbsp; </td>
+<td valign="middle" align="left">[<a href="emacs-w3m.html#Top" title="Cover (top) of document">Top</a>]</td>
+<td valign="middle" align="left">[<a href="emacs-w3m_toc.html#SEC_Contents" title="Table of contents">Contents</a>]</td>
+<td valign="middle" align="left">[<a href="emacs-w3m_68.html#Index" title="Index">Index</a>]</td>
+<td valign="middle" align="left">[<a href="emacs-w3m_abt.html#SEC_About" title="About (help)"> ? </a>]</td>
+</tr></table>
+<a name="Reading-HTML-mails-in-SEMI-MUAs"></a>
+<h2 class="section">6.3 Reading HTML mails in <acronym>SEMI</acronym> MUAs</h2>
+
+<p>You can display HTML mails as human-readable, using emacs-w3m and
+<acronym>SEMI</acronym> MUA, for example, Wanderlust.  Since that MUA depends on
+<acronym>SEMI</acronym> (and also <acronym>FLIM</acronym>) for MIME functions, we
+generically call it <acronym>SEMI</acronym> MUA.  Although <acronym>SEMI</acronym> uses
+Emacs/W3 for rendering HTML mails by default, it can easily be altered
+to emacs-w3m and it will make your cyber life still more comfortable.
+</p>
+<p>You simply need to put the following line in &lsquo;<tt>~/.emacs</tt>&rsquo; file:
+</p>
+<table><tr><td>&nbsp;</td><td><pre class="lisp">(require 'mime-w3m)
+</pre></td></tr></table>
+
+<p>The <code>mime-w3m</code> and <code>mime-w3</code> modules are functionally alike,
+as you might have guessed (see how the names sound alike?).  The latter
+is included in the <acronym>SEMI</acronym> package.
+</p>
+<p>On HTML parts of an article buffer, the <code>w3m-minor-mode</code> is turned
+on and you can use the same main keys as the keys of emacs-w3m, for
+instance, <kbd>&lt;RET&gt;</kbd> is for visiting a page which a link in the
+current position points to.  Those keys are defined in the
+<code>w3m-minor-mode-command-alist</code> variable.  Keep in mind that some
+commands are replaced by others similar to them, for security reasons.
+</p>
+<p>There are some customizable variables related to the <code>mime-w3m</code>
+module:
+</p>
+<dl compact="compact">
+<dt> <code>mime-w3m-display-inline-images</code></dt>
+<dd><p>If it is non-<code>nil</code>, images will be displayed inline in HTML mails.
+If it is the symbol <code>default</code> (which is the default) at the first
+time, the value of this variable will be replaced with the value of the
+<code>w3m-default-display-inline-images</code> variable.  You probably don&rsquo;t
+need to change this.
+</p>
+</dd>
+<dt> <code>mime-w3m-safe-url-regexp</code></dt>
+<dd><p>Regexp matching URLs which are considered to be safe.  The default value
+is &lsquo;<samp>&quot;\\`cid:&quot;</samp>&rsquo; which means we consider that images included in a
+mail with the &lsquo;<samp>cid:</samp>&rsquo; URLs are safe.  See also <a href="emacs-w3m_47.html#Gnus">Reading HTML mails in Gnus</a> about
+rogue attacks.
+</p>
+</dd>
+<dt> <code>mime-w3m-setup-hook</code></dt>
+<dd><p>A hook run just after setting up the cooperation of the <code>mime-w3m</code>
+module and <acronym>SEMI</acronym>.  The default value is <code>nil</code>.
+</p></dd>
+</dl>
+
+<p>By the way, even when you are in the summary buffer, you can toggle
+displaying of images in the article buffer (which is what is called the
+message buffer in the Wanderlust community).  It is effective only when
+those images are displayed by emacs-w3m, though.  Here&rsquo;s an example for
+Wanderlust:
+</p>
+<table><tr><td>&nbsp;</td><td><pre class="lisp">(defun wl-summary-w3m-safe-toggle-inline-images (&amp;optional arg)
+  &quot;Toggle displaying of all images in the message buffer.
+If the prefix arg is given, all images are considered to be safe.&quot;
+  (interactive &quot;P&quot;)
+  (with-current-buffer wl-message-buffer
+    (w3m-toggle-inline-images arg)))
+
+(eval-after-load &quot;wl-summary&quot;
+  '(define-key wl-summary-mode-map
+     &quot;\M-i&quot; 'wl-summary-w3m-safe-toggle-inline-images))
+</pre></td></tr></table>
+
+<hr size="6">
+<table cellpadding="1" cellspacing="1" border="0">
+<tr><td valign="middle" align="left">[<a href="emacs-w3m_48.html#Mew" title="Previous section in reading order"> &lt; </a>]</td>
+<td valign="middle" align="left">[<a href="emacs-w3m_50.html#VM" title="Next section in reading order"> &gt; </a>]</td>
+<td valign="middle" align="left"> &nbsp; </td>
+<td valign="middle" align="left">[<a href="emacs-w3m_46.html#Hooking-into-MUAs" title="Beginning of this chapter or previous chapter"> &lt;&lt; </a>]</td>
+<td valign="middle" align="left">[<a href="emacs-w3m_46.html#Hooking-into-MUAs" title="Up section"> Up </a>]</td>
+<td valign="middle" align="left">[<a href="emacs-w3m_51.html#Frequently-Asked-Questions" title="Next chapter"> &gt;&gt; </a>]</td>
+</tr></table>
+<p>
+ <font size="-1">
+  This document was generated by <em>TSUCHIYA Masatoshi</em> on <em>January 30, 2019</em> using <a href="http://www.nongnu.org/texi2html/"><em>texi2html 1.82</em></a>.
+ </font>
+ <br>
+
+</p>
+</body>
+</html>

@@ -1,0 +1,191 @@
+<!DOCTYPE html PUBLIC "-//W3C//DTD HTML 4.01 Transitional//EN" "http://www.w3.org/TR/html401/loose.dtd">
+<html>
+<!-- Copyright C 2000-2014 TSUCHIYA Masatoshi
+
+Permission is granted to copy, distribute and/or modify this document
+under the terms of the GNU General Public License, Version 2 or any
+later version published by the Free Software Foundation.
+
+この文書を、フリーソフトウェア財団によって発行された GNU 一般公衆利用許
+諾契約書第 2 版またはそれ以降の版のうちどれかの定める条件の下で複製、配
+布、あるいは変更することを許可します。
+
+This document is distributed in the hope that it will be useful, but
+WITHOUT ANY WARRANTY; without even the implied warranty of
+MERCHANTABILITY or FITNESS FOR A PARTICULAR PURPOSE.  See the GNU
+General Public License for more details.
+
+この文書は有用であることを願って頒布されますが、全くの無保証 です。
+商業可能性 の保証や 特定の目的への適合性 は、言外に示され
+たものも含め全く存在しません。詳しくは GNU 一般公衆利用許諾契約書をご覧
+ください。
+
+You should have received a copy of the GNU General Public License along
+with this document; see the file COPYING.  If not, write to the Free
+Software Foundation, Inc., 51 Franklin Street, Fifth Floor, Boston, MA
+02110-1301, USA.
+
+あなたはこの文書と共に、GNU 一般公衆利用許諾契約書の複製物を一部受け取っ
+たはずです。COPYING ファイルを参照してください。もし受け取っていなければ、
+フリーソフトウェア財団まで請求してください (宛先は the Free Software
+Foundation, Inc., 59 Temple Place, Suite 330, Boston, MA 02111-1307 USA)。
+
+ -->
+<!-- Created on 2019å¹´1ææ30æ¥ by texi2html 1.82
+texi2html was written by: 
+            Lionel Cons <Lionel.Cons@cern.ch> (original author)
+            Karl Berry  <karl@freefriends.org>
+            Olaf Bachmann <obachman@mathematik.uni-kl.de>
+            and many others.
+Maintained by: Many creative people.
+Send bugs and suggestions to <texi2html-bug@nongnu.org>
+-->
+<head>
+<title>Emacs-w3m &ndash; an Emacs interface to w3m &ndash;: 3.5 みんなタブが好きだよね</title>
+
+<meta name="description" content="Emacs-w3m &ndash; an Emacs interface to w3m &ndash;: 3.5 みんなタブが好きだよね">
+<meta name="keywords" content="Emacs-w3m &ndash; an Emacs interface to w3m &ndash;: 3.5 みんなタブが好きだよね">
+<meta name="resource-type" content="document">
+<meta name="distribution" content="global">
+<meta name="Generator" content="texi2html 1.82">
+<meta http-equiv="Content-Type" content="text/html; charset=utf-8">
+<style type="text/css">
+<!--
+a.summary-letter {text-decoration: none}
+blockquote.smallquotation {font-size: smaller}
+pre.display {font-family: serif}
+pre.format {font-family: serif}
+pre.menu-comment {font-family: serif}
+pre.menu-preformatted {font-family: serif}
+pre.smalldisplay {font-family: serif; font-size: smaller}
+pre.smallexample {font-size: smaller}
+pre.smallformat {font-family: serif; font-size: smaller}
+pre.smalllisp {font-size: smaller}
+span.roman {font-family:serif; font-weight:normal;}
+span.sansserif {font-family:sans-serif; font-weight:normal;}
+ul.toc {list-style: none}
+-->
+</style>
+
+
+</head>
+
+<body lang="ja" bgcolor="#FFFFFF" text="#000000" link="#0000FF" vlink="#800080" alink="#FF0000">
+
+<a name="Using-Tabs"></a>
+<table cellpadding="1" cellspacing="1" border="0">
+<tr><td valign="middle" align="left">[<a href="emacs-w3m-ja_13.html#Editing-Bookmarks" title="Previous section in reading order"> &lt; </a>]</td>
+<td valign="middle" align="left">[<a href="emacs-w3m-ja_15.html#Working-with-buffers" title="Next section in reading order"> &gt; </a>]</td>
+<td valign="middle" align="left"> &nbsp; </td>
+<td valign="middle" align="left">[<a href="emacs-w3m-ja_9.html#Basic-Usage" title="Beginning of this chapter or previous chapter"> &lt;&lt; </a>]</td>
+<td valign="middle" align="left">[<a href="emacs-w3m-ja_9.html#Basic-Usage" title="Up section">ä¸</a>]</td>
+<td valign="middle" align="left">[<a href="emacs-w3m-ja_19.html#Pretty-Good-Features" title="Next chapter"> &gt;&gt; </a>]</td>
+<td valign="middle" align="left"> &nbsp; </td>
+<td valign="middle" align="left"> &nbsp; </td>
+<td valign="middle" align="left"> &nbsp; </td>
+<td valign="middle" align="left"> &nbsp; </td>
+<td valign="middle" align="left">[<a href="emacs-w3m-ja.html#Top" title="Cover (top) of document">åé ­</a>]</td>
+<td valign="middle" align="left">[<a href="emacs-w3m-ja_toc.html#SEC_Contents" title="Table of contents">ç®æ¬¡</a>]</td>
+<td valign="middle" align="left">[<a href="emacs-w3m-ja_68.html#Index" title="è¦åºã">è¦åºã</a>]</td>
+<td valign="middle" align="left">[<a href="emacs-w3m-ja_abt.html#SEC_About" title="About (help)"> ? </a>]</td>
+</tr></table>
+<a name="minnatabugaHao-kidayone"></a>
+<h2 class="section">3.5 みんなタブが好きだよね</h2>
+
+<p>ほとんどの他のテキストベースのブラウザーと異なり、emacs-w3m はタブによる
+閲覧をサポートしています。タブによる閲覧って何? と尋ねられそうですね。そ
+れはとても単純で、ウィンドウのてっぺんの行にすべてのバッファを単純かつ分
+かりやすいやり方で表示することによって、単一のウィンドゥですべて
+の emacs-w3m のバッファを表現する方法です。それぞれのバッファは「タブ」
+として表示されます。この行は、他のバッファに移動したり、ページの状態を知
+ることができるようにするために常に見えたままになっていて、バッファにつら
+れてスクロールしません。
+</p>
+<p>その感触をつかむ最も簡単な方法は、単に試してみることです。ですから、引き
+続いて emacs-w3m のセッションを始めてください。何も設定変更をしていなけ
+れば、デフォルトでタブの行が現れます。てっぺんで、小さな四角に現在のペー
+ジのタイトルを表示している明るい行がそれです。では (例え
+ば <kbd>G</kbd> で) 別の w3m バッファを作ってみましょう。すると四角が二つになっ
+たでしょう。それらがタブです。
+</p>
+<p>もっとも分かりやすいタブの使い道は切り替えです: タブの上
+で <kbd>mouse-1</kbd> ボタンをクリックすることによって、そのバッファを表示さ
+せることができます。さらに <kbd>mouse-2</kbd> ボタンでも、または GNU Emacs で
+はマウスホイールでも動作します。これは、複数の emacs-w3m バッファを使う
+ための、非常に速くて簡単な方法です。単に指し示してクリックするか、マウス
+ホイールをクルクルすれば良いのですから。(はいはい、あなたを無視していま
+せんよ。あなたはキーボードを使って切り替えたいのですね。ご心配無く。それ
+も可能です。次の節で説明しますから、黙って読み続けてください!)
+</p>
+<p>もう一つの気が利いた機能は、ページの状態を知らせることです。カラー端末か
+ウィンドゥシステムを使っていれば、ページの状態を知らせるため
+に emacs-w3m は違う色でテキストをタブに表示します<a name="DOCF3" href="emacs-w3m-ja_fot.html#FOOT3">(3)</a>。例えばベー
+ジを取り込んでいる最中はテキストは赤くなっていて、取り込みが完了するとデ
+フォルトの色 (通常は黒) に戻ります。これにより、見ようと思って待っている
+ページが到着したかどうかが、タブ行を一目見ただけで分かります。
+</p>
+<p>最後に、もしウェブページが favicon を持っていれば、それもタブに表示され
+ます<a name="DOCF4" href="emacs-w3m-ja_fot.html#FOOT4">(4)</a>。
+Emacs-w3m ユーザにもっと視覚効果を!
+</p>
+<p>ユーザオプション:
+</p>
+<dl compact="compact">
+<dt> <code>w3m-use-tab</code></dt>
+<dd><a name="index-w3m_002duse_002dtab"></a>
+<p>タブによる閲覧を活かすかどうか。
+</p></dd>
+</dl>
+
+<p>あなたが GNU Emacs のユーザーならば、マウスホイールを使うと、隣のバッファ
+に行くだけでなく、バッファを隣の場所に移動させることもできます。それには
+タブ行の上でマウスホイールを回す間、コントロール・キーを押し下げておいて
+ください。マウスホイールによって emacs-w3m がどのように動作するかを制御
+する二つの変数があります:
+</p>
+<dl compact="compact">
+<dt> <code>w3m-tab-track-mouse</code></dt>
+<dd><a name="index-w3m_002dtab_002dtrack_002dmouse"></a>
+<p>この変数は、マウスが選択したタブを追いかけて移動するかどうかを制御します。
+デフォルト値は <code>t</code> です。もしプロポーショナルなフォントをタブのフェー
+スに使っているならば、これを <code>nil</code> に設定する必要があるかもしれませ
+ん。<code>w3m-tab-mouse-position-adjuster</code> も見てください。
+</p>
+</dd>
+<dt> <code>w3m-tab-mouse-position-adjuster</code></dt>
+<dd><a name="index-w3m_002dtab_002dmouse_002dposition_002dadjuster"></a>
+<p>この変数は、マウスポインターが選択したタブを追いかけて移動するときのマウ
+スの位置を調整するための値を含んでいます。デフォルト値
+は <code>(0.5 . -4)</code> です。これは浮動少数 <var>m</var> と整数 <var>n</var> のコン
+ス・セルで、マウスの位置 (ピクセル数で与えられます) の計算に以下のように
+適用されます:
+</p>
+<table><tr><td>&nbsp;</td><td><pre class="example">(TAB_WIDTH + M) * ORDER + N
+</pre></td></tr></table>
+
+<p>ここで <var>tab_width</var> は一つのタブのピクセル幅、<var>order</var> は何番目の
+タブかを表します。結果の少数以下は切り捨てられます。
+</p>
+<p>もしタブのフェースにプロポーショナルなフォントを使っていると、この計算は
+常に失敗するでしょう。<code>w3m-tab-track-mouse</code> も参照してください。
+</p></dd>
+</dl>
+
+<hr size="6">
+<table cellpadding="1" cellspacing="1" border="0">
+<tr><td valign="middle" align="left">[<a href="emacs-w3m-ja_13.html#Editing-Bookmarks" title="Previous section in reading order"> &lt; </a>]</td>
+<td valign="middle" align="left">[<a href="emacs-w3m-ja_15.html#Working-with-buffers" title="Next section in reading order"> &gt; </a>]</td>
+<td valign="middle" align="left"> &nbsp; </td>
+<td valign="middle" align="left">[<a href="emacs-w3m-ja_9.html#Basic-Usage" title="Beginning of this chapter or previous chapter"> &lt;&lt; </a>]</td>
+<td valign="middle" align="left">[<a href="emacs-w3m-ja_9.html#Basic-Usage" title="Up section">ä¸</a>]</td>
+<td valign="middle" align="left">[<a href="emacs-w3m-ja_19.html#Pretty-Good-Features" title="Next chapter"> &gt;&gt; </a>]</td>
+</tr></table>
+<p>
+ <font size="-1">
+  ãã®ææ¸ã¯<em>TSUCHIYA Masatoshi</em>ã«ãã£ã¦<em>2019å¹´1ææ30æ¥</em>ã«<a href="http://www.nongnu.org/texi2html/"><em>texi2html 1.82</em></a>ãç¨ãã¦çæããã¾ããã
+ </font>
+ <br>
+
+</p>
+</body>
+</html>

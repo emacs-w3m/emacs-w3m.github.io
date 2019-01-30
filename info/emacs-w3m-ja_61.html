@@ -1,0 +1,1350 @@
+<!DOCTYPE html PUBLIC "-//W3C//DTD HTML 4.01 Transitional//EN" "http://www.w3.org/TR/html401/loose.dtd">
+<html>
+<!-- Copyright C 2000-2014 TSUCHIYA Masatoshi
+
+Permission is granted to copy, distribute and/or modify this document
+under the terms of the GNU General Public License, Version 2 or any
+later version published by the Free Software Foundation.
+
+この文書を、フリーソフトウェア財団によって発行された GNU 一般公衆利用許
+諾契約書第 2 版またはそれ以降の版のうちどれかの定める条件の下で複製、配
+布、あるいは変更することを許可します。
+
+This document is distributed in the hope that it will be useful, but
+WITHOUT ANY WARRANTY; without even the implied warranty of
+MERCHANTABILITY or FITNESS FOR A PARTICULAR PURPOSE.  See the GNU
+General Public License for more details.
+
+この文書は有用であることを願って頒布されますが、全くの無保証 です。
+商業可能性 の保証や 特定の目的への適合性 は、言外に示され
+たものも含め全く存在しません。詳しくは GNU 一般公衆利用許諾契約書をご覧
+ください。
+
+You should have received a copy of the GNU General Public License along
+with this document; see the file COPYING.  If not, write to the Free
+Software Foundation, Inc., 51 Franklin Street, Fifth Floor, Boston, MA
+02110-1301, USA.
+
+あなたはこの文書と共に、GNU 一般公衆利用許諾契約書の複製物を一部受け取っ
+たはずです。COPYING ファイルを参照してください。もし受け取っていなければ、
+フリーソフトウェア財団まで請求してください (宛先は the Free Software
+Foundation, Inc., 59 Temple Place, Suite 330, Boston, MA 02111-1307 USA)。
+
+ -->
+<!-- Created on 2019å¹´1ææ30æ¥ by texi2html 1.82
+texi2html was written by: 
+            Lionel Cons <Lionel.Cons@cern.ch> (original author)
+            Karl Berry  <karl@freefriends.org>
+            Olaf Bachmann <obachman@mathematik.uni-kl.de>
+            and many others.
+Maintained by: Many creative people.
+Send bugs and suggestions to <texi2html-bug@nongnu.org>
+-->
+<head>
+<title>Emacs-w3m &ndash; an Emacs interface to w3m &ndash;: 9.5 新聞が読めるサイト</title>
+
+<meta name="description" content="Emacs-w3m &ndash; an Emacs interface to w3m &ndash;: 9.5 新聞が読めるサイト">
+<meta name="keywords" content="Emacs-w3m &ndash; an Emacs interface to w3m &ndash;: 9.5 新聞が読めるサイト">
+<meta name="resource-type" content="document">
+<meta name="distribution" content="global">
+<meta name="Generator" content="texi2html 1.82">
+<meta http-equiv="Content-Type" content="text/html; charset=utf-8">
+<style type="text/css">
+<!--
+a.summary-letter {text-decoration: none}
+blockquote.smallquotation {font-size: smaller}
+pre.display {font-family: serif}
+pre.format {font-family: serif}
+pre.menu-comment {font-family: serif}
+pre.menu-preformatted {font-family: serif}
+pre.smalldisplay {font-family: serif; font-size: smaller}
+pre.smallexample {font-size: smaller}
+pre.smallformat {font-family: serif; font-size: smaller}
+pre.smalllisp {font-size: smaller}
+span.roman {font-family:serif; font-weight:normal;}
+span.sansserif {font-family:sans-serif; font-weight:normal;}
+ul.toc {list-style: none}
+-->
+</style>
+
+
+</head>
+
+<body lang="ja" bgcolor="#FFFFFF" text="#000000" link="#0000FF" vlink="#800080" alink="#FF0000">
+
+<a name="Shimbun-Sites"></a>
+<table cellpadding="1" cellspacing="1" border="0">
+<tr><td valign="middle" align="left">[<a href="emacs-w3m-ja_60.html#Shimbun-local-mode" title="Previous section in reading order"> &lt; </a>]</td>
+<td valign="middle" align="left">[<a href="#Newspapers-Supported-by-Shimbun" title="Next section in reading order"> &gt; </a>]</td>
+<td valign="middle" align="left"> &nbsp; </td>
+<td valign="middle" align="left">[<a href="emacs-w3m-ja_56.html#Shimbun-Library" title="Beginning of this chapter or previous chapter"> &lt;&lt; </a>]</td>
+<td valign="middle" align="left">[<a href="emacs-w3m-ja_56.html#Shimbun-Library" title="Up section">ä¸</a>]</td>
+<td valign="middle" align="left">[<a href="emacs-w3m-ja_63.html#Tips" title="Next chapter"> &gt;&gt; </a>]</td>
+<td valign="middle" align="left"> &nbsp; </td>
+<td valign="middle" align="left"> &nbsp; </td>
+<td valign="middle" align="left"> &nbsp; </td>
+<td valign="middle" align="left"> &nbsp; </td>
+<td valign="middle" align="left">[<a href="emacs-w3m-ja.html#Top" title="Cover (top) of document">åé ­</a>]</td>
+<td valign="middle" align="left">[<a href="emacs-w3m-ja_toc.html#SEC_Contents" title="Table of contents">ç®æ¬¡</a>]</td>
+<td valign="middle" align="left">[<a href="emacs-w3m-ja_68.html#Index" title="è¦åºã">è¦åºã</a>]</td>
+<td valign="middle" align="left">[<a href="emacs-w3m-ja_abt.html#SEC_About" title="About (help)"> ? </a>]</td>
+</tr></table>
+<a name="Xin-Wen-gaDu-merusaito"></a>
+<h2 class="section">9.5 新聞が読めるサイト</h2>
+
+<p>&lsquo;<samp>Shimbun</samp>&rsquo; ライブラリが対応しているサイトの一覧表です。
+</p>
+<table class="menu" border="0" cellspacing="0">
+<tr><td align="left" valign="top"><a href="#Newspapers-Supported-by-Shimbun">9.5.1 新聞社</a></td><td>&nbsp;&nbsp;</td><td align="left" valign="top"></td></tr>
+<tr><td align="left" valign="top"><a href="#News-Sites-Supported-by-Shimbun">9.5.2 ニュースサイト</a></td><td>&nbsp;&nbsp;</td><td align="left" valign="top"></td></tr>
+<tr><td align="left" valign="top"><a href="#Mailing-Lists-Supported-by-Shimbun">9.5.3 メーリングリスト</a></td><td>&nbsp;&nbsp;</td><td align="left" valign="top"></td></tr>
+<tr><td align="left" valign="top"><a href="#Sport-Sites-Supported-by-Shimbun">9.5.4 スポーツ</a></td><td>&nbsp;&nbsp;</td><td align="left" valign="top"></td></tr>
+<tr><td align="left" valign="top"><a href="#Misc-Sites-Supported-by-Shimbun">9.5.5 その他</a></td><td>&nbsp;&nbsp;</td><td align="left" valign="top"></td></tr>
+</table>
+
+<hr size="6">
+<a name="Newspapers-Supported-by-Shimbun"></a>
+<table cellpadding="1" cellspacing="1" border="0">
+<tr><td valign="middle" align="left">[<a href="#Shimbun-Sites" title="Previous section in reading order"> &lt; </a>]</td>
+<td valign="middle" align="left">[<a href="#News-Sites-Supported-by-Shimbun" title="Next section in reading order"> &gt; </a>]</td>
+<td valign="middle" align="left"> &nbsp; </td>
+<td valign="middle" align="left">[<a href="emacs-w3m-ja_56.html#Shimbun-Library" title="Beginning of this chapter or previous chapter"> &lt;&lt; </a>]</td>
+<td valign="middle" align="left">[<a href="#Shimbun-Sites" title="Up section">ä¸</a>]</td>
+<td valign="middle" align="left">[<a href="emacs-w3m-ja_63.html#Tips" title="Next chapter"> &gt;&gt; </a>]</td>
+<td valign="middle" align="left"> &nbsp; </td>
+<td valign="middle" align="left"> &nbsp; </td>
+<td valign="middle" align="left"> &nbsp; </td>
+<td valign="middle" align="left"> &nbsp; </td>
+<td valign="middle" align="left">[<a href="emacs-w3m-ja.html#Top" title="Cover (top) of document">åé ­</a>]</td>
+<td valign="middle" align="left">[<a href="emacs-w3m-ja_toc.html#SEC_Contents" title="Table of contents">ç®æ¬¡</a>]</td>
+<td valign="middle" align="left">[<a href="emacs-w3m-ja_68.html#Index" title="è¦åºã">è¦åºã</a>]</td>
+<td valign="middle" align="left">[<a href="emacs-w3m-ja_abt.html#SEC_About" title="About (help)"> ? </a>]</td>
+</tr></table>
+<a name="Xin-Wen-She-"></a>
+<h3 class="subsection">9.5.1 新聞社</h3>
+
+<p>&lsquo;<samp>Shimbun</samp>&rsquo; ライブラリが対応している新聞社です。
+</p>
+<dl compact="compact">
+<dt> <a href="http://www.asahi.com/">朝日新聞</a></dt>
+<dd><p>asahi.book asahi.book.column asahi.book.news asahi.book.paperback
+asahi.book.review asahi.book.special asahi.business asahi.car
+asahi.culture asahi.digital asahi.editorial asahi.edu asahi.english
+asahi.food asahi.health asahi.housing asahi.igo asahi.international
+asahi.international.asia asahi.international.column
+asahi.international.special asahi.international.world asahi.job
+asahi.kansai asahi.kansai.entertainment asahi.kansai.kokoro
+asahi.kansai.sumai asahi.kansai.taberu asahi.komimi asahi.life
+asahi.life.column asahi.national asahi.politics asahi.rss asahi.science
+asahi.shopping asahi.shopping.column asahi.shopping.yakimono
+asahi.shougi asahi.sports asahi.sports.baseball asahi.sports.battle
+asahi.sports.etc asahi.sports.football asahi.sports.golf
+asahi.sports.rugby asahi.sports.usa asahi.sports.winter asahi.tenjin
+asahi.travel asahi.wakata
+</p>
+<p>これらのグループは、デフォルトでテキストだけの記事を作ります。それらに、
+テキストだけでなく写真をも含む HTML の記事を生成させたいならば、以下の行
+を &lsquo;<tt>~/.emacs</tt>&rsquo; ファイルに加えてください。
+</p>
+<table><tr><td>&nbsp;</td><td><pre class="lisp">(setq shimbun-asahi-prefer-text-plain nil)
+</pre></td></tr></table>
+
+<p>一方、HTML の記事を作るために &lsquo;<samp>asahi-html</samp>&rsquo; バックエンドを使うことも
+できます。それを使うには、例えばグループ名とし
+て &lsquo;<samp>asahi.business</samp>&rsquo; の代わりに &lsquo;<samp>asahi-html.business</samp>&rsquo; を指定し
+てください。
+</p>
+</dd>
+<dt> <a href="http://mytown.asahi.com/">朝日新聞</a></dt>
+<dd><p>asahi-mytown.(hokkaido&hellip;okinawa)
+</p>
+<p>日本の全都道府県を網羅する朝日新聞の地方版です。
+</p>
+</dd>
+<dt> <a href="http://www.bbc.co.uk/">BBC</a></dt>
+<dd><p>bbc.news
+</p>
+</dd>
+<dt> <a href="http://www.welt.de/">ディー・ヴェルト</a></dt>
+<dd><p>welt-de.news
+</p>
+</dd>
+<dt> <a href="http://www.zeit.de/">ディー・ツァイト</a></dt>
+<dd><p>zeit-de.auto zeit-de.computer zeit-de.deutschland zeit-de.feuilleton
+zeit-de.gesundheit zeit-de.international zeit-de.leben zeit-de.literatur
+zeit-de.musik zeit-de.news zeit-de.reisen zeit-de.schule zeit-de.sport
+zeit-de.studium zeit-de.wirtschaft zeit-de.wissen zeit-de.zuender
+</p>
+</dd>
+<dt> <a href="http://www.nikkan-gendai.com/">日刊ゲンダイ</a></dt>
+<dd><p>nikkangendai.top nikkangendai.news nikkangendai.geino
+nikkangendai.sports nikkangendai.life nikkangendai.book
+nikkangendai.gourmet
+</p>
+</dd>
+<dt> <a href="http://mainichi.jp/">毎日jp</a></dt>
+<dt> (2007年10月に MSN から自社サイトに移行)</dt>
+<dd><p>mainichi.flash mainichi.sports mainichi.entertainment mainichi.mantan
+mainichi.electronics mainichi.weekly mainichi.opinion.editorial
+mainichi.opinion.yoroku mainichi.opinion.hasshinbako
+mainichi.opinion.eye mainichi.opinion.hito mainichi.opinion.kinji
+mainichi.opinion.yuraku mainichi.opinion.closeup
+mainichi.opinion.kaisetsu mainichi.opinion.newsup
+mainichi.opinion.jidainokaze mainichi.entertainment.art
+mainichi.fuchisou
+</p>
+<p>これらのグループは、デフォルトで写真をも含む HTML の記事を作ります。それ
+らに、テキストだけの記事を生成させたいならば、以下の行
+を &lsquo;<tt>~/.emacs</tt>&rsquo; ファイルに加えてください。
+</p>
+<table><tr><td>&nbsp;</td><td><pre class="lisp">(setq shimbun-mainichi-prefer-text-plain t)
+</pre></td></tr></table>
+
+</dd>
+<dt> <a href="http://www.nytimes.com/">ニューヨークタイムズ</a></dt>
+<dd><p>nytimes.homepage nytimes.news.business
+nytimes.news.business.media&amp;advertising
+nytimes.news.business.worldbusiness nytimes.news.business.smallbusiness
+nytimes.news.business.yourmoney nytimes.news.business.dealbook
+nytimes.news.education nytimes.news.health nytimes.news.health.policy
+nytimes.news.health.psychology nytimes.news.world
+nytimes.news.world.africa nytimes.news.world.americas
+nytimes.news.world.asia nytimes.news.world.europe
+nytimes.news.world.middleeast nytimes.news.us nytimes.news.newyork
+nytimes.news.newyork.thecity nytimes.news.newyork.metro
+nytimes.news.obituaries nytimes.news.science nytimes.news.science.earth
+nytimes.news.science.nutrition nytimes.news.science.space
+nytimes.news.sports nytimes.news.sports.basketball.college
+nytimes.news.sports.football.college nytimes.news.sports.golf
+nytimes.news.sports.hockey nytimes.news.sports.other
+nytimes.news.sports.baseball.pro nytimes.news.sports.basketball.pro
+nytimes.news.sports.football.pro nytimes.news.sports.soccer
+nytimes.news.technology nytimes.news.technology.bits
+nytimes.news.technology.circuits nytimes.news.technology.pogue
+nytimes.news.washington nytimes.features.arts
+nytimes.features.arts.design nytimes.features.arts.music
+nytimes.features.arts.television nytimes.features.automobiles
+nytimes.features.books nytimes.features.books.review
+nytimes.features.dining&amp;wine nytimes.features.fashion
+nytimes.features.fashion.thursdaystyles
+nytimes.features.fashion.weddings nytimes.features.home&amp;garden
+nytimes.features.jobs nytimes.features.magazine
+nytimes.features.movie.news nytimes.features.movie.reviews
+nytimes.features.realestate nytimes.features.theater
+nytimes.features.travel nytimes.features.travel.escapes
+nytimes.features.week_in_review nytimes.additional.pop_top
+nytimes.opinion.editorial
+</p>
+<p>2007年9月19日、ニューヨークタイムズは無料でニュース記事を提供し始めまし
+た。&lsquo;<samp>charset=iso-8859-1</samp>&rsquo; と言ったのにもかかわらず、このサイトはしば
+しば <code>iso-8859-1</code> の上位互換文字セットである <code>windows-1252</code> を
+使います。使用している (X)Emacs に <code>windows-1252</code> coding system が
+あれば、&lsquo;<samp>shimbun</samp>&rsquo; は (そして emacs-w3m も) そのような場合でも動作し
+ます。
+</p>
+</dd>
+<dt> <a href="http://www.nikkansports.com/">日刊スポーツ</a></dt>
+<dd><p>nikkansports.flash nikkansports.baseball
+nikkansports.baseball.highschool nikkansports.baseball.amateur
+nikkansports.baseball.mlb nikkansports.soccer nikkansports.soccer.japan
+nikkansports.soccer.world nikkansports.sports nikkansports.sumo
+nikkansports.nba nikkansports.nfl nikkansports.nhl nikkansports.rugby
+nikkansports.golf nikkansports.motor nikkansports.battle
+nikkansports.race nikkansports.race.kka nikkansports.entertainment
+nikkansports.cinema nikkansports.general
+</p>
+</dd>
+<dt> <a href="http://www.nikkei.co.jp/">日本経済新聞</a></dt>
+<dd><p>nikkei.top nikkei.main nikkei.keizai nikkei.sangyo nikkei.tento
+nikkei.kansai nikkei.it.business nikkei.it.busi_gyoukai
+nikkei.it.biz-system nikkei.it.sox nikkei.it.data nikkei.it.taidan
+nikkei.it.internet nikkei.it.broad nikkei.it.net_gyoukai nikkei.it.iptel
+nikkei.it.tele nikkei.it.broadcast nikkei.it.internet-column
+nikkei.it.contents nikkei.it.ec nikkei.it.policy nikkei.it.e-gov
+nikkei.it.mobile nikkei.it.mob_gyoukai nikkei.it.mobsoft
+nikkei.it.mobcon nikkei.it.money nikkei.it.one nikkei.it.security
+nikkei.it.net_crime nikkei.it.digital nikkei.it.pc nikkei.kokunai
+nikkei.markets nikkei.kawase nikkei.kinri nikkei.ft nikkei.dj
+nikkei.ngyoseki nikkei.gyosuuchi nikkei.gyoseki nikkei.china
+nikkei.market nikkei.kaigai nikkei.seiji nikkei.shakai nikkei.retto
+nikkei.sports nikkei.newpro nikkei.release nikkei.release.it.comp
+nikkei.release.it.peri nikkei.release.it.sys nikkei.release.it.cont
+nikkei.release.it.net nikkei.release.it.lsi nikkei.release.it.game
+nikkei.release.it.etc nikkei.release.dist.depart
+nikkei.release.dist.ryohan nikkei.release.dist.zakka
+nikkei.release.dist.cosme nikkei.release.dist.car
+nikkei.release.dist.book nikkei.release.dist.record
+nikkei.release.dist.food nikkei.release.dist.mercha
+nikkei.release.dist.mail nikkei.release.dist.netshop
+nikkei.release.dist.etc nikkei.release.money.bank
+nikkei.release.money.sec nikkei.release.money.am
+nikkei.release.money.insu nikkei.release.money.etc
+nikkei.release.maker.chemi nikkei.release.maker.mecha
+nikkei.release.maker.car nikkei.release.maker.elec
+nikkei.release.maker.food nikkei.release.maker.sports
+nikkei.release.maker.apparel nikkei.release.maker.commu
+nikkei.release.maker.etc nikkei.release.service.medic
+nikkei.release.service.rest nikkei.release.service.trans
+nikkei.release.service.energy nikkei.release.service.enter
+nikkei.release.service.env nikkei.release.service.consul
+nikkei.release.service.edu nikkei.release.service.haken
+nikkei.release.service.life nikkei.release.service.media
+nikkei.release.service.lease nikkei.release.service.travel
+nikkei.release.service.etc nikkei.release.const.const
+nikkei.release.const.house nikkei.release.const.etc nikkei.shasetsu
+</p>
+</dd>
+<dt> <a href="http://www.sankei.com/">産経ニュース</a></dt>
+<dd><p>sankei.affairs sankei.column sankei.column.editorial
+sankei.column.sankeisyo sankei.column.seiron sankei.economy
+sankei.entertainments sankei.flash sankei.life sankei.politics
+sankei.region.chubu sankei.region.chugoku-shikoku
+sankei.region.hokkaido-tohoku sankei.region.kanto sankei.region.kinki
+sankei.region.kyushu-okinawa sankei.sports sankei.top
+sankei.west.affairs sankei.west.economy sankei.west.flash
+sankei.west.life sankei.west.sports sankei.world
+</p>
+</dd>
+<dt> <a href="http://www.spiegel.de/">Spiegel Online</a></dt>
+<dd><p>spiegel.news
+</p>
+</dd>
+<dt> <a href="http://www.sponichi.co.jp/">スポニチ</a></dt>
+<dd><p>sponichi.baseball sponichi.soccer sponichi.usa sponichi.others
+sponichi.society sponichi.entertainment sponichi.horseracing
+</p>
+</dd>
+<dt> <a href="http://www.sueddeutsche.de/">南ドイツ新聞</a></dt>
+<dd><p>sueddeutsche-de.alles sueddeutsche-de.nachrichten
+sueddeutsche-de.politik sueddeutsche-de.wirtschaft
+sueddeutsche-de.finanzen sueddeutsche-de.kino sueddeutsche-de.kultur
+sueddeutsche-de.sport sueddeutsche-de.muenchen sueddeutsche-de.panorama
+sueddeutsche-de.leben sueddeutsche-de.gesundheit
+sueddeutsche-de.computer
+</p>
+</dd>
+<dt> <a href="http://www.yomiuri.co.jp/">讀売新聞</a></dt>
+<dd><p>yomiuri.atmoney yomiuri.editorial yomiuri.entertainment yomiuri.iryou
+yomiuri.kyoiku yomiuri.kyoiku.children yomiuri.kyoiku.english
+yomiuri.kyoiku.qanda yomiuri.kyoiku.renaissance yomiuri.kyoiku.special
+yomiuri.national yomiuri.politics yomiuri.science yomiuri.sports
+yomiuri.world
+</p>
+<p>これらのグループは、デフォルトでテキストだけの記事を作ります。それらに、
+テキストだけでなく写真をも含む HTML の記事を生成させたいならば、以下の行
+を &lsquo;<tt>~/.emacs</tt>&rsquo; ファイルに加えてください。
+</p>
+<table><tr><td>&nbsp;</td><td><pre class="lisp">(setq shimbun-yomiuri-prefer-text-plain nil)
+</pre></td></tr></table>
+
+<p>一方、HTML の記事を作るために &lsquo;<samp>yomiuri-html</samp>&rsquo; バックエンドを使うこと
+もできます。それを使うには、例えばグループ名とし
+て &lsquo;<samp>yomiuri.atmoney</samp>&rsquo; の代わりに &lsquo;<samp>yomiuri-html.atmoney</samp>&rsquo; を指定
+してください。
+</p>
+</dd>
+<dt> <a href="http://kyoko-np.net/">虚構新聞</a></dt>
+<dd><p>kyoko-np.rss
+</p></dd>
+</dl>
+
+<hr size="6">
+<a name="News-Sites-Supported-by-Shimbun"></a>
+<table cellpadding="1" cellspacing="1" border="0">
+<tr><td valign="middle" align="left">[<a href="#Newspapers-Supported-by-Shimbun" title="Previous section in reading order"> &lt; </a>]</td>
+<td valign="middle" align="left">[<a href="#Mailing-Lists-Supported-by-Shimbun" title="Next section in reading order"> &gt; </a>]</td>
+<td valign="middle" align="left"> &nbsp; </td>
+<td valign="middle" align="left">[<a href="emacs-w3m-ja_56.html#Shimbun-Library" title="Beginning of this chapter or previous chapter"> &lt;&lt; </a>]</td>
+<td valign="middle" align="left">[<a href="#Shimbun-Sites" title="Up section">ä¸</a>]</td>
+<td valign="middle" align="left">[<a href="emacs-w3m-ja_63.html#Tips" title="Next chapter"> &gt;&gt; </a>]</td>
+<td valign="middle" align="left"> &nbsp; </td>
+<td valign="middle" align="left"> &nbsp; </td>
+<td valign="middle" align="left"> &nbsp; </td>
+<td valign="middle" align="left"> &nbsp; </td>
+<td valign="middle" align="left">[<a href="emacs-w3m-ja.html#Top" title="Cover (top) of document">åé ­</a>]</td>
+<td valign="middle" align="left">[<a href="emacs-w3m-ja_toc.html#SEC_Contents" title="Table of contents">ç®æ¬¡</a>]</td>
+<td valign="middle" align="left">[<a href="emacs-w3m-ja_68.html#Index" title="è¦åºã">è¦åºã</a>]</td>
+<td valign="middle" align="left">[<a href="emacs-w3m-ja_abt.html#SEC_About" title="About (help)"> ? </a>]</td>
+</tr></table>
+<a name="niyususaito"></a>
+<h3 class="subsection">9.5.2 ニュースサイト</h3>
+
+<p>&lsquo;<samp>Shimbun</samp>&rsquo; ライブラリが対応しているニュースサイトです。
+</p>
+<dl compact="compact">
+<dt> <a href="http://english.aljazeera.net/">Al Jazeera</a></dt>
+<dd><p>aljazeera.news aljazeera.africa aljazeera.america aljazeera.asia-pacific
+aljazeera.central-asia aljazeera.europe aljazeera.middle-east
+aljazeera.focus aljazeera.business aljazeera.sport aljazeera.programmes
+</p>
+</dd>
+<dt> <a href="http://news.com.com/">CNET</a></dt>
+<dd><p>cnet.news cnet.enterprise.software cnet.enterprise.hardware
+cnet.security cnet.networking cnet.personal.technology cnet.newsmakers
+cnet.perspectives
+</p>
+</dd>
+<dt> <a href="http://japan.cnet.com/">CNET Japan</a></dt>
+<dd><p>cnet-jp.general cnet-jp.news cnet-jp.special cnet-jp.opinion
+cnet-jp.blog.geetstate cnet-jp.blog.kenn cnet-jp.blog.lessig
+cnet-jp.blog.matsumura cnet-jp.blog.nakajima cnet-jp.blog.saeki
+cnet-jp.blog.sakamoto cnet-jp.blog.sasaki cnet-jp.blog.sentan
+cnet-jp.blog.staff cnet-jp.blog.takawata cnet-jp.blog.watanabe
+</p>
+</dd>
+<dt> <a href="http://www.cnn.co.jp/">CNN Japan</a></dt>
+<dd><p>cnn-jp.business cnn-jp.fringe cnn-jp.science cnn-jp.showbiz
+cnn-jp.sports cnn-jp.top cnn-jp.usa cnn-jp.world
+</p>
+</dd>
+<dt> <a href="http://www.de-bug.de/">De-Bug Magazine</a></dt>
+<dd><p>debugmagazin-de.frontpage debugmagazin-de.musik debugmagazin-de.reviews
+debugmagazin-de.magazin debugmagazin-de.medien debugmagazin-de.podcast
+debugmagazin-de.musiktechnik debugmagazin-de.screen
+debugmagazin-de.gadgets debugmagazin-de.games debugmagazin-de.mode
+</p>
+</dd>
+<dt> <a href="http://japanese.engadget.com/">Engadget Japanese</a></dt>
+<dd><p>engadget-ja.top
+</p>
+</dd>
+<dt> <a href="http://www.excite.co.jp/">エキサイト ニュース</a></dt>
+<dd><p>excite.bit-koneta excite.world-odd
+</p>
+</dd>
+<dt> <a href="http://www.fau.org/">自由労働者同盟ドイツ</a></dt>
+<dd><p>fau.news
+</p>
+</dd>
+<dt> <a href="http://www.heise.de/">ハイゼ・オンライン</a></dt>
+<dd><p>heise.news heise.telepolis
+</p>
+</dd>
+<dt> <a href="http://news.infoshop.org/">Infoshop News</a></dt>
+<dd><p>infoshop.news
+</p>
+</dd>
+<dt> <a href="http://www.watch.impress.co.jp/">インプレス</a></dt>
+<dd><p>impress.enterprise impress.pc impress.dc impress.akiba impress.av
+impress.game impress.k-tai impress.internet impress.bb impress.forest
+impress.robot impress.kaden impress.car
+</p>
+</dd>
+<dt> <a href="http://www.itmedia.co.jp/">ITmedia</a></dt>
+<dd><p>itmedia.news.bursts itmedia.news.domestic itmedia.news.foreign
+itmedia.news.products itmedia.news.technology itmedia.news.web20
+itmedia.news.nettopics itmedia.news.society itmedia.news.security
+itmedia.news.industry itmedia.news.research itmedia.news.sp_amd
+itmedia.anchordesk itmedia.bizid itmedia.enterprise itmedia.+D.plusd
+itmedia.+D.mobile itmedia.+D.pcupdate itmedia.+D.lifestyle
+itmedia.+D.games itmedia.+D.docomo itmedia.+D.au_kddi
+itmedia.+D.vodafone itmedia.+D.shopping
+itmedia.+D.lifestyle.column.asakura itmedia.+D.lifestyle.column.honda
+itmedia.+D.lifestyle.column.kobayashi itmedia.+D.lifestyle.column.kodera
+itmedia.+D.lifestyle.column.nishi itmedia.+D.lifestyle.column.ogikubo
+itmedia.+D.lifestyle.column.tachibana
+itmedia.+D.lifestyle.column.takemura itmedia.+D.lifestyle.column.unakami
+</p>
+</dd>
+<dt> <a href="http://www.japantimes.co.jp/">Japan Times</a></dt>
+<dd><p>japantimes.general japantimes.business
+</p>
+</dd>
+<dt> <a href="http://www.laut.de/">LAUT AG</a></dt>
+<dd><p>laut-de.news laut-de.platten laut-de.platten_alternative
+laut-de.platten_dance laut-de.platten_hiphop platten_jazz
+laut-de.platten_metal laut-de.platten_pop laut-de.platten_rnb
+laut-de.platten_rock
+</p>
+</dd>
+<dt> <a href="http://www.n24.de/">N24</a></dt>
+<dd><p>n24-de.boerse n24-de.boulevard n24-de.nachrichten n24-de.netnews
+n24-de.politik n24-de.sport n24-de.wirtschaft
+</p>
+</dd>
+<dt> <a href="http://opentechpress.jp/">Open Tech Press</a></dt>
+<dd><p>opentechpress-jp.general opentechpress-jp.enterprise
+opentechpress-jp.opensource opentechpress-jp.security
+opentechpress-jp.news opentechpress-jp.pr
+</p>
+</dd>
+<dt> <a href="http://www.perlentaucher.de/">Perlentaucher (真珠採り)</a></dt>
+<dd><p>perlentaucher-de.aktuell
+</p>
+</dd>
+<dt> <a href="http://www.rediff.com/">Rediff.com</a></dt>
+<dd><p>rediff.news
+</p>
+</dd>
+<dt> <a href="http://www.slashdot.org/">Slashdot</a></dt>
+<dd><p>slashdot.frontpage slashdot.apple slashdot.askslashdot slashdot.books
+slashdot.developers slashdot.games slashdot.hardware slashdot.interviews
+slashdot.IT slashdot.linux slashdot.mobile slashdot.politics
+slashdot.science
+</p>
+<p>Slashdot shimbun のコメントの部分を設定するための以下の変数があります:
+</p>
+<dl compact="compact">
+<dt> <code>shimbun-slashdot-get-comments</code></dt>
+<dd><a name="index-shimbun_002dslashdot_002dget_002dcomments"></a>
+<p>もし <code>t</code> に設定されていると (それがデフォルトです)、すべての記事の
+コメントを取得します。それらはフォームフィード文字 (&ldquo;^L&rdquo; のこと) でイ
+ントロ・テキストから分離されます。それらを見るには、いつものように記事バッ
+ファをスクロールしてください (Gnus では &ldquo;Next page&rdquo; ボタン
+と &ldquo;Previous page&rdquo; ボタンを使うことができます)。この変数
+を <code>nil</code> に設定すると、記事のコメントを取得しなくなります。
+</p>
+</dd>
+<dt> <code>shimbun-slashdot-comment-threshold</code></dt>
+<dd><a name="index-shimbun_002dslashdot_002dcomment_002dthreshold"></a>
+<p>表示されるコメントの閾値です (デフォルトは 3)。-1 (すべてのコメント) か
+ら 5 (最高レート) までの間の数にしてください。
+</p>
+</dd>
+<dt> <code>shimbun-slashdot-comment-display</code></dt>
+<dd><a name="index-shimbun_002dslashdot_002dcomment_002ddisplay"></a>
+<p>コメントを表示する形式です (デフォルトは &ldquo;flat&rdquo;)。&ldquo;flat&rdquo;、
+&ldquo;thread&rdquo; または &ldquo;nested&rdquo; のどれかにしてください。これはシンボルでは
+なく文字列でなければなりません。
+</p></dd>
+</dl>
+
+</dd>
+<dt> <a href="http://slashdot.jp/">Slashdot Japan</a></dt>
+<dd><p>slashdot-jp.story slashdot-jp.askslashdot slashdot-jp.bookreview
+slashdot-jp.bsd slashdot-jp.developers slashdot-jp.interview
+slashdot-jp.linux slashdot-jp.mac slashdot-jp.mobile slashdot-jp.science
+slashdot-jp.security slashdot-jp.slash slashdot-jp.it
+slashdot-jp.hardware slashdot-jp.diary.oliver
+</p>
+<p>変数 <code>shimbun-slashdot-jp-group-alist</code> に適切な設定を加えると、その
+他のユーザーの日記も閲覧できます。
+</p>
+</dd>
+<dt> <a href="http://techon.nikkeibp.co.jp/">Tech-On! 日経BP社</a></dt>
+<dd><p>tech-on.latestnews tech-on.mobile tech-on.bbint tech-on.d-ce tech-on.AT
+tech-on.edaonline tech-on.device tech-on.lsi tech-on.silicon
+tech-on.observer tech-on.fpd tech-on.mono tech-on.embedded tech-on.mecha
+tech-on.MEMS tech-on.nano tech-on.carele tech-on.board tech-on.mcu
+tech-on.PLM tech-on.memory tech-on.measurement tech-on.column.mot
+</p>
+<p>Tech-On! は日経BP社が提供する技術ニュースサイトです。以前は記事の内容を
+全部読むためにログイン・アカウント (無料) が必要でしたが、少なくと
+も 2007年の秋においては要らないように見えます。将来もし再び必要になった
+ら <a href="http://techon.nikkeibp.co.jp/guide/inf_regi.html">登録ページ</a> に行って取得してください。次の二つの変数で、どうやってログイ
+ンするかを制御します:
+</p>
+<dl compact="compact">
+<dt> <code>shimbun-tech-on-user-name</code></dt>
+<dd><a name="index-shimbun_002dtech_002don_002duser_002dname"></a>
+<p>Tech-On! にログインするためのユーザー名です。<code>nil</code> だと Tech-On! に
+ログインするときに、ユーザー名の入力を要求されます。文字列だったらそれが
+ユーザー名として使われ、入力を要求されることはありません。<code>nil</code> で
+も文字列でもない場合 (これがデフォルトです)、ログインを行ないません。
+</p>
+</dd>
+<dt> <code>shimbun-tech-on-password</code></dt>
+<dd><a name="index-shimbun_002dtech_002don_002dpassword"></a>
+<p>Tech-On! にログインするためのパスワードです。<code>nil</code> だと Tech-On! に
+ログインするときに、パスワードの入力を要求されます。文字列だったらそれが
+パスワードとして使われ、入力を要求されることはありません。<code>nil</code> で
+も文字列でもない場合 (これがデフォルトです)、ログインを行ないません。
+</p></dd>
+</dl>
+
+<p>これらの入力は、その Emacs セッションで最初に Tech-On! の記事を読み始め
+るときに一回だけ要求されます。
+</p>
+</dd>
+<dt> <a href="http://hotwired.goo.ne.jp/">HotWired Japan</a></dt>
+<dd><p>wired-jp.news wired-jp.business wired-jp.culture wired-jp.technology
+wired-jp.blog.ogura wired-jp.blog.sasaki wired-jp.blog.takahashi
+</p>
+</dd>
+<dt> <a href="http://headlines.yahoo.co.jp/">Yahoo! Japan</a></dt>
+<dd><p>yahoo.topnews yahoo.news yahoo.politics yahoo.society yahoo.people
+yahoo.business-all yahoo.market yahoo.stock yahoo.industry
+yahoo.international yahoo.entertainment yahoo.sports yahoo.computer
+yahoo.zenkoku yahoo.hokkaido yahoo.aomori yahoo.iwate yahoo.miyagi
+yahoo.akita yahoo.yamagata yahoo.fukushima yahoo.tokyo yahoo.kanagawa
+yahoo.chiba yahoo.saitama yahoo.ibaraki yahoo.tochigi yahoo.gunma
+yahoo.yamanashi yahoo.nagano yahoo.niigata yahoo.toyama yahoo.ishikawa
+yahoo.fukui yahoo.aichi yahoo.gifu yahoo.shizuoka yahoo.mie yahoo.osaka
+yahoo.hyogo yahoo.kyoto yahoo.shiga yahoo.nara yahoo.wakayama
+yahoo.tottori yahoo.shimane yahoo.okayama yahoo.hiroshima
+yahoo.yamaguchi yahoo.tokushima yahoo.kagawa yahoo.ehime yahoo.kochi
+yahoo.fukuoka yahoo.saga yahoo.nagasaki yahoo.kumamoto yahoo.oita
+yahoo.miyazaki yahoo.kagoshima yahoo.okinawa
+</p>
+<p>yahoo.news グループは主要な記事と、さらに速報記事を検索します。これらの
+グループは、デフォルトで HTML の記事を作ります。それらにテキストだけの記
+事を生成させたいならば、以下の行を &lsquo;<tt>~/.emacs</tt>&rsquo; ファイルに加えてくだ
+さい。
+</p>
+<table><tr><td>&nbsp;</td><td><pre class="lisp">(setq shimbun-yahoo-prefer-text-plain t)
+</pre></td></tr></table>
+
+</dd>
+<dt> <a href="http://japan.zdnet.com/">ZDNet Japan</a></dt>
+<dd><p>zdnet-jp.news zdnet-jp.news.network zdnet-jp.news.hardware
+zdnet-jp.news.software zdnet-jp.news.manage zdnet-jp.news.security
+zdnet-jp.news.internet zdnet-jp.news.os zdnet-jp.news.db
+zdnet-jp.news.system zdnet-jp.column zdnet-jp.column.sp1
+zdnet-jp.column.netsecurity1 zdnet-jp.column.ea1 zdnet-jp.column.btl
+zdnet-jp.column.solutionIT zdnet-jp.channel.security
+zdnet-jp.channel.ilm zdnet-jp.blog.iida zdnet-jp.blog.mhatta
+zdnet-jp.blog.kurei zdnet-jp.blog.opensource zdnet-jp.blog.soa
+zdnet-jp.blog.dp
+</p>
+</dd>
+<dt> <a href="http://www.theonion.com/">The Onion</a></dt>
+<dd><p>the-onion.news
+</p></dd>
+</dl>
+
+<hr size="6">
+<a name="Mailing-Lists-Supported-by-Shimbun"></a>
+<table cellpadding="1" cellspacing="1" border="0">
+<tr><td valign="middle" align="left">[<a href="#News-Sites-Supported-by-Shimbun" title="Previous section in reading order"> &lt; </a>]</td>
+<td valign="middle" align="left">[<a href="#Sport-Sites-Supported-by-Shimbun" title="Next section in reading order"> &gt; </a>]</td>
+<td valign="middle" align="left"> &nbsp; </td>
+<td valign="middle" align="left">[<a href="emacs-w3m-ja_56.html#Shimbun-Library" title="Beginning of this chapter or previous chapter"> &lt;&lt; </a>]</td>
+<td valign="middle" align="left">[<a href="#Shimbun-Sites" title="Up section">ä¸</a>]</td>
+<td valign="middle" align="left">[<a href="emacs-w3m-ja_63.html#Tips" title="Next chapter"> &gt;&gt; </a>]</td>
+<td valign="middle" align="left"> &nbsp; </td>
+<td valign="middle" align="left"> &nbsp; </td>
+<td valign="middle" align="left"> &nbsp; </td>
+<td valign="middle" align="left"> &nbsp; </td>
+<td valign="middle" align="left">[<a href="emacs-w3m-ja.html#Top" title="Cover (top) of document">åé ­</a>]</td>
+<td valign="middle" align="left">[<a href="emacs-w3m-ja_toc.html#SEC_Contents" title="Table of contents">ç®æ¬¡</a>]</td>
+<td valign="middle" align="left">[<a href="emacs-w3m-ja_68.html#Index" title="è¦åºã">è¦åºã</a>]</td>
+<td valign="middle" align="left">[<a href="emacs-w3m-ja_abt.html#SEC_About" title="About (help)"> ? </a>]</td>
+</tr></table>
+<a name="meringurisuto"></a>
+<h3 class="subsection">9.5.3 メーリングリスト</h3>
+
+<p>最近では、メーリングリストに投稿された過去記事のアーカイブが WEB 上に幾
+つも公開されています。&lsquo;<samp>Shimbun</samp>&rsquo; ライブラリは、以下のアーカイブを扱
+うことができます。
+</p>
+<dl compact="compact">
+<dt> <a href="http://lists.airs.net/semi-gnus/archive/">Semi-gnus Mailing List in Japan</a></dt>
+<dd><p>airs.semi-gnus-ja
+</p>
+</dd>
+<dt> <a href="http://lists.airs.net/">Wanderlust Mailing List</a></dt>
+<dd><p>airs.wl airs.wl-en
+</p>
+</dd>
+<dt> <a href="http://www.rc.tutrp.tut.ac.jp/bbdb-ml/">Big Brother DataBase Mailing List</a></dt>
+<dd><p>bbdb-ml.bbdb-ml
+</p>
+</dd>
+<dt> <a href="http://mail.gnome.org/archives/">GNOME Mailing List</a></dt>
+<dd><p>gnome.balsa-list gnome.calendar-list gnome.cvs-commits-list
+gnome.foundation-announce gnome.foundation-list gnome.fplan-list
+gnome.gconf-list gnome.gdome gnome.gnome-1.4-list
+gnome.gnome-announce-list gnome.gnome-components-list
+gnome.gnome-db-list gnome.gnome-de gnome.gnome-debugger-list
+gnome.gnome-devel-list gnome.gnome-doc-list gnome.gnome-gui-list
+gnome.gnome-hackers gnome.gnome-hackers-readonly
+gnome.gnome-hackers-test gnome.gnome-i18n gnome.gnome-i18n-tools
+gnome.gnome-kde-list gnome.gnome-list gnome.gnome-office-list
+gnome.gnome-pilot-list gnome.gnome-sound-list gnome.gnome-themes-list
+gnome.gnome-ui-hackers gnome.gnome-web-list gnome.gnome-webmaster-list
+gnome.gnome-workshop-list gnome.gnomecc-list gnome.gnumeric-list
+gnome.gtk-app-devel-list gnome.gtk-devel-list gnome.gtk-doc-list
+gnome.gtk-i18n-list gnome.gtk-list gnome.gtk-perl-list
+gnome.guppi-list gnome.libart gnome.libart-hackers gnome.orbit-list
+gnome.vote gnome.wm-spec-list gnome.xml gnome.xslt
+</p>
+</dd>
+<dt> <a href="http://www.java-conf.gr.jp/archives/">Java カンファレンス Mailing List</a></dt>
+<dd><p>javaconf.servlet-ml javaconf.business-ml
+javaconf.duke-in-the-box-ml javaconf.jfriends-ml javaconf.JGT-ml
+javaconf.jini-ml javaconf.ejb-ml javaconf.cm-ml javaconf.horb-ml
+javaconf.talk-ml
+</p>
+</dd>
+<dt> <a href="http://www.peanuts.gr.jp/~kei/ml-archive/">LinuxCE JP Mailing List</a></dt>
+<dd><p>linuxce-jp.users
+</p>
+</dd>
+<dt> <a href="http://www.m17n.org/">Mule Mailing List</a></dt>
+<dd><p>m17n.mule-ja m17n.mule
+</p>
+</dd>
+<dt> <a href="http://www.ysnb.net/meadow/">Meadow Mailing List</a></dt>
+<dd><p>meadow.meadow-develop meadow.meadow-users-jp
+</p>
+</dd>
+<dt> <a href="http://www.mew.org/ml/">Mew Mailing List</a></dt>
+<dd><p>mew.mew-dist mew.mew-win32 mew.mew-int
+</p>
+</dd>
+<dt> <a href="http://www.mew.org/ml/">MagicPoint Mailing List</a></dt>
+<dd><p>mew.mgp-users mew.mgp-users-jp
+</p>
+</dd>
+<dt> <a href="http://www.namazu.org/cgi-bin/mailman/listinfo">www.namazu.org Mailing Lists</a></dt>
+<dd><p>namazu.kakasi-commits namazu.kakasi-dev namazu.migemo
+namazu.namazu-users-en namazu.namazu-users-ja
+namazu.namazu-devel-ja namazu.namazu-devel-en
+namazu.namazu-win32-users-ja namazu.sary
+</p>
+</dd>
+<dt> <a href="http://emacs-w3m.namazu.org/ml/">emacs-w3m Mailing List</a></dt>
+<dd><p>emacs-w3m.emacs-w3m
+</p>
+</dd>
+<dt> <a href="http://www.jp.netbsd.org/ja/JP/ml/">NetBSD JP Mailing List</a></dt>
+<dd><p>netbsd.announce-ja netbsd.junk-ja netbsd.tech-misc-ja
+netbsd.tech-pkg-ja netbsd.port-arm32-ja netbsd.port-hpcmips-ja
+netbsd.port-mac68k-ja netbsd.port-mips-ja netbsd.port-powerpc-ja
+netbsd.hpcmips-changes-ja netbsd.members-ja netbsd.admin-ja
+netbsd.www-changes-ja
+</p>
+</dd>
+<dt> <a href="http://blade.nagaokaut.ac.jp/">Ruby Mailing List</a></dt>
+<dd><p>ruby.comp.lang.ruby ruby.fj.comp.lang.ruby
+ruby.ruby-dev ruby.ruby-ext ruby.ruby-list ruby.ruby-math
+ruby.ruby-talk
+</p>
+</dd>
+<dt> <a href="http://linux.toshiba-dme.co.jp/ML/tlinux-users-j/">Toshiba Linux Users JP Mailing List</a></dt>
+<dd><p>toshiba.linux-users-j
+</p>
+</dd>
+<dt> <a href="http://mi.med.tohoku.ac.jp/~satodai/w3m-dev/">w3m-dev Mailing List</a></dt>
+<dd><p>w3m-dev.w3m-dev w3m-dev.w3m-dev-en
+</p>
+</dd>
+<dt> <a href="http://yar-3.net/digiko/">digiko Mailing List</a></dt>
+<dd><p>digiko.digiko
+</p>
+</dd>
+<dt> <a href="http://list-archive.xemacs.org/">XEmacs Mailing List</a></dt>
+<dd><p>xemacs.xemacs-announce xemacs.xemacs-beta-ja
+xemacs.xemacs-beta xemacs.xemacs-build-reports xemacs.xemacs-cvs
+xemacs.xemacs-design xemacs.xemacs-mule xemacs.xemacs-nt
+xemacs.xemacs-patches xemacs.xemacs-users-ja xemacs.xemacs
+</p>
+</dd>
+<dt> <a href="http://memo.st.ryukoku.ac.jp/archive/">セキュリティーMEMO Mailing List</a></dt>
+<dd><p>security-memo.memo security-memo.free-memo security-memo.social-memo
+</p>
+<p>なお、&lsquo;<samp>security-memo.*</samp>&rsquo; はアドレス回収ロボット対策
+で userid と passowrd を求められるので &lsquo;<tt>~/.w3m/passwd</tt>&rsquo; に
+</p>
+<table><tr><td>&nbsp;</td><td><pre class="example">machine memo.st.ryukoku.ac.jp
+realm input username/password = archives/archives
+login archives
+passwd archives
+
+machine memo.st.ryukoku.ac.jp
+realm input user: archives / password: archives
+login archives
+passwd archives
+</pre></td></tr></table>
+
+<p>と書き、上記ファイルから group, others のアクセス権を取り除いておく必要
+があります。
+</p>
+</dd>
+<dt> <a href="http://lists.debian.or.jp/">Debian JP Mailing List</a></dt>
+<dd><p>debian-jp.debian-announce debian-jp.debian-devel
+debian-jp.debian-www debian-jp.debian-users debian-jp.debian-policy
+debian-jp.jp-qa
+</p>
+</dd>
+<dt> <a href="http://lists.debian.org/">Debian Mailing List</a></dt>
+<dd><p>debian.debian-announce debian.debian-commercial debian.debian-firewall
+debian.debian-french debian.debian-isp debian.debian-italian
+debian.debian-kde debian.debian-laptop debian.debian-news
+debian.debian-news-german debian.debian-news-portuguese
+debian.debian-security-announce debian.debian-testing
+debian.debian-user debian.debian-user-catalan
+debian.debian-user-french debian.debian-user-polish
+debian.debian-user-portuguese debian.debian-user-spanish
+debian.debian-user-swedish debian.debian-admintool
+debian.debian-apache debian.debian-autobuild debian.debian-beowulf
+debian.debian-boot debian.debian-cd debian.debian-ctte
+debian.debian-debbugs debian.debian-devel debian.debian-devel-announce
+debian.debian-devel-french debian.debian-devel-games
+debian.debian-devel-spanish debian.debian-doc debian.debian-dpkg
+debian.debian-emacsen debian.debian-events-eu debian.debian-events-na
+debian.debian-faq debian.debian-gcc debian.debian-glibc
+debian.debian-gtk-gnome debian.debian-hams debian.debian-ipv6
+debian.debian-java debian.debian-jr debian.debian-med
+debian.debian-mentors debian.debian-newmaint
+debian.debian-newmaint-admin debian.debian-ocaml-maint
+debian.debian-openoffice debian.debian-perl debian.debian-pilot
+debian.debian-policy debian.debian-pool debian.debian-python
+debian.debian-qa debian.debian-qa-private debian.debian-release
+debian.debian-security debian.debian-snapshots
+debian.debian-tetex-maint debian.debian-toolchain debian.debian-vote
+debian.debian-wnpp debian.debian-www debian.debian-x debian.deity
+debian.debian-chinese debian.debian-chinese-big5
+debian.debian-chinese-gb debian.debian-esperanto debian.debian-i18n
+debian.debian-japanese debian.debian-l10n-catalan
+debian.debian-l10n-dutch debian.debian-l10n-english
+debian.debian-l10n-french debian.debian-l10n-italian
+debian.debian-l10n-portuguese debian.debian-l10n-spanish
+debian.debian-laespiral debian.debian-russian
+debian.debian-simplified-chinese debian.debian-68k debian.debian-alpha
+debian.debian-arm debian.debian-bsd debian.debian-hppa
+debian.debian-hurd debian.debian-ia64 debian.debian-mips
+debian.debian-parisc debian.debian-powerpc debian.debian-s390
+debian.debian-sparc debian.debian-superh debian.debian-ultralinux
+debian.debian-win32 debian.debian-all-changes
+debian.debian-alpha-changes debian.debian-arm-changes
+debian.debian-books debian.debian-cd-vendors debian.debian-changes
+debian.debian-consultants debian.debian-curiosa
+debian.debian-devel-all-changes debian.debian-devel-alpha-changes
+debian.debian-devel-arm-changes debian.debian-devel-changes
+debian.debian-devel-hurd-i386-changes debian.debian-devel-i386-changes
+debian.debian-devel-m68k-changes debian.debian-devel-powerpc-changes
+debian.debian-devel-sparc-changes debian.debian-hurd-i386-changes
+debian.debian-i386-changes debian.debian-legal
+debian.debian-m68k-changes debian.debian-mirrors
+debian.debian-powerpc-changes debian.debian-project
+debian.debian-publicity debian.debian-sgml debian.debian-sparc-changes
+debian.lcs-eng debian.lsb-confcall debian.lsb-discuss debian.lsb-impl
+debian.lsb-spec debian.lsb-test debian.spi-announce debian.spi-general
+debian.vgui-discuss
+</p>
+</dd>
+<dt> <a href="http://www.kde.gr.jp/ml/">KDE Mailing List in Japan</a></dt>
+<dd><p>kde.Kuser kde.Kdeveloper
+</p>
+</dd>
+<dt> <a href="http://www.geocrawler.com/">Geocrawler</a></dt>
+<dd><p>Geocrawler に保存されているすべてのメーリングリストを閲覧できます。
+<kbd>M-x shimbun-geocrawler-add-group &lt;RET&gt;</kbd> というコマンドを使っ
+て、閲覧したいグループを変数 <code>shimbun-geocrawler-group-alist</code> に登
+録してください。
+</p>
+</dd>
+<dt> <a href="http://marc.theaimsgroup.com/">Mailing list ARChives</a></dt>
+<dd><p>Mailing list ARChives (<acronym>MARC</acronym>) に保存されているすべてのメーリン
+グリストを閲覧できます。閲覧したいグループのグループ名と URL を、
+変数 <code>shimbun-marc-aims-group-alist</code> に登録してください。
+</p>
+</dd>
+<dt> <a href="http://sources.redhat.com/ml/">RedHat Mailing List</a></dt>
+<dd><p>redhat.automake redhat.bug-automake redhat.automake-prs
+redhat.automake-cvs redhat.binutils redhat.binutils-cvs
+redhat.c++-embedded redhat.crossgcc redhat.cgen redhat.cgen-prs
+redhat.cgen-cvs redhat.cygwin redhat.cygwin-xfree redhat.cygwin-announce
+redhat.cygwin-xfree-announce redhat.cygwin-apps redhat.cygwin-patches
+redhat.cygwin-developers redhat.cygwin-cvs redhat.cygwin-apps-cvs
+redhat.docbook-tools-discuss redhat.docbook-tools-announce
+redhat.docbook-tools-cvs redhat.docbook redhat.dssslist
+redhat.sgml-tools redhat.docbook-apps redhat.ecos-announce
+redhat.ecos-devel redhat.ecos-discuss redhat.ecos-maintainers
+redhat.ecos-patches redhat.elix redhat.elix-announce redhat.gdb
+redhat.gdb-announce redhat.gdb-testers redhat.gdb-testresults
+redhat.gdb-patches redhat.gdb-cvs redhat.bug-gdb redhat.gdb-prs
+redhat.libc-alpha redhat.libc-hacker redhat.bug-glibc redhat.glibc-cvs
+redhat.glibc-linux redhat.bug-gnats redhat.gnats-devel
+redhat.gnats-announce redhat.gnats-cvs redhat.gsl-discuss
+redhat.gsl-announce redhat.gsl-cvs redhat.guile redhat.guile-emacs
+redhat.guile-prs redhat.guile-gtk redhat.bug-guile redhat.guile-cvs
+redhat.guile-emacs-cvs redhat.insight redhat.insight-announce
+redhat.insight-prs redhat.installshell redhat.inti redhat.kawa
+redhat.libffi-discuss redhat.libffi-announce redhat.libstdc++
+redhat.libstdc++-cvs redhat.libstdc++-prs redhat.mauve-discuss
+redhat.mauve-announce redhat.newlib redhat.pthreads-win32 redhat.rhdb
+redhat.rhdb-announce redhat.rhug-rhats redhat.rpm2html-cvs
+redhat.rpm2html-prs redhat.rpm2html redhat.sid redhat.sid-announce
+redhat.sid-cvs redhat.sourcenav redhat.sourcenav-announce
+redhat.sourcenav-prs redhat.win32-x11 redhat.xconq7
+redhat.xconq-announce redhat.xconq-cvs
+</p>
+</dd>
+<dt> <a href="http://www.tech-arts.co.jp/macosx/">MacOSX JP Mailing List</a></dt>
+<dd><p>macosx-jp.macosx-jp macosx-jp.macosx-dev-jp
+macosx-jp.macosx-ws-jp macosx-jp.webobjects-jp
+</p>
+</dd>
+<dt> <a href="http://sourceforge.jp">SourceForge JP</a></dt>
+<dd><p>SourceForge JP に保存されているメーリングリストのすべての公開書庫を閲覧
+できます。閲覧したいグループを
+変数 <code>shimbun-sourceforge-jp-mailing-lists</code> に登録してください。
+</p>
+</dd>
+<dt> <a href="http://heimat.jp/~nakaji/elips/">Elips Mailing List</a></dt>
+<dd><p>elips.elips
+</p>
+</dd>
+<dt> <a href="http://lists.squeakfoundation.org/pipermail/squeak-ja/">Squeak-ja Mailing List</a></dt>
+<dd><p>squeak-ja.main
+</p>
+</dd>
+<dt> <a href="http://www.sra.co.jp/smalltalk/SML/archives/">Smalltalkers&rsquo; Salon Mailing List</a></dt>
+<dd><p>sml.main
+</p>
+</dd>
+<dt> <a href="http://lists.squeakfoundation.org/pipermail/squeak-dev/">Squeak-dev Mailing List</a></dt>
+<dd><p>squeak-dev.main
+</p>
+</dd>
+<dt> <a href="http://www.mail-archive.com/plucker-*@rubberchicken.org/maillist.html">Plucker Mailing List</a></dt>
+<dd><p>plucker.announce plucker.list plucker.dev
+</p>
+</dd>
+<dt> <a href="http://www.pilot-link.org/pipermail/">pilot-link Mailing List</a></dt>
+<dd><p>pilot-link.announce pilot-link.devel pilot-link.general
+pilot-link.unix-ng
+</p>
+</dd>
+<dt> <a href="http://www.thedotin.net/maillists/coldsync-hackers/maillist.html">Coldsync Mailing List</a></dt>
+<dd><p>coldsync.main
+</p>
+</dd>
+<dt> <a href="http://www.jpilot.org/pipermail/jpilot/">J-Pilot Mailing List</a></dt>
+<dd><p>jpilot.main
+</p>
+</dd>
+<dt> <a href="http://lists.gnu-designs.com/pipermail/pilot-mailsync/">pilot-mailsync Mailing List</a></dt>
+<dd><p>pilot-mailsync.main
+</p>
+</dd>
+<dt> <a href="http://www.mozilla.gr.jp/ml/logs/moz-users/">Mozilla Users Mailing List in Japan</a></dt>
+<dd><p>mozilla-jp.users
+</p>
+<p>なお、&lsquo;<samp>mozilla-jp.users</samp>&rsquo; はアドレス回収ロボット対策
+で userid と passowrd を求められるので &lsquo;<tt>~/.w3m/passwd</tt>&rsquo; に
+</p>
+<table><tr><td>&nbsp;</td><td><pre class="example">machine www.mozilla.gr.jp
+realm Please Enter mozilla mozilla
+login mozilla
+passwd mozilla
+</pre></td></tr></table>
+
+<p>と書き、上記ファイルから group, others のアクセス権を取り除いておく必要
+があります。
+</p>
+</dd>
+<dt> <a href="http://www.tdiary.org/">tDiary Developers Mailing List in Japan</a></dt>
+<dd><p>tdiary-ml.devel tdiary-ml.theme
+</p>
+</dd>
+<dt> <a href="http://arch.bluegate.org/mailman/listinfo">arch.bluegate.org Mailing Lists</a></dt>
+<dd><p>arch-bluegate.subversion-jp arch-bluegate.arch-jp arch-bluegate.mailman
+arch-bluegate.viewarch
+</p>
+</dd>
+<dt> <a href="http://www.tigris.org/">Tigris.org:Open Source Software Engineering</a></dt>
+<dd><p>Tigris.org に保存されているすべてのメーリングリストを閲覧できます。閲覧
+したいグループを変数 <code>shimbun-tigris-group-alist</code> に登録してくださ
+い。グループ名は tigris.&lt;project&gt;.&lt;mailinglist&gt; になります。
+</p>
+</dd>
+<dt> <a href="http://www.scipy.net/mailman/listinfo">www.SciPy.net Mailing Lists</a></dt>
+<dd><p>scipy.astropy scipy.ipython-user scipy.ipython-dev scipy.scipy-user
+scipy.scipy-dev scipy.scipy-testlog scipy.scipy-chaco scipy.scipy-cvs
+</p>
+</dd>
+<dt> <a href="http://lists.chise.org/mailman/listinfo">lists.chise.org Mailing Lists</a></dt>
+<dd><p>chise.apel chise.chise chise.emacs-mime
+</p>
+</dd>
+</dl>
+
+<hr size="6">
+<a name="Sport-Sites-Supported-by-Shimbun"></a>
+<table cellpadding="1" cellspacing="1" border="0">
+<tr><td valign="middle" align="left">[<a href="#Mailing-Lists-Supported-by-Shimbun" title="Previous section in reading order"> &lt; </a>]</td>
+<td valign="middle" align="left">[<a href="#Misc-Sites-Supported-by-Shimbun" title="Next section in reading order"> &gt; </a>]</td>
+<td valign="middle" align="left"> &nbsp; </td>
+<td valign="middle" align="left">[<a href="emacs-w3m-ja_56.html#Shimbun-Library" title="Beginning of this chapter or previous chapter"> &lt;&lt; </a>]</td>
+<td valign="middle" align="left">[<a href="#Shimbun-Sites" title="Up section">ä¸</a>]</td>
+<td valign="middle" align="left">[<a href="emacs-w3m-ja_63.html#Tips" title="Next chapter"> &gt;&gt; </a>]</td>
+<td valign="middle" align="left"> &nbsp; </td>
+<td valign="middle" align="left"> &nbsp; </td>
+<td valign="middle" align="left"> &nbsp; </td>
+<td valign="middle" align="left"> &nbsp; </td>
+<td valign="middle" align="left">[<a href="emacs-w3m-ja.html#Top" title="Cover (top) of document">åé ­</a>]</td>
+<td valign="middle" align="left">[<a href="emacs-w3m-ja_toc.html#SEC_Contents" title="Table of contents">ç®æ¬¡</a>]</td>
+<td valign="middle" align="left">[<a href="emacs-w3m-ja_68.html#Index" title="è¦åºã">è¦åºã</a>]</td>
+<td valign="middle" align="left">[<a href="emacs-w3m-ja_abt.html#SEC_About" title="About (help)"> ? </a>]</td>
+</tr></table>
+<a name="supotu"></a>
+<h3 class="subsection">9.5.4 スポーツ</h3>
+
+<p>&lsquo;<samp>Shimbun</samp>&rsquo; ライブラリが対応しているスポーツ関係のサイトです。
+</p>
+<dl compact="compact">
+<dt> <a href="http://www.makanai.com/">makanai</a></dt>
+<dd><p>makanai.f1news
+</p>
+</dd>
+<dt> <a href="http://www.ksky.ne.jp/~tahara/f1/">F1 ファン</a></dt>
+<dd><p>f1fan.news
+</p>
+</dd>
+<dt> <a href="http://forum.nifty.com/fmotor/">@nifty:モータースポーツ</a></dt>
+<dd><p>msports-nifty.F1 msports-nifty.IRL msports-nifty.WRC
+msports-nifty.Europe msports-nifty.USA
+</p>
+</dd>
+<dt> <a href="http://sports.yahoo.co.jp/">Yahoo!スポーツ</a></dt>
+<dd><p>yahoo-sports.F1 yahoo-sports.baseball yahoo-sports.keiba
+yahoo-sports.NBA yahoo-sports.NFL yahoo-sports.rugby
+</p></dd>
+</dl>
+
+<p>ただし、Emacs-21.4 またはそれ以前の版で @nifty: モータースポーツを閲覧
+するには、Mule-UCS (see section <a href="emacs-w3m-ja_5.html#Other-Requirements">Emacs-w3m を動作させるのに必要なもの</a>) が必要です。
+</p>
+<hr size="6">
+<a name="Misc-Sites-Supported-by-Shimbun"></a>
+<table cellpadding="1" cellspacing="1" border="0">
+<tr><td valign="middle" align="left">[<a href="#Sport-Sites-Supported-by-Shimbun" title="Previous section in reading order"> &lt; </a>]</td>
+<td valign="middle" align="left">[<a href="emacs-w3m-ja_62.html#Shimbun-Basics" title="Next section in reading order"> &gt; </a>]</td>
+<td valign="middle" align="left"> &nbsp; </td>
+<td valign="middle" align="left">[<a href="emacs-w3m-ja_56.html#Shimbun-Library" title="Beginning of this chapter or previous chapter"> &lt;&lt; </a>]</td>
+<td valign="middle" align="left">[<a href="#Shimbun-Sites" title="Up section">ä¸</a>]</td>
+<td valign="middle" align="left">[<a href="emacs-w3m-ja_63.html#Tips" title="Next chapter"> &gt;&gt; </a>]</td>
+<td valign="middle" align="left"> &nbsp; </td>
+<td valign="middle" align="left"> &nbsp; </td>
+<td valign="middle" align="left"> &nbsp; </td>
+<td valign="middle" align="left"> &nbsp; </td>
+<td valign="middle" align="left">[<a href="emacs-w3m-ja.html#Top" title="Cover (top) of document">åé ­</a>]</td>
+<td valign="middle" align="left">[<a href="emacs-w3m-ja_toc.html#SEC_Contents" title="Table of contents">ç®æ¬¡</a>]</td>
+<td valign="middle" align="left">[<a href="emacs-w3m-ja_68.html#Index" title="è¦åºã">è¦åºã</a>]</td>
+<td valign="middle" align="left">[<a href="emacs-w3m-ja_abt.html#SEC_About" title="About (help)"> ? </a>]</td>
+</tr></table>
+<a name="sonoTa-"></a>
+<h3 class="subsection">9.5.5 その他</h3>
+
+<p>&lsquo;<samp>Shimbun</samp>&rsquo; ライブラリの対応しているその他のサイトです。掲示板や、連
+載記事を主体とするようなサイトが含まれています。
+</p>
+<dl compact="compact">
+<dt> <a href="http://www.tcup.com/">Tea Cup 掲示板</a></dt>
+<dd><p>Tea Cup Communication によって提供される、様々な掲示板を講読することがで
+きます。デフォルトでは、以下の三つの掲示板が用意されています。
+</p>
+<dl compact="compact">
+<dt> tcup.meadow</dt>
+<dd><p><a href="http://www66.tcup.com/6629/yutopia.html">Meadow 掲示板</a>
+</p>
+</dd>
+<dt> tcup.skk</dt>
+<dd><p><a href="http://www67.tcup.com/6718/yutopia.html">SKK 掲示板</a>
+</p>
+</dd>
+<dt> tcup.yutopia</dt>
+<dd><p><a href="http://www61.tcup.com/6116/yutopia.html">ゆうτοπια掲示板</a>
+</p></dd>
+</dl>
+
+<p>新たに掲示板をリストに追加するには、それらの名前と URL を調べて、
+<code>shimbun-tcup-group-alist</code> を変更してください。二つの掲示
+板 &lsquo;<samp>foo</samp>&rsquo; と &lsquo;<samp>bar</samp>&rsquo; を追加する例です。
+</p>
+<table><tr><td>&nbsp;</td><td><pre class="lisp">(eval-after-load &quot;sb-tcup&quot;
+  '(setq shimbun-tcup-group-alist
+         (append
+          '((&quot;foo&quot; &quot;http://MMMM.teacup.com/foo/bbs2&quot;)
+            (&quot;bar&quot; &quot;http://NNNN.teacup.com/bar/bbs2&quot;))
+          shimbun-tcup-group-alist)))
+</pre></td></tr></table>
+
+</dd>
+<dt> 2ch</dt>
+<dd><p>グループ名と URL を調べて、以下のように設定して使います。
+</p>
+<table><tr><td>&nbsp;</td><td><pre class="lisp">(setq shimbun-2ch-group-alist
+      '((&quot;Meadow&quot; .
+         &quot;http://pc.2ch.net/test/read.cgi/software/1005469775&quot;)
+        (&quot;emacs-w3m&quot; .
+         &quot;http://pc.2ch.net/test/read.cgi/unix/1013710106&quot;)))
+</pre></td></tr></table>
+
+</dd>
+<dt> <a href="http://www.math.tohoku.ac.jp/~kuroki/support/">CGI_Board を使っている掲示板</a></dt>
+<dd>
+<p>CGI_Board を使っている掲示板の URL を調べて、
+<code>shimbun-cgi-board-group-alist</code> に適切な設定を加えて使います。
+</p>
+</dd>
+<dt> HNS による日記</dt>
+<dd><p>閲覧したい日記の URL を調べて、以下のように設定して使います。
+</p>
+<table><tr><td>&nbsp;</td><td><pre class="lisp">(setq shimbun-hns-group-alist
+      '((&quot;arisawa&quot;                            ;; グループ名
+         &quot;http://nijino.homelinux.net/diary/&quot; ;; URL
+         &quot;ari@mbf.sphere.ne.jp&quot;)              ;; メールアドレス
+        (&quot;miyoshi&quot;
+         &quot;http://www.be.wakwak.com/cgi-bin/sbox/~miyoshi/hns/&quot;
+         &quot;miyoshi@meadowy.org&quot;)))
+</pre></td></tr></table>
+
+</dd>
+<dt> tDiary による日記</dt>
+<dd><p>閲覧したい日記の URL を調べて、以下のように設定して使います。
+</p>
+<table><tr><td>&nbsp;</td><td><pre class="lisp">(setq shimbun-tdiary-group-alist
+      '((&quot;henahena&quot;                          ;; グループ名
+         &quot;http://www.fan.gr.jp/~ring/d/&quot;)    ;; URL
+        (&quot;yoichi&quot;
+         &quot;http://yoichi.geiin.org/d/&quot;)))
+</pre></td></tr></table>
+
+</dd>
+<dt> <a href="http://plaza.rakuten.co.jp/">楽天広場</a> の日記</dt>
+<dd><p>閲覧したい日記を開設している人の楽天 ID とメールアドレスを調べて、以下の
+ように設定して使います。
+</p>
+<table><tr><td>&nbsp;</td><td><pre class="lisp">(setq shimbun-rakuten-group-alist
+      '((&quot;rakuten-id&quot; . &quot;email-address&quot;)))
+</pre></td></tr></table>
+
+</dd>
+<dt> <a href="http://www.emacswiki.org/">EmacsWiKi</a></dt>
+<dd><p>emacswiki.changes emacswiki.diff
+</p>
+</dd>
+<dt> コンテンツを含む RSS フィード</dt>
+<dd><p>閲覧したい掲載コンテンツが含まれるような RSS フィードを調べて、
+<code>shimbun-rss-hash-group-path-alist</code> 変数を以下のように設定して使い
+ます。バックエンド名は &lsquo;<samp>rss-hash</samp>&rsquo; です。主に個人のブログなどが対象
+になるでしょう。
+</p>
+<p>パラメータはグループ名、RSS アドレス、メールタイプ (<code>t</code> で html)、
+整形時の開始正規表現、整形時の終了正規表現となります。グループ名、RSS ア
+ドレス以外はオプションです。
+</p>
+<p>以下はサンプルです。この場合は &lsquo;<samp>rss-hash.sampleblog1</samp>&rsquo; およ
+び &lsquo;<samp>rss-hash.sampleblog2</samp>&rsquo; として閲覧できます。
+</p>
+<table><tr><td>&nbsp;</td><td><pre class="lisp">(setq shimbun-rss-hash-group-path-alist
+      '(;; text mail
+        (&quot;sampleblog1&quot; &quot;http://www.example.com/index1.rss&quot;)
+        ;; html mail
+        (&quot;sampleblog2&quot; &quot;http://www.example.com/index2.rss&quot;
+         t &quot;&lt;/title&gt;&quot; &quot;&lt;!-- start ads&quot;)))
+</pre></td></tr></table>
+
+</dd>
+<dt> コンテンツを含む Atom フィード</dt>
+<dd><p>前項 (コンテンツを含む RSS フィード) と同様に、掲載されたコンテンツを含
+む Atom フィードも閲覧することができます。それを行なうには、
+shimbun-rss-hash-* と同様のやり方で変
+数 <code>shimbun-atom-hash-group-path-alist</code> (ひょっとする
+と <code>shimbun-atom-hash-x-face-alist</code> なども) を設定してください。バッ
+クエンド名は &lsquo;<samp>atom-hash</samp>&rsquo; です。
+</p>
+</dd>
+<dt> コンテンツのない RSS フィード</dt>
+<dd><p>多くのフィードには記事の完全なコンテンツが無いか、またはいぢわるに小出し
+にします。サイトがちゃんと記事を書かずに、そのようなフィードしか提供しな
+い場合でも、多くの場合 &lsquo;<samp>rss-blogs</samp>&rsquo; を使って切り抜けることができます。
+設定は &lsquo;<samp>rss-hash</samp>&rsquo; のものと似ています。例を示しましょう:
+</p>
+<table><tr><td>&nbsp;</td><td><pre class="lisp">(setq shimbun-rss-blogs-group-url-regexp
+  '((&quot;first-feed&quot; &quot;http://example/wordpressfeed&quot;)
+    (&quot;second-feed&quot; &quot;http://example/somefeed&quot;
+     &quot;&lt;div name=\&quot;content\&quot;&gt;&quot; &quot;&lt;div name=\&quot;comments\&quot;&gt;&quot;)
+    (&quot;third-feed&quot; &quot;http://example/someotherfeed&quot; 'none)))
+</pre></td></tr></table>
+
+<p>最初の二つのアイテムはフィードの名前と URL です。そのフィードが指し示
+す HTML ページにおいて、実際のコンテンツの始めと終りを探すための二つの正
+規表現を、任意で与えることができます。そこで単に <code>none</code> というシン
+ボルを使うと、いかなる濾過も行なわれません。
+</p>
+<p>加えて、&lsquo;<samp>rss-blogs</samp>&rsquo; はいくつかのポピュラーなブログ・エンジンを自動
+的に扱うことができます。すなわち Google の Blogger/Blogspot (コメント・
+フィードを含みます)、WordPress、および TypePad です。フィードを取り寄せ
+るサイトがそれらの一つを使っているなら (<code>generator</code> タグを眺めれば
+わかります)、単に任意のパラメータを省略するだけで、自動的にコンテンツを
+切り出そうとするでしょう。
+</p>
+</dd>
+<dt> Wiki コンテンツ</dt>
+<dd><p>閲覧したい Wiki の URL を調べて、以下のように設定して使います。
+PukiWiki と Hiki に対応しています。もし、各内側のリストの 4 番目、5 番目
+の要素の正規表現に何を指定して良いか分からないときは、<code>nil</code> を指定
+すれば良いでしょう。記事の取得時に整形が行われず、ただページ全体が見える
+だけです。
+</p>
+<table><tr><td>&nbsp;</td><td><pre class="lisp">(setq shimbun-wiki-group-alist
+      '((&quot;pukiwiki&quot; ;; グループ名
+         &quot;http://pukiwiki.org/index.php?cmd=rss10&quot; ;; URL
+         &quot;webmaster@pukiwiki.org&quot; ;; メールアドレス
+         nil ;; X-Face
+         &quot;\n&lt;h3 id=\&quot;&quot; ;; contents の start を示す regexp
+         &quot;&lt;/address&gt;&quot;) ;; contents の end を示す regexp
+        (&quot;hiki&quot;
+         &quot;http://www.namaraii.com/hiki/?c=rss&quot;
+         &quot;webmaster@fdiary.net&quot;
+         nil
+         &quot;&lt;div class=\&quot;section\&quot;&gt;&quot;
+         &quot;&lt;div class=\&quot;sidebar\&quot;&gt;&quot;)
+        (&quot;apollo&quot;
+         &quot;http://wiki.fdiary.net/apollo/?c=rss&quot;
+         &quot;moriq@moriq.com&quot;
+         nil
+         &quot;&lt;div class=\&quot;section\&quot;&gt;&quot;
+         &quot;&lt;div class=\&quot;sidebar\&quot;&gt;&quot;)
+        ))
+</pre></td></tr></table>
+
+</dd>
+<dt> <a href="http://auctions.yahoo.co.jp/">Yahoo!オークション</a></dt>
+<dd><p>閲覧したいカテゴリや検索結果の URL を調べて、以下のように設定して使いま
+す。
+</p>
+<table><tr><td>&nbsp;</td><td><pre class="lisp">(setq shimbun-yahoo-auctions-group-alist
+      '((&quot;mp3player&quot; . &quot;http://list3.auctions.yahoo.co.jp/jp/show/catleaf_rss?category=2084039708&amp;alocale=0jp&quot;)
+        (&quot;iPod&quot; . &quot;http://search3.auctions.yahoo.co.jp/search_rss?p=iPod&amp;auccat=2084039708&amp;alocale=0jp&amp;acc=jp&quot;)))
+</pre></td></tr></table>
+
+</dd>
+<dt> <a href="http://www.vinelinux.org/">VineLinux Errata</a></dt>
+<dd><p>vinelinux.errata.4x.i386 vinelinux.errata.4x.ppc
+vinelinux.errata.3x.i386 vinelinux.errata.3x.ppc
+vinelinux.errata.3x.alpha
+vinelinux.errata.2x.i386 vinelinux.errata.2x.ppc
+vinelinux.errata.2x.sparc vinelinux.errata.2x.alpha
+vinelinux.errata.1x
+</p>
+</dd>
+<dt> <a href="http://www.kantei.go.jp/">内閣ブログ/メールマガジン</a></dt>
+<dd><p>kantei.blog-en kantei.blog-ja kantei.blog-en.kan kantei.blog-ja.kan
+kantei.m-magazine-cn.hatoyama kantei.m-magazine-kr.hatoyama
+kantei.m-magazine-en.hatoyama kantei.m-magazine-ja.hatoyama
+kantei.m-magazine-en.aso kantei.m-magazine-ja.aso
+kantei.m-magazine-en.fukuda kantei.m-magazine-ja.fukuda
+kantei.m-magazine-en.abe kantei.m-magazine-ja.abe
+kantei.m-magazine-en.koizumi kantei.m-magazine-ja.koizumi
+kantei.m-magazine
+</p>
+<p>後方互換性のため &lsquo;<samp>kantei.m-magazine</samp>&rsquo; も利用可能になっています。
+</p>
+</dd>
+<dt> <a href="http://www.jpo.go.jp/">特許庁</a></dt>
+<dd><p>jpo.news jpo.revision jpo.lawguide jpo.details
+</p>
+</dd>
+<dt> <a href="http://www-6.ibm.com/jp/developerworks/">IBM developerWorks</a></dt>
+<dd><p>ibm-dev.autonomic ibm-dev.java ibm-dev.linux ibm-dev.opensource
+ibm-dev.webservices ibm-dev.xml
+</p>
+</dd>
+<dt> <a href="http://www.pocketgames.jp/">Pocketgames</a></dt>
+<dd><p>pocketgames.news
+</p>
+</dd>
+<dt> <a href="http://www.wince.ne.jp/">Wincefan</a></dt>
+<dd><p>wincefan.news
+</p>
+</dd>
+<dt> <a href="http://www.palmfan.com/">PalmFan</a></dt>
+<dd><p>palmfan.news
+</p>
+</dd>
+<dt> <a href="http://homepage1.nifty.com/akiba/plat.html">電脳街の現場レポート</a></dt>
+<dd><p>dennou.report
+</p>
+</dd>
+<dt> <a href="http://pcweb.mycom.co.jp/column/">PCWEB COLUMN Square</a></dt>
+<dd><p>pcweb-column.jsr pcweb-column.yume pcweb-column.hreceipe
+pcweb-column.kita pcweb-column.shonanlife pcweb-column.kaden
+pcweb-column.nemurenai pcweb-column.komono pcweb-column.js
+pcweb-column.en pcweb-column.motherboard pcweb-column.svalley
+pcweb-column.architecture pcweb-column.motorlife
+pcweb-column.nihongoprog pcweb-column.objc pcweb-column.ide
+pcweb-column.music pcweb-column.itsecurity pcweb-column.soundvisual
+pcweb-column.osx pcweb-column.sopinion pcweb-column.ebook
+pcweb-column.orerobo pcweb-column.zsh pcweb-column.rikei
+pcweb-column.lifehack pcweb-column.world pcweb-column.guutara
+pcweb-column.volt pcweb-column.textclean pcweb-column.person
+pcweb-column.web20 pcweb-column.system
+</p>
+<p>後方互換性のため、以下のアイテムも利用可能になっています。
+pcweb-column.itshihonron pcweb-column.yetanother pcweb-column.asia
+pcweb-column.benri pcweb-column.bytes pcweb-column.game
+pcweb-column.hitech pcweb-column.java pcweb-column.jisakuparts
+pcweb-column.scramble pcweb-column.toolexp pcweb-column.winvista
+pcweb-column.winxp pcweb-column.interview pcweb-column.ityougo
+pcweb-column.kimeuchi pcweb-column.stratesys pcweb-column.toyagain
+</p>
+</dd>
+<dt> <a href="http://tsuruo.dominohosting.biz/members/tsuruo/">ノーツ陳列館</a></dt>
+<dd><p>lotusex.news lotusex.library lotusex.operation lotusex.primer
+lotusex.tips lotusex.practical lotusex.qanda lotusex.lounge
+lotusex.bbs
+</p>
+</dd>
+<dt> <a href="http://www.atmarkit.co.jp">＠ITフォーラム</a></dt>
+<dd><p>atmarkit.news atmarkit.fwin2k atmarkit.fdotnet atmarkit.fsys
+atmarkit.fxml atmarkit.fdb atmarkit.flinux atmarkit.fnetwork
+atmarkit.fjava atmarkit.fsecurity atmarkit.farc atmarkit.fbiz
+atmarkit.fwcr atmarkit.jibun
+</p>
+</dd>
+<dt> <a href="http://www.matsusaka-u.ac.jp/~okumura/texfaq/qa/">TeX Q&amp;A 掲示板</a></dt>
+<dd><p>texfaq.qanda
+</p>
+</dd>
+<dt> <a href="http://x51.org/">X51.org</a></dt>
+<dd><p>x51.anima x51.art x51.auction x51.blow x51.cabal x51.crime x51.disaster
+x51.edge x51.enema x51.ghost x51.homme x51.info x51.life x51.love
+x51.media x51.medical x51.military x51.northkorea x51.oparts x51.phallic
+x51.psychics x51.religion x51.science x51.top x51.ufo x51.uma x51.xfiles
+</p>
+</dd>
+<dt> <a href="http://www.exconn.net/">eXperts Connection (eXConn)</a></dt>
+<dd><p>exconn.news
+</p>
+</dd>
+<dt> <a href="http://msdn.microsoft.com/">MSDN</a></dt>
+<dd><p>msdn.all msdn.netframework msdn.architecture msdn.asp.net msdn.data
+msdn.longhorn msdn.mobility msdn.subscriptions msdn.msdntv msdn.office
+msdn.security msdn.sql msdn.theshow msdn.vbasic msdn.vcsharp
+msdn.visualc msdn.vfoxpro msdn.vjsharp msdn.vstudio msdn.vs2005
+msdn.webservices msdn.embedded msdn.xml msdn.japan.msdn
+msdn.japan.msdn-us
+</p>
+</dd>
+<dt> <a href="http://haiku-os.org/">Haiku OS</a></dt>
+<dd><p>haiku-os.news haiku-os.forums haiku-os.newsletters
+</p>
+</dd>
+<dt> <a href="http://www.ffii.org/">Foundation for a Free Information Infrastructure</a></dt>
+<dd><p>ffii.en.software-patents ffii.en.software-patents.ffii
+ffii.en.information-infrastructure ffii.en.project
+ffii.de.software-patente ffii.de.software-patente.ffii
+ffii.de.informations-infrastruktur ffii.fr.brevets-logiciels
+ffii.fr.brevets-logiciels.ffii ffii.nl.softwarepatenten
+ffii.nl.softwarepatenten.ffii
+</p>
+</dd>
+<dt> <a href="http://yoshinori-kobayashi.com/">小林よしのり公式サイト</a></dt>
+<dd><p>yoshirin.blog yoshirin.topics
+</p></dd>
+</dl>
+
+<hr size="6">
+<table cellpadding="1" cellspacing="1" border="0">
+<tr><td valign="middle" align="left">[<a href="#Sport-Sites-Supported-by-Shimbun" title="Previous section in reading order"> &lt; </a>]</td>
+<td valign="middle" align="left">[<a href="emacs-w3m-ja_62.html#Shimbun-Basics" title="Next section in reading order"> &gt; </a>]</td>
+<td valign="middle" align="left"> &nbsp; </td>
+<td valign="middle" align="left">[<a href="emacs-w3m-ja_56.html#Shimbun-Library" title="Beginning of this chapter or previous chapter"> &lt;&lt; </a>]</td>
+<td valign="middle" align="left">[<a href="#Shimbun-Sites" title="Up section">ä¸</a>]</td>
+<td valign="middle" align="left">[<a href="emacs-w3m-ja_63.html#Tips" title="Next chapter"> &gt;&gt; </a>]</td>
+</tr></table>
+<p>
+ <font size="-1">
+  ãã®ææ¸ã¯<em>TSUCHIYA Masatoshi</em>ã«ãã£ã¦<em>2019å¹´1ææ30æ¥</em>ã«<a href="http://www.nongnu.org/texi2html/"><em>texi2html 1.82</em></a>ãç¨ãã¦çæããã¾ããã
+ </font>
+ <br>
+
+</p>
+</body>
+</html>

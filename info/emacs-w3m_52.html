@@ -1,0 +1,157 @@
+<!DOCTYPE html PUBLIC "-//W3C//DTD HTML 4.01 Transitional//EN" "http://www.w3.org/TR/html401/loose.dtd">
+<html>
+<!-- Copyright C 2000-2014 TSUCHIYA Masatoshi
+
+Permission is granted to copy, distribute and/or modify this document
+under the terms of the GNU General Public License, Version 2 or any
+later version published by the Free Software Foundation.
+
+This document is distributed in the hope that it will be useful, but
+WITHOUT ANY WARRANTY; without even the implied warranty of
+MERCHANTABILITY or FITNESS FOR A PARTICULAR PURPOSE.  See the GNU
+General Public License for more details.
+
+You should have received a copy of the GNU General Public License along
+with this document; see the file COPYING.  If not, write to the Free
+Software Foundation, Inc., 51 Franklin Street, Fifth Floor, Boston, MA
+02110-1301, USA.
+
+ -->
+<!-- Created on January 30, 2019 by texi2html 1.82
+texi2html was written by: 
+            Lionel Cons <Lionel.Cons@cern.ch> (original author)
+            Karl Berry  <karl@freefriends.org>
+            Olaf Bachmann <obachman@mathematik.uni-kl.de>
+            and many others.
+Maintained by: Many creative people.
+Send bugs and suggestions to <texi2html-bug@nongnu.org>
+-->
+<head>
+<title>Emacs-w3m &ndash; an Emacs interface to w3m &ndash;: 7.1 General Questions</title>
+
+<meta name="description" content="Emacs-w3m &ndash; an Emacs interface to w3m &ndash;: 7.1 General Questions">
+<meta name="keywords" content="Emacs-w3m &ndash; an Emacs interface to w3m &ndash;: 7.1 General Questions">
+<meta name="resource-type" content="document">
+<meta name="distribution" content="global">
+<meta name="Generator" content="texi2html 1.82">
+<meta http-equiv="Content-Type" content="text/html; charset=utf-8">
+<style type="text/css">
+<!--
+a.summary-letter {text-decoration: none}
+blockquote.smallquotation {font-size: smaller}
+pre.display {font-family: serif}
+pre.format {font-family: serif}
+pre.menu-comment {font-family: serif}
+pre.menu-preformatted {font-family: serif}
+pre.smalldisplay {font-family: serif; font-size: smaller}
+pre.smallexample {font-size: smaller}
+pre.smallformat {font-family: serif; font-size: smaller}
+pre.smalllisp {font-size: smaller}
+span.roman {font-family:serif; font-weight:normal;}
+span.sansserif {font-family:sans-serif; font-weight:normal;}
+ul.toc {list-style: none}
+-->
+</style>
+
+
+</head>
+
+<body lang="en" bgcolor="#FFFFFF" text="#000000" link="#0000FF" vlink="#800080" alink="#FF0000">
+
+<a name="General-FAQ"></a>
+<table cellpadding="1" cellspacing="1" border="0">
+<tr><td valign="middle" align="left">[<a href="emacs-w3m_51.html#Frequently-Asked-Questions" title="Previous section in reading order"> &lt; </a>]</td>
+<td valign="middle" align="left">[<a href="emacs-w3m_53.html#Trouble-FAQ" title="Next section in reading order"> &gt; </a>]</td>
+<td valign="middle" align="left"> &nbsp; </td>
+<td valign="middle" align="left">[<a href="emacs-w3m_51.html#Frequently-Asked-Questions" title="Beginning of this chapter or previous chapter"> &lt;&lt; </a>]</td>
+<td valign="middle" align="left">[<a href="emacs-w3m_51.html#Frequently-Asked-Questions" title="Up section"> Up </a>]</td>
+<td valign="middle" align="left">[<a href="emacs-w3m_55.html#Known-Problems" title="Next chapter"> &gt;&gt; </a>]</td>
+<td valign="middle" align="left"> &nbsp; </td>
+<td valign="middle" align="left"> &nbsp; </td>
+<td valign="middle" align="left"> &nbsp; </td>
+<td valign="middle" align="left"> &nbsp; </td>
+<td valign="middle" align="left">[<a href="emacs-w3m.html#Top" title="Cover (top) of document">Top</a>]</td>
+<td valign="middle" align="left">[<a href="emacs-w3m_toc.html#SEC_Contents" title="Table of contents">Contents</a>]</td>
+<td valign="middle" align="left">[<a href="emacs-w3m_68.html#Index" title="Index">Index</a>]</td>
+<td valign="middle" align="left">[<a href="emacs-w3m_abt.html#SEC_About" title="About (help)"> ? </a>]</td>
+</tr></table>
+<a name="General-Questions"></a>
+<h2 class="section">7.1 General Questions</h2>
+
+<ul>
+<li>
+Q. What&rsquo;s emacs-w3m?
+
+<p>It is an interface program on Emacs which controls w3m.  For more
+information, see <a href="emacs-w3m_1.html#Introduction">Preliminary remarks</a>.
+</p>
+</li><li>
+Q. Which emacs versions are supported?
+
+<p>The following Emacsen have been checked for emacs-w3m support:
+</p>
+<ul>
+<li> Emacs 21
+</li><li> Emacs 22
+</li><li> XEmacs 21.4.17 and later with/without Mule
+</li><li> XEmacs 21.5-b19 and later with/without Mule
+</li><li> Meadow
+</li></ul>
+
+<p>Note that you&rsquo;re required to use <acronym>APEL</acronym> if you&rsquo;d like to run
+emacs-w3m under XEmacs.  For more information, see <a href="emacs-w3m_5.html#Other-Requirements">Things required to run emacs-w3m</a>.
+</p>
+</li><li>
+Q. Which w3m versions are supported?
+
+<p>The following w3m versions have been checked for emacs-w3m support:
+</p>
+<ul>
+<li> w3m-0.3 and later
+</li><li> w3mmee-p24-18 + moe-1.5.4
+
+<p>Note that w3mmee mentioned as the example is configured with the
+&lsquo;<samp>lang=many</samp>&rsquo; option (it can be done by entering 3, when the
+&lsquo;<samp>configure</samp>&rsquo; script prompts you, &quot;Which language do you prefer?&quot;).
+It also requires the &lsquo;<samp>libmoe</samp>&rsquo; package.
+</p></li></ul>
+
+</li><li>
+Q. I&rsquo;ve already installed <acronym>APEL</acronym> in the XEmacs SUMO package, is
+it ok?
+
+<p>There are some problems in the XEmacs <acronym>APEL</acronym> package (all
+modules have been compiled for XEmacs with Mule); for instance, the
+&lsquo;<samp>std11</samp>&rsquo; modules conflict with the <acronym>FLIM</acronym>&rsquo;s one, etc.  Even
+though you can use &lsquo;<tt>apel-1.23-pkg.tar.gz</tt>&rsquo; or later for both XEmacs
+with Mule and non-Mule XEmacs if you don&rsquo;t use <acronym>FLIM</acronym> for the
+&lsquo;<samp>shimbun</samp>&rsquo; features, we recommend you replace it or newly install
+the original <acronym>APEL</acronym> package.  See <a href="emacs-w3m_5.html#Other-Requirements">Things required to run emacs-w3m</a> where
+to get it from.
+</p>
+</li><li>
+Q. I&rsquo;ve gotten the developing version of emacs-w3m with CVS, however I&rsquo;m
+missing &lsquo;<tt>configure</tt>&rsquo; script.
+
+<p>It is necessary to run &lsquo;<samp>autoconf</samp>&rsquo; first, to generate
+&lsquo;<tt>configure</tt>&rsquo; script.
+</p></li></ul>
+
+<hr size="6">
+<table cellpadding="1" cellspacing="1" border="0">
+<tr><td valign="middle" align="left">[<a href="emacs-w3m_51.html#Frequently-Asked-Questions" title="Previous section in reading order"> &lt; </a>]</td>
+<td valign="middle" align="left">[<a href="emacs-w3m_53.html#Trouble-FAQ" title="Next section in reading order"> &gt; </a>]</td>
+<td valign="middle" align="left"> &nbsp; </td>
+<td valign="middle" align="left">[<a href="emacs-w3m_51.html#Frequently-Asked-Questions" title="Beginning of this chapter or previous chapter"> &lt;&lt; </a>]</td>
+<td valign="middle" align="left">[<a href="emacs-w3m_51.html#Frequently-Asked-Questions" title="Up section"> Up </a>]</td>
+<td valign="middle" align="left">[<a href="emacs-w3m_55.html#Known-Problems" title="Next chapter"> &gt;&gt; </a>]</td>
+</tr></table>
+<p>
+ <font size="-1">
+  This document was generated by <em>TSUCHIYA Masatoshi</em> on <em>January 30, 2019</em> using <a href="http://www.nongnu.org/texi2html/"><em>texi2html 1.82</em></a>.
+ </font>
+ <br>
+
+</p>
+</body>
+</html>

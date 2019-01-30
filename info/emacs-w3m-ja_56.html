@@ -1,0 +1,165 @@
+<!DOCTYPE html PUBLIC "-//W3C//DTD HTML 4.01 Transitional//EN" "http://www.w3.org/TR/html401/loose.dtd">
+<html>
+<!-- Copyright C 2000-2014 TSUCHIYA Masatoshi
+
+Permission is granted to copy, distribute and/or modify this document
+under the terms of the GNU General Public License, Version 2 or any
+later version published by the Free Software Foundation.
+
+この文書を、フリーソフトウェア財団によって発行された GNU 一般公衆利用許
+諾契約書第 2 版またはそれ以降の版のうちどれかの定める条件の下で複製、配
+布、あるいは変更することを許可します。
+
+This document is distributed in the hope that it will be useful, but
+WITHOUT ANY WARRANTY; without even the implied warranty of
+MERCHANTABILITY or FITNESS FOR A PARTICULAR PURPOSE.  See the GNU
+General Public License for more details.
+
+この文書は有用であることを願って頒布されますが、全くの無保証 です。
+商業可能性 の保証や 特定の目的への適合性 は、言外に示され
+たものも含め全く存在しません。詳しくは GNU 一般公衆利用許諾契約書をご覧
+ください。
+
+You should have received a copy of the GNU General Public License along
+with this document; see the file COPYING.  If not, write to the Free
+Software Foundation, Inc., 51 Franklin Street, Fifth Floor, Boston, MA
+02110-1301, USA.
+
+あなたはこの文書と共に、GNU 一般公衆利用許諾契約書の複製物を一部受け取っ
+たはずです。COPYING ファイルを参照してください。もし受け取っていなければ、
+フリーソフトウェア財団まで請求してください (宛先は the Free Software
+Foundation, Inc., 59 Temple Place, Suite 330, Boston, MA 02111-1307 USA)。
+
+ -->
+<!-- Created on 2019å¹´1ææ30æ¥ by texi2html 1.82
+texi2html was written by: 
+            Lionel Cons <Lionel.Cons@cern.ch> (original author)
+            Karl Berry  <karl@freefriends.org>
+            Olaf Bachmann <obachman@mathematik.uni-kl.de>
+            and many others.
+Maintained by: Many creative people.
+Send bugs and suggestions to <texi2html-bug@nongnu.org>
+-->
+<head>
+<title>Emacs-w3m &ndash; an Emacs interface to w3m &ndash;: 9. ウェブ上の新聞を読むための道具</title>
+
+<meta name="description" content="Emacs-w3m &ndash; an Emacs interface to w3m &ndash;: 9. ウェブ上の新聞を読むための道具">
+<meta name="keywords" content="Emacs-w3m &ndash; an Emacs interface to w3m &ndash;: 9. ウェブ上の新聞を読むための道具">
+<meta name="resource-type" content="document">
+<meta name="distribution" content="global">
+<meta name="Generator" content="texi2html 1.82">
+<meta http-equiv="Content-Type" content="text/html; charset=utf-8">
+<style type="text/css">
+<!--
+a.summary-letter {text-decoration: none}
+blockquote.smallquotation {font-size: smaller}
+pre.display {font-family: serif}
+pre.format {font-family: serif}
+pre.menu-comment {font-family: serif}
+pre.menu-preformatted {font-family: serif}
+pre.smalldisplay {font-family: serif; font-size: smaller}
+pre.smallexample {font-size: smaller}
+pre.smallformat {font-family: serif; font-size: smaller}
+pre.smalllisp {font-size: smaller}
+span.roman {font-family:serif; font-weight:normal;}
+span.sansserif {font-family:sans-serif; font-weight:normal;}
+ul.toc {list-style: none}
+-->
+</style>
+
+
+</head>
+
+<body lang="ja" bgcolor="#FFFFFF" text="#000000" link="#0000FF" vlink="#800080" alink="#FF0000">
+
+<a name="Shimbun-Library"></a>
+<table cellpadding="1" cellspacing="1" border="0">
+<tr><td valign="middle" align="left">[<a href="emacs-w3m-ja_55.html#Known-Problems" title="Previous section in reading order"> &lt; </a>]</td>
+<td valign="middle" align="left">[<a href="emacs-w3m-ja_57.html#Nnshimbun" title="Next section in reading order"> &gt; </a>]</td>
+<td valign="middle" align="left"> &nbsp; </td>
+<td valign="middle" align="left">[<a href="emacs-w3m-ja_55.html#Known-Problems" title="Beginning of this chapter or previous chapter"> &lt;&lt; </a>]</td>
+<td valign="middle" align="left">[<a href="emacs-w3m-ja.html#Top" title="Up section">ä¸</a>]</td>
+<td valign="middle" align="left">[<a href="emacs-w3m-ja_63.html#Tips" title="Next chapter"> &gt;&gt; </a>]</td>
+<td valign="middle" align="left"> &nbsp; </td>
+<td valign="middle" align="left"> &nbsp; </td>
+<td valign="middle" align="left"> &nbsp; </td>
+<td valign="middle" align="left"> &nbsp; </td>
+<td valign="middle" align="left">[<a href="emacs-w3m-ja.html#Top" title="Cover (top) of document">åé ­</a>]</td>
+<td valign="middle" align="left">[<a href="emacs-w3m-ja_toc.html#SEC_Contents" title="Table of contents">ç®æ¬¡</a>]</td>
+<td valign="middle" align="left">[<a href="emacs-w3m-ja_68.html#Index" title="è¦åºã">è¦åºã</a>]</td>
+<td valign="middle" align="left">[<a href="emacs-w3m-ja_abt.html#SEC_About" title="About (help)"> ? </a>]</td>
+</tr></table>
+<a name="uebuShang-noXin-Wen-woDu-mutamenoDao-Ju-"></a>
+<h1 class="chapter">9. ウェブ上の新聞を読むための道具</h1>
+<a name="index-Shimbun-library"></a>
+
+<p>ウェブでは、ますます多くの新聞、メーリングリストのアーカイブ、掲示板、あ
+るいは個人の日記 (hyper nikki system、weblogs または blogs) が公開されて
+います。&lsquo;<samp>Shimbun</samp>&rsquo; ライブラリは、それらのコンテンツを貴方の好みのメー
+ラーで読むことができるようにします。具体的には、それらのコンテンツを、メー
+ルのように整形・整理する機能を提供します。
+</p>
+<p>すべての &lsquo;<samp>shimbun</samp>&rsquo; モジュールは、普通のメールやニュースのように読む
+ことができる記事を生成することを目標にしています。しかしながら、ウェブサ
+イトがそれらの記事の html をしばしば変更するので、その度に私たちは困難に
+ぶつかります。
+</p>
+<p>もし、無意味な画像や、記事とは関係の無いテキストが現れるのに気がついたら、
+(たとえ些細なものでも) <code>report-emacs-w3m-bug</code> (see section <a href="emacs-w3m-ja_64.html#Mailing-List">メーリングリスト、バグリポート</a>) を使って報告してください。
+</p>
+<p>&lsquo;<samp>Shimbun</samp>&rsquo; ライブラリは、現在、朝日新聞、読売オンライン、Emacs Devel、
+XEmacs Beta、Gnus/Mew/Wanderlust などのメーリングリスト、Slashdot、
+Slashdot Japan、および他のたくさんのものに対応しています。具体的には、
+<a href="emacs-w3m-ja_61.html#Shimbun-Sites">新聞が読めるサイト</a> を参照してください。
+</p>
+<p>ところで、&lsquo;<samp>Shimbun</samp>&rsquo; ライブラリを利用する時は、著作権について注意が
+必要です。&lsquo;<samp>Shimbun</samp>&rsquo; ライブラリによって加工・生成された記事の著作権
+は、その記事を生成する元になったデータの著作者に帰属します。したがって、
+得られた記事を利用する場合は、元のデータの著作者の権利を侵害しない範囲を
+守る法律上の義務があります。つまり、著作権法に定められた「私的利用」の範
+囲を守らなければならない、ということです。
+</p>
+<p>&lsquo;<samp>Shimbun</samp>&rsquo; ライブラリを利用したことによって、万が一あなたが不利益を
+被ったり、あなたが他者の権利を侵害したことによってあなたが訴えられたとし
+ても、emacs-w3m 開発チームは一切の責任を負いません。
+</p>
+<p>&lsquo;<samp>Shimbun</samp>&rsquo; ライブラリはたくさんのモジュールのコレクションで、それら
+の各々は単独では何の役にも立ちません。
+ここでは代表的な三つの &lsquo;<samp>Shimbun</samp>&rsquo; のアプリケーションプログラム (それ
+らのうちの二つは &lsquo;<samp>Shimbun</samp>&rsquo; ライブラリに含まれています) と、あなたが
+自分で &lsquo;<samp>Shimbun</samp>&rsquo; モジュールを作る方法について説明します (Emacs
+Lisp プログラムを書くことができる必要があります)。
+</p>
+<table class="menu" border="0" cellspacing="0">
+<tr><td align="left" valign="top"><a href="emacs-w3m-ja_57.html#Nnshimbun">9.1 Gnus をウェブブラウザにする!</a></td><td>&nbsp;&nbsp;</td><td align="left" valign="top"></td></tr>
+<tr><td align="left" valign="top"><a href="emacs-w3m-ja_58.html#Mew-Shimbun">9.2 Mew で新聞を読む</a></td><td>&nbsp;&nbsp;</td><td align="left" valign="top"></td></tr>
+<tr><td align="left" valign="top"><a href="emacs-w3m-ja_59.html#Shimbun-with-Wanderlust">9.3 Wanderlust で新聞を読む</a></td><td>&nbsp;&nbsp;</td><td align="left" valign="top"></td></tr>
+<tr><td align="left" valign="top"><a href="emacs-w3m-ja_60.html#Shimbun-local-mode">9.4 新聞の取得にシェルスクリプトを使う</a></td><td>&nbsp;&nbsp;</td><td align="left" valign="top"></td></tr>
+<tr><td align="left" valign="top"><a href="emacs-w3m-ja_61.html#Shimbun-Sites">9.5 新聞が読めるサイト</a></td><td>&nbsp;&nbsp;</td><td align="left" valign="top"></td></tr>
+<tr><td align="left" valign="top"><a href="emacs-w3m-ja_62.html#Shimbun-Basics">9.6 新聞モジュールの作り方</a></td><td>&nbsp;&nbsp;</td><td align="left" valign="top"></td></tr>
+</table>
+
+<p>&lsquo;<samp>Shimbun</samp>&rsquo; ライブラリを利用するためには、emacs-w3m を構築してインス
+トールする前に <acronym>FLIM</acronym> パッケージ (加えて &lsquo;<samp>nnshimbun</samp>&rsquo; を使い
+たければ Gnus) をインストールする必要があることに注意してください。
+<acronym>FLIM</acronym> パッケージには <acronym>APEL</acronym> パッケージが必要です。あな
+たは <a href="emacs-w3m-ja_5.html#Other-Requirements">Emacs-w3m を動作させるのに必要なもの</a> も見るべきかもしれません。
+</p>
+<hr size="6">
+<table cellpadding="1" cellspacing="1" border="0">
+<tr><td valign="middle" align="left">[<a href="emacs-w3m-ja_55.html#Known-Problems" title="Previous section in reading order"> &lt; </a>]</td>
+<td valign="middle" align="left">[<a href="emacs-w3m-ja_57.html#Nnshimbun" title="Next section in reading order"> &gt; </a>]</td>
+<td valign="middle" align="left"> &nbsp; </td>
+<td valign="middle" align="left">[<a href="emacs-w3m-ja_55.html#Known-Problems" title="Beginning of this chapter or previous chapter"> &lt;&lt; </a>]</td>
+<td valign="middle" align="left">[<a href="emacs-w3m-ja.html#Top" title="Up section">ä¸</a>]</td>
+<td valign="middle" align="left">[<a href="emacs-w3m-ja_63.html#Tips" title="Next chapter"> &gt;&gt; </a>]</td>
+</tr></table>
+<p>
+ <font size="-1">
+  ãã®ææ¸ã¯<em>TSUCHIYA Masatoshi</em>ã«ãã£ã¦<em>2019å¹´1ææ30æ¥</em>ã«<a href="http://www.nongnu.org/texi2html/"><em>texi2html 1.82</em></a>ãç¨ãã¦çæããã¾ããã
+ </font>
+ <br>
+
+</p>
+</body>
+</html>

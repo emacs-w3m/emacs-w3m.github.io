@@ -1,0 +1,125 @@
+<!DOCTYPE html PUBLIC "-//W3C//DTD HTML 4.01 Transitional//EN" "http://www.w3.org/TR/html401/loose.dtd">
+<html>
+<!-- Copyright C 2000-2014 TSUCHIYA Masatoshi
+
+Permission is granted to copy, distribute and/or modify this document
+under the terms of the GNU General Public License, Version 2 or any
+later version published by the Free Software Foundation.
+
+This document is distributed in the hope that it will be useful, but
+WITHOUT ANY WARRANTY; without even the implied warranty of
+MERCHANTABILITY or FITNESS FOR A PARTICULAR PURPOSE.  See the GNU
+General Public License for more details.
+
+You should have received a copy of the GNU General Public License along
+with this document; see the file COPYING.  If not, write to the Free
+Software Foundation, Inc., 51 Franklin Street, Fifth Floor, Boston, MA
+02110-1301, USA.
+
+ -->
+<!-- Created on January 30, 2019 by texi2html 1.82
+texi2html was written by: 
+            Lionel Cons <Lionel.Cons@cern.ch> (original author)
+            Karl Berry  <karl@freefriends.org>
+            Olaf Bachmann <obachman@mathematik.uni-kl.de>
+            and many others.
+Maintained by: Many creative people.
+Send bugs and suggestions to <texi2html-bug@nongnu.org>
+-->
+<head>
+<title>Emacs-w3m &ndash; an Emacs interface to w3m &ndash;: 4.9 Grouping sessions into separate frames</title>
+
+<meta name="description" content="Emacs-w3m &ndash; an Emacs interface to w3m &ndash;: 4.9 Grouping sessions into separate frames">
+<meta name="keywords" content="Emacs-w3m &ndash; an Emacs interface to w3m &ndash;: 4.9 Grouping sessions into separate frames">
+<meta name="resource-type" content="document">
+<meta name="distribution" content="global">
+<meta name="Generator" content="texi2html 1.82">
+<meta http-equiv="Content-Type" content="text/html; charset=utf-8">
+<style type="text/css">
+<!--
+a.summary-letter {text-decoration: none}
+blockquote.smallquotation {font-size: smaller}
+pre.display {font-family: serif}
+pre.format {font-family: serif}
+pre.menu-comment {font-family: serif}
+pre.menu-preformatted {font-family: serif}
+pre.smalldisplay {font-family: serif; font-size: smaller}
+pre.smallexample {font-size: smaller}
+pre.smallformat {font-family: serif; font-size: smaller}
+pre.smalllisp {font-size: smaller}
+span.roman {font-family:serif; font-weight:normal;}
+span.sansserif {font-family:sans-serif; font-weight:normal;}
+ul.toc {list-style: none}
+-->
+</style>
+
+
+</head>
+
+<body lang="en" bgcolor="#FFFFFF" text="#000000" link="#0000FF" vlink="#800080" alink="#FF0000">
+
+<a name="Frame-Local-Buffers"></a>
+<table cellpadding="1" cellspacing="1" border="0">
+<tr><td valign="middle" align="left">[<a href="emacs-w3m_27.html#Octet" title="Previous section in reading order"> &lt; </a>]</td>
+<td valign="middle" align="left">[<a href="emacs-w3m_29.html#Session-Manager" title="Next section in reading order"> &gt; </a>]</td>
+<td valign="middle" align="left"> &nbsp; </td>
+<td valign="middle" align="left">[<a href="emacs-w3m_19.html#Pretty-Good-Features" title="Beginning of this chapter or previous chapter"> &lt;&lt; </a>]</td>
+<td valign="middle" align="left">[<a href="emacs-w3m_19.html#Pretty-Good-Features" title="Up section"> Up </a>]</td>
+<td valign="middle" align="left">[<a href="emacs-w3m_30.html#Customizable-Variables" title="Next chapter"> &gt;&gt; </a>]</td>
+<td valign="middle" align="left"> &nbsp; </td>
+<td valign="middle" align="left"> &nbsp; </td>
+<td valign="middle" align="left"> &nbsp; </td>
+<td valign="middle" align="left"> &nbsp; </td>
+<td valign="middle" align="left">[<a href="emacs-w3m.html#Top" title="Cover (top) of document">Top</a>]</td>
+<td valign="middle" align="left">[<a href="emacs-w3m_toc.html#SEC_Contents" title="Table of contents">Contents</a>]</td>
+<td valign="middle" align="left">[<a href="emacs-w3m_68.html#Index" title="Index">Index</a>]</td>
+<td valign="middle" align="left">[<a href="emacs-w3m_abt.html#SEC_About" title="About (help)"> ? </a>]</td>
+</tr></table>
+<a name="Grouping-sessions-into-separate-frames"></a>
+<h2 class="section">4.9 Grouping sessions into separate frames</h2>
+
+<p>It is possible to manage groups of emacs-w3m sessions in separate
+frames.  One use for this would be to have two emacs-w3m frames, where
+one contains sessions visiting search engines, and the other sessions
+visiting news sites.
+</p>
+<a name="index-w3m_002dfb_002dmode"></a>
+<p>Emacs-w3m offers some convenient features that allow you to visit many
+web pages at the same time.  For instance, you can use tabs
+(see section <a href="emacs-w3m_14.html#Using-Tabs">Everybody likes tabs</a>) to visit many pages in new sessions, or do so using
+a special URL beginning with &lsquo;<samp>group:</samp>&rsquo; (see section <a href="emacs-w3m_21.html#Grouping-URLs">Visiting several web pages in one URL</a>).
+However, you may want to group them into separate frames if there are
+too many pages.  If so, the <code>w3m-fb-mode</code> command is for you.  Note
+that you have to set the <code>w3m-use-tab</code> variable to non-<code>nil</code>
+(<code>t</code> by default) and set the <code>w3m-pop-up-frames</code> variable to
+<code>nil</code> (the default) in order to use it (see section <a href="emacs-w3m_31.html#General-Variables">General variables</a>).
+</p>
+<p>Typing <kbd>M-x w3m-fb-mode</kbd> toggles the mode, but you can turn the
+mode on by giving a positive integer as a prefix argument to the command
+(zero or less turns it off).
+</p>
+<p>When the <code>w3m-fb-mode</code> is turned on, the sessions that you start in
+the current frame will be associated with only that frame.  Other
+sessions that are opened in other frames will similarly only appear in
+those frames.  In other words, sessions associated with one frame don&rsquo;t
+appear in other frames.  <code>w3m-fb-mode</code> doesn&rsquo;t create any new
+frames, so you need to make them yourself in some way.
+</p>
+<hr size="6">
+<table cellpadding="1" cellspacing="1" border="0">
+<tr><td valign="middle" align="left">[<a href="emacs-w3m_27.html#Octet" title="Previous section in reading order"> &lt; </a>]</td>
+<td valign="middle" align="left">[<a href="emacs-w3m_29.html#Session-Manager" title="Next section in reading order"> &gt; </a>]</td>
+<td valign="middle" align="left"> &nbsp; </td>
+<td valign="middle" align="left">[<a href="emacs-w3m_19.html#Pretty-Good-Features" title="Beginning of this chapter or previous chapter"> &lt;&lt; </a>]</td>
+<td valign="middle" align="left">[<a href="emacs-w3m_19.html#Pretty-Good-Features" title="Up section"> Up </a>]</td>
+<td valign="middle" align="left">[<a href="emacs-w3m_30.html#Customizable-Variables" title="Next chapter"> &gt;&gt; </a>]</td>
+</tr></table>
+<p>
+ <font size="-1">
+  This document was generated by <em>TSUCHIYA Masatoshi</em> on <em>January 30, 2019</em> using <a href="http://www.nongnu.org/texi2html/"><em>texi2html 1.82</em></a>.
+ </font>
+ <br>
+
+</p>
+</body>
+</html>

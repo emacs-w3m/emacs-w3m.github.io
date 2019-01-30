@@ -1,0 +1,170 @@
+<!DOCTYPE html PUBLIC "-//W3C//DTD HTML 4.01 Transitional//EN" "http://www.w3.org/TR/html401/loose.dtd">
+<html>
+<!-- Copyright C 2000-2014 TSUCHIYA Masatoshi
+
+Permission is granted to copy, distribute and/or modify this document
+under the terms of the GNU General Public License, Version 2 or any
+later version published by the Free Software Foundation.
+
+This document is distributed in the hope that it will be useful, but
+WITHOUT ANY WARRANTY; without even the implied warranty of
+MERCHANTABILITY or FITNESS FOR A PARTICULAR PURPOSE.  See the GNU
+General Public License for more details.
+
+You should have received a copy of the GNU General Public License along
+with this document; see the file COPYING.  If not, write to the Free
+Software Foundation, Inc., 51 Franklin Street, Fifth Floor, Boston, MA
+02110-1301, USA.
+
+ -->
+<!-- Created on January 30, 2019 by texi2html 1.82
+texi2html was written by: 
+            Lionel Cons <Lionel.Cons@cern.ch> (original author)
+            Karl Berry  <karl@freefriends.org>
+            Olaf Bachmann <obachman@mathematik.uni-kl.de>
+            and many others.
+Maintained by: Many creative people.
+Send bugs and suggestions to <texi2html-bug@nongnu.org>
+-->
+<head>
+<title>Emacs-w3m &ndash; an Emacs interface to w3m &ndash;: 2.6 Minimal settings to run emacs-w3m</title>
+
+<meta name="description" content="Emacs-w3m &ndash; an Emacs interface to w3m &ndash;: 2.6 Minimal settings to run emacs-w3m">
+<meta name="keywords" content="Emacs-w3m &ndash; an Emacs interface to w3m &ndash;: 2.6 Minimal settings to run emacs-w3m">
+<meta name="resource-type" content="document">
+<meta name="distribution" content="global">
+<meta name="Generator" content="texi2html 1.82">
+<meta http-equiv="Content-Type" content="text/html; charset=utf-8">
+<style type="text/css">
+<!--
+a.summary-letter {text-decoration: none}
+blockquote.smallquotation {font-size: smaller}
+pre.display {font-family: serif}
+pre.format {font-family: serif}
+pre.menu-comment {font-family: serif}
+pre.menu-preformatted {font-family: serif}
+pre.smalldisplay {font-family: serif; font-size: smaller}
+pre.smallexample {font-size: smaller}
+pre.smallformat {font-family: serif; font-size: smaller}
+pre.smalllisp {font-size: smaller}
+span.roman {font-family:serif; font-weight:normal;}
+span.sansserif {font-family:sans-serif; font-weight:normal;}
+ul.toc {list-style: none}
+-->
+</style>
+
+
+</head>
+
+<body lang="en" bgcolor="#FFFFFF" text="#000000" link="#0000FF" vlink="#800080" alink="#FF0000">
+
+<a name="Minimal-Settings"></a>
+<table cellpadding="1" cellspacing="1" border="0">
+<tr><td valign="middle" align="left">[<a href="emacs-w3m_7.html#Non_002dUNIX_002dlike-systems" title="Previous section in reading order"> &lt; </a>]</td>
+<td valign="middle" align="left">[<a href="emacs-w3m_9.html#Basic-Usage" title="Next section in reading order"> &gt; </a>]</td>
+<td valign="middle" align="left"> &nbsp; </td>
+<td valign="middle" align="left">[<a href="emacs-w3m_2.html#Getting-Started" title="Beginning of this chapter or previous chapter"> &lt;&lt; </a>]</td>
+<td valign="middle" align="left">[<a href="emacs-w3m_2.html#Getting-Started" title="Up section"> Up </a>]</td>
+<td valign="middle" align="left">[<a href="emacs-w3m_9.html#Basic-Usage" title="Next chapter"> &gt;&gt; </a>]</td>
+<td valign="middle" align="left"> &nbsp; </td>
+<td valign="middle" align="left"> &nbsp; </td>
+<td valign="middle" align="left"> &nbsp; </td>
+<td valign="middle" align="left"> &nbsp; </td>
+<td valign="middle" align="left">[<a href="emacs-w3m.html#Top" title="Cover (top) of document">Top</a>]</td>
+<td valign="middle" align="left">[<a href="emacs-w3m_toc.html#SEC_Contents" title="Table of contents">Contents</a>]</td>
+<td valign="middle" align="left">[<a href="emacs-w3m_68.html#Index" title="Index">Index</a>]</td>
+<td valign="middle" align="left">[<a href="emacs-w3m_abt.html#SEC_About" title="About (help)"> ? </a>]</td>
+</tr></table>
+<a name="Minimal-settings-to-run-emacs_002dw3m"></a>
+<h2 class="section">2.6 Minimal settings to run emacs-w3m</h2>
+
+<p>This section mentions some fundamental settings for emacs-w3m.  If you
+want to fine-tune your installation, you&rsquo;ll find many customizable
+variables in <a href="emacs-w3m_30.html#Customizable-Variables">Customizable variables</a>.
+</p>
+<dl compact="compact">
+<dt> &lsquo;<samp>Autoloads</samp>&rsquo;</dt>
+<dd><a name="index-Adding-autoload-settings"></a>
+
+<p>You don&rsquo;t need this if you&rsquo;ve installed emacs-w3m as an XEmacs package
+(see section <a href="emacs-w3m_6.html#Installing-Emacs_002dw3m">Installing emacs-w3m</a>) because the &lsquo;<tt>w3m/auto-autoloads.el</tt>&rsquo;
+takes care of setting up autoloads.
+</p>
+<p>In all other cases, put the following line in your &lsquo;<tt>~/.emacs</tt>&rsquo; file:
+</p>
+<table><tr><td>&nbsp;</td><td><pre class="lisp">(require 'w3m-load)
+</pre></td></tr></table>
+
+</dd>
+<dt> &lsquo;<samp>Startup File</samp>&rsquo;</dt>
+<dd><a name="index-Startup-file"></a>
+<a name="index-w3m_002dinit_002dfile"></a>
+
+<p>We recommend using the &lsquo;<tt>~/.emacs-w3m</tt>&rsquo; file (which is the default
+value of <code>w3m-init-file</code>) if you need to twiddle some emacs-w3m
+variables.  This file is similar to &lsquo;<tt>~/.emacs</tt>&rsquo;, but is read when
+emacs-w3m starts.  Note that some options shouldn&rsquo;t be modified there,
+for example, <code>w3m-command</code>.
+</p>
+</dd>
+<dt> &lsquo;<samp>Proxy Gateway</samp>&rsquo;</dt>
+<dd><a name="index-Firewall"></a>
+<a name="index-Proxy-gateways"></a>
+<a name="index-Proxy-servers"></a>
+<a name="index-w3m_002dcommand_002darguments"></a>
+<a name="index-w3m_002dno_002dproxy_002ddomains"></a>
+
+<p>If you are behind a firewall and access the Internet through a proxy
+gateway, you need to instruct w3m to use it.
+</p>
+<p>There are several ways to do this, one is to set the <code>http_proxy</code>
+environment variable globally in the shell something like:
+</p>
+<table><tr><td>&nbsp;</td><td><pre class="example">setenv http_proxy http://proxy.hogege.com:8000/
+</pre></td></tr></table>
+
+<p>Another way is to customize the <code>w3m-command-arguments</code> variable to
+add the options &lsquo;<samp>-o</samp>&rsquo; and
+&lsquo;<samp>http_proxy=http://PROXY_SERVER_NAME:PORT/</samp>&rsquo;.
+</p>
+<p>This can also be done in your &lsquo;<tt>~/.emacs-w3m</tt>&rsquo; file as shown below:
+</p>
+<table><tr><td>&nbsp;</td><td><pre class="lisp">(setq w3m-command-arguments
+      (nconc w3m-command-arguments
+             '(&quot;-o&quot; &quot;http_proxy=http://proxy.hogege.com:8000/&quot;)))
+</pre></td></tr></table>
+
+<p>To specify hosts for which the proxy shouldn&rsquo;t be used (Intranet sites
+and the like), set the <code>no_proxy</code> (note that it is not
+<code>no-proxy</code>) environment variable to a comma-separated list of
+hostnames.  Alternatively, you can set the <code>w3m-no-proxy-domains</code>
+variable to a list of domain names (not host names) as follows:
+</p>
+<table><tr><td>&nbsp;</td><td><pre class="lisp">(setq w3m-no-proxy-domains '(&quot;local.com&quot; &quot;neighbor.com&quot;))
+</pre></td></tr></table>
+
+<p>See also the documentation of the <code>w3m-command-arguments-alist</code>
+variable for instructions on how to use regexps to specify
+<code>no_proxy</code> hosts.
+</p>
+</dd>
+</dl>
+
+<hr size="6">
+<table cellpadding="1" cellspacing="1" border="0">
+<tr><td valign="middle" align="left">[<a href="emacs-w3m_7.html#Non_002dUNIX_002dlike-systems" title="Previous section in reading order"> &lt; </a>]</td>
+<td valign="middle" align="left">[<a href="emacs-w3m_9.html#Basic-Usage" title="Next section in reading order"> &gt; </a>]</td>
+<td valign="middle" align="left"> &nbsp; </td>
+<td valign="middle" align="left">[<a href="emacs-w3m_2.html#Getting-Started" title="Beginning of this chapter or previous chapter"> &lt;&lt; </a>]</td>
+<td valign="middle" align="left">[<a href="emacs-w3m_2.html#Getting-Started" title="Up section"> Up </a>]</td>
+<td valign="middle" align="left">[<a href="emacs-w3m_9.html#Basic-Usage" title="Next chapter"> &gt;&gt; </a>]</td>
+</tr></table>
+<p>
+ <font size="-1">
+  This document was generated by <em>TSUCHIYA Masatoshi</em> on <em>January 30, 2019</em> using <a href="http://www.nongnu.org/texi2html/"><em>texi2html 1.82</em></a>.
+ </font>
+ <br>
+
+</p>
+</body>
+</html>

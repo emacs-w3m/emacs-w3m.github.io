@@ -1,0 +1,167 @@
+<!DOCTYPE html PUBLIC "-//W3C//DTD HTML 4.01 Transitional//EN" "http://www.w3.org/TR/html401/loose.dtd">
+<html>
+<!-- Copyright C 2000-2014 TSUCHIYA Masatoshi
+
+Permission is granted to copy, distribute and/or modify this document
+under the terms of the GNU General Public License, Version 2 or any
+later version published by the Free Software Foundation.
+
+This document is distributed in the hope that it will be useful, but
+WITHOUT ANY WARRANTY; without even the implied warranty of
+MERCHANTABILITY or FITNESS FOR A PARTICULAR PURPOSE.  See the GNU
+General Public License for more details.
+
+You should have received a copy of the GNU General Public License along
+with this document; see the file COPYING.  If not, write to the Free
+Software Foundation, Inc., 51 Franklin Street, Fifth Floor, Boston, MA
+02110-1301, USA.
+
+ -->
+<!-- Created on January 30, 2019 by texi2html 1.82
+texi2html was written by: 
+            Lionel Cons <Lionel.Cons@cern.ch> (original author)
+            Karl Berry  <karl@freefriends.org>
+            Olaf Bachmann <obachman@mathematik.uni-kl.de>
+            and many others.
+Maintained by: Many creative people.
+Send bugs and suggestions to <texi2html-bug@nongnu.org>
+-->
+<head>
+<title>Emacs-w3m &ndash; an Emacs interface to w3m &ndash;: 3.9 Support for web page editing and hacking</title>
+
+<meta name="description" content="Emacs-w3m &ndash; an Emacs interface to w3m &ndash;: 3.9 Support for web page editing and hacking">
+<meta name="keywords" content="Emacs-w3m &ndash; an Emacs interface to w3m &ndash;: 3.9 Support for web page editing and hacking">
+<meta name="resource-type" content="document">
+<meta name="distribution" content="global">
+<meta name="Generator" content="texi2html 1.82">
+<meta http-equiv="Content-Type" content="text/html; charset=utf-8">
+<style type="text/css">
+<!--
+a.summary-letter {text-decoration: none}
+blockquote.smallquotation {font-size: smaller}
+pre.display {font-family: serif}
+pre.format {font-family: serif}
+pre.menu-comment {font-family: serif}
+pre.menu-preformatted {font-family: serif}
+pre.smalldisplay {font-family: serif; font-size: smaller}
+pre.smallexample {font-size: smaller}
+pre.smallformat {font-family: serif; font-size: smaller}
+pre.smalllisp {font-size: smaller}
+span.roman {font-family:serif; font-weight:normal;}
+span.sansserif {font-family:sans-serif; font-weight:normal;}
+ul.toc {list-style: none}
+-->
+</style>
+
+
+</head>
+
+<body lang="en" bgcolor="#FFFFFF" text="#000000" link="#0000FF" vlink="#800080" alink="#FF0000">
+
+<a name="HTML-File-Information"></a>
+<table cellpadding="1" cellspacing="1" border="0">
+<tr><td valign="middle" align="left">[<a href="emacs-w3m_17.html#Submitting-Forms" title="Previous section in reading order"> &lt; </a>]</td>
+<td valign="middle" align="left">[<a href="emacs-w3m_19.html#Pretty-Good-Features" title="Next section in reading order"> &gt; </a>]</td>
+<td valign="middle" align="left"> &nbsp; </td>
+<td valign="middle" align="left">[<a href="emacs-w3m_9.html#Basic-Usage" title="Beginning of this chapter or previous chapter"> &lt;&lt; </a>]</td>
+<td valign="middle" align="left">[<a href="emacs-w3m_9.html#Basic-Usage" title="Up section"> Up </a>]</td>
+<td valign="middle" align="left">[<a href="emacs-w3m_19.html#Pretty-Good-Features" title="Next chapter"> &gt;&gt; </a>]</td>
+<td valign="middle" align="left"> &nbsp; </td>
+<td valign="middle" align="left"> &nbsp; </td>
+<td valign="middle" align="left"> &nbsp; </td>
+<td valign="middle" align="left"> &nbsp; </td>
+<td valign="middle" align="left">[<a href="emacs-w3m.html#Top" title="Cover (top) of document">Top</a>]</td>
+<td valign="middle" align="left">[<a href="emacs-w3m_toc.html#SEC_Contents" title="Table of contents">Contents</a>]</td>
+<td valign="middle" align="left">[<a href="emacs-w3m_68.html#Index" title="Index">Index</a>]</td>
+<td valign="middle" align="left">[<a href="emacs-w3m_abt.html#SEC_About" title="About (help)"> ? </a>]</td>
+</tr></table>
+<a name="Support-for-web-page-editing-and-hacking"></a>
+<h2 class="section">3.9 Support for web page editing and hacking</h2>
+
+<p>For those who usually use Emacs to write documentation or programs, it&rsquo;s
+very convenient to be able to browse the web in the same Emacs session.
+For example, if you are editing a HTML file in Emacs, you can preview it
+without launching an external browser.  You can also quickly copy sample
+code from technical documentation during a programming marathon&hellip;
+</p>
+<p>How about the opposite?  (That is, being able to edit the source of a
+web page in a web browser.)  Wouldn&rsquo;t that be cool?  Imagine you found
+an error in your document after previewing it in emacs-w3m; you probably
+want to fix it right away.  Or if you are a programmer specialized in
+web technology, sometimes you might want to see the raw HTML file for
+the current web page&hellip; especially if you are the author of a
+Shimbun module (see section <a href="emacs-w3m_62.html#Shimbun-Basics">How to make a new shimbun module</a>).
+</p>
+<p>It is usually possible to switch to an Emacs buffer visiting an HTML
+file by using the buffer name, but emacs-w3m adds a specific keybinding
+for this.  Emacs-w3m knows the URL of the web page it is visiting, so
+why not take advantage of this?
+</p>
+<dl compact="compact">
+<dt> <kbd>\</kbd></dt>
+<dd><a name="index-_005c"></a>
+<a name="index-w3m_002dview_002dsource"></a>
+<p>Display the current web page in the raw HTML
+format(<code>w3m-view-source</code>).
+</p>
+</dd>
+<dt> <kbd>=</kbd></dt>
+<dd><a name="index-_003d"></a>
+<a name="index-w3m_002dview_002dheader"></a>
+<p>Show the information about currently displayed web page. It includes
+title, URL, document type, last modified date(<code>w3m-view-header</code>).
+</p>
+</dd>
+<dt> <kbd>E</kbd> (Lynx-like keymap)</dt>
+<dt> <kbd>e</kbd> (Info-like keymap)</dt>
+<dd><a name="index-E-_0028Lynx_002dlike-keymap_0029"></a>
+<a name="index-e-_0028Info_002dlike-keymap_0029"></a>
+<a name="index-w3m_002dedit_002dcurrent_002durl"></a>
+<p>Edit the local file pointed by URL of current
+page(<code>w3m-edit-current-url</code>).
+</p>
+</dd>
+<dt> <kbd>e</kbd> (Lynx-like keymap)</dt>
+<dt> <kbd>E</kbd> (Info-like keymap)</dt>
+<dd><a name="index-e-_0028Lynx_002dlike-keymap_0029"></a>
+<a name="index-E-_0028Info_002dlike-keymap_0029"></a>
+<a name="index-w3m_002dedit_002dthis_002durl"></a>
+<p>Edit the local file pointed by URL under
+point(<code>w3m-edit-this-url</code>).
+</p>
+</dd>
+<dt> <kbd>M</kbd></dt>
+<dd><a name="index-M"></a>
+<a name="index-w3m_002dview_002durl_002dwith_002dbrowse_002durl"></a>
+<p>Open a link at point, or the current page, using <code>browse-url</code>.
+</p>
+</dd>
+<dt> <kbd>|</kbd></dt>
+<dd><a name="index-_007c"></a>
+<a name="index-w3m_002dpipe_002dsource"></a>
+<p>Pipe the source of the web page to a command.  You will be prompted for
+the command (<code>w3m-pipe-source</code>).
+</p></dd>
+</dl>
+
+<p>The (see section <a href="emacs-w3m_63.html#Tips">Some knick-knacks using emacs-w3m</a>) section gives more examples on how to integrate
+emacs-w3m with other commands and Emacs subsystems.
+</p>
+<hr size="6">
+<table cellpadding="1" cellspacing="1" border="0">
+<tr><td valign="middle" align="left">[<a href="emacs-w3m_17.html#Submitting-Forms" title="Previous section in reading order"> &lt; </a>]</td>
+<td valign="middle" align="left">[<a href="emacs-w3m_19.html#Pretty-Good-Features" title="Next section in reading order"> &gt; </a>]</td>
+<td valign="middle" align="left"> &nbsp; </td>
+<td valign="middle" align="left">[<a href="emacs-w3m_9.html#Basic-Usage" title="Beginning of this chapter or previous chapter"> &lt;&lt; </a>]</td>
+<td valign="middle" align="left">[<a href="emacs-w3m_9.html#Basic-Usage" title="Up section"> Up </a>]</td>
+<td valign="middle" align="left">[<a href="emacs-w3m_19.html#Pretty-Good-Features" title="Next chapter"> &gt;&gt; </a>]</td>
+</tr></table>
+<p>
+ <font size="-1">
+  This document was generated by <em>TSUCHIYA Masatoshi</em> on <em>January 30, 2019</em> using <a href="http://www.nongnu.org/texi2html/"><em>texi2html 1.82</em></a>.
+ </font>
+ <br>
+
+</p>
+</body>
+</html>

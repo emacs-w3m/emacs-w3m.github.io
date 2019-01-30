@@ -1,0 +1,328 @@
+<!DOCTYPE html PUBLIC "-//W3C//DTD HTML 4.01 Transitional//EN" "http://www.w3.org/TR/html401/loose.dtd">
+<html>
+<!-- Copyright C 2000-2014 TSUCHIYA Masatoshi
+
+Permission is granted to copy, distribute and/or modify this document
+under the terms of the GNU General Public License, Version 2 or any
+later version published by the Free Software Foundation.
+
+この文書を、フリーソフトウェア財団によって発行された GNU 一般公衆利用許
+諾契約書第 2 版またはそれ以降の版のうちどれかの定める条件の下で複製、配
+布、あるいは変更することを許可します。
+
+This document is distributed in the hope that it will be useful, but
+WITHOUT ANY WARRANTY; without even the implied warranty of
+MERCHANTABILITY or FITNESS FOR A PARTICULAR PURPOSE.  See the GNU
+General Public License for more details.
+
+この文書は有用であることを願って頒布されますが、全くの無保証 です。
+商業可能性 の保証や 特定の目的への適合性 は、言外に示され
+たものも含め全く存在しません。詳しくは GNU 一般公衆利用許諾契約書をご覧
+ください。
+
+You should have received a copy of the GNU General Public License along
+with this document; see the file COPYING.  If not, write to the Free
+Software Foundation, Inc., 51 Franklin Street, Fifth Floor, Boston, MA
+02110-1301, USA.
+
+あなたはこの文書と共に、GNU 一般公衆利用許諾契約書の複製物を一部受け取っ
+たはずです。COPYING ファイルを参照してください。もし受け取っていなければ、
+フリーソフトウェア財団まで請求してください (宛先は the Free Software
+Foundation, Inc., 59 Temple Place, Suite 330, Boston, MA 02111-1307 USA)。
+
+ -->
+<!-- Created on 2019å¹´1ææ30æ¥ by texi2html 1.82
+texi2html was written by: 
+            Lionel Cons <Lionel.Cons@cern.ch> (original author)
+            Karl Berry  <karl@freefriends.org>
+            Olaf Bachmann <obachman@mathematik.uni-kl.de>
+            and many others.
+Maintained by: Many creative people.
+Send bugs and suggestions to <texi2html-bug@nongnu.org>
+-->
+<head>
+<title>Emacs-w3m &ndash; an Emacs interface to w3m &ndash;: 9.2 Mew で新聞を読む</title>
+
+<meta name="description" content="Emacs-w3m &ndash; an Emacs interface to w3m &ndash;: 9.2 Mew で新聞を読む">
+<meta name="keywords" content="Emacs-w3m &ndash; an Emacs interface to w3m &ndash;: 9.2 Mew で新聞を読む">
+<meta name="resource-type" content="document">
+<meta name="distribution" content="global">
+<meta name="Generator" content="texi2html 1.82">
+<meta http-equiv="Content-Type" content="text/html; charset=utf-8">
+<style type="text/css">
+<!--
+a.summary-letter {text-decoration: none}
+blockquote.smallquotation {font-size: smaller}
+pre.display {font-family: serif}
+pre.format {font-family: serif}
+pre.menu-comment {font-family: serif}
+pre.menu-preformatted {font-family: serif}
+pre.smalldisplay {font-family: serif; font-size: smaller}
+pre.smallexample {font-size: smaller}
+pre.smallformat {font-family: serif; font-size: smaller}
+pre.smalllisp {font-size: smaller}
+span.roman {font-family:serif; font-weight:normal;}
+span.sansserif {font-family:sans-serif; font-weight:normal;}
+ul.toc {list-style: none}
+-->
+</style>
+
+
+</head>
+
+<body lang="ja" bgcolor="#FFFFFF" text="#000000" link="#0000FF" vlink="#800080" alink="#FF0000">
+
+<a name="Mew-Shimbun"></a>
+<table cellpadding="1" cellspacing="1" border="0">
+<tr><td valign="middle" align="left">[<a href="emacs-w3m-ja_57.html#Nnshimbun" title="Previous section in reading order"> &lt; </a>]</td>
+<td valign="middle" align="left">[<a href="emacs-w3m-ja_59.html#Shimbun-with-Wanderlust" title="Next section in reading order"> &gt; </a>]</td>
+<td valign="middle" align="left"> &nbsp; </td>
+<td valign="middle" align="left">[<a href="emacs-w3m-ja_56.html#Shimbun-Library" title="Beginning of this chapter or previous chapter"> &lt;&lt; </a>]</td>
+<td valign="middle" align="left">[<a href="emacs-w3m-ja_56.html#Shimbun-Library" title="Up section">ä¸</a>]</td>
+<td valign="middle" align="left">[<a href="emacs-w3m-ja_63.html#Tips" title="Next chapter"> &gt;&gt; </a>]</td>
+<td valign="middle" align="left"> &nbsp; </td>
+<td valign="middle" align="left"> &nbsp; </td>
+<td valign="middle" align="left"> &nbsp; </td>
+<td valign="middle" align="left"> &nbsp; </td>
+<td valign="middle" align="left">[<a href="emacs-w3m-ja.html#Top" title="Cover (top) of document">åé ­</a>]</td>
+<td valign="middle" align="left">[<a href="emacs-w3m-ja_toc.html#SEC_Contents" title="Table of contents">ç®æ¬¡</a>]</td>
+<td valign="middle" align="left">[<a href="emacs-w3m-ja_68.html#Index" title="è¦åºã">è¦åºã</a>]</td>
+<td valign="middle" align="left">[<a href="emacs-w3m-ja_abt.html#SEC_About" title="About (help)"> ? </a>]</td>
+</tr></table>
+<a name="Mew-deXin-Wen-woDu-mu"></a>
+<h2 class="section">9.2 Mew で新聞を読む</h2>
+
+<p>Mew Shimbun は &lsquo;<samp>shimbun</samp>&rsquo; と Mew (version 2.1 以降) とともに使うこと
+を意図した Emacs Lisp プログラムです。Mew, <acronym>APEL</acronym> およ
+び <acronym>FLIM</acronym> もインストールされていれば、emacs-w3m をインストールす
+るときに一緒にインストールされます。
+</p>
+<p><a href="emacs-w3m-ja_48.html#Mew">Mew で HTML メールを読む</a> も参照することをお勧めします。
+</p>
+<ol>
+<li>
+諸設定
+
+<p>以下の各行を &lsquo;<tt>~/.mew.el</tt>&rsquo; ファイルの最後に書いてください:
+</p>
+<table><tr><td>&nbsp;</td><td><pre class="format">;;; mew-shimbun のロード、キー定義
+</pre></td></tr></table>
+
+<p>;; (setq mew-shimbun-use-unseen t) ;; <a name="DOCF11" href="emacs-w3m-ja_fot.html#FOOT11">(11)</a>
+</p><table><tr><td>&nbsp;</td><td><pre class="format">(require &rsquo;mew-shimbun)
+(define-key mew-summary-mode-map &quot;G&quot;  (make-sparse-keymap))
+(define-key mew-summary-mode-map &quot;Gg&quot; &rsquo;mew-shimbun-goto-folder)
+(define-key mew-summary-mode-map &quot;GG&quot; &rsquo;mew-shimbun-goto-unseen-folder)
+(define-key mew-summary-mode-map &quot;Gi&quot; &rsquo;mew-shimbun-retrieve)
+(define-key mew-summary-mode-map &quot;GI&quot; &rsquo;mew-shimbun-retrieve-all)
+(define-key mew-summary-mode-map &quot;Gr&quot; &rsquo;mew-shimbun-re-retrieve)
+(define-key mew-summary-mode-map &quot;GR&quot; &rsquo;mew-shimbun-re-retrieve-all)
+(define-key mew-summary-mode-map &quot;Ge&quot; &rsquo;mew-shimbun-expire)
+(define-key mew-summary-mode-map &quot;GE&quot; &rsquo;mew-shimbun-expire-all)
+
+;; <code>mew-shimbun-folder-groups</code> に Mew で購読する &lsquo;<samp>shimbun</samp>&rsquo; servers 及び
+;; group を設定します。それぞれの要素は
+;; <code>(&quot;folder&quot; (&quot;server.group&quot; . range) ...)</code> の形式です。<code>range</code> には
+;; <code>all</code>, <code>last</code>, および数字が指定できます。
+
+(setq mew-shimbun-folder-groups
+      &rsquo;(;; &lsquo;<samp>+shimbun/yomiuri</samp>&rsquo; という folder に &lsquo;<samp>yomiuri.national</samp>&rsquo;,
+        ;; &lsquo;<samp>yomiuri.sports</samp>&rsquo; などを一括して取得します。
+        (&quot;yomiuri&quot;
+         (&quot;yomiuri.national&quot; . 2)
+         (&quot;yomiuri.sports&quot;. 2)
+         (&quot;yomiuri.world&quot;. 2))
+        ;; &lsquo;<samp>+shimbun/security-memo</samp>&rsquo; に &lsquo;<samp>security-memo.memo</samp>&rsquo; を取得します。
+        (&quot;security-memo&quot;
+         (&quot;security-memo.memo&quot; . 2))
+        (&quot;slashdot-jp&quot;
+         (&quot;slashdot-jp.story&quot; . last))
+        ;; このように、異なる server の group も一つの folder
+        ;; (&lsquo;<samp>+shimbun/emacs</samp>&rsquo;) で読むことができます。
+        (&quot;emacs&quot;
+         (&quot;airs.wl&quot; . last)
+         (&quot;emacs-w3m.emacs-w3m&quot; . last))
+        ;; &lsquo;<samp>+shimbun/hns/arisawa</samp>&rsquo;, &lsquo;<samp>+shimbun/hns/miyoshi</samp>&rsquo; にそれぞれの
+        ;; 日記を取得します。
+        (&quot;hns/arisawa&quot;
+         (&quot;hns.arisawa&quot; . last))
+        (&quot;hns/miyoshi&quot;
+         (&quot;hns.miyoshi&quot; . last))))
+</pre></td></tr></table>
+
+<p>以上で基本的な設定は終了です。他のユーザ定義変数は <code>mew-shimbun</code> グ
+ループを <kbd>M-x customize-group</kbd> するか、ソースを見てください。
+</p>
+</li><li>
+記事の購読
+
+<ol>
+<li>
+最初の購読
+
+<p>上記の設定をしたあと、まず <kbd>G I</kbd> しましょ
+う (<code>mew-shimbun-retrieve-all</code>)。
+<code>mew-shimbun-folder-groups</code> で種々の設定を行なった &lsquo;<samp>shimbun</samp>&rsquo;
+folder が &lsquo;<samp>+shimbun</samp>&rsquo; 以下に出来ます。また、新たに group を追加した
+ときも <kbd>G I</kbd> すると便利です。なお、
+&lsquo;<samp>+shimbun</samp>&rsquo; は <code>mew-shimbun-folder</code> という変数で好みのものに変
+更できます。
+</p>
+</li><li>
+&lsquo;<samp>shimbun</samp>&rsquo; folder への移動
+
+<p>通常の <kbd>g</kbd> (<code>mew-summary-goto-folder</code>) でも &lsquo;<samp>shimbun</samp>&rsquo;
+folder への移動はできますが、
+<kbd>G g</kbd> (<code>mew-shimbun-goto-folder</code>) を使うと &lsquo;<samp>shimbun</samp>&rsquo;
+folder 限定で移動できます。また <kbd>C-u G g</kbd> と prefix をつけたとき
+は、新規記事のある folder (まだ scan をしていない folder) のみ表示します。
+<kbd>G G</kbd> でも同様です。
+</p>
+</li><li>
+folder 単位での記事の取得
+
+<p>&lsquo;<samp>shimbun</samp>&rsquo; folder で <kbd>G i</kbd> (<code>mew-shimbun-retrieve</code>) す
+ると、現在の &lsquo;<samp>shimbun</samp>&rsquo; folder で新規記事を取得します。
+</p>
+</li><li>
+更新された記事の取得
+
+<p>特定の記事を表示した状態
+で <kbd>G r</kbd> (<code>mew-shimbun-re-retrieve</code>) すると、その記事が更新
+されていたら更新し、同時に新規記事も取得します。<kbd>C-u G r</kbd> とする
+と、<code>mew-shimbun-mark-re-retrieve</code> に指定したマーク (デフォルト値
+は &lsquo;<samp>@</samp>&rsquo;) の記事の更新を試みます。CNET などで使うと便利でしょう。
+</p>
+<p><kbd>G R</kbd> (<code>mew-shimbun-re-retrieve-all</code>) では、すべての記事の
+新規性を調べ取得しなおします。<kbd>C-u G R</kbd> ではリージョンで指定した
+範囲の記事を対象とします。おそらくハイパー日記システムが稼働している日記
+サイトでは有意義なコマンドでしょう。
+</p></li></ol>
+
+</li><li>
+未読管理
+
+<p>&lsquo;<tt>~/.mew.el</tt>&rsquo; ファイルで以下の設定を行なっていると、
+</p>
+<table><tr><td>&nbsp;</td><td><pre class="lisp">(setq mew-shimbun-use-unseen t)
+</pre></td></tr></table>
+
+<p>新規に取得した記事に <code>mew-shimbun-mark-unseen</code> で設定したマーク (デ
+フォルトは &lsquo;<samp>*</samp>&rsquo;) がつくようになり、読むと自動的に消えます。
+</p>
+<p>通常、Mew の summary モードでマークをつける、あるいは消した後、scan をし
+ないと &lsquo;<tt>.mew-cache</tt>&rsquo; ファイルに反映されませんが、&lsquo;<tt>~/.mew.el</tt>&rsquo; ファ
+イルで以下の設定を行なうことにより、
+</p>
+<table><tr><td>&nbsp;</td><td><pre class="lisp">(setq mew-shimbun-use-unseen-cache-save t)
+</pre></td></tr></table>
+
+<p>Mew の終了時や folder の kill 時 (<kbd>C-c C-q</kbd> を使ったと
+き) に &lsquo;<samp>shimbun</samp>&rsquo; folder は自動的に &lsquo;<tt>.mew-cache</tt>&rsquo; ファイルを保存
+するようになります。ただし、確実
+<a name="DOCF12" href="emacs-w3m-ja_fot.html#FOOT12">(12)</a>
+に保存するわけではありません。既読になった情報を確実に cache に保存する
+には、その folder を読み終わったときに &lsquo;<samp>scan update</samp>&rsquo; をする習慣をつ
+けると良いでしょう。
+</p>
+<p>未読に使うマークが &lsquo;<samp>*</samp>&rsquo; じゃダメ、という方は、変
+数 <code>mew-shimbun-mark-unseen</code> をカスタマイズしてください (上述)。
+<kbd>C-u N</kbd> でそのマークを指定すると楽しい未読ライフをおくることがで
+きると思います。
+</p>
+</li><li>
+期限切れ記事の消去
+
+<p>事前に <code>mew-shimbun-expires</code> を設定しておくと、期限切れ記事の消去を
+行なうことができます。例えば:
+</p>
+<table><tr><td>&nbsp;</td><td><pre class="lisp">(setq mew-shimbun-expires
+      '((&quot;yomiuri&quot; . 7)
+        (&quot;asahi&quot; . 1)
+        (&quot;slashdot-jp&quot; . 7)
+        (&quot;emacs&quot; . 7)))
+</pre></td></tr></table>
+
+<p>上記のように設定しておくと、&lsquo;<samp>+shimbun/yomiuri</samp>&rsquo; は 7日、
+&lsquo;<samp>+shimbun/asahi</samp>&rsquo; は 1日と期限を設定することができます。指定されてい
+ない &lsquo;<samp>shimbun</samp>&rsquo; folder は消去しません。<kbd>G e</kbd>
+(<code>mew-shimbun-expire</code>) でその folder の期限切れ記事を消去します。
+<kbd>G e</kbd> (<code>mew-shimbun-expire</code>) で設定したすべての folder で記
+事の消去を実行します。なお、一度消去した記事は復旧出来ませんので注意して
+ください。
+</p>
+</li><li>
+未読マークとして &lsquo;<samp>$</samp>&rsquo; を追加する方法
+
+<p>&lsquo;<samp>$</samp>&rsquo; マークを新たに作成し、&lsquo;<samp>$</samp>&rsquo; マークを未読マークとして使うには、
+次の記述を &lsquo;<tt>~/.mew.el</tt>&rsquo; ファイルに記述してください。なお、
+&lsquo;<samp>$</samp>&rsquo; 以外の記号にしたければ、
+<a href="http://www.mew.org/ml/mew-dist-2.0/msg01251.html">http://www.mew.org/ml/mew-dist-2.0/msg01251.html</a> を参照して記述を
+生成してください。
+</p>
+<table><tr><td>&nbsp;</td><td><pre class="format">;;&mdash;&mdash;&mdash;&mdash;&mdash;&mdash;&mdash;&mdash;&mdash;&mdash;&mdash;&mdash;&mdash;&mdash;&mdash;&mdash;&mdash;&mdash;&mdash;&mdash;&mdash;&mdash;&mdash;-
+;;; &lsquo;<samp>$</samp>&rsquo; を未読マークとして使うための記述
+(setq mew-mark-unseen ?$)
+(setq mew-shimbun-mark-unseen mew-mark-unseen)
+(setq mew-mark-show-list (cons mew-mark-unseen mew-mark-show-list))
+(setq mew-mark-afterstep-spec
+      (cons (cons mew-mark-unseen &rsquo;(1 0 1 0 0 0 0))
+            mew-mark-afterstep-spec))
+(setq mew-mark-spec
+      (cons (list mew-mark-unseen &quot;unseen&quot; 0 nil nil nil nil nil)
+            mew-mark-spec))
+(setq mew-highlight-mark-keywords
+      (cons
+       (cons mew-mark-unseen &rsquo;mew-face-mark-unseen)
+       mew-highlight-mark-keywords))
+(defface mew-face-mark-unseen
+  &rsquo;((((class color) (type tty))
+     (:foreground &quot;green&quot;))
+    (((class color) (background light))
+     (:foreground &quot;deep pink&quot; :bold t :italic t))
+    (((class color) (background dark))
+     (:foreground &quot;thistle&quot;))
+    (t (:bold t)))
+  &quot;*Face to highlight the unseen mark&quot;
+  :group &rsquo;mew-highlight)
+(defun mew-summary-unseen (&amp;optional count)
+  &quot;Put the unseen mark(default is &rsquo;$&rsquo;) in COUNT times.&quot;
+  (interactive &quot;P&quot;)
+  (mew-mark-put-mark-loop (function mew-summary-unseen-one) count nil))
+(defun mew-summary-unseen-one (&amp;optional no-msg)
+  &quot;Put the unseen mark(default is &rsquo;$&rsquo;) on this message.&quot;
+  (mew-mark-put-mark mew-mark-unseen no-msg))
+(defun mew-summary-mark-unseen ()
+  &quot;Change the &rsquo;*&rsquo; mark into the &rsquo;$&rsquo; mark.&quot;
+  (interactive)
+  (mew-summary-exchange-mark mew-mark-review mew-mark-unseen))
+(defun mew-thread-mark-unseen ()
+  &quot;Put the &rsquo;$&rsquo; mark on all messages of the current sub-thread.&quot;
+  (interactive)
+  (mew-thread-mark mew-mark-unseen))
+
+(define-key mew-summary-mode-map &quot;$&quot;  &rsquo;mew-summary-unseen)
+(define-key mew-summary-mode-map &quot;m$&quot; &rsquo;mew-summary-mark-unseen)
+(define-key mew-summary-mode-map &quot;t$&quot; &rsquo;mew-thread-mark-unseen)
+;;&mdash;&mdash;&mdash;&mdash;&mdash;&mdash;&mdash;&mdash;&mdash;&mdash;&mdash;&mdash;&mdash;&mdash;&mdash;&mdash;&mdash;&mdash;&mdash;&mdash;&mdash;&mdash;&mdash;-
+</pre></td></tr></table>
+</li></ol>
+
+<hr size="6">
+<table cellpadding="1" cellspacing="1" border="0">
+<tr><td valign="middle" align="left">[<a href="emacs-w3m-ja_57.html#Nnshimbun" title="Previous section in reading order"> &lt; </a>]</td>
+<td valign="middle" align="left">[<a href="emacs-w3m-ja_59.html#Shimbun-with-Wanderlust" title="Next section in reading order"> &gt; </a>]</td>
+<td valign="middle" align="left"> &nbsp; </td>
+<td valign="middle" align="left">[<a href="emacs-w3m-ja_56.html#Shimbun-Library" title="Beginning of this chapter or previous chapter"> &lt;&lt; </a>]</td>
+<td valign="middle" align="left">[<a href="emacs-w3m-ja_56.html#Shimbun-Library" title="Up section">ä¸</a>]</td>
+<td valign="middle" align="left">[<a href="emacs-w3m-ja_63.html#Tips" title="Next chapter"> &gt;&gt; </a>]</td>
+</tr></table>
+<p>
+ <font size="-1">
+  ãã®ææ¸ã¯<em>TSUCHIYA Masatoshi</em>ã«ãã£ã¦<em>2019å¹´1ææ30æ¥</em>ã«<a href="http://www.nongnu.org/texi2html/"><em>texi2html 1.82</em></a>ãç¨ãã¦çæããã¾ããã
+ </font>
+ <br>
+
+</p>
+</body>
+</html>

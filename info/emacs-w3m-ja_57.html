@@ -1,0 +1,401 @@
+<!DOCTYPE html PUBLIC "-//W3C//DTD HTML 4.01 Transitional//EN" "http://www.w3.org/TR/html401/loose.dtd">
+<html>
+<!-- Copyright C 2000-2014 TSUCHIYA Masatoshi
+
+Permission is granted to copy, distribute and/or modify this document
+under the terms of the GNU General Public License, Version 2 or any
+later version published by the Free Software Foundation.
+
+この文書を、フリーソフトウェア財団によって発行された GNU 一般公衆利用許
+諾契約書第 2 版またはそれ以降の版のうちどれかの定める条件の下で複製、配
+布、あるいは変更することを許可します。
+
+This document is distributed in the hope that it will be useful, but
+WITHOUT ANY WARRANTY; without even the implied warranty of
+MERCHANTABILITY or FITNESS FOR A PARTICULAR PURPOSE.  See the GNU
+General Public License for more details.
+
+この文書は有用であることを願って頒布されますが、全くの無保証 です。
+商業可能性 の保証や 特定の目的への適合性 は、言外に示され
+たものも含め全く存在しません。詳しくは GNU 一般公衆利用許諾契約書をご覧
+ください。
+
+You should have received a copy of the GNU General Public License along
+with this document; see the file COPYING.  If not, write to the Free
+Software Foundation, Inc., 51 Franklin Street, Fifth Floor, Boston, MA
+02110-1301, USA.
+
+あなたはこの文書と共に、GNU 一般公衆利用許諾契約書の複製物を一部受け取っ
+たはずです。COPYING ファイルを参照してください。もし受け取っていなければ、
+フリーソフトウェア財団まで請求してください (宛先は the Free Software
+Foundation, Inc., 59 Temple Place, Suite 330, Boston, MA 02111-1307 USA)。
+
+ -->
+<!-- Created on 2019å¹´1ææ30æ¥ by texi2html 1.82
+texi2html was written by: 
+            Lionel Cons <Lionel.Cons@cern.ch> (original author)
+            Karl Berry  <karl@freefriends.org>
+            Olaf Bachmann <obachman@mathematik.uni-kl.de>
+            and many others.
+Maintained by: Many creative people.
+Send bugs and suggestions to <texi2html-bug@nongnu.org>
+-->
+<head>
+<title>Emacs-w3m &ndash; an Emacs interface to w3m &ndash;: 9.1 Gnus をウェブブラウザにする!</title>
+
+<meta name="description" content="Emacs-w3m &ndash; an Emacs interface to w3m &ndash;: 9.1 Gnus をウェブブラウザにする!">
+<meta name="keywords" content="Emacs-w3m &ndash; an Emacs interface to w3m &ndash;: 9.1 Gnus をウェブブラウザにする!">
+<meta name="resource-type" content="document">
+<meta name="distribution" content="global">
+<meta name="Generator" content="texi2html 1.82">
+<meta http-equiv="Content-Type" content="text/html; charset=utf-8">
+<style type="text/css">
+<!--
+a.summary-letter {text-decoration: none}
+blockquote.smallquotation {font-size: smaller}
+pre.display {font-family: serif}
+pre.format {font-family: serif}
+pre.menu-comment {font-family: serif}
+pre.menu-preformatted {font-family: serif}
+pre.smalldisplay {font-family: serif; font-size: smaller}
+pre.smallexample {font-size: smaller}
+pre.smallformat {font-family: serif; font-size: smaller}
+pre.smalllisp {font-size: smaller}
+span.roman {font-family:serif; font-weight:normal;}
+span.sansserif {font-family:sans-serif; font-weight:normal;}
+ul.toc {list-style: none}
+-->
+</style>
+
+
+</head>
+
+<body lang="ja" bgcolor="#FFFFFF" text="#000000" link="#0000FF" vlink="#800080" alink="#FF0000">
+
+<a name="Nnshimbun"></a>
+<table cellpadding="1" cellspacing="1" border="0">
+<tr><td valign="middle" align="left">[<a href="emacs-w3m-ja_56.html#Shimbun-Library" title="Previous section in reading order"> &lt; </a>]</td>
+<td valign="middle" align="left">[<a href="emacs-w3m-ja_58.html#Mew-Shimbun" title="Next section in reading order"> &gt; </a>]</td>
+<td valign="middle" align="left"> &nbsp; </td>
+<td valign="middle" align="left">[<a href="emacs-w3m-ja_56.html#Shimbun-Library" title="Beginning of this chapter or previous chapter"> &lt;&lt; </a>]</td>
+<td valign="middle" align="left">[<a href="emacs-w3m-ja_56.html#Shimbun-Library" title="Up section">ä¸</a>]</td>
+<td valign="middle" align="left">[<a href="emacs-w3m-ja_63.html#Tips" title="Next chapter"> &gt;&gt; </a>]</td>
+<td valign="middle" align="left"> &nbsp; </td>
+<td valign="middle" align="left"> &nbsp; </td>
+<td valign="middle" align="left"> &nbsp; </td>
+<td valign="middle" align="left"> &nbsp; </td>
+<td valign="middle" align="left">[<a href="emacs-w3m-ja.html#Top" title="Cover (top) of document">åé ­</a>]</td>
+<td valign="middle" align="left">[<a href="emacs-w3m-ja_toc.html#SEC_Contents" title="Table of contents">ç®æ¬¡</a>]</td>
+<td valign="middle" align="left">[<a href="emacs-w3m-ja_68.html#Index" title="è¦åºã">è¦åºã</a>]</td>
+<td valign="middle" align="left">[<a href="emacs-w3m-ja_abt.html#SEC_About" title="About (help)"> ? </a>]</td>
+</tr></table>
+<a name="Gnus-wouebuburauzanisuru_0021"></a>
+<h2 class="section">9.1 Gnus をウェブブラウザにする!</h2>
+<a name="index-nnshimbun"></a>
+<a name="index-Web-Newspaper"></a>
+
+<p>&lsquo;<samp>Nnshimbun</samp>&rsquo; は Gnus のバックエンドです。しかしながら、例外的
+に Gnus ではなくて emacs-w3m とともに配布されています。
+&lsquo;<samp>Nnshimbun</samp>&rsquo; は Gnus を並外れて便利なウェブブラウザにすることができ
+ます。すべての広告に煩わされずに新聞社のウェブサーバで記事を拾い読みする
+ことができます。メーリングリストの記事アーカイブを、そのリストに講読登録
+しているように読むことができます。掲示板の書き込みも読むことができます。
+等々... でも Gnus は &lsquo;<samp>nnshimbun</samp>&rsquo; でウェブを介した投稿ができないので、
+フォローしたいときは emacs-w3m を使わなければいけないことに注意してくだ
+さい。
+</p>
+<p>さらに emacs-w3m で HTML メッセージを整形するには <a href="emacs-w3m-ja_47.html#Gnus">Gnus で HTML メールを読む</a> も参照して
+ください。
+</p>
+<a name="index-gnus_002dgroup_002dmake_002dshimbun_002dgroup"></a>
+<p>&lsquo;<samp>Nnshimbun</samp>&rsquo; を始めるための一番簡単な方法は、グループバッファで以下
+のようなことをすることです:
+</p>
+<p><kbd>M-x gnus-group-make-shimbun-group &lt;RET&gt; asahi &lt;RET&gt; national &lt;RET&gt;</kbd>
+</p>
+<p>&lsquo;<samp>asahi</samp>&rsquo; と &lsquo;<samp>national</samp>&rsquo; は、接続したいサーバーに対応したキーワー
+ドと興味のあるグループに、それぞれ置き換えてください。
+<kbd>&lt;TAB&gt;</kbd> か <kbd>&lt;SPC&gt;</kbd> をタイプすることによって、それらの名
+前を両方とも補完することができます。
+</p>
+<p>もし <code>gnus-group-mode-map</code> に十分な空きがあるならば、以下のようなも
+のを &lsquo;<tt>~/.gnus.el</tt>&rsquo; ファイルに加えてください:
+</p>
+<table><tr><td>&nbsp;</td><td><pre class="lisp">(eval-after-load &quot;gnus-group&quot;
+  '(define-key gnus-group-mode-map &quot;Gn&quot;
+     'gnus-group-make-shimbun-group))
+</pre></td></tr></table>
+
+<p>すると、<kbd>M-x gnus-group-make-shimbun-group</kbd> の代わり
+に <kbd>G n</kbd> を使うことができます。
+</p>
+<p><em>誰かこのキーを Gnus タワーに予約してくれませんか?</em>
+</p>
+
+<a name="index-gnus_002dgroup_002dmake_002dshimbun_002dgroups"></a>
+<p>この他に、<code>gnus-group-make-shimbun-groups</code> コマンドを使って、指定し
+たサーバーのすべてのグループを作ることができます。
+</p>
+<p>&lsquo;<samp>Nnshimbun</samp>&rsquo; は単にウェブサーバから HTML コンテンツを取り寄せて、そ
+れを記事として表示しますが、永続記
+事 (see <a href="../gnus-ja/Persistent-Articles.html#Persistent-Articles">(gnus-ja)Persistent Articles</a> section &lsquo;永続記事&rsquo; in <cite>The Gnus Manual</cite>) を
+作る場合を除いて、ローカルファイルに記事をセーブすることはありません。
+&lsquo;<samp>Nnshimbun</samp>&rsquo; は <acronym>NOV</acronym> ファイルを、それぞれ
+の &lsquo;<samp>nnshimbun</samp>&rsquo; グループで使います。そのバックエンド
+は &lsquo;<samp>nnml</samp>&rsquo; とほぼ同じです。
+</p>
+<p>以下の &lsquo;<samp>nnshimbun</samp>&rsquo; に関する変数をカスタマイズすることが可能です:
+</p>
+<dl compact="compact">
+<dt> <code>nnshimbun-keep-backlog</code></dt>
+<dd><a name="index-nnshimbun_002dkeep_002dbacklog"></a>
+<a name="index-gnus_002dkeep_002dbacklog"></a>
+<p>この変数は &lsquo;<samp>nnshimbun</samp>&rsquo; グループで <code>gnus-keep-backlog</code> 変
+数 (see <a href="../gnus-ja/Article-Backlog.html#Article-Backlog">(gnus-ja)Article Backlog</a> section &lsquo;記事のバックログ&rsquo; in <cite>The Gnus Manual</cite>) を上書きします。もし <code>nnshimbun-keep-backlog</code> を数
+字 <var>n</var> に設定すると、&lsquo;<samp>nnshimbun</samp>&rsquo; は最大で <var>n</var> の古い記事を
+後の再取得のためにバッファに溜めておきます。この変数が <code>nil</code> ではな
+く、数字でもない場合、&lsquo;<samp>nnshimbun</samp>&rsquo; は <em>すべて</em> の既読記事を蓄え
+ます (これは良い考えではありません)。デフォルト値は 300 です。
+</p>
+<p>&lsquo;<samp>Nnshimbun</samp>&rsquo; はあらかじめ取得した (prefetched) 記事の保存
+に backlog を使うので、小さすぎる値は <code>prefetch-articles</code> 機能 (下
+記参照) を損なうかもしれないことに注意してください。
+</p>
+</dd>
+<dt> <code>nnshimbun-directory</code></dt>
+<dd><a name="index-nnshimbun_002ddirectory"></a>
+<p>&lsquo;<samp>Nnshimbun</samp>&rsquo; が <acronym>NOV</acronym> ファイルと印ファイルを保存するディレク
+トリです。デフォルト値は &lsquo;<samp>~/News/shimbun/</samp>&rsquo; です。これはサーバー変
+数 (see <a href="../gnus-ja/Server-Variables.html#Server-Variables">(gnus-ja)Server Variables</a> section &lsquo;サーバー変数&rsquo; in <cite>The Gnus Manual</cite>) です。
+</p>
+</dd>
+<dt> <code>nnshimbun-default-group-level</code></dt>
+<dd><a name="index-nnshimbun_002ddefault_002dgroup_002dlevel"></a>
+<p><code>gnus-level-default-subscribed</code> を上書きする、デフォルトのグループ
+レベルです。新たに作られた &lsquo;<samp>nnshimbun</samp>&rsquo; グループに適用されます。デフォ
+ルト値は <code>nil</code> です。これはサーバー変数 (see <a href="../gnus-ja/Server-Variables.html#Server-Variables">(gnus-ja)Server Variables</a> section &lsquo;サーバー変数&rsquo; in <cite>The Gnus Manual</cite>) です。
+</p></dd>
+</dl>
+
+<a name="index-group-parameters"></a>
+<p>&lsquo;<samp>Nnshimbun</samp>&rsquo; は Gnus が提供する標準のグループパラメー
+タ<a name="DOCF7" href="emacs-w3m-ja_fot.html#FOOT7">(7)</a> に加えて、&lsquo;<samp>nnshimbun</samp>&rsquo; 専用に設けられ
+たグループパラメータを利用することができます。複数の &lsquo;<samp>nnshimbun</samp>&rsquo; 用
+のパラメータが <code>nnshimbun-group-parameters</code> という単一のグループパ
+ラメータ (すべてのグループで違う値を持つことができる) にまとめられていま
+す。それはプロパティリストで、例えば次のような値です:
+</p>
+<table><tr><td>&nbsp;</td><td><pre class="lisp">'(index-range all prefetch-articles off encapsulate-images on
+              expiry-wait 6)
+</pre></td></tr></table>
+
+<p>以降はこれらのグループパラメータと、関連する変数の説明です。
+</p>
+<dl compact="compact">
+<dt> <code>prefetch-articles</code></dt>
+<dd><a name="index-nnshimbun_002dpre_002dfetch_002darticle"></a>
+<p>このグループパラメータが <code>off</code> または <code>nil</code> 以外の何かに設定さ
+れているグループでは、&lsquo;<samp>nnshimbun</samp>&rsquo; は新しい記事を探すだけではなく、
+それらの記事のダウンロードも行います。これは新しい記事の検索を遅くします
+が、記事を閲覧するときに待たされません。このグループパラメータが設定され
+ていないか、その値が <code>nil</code> になっているグループでは、代わりに変
+数 <code>nnshimbun-pre-fetch-article</code> の値 (デフォルトは <code>off</code>) が
+使われます。
+</p>
+</dd>
+<dt> <code>encapsulate-images</code></dt>
+<dd><a name="index-nnshimbun_002dencapsulate_002dimages"></a>
+<p>このグループパラメータが <code>off</code> または <code>nil</code> 以外の何かに設定さ
+れているグループでは、&lsquo;<samp>nnshimbun</samp>&rsquo; は元の記事に埋め込まれている画像
+データを MIME の &lsquo;<samp>multipart/related</samp>&rsquo; パートとして記事にはめ込みます。
+このグループパラメータが設定されていないか、その値が <code>nil</code> になって
+いるグループでは、代わりに変数 <code>nnshimbun-encapsulate-images</code> の値
+が使われます。この変数 <code>nnshimbun-encapsulate-images</code> のデフォルト
+値は、&lsquo;<samp>shimbun</samp>&rsquo; ライブラリによって提供される変
+数 <code>shimbun-encapsulate-images</code> の値です (たぶんデフォルト値
+は <code>t</code> です)。
+</p>
+</dd>
+<dt> <code>index-range</code></dt>
+<dd><a name="index-nnshimbun_002dindex_002drange"></a>
+<p>グループパラメータ <code>index-range</code> で、ウェブサーバーから取得される記
+事の範囲を指定することができます。範囲の指定には以下の値を使ってください:
+</p>
+<dl compact="compact">
+<dt> <code>nil</code></dt>
+<dt> <code>all</code></dt>
+<dd><p>すべてのページ
+</p>
+</dd>
+<dt> <code>last</code></dt>
+<dd><p>最新のページだけ
+</p></dd>
+</dl>
+
+<dl compact="compact">
+<dt> &lsquo;<samp>integer N</samp>&rsquo;</dt>
+<dd><p>最新の N ページ
+</p></dd>
+</dl>
+
+<p>&lsquo;<samp>Nnshimbun</samp>&rsquo; はサーバー上に存在する目次ページを解析して新しい記事の
+有無を調べます。サーバーによってはそのような目次ページが複数存在する場合
+があります。例えば、メーリングリストの記事を提供しているサーバーの場合は、
+その記事が投稿された日付によって分類された目次になっていることが一般的で
+す。特に遅い回線を利用している時に、それらすべての巨大な目次を調べるには、
+相当な時間がかかるでしょう。
+</p>
+<p>&lsquo;<samp>Nnshimbun</samp>&rsquo; は前回の接続時に調べた目次については、なるべく調べずに
+済ませるようになっています。更に時間を節約したい場合は <code>last</code> を使っ
+てください。これは &lsquo;<samp>nnshimbun</samp>&rsquo; に、最新の目次だけを参照して新しい記
+事の検査を行なわせます。
+</p>
+<p>グループパラメータ <code>index-range</code> が設定されていないか、値
+が <code>nil</code> になっているグループでは、変
+数 <code>nnshimbun-index-range</code> の値 (デフォルトは <code>2</code>) が使われま
+す。
+</p>
+</dd>
+<dt> <code>nnshimbun-group-parameters-alist</code></dt>
+<dd><a name="index-nnshimbun_002dgroup_002dparameters_002dalist"></a>
+<p>これは Emacs Lisp 変数で、グループ名の正規表現と &lsquo;<samp>nnshimbun</samp>&rsquo; 用グルー
+プパラメータの連想リストです。デフォルト値は <code>nil</code> です。各々の要素
+は &lsquo;<samp>(REGEXP KEYWORD VALUE KEYWORD VALUE...)</samp>&rsquo; の形式を持ちます。例え
+ば:
+</p>
+<table><tr><td>&nbsp;</td><td><pre class="lisp">'(&quot;^nnshimbun\\+asahi:&quot; index-range all prefetch-articles off
+  encapsulate-images on expiry-wait 6)
+</pre></td></tr></table>
+
+<p>似た名前を持つ (すなわち、互いに似た性格を持っていそうな) 複数のグループ
+に対して同じ &lsquo;<samp>nnshimbun</samp>&rsquo; グループパラメータを指定することができるの
+で、個々のグループに対してそれぞれグループパラメータを設定する代わりに使
+うことができて便利です。もしグループですでにグループパラメータの設定が行
+なわれていた場合は、この変数よりもそちらが優先されます。
+</p></dd>
+</dl>
+
+<a name="index-article-expiry"></a>
+<a name="index-auto_002dexpire"></a>
+<a name="index-expiry_002dwait"></a>
+<a name="index-nnmail_002dexpiry_002dwait_002dfunction"></a>
+<a name="index-nnmail_002dexpiry_002dwait"></a>
+<p>&lsquo;<samp>Nnshimbun</samp>&rsquo; には記事の期限切れ消去を行なわせることができま
+す<a name="DOCF8" href="emacs-w3m-ja_fot.html#FOOT8">(8)</a>。記事が期限切
+れ消去されると言っても、それが遠隔サーバーから削除されるわけではなく、そ
+れはずっとそこから取得可能であることを覚えておいてください。消えるのはあ
+なた自身の &lsquo;<samp>nnshimbun</samp>&rsquo; 用の <acronym>NOV</acronym> ファイ
+ル<a name="DOCF9" href="emacs-w3m-ja_fot.html#FOOT9">(9)</a> の、
+消去される記事に該当する行です。それによってその記事は二度と概略バッファ
+に現れなくなります。
+</p>
+<p>&lsquo;<samp>Nnshimbun</samp>&rsquo; グループで記事の期限切れ消去を行なわない
+と <acronym>NOV</acronym> ファイルが際限無く太り続け、非常に古い記事があたかも存
+在しているように見えるかもしれません (実際には、それらは新聞社のサーバー
+で三年前に期限切れ消去されてしまっているかもしれない!)。それを読もうとし
+ても記事バッファには何も現れないでしょう。一方、メーリングリストの記事を
+提供しているたいていのサーバーは、一般的に過去の全記事を提供しています。
+憂愁の彼方に去りし古き良き時代に、あなたが興じた記事を懐かしくうるうるし
+て読み返すことができるように、そういうグループでは期限切れ消去はさせたく
+ないと思うかもしれません。
+</p>
+<p>他のメールバックエンドと同様に、&lsquo;<samp>nnshimbun</samp>&rsquo; のグループ毎に記事に自
+動期限切れ消去の印を付けて、残しておく期間を設定することができます。ただ
+し &lsquo;<samp>nnshimbun</samp>&rsquo; バックエンドと他のメールバックエンドには、少し違いが
+あります:
+</p>
+<ul>
+<li>
+第一に、残しておく期間のデフォルト値は以下の優先度で決定されます。グルー
+プによってデフォルト値が異なるかもしれないことに注意してください。
+
+<ol>
+<li>
+グループにおける <code>expiry-wait</code> グループパラメータの値。
+
+</li><li>
+そのグループを対象として、変数 <code>nnmail-expiry-wait-function</code> を評価
+することによって得られた値。
+
+</li><li>
+グループに対応する &lsquo;<samp>shimbun</samp>&rsquo; モジュールが提供するデフォルト値。
+
+</li><li>
+変数 <code>nnmail-expiry-wait</code> の値。
+</li></ol>
+
+<p>第二に、変数 <code>nnmail-expiry-wait-function</code> によって設定される関数に
+与えられる引数に、&ldquo;nnshimbun+asahi:national&rdquo; のようにバックエンドとサー
+バーの名前が含まれることです。他のメールバックエンドの場合にはグループ名
+だけが与えられるのに、です。例を挙げましょう:
+</p>
+<table><tr><td>&nbsp;</td><td><pre class="lisp">(setq nnmail-expiry-wait-function
+      (lambda (group)
+        (cond ((string-equal group &quot;ding&quot;) 7)
+              ((string-equal group &quot;nnshimbun+ding:ding&quot;) 'never))))
+</pre></td></tr></table>
+
+<p>これは、同じ ding メーリングリスト用に二つのグループがあることを意味しま
+す: 一つはリストのメンバーとして講読登録しています。もう一つは Gnus タワー
+のメーリングリストアーカイブから読むためのものです。どうです、なかなか賢
+いでしょ?  &ldquo;ding&rdquo; グループのローカルなメールファイルは七日で期限切れ消
+去され、ローカルディスクの容量が節約されます。しかし二つ目のグループでは、
+前世紀の記事でさえ読むことができます (それが本当に必要ならば、ですが)。
+</p>
+<p>第三に、これはあなたに疑念が沸いたときに思い出すことができるように書き留
+められています: &lsquo;<samp>nnshimbun</samp>&rsquo; グループのすべての記事が期限切れ消去さ
+れるべきときでも、最新の一通だけは消さずに残しておきます。これはあなたの
+未練心を満足させるためではなく、次回にこのグループの新しい記事を取得しよ
+うとしたときに、&lsquo;<samp>nnshimbun</samp>&rsquo; がどこから始めるかを知って、すべての記
+事を取得し直さないようにするためです。
+</p></li></ul>
+
+<p>&lsquo;<samp>Nnshimbun</samp>&rsquo; の期限切れ消去に関係するグループパラメータと変数は以下
+の通りです:
+</p>
+<dl compact="compact">
+<dt> <code>expiry-wait</code></dt>
+<dd><a name="index-expiry_002dwait-1"></a>
+<p>どうか混乱なさらないように。<code>expiry-wait</code> グループパラメータ
+が &lsquo;<samp>nnshimbun</samp>&rsquo; 専用に作られたグループパラメー
+タ <code>nnshimbun-group-parameters</code> の要素の一つとして提供されます。そ
+れは標準のグループパラメータと同じ名前を持ち、意味も同じです。あなたはど
+ちらを使っても構いません。もし &lsquo;<samp>nnshimbun</samp>&rsquo; 専用のもの
+が <code>nil</code> 以外の値に設定されると、標準のものよりも優先されます。これ
+は &lsquo;<samp>nnshimbun</samp>&rsquo; に関係するものを &ldquo;Gnus Customize&rdquo; バッファ (グルー
+プバッファで <kbd>G c</kbd> をタイプすると現れる) の一箇所に集めるためと、
+変数 <code>nnshimbun-group-parameters-alist</code> で一括して管理できるように
+することを目的に用意したものです<a name="DOCF10" href="emacs-w3m-ja_fot.html#FOOT10">(10)</a>。設定できる
+値は標準のグループパラメータと同様に、時限消去の日数、<code>never</code> また
+は <code>immediate</code> です。
+</p>
+</dd>
+<dt> <code>nnshimbun-keep-unparsable-dated-articles</code></dt>
+<dd><a name="index-nnshimbun_002dkeep_002dunparsable_002ddated_002darticles"></a>
+<p>この変数の値が <code>nil</code> でない場合は、作成された (または到着した) 時刻
+がわからない記事は期限切れ消去されません。なにしろどのくらい古いのかわか
+らないんですから。デフォルト値は <code>t</code> です。<code>nil</code> に設定すると、
+期限切れ消去の処理が行なわれるときに、期限がわからない記事でも無条件で消
+されてしまいます。まあ、年の暮れの大掃除の役には立つことが判明するかもし
+れません。
+</p></dd>
+</dl>
+
+<hr size="6">
+<table cellpadding="1" cellspacing="1" border="0">
+<tr><td valign="middle" align="left">[<a href="emacs-w3m-ja_56.html#Shimbun-Library" title="Previous section in reading order"> &lt; </a>]</td>
+<td valign="middle" align="left">[<a href="emacs-w3m-ja_58.html#Mew-Shimbun" title="Next section in reading order"> &gt; </a>]</td>
+<td valign="middle" align="left"> &nbsp; </td>
+<td valign="middle" align="left">[<a href="emacs-w3m-ja_56.html#Shimbun-Library" title="Beginning of this chapter or previous chapter"> &lt;&lt; </a>]</td>
+<td valign="middle" align="left">[<a href="emacs-w3m-ja_56.html#Shimbun-Library" title="Up section">ä¸</a>]</td>
+<td valign="middle" align="left">[<a href="emacs-w3m-ja_63.html#Tips" title="Next chapter"> &gt;&gt; </a>]</td>
+</tr></table>
+<p>
+ <font size="-1">
+  ãã®ææ¸ã¯<em>TSUCHIYA Masatoshi</em>ã«ãã£ã¦<em>2019å¹´1ææ30æ¥</em>ã«<a href="http://www.nongnu.org/texi2html/"><em>texi2html 1.82</em></a>ãç¨ãã¦çæããã¾ããã
+ </font>
+ <br>
+
+</p>
+</body>
+</html>

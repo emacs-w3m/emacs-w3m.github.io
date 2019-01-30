@@ -1,0 +1,245 @@
+<!DOCTYPE html PUBLIC "-//W3C//DTD HTML 4.01 Transitional//EN" "http://www.w3.org/TR/html401/loose.dtd">
+<html>
+<!-- Copyright C 2000-2014 TSUCHIYA Masatoshi
+
+Permission is granted to copy, distribute and/or modify this document
+under the terms of the GNU General Public License, Version 2 or any
+later version published by the Free Software Foundation.
+
+This document is distributed in the hope that it will be useful, but
+WITHOUT ANY WARRANTY; without even the implied warranty of
+MERCHANTABILITY or FITNESS FOR A PARTICULAR PURPOSE.  See the GNU
+General Public License for more details.
+
+You should have received a copy of the GNU General Public License along
+with this document; see the file COPYING.  If not, write to the Free
+Software Foundation, Inc., 51 Franklin Street, Fifth Floor, Boston, MA
+02110-1301, USA.
+
+ -->
+<!-- Created on January 30, 2019 by texi2html 1.82
+texi2html was written by: 
+            Lionel Cons <Lionel.Cons@cern.ch> (original author)
+            Karl Berry  <karl@freefriends.org>
+            Olaf Bachmann <obachman@mathematik.uni-kl.de>
+            and many others.
+Maintained by: Many creative people.
+Send bugs and suggestions to <texi2html-bug@nongnu.org>
+-->
+<head>
+<title>Emacs-w3m &ndash; an Emacs interface to w3m &ndash;: 5.2 Variables related to images</title>
+
+<meta name="description" content="Emacs-w3m &ndash; an Emacs interface to w3m &ndash;: 5.2 Variables related to images">
+<meta name="keywords" content="Emacs-w3m &ndash; an Emacs interface to w3m &ndash;: 5.2 Variables related to images">
+<meta name="resource-type" content="document">
+<meta name="distribution" content="global">
+<meta name="Generator" content="texi2html 1.82">
+<meta http-equiv="Content-Type" content="text/html; charset=utf-8">
+<style type="text/css">
+<!--
+a.summary-letter {text-decoration: none}
+blockquote.smallquotation {font-size: smaller}
+pre.display {font-family: serif}
+pre.format {font-family: serif}
+pre.menu-comment {font-family: serif}
+pre.menu-preformatted {font-family: serif}
+pre.smalldisplay {font-family: serif; font-size: smaller}
+pre.smallexample {font-size: smaller}
+pre.smallformat {font-family: serif; font-size: smaller}
+pre.smalllisp {font-size: smaller}
+span.roman {font-family:serif; font-weight:normal;}
+span.sansserif {font-family:sans-serif; font-weight:normal;}
+ul.toc {list-style: none}
+-->
+</style>
+
+
+</head>
+
+<body lang="en" bgcolor="#FFFFFF" text="#000000" link="#0000FF" vlink="#800080" alink="#FF0000">
+
+<a name="Image-Variables"></a>
+<table cellpadding="1" cellspacing="1" border="0">
+<tr><td valign="middle" align="left">[<a href="emacs-w3m_31.html#General-Variables" title="Previous section in reading order"> &lt; </a>]</td>
+<td valign="middle" align="left">[<a href="emacs-w3m_33.html#Form-Variables" title="Next section in reading order"> &gt; </a>]</td>
+<td valign="middle" align="left"> &nbsp; </td>
+<td valign="middle" align="left">[<a href="emacs-w3m_30.html#Customizable-Variables" title="Beginning of this chapter or previous chapter"> &lt;&lt; </a>]</td>
+<td valign="middle" align="left">[<a href="emacs-w3m_30.html#Customizable-Variables" title="Up section"> Up </a>]</td>
+<td valign="middle" align="left">[<a href="emacs-w3m_46.html#Hooking-into-MUAs" title="Next chapter"> &gt;&gt; </a>]</td>
+<td valign="middle" align="left"> &nbsp; </td>
+<td valign="middle" align="left"> &nbsp; </td>
+<td valign="middle" align="left"> &nbsp; </td>
+<td valign="middle" align="left"> &nbsp; </td>
+<td valign="middle" align="left">[<a href="emacs-w3m.html#Top" title="Cover (top) of document">Top</a>]</td>
+<td valign="middle" align="left">[<a href="emacs-w3m_toc.html#SEC_Contents" title="Table of contents">Contents</a>]</td>
+<td valign="middle" align="left">[<a href="emacs-w3m_68.html#Index" title="Index">Index</a>]</td>
+<td valign="middle" align="left">[<a href="emacs-w3m_abt.html#SEC_About" title="About (help)"> ? </a>]</td>
+</tr></table>
+<a name="Variables-related-to-images"></a>
+<h2 class="section">5.2 Variables related to images</h2>
+<a name="index-Variables-related-to-images"></a>
+
+<dl compact="compact">
+<dt> <code>w3m-default-display-inline-images</code></dt>
+<dd><a name="index-w3m_002ddefault_002ddisplay_002dinline_002dimages"></a>
+<p>Non-<code>nil</code> means display images inline in emacs-w3m buffers.  You
+can toggle the visibility of images with the
+<code>w3m-toggle-inline-images</code> command.  See also
+<code>w3m-toggle-inline-images-permanently</code>.
+</p>
+</dd>
+<dt> <code>w3m-favicon-cache-expire-wait</code></dt>
+<dd><a name="index-w3m_002dfavicon_002dcache_002dexpire_002dwait"></a>
+<p>The cache will be expired after specified seconds passed since
+retrieval.  If this variable is <code>nil</code>, never expired.
+</p>
+</dd>
+<dt> <code>w3m-favicon-cache-file</code></dt>
+<dd><a name="index-w3m_002dfavicon_002dcache_002dfile"></a>
+<p>Filename of saving favicon cache.  It defaults to the file named
+&lsquo;<tt>.favicon</tt>&rsquo; under the directory specified by the
+<code>w3m-profile-directory</code> variable.
+</p>
+</dd>
+<dt> <code>w3m-favicon-size</code></dt>
+<dd><a name="index-w3m_002dfavicon_002dsize"></a>
+<p>Size of favicon. This value is used as geometry argument for
+<code>convert</code>.
+</p>
+</dd>
+<dt> <code>w3m-favicon-type</code></dt>
+<dd><a name="index-w3m_002dfavicon_002dtype"></a>
+<p>Image type of display favicon.
+</p>
+</dd>
+<dt> <code>w3m-favicon-use-cache-file</code></dt>
+<dd><a name="index-w3m_002dfavicon_002duse_002dcache_002dfile"></a>
+<p>If non-<code>nil</code>, use favicon cache file.
+</p>
+</dd>
+<dt> <code>w3m-favicon-default-background</code></dt>
+<dd><a name="index-w3m_002dfavicon_002ddefault_002dbackground"></a>
+<p>Color name used as transparent color of favicon image.  <code>Nil</code> means
+to use the background color of the Emacs frame.  The null string &quot;&quot; is
+special, that will be replaced with the background color of the header
+line or the mode line on which the favicon is displayed.  Note that this
+value is effective only with Emacs 22 and greater.
+</p>
+</dd>
+<dt> <code>w3m-icon-directory</code></dt>
+<dd><a name="index-w3m_002dicon_002ddirectory"></a>
+<p>Directory where emacs-w3m should find icon files.
+</p>
+</dd>
+<dt> <code>w3m-imagick-convert-program</code></dt>
+<dd><a name="index-w3m_002dimagick_002dconvert_002dprogram"></a>
+<p>Program name of ImageMagick&rsquo;s &lsquo;<samp>convert</samp>&rsquo;.
+</p>
+</dd>
+<dt> <code>w3m-treat-image-size</code></dt>
+<dd><a name="index-w3m_002dtreat_002dimage_002dsize"></a>
+<p>Non-<code>nil</code> means let the &lsquo;<samp>w3m</samp>&rsquo; command mind the ratio of the
+size of images and text.  The default value is <code>t</code>.
+</p>
+<p>If it is non-<code>nil</code>, the &lsquo;<samp>w3m</samp>&rsquo; command will make a
+&lsquo;<samp>halfdump</samp>&rsquo; which reserves rectangle spaces in which images will be
+put, and also &lsquo;<samp>alt</samp>&rsquo; texts will be truncated or padded with spaces
+so that their display width will be the same as the width of images.
+</p>
+<p>See also <code>w3m-pixels-per-character</code> and <code>w3m-pixels-per-line</code>.
+Those values will be passed to the &lsquo;<samp>w3m</samp>&rsquo; command in order to
+compute columns and lines which images occupy.
+</p>
+</dd>
+<dt> <code>w3m-pixels-per-character</code></dt>
+<dd><a name="index-w3m_002dpixels_002dper_002dcharacter"></a>
+<p>Integer used for the <code>-ppc</code> argument of the &lsquo;<samp>w3m</samp>&rsquo; command.  If
+<code>nil</code>, the width of the default face is used.  It is valid only
+when <code>w3m-treat-image-size</code> is non-<code>nil</code>.  The default value
+is <code>nil</code>.  If you want to use emacs-w3m in a character terminal and
+make <code>w3m-treat-image-size</code> effective, you need to set this
+variable properly.
+</p>
+</dd>
+<dt> <code>w3m-pixels-per-line</code></dt>
+<dd><a name="index-w3m_002dpixels_002dper_002dline"></a>
+<p>Integer used for the &lsquo;<samp>-ppl</samp>&rsquo; argument of the &lsquo;<samp>w3m</samp>&rsquo; command.  If
+<code>nil</code>, the height of the default face is used.  It is valid only
+when <code>w3m-treat-image-size</code> is non-<code>nil</code>.  Note that a small
+value may not induce a good result.  The default value is &lsquo;<samp>64</samp>&rsquo;.  If
+you want to use emacs-w3m in a character terminal and make
+<code>w3m-treat-image-size</code> effective, you need to set this variable
+properly.
+</p>
+</dd>
+<dt> <code>w3m-resize-image-scale</code></dt>
+<dd><a name="index-w3m_002dresize_002dimage_002dscale"></a>
+<p>Number of steps in percent used when resizing images.
+</p>
+</dd>
+<dt> <code>w3m-resize-images</code></dt>
+<dd><a name="index-w3m_002dresize_002dimages"></a>
+<p>If non-<code>nil</code>, resize images to the specified width and height.
+</p>
+</dd>
+<dt> <code>w3m-show-graphic-icons-in-header-line</code></dt>
+<dd><a name="index-w3m_002dshow_002dgraphic_002dicons_002din_002dheader_002dline"></a>
+<p>Non-<code>nil</code> means show graphic status indicators in the header-line.
+If it is <code>nil</code>, also the favicon won&rsquo;t be shown in the header-line
+even if <code>w3m-use-favicon</code> is non-<code>nil</code>.  This variable is
+currently meaningless under XEmacs.
+</p>
+</dd>
+<dt> <code>w3m-show-graphic-icons-in-mode-line</code></dt>
+<dd><a name="index-w3m_002dshow_002dgraphic_002dicons_002din_002dmode_002dline"></a>
+<p>Non-<code>nil</code> means show graphic status indicators in the mode-line.
+If it is <code>nil</code>, also the favicon won&rsquo;t be shown in the mode-line
+even if <code>w3m-use-favicon</code> is non-<code>nil</code>.
+</p>
+</dd>
+<dt> <code>w3m-toggle-inline-images-permanently</code></dt>
+<dd><a name="index-w3m_002dtoggle_002dinline_002dimages_002dpermanently"></a>
+<p>Non-<code>nil</code> means let the visibility of images continue permanently.
+The visibility of images is initialized according to
+<code>w3m-default-display-inline-images</code> at the first time, and except
+that it may be toggled by the <code>w3m-toggle-inline-images</code> command,
+it does not change hereafter, if it is non-<code>nil</code>.  Otherwise,
+whether images are visible is initialized according to
+<code>w3m-default-display-inline-images</code> whenever you visit a new page
+or reload the current page in an emacs-w3m buffer.
+</p>
+</dd>
+<dt> <code>w3m-use-favicon</code></dt>
+<dd><a name="index-w3m_002duse_002dfavicon"></a>
+<p>Non-<code>nil</code> means show favicon images if they are available.  It will
+be set to <code>nil</code> automatically if ImageMagick&rsquo;s <code>convert</code>
+program does not support the ico format.
+</p>
+</dd>
+<dt> <code>w3m-image-default-background</code></dt>
+<dd><a name="index-w3m_002dimage_002ddefault_002dbackground"></a>
+<p>Color name used as transparent color of image.  <code>Nil</code> means to use
+the background color of the Emacs frame.  The null string &quot;&quot; is special,
+that will be replaced with the background color of the buffer. Note that
+this value is effective only with Emacs 22 and greater.
+</p></dd>
+</dl>
+
+<hr size="6">
+<table cellpadding="1" cellspacing="1" border="0">
+<tr><td valign="middle" align="left">[<a href="emacs-w3m_31.html#General-Variables" title="Previous section in reading order"> &lt; </a>]</td>
+<td valign="middle" align="left">[<a href="emacs-w3m_33.html#Form-Variables" title="Next section in reading order"> &gt; </a>]</td>
+<td valign="middle" align="left"> &nbsp; </td>
+<td valign="middle" align="left">[<a href="emacs-w3m_30.html#Customizable-Variables" title="Beginning of this chapter or previous chapter"> &lt;&lt; </a>]</td>
+<td valign="middle" align="left">[<a href="emacs-w3m_30.html#Customizable-Variables" title="Up section"> Up </a>]</td>
+<td valign="middle" align="left">[<a href="emacs-w3m_46.html#Hooking-into-MUAs" title="Next chapter"> &gt;&gt; </a>]</td>
+</tr></table>
+<p>
+ <font size="-1">
+  This document was generated by <em>TSUCHIYA Masatoshi</em> on <em>January 30, 2019</em> using <a href="http://www.nongnu.org/texi2html/"><em>texi2html 1.82</em></a>.
+ </font>
+ <br>
+
+</p>
+</body>
+</html>

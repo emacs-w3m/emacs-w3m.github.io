@@ -1,0 +1,156 @@
+<!DOCTYPE html PUBLIC "-//W3C//DTD HTML 4.01 Transitional//EN" "http://www.w3.org/TR/html401/loose.dtd">
+<html>
+<!-- Copyright C 2000-2014 TSUCHIYA Masatoshi
+
+Permission is granted to copy, distribute and/or modify this document
+under the terms of the GNU General Public License, Version 2 or any
+later version published by the Free Software Foundation.
+
+This document is distributed in the hope that it will be useful, but
+WITHOUT ANY WARRANTY; without even the implied warranty of
+MERCHANTABILITY or FITNESS FOR A PARTICULAR PURPOSE.  See the GNU
+General Public License for more details.
+
+You should have received a copy of the GNU General Public License along
+with this document; see the file COPYING.  If not, write to the Free
+Software Foundation, Inc., 51 Franklin Street, Fifth Floor, Boston, MA
+02110-1301, USA.
+
+ -->
+<!-- Created on January 30, 2019 by texi2html 1.82
+texi2html was written by: 
+            Lionel Cons <Lionel.Cons@cern.ch> (original author)
+            Karl Berry  <karl@freefriends.org>
+            Olaf Bachmann <obachman@mathematik.uni-kl.de>
+            and many others.
+Maintained by: Many creative people.
+Send bugs and suggestions to <texi2html-bug@nongnu.org>
+-->
+<head>
+<title>Emacs-w3m &ndash; an Emacs interface to w3m &ndash;: 9. A tool for reading a newspaper</title>
+
+<meta name="description" content="Emacs-w3m &ndash; an Emacs interface to w3m &ndash;: 9. A tool for reading a newspaper">
+<meta name="keywords" content="Emacs-w3m &ndash; an Emacs interface to w3m &ndash;: 9. A tool for reading a newspaper">
+<meta name="resource-type" content="document">
+<meta name="distribution" content="global">
+<meta name="Generator" content="texi2html 1.82">
+<meta http-equiv="Content-Type" content="text/html; charset=utf-8">
+<style type="text/css">
+<!--
+a.summary-letter {text-decoration: none}
+blockquote.smallquotation {font-size: smaller}
+pre.display {font-family: serif}
+pre.format {font-family: serif}
+pre.menu-comment {font-family: serif}
+pre.menu-preformatted {font-family: serif}
+pre.smalldisplay {font-family: serif; font-size: smaller}
+pre.smallexample {font-size: smaller}
+pre.smallformat {font-family: serif; font-size: smaller}
+pre.smalllisp {font-size: smaller}
+span.roman {font-family:serif; font-weight:normal;}
+span.sansserif {font-family:sans-serif; font-weight:normal;}
+ul.toc {list-style: none}
+-->
+</style>
+
+
+</head>
+
+<body lang="en" bgcolor="#FFFFFF" text="#000000" link="#0000FF" vlink="#800080" alink="#FF0000">
+
+<a name="Shimbun-Library"></a>
+<table cellpadding="1" cellspacing="1" border="0">
+<tr><td valign="middle" align="left">[<a href="emacs-w3m_55.html#Known-Problems" title="Previous section in reading order"> &lt; </a>]</td>
+<td valign="middle" align="left">[<a href="emacs-w3m_57.html#Nnshimbun" title="Next section in reading order"> &gt; </a>]</td>
+<td valign="middle" align="left"> &nbsp; </td>
+<td valign="middle" align="left">[<a href="emacs-w3m_55.html#Known-Problems" title="Beginning of this chapter or previous chapter"> &lt;&lt; </a>]</td>
+<td valign="middle" align="left">[<a href="emacs-w3m.html#Top" title="Up section"> Up </a>]</td>
+<td valign="middle" align="left">[<a href="emacs-w3m_63.html#Tips" title="Next chapter"> &gt;&gt; </a>]</td>
+<td valign="middle" align="left"> &nbsp; </td>
+<td valign="middle" align="left"> &nbsp; </td>
+<td valign="middle" align="left"> &nbsp; </td>
+<td valign="middle" align="left"> &nbsp; </td>
+<td valign="middle" align="left">[<a href="emacs-w3m.html#Top" title="Cover (top) of document">Top</a>]</td>
+<td valign="middle" align="left">[<a href="emacs-w3m_toc.html#SEC_Contents" title="Table of contents">Contents</a>]</td>
+<td valign="middle" align="left">[<a href="emacs-w3m_68.html#Index" title="Index">Index</a>]</td>
+<td valign="middle" align="left">[<a href="emacs-w3m_abt.html#SEC_About" title="About (help)"> ? </a>]</td>
+</tr></table>
+<a name="A-tool-for-reading-a-newspaper"></a>
+<h1 class="chapter">9. A tool for reading a newspaper</h1>
+<a name="index-Shimbun-library"></a>
+
+<p>More and more newspapers, mailing list archives, bulletin boards, and
+individual diaries (such as hyper nikki system, weblogs and blogs) are
+published on the web.  &lsquo;<samp>Shimbun</samp>&rsquo; library enables you to read those
+contents with your favorite mail/news reader.  Actually, &lsquo;<samp>Shimbun</samp>&rsquo;
+library provides functions to convert those contents into articles like
+common e-mails.
+</p>
+<blockquote><p>&lsquo;<samp>Shimbun</samp>&rsquo; is pronounced &ldquo;she-n-boon&rdquo; (but actually vowels
+shouldn&rsquo;t be prolonged), it means &ldquo;newspaper&rdquo; in Japanese.
+</p></blockquote>
+
+<p>The &lsquo;<samp>shimbun</samp>&rsquo; module has the goal to generate articles that are as
+readable as normal mail or news posting.  This goal is often difficult
+to achieve as web sites change the html of their articles.
+</p>
+<p>If you notice (even small) annoyances like nonsense images within the
+text or any other text that is not related to the article please report
+them using <code>report-emacs-w3m-bug</code> (see section <a href="emacs-w3m_64.html#Mailing-List">Mailing list and submitting bug reports</a>).
+</p>
+<p>&lsquo;<samp>Shimbun</samp>&rsquo; library currently supports Asahi Shimbun, Yomiuri
+On-line, many mailing list archives such as Emacs Devel, XEmacs Beta,
+Gnus, Mew, and Wanderlust, Slashdot, Slashdot Japan, and a lot of
+others.  For more detail, see <a href="emacs-w3m_61.html#Shimbun-Sites">Sites supported by Shimbun</a>.
+</p>
+<p>By the way, you have to pay attention to copyright when using
+&lsquo;<samp>Shimbun</samp>&rsquo; library.  Copyrights of articles generated with
+&lsquo;<samp>Shimbun</samp>&rsquo; library are reserved by copyright holders of those
+original contents.  Therefore, you are obliged not to violate rights of
+copyright holders, when you enjoy generated articles.  It means that you
+can enjoy generated articles on &ldquo;fair use&rdquo; that is described in the
+copyright law.
+</p>
+<p>We, emacs-w3m development team, give no warranty to you, if
+&lsquo;<samp>Shimbun</samp>&rsquo; library causes a damage to you, or if you face a lawsuit
+about violation of copyrights.
+</p>
+<p>&lsquo;<samp>Shimbun</samp>&rsquo; library is a collection of many modules, but each of them
+serves no useful purpose alone.  This section explains three typical
+&lsquo;<samp>Shimbun</samp>&rsquo; applications (two of which are included in the
+&lsquo;<samp>Shimbun</samp>&rsquo; library) and how to make &lsquo;<samp>Shimbun</samp>&rsquo; modules by
+yourself (you need to be able to write Emacs Lisp programs).
+</p>
+<table class="menu" border="0" cellspacing="0">
+<tr><td align="left" valign="top"><a href="emacs-w3m_57.html#Nnshimbun">9.1 Turning Gnus into a web browser!</a></td><td>&nbsp;&nbsp;</td><td align="left" valign="top"></td></tr>
+<tr><td align="left" valign="top"><a href="emacs-w3m_58.html#Mew-Shimbun">9.2 Reading web newspapers with Mew</a></td><td>&nbsp;&nbsp;</td><td align="left" valign="top"></td></tr>
+<tr><td align="left" valign="top"><a href="emacs-w3m_59.html#Shimbun-with-Wanderlust">9.3 Reading web newspapers with Wanderlust</a></td><td>&nbsp;&nbsp;</td><td align="left" valign="top"></td></tr>
+<tr><td align="left" valign="top"><a href="emacs-w3m_60.html#Shimbun-local-mode">9.4 Using a shell script to fetch shimbun feeds</a></td><td>&nbsp;&nbsp;</td><td align="left" valign="top">          Use a shell script to fetch shimbun feeds
+</td></tr>
+<tr><td align="left" valign="top"><a href="emacs-w3m_61.html#Shimbun-Sites">9.5 Sites supported by Shimbun</a></td><td>&nbsp;&nbsp;</td><td align="left" valign="top"></td></tr>
+<tr><td align="left" valign="top"><a href="emacs-w3m_62.html#Shimbun-Basics">9.6 How to make a new shimbun module</a></td><td>&nbsp;&nbsp;</td><td align="left" valign="top"></td></tr>
+</table>
+
+<p>Note that you need to have installed the <acronym>FLIM</acronym> package (and
+Gnus if you&rsquo;d like to use &lsquo;<samp>nnshimbun</samp>&rsquo;) before building and
+installing emacs-w3m.  The <acronym>FLIM</acronym> package requires the
+<acronym>APEL</acronym> package.  You might also want to see See section <a href="emacs-w3m_5.html#Other-Requirements">Things required to run emacs-w3m</a>.
+</p>
+<hr size="6">
+<table cellpadding="1" cellspacing="1" border="0">
+<tr><td valign="middle" align="left">[<a href="emacs-w3m_55.html#Known-Problems" title="Previous section in reading order"> &lt; </a>]</td>
+<td valign="middle" align="left">[<a href="emacs-w3m_57.html#Nnshimbun" title="Next section in reading order"> &gt; </a>]</td>
+<td valign="middle" align="left"> &nbsp; </td>
+<td valign="middle" align="left">[<a href="emacs-w3m_55.html#Known-Problems" title="Beginning of this chapter or previous chapter"> &lt;&lt; </a>]</td>
+<td valign="middle" align="left">[<a href="emacs-w3m.html#Top" title="Up section"> Up </a>]</td>
+<td valign="middle" align="left">[<a href="emacs-w3m_63.html#Tips" title="Next chapter"> &gt;&gt; </a>]</td>
+</tr></table>
+<p>
+ <font size="-1">
+  This document was generated by <em>TSUCHIYA Masatoshi</em> on <em>January 30, 2019</em> using <a href="http://www.nongnu.org/texi2html/"><em>texi2html 1.82</em></a>.
+ </font>
+ <br>
+
+</p>
+</body>
+</html>

@@ -1,0 +1,200 @@
+<!DOCTYPE html PUBLIC "-//W3C//DTD HTML 4.01 Transitional//EN" "http://www.w3.org/TR/html401/loose.dtd">
+<html>
+<!-- Copyright C 2000-2014 TSUCHIYA Masatoshi
+
+Permission is granted to copy, distribute and/or modify this document
+under the terms of the GNU General Public License, Version 2 or any
+later version published by the Free Software Foundation.
+
+This document is distributed in the hope that it will be useful, but
+WITHOUT ANY WARRANTY; without even the implied warranty of
+MERCHANTABILITY or FITNESS FOR A PARTICULAR PURPOSE.  See the GNU
+General Public License for more details.
+
+You should have received a copy of the GNU General Public License along
+with this document; see the file COPYING.  If not, write to the Free
+Software Foundation, Inc., 51 Franklin Street, Fifth Floor, Boston, MA
+02110-1301, USA.
+
+ -->
+<!-- Created on January 30, 2019 by texi2html 1.82
+texi2html was written by: 
+            Lionel Cons <Lionel.Cons@cern.ch> (original author)
+            Karl Berry  <karl@freefriends.org>
+            Olaf Bachmann <obachman@mathematik.uni-kl.de>
+            and many others.
+Maintained by: Many creative people.
+Send bugs and suggestions to <texi2html-bug@nongnu.org>
+-->
+<head>
+<title>Emacs-w3m &ndash; an Emacs interface to w3m &ndash;: 3.2 Toggle displaying inline images</title>
+
+<meta name="description" content="Emacs-w3m &ndash; an Emacs interface to w3m &ndash;: 3.2 Toggle displaying inline images">
+<meta name="keywords" content="Emacs-w3m &ndash; an Emacs interface to w3m &ndash;: 3.2 Toggle displaying inline images">
+<meta name="resource-type" content="document">
+<meta name="distribution" content="global">
+<meta name="Generator" content="texi2html 1.82">
+<meta http-equiv="Content-Type" content="text/html; charset=utf-8">
+<style type="text/css">
+<!--
+a.summary-letter {text-decoration: none}
+blockquote.smallquotation {font-size: smaller}
+pre.display {font-family: serif}
+pre.format {font-family: serif}
+pre.menu-comment {font-family: serif}
+pre.menu-preformatted {font-family: serif}
+pre.smalldisplay {font-family: serif; font-size: smaller}
+pre.smallexample {font-size: smaller}
+pre.smallformat {font-family: serif; font-size: smaller}
+pre.smalllisp {font-size: smaller}
+span.roman {font-family:serif; font-weight:normal;}
+span.sansserif {font-family:sans-serif; font-weight:normal;}
+ul.toc {list-style: none}
+-->
+</style>
+
+
+</head>
+
+<body lang="en" bgcolor="#FFFFFF" text="#000000" link="#0000FF" vlink="#800080" alink="#FF0000">
+
+<a name="Inline-Images"></a>
+<table cellpadding="1" cellspacing="1" border="0">
+<tr><td valign="middle" align="left">[<a href="emacs-w3m_10.html#Going-Back-to-Daily-Hacking-and_002for-Daily-Writing" title="Previous section in reading order"> &lt; </a>]</td>
+<td valign="middle" align="left">[<a href="emacs-w3m_12.html#Tracing-History" title="Next section in reading order"> &gt; </a>]</td>
+<td valign="middle" align="left"> &nbsp; </td>
+<td valign="middle" align="left">[<a href="emacs-w3m_9.html#Basic-Usage" title="Beginning of this chapter or previous chapter"> &lt;&lt; </a>]</td>
+<td valign="middle" align="left">[<a href="emacs-w3m_9.html#Basic-Usage" title="Up section"> Up </a>]</td>
+<td valign="middle" align="left">[<a href="emacs-w3m_19.html#Pretty-Good-Features" title="Next chapter"> &gt;&gt; </a>]</td>
+<td valign="middle" align="left"> &nbsp; </td>
+<td valign="middle" align="left"> &nbsp; </td>
+<td valign="middle" align="left"> &nbsp; </td>
+<td valign="middle" align="left"> &nbsp; </td>
+<td valign="middle" align="left">[<a href="emacs-w3m.html#Top" title="Cover (top) of document">Top</a>]</td>
+<td valign="middle" align="left">[<a href="emacs-w3m_toc.html#SEC_Contents" title="Table of contents">Contents</a>]</td>
+<td valign="middle" align="left">[<a href="emacs-w3m_68.html#Index" title="Index">Index</a>]</td>
+<td valign="middle" align="left">[<a href="emacs-w3m_abt.html#SEC_About" title="About (help)"> ? </a>]</td>
+</tr></table>
+<a name="Toggle-displaying-inline-images"></a>
+<h2 class="section">3.2 Toggle displaying inline images</h2>
+<a name="index-Displaying-images"></a>
+
+<p>If the Emacs version you&rsquo;re using is capable of displaying images in
+buffers, then emacs-w3m can display them in web pages, just like
+&ldquo;graphical&rdquo; browsers like Mozilla do.  You should make sure your Emacs
+is correctly setup for images before trying to use any of the following
+commands (see section <a href="emacs-w3m_3.html#Required-Emacs-Version">What version of Emacs can be used?</a>).
+</p>
+<p>To toggle displaying of images in the current buffer, use <kbd>T</kbd>
+(<kbd>I</kbd> for the &lsquo;<samp>Info-like</samp>&rsquo; keymap).  It makes emacs-w3m fetch the
+images from the server, then display them in the buffer, at the position
+they would have in a &ldquo;graphical&rdquo; browser. If you hit the key again,
+images will disappear from the buffer.
+</p>
+<p>By default, emacs-w3m won&rsquo;t display images, but you can change its
+behavior and choose to always display images, for this you need to
+customize the <code>w3m-default-display-inline-images</code> variable and
+change its value from <code>nil</code> to <code>t</code>.  See section <a href="emacs-w3m_30.html#Customizable-Variables">Customizable variables</a>.
+</p>
+<p>Emacs-w3m also comes with nifty features that let you zoom an image in
+or out, save it to a file, or view it in a external viewer.  See also
+<a href="emacs-w3m_10.html#Moving-in-a-page">Moving from place to place in a page</a> for instructions on how to move from image to
+image in an emacs-w3m buffer.
+</p>
+<dl compact="compact">
+<dt> <kbd>T</kbd> (Lynx-like keymap)</dt>
+<dt> <kbd>I</kbd> (Info-like keymap)</dt>
+<dd><a name="index-T-_0028Lynx_002dlike-keymap_0029"></a>
+<a name="index-I-_0028Info_002dlike-keymap_0029"></a>
+<a name="index-w3m_002dtoggle_002dinline_002dimages"></a>
+<p>Toggle displaying of all the inline images in this buffer
+(<code>w3m-toggle-inline-images</code>).  If and only if
+<code>transient-mark-mode</code> is turned on and the region is active, only
+the images within the region will be turned on.
+</p>
+<p>Note1: whether to display inline images in a page from the start when
+you first visit the page is controlled by the value of the variable
+<code>w3m-default-display-inline-images</code> (the default is off) as
+mentioned above.  But the visibility of images in pages that you visit
+from this buffer inherits the last status of the visibility in this
+buffer if <code>w3m-toggle-inline-images-permanently</code> is non-<code>nil</code>
+(default=<code>t</code>).  If <code>w3m-toggle-inline-images-permanently</code> is
+<code>nil</code>, <code>w3m-default-display-inline-images</code> always controls it.
+</p>
+<p>Note2: this command deactivates the region, so you have to set it again
+if you want to turn on only the images in a certain area again.
+</p>
+</dd>
+<dt> <kbd>t</kbd> (Lynx-like keymap)</dt>
+<dt> <kbd>i</kbd> (Info-like keymap)</dt>
+<dd><a name="index-t-_0028Lynx_002dlike-keymap_0029"></a>
+<a name="index-i-_0028Info_002dlike-keymap_0029"></a>
+<a name="index-w3m_002dtoggle_002dinline_002dimage"></a>
+<p>Toggle displaying of the single inline image under the cursor
+(<code>w3m-toggle-inline-image</code>).  If and only if
+<code>transient-mark-mode</code> is turned on and the region is active, only
+the images within the region will be turned on.  For the &lsquo;<samp>Info-like
+keymap</samp>&rsquo;, this key is bound to the command (<code>w3m-view-image</code>) that
+launches the external viewer if Emacs does not support displaying
+images.
+</p>
+</dd>
+<dt> <kbd>M-S-t</kbd> (Lynx-like keymap)</dt>
+<dt> <kbd>M-S-i</kbd> (Info-like keymap)</dt>
+<dd><a name="index-M_002dT-_0028Lynx_002dlike-keymap_0029"></a>
+<a name="index-M_002dI-_0028Info_002dlike-keymap_0029"></a>
+<a name="index-w3m_002dturnoff_002dinline_002dimages"></a>
+<p>Turn off displaying of all the inline images in this buffer.
+(<code>w3m-turnoff-inline-images</code>).
+</p>
+</dd>
+<dt> <kbd>I</kbd> (Lynx-like keymap)</dt>
+<dd><a name="index-I-_0028Lynx_002dlike-keymap_0029"></a>
+<a name="index-w3m_002dview_002dimage"></a>
+<a name="index-Viewing-images"></a>
+<p>View the image under point in an external viewer
+(<code>w3m-view-image</code>).
+</p>
+</dd>
+<dt> <kbd>M-i</kbd></dt>
+<dd><a name="index-M_002di"></a>
+<a name="index-w3m_002dsave_002dimage"></a>
+<a name="index-Saving-images"></a>
+<p>Save the image under point to an external file.  The default name will
+be the original name of the image, so most of the time
+<kbd>M-i &lt;RET&gt;</kbd> will save the image with the right name
+(<code>w3m-save-image</code>).
+</p>
+<a name="index-Zooming-images"></a>
+</dd>
+<dt> <kbd>M-[</kbd></dt>
+<dd><a name="index-M_002d_005b"></a>
+<a name="index-w3m_002dzoom_002dout_002dimage"></a>
+<p>Zoom out the image under point (<code>w3m-zoom-out-image</code>).
+</p>
+</dd>
+<dt> <kbd>M-]</kbd></dt>
+<dd><a name="index-M_002d_005d"></a>
+<a name="index-w3m_002dzoom_002din_002dimage"></a>
+<p>Zoom in the image under point (<code>w3m-zoom-in-image</code>).
+</p></dd>
+</dl>
+
+<hr size="6">
+<table cellpadding="1" cellspacing="1" border="0">
+<tr><td valign="middle" align="left">[<a href="emacs-w3m_10.html#Going-Back-to-Daily-Hacking-and_002for-Daily-Writing" title="Previous section in reading order"> &lt; </a>]</td>
+<td valign="middle" align="left">[<a href="emacs-w3m_12.html#Tracing-History" title="Next section in reading order"> &gt; </a>]</td>
+<td valign="middle" align="left"> &nbsp; </td>
+<td valign="middle" align="left">[<a href="emacs-w3m_9.html#Basic-Usage" title="Beginning of this chapter or previous chapter"> &lt;&lt; </a>]</td>
+<td valign="middle" align="left">[<a href="emacs-w3m_9.html#Basic-Usage" title="Up section"> Up </a>]</td>
+<td valign="middle" align="left">[<a href="emacs-w3m_19.html#Pretty-Good-Features" title="Next chapter"> &gt;&gt; </a>]</td>
+</tr></table>
+<p>
+ <font size="-1">
+  This document was generated by <em>TSUCHIYA Masatoshi</em> on <em>January 30, 2019</em> using <a href="http://www.nongnu.org/texi2html/"><em>texi2html 1.82</em></a>.
+ </font>
+ <br>
+
+</p>
+</body>
+</html>

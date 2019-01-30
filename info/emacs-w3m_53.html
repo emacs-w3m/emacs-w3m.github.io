@@ -1,0 +1,350 @@
+<!DOCTYPE html PUBLIC "-//W3C//DTD HTML 4.01 Transitional//EN" "http://www.w3.org/TR/html401/loose.dtd">
+<html>
+<!-- Copyright C 2000-2014 TSUCHIYA Masatoshi
+
+Permission is granted to copy, distribute and/or modify this document
+under the terms of the GNU General Public License, Version 2 or any
+later version published by the Free Software Foundation.
+
+This document is distributed in the hope that it will be useful, but
+WITHOUT ANY WARRANTY; without even the implied warranty of
+MERCHANTABILITY or FITNESS FOR A PARTICULAR PURPOSE.  See the GNU
+General Public License for more details.
+
+You should have received a copy of the GNU General Public License along
+with this document; see the file COPYING.  If not, write to the Free
+Software Foundation, Inc., 51 Franklin Street, Fifth Floor, Boston, MA
+02110-1301, USA.
+
+ -->
+<!-- Created on January 30, 2019 by texi2html 1.82
+texi2html was written by: 
+            Lionel Cons <Lionel.Cons@cern.ch> (original author)
+            Karl Berry  <karl@freefriends.org>
+            Olaf Bachmann <obachman@mathematik.uni-kl.de>
+            and many others.
+Maintained by: Many creative people.
+Send bugs and suggestions to <texi2html-bug@nongnu.org>
+-->
+<head>
+<title>Emacs-w3m &ndash; an Emacs interface to w3m &ndash;: 7.2 Troubleshooting</title>
+
+<meta name="description" content="Emacs-w3m &ndash; an Emacs interface to w3m &ndash;: 7.2 Troubleshooting">
+<meta name="keywords" content="Emacs-w3m &ndash; an Emacs interface to w3m &ndash;: 7.2 Troubleshooting">
+<meta name="resource-type" content="document">
+<meta name="distribution" content="global">
+<meta name="Generator" content="texi2html 1.82">
+<meta http-equiv="Content-Type" content="text/html; charset=utf-8">
+<style type="text/css">
+<!--
+a.summary-letter {text-decoration: none}
+blockquote.smallquotation {font-size: smaller}
+pre.display {font-family: serif}
+pre.format {font-family: serif}
+pre.menu-comment {font-family: serif}
+pre.menu-preformatted {font-family: serif}
+pre.smalldisplay {font-family: serif; font-size: smaller}
+pre.smallexample {font-size: smaller}
+pre.smallformat {font-family: serif; font-size: smaller}
+pre.smalllisp {font-size: smaller}
+span.roman {font-family:serif; font-weight:normal;}
+span.sansserif {font-family:sans-serif; font-weight:normal;}
+ul.toc {list-style: none}
+-->
+</style>
+
+
+</head>
+
+<body lang="en" bgcolor="#FFFFFF" text="#000000" link="#0000FF" vlink="#800080" alink="#FF0000">
+
+<a name="Trouble-FAQ"></a>
+<table cellpadding="1" cellspacing="1" border="0">
+<tr><td valign="middle" align="left">[<a href="emacs-w3m_52.html#General-FAQ" title="Previous section in reading order"> &lt; </a>]</td>
+<td valign="middle" align="left">[<a href="emacs-w3m_54.html#Shimbun-FAQ" title="Next section in reading order"> &gt; </a>]</td>
+<td valign="middle" align="left"> &nbsp; </td>
+<td valign="middle" align="left">[<a href="emacs-w3m_51.html#Frequently-Asked-Questions" title="Beginning of this chapter or previous chapter"> &lt;&lt; </a>]</td>
+<td valign="middle" align="left">[<a href="emacs-w3m_51.html#Frequently-Asked-Questions" title="Up section"> Up </a>]</td>
+<td valign="middle" align="left">[<a href="emacs-w3m_55.html#Known-Problems" title="Next chapter"> &gt;&gt; </a>]</td>
+<td valign="middle" align="left"> &nbsp; </td>
+<td valign="middle" align="left"> &nbsp; </td>
+<td valign="middle" align="left"> &nbsp; </td>
+<td valign="middle" align="left"> &nbsp; </td>
+<td valign="middle" align="left">[<a href="emacs-w3m.html#Top" title="Cover (top) of document">Top</a>]</td>
+<td valign="middle" align="left">[<a href="emacs-w3m_toc.html#SEC_Contents" title="Table of contents">Contents</a>]</td>
+<td valign="middle" align="left">[<a href="emacs-w3m_68.html#Index" title="Index">Index</a>]</td>
+<td valign="middle" align="left">[<a href="emacs-w3m_abt.html#SEC_About" title="About (help)"> ? </a>]</td>
+</tr></table>
+<a name="Troubleshooting"></a>
+<h2 class="section">7.2 Troubleshooting</h2>
+
+<ul>
+<li>
+Q. Why can&rsquo;t I enter a password on pages which require authentication?
+
+<p>Make sure the <code>w3m-async-exec</code> variable is set to a value other
+than <code>nil</code>.
+</p>
+</li><li>
+Q. Why can&rsquo;t I enter a password for a proxy server which requires
+authentication?
+
+<p>Make sure the <code>w3m-async-exec</code> variable is set to a value other
+than <code>nil</code>.
+</p>
+</li><li>
+Q. Why can&rsquo;t I follow links?
+
+<p>Emacs-w3m requires a version of w3m which recognizes the &lsquo;<samp>-header</samp>&rsquo;
+option.  Check what version of w3m you use.
+</p>
+</li><li>
+Q. Why do garbage characters appear?
+
+<p>It could be caused by the following reasons:
+</p>
+<ol>
+<li>
+Bad HTML file
+
+<p>If the character set specified by the &lsquo;<samp>&lt;meta&gt;</samp>&rsquo; tag differs from
+the actual contents in an HTML file, it will not be displayed correctly.
+Use the command <kbd>M-x w3m-redisplay-with-charset &lt;RET&gt;</kbd> or
+<kbd>C c</kbd> to set the correct character set and to force redisplay of
+the page.
+</p>
+</li><li>
+Limitation of the character sets
+
+<p>A page written by a character set other than ISO-2022-JP(jis), EUC-JP,
+or SHIFT_JIS may not be displayed correctly.  Try one of the following
+ways:
+</p>
+<ol>
+<li>
+Any characters defined in Unicode will be displayed correctly if you
+install the Mule-UCS package (see section <a href="emacs-w3m_5.html#Other-Requirements">Things required to run emacs-w3m</a>).  You need to
+make sure that the value of the <code>w3m-use-mule-ucs</code> variable is set
+to a value other than <code>nil</code> after installing the Mule-UCS package.
+In addition, if you want to make Emacs (and also emacs-w3m) handle the
+character sets EUC-JISX0213 and ISO-2022-JP-3, you have to install the
+&lsquo;<samp>jisx0213</samp>&rsquo; module which is contained in the Mule-UCS package
+(though it doesn&rsquo;t work under XEmacs unfortunately).
+
+</li><li>
+Install w3mmee or w3m-m17n, and set the <code>w3m-command</code> variable to
+the appropriate value.  And emacs-w3m will use the multi-lingual
+features provided by one of those programs.
+However, a page written by a coding system which Emacs doesn&rsquo;t support
+may not be displayed correctly. So please install Mule-UCS package if
+necessary.
+</li></ol>
+
+</li><li>
+Emacsen incompatibility
+
+<p>Under XEmacs 21.1, pages written by the SHIFT_JIS character set may not
+be displayed correctly.  There is also a problem in XEmacs 21.2 prior to
+the beta 36 version.  You should upgrade your XEmacs if you use such
+one.
+</p>
+<p>You should notice that XEmacs versions 21.1 and 21.2 have already been
+retired officially.
+</p>
+</li><li>
+Don&rsquo;t use <code>standard-display-european</code>
+
+<p>It is generally harmful since it often makes Latin characters get
+displayed incorrectly.  For instance, the apostrophe character
+(&lsquo;<samp>'</samp>&rsquo;) which was encoded as &lsquo;<samp>&amp;#8217</samp>&rsquo; will be displayed as the
+character &lsquo;<samp>u</samp>&rsquo; with a grave accent as if it had been encoded as
+&lsquo;<samp>&amp;#249</samp>&rsquo;.  If the line something like the following is in your
+&lsquo;<tt>~/.emacs</tt>&rsquo; file or site files which Emacs loads when starting up,
+we strongly recommend you to remove it.
+</p>
+<table><tr><td>&nbsp;</td><td><pre class="lisp">(standard-display-european 1)
+</pre></td></tr></table>
+
+<p>There the argument might be <code>t</code>, not <code>1</code>.
+</p></li></ol>
+
+</li><li>
+Q. Why can&rsquo;t images be shown?
+
+<p>It could be caused by the following reasons:
+</p>
+<p>There is a bug in the earlier versions of the &lsquo;<samp>libungif</samp>&rsquo; library.
+You have to install &lsquo;<samp>libungif-4.1.0b1</samp>&rsquo; and later.
+</p>
+<p>You must install the &lsquo;<samp>gifsicle</samp>&rsquo; program if you want to run
+emacs-w3m under XEmacs.  See section <a href="emacs-w3m_5.html#Other-Requirements">Things required to run emacs-w3m</a>.
+</p>
+<p>Emacs-w3m doesn&rsquo;t support the old versions of w3m.  Check what version
+of w3m you use.
+</p>
+</li><li>
+Q. Why can&rsquo;t I browse pages which require cookies?
+
+<p>(This is still an experimental feature.)
+</p>
+<p>Make sure the <code>w3m-use-cookies</code> variable is set to a value other
+than <code>nil</code>.
+</p>
+</li><li>
+Q. Why can&rsquo;t I fill in the form?
+
+<p>(This is still an experimental feature.)
+</p>
+<p>Make sure the <code>w3m-use-form</code> variable is set to a value other than
+<code>nil</code>.
+</p>
+</li><li>
+Q. Why can&rsquo;t I submit a form?
+
+<p>(This is still an experimental feature.)
+</p>
+<p>Make sure the <code>w3m-use-form</code> variable is set to a value other than
+<code>nil</code>.  You also need to use a version of w3m which recognizes the
+&lsquo;<samp>-post</samp>&rsquo; option in order to use this function.  Check what version
+of w3m you use.
+</p>
+</li><li>
+Q. Why are frames not rendered?
+
+<p>Install w3mmee and put the following line in your &lsquo;<tt>~/.emacs</tt>&rsquo; file:
+</p>
+<table><tr><td>&nbsp;</td><td><pre class="lisp">(setq w3m-command &quot;w3mmee&quot;)
+</pre></td></tr></table>
+
+</li><li>
+Q. Why are favicon images not displayed in the tabs line on GNU Emacs?
+
+<p>Install the &lsquo;<samp>convert</samp>&rsquo; program which is included in ImageMagick.
+It is available from: <a href="http://www.imagemagick.org/">http://www.imagemagick.org/</a>
+</p>
+</li><li>
+Q. Why does GNU Emacs get locked when a favicon image is going to be
+displayed?
+</li><li>
+Q. My computer accesses the disk drive violently and says &lsquo;<samp>process
+convert exited abnormally with code 10</samp>&rsquo;.  What&rsquo;s the story?
+
+<p>Do you use an old version of ImageMagick?  As far as we know, it happens
+when you use the &lsquo;<samp>convert</samp>&rsquo; program bundled with ImageMagick 5.2.1.
+It has been confirmed that the &lsquo;<samp>convert</samp>&rsquo; program bundled with
+ImageMagick 5.4.0-5 (and later) works fine.
+</p>
+<p>If you don&rsquo;t want to use ImageMagick, or if you can&rsquo;t use its most
+recent version, add the following line in your &lsquo;<tt>~/.emacs-w3m</tt>&rsquo; file:
+</p>
+<table><tr><td>&nbsp;</td><td><pre class="lisp">(setq w3m-use-favicon nil)
+</pre></td></tr></table>
+
+</li><li>
+Q. Why does not emacs-w3m work with w3mmee?
+
+<p>If you are using w3mmee configured with the option &lsquo;<samp>lang=en</samp>&rsquo; or
+&lsquo;<samp>lang=ja</samp>&rsquo;, reconfigure w3mmee with the option &lsquo;<samp>lang=many</samp>&rsquo; (it
+can be done by entering 3, when the &lsquo;<samp>configure</samp>&rsquo; script prompts you,
+&quot;Which language do you prefer?&quot;), and rebuild w3mmee.
+</p>
+</li><li>
+Q. Why I cannot visit web pages using emacs-w3m?  There is no problem
+when visiting local html files or using w3m barefoot, though.
+
+<p>What is called the asynch
+patch<a name="DOCF4" href="emacs-w3m_fot.html#FOOT4">(4)</a> is applied to the w3m command which some Linux
+distribution (e.g. Gentoo Linux) contains.  It is useful when using w3m
+barefoot, however it might make emacs-w3m hang.  If it is suspected, we
+recommend you reinstall the w3m command from the original source.
+</p>
+</li><li>
+Q. Why doesn&rsquo;t the emacs-w3m frame pop up to the front?
+
+<p>It is quite convenient that the <kbd>M-x w3m &lt;RET&gt;</kbd> command
+makes the emacs-w3m frame pop to the front even if it is hidden under
+the other frames.  However, it was reported that it does not work when
+running Emacs which has been built on some platforms (e.g., Fedora
+Linux) in which the &lsquo;<samp>metacity</samp>&rsquo; window manager is used.  In those
+systems, other features which raise the Emacs frames will not work,
+either.  If you are in such a miserable circumstance, it might be worth
+trying the following advice:
+</p>
+<table><tr><td>&nbsp;</td><td><pre class="lisp">(if (or (not window-system) (featurep 'xemacs))
+    nil
+  (defadvice raise-frame
+    (after make-it-work (&amp;optional frame) activate)
+    &quot;Make it work with the aid of wmctrl.&quot;
+    (call-process
+     &quot;wmctrl&quot; nil nil nil &quot;-i&quot; &quot;-R&quot;
+     (frame-parameter (or frame (selected-frame))
+                      'outer-window-id))))
+</pre></td></tr></table>
+
+<p>Where &lsquo;<samp>wmctrl</samp>&rsquo; is the external command which you can get from:
+</p>
+<p><a href="http://sweb.cz/tripie/utils/wmctrl/">http://sweb.cz/tripie/utils/wmctrl/</a>
+</p>
+<p>Note that you have to install the &lsquo;<samp>wmctrl</samp>&rsquo; command before putting
+the advice into the &lsquo;<tt>~/.emacs</tt>&rsquo; file.
+</p>
+<p>The following one is currently unnecessary for emacs-w3m, but a certain
+application needs it to work.  (You will lose nothing by adding it if
+you are in the platform in which the previous one is needed.)
+</p>
+<table><tr><td>&nbsp;</td><td><pre class="lisp">(if (or (not window-system) (featurep 'xemacs))
+    nil
+  (defadvice pop-to-buffer (after enable-it-to-forcus-frame
+                                  activate)
+    &quot;Enable it to focus frame if `pop-up-frames' is non-nil.&quot;
+    (when pop-up-frames
+      (let ((id (condition-case nil
+                    (frame-parameter
+                     (window-frame
+                      (get-buffer-window (ad-get-arg 0)))
+                     'outer-window-id)
+                  (error nil))))
+        (when id
+          (call-process
+           &quot;wmctrl&quot; nil nil nil &quot;-i&quot; &quot;-R&quot; id))))))
+</pre></td></tr></table>
+
+<p>The last one is perhaps unnecessary but it might be worth trying in some
+platforms.
+</p>
+<table><tr><td>&nbsp;</td><td><pre class="lisp">(if (or (not window-system)(featurep 'xemacs))
+    nil
+  (defadvice select-frame (around set-input-focus
+                                  (frame) activate)
+    &quot;Run `select-frame-set-input-focus'.&quot;
+    (setq ad-return-value (and (framep frame)
+                               (frame-live-p frame)
+                               frame))
+    (ad-deactivate 'select-frame)
+    (unwind-protect
+        (select-frame-set-input-focus frame)
+      (ad-activate 'select-frame))))
+</pre></td></tr></table>
+
+<p>These workarounds will become unnecessary in subsequent Emacs releases
+(22.2 or 23.1).
+</p></li></ul>
+
+<hr size="6">
+<table cellpadding="1" cellspacing="1" border="0">
+<tr><td valign="middle" align="left">[<a href="emacs-w3m_52.html#General-FAQ" title="Previous section in reading order"> &lt; </a>]</td>
+<td valign="middle" align="left">[<a href="emacs-w3m_54.html#Shimbun-FAQ" title="Next section in reading order"> &gt; </a>]</td>
+<td valign="middle" align="left"> &nbsp; </td>
+<td valign="middle" align="left">[<a href="emacs-w3m_51.html#Frequently-Asked-Questions" title="Beginning of this chapter or previous chapter"> &lt;&lt; </a>]</td>
+<td valign="middle" align="left">[<a href="emacs-w3m_51.html#Frequently-Asked-Questions" title="Up section"> Up </a>]</td>
+<td valign="middle" align="left">[<a href="emacs-w3m_55.html#Known-Problems" title="Next chapter"> &gt;&gt; </a>]</td>
+</tr></table>
+<p>
+ <font size="-1">
+  This document was generated by <em>TSUCHIYA Masatoshi</em> on <em>January 30, 2019</em> using <a href="http://www.nongnu.org/texi2html/"><em>texi2html 1.82</em></a>.
+ </font>
+ <br>
+
+</p>
+</body>
+</html>

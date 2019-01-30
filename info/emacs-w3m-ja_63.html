@@ -1,0 +1,260 @@
+<!DOCTYPE html PUBLIC "-//W3C//DTD HTML 4.01 Transitional//EN" "http://www.w3.org/TR/html401/loose.dtd">
+<html>
+<!-- Copyright C 2000-2014 TSUCHIYA Masatoshi
+
+Permission is granted to copy, distribute and/or modify this document
+under the terms of the GNU General Public License, Version 2 or any
+later version published by the Free Software Foundation.
+
+この文書を、フリーソフトウェア財団によって発行された GNU 一般公衆利用許
+諾契約書第 2 版またはそれ以降の版のうちどれかの定める条件の下で複製、配
+布、あるいは変更することを許可します。
+
+This document is distributed in the hope that it will be useful, but
+WITHOUT ANY WARRANTY; without even the implied warranty of
+MERCHANTABILITY or FITNESS FOR A PARTICULAR PURPOSE.  See the GNU
+General Public License for more details.
+
+この文書は有用であることを願って頒布されますが、全くの無保証 です。
+商業可能性 の保証や 特定の目的への適合性 は、言外に示され
+たものも含め全く存在しません。詳しくは GNU 一般公衆利用許諾契約書をご覧
+ください。
+
+You should have received a copy of the GNU General Public License along
+with this document; see the file COPYING.  If not, write to the Free
+Software Foundation, Inc., 51 Franklin Street, Fifth Floor, Boston, MA
+02110-1301, USA.
+
+あなたはこの文書と共に、GNU 一般公衆利用許諾契約書の複製物を一部受け取っ
+たはずです。COPYING ファイルを参照してください。もし受け取っていなければ、
+フリーソフトウェア財団まで請求してください (宛先は the Free Software
+Foundation, Inc., 59 Temple Place, Suite 330, Boston, MA 02111-1307 USA)。
+
+ -->
+<!-- Created on 2019å¹´1ææ30æ¥ by texi2html 1.82
+texi2html was written by: 
+            Lionel Cons <Lionel.Cons@cern.ch> (original author)
+            Karl Berry  <karl@freefriends.org>
+            Olaf Bachmann <obachman@mathematik.uni-kl.de>
+            and many others.
+Maintained by: Many creative people.
+Send bugs and suggestions to <texi2html-bug@nongnu.org>
+-->
+<head>
+<title>Emacs-w3m &ndash; an Emacs interface to w3m &ndash;: 10. Emacs-w3m を使う洒落た小物たち</title>
+
+<meta name="description" content="Emacs-w3m &ndash; an Emacs interface to w3m &ndash;: 10. Emacs-w3m を使う洒落た小物たち">
+<meta name="keywords" content="Emacs-w3m &ndash; an Emacs interface to w3m &ndash;: 10. Emacs-w3m を使う洒落た小物たち">
+<meta name="resource-type" content="document">
+<meta name="distribution" content="global">
+<meta name="Generator" content="texi2html 1.82">
+<meta http-equiv="Content-Type" content="text/html; charset=utf-8">
+<style type="text/css">
+<!--
+a.summary-letter {text-decoration: none}
+blockquote.smallquotation {font-size: smaller}
+pre.display {font-family: serif}
+pre.format {font-family: serif}
+pre.menu-comment {font-family: serif}
+pre.menu-preformatted {font-family: serif}
+pre.smalldisplay {font-family: serif; font-size: smaller}
+pre.smallexample {font-size: smaller}
+pre.smallformat {font-family: serif; font-size: smaller}
+pre.smalllisp {font-size: smaller}
+span.roman {font-family:serif; font-weight:normal;}
+span.sansserif {font-family:sans-serif; font-weight:normal;}
+ul.toc {list-style: none}
+-->
+</style>
+
+
+</head>
+
+<body lang="ja" bgcolor="#FFFFFF" text="#000000" link="#0000FF" vlink="#800080" alink="#FF0000">
+
+<a name="Tips"></a>
+<table cellpadding="1" cellspacing="1" border="0">
+<tr><td valign="middle" align="left">[<a href="emacs-w3m-ja_62.html#Coding-convention-of-Shimbun" title="Previous section in reading order"> &lt; </a>]</td>
+<td valign="middle" align="left">[<a href="emacs-w3m-ja_64.html#Mailing-List" title="Next section in reading order"> &gt; </a>]</td>
+<td valign="middle" align="left"> &nbsp; </td>
+<td valign="middle" align="left">[<a href="emacs-w3m-ja_56.html#Shimbun-Library" title="Beginning of this chapter or previous chapter"> &lt;&lt; </a>]</td>
+<td valign="middle" align="left">[<a href="emacs-w3m-ja.html#Top" title="Up section">ä¸</a>]</td>
+<td valign="middle" align="left">[<a href="emacs-w3m-ja_64.html#Mailing-List" title="Next chapter"> &gt;&gt; </a>]</td>
+<td valign="middle" align="left"> &nbsp; </td>
+<td valign="middle" align="left"> &nbsp; </td>
+<td valign="middle" align="left"> &nbsp; </td>
+<td valign="middle" align="left"> &nbsp; </td>
+<td valign="middle" align="left">[<a href="emacs-w3m-ja.html#Top" title="Cover (top) of document">åé ­</a>]</td>
+<td valign="middle" align="left">[<a href="emacs-w3m-ja_toc.html#SEC_Contents" title="Table of contents">ç®æ¬¡</a>]</td>
+<td valign="middle" align="left">[<a href="emacs-w3m-ja_68.html#Index" title="è¦åºã">è¦åºã</a>]</td>
+<td valign="middle" align="left">[<a href="emacs-w3m-ja_abt.html#SEC_About" title="About (help)"> ? </a>]</td>
+</tr></table>
+<a name="Emacs_002dw3m-woShi-uSa-Luo-taXiao-Wu-tati"></a>
+<h1 class="chapter">10. Emacs-w3m を使う洒落た小物たち</h1>
+<a name="index-Tips"></a>
+
+<p>他の Emacs の応用機能とともに emacs-w3m を便利に使うためのヒント集です。
+</p>
+<ul>
+<li> browse-url
+
+<p><code>browse-url</code> の機能とともに emacs-w3m を使うことができます。例えば、
+以下の行を &lsquo;<tt>~/.emacs</tt>&rsquo; ファイルに入れてください:
+</p>
+<table><tr><td>&nbsp;</td><td><pre class="lisp">(setq browse-url-browser-function 'w3m-browse-url)
+(global-set-key &quot;\C-xm&quot; 'browse-url-at-point)
+</pre></td></tr></table>
+
+<p>こうすることによって、Emacs のどのバッファでも、URL のような文字列の上
+で <kbd>C-x m</kbd> キーをタイプすると、emacs-w3m が起動されます。加えて、
+<kbd>C-c C-v</kbd> キーをタイプすることによって、まさに編集中の HTML ファ
+イルを emacs-w3m で下見 (preview) することができます (HTML ファイルの編
+集に、Emacs と <code>html-mode</code> メジャーモードを使う必要があります)。
+</p>
+<p>Emacs-w3m のバッファにいるときに、<kbd>C-x m</kbd> キーをタイプすることに
+よって、emacs-w3m の代わりに他のウェブブラウザを使いたい場合は (そんなこ
+とをしたい人がいるのかな?)、以下のアドバイスを &lsquo;<tt>~/.emacs</tt>&rsquo; ファイル
+に加えてください:
+</p>
+<table><tr><td>&nbsp;</td><td><pre class="lisp">(defadvice browse-url-at-point
+  (around change-browse-url-browser-function activate)
+  &quot;Use Netscape only when it is invoked in an emacs-w3m buffer.&quot;
+  (let ((browse-url-browser-function
+         (if (eq major-mode 'w3m-mode)
+             'browse-url-netscape
+           'w3m-browse-url)))
+    ad-do-it))
+</pre></td></tr></table>
+
+</li><li> dired
+
+<p><code>dired</code> のバッファで <kbd>C-x m</kbd> キーをタイプすることによって、
+emacs-w3m を使って HTML ファイルを閲覧することができます。
+&lsquo;<tt>~/.emacs</tt>&rsquo; ファイルで、以下の設定を使ってください:
+</p>
+<table><tr><td>&nbsp;</td><td><pre class="lisp">(eval-after-load &quot;dired&quot;
+  '(define-key dired-mode-map &quot;\C-xm&quot; 'dired-w3m-find-file))
+
+(defun dired-w3m-find-file ()
+  (interactive)
+  (require 'w3m)
+  (let ((file (dired-get-filename)))
+    (if (y-or-n-p (format &quot;Use emacs-w3m to browse %s? &quot;
+                          (file-name-nondirectory file)))
+        (w3m-find-file file))))
+</pre></td></tr></table>
+
+</li><li> hnf-mode
+
+<p>ハイパー日記システムと emacs-w3m を使って、最新の日記を見ることができま
+す。以下の行を &lsquo;<tt>~/.emacs</tt>&rsquo; ファイルに入れて、<code>hnf-mode</code> のバッ
+ファで <kbd>C-c C-b</kbd> キーをタイプしてください:
+</p>
+<table><tr><td>&nbsp;</td><td><pre class="lisp">(defun w3m-hnf-browse-url-w3m (url &amp;optional new-window)
+  (interactive (browse-url-interactive-arg &quot;URL: &quot;))
+  (save-selected-window
+    (pop-to-buffer (get-buffer-create &quot;*w3m*&quot;))
+    (w3m-browse-url url new-window)))
+(setq hnf-browse-url-browser-function #'w3m-hnf-browse-url-w3m)
+</pre></td></tr></table>
+
+</li><li> Gnus
+
+<p>あなたが Gnus のユーザで、この項がこの Info で初めて読むベージであるのな
+らば、あなたは入り口を間違えましたね。最初に <a href="emacs-w3m-ja_46.html#Hooking-into-MUAs">メール/ニュースリーダーで使う</a> を
+見てください。
+</p>
+<p>デフォルトでは、Gnus は例えば <code>gnus-treat-strip-banner</code> のよう
+な treatment 変数を &lsquo;<samp>text/html</samp>&rsquo; パートに適用しません。自動的に行な
+わせるには二つの方法があります:
+</p>
+<table><tr><td>&nbsp;</td><td><pre class="lisp">;; すべての treatment を text/html パートに適用する。
+(eval-after-load &quot;gnus-art&quot;
+  '(add-to-list 'gnus-article-treat-types &quot;text/html&quot;))
+</pre></td></tr></table>
+
+<table><tr><td>&nbsp;</td><td><pre class="lisp">;; 特定の treatment を text/html パートに適用する。
+(setq gnus-treat-strip-banner '(or t (typep &quot;text/html&quot;)))
+</pre></td></tr></table>
+
+<p>詳しいことは See <a href="../gnus-ja/Customizing-Articles.html#Customizing-Articles">(gnus-ja)Customizing Articles</a> section &lsquo;記事のカスタマイズ&rsquo; in <cite>The Gnus Manual</cite>, を見てください。
+</p>
+<p>加えて、以下の実験的なコードは &lsquo;<samp>multipart/related</samp>&rsquo; な絵を見るための
+ものです。表示される場所に少々難がありますが。
+</p>
+<table><tr><td>&nbsp;</td><td><pre class="lisp">(eval-after-load &quot;gnus-art&quot;
+  '(or (assoc &quot;multipart/related&quot; gnus-mime-multipart-functions)
+       (setq gnus-mime-multipart-functions
+             (cons
+              (cons
+               &quot;multipart/related&quot;
+               (byte-compile
+                (lambda (handle)
+                  (gnus-mime-display-mixed (cdr handle)))))
+              gnus-mime-multipart-functions))))
+</pre></td></tr></table>
+
+<p>HTML メールを読むために <code>shr</code> を使うと、それはメールの中の複数
+の HTML パートの間にあるページ区切り (つまり ~L) を消してしまいます。以
+下の advice はそれらのページ区切りを (元々なくても) 追加するための例です。
+新聞 (see section <a href="emacs-w3m-ja_56.html#Shimbun-Library">ウェブ上の新聞を読むための道具</a>) を読むとき役に立つかもしれません:
+</p>
+<table><tr><td>&nbsp;</td><td><pre class="lisp">(defadvice gnus-mime-display-mixed (around add-page-delimiter
+                                           (handles) activate)
+  &quot;Add page delimiters to the beginning of succeeding html parts.&quot;
+  (if (eq mm-text-html-renderer 'shr)
+      (progn
+        (gnus-mime-display-part (pop handles))
+        (while handles
+          (if (equal (mm-handle-media-type (car handles))
+                     &quot;text/html&quot;)
+              (insert &quot;\C-l\n&quot;))
+          (gnus-mime-display-part (pop handles))))
+    ad-do-it))
+</pre></td></tr></table>
+
+</li><li> yahtml-mode
+
+<p>Emacs-w3m を使って、<code>yahtml-mode</code> でまさに編集中の HTML ファイル
+を下見 (preview) することができます。例です:
+</p>
+<table><tr><td>&nbsp;</td><td><pre class="lisp">(defadvice yahtml-browse-html
+  (around w3m-yahtml-browse-html activate compile)
+  (w3m-goto-url (ad-get-arg 0) t))
+</pre></td></tr></table>
+
+</li><li> jisx0213
+
+<p>Emacs では Mule-UCS パッケージに含まれている <code>jis0213</code> モジュールを
+使うことによって、JIS X 0213 文字セットを使うことができます。
+<code>decode-char</code> 関数が <code>mucs</code> によって上書きされてしま
+う (<code>jis0213</code> が <code>mucs</code> を読み込む) ために、<code>ucs</code> CCS に
+対して正しく動作しなくなってしまいますが、さらに <code>unicode</code> モジュー
+ルを読み込むことによって、その問題が解決されるように見えるという報告があ
+りました。理由はまだ解明されていません。&lsquo;<tt>~/.emacs</tt>&rsquo; ファイル用の例で
+す:
+</p>
+<table><tr><td>&nbsp;</td><td><pre class="lisp">(require 'unicode)
+(require 'un-define)
+(require 'jisx0213)
+</pre></td></tr></table>
+</li></ul>
+
+<hr size="6">
+<table cellpadding="1" cellspacing="1" border="0">
+<tr><td valign="middle" align="left">[<a href="emacs-w3m-ja_62.html#Coding-convention-of-Shimbun" title="Previous section in reading order"> &lt; </a>]</td>
+<td valign="middle" align="left">[<a href="emacs-w3m-ja_64.html#Mailing-List" title="Next section in reading order"> &gt; </a>]</td>
+<td valign="middle" align="left"> &nbsp; </td>
+<td valign="middle" align="left">[<a href="emacs-w3m-ja_56.html#Shimbun-Library" title="Beginning of this chapter or previous chapter"> &lt;&lt; </a>]</td>
+<td valign="middle" align="left">[<a href="emacs-w3m-ja.html#Top" title="Up section">ä¸</a>]</td>
+<td valign="middle" align="left">[<a href="emacs-w3m-ja_64.html#Mailing-List" title="Next chapter"> &gt;&gt; </a>]</td>
+</tr></table>
+<p>
+ <font size="-1">
+  ãã®ææ¸ã¯<em>TSUCHIYA Masatoshi</em>ã«ãã£ã¦<em>2019å¹´1ææ30æ¥</em>ã«<a href="http://www.nongnu.org/texi2html/"><em>texi2html 1.82</em></a>ãç¨ãã¦çæããã¾ããã
+ </font>
+ <br>
+
+</p>
+</body>
+</html>

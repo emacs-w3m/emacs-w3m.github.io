@@ -1,0 +1,221 @@
+<!DOCTYPE html PUBLIC "-//W3C//DTD HTML 4.01 Transitional//EN" "http://www.w3.org/TR/html401/loose.dtd">
+<html>
+<!-- Copyright C 2000-2014 TSUCHIYA Masatoshi
+
+Permission is granted to copy, distribute and/or modify this document
+under the terms of the GNU General Public License, Version 2 or any
+later version published by the Free Software Foundation.
+
+この文書を、フリーソフトウェア財団によって発行された GNU 一般公衆利用許
+諾契約書第 2 版またはそれ以降の版のうちどれかの定める条件の下で複製、配
+布、あるいは変更することを許可します。
+
+This document is distributed in the hope that it will be useful, but
+WITHOUT ANY WARRANTY; without even the implied warranty of
+MERCHANTABILITY or FITNESS FOR A PARTICULAR PURPOSE.  See the GNU
+General Public License for more details.
+
+この文書は有用であることを願って頒布されますが、全くの無保証 です。
+商業可能性 の保証や 特定の目的への適合性 は、言外に示され
+たものも含め全く存在しません。詳しくは GNU 一般公衆利用許諾契約書をご覧
+ください。
+
+You should have received a copy of the GNU General Public License along
+with this document; see the file COPYING.  If not, write to the Free
+Software Foundation, Inc., 51 Franklin Street, Fifth Floor, Boston, MA
+02110-1301, USA.
+
+あなたはこの文書と共に、GNU 一般公衆利用許諾契約書の複製物を一部受け取っ
+たはずです。COPYING ファイルを参照してください。もし受け取っていなければ、
+フリーソフトウェア財団まで請求してください (宛先は the Free Software
+Foundation, Inc., 59 Temple Place, Suite 330, Boston, MA 02111-1307 USA)。
+
+ -->
+<!-- Created on 2019å¹´1ææ30æ¥ by texi2html 1.82
+texi2html was written by: 
+            Lionel Cons <Lionel.Cons@cern.ch> (original author)
+            Karl Berry  <karl@freefriends.org>
+            Olaf Bachmann <obachman@mathematik.uni-kl.de>
+            and many others.
+Maintained by: Many creative people.
+Send bugs and suggestions to <texi2html-bug@nongnu.org>
+-->
+<head>
+<title>Emacs-w3m &ndash; an Emacs interface to w3m &ndash;: 3.3 時空を遡る</title>
+
+<meta name="description" content="Emacs-w3m &ndash; an Emacs interface to w3m &ndash;: 3.3 時空を遡る">
+<meta name="keywords" content="Emacs-w3m &ndash; an Emacs interface to w3m &ndash;: 3.3 時空を遡る">
+<meta name="resource-type" content="document">
+<meta name="distribution" content="global">
+<meta name="Generator" content="texi2html 1.82">
+<meta http-equiv="Content-Type" content="text/html; charset=utf-8">
+<style type="text/css">
+<!--
+a.summary-letter {text-decoration: none}
+blockquote.smallquotation {font-size: smaller}
+pre.display {font-family: serif}
+pre.format {font-family: serif}
+pre.menu-comment {font-family: serif}
+pre.menu-preformatted {font-family: serif}
+pre.smalldisplay {font-family: serif; font-size: smaller}
+pre.smallexample {font-size: smaller}
+pre.smallformat {font-family: serif; font-size: smaller}
+pre.smalllisp {font-size: smaller}
+span.roman {font-family:serif; font-weight:normal;}
+span.sansserif {font-family:sans-serif; font-weight:normal;}
+ul.toc {list-style: none}
+-->
+</style>
+
+
+</head>
+
+<body lang="ja" bgcolor="#FFFFFF" text="#000000" link="#0000FF" vlink="#800080" alink="#FF0000">
+
+<a name="Tracing-History"></a>
+<table cellpadding="1" cellspacing="1" border="0">
+<tr><td valign="middle" align="left">[<a href="emacs-w3m-ja_11.html#Inline-Images" title="Previous section in reading order"> &lt; </a>]</td>
+<td valign="middle" align="left">[<a href="emacs-w3m-ja_13.html#Managing-Bookmarks" title="Next section in reading order"> &gt; </a>]</td>
+<td valign="middle" align="left"> &nbsp; </td>
+<td valign="middle" align="left">[<a href="emacs-w3m-ja_9.html#Basic-Usage" title="Beginning of this chapter or previous chapter"> &lt;&lt; </a>]</td>
+<td valign="middle" align="left">[<a href="emacs-w3m-ja_9.html#Basic-Usage" title="Up section">ä¸</a>]</td>
+<td valign="middle" align="left">[<a href="emacs-w3m-ja_19.html#Pretty-Good-Features" title="Next chapter"> &gt;&gt; </a>]</td>
+<td valign="middle" align="left"> &nbsp; </td>
+<td valign="middle" align="left"> &nbsp; </td>
+<td valign="middle" align="left"> &nbsp; </td>
+<td valign="middle" align="left"> &nbsp; </td>
+<td valign="middle" align="left">[<a href="emacs-w3m-ja.html#Top" title="Cover (top) of document">åé ­</a>]</td>
+<td valign="middle" align="left">[<a href="emacs-w3m-ja_toc.html#SEC_Contents" title="Table of contents">ç®æ¬¡</a>]</td>
+<td valign="middle" align="left">[<a href="emacs-w3m-ja_68.html#Index" title="è¦åºã">è¦åºã</a>]</td>
+<td valign="middle" align="left">[<a href="emacs-w3m-ja_abt.html#SEC_About" title="About (help)"> ? </a>]</td>
+</tr></table>
+<a name="Shi-Kong-woSu-ru"></a>
+<h2 class="section">3.3 時空を遡る</h2>
+<a name="index-Browsing-history"></a>
+<a name="index-Arrived-URLs"></a>
+
+<p>Emacs-w3m には、以前に訪問したすべてのページのリストを提示するための、
+2つの方法があります。第一の方法は「emacs-w3m の履歴」
+(emacs-w3m history) と単純に呼ばれるもので、そのセッション (注: そのバッ
+ファ内で行なう操作とそれに対する反応) において訪問したページのリストを階
+層的に提示します。すなわち、あるリンクをたどると、それまでのページは行き
+先の「親」になります。それは、訪れたページの跡をたどったり、履歴が長くなっ
+てしまった場合にどこから着たかを思い出すためには、たいへん都合の良いもの
+です。
+</p>
+<p>これは、GNU プロジェクトのホームページをちょっと訪ねた後における、この機
+能の動作の例です:
+</p>
+<table><tr><td>&nbsp;</td><td><pre class="example">GNU's Not Unix! - the GNU Project and the Free Software Foundation (FSF)
+  Philosophy of the GNU Project - Free Software Foundation (FSF)
+    GNU Emacs - GNU Project - Free Software Foundation (FSF)
+     Order from the Free Software Foundation (FSF)
+  Links to Other Free Software Sites - GNU Project - Free Software Fo...
+    EFF: Homepage
+</pre></td></tr></table>
+
+<p>(実際には、この例は 72 桁に収まるように、少しばかり編集されています。現
+実の emacs-w3m バッファでは URLs は切り詰められません。)
+</p>
+<p>どの emacs-w3m バッファからでも <kbd>s</kbd> キー (&lsquo;<samp>Info-like</samp>&rsquo; キーマッ
+プの場合は <kbd>o</kbd> キー) を使うことによって、このような履歴を提示させる
+ことが可能です。
+</p>
+<p>この履歴はバッファ・ローカル、すなわち、ある emacs-w3m のバッファに固有
+のものであることに注意してください。でも emacs-w3m にはユニークな機能が
+あります: あなたが新しいページを訪問する場合、履歴は新しいバッファにコピー
+されます。その結果、それまでに訪れたページに今まで通りアクセスすることが
+できます。これは、Mozilla などの、新しいバッファでは履歴が常にゼロからス
+タートするブラウザとは異なります。
+</p>
+<p>Emacs-w3m は単にあなたが訪れたページを記録するだけでなく、あなたがページ
+の正確な同じ場所へ戻りたい場合に、それらのページの中の特定の位置を記録す
+ることもできます。<kbd>C-c C-@</kbd> を押すと、カーソルの位置が履歴に登
+録されます。以前に記録した位置へ移動するには、そのページを開い
+た emacs-w3m のバッファで <kbd>C-c C-v</kbd> を押してください。
+</p>
+<dl compact="compact">
+<dt> <kbd>s</kbd> (Lynx-like キーマップ)</dt>
+<dt> <kbd>C-u s</kbd> (Lynx-like キーマップ)</dt>
+<dt> <kbd>o</kbd> (Info-like キーマップ)</dt>
+<dt> <kbd>C-u o</kbd> (Info-like キーマップ)</dt>
+<dd><a name="index-s-_0028Lynx_002dlike-kimatupu_0029"></a>
+<a name="index-C_002du-s-_0028Lynx_002dlike-kimatupu_0029"></a>
+<a name="index-o-_0028Info_002dlike-kimatupu_0029"></a>
+<a name="index-C_002du-o-_0028Info_002dlike-kimatupu_0029"></a>
+<a name="index-w3m_002dhistory"></a>
+<p>このセッションにおいて訪問した URLs のリストを表示します。接頭引数付きで
+呼ばれると (後述)、代わりに arrived URLs を表示しま
+す (<code>w3m-history</code>)。
+</p>
+</dd>
+<dt> <kbd>C-c C-@</kbd></dt>
+<dt> <kbd>C-c C-&lt;SPC&gt;</kbd></dt>
+<dd><a name="index-C_002dc-C_002d_0040"></a>
+<a name="index-C_002dc-C_002dSPC"></a>
+<a name="index-w3m_002dhistory_002dstore_002dposition"></a>
+<p>そのページの中のカーソルの位置を履歴に記録します。
+</p>
+</dd>
+<dt> <kbd>C-c C-v</kbd></dt>
+<dd><a name="index-C_002dc-C_002dv"></a>
+<a name="index-w3m_002dhistory_002drestore_002dposition"></a>
+<p>現在表示しているページにおい
+て、<kbd>C-c C-@</kbd> (<code>w3m-history-store-position</code>) で記憶した位
+置へ移動します。
+</p></dd>
+</dl>
+
+<p>もう一つの過去に訪れたページに関する情報を手に入れる方法は、「arrived
+URLs」です。これはあなたが emacs-w3m で訪問した、最後の 500個! の URL の
+リストです。リストは日付順で、最も最近のものを先頭に、それぞれのページの
+訪問時刻が表示されます。これは例です (info の表示が拡がり過ぎないように
+編集されています):
+</p>
+<table><tr><td>&nbsp;</td><td><pre class="example">Order from the Free Software Foundation (FSF)             22:53:25
+GNU Emacs - GNU Project - Free Software Foundation (FS    22:53:05
+Philosophy of the GNU Project - Free Software Foundati... 22:52:46
+Philosophy of the GNU Project - Free Software Foundati... 22:52:39
+EFF: Homepage                                             22:52:18
+Links to Other Free Software Sites - GNU Project - Fre... 22:52:07
+Links to Other Free Software Sites - GNU Project - Fre... 22:52:07
+GNU's Not Unix! - the GNU Project and the Free Softwar... 22:51:32
+Bookmarks                                                 22:51:02
+The DICT Development Group- upwards                       2003-01-08
+the monkey puzzle: new debian packages as an rss feed     2003-01-08
+new-debian-packages.rss                                   2003-01-07
+it's a miracle                                            2003-01-06
+</pre></td></tr></table>
+
+<p>前のコマンドに接頭引数を渡す、すなわち <kbd>C-u s</kbd>
+(&lsquo;<samp>Info-like</samp>&rsquo; キーマップの場合は <kbd>C-u o</kbd>) を使うことによって、
+この履歴を得ることができます。このページに表示される URLs の数はカスタマ
+イズできます。変数 <code>w3m-keep-arrived-urls</code> を参照してください。それ
+はデフォルトでは 500 を越えることはできません。See section <a href="emacs-w3m-ja_30.html#Customizable-Variables">デフォルトのままでも結構良いと思うけれど</a>.
+</p>
+<p>もちろん、すべての場合に、例に示されているすべての行はリンクです。そのリ
+ンクをたどることによって、通常のページを訪問していたらちょうどそうなるよ
+うに、以前に訪ねたどのページにも行くことができます。
+</p>
+<p><a href="emacs-w3m-ja_10.html#Moving-over-pages">ページ間を渡り歩く</a> の項も見てください。そこでは「戻る」「進む」など
+の機能に割り当てられた単純なキーで、履歴の中を移動するやり方を説明してい
+ます。
+</p>
+<hr size="6">
+<table cellpadding="1" cellspacing="1" border="0">
+<tr><td valign="middle" align="left">[<a href="emacs-w3m-ja_11.html#Inline-Images" title="Previous section in reading order"> &lt; </a>]</td>
+<td valign="middle" align="left">[<a href="emacs-w3m-ja_13.html#Managing-Bookmarks" title="Next section in reading order"> &gt; </a>]</td>
+<td valign="middle" align="left"> &nbsp; </td>
+<td valign="middle" align="left">[<a href="emacs-w3m-ja_9.html#Basic-Usage" title="Beginning of this chapter or previous chapter"> &lt;&lt; </a>]</td>
+<td valign="middle" align="left">[<a href="emacs-w3m-ja_9.html#Basic-Usage" title="Up section">ä¸</a>]</td>
+<td valign="middle" align="left">[<a href="emacs-w3m-ja_19.html#Pretty-Good-Features" title="Next chapter"> &gt;&gt; </a>]</td>
+</tr></table>
+<p>
+ <font size="-1">
+  ãã®ææ¸ã¯<em>TSUCHIYA Masatoshi</em>ã«ãã£ã¦<em>2019å¹´1ææ30æ¥</em>ã«<a href="http://www.nongnu.org/texi2html/"><em>texi2html 1.82</em></a>ãç¨ãã¦çæããã¾ããã
+ </font>
+ <br>
+
+</p>
+</body>
+</html>

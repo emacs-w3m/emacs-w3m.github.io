@@ -1,0 +1,350 @@
+<!DOCTYPE html PUBLIC "-//W3C//DTD HTML 4.01 Transitional//EN" "http://www.w3.org/TR/html401/loose.dtd">
+<html>
+<!-- Copyright C 2000-2014 TSUCHIYA Masatoshi
+
+Permission is granted to copy, distribute and/or modify this document
+under the terms of the GNU General Public License, Version 2 or any
+later version published by the Free Software Foundation.
+
+この文書を、フリーソフトウェア財団によって発行された GNU 一般公衆利用許
+諾契約書第 2 版またはそれ以降の版のうちどれかの定める条件の下で複製、配
+布、あるいは変更することを許可します。
+
+This document is distributed in the hope that it will be useful, but
+WITHOUT ANY WARRANTY; without even the implied warranty of
+MERCHANTABILITY or FITNESS FOR A PARTICULAR PURPOSE.  See the GNU
+General Public License for more details.
+
+この文書は有用であることを願って頒布されますが、全くの無保証 です。
+商業可能性 の保証や 特定の目的への適合性 は、言外に示され
+たものも含め全く存在しません。詳しくは GNU 一般公衆利用許諾契約書をご覧
+ください。
+
+You should have received a copy of the GNU General Public License along
+with this document; see the file COPYING.  If not, write to the Free
+Software Foundation, Inc., 51 Franklin Street, Fifth Floor, Boston, MA
+02110-1301, USA.
+
+あなたはこの文書と共に、GNU 一般公衆利用許諾契約書の複製物を一部受け取っ
+たはずです。COPYING ファイルを参照してください。もし受け取っていなければ、
+フリーソフトウェア財団まで請求してください (宛先は the Free Software
+Foundation, Inc., 59 Temple Place, Suite 330, Boston, MA 02111-1307 USA)。
+
+ -->
+<!-- Created on 2019å¹´1ææ30æ¥ by texi2html 1.82
+texi2html was written by: 
+            Lionel Cons <Lionel.Cons@cern.ch> (original author)
+            Karl Berry  <karl@freefriends.org>
+            Olaf Bachmann <obachman@mathematik.uni-kl.de>
+            and many others.
+Maintained by: Many creative people.
+Send bugs and suggestions to <texi2html-bug@nongnu.org>
+-->
+<head>
+<title>Emacs-w3m &ndash; an Emacs interface to w3m &ndash;: 4.1 使いやすいウェブ検索</title>
+
+<meta name="description" content="Emacs-w3m &ndash; an Emacs interface to w3m &ndash;: 4.1 使いやすいウェブ検索">
+<meta name="keywords" content="Emacs-w3m &ndash; an Emacs interface to w3m &ndash;: 4.1 使いやすいウェブ検索">
+<meta name="resource-type" content="document">
+<meta name="distribution" content="global">
+<meta name="Generator" content="texi2html 1.82">
+<meta http-equiv="Content-Type" content="text/html; charset=utf-8">
+<style type="text/css">
+<!--
+a.summary-letter {text-decoration: none}
+blockquote.smallquotation {font-size: smaller}
+pre.display {font-family: serif}
+pre.format {font-family: serif}
+pre.menu-comment {font-family: serif}
+pre.menu-preformatted {font-family: serif}
+pre.smalldisplay {font-family: serif; font-size: smaller}
+pre.smallexample {font-size: smaller}
+pre.smallformat {font-family: serif; font-size: smaller}
+pre.smalllisp {font-size: smaller}
+span.roman {font-family:serif; font-weight:normal;}
+span.sansserif {font-family:sans-serif; font-weight:normal;}
+ul.toc {list-style: none}
+-->
+</style>
+
+
+</head>
+
+<body lang="ja" bgcolor="#FFFFFF" text="#000000" link="#0000FF" vlink="#800080" alink="#FF0000">
+
+<a name="Using-Search-Engines"></a>
+<table cellpadding="1" cellspacing="1" border="0">
+<tr><td valign="middle" align="left">[<a href="emacs-w3m-ja_19.html#Pretty-Good-Features" title="Previous section in reading order"> &lt; </a>]</td>
+<td valign="middle" align="left">[<a href="#The-Search-Interface" title="Next section in reading order"> &gt; </a>]</td>
+<td valign="middle" align="left"> &nbsp; </td>
+<td valign="middle" align="left">[<a href="emacs-w3m-ja_19.html#Pretty-Good-Features" title="Beginning of this chapter or previous chapter"> &lt;&lt; </a>]</td>
+<td valign="middle" align="left">[<a href="emacs-w3m-ja_19.html#Pretty-Good-Features" title="Up section">ä¸</a>]</td>
+<td valign="middle" align="left">[<a href="emacs-w3m-ja_30.html#Customizable-Variables" title="Next chapter"> &gt;&gt; </a>]</td>
+<td valign="middle" align="left"> &nbsp; </td>
+<td valign="middle" align="left"> &nbsp; </td>
+<td valign="middle" align="left"> &nbsp; </td>
+<td valign="middle" align="left"> &nbsp; </td>
+<td valign="middle" align="left">[<a href="emacs-w3m-ja.html#Top" title="Cover (top) of document">åé ­</a>]</td>
+<td valign="middle" align="left">[<a href="emacs-w3m-ja_toc.html#SEC_Contents" title="Table of contents">ç®æ¬¡</a>]</td>
+<td valign="middle" align="left">[<a href="emacs-w3m-ja_68.html#Index" title="è¦åºã">è¦åºã</a>]</td>
+<td valign="middle" align="left">[<a href="emacs-w3m-ja_abt.html#SEC_About" title="About (help)"> ? </a>]</td>
+</tr></table>
+<a name="Shi-iyasuiuebuJian-Suo-"></a>
+<h2 class="section">4.1 使いやすいウェブ検索</h2>
+<a name="index-Search-engines"></a>
+
+<p>Emacs-w3m には検索エンジンを利用するための先進の機能があり、三つのインター
+フェースを通して利用することができます:
+</p>
+<ul>
+<li>
+標準の検索インターフェースです。<kbd>S</kbd> キー (&lsquo;<samp>Info-like</samp>&rsquo; キーマッ
+プの場合は <kbd>s</kbd> キー) で、いずれかの emacs-w3m バッファから起動されま
+す。これは検索エンジンを指定して検索語を入力する、単純な対話型のやり方で
+す。<a href="#The-Search-Interface">Emacs-w3m による検索のやり方</a> を参照してください。
+
+</li><li>
+クイックサーチ・インターフェースです。これは技巧的に作られた URL に行く
+ことによって検索エンジンを利用するための、より速い (さらに、より複雑
+な) 方法です。この機能に関する詳細は <a href="#Quick-Searching">もう一つの (そして速い) ウェブ検索</a> を参照してく
+ださい。
+
+</li><li>
+&ldquo;feeling searchy&rdquo; 機能が有効になってい
+る (<code>w3m-enable-feeling-searchy</code>) と、URL を入力するときに通常
+の URL の代わりに何かの語句を指定することによって、その語句の web 検索を
+自動的に開始させることができます。
+</li></ul>
+
+<table class="menu" border="0" cellspacing="0">
+<tr><td align="left" valign="top"><a href="#The-Search-Interface">4.1.1 Emacs-w3m による検索のやり方</a></td><td>&nbsp;&nbsp;</td><td align="left" valign="top"></td></tr>
+<tr><td align="left" valign="top"><a href="#Quick-Searching">4.1.2 もう一つの (そして速い) ウェブ検索</a></td><td>&nbsp;&nbsp;</td><td align="left" valign="top"></td></tr>
+<tr><td align="left" valign="top"><a href="#Adding-New-Search-Engines">4.1.3 お気に入りのエンジンを使うには?</a></td><td>&nbsp;&nbsp;</td><td align="left" valign="top"></td></tr>
+</table>
+
+<hr size="6">
+<a name="The-Search-Interface"></a>
+<table cellpadding="1" cellspacing="1" border="0">
+<tr><td valign="middle" align="left">[<a href="#Using-Search-Engines" title="Previous section in reading order"> &lt; </a>]</td>
+<td valign="middle" align="left">[<a href="#Quick-Searching" title="Next section in reading order"> &gt; </a>]</td>
+<td valign="middle" align="left"> &nbsp; </td>
+<td valign="middle" align="left">[<a href="emacs-w3m-ja_19.html#Pretty-Good-Features" title="Beginning of this chapter or previous chapter"> &lt;&lt; </a>]</td>
+<td valign="middle" align="left">[<a href="#Using-Search-Engines" title="Up section">ä¸</a>]</td>
+<td valign="middle" align="left">[<a href="emacs-w3m-ja_30.html#Customizable-Variables" title="Next chapter"> &gt;&gt; </a>]</td>
+<td valign="middle" align="left"> &nbsp; </td>
+<td valign="middle" align="left"> &nbsp; </td>
+<td valign="middle" align="left"> &nbsp; </td>
+<td valign="middle" align="left"> &nbsp; </td>
+<td valign="middle" align="left">[<a href="emacs-w3m-ja.html#Top" title="Cover (top) of document">åé ­</a>]</td>
+<td valign="middle" align="left">[<a href="emacs-w3m-ja_toc.html#SEC_Contents" title="Table of contents">ç®æ¬¡</a>]</td>
+<td valign="middle" align="left">[<a href="emacs-w3m-ja_68.html#Index" title="è¦åºã">è¦åºã</a>]</td>
+<td valign="middle" align="left">[<a href="emacs-w3m-ja_abt.html#SEC_About" title="About (help)"> ? </a>]</td>
+</tr></table>
+<a name="Emacs_002dw3m-niyoruJian-Suo-noyariFang-"></a>
+<h3 class="subsection">4.1.1 Emacs-w3m による検索のやり方</h3>
+<a name="index-Searching"></a>
+
+<p>Emacs-w3m のバッファで <kbd>S</kbd> キー (&lsquo;<samp>Info-like</samp>&rsquo; キーマップの場合
+は <kbd>s</kbd> キー) を使うことにより、標準の検索インターフェースを立ち上げ
+ることができます。すると、ミニバッファで検索語の入力を求めるプロンプトが
+現れるので、一つまたは複数の語を入れて、<kbd>&lt;RET&gt;</kbd> を叩いてください。
+そのエンジンの検索結果のページが現れ、その後、あたかも検索エンジンに通常
+のウェブの流儀による入力を行なったときのように、結果を閲覧することができ
+ます。
+</p>
+<p>おそらく、あなたはどのエンジンで探索したいかを決める機会が与えられていな
+いことに気付くでしょう。Emacs-w3m はデフォルトで Google 検索エンジンを使
+いますが、変数 <code>w3m-search-default-engine</code> (<a href="emacs-w3m-ja_30.html#Customizable-Variables">デフォルトのままでも結構良いと思うけれど</a> 参照) をカスタマイズすることによって、この振る舞いを変更する
+ことができます。あるいは、このコマンドを使うたびに検索エンジンを指定する
+ことができます。
+</p>
+<p>どのエンジンを使用するかを明示するためには、コマンドに接頭引数を与えなけ
+ればなりません (通常これは <kbd>C-u S</kbd> (&lsquo;<samp>Info-like</samp>&rsquo; キーマップ
+の場合は <kbd>C-u s</kbd>) のように、コマンドの前に <kbd>C-u</kbd> を叩くこと
+を意味します)。すると emacs-w3m はエンジンの入力を促すので、その名前を一
+つ選ぶことができます (&lt;&lt;TAB&gt;&gt; キーで補完ができます)。いったん選
+択したら <kbd>&lt;RET&gt;</kbd> キーを叩いてください。その後で検索語を入力する
+ことができ、<kbd>&lt;RET&gt;</kbd> をタイプすれば検索結果が現れるでしょう。
+</p>
+<dl compact="compact">
+<dt> <kbd>S</kbd> (Lynx-like キーマップ)</dt>
+<dt> <kbd>s</kbd> (Info-like キーマップ)</dt>
+<dd><a name="index-S-_0028Lynx_002dlike-kimatupu_0029"></a>
+<a name="index-s-_0028Info_002dlike-kimatupu_0029"></a>
+<a name="index-w3m_002dsearch"></a>
+<a name="index-w3m_002dsearch_002ddefault_002dengine"></a>
+<p>新しい検索を始めます。接頭引数付きで呼ばれた場合は、どのエンジンを使うか
+を尋ねます (<code>w3m-search</code>)。
+</p></dd>
+</dl>
+
+<hr size="6">
+<a name="Quick-Searching"></a>
+<table cellpadding="1" cellspacing="1" border="0">
+<tr><td valign="middle" align="left">[<a href="#The-Search-Interface" title="Previous section in reading order"> &lt; </a>]</td>
+<td valign="middle" align="left">[<a href="#Adding-New-Search-Engines" title="Next section in reading order"> &gt; </a>]</td>
+<td valign="middle" align="left"> &nbsp; </td>
+<td valign="middle" align="left">[<a href="emacs-w3m-ja_19.html#Pretty-Good-Features" title="Beginning of this chapter or previous chapter"> &lt;&lt; </a>]</td>
+<td valign="middle" align="left">[<a href="#Using-Search-Engines" title="Up section">ä¸</a>]</td>
+<td valign="middle" align="left">[<a href="emacs-w3m-ja_30.html#Customizable-Variables" title="Next chapter"> &gt;&gt; </a>]</td>
+<td valign="middle" align="left"> &nbsp; </td>
+<td valign="middle" align="left"> &nbsp; </td>
+<td valign="middle" align="left"> &nbsp; </td>
+<td valign="middle" align="left"> &nbsp; </td>
+<td valign="middle" align="left">[<a href="emacs-w3m-ja.html#Top" title="Cover (top) of document">åé ­</a>]</td>
+<td valign="middle" align="left">[<a href="emacs-w3m-ja_toc.html#SEC_Contents" title="Table of contents">ç®æ¬¡</a>]</td>
+<td valign="middle" align="left">[<a href="emacs-w3m-ja_68.html#Index" title="è¦åºã">è¦åºã</a>]</td>
+<td valign="middle" align="left">[<a href="emacs-w3m-ja_abt.html#SEC_About" title="About (help)"> ? </a>]</td>
+</tr></table>
+<a name="mouYi-tuno-_0028sositeSu-i_0029-uebuJian-Suo-"></a>
+<h3 class="subsection">4.1.2 もう一つの (そして速い) ウェブ検索</h3>
+<a name="index-Quick-Searching"></a>
+<a name="index-Special-URLs"></a>
+<a name="index-w3m_002duri_002dreplace_002dalist"></a>
+<a name="index-w3m_002dsearch_002dengine_002dalist"></a>
+<a name="index-w3m_002ddefault_002dcoding_002dsystem"></a>
+
+<p>ウェブ・パワーユーザ (これを読んでいるあなた) には、迅速で効率的な検索の
+方法が必要です。クイックサーチはその一つです。
+</p>
+<p>それは何をするのかって?  それは <a href="gg:emacs">gg:emacs</a> のような特別の URL に行
+くだけで、ウェブ検索を始めさせるのです。このモードの動作の長所は、次の通
+りです:
+</p>
+<ul>
+<li>
+速い。エンジンと検索語を選ぶのに、一つの URL をタイプするだけです。
+
+</li><li>
+便利。この機能によって、容易に emacs-w3m のタブかウィンドゥを開いて、検
+索を始めることができます。例えば、<kbd>G</kbd> キーで新しいウィンドウを開いて
+クイックサーチ URL に行くように。そして、特別のクイックサーチ URL そのも
+のにも、ブックマークを付けることができます。
+
+</li><li>
+グルーピング機能も使える。例えば <a href="group:gg:emacs&amp;ya:w3m">group:gg:emacs&amp;ya:w3m</a> のよう
+な URL によって、同時に二つの検索を始めることができます。例えばこの場合
+は、Google で &ldquo;emacs&rdquo; の、Yahoo! で &ldquo;w3m&rdquo; の検索をそれぞれ始めます。
+See section <a href="emacs-w3m-ja_21.html#Grouping-URLs">一つの URL で複数のウェブページを見る</a>.
+</li></ul>
+
+<p>これを使うのはとても簡単です。&ldquo;gnu&rdquo; という単語を Google で探して結果の
+リストを得たいのであれば、<kbd>g</kbd> を叩いてから &ldquo;gg:gnu&rdquo; という URL を
+タイプしてください。この表現の第一の部分 &quot;gg&quot; は、Google 検索エンジンを
+使用したいことを示します。第二の部分は検索語です。エンジンと検索語は、コ
+ロンで分けなければなりません。そして <kbd>&lt;RET&gt;</kbd> を叩けば検索結果を
+見ることができます。スペースで分離した複数の語を入力できることを、心に留
+めておいてください。&ldquo;Feeling Searchy&rdquo; 機能が有効になっていれば、ミニバッ
+ファで <kbd>&lt;SPC&gt;</kbd> は self-insert キーになっています (これがデフォル
+トです。<code>w3m-enable-feeling-searchy</code> を参照してください。) 無
+効にしてある場合は、最初に <kbd>C-q</kbd> を叩いてください。つま
+り <kbd>C-q &lt;SPC&gt;</kbd> です。
+</p>
+<p>Emacs-w3m のデフォルトでは、利用可能ないくつかの検索エンジンの短縮形があ
+り、それらは変数 <code>w3m-uri-replace-alist</code> で定義されています。例え
+ば Google には &ldquo;gg&rdquo;、Google Groups 用には &ldquo;ggg&rdquo;、Yahoo! のため
+の &ldquo;ya&rdquo;、Altavista に対する &ldquo;al&rdquo; および 英辞朗 on the
+WEB の &ldquo;alc&rdquo; などの短い名前です。さらに検索エンジンの短縮形を追加する
+には <a href="#Adding-New-Search-Engines">お気に入りのエンジンを使うには?</a> を参照してください。
+</p>
+<p>短縮形の代わりに、&ldquo;google&rdquo; や &ldquo;yahoo&rdquo; のような完全なエンジンの名前を、
+クイックサーチ URL に使うこともできます。それらの名前は、変
+数 <code>w3m-search-engine-alist</code> で定義されます。
+</p>
+<hr size="6">
+<a name="Adding-New-Search-Engines"></a>
+<table cellpadding="1" cellspacing="1" border="0">
+<tr><td valign="middle" align="left">[<a href="#Quick-Searching" title="Previous section in reading order"> &lt; </a>]</td>
+<td valign="middle" align="left">[<a href="emacs-w3m-ja_21.html#Grouping-URLs" title="Next section in reading order"> &gt; </a>]</td>
+<td valign="middle" align="left"> &nbsp; </td>
+<td valign="middle" align="left">[<a href="emacs-w3m-ja_19.html#Pretty-Good-Features" title="Beginning of this chapter or previous chapter"> &lt;&lt; </a>]</td>
+<td valign="middle" align="left">[<a href="#Using-Search-Engines" title="Up section">ä¸</a>]</td>
+<td valign="middle" align="left">[<a href="emacs-w3m-ja_30.html#Customizable-Variables" title="Next chapter"> &gt;&gt; </a>]</td>
+<td valign="middle" align="left"> &nbsp; </td>
+<td valign="middle" align="left"> &nbsp; </td>
+<td valign="middle" align="left"> &nbsp; </td>
+<td valign="middle" align="left"> &nbsp; </td>
+<td valign="middle" align="left">[<a href="emacs-w3m-ja.html#Top" title="Cover (top) of document">åé ­</a>]</td>
+<td valign="middle" align="left">[<a href="emacs-w3m-ja_toc.html#SEC_Contents" title="Table of contents">ç®æ¬¡</a>]</td>
+<td valign="middle" align="left">[<a href="emacs-w3m-ja_68.html#Index" title="è¦åºã">è¦åºã</a>]</td>
+<td valign="middle" align="left">[<a href="emacs-w3m-ja_abt.html#SEC_About" title="About (help)"> ? </a>]</td>
+</tr></table>
+<a name="oQi-niRu-rinoenzinwoShi-uniha_003f"></a>
+<h3 class="subsection">4.1.3 お気に入りのエンジンを使うには?</h3>
+<a name="index-Adding-new-search-engines"></a>
+
+<p>Emacs-w3m は利用可能な多くの検索エンジンを持っています。あなたのお気に入
+りの検索エンジンを使いたいのに、万が一にもそれが既知の検索エンジンのリス
+トに載っていなかったらどうしましょう?  それを検索エンジンのリストに加え
+れば良いのです。そしてそれは極めて簡単です:
+</p>
+<ol>
+<li>
+最初に、あなたが加えたい検索エンジンのエントリー・ポイントが何かを知らな
+ければなりません。例えば:
+
+<p><a href="http://my.searchengine.com/?query=foobar">http://my.searchengine.com/?query=foobar</a>
+</p>
+<p>ここで foobar はあなたが検索したい語です。
+</p>
+</li><li>
+この情報が手に入ったら、&lsquo;<tt>~/.emacs-w3m</tt>&rsquo; ファイルに加えてください:
+
+<table><tr><td>&nbsp;</td><td><pre class="lisp">(eval-after-load &quot;w3m-search&quot;
+  '(add-to-list 'w3m-search-engine-alist
+                '(&quot;My engine&quot;
+                  &quot;http://my.searchengine.com/?query=%s&quot;
+                  nil)))
+</pre></td></tr></table>
+
+<p>第一フィールドの &quot;My engine&quot; をあなたのエンジンの説明で、第二フィールド
+をエントリー・ポイントで置き換えてください (&lsquo;<samp>%s</samp>&rsquo; は重要です。これは
+検索を行なうときに、検索語で置き換えられます)。そして第三フィールドは使
+用するエンコーディングを意味し、<code>nil</code> またはそれが省略された場合は
+変数 <code>w3m-default-coding-system</code> の値が標準のエンコーディングとして
+使われます。
+</p>
+<p>英語の検索エンジンでは滅多に気にする必要が無いことなのですが、いくつかの
+日本の検索エンジンでは、それに何か (例えば <code>euc-japan</code>) を指定する
+必要があるかもしれません。
+</p>
+</li><li>
+今やこの検索エンジンは、emacs-w3m で通常
+の <kbd>S</kbd> キー (&lsquo;<samp>Info-like</samp>&rsquo; キーマップの場合は <kbd>s</kbd> キー) で使
+うことができます。このエンジンを頻繁に使うのならば、短いエンジンの名前を
+クイックサーチエンジン (<a href="#Quick-Searching">もう一つの (そして速い) ウェブ検索</a> を参照) に加えることもでき
+ます。それには、以下のコードを &lsquo;<tt>~/.emacs-w3m</tt>&rsquo; ファイルに追加してく
+ださい:
+
+<table><tr><td>&nbsp;</td><td><pre class="lisp">(eval-after-load &quot;w3m-search&quot;
+  '(progn
+     (add-to-list 'w3m-search-engine-alist
+                  '(&quot;My engine&quot;
+                    &quot;http://my.searchengine.com/?query=%s&quot;
+                    nil))
+     (add-to-list 'w3m-uri-replace-alist
+                  '(&quot;\\`my:&quot; w3m-search-uri-replace &quot;My engine&quot;))))
+</pre></td></tr></table>
+
+<p>これにより、<a href="my:foobar">my:foobar</a> のような URL を使って、あなたの検索エンジン
+で &ldquo;foobar&rdquo; という語を検索することができます。
+</p></li></ol>
+
+<hr size="6">
+<table cellpadding="1" cellspacing="1" border="0">
+<tr><td valign="middle" align="left">[<a href="#Quick-Searching" title="Previous section in reading order"> &lt; </a>]</td>
+<td valign="middle" align="left">[<a href="emacs-w3m-ja_21.html#Grouping-URLs" title="Next section in reading order"> &gt; </a>]</td>
+<td valign="middle" align="left"> &nbsp; </td>
+<td valign="middle" align="left">[<a href="emacs-w3m-ja_19.html#Pretty-Good-Features" title="Beginning of this chapter or previous chapter"> &lt;&lt; </a>]</td>
+<td valign="middle" align="left">[<a href="#Using-Search-Engines" title="Up section">ä¸</a>]</td>
+<td valign="middle" align="left">[<a href="emacs-w3m-ja_30.html#Customizable-Variables" title="Next chapter"> &gt;&gt; </a>]</td>
+</tr></table>
+<p>
+ <font size="-1">
+  ãã®ææ¸ã¯<em>TSUCHIYA Masatoshi</em>ã«ãã£ã¦<em>2019å¹´1ææ30æ¥</em>ã«<a href="http://www.nongnu.org/texi2html/"><em>texi2html 1.82</em></a>ãç¨ãã¦çæããã¾ããã
+ </font>
+ <br>
+
+</p>
+</body>
+</html>

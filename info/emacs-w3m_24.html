@@ -1,0 +1,156 @@
+<!DOCTYPE html PUBLIC "-//W3C//DTD HTML 4.01 Transitional//EN" "http://www.w3.org/TR/html401/loose.dtd">
+<html>
+<!-- Copyright C 2000-2014 TSUCHIYA Masatoshi
+
+Permission is granted to copy, distribute and/or modify this document
+under the terms of the GNU General Public License, Version 2 or any
+later version published by the Free Software Foundation.
+
+This document is distributed in the hope that it will be useful, but
+WITHOUT ANY WARRANTY; without even the implied warranty of
+MERCHANTABILITY or FITNESS FOR A PARTICULAR PURPOSE.  See the GNU
+General Public License for more details.
+
+You should have received a copy of the GNU General Public License along
+with this document; see the file COPYING.  If not, write to the Free
+Software Foundation, Inc., 51 Franklin Street, Fifth Floor, Boston, MA
+02110-1301, USA.
+
+ -->
+<!-- Created on January 30, 2019 by texi2html 1.82
+texi2html was written by: 
+            Lionel Cons <Lionel.Cons@cern.ch> (original author)
+            Karl Berry  <karl@freefriends.org>
+            Olaf Bachmann <obachman@mathematik.uni-kl.de>
+            and many others.
+Maintained by: Many creative people.
+Send bugs and suggestions to <texi2html-bug@nongnu.org>
+-->
+<head>
+<title>Emacs-w3m &ndash; an Emacs interface to w3m &ndash;: 4.5 Showing the tree structure of local directories</title>
+
+<meta name="description" content="Emacs-w3m &ndash; an Emacs interface to w3m &ndash;: 4.5 Showing the tree structure of local directories">
+<meta name="keywords" content="Emacs-w3m &ndash; an Emacs interface to w3m &ndash;: 4.5 Showing the tree structure of local directories">
+<meta name="resource-type" content="document">
+<meta name="distribution" content="global">
+<meta name="Generator" content="texi2html 1.82">
+<meta http-equiv="Content-Type" content="text/html; charset=utf-8">
+<style type="text/css">
+<!--
+a.summary-letter {text-decoration: none}
+blockquote.smallquotation {font-size: smaller}
+pre.display {font-family: serif}
+pre.format {font-family: serif}
+pre.menu-comment {font-family: serif}
+pre.menu-preformatted {font-family: serif}
+pre.smalldisplay {font-family: serif; font-size: smaller}
+pre.smallexample {font-size: smaller}
+pre.smallformat {font-family: serif; font-size: smaller}
+pre.smalllisp {font-size: smaller}
+span.roman {font-family:serif; font-weight:normal;}
+span.sansserif {font-family:sans-serif; font-weight:normal;}
+ul.toc {list-style: none}
+-->
+</style>
+
+
+</head>
+
+<body lang="en" bgcolor="#FFFFFF" text="#000000" link="#0000FF" vlink="#800080" alink="#FF0000">
+
+<a name="Showing-Directory-Tree"></a>
+<table cellpadding="1" cellspacing="1" border="0">
+<tr><td valign="middle" align="left">[<a href="emacs-w3m_23.html#Daily-web-tracking" title="Previous section in reading order"> &lt; </a>]</td>
+<td valign="middle" align="left">[<a href="emacs-w3m_25.html#Viewing-Perl-Documents" title="Next section in reading order"> &gt; </a>]</td>
+<td valign="middle" align="left"> &nbsp; </td>
+<td valign="middle" align="left">[<a href="emacs-w3m_19.html#Pretty-Good-Features" title="Beginning of this chapter or previous chapter"> &lt;&lt; </a>]</td>
+<td valign="middle" align="left">[<a href="emacs-w3m_19.html#Pretty-Good-Features" title="Up section"> Up </a>]</td>
+<td valign="middle" align="left">[<a href="emacs-w3m_30.html#Customizable-Variables" title="Next chapter"> &gt;&gt; </a>]</td>
+<td valign="middle" align="left"> &nbsp; </td>
+<td valign="middle" align="left"> &nbsp; </td>
+<td valign="middle" align="left"> &nbsp; </td>
+<td valign="middle" align="left"> &nbsp; </td>
+<td valign="middle" align="left">[<a href="emacs-w3m.html#Top" title="Cover (top) of document">Top</a>]</td>
+<td valign="middle" align="left">[<a href="emacs-w3m_toc.html#SEC_Contents" title="Table of contents">Contents</a>]</td>
+<td valign="middle" align="left">[<a href="emacs-w3m_68.html#Index" title="Index">Index</a>]</td>
+<td valign="middle" align="left">[<a href="emacs-w3m_abt.html#SEC_About" title="About (help)"> ? </a>]</td>
+</tr></table>
+<a name="Showing-the-tree-structure-of-local-directories"></a>
+<h2 class="section">4.5 Showing the tree structure of local directories</h2>
+<a name="index-Showing-the-tree-structure-of-local-directories"></a>
+
+<p>Using the <code>w3m-dtree</code> command, you can display a tree of all
+subdirectories of a local directory, and browse it like a regular web
+page.  The emacs-w3m buffer you get when you use this feature is very
+similar to the output of the external &ldquo;tree&rdquo; utility, hence the
+name.  Emacs-w3m adds a bonus: if you call the command with a prefix
+argument, it will display files as well, turning emacs-w3m into a
+full-featured file browser.
+</p>
+<p>Here is an example of what an emacs-w3m dtree run looks like:
+</p>
+<table><tr><td>&nbsp;</td><td><pre class="example">/home/romain/.elisp/emacs-w3m/
+ |-CVS/
+ |-attic/
+ |  +-CVS/
+ |-autom4te.cache/
+ |-doc/
+ |  |-CVS/
+ |  +-emacs-w3m/
+ |-icons/
+ |  +-CVS/
+ |-patches/
+ |  +-CVS/
+ +-shimbun/
+    +-CVS/
+</pre></td></tr></table>
+
+<p>And with a prefix argument, you get something like this instead:
+</p>
+<table><tr><td>&nbsp;</td><td><pre class="example">/home/romain/.elisp/emacs-w3m/ (allfiles)
+ |-(f).cvsignore
+ |-(f)BUGS.ja
+ |-(f)COPYING
+ |-[d]CVS/
+ |  |-(f)Entries
+ |  |-(f)Repository
+ |  +-(f)Root
+ |-(f)ChangeLog
+ |-(f)ChangeLog.1
+ |-(f)Makefile
+ |-(f)Makefile.in
+ |-(f)README
+ |-(f)README.ja
+</pre></td></tr></table>
+
+<dl compact="compact">
+<dt> <kbd>D</kbd> (Lynx-like keymap)</dt>
+<dt> <kbd>T</kbd> (Info-like keymap)</dt>
+<dd><a name="index-D-_0028Lynx_002dlike-keymap_0029"></a>
+<a name="index-T-_0028Info_002dlike-keymap_0029"></a>
+<a name="index-w3m_002ddtree"></a>
+<p>Prompt for a local directory in the minibuffer, then display its tree
+structure.  If called with a prefix argument (e.g. <kbd>C-u D</kbd>, or
+<kbd>C-u T</kbd> for the &lsquo;<samp>Info-like</samp>&rsquo; keymap), show files in the
+directories as well (<code>w3m-dtree</code>).
+</p></dd>
+</dl>
+
+<hr size="6">
+<table cellpadding="1" cellspacing="1" border="0">
+<tr><td valign="middle" align="left">[<a href="emacs-w3m_23.html#Daily-web-tracking" title="Previous section in reading order"> &lt; </a>]</td>
+<td valign="middle" align="left">[<a href="emacs-w3m_25.html#Viewing-Perl-Documents" title="Next section in reading order"> &gt; </a>]</td>
+<td valign="middle" align="left"> &nbsp; </td>
+<td valign="middle" align="left">[<a href="emacs-w3m_19.html#Pretty-Good-Features" title="Beginning of this chapter or previous chapter"> &lt;&lt; </a>]</td>
+<td valign="middle" align="left">[<a href="emacs-w3m_19.html#Pretty-Good-Features" title="Up section"> Up </a>]</td>
+<td valign="middle" align="left">[<a href="emacs-w3m_30.html#Customizable-Variables" title="Next chapter"> &gt;&gt; </a>]</td>
+</tr></table>
+<p>
+ <font size="-1">
+  This document was generated by <em>TSUCHIYA Masatoshi</em> on <em>January 30, 2019</em> using <a href="http://www.nongnu.org/texi2html/"><em>texi2html 1.82</em></a>.
+ </font>
+ <br>
+
+</p>
+</body>
+</html>

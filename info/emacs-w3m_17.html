@@ -1,0 +1,147 @@
+<!DOCTYPE html PUBLIC "-//W3C//DTD HTML 4.01 Transitional//EN" "http://www.w3.org/TR/html401/loose.dtd">
+<html>
+<!-- Copyright C 2000-2014 TSUCHIYA Masatoshi
+
+Permission is granted to copy, distribute and/or modify this document
+under the terms of the GNU General Public License, Version 2 or any
+later version published by the Free Software Foundation.
+
+This document is distributed in the hope that it will be useful, but
+WITHOUT ANY WARRANTY; without even the implied warranty of
+MERCHANTABILITY or FITNESS FOR A PARTICULAR PURPOSE.  See the GNU
+General Public License for more details.
+
+You should have received a copy of the GNU General Public License along
+with this document; see the file COPYING.  If not, write to the Free
+Software Foundation, Inc., 51 Franklin Street, Fifth Floor, Boston, MA
+02110-1301, USA.
+
+ -->
+<!-- Created on January 30, 2019 by texi2html 1.82
+texi2html was written by: 
+            Lionel Cons <Lionel.Cons@cern.ch> (original author)
+            Karl Berry  <karl@freefriends.org>
+            Olaf Bachmann <obachman@mathematik.uni-kl.de>
+            and many others.
+Maintained by: Many creative people.
+Send bugs and suggestions to <texi2html-bug@nongnu.org>
+-->
+<head>
+<title>Emacs-w3m &ndash; an Emacs interface to w3m &ndash;: 3.8 Filling in HTML forms</title>
+
+<meta name="description" content="Emacs-w3m &ndash; an Emacs interface to w3m &ndash;: 3.8 Filling in HTML forms">
+<meta name="keywords" content="Emacs-w3m &ndash; an Emacs interface to w3m &ndash;: 3.8 Filling in HTML forms">
+<meta name="resource-type" content="document">
+<meta name="distribution" content="global">
+<meta name="Generator" content="texi2html 1.82">
+<meta http-equiv="Content-Type" content="text/html; charset=utf-8">
+<style type="text/css">
+<!--
+a.summary-letter {text-decoration: none}
+blockquote.smallquotation {font-size: smaller}
+pre.display {font-family: serif}
+pre.format {font-family: serif}
+pre.menu-comment {font-family: serif}
+pre.menu-preformatted {font-family: serif}
+pre.smalldisplay {font-family: serif; font-size: smaller}
+pre.smallexample {font-size: smaller}
+pre.smallformat {font-family: serif; font-size: smaller}
+pre.smalllisp {font-size: smaller}
+span.roman {font-family:serif; font-weight:normal;}
+span.sansserif {font-family:sans-serif; font-weight:normal;}
+ul.toc {list-style: none}
+-->
+</style>
+
+
+</head>
+
+<body lang="en" bgcolor="#FFFFFF" text="#000000" link="#0000FF" vlink="#800080" alink="#FF0000">
+
+<a name="Submitting-Forms"></a>
+<table cellpadding="1" cellspacing="1" border="0">
+<tr><td valign="middle" align="left">[<a href="emacs-w3m_16.html#Downloading" title="Previous section in reading order"> &lt; </a>]</td>
+<td valign="middle" align="left">[<a href="emacs-w3m_18.html#HTML-File-Information" title="Next section in reading order"> &gt; </a>]</td>
+<td valign="middle" align="left"> &nbsp; </td>
+<td valign="middle" align="left">[<a href="emacs-w3m_9.html#Basic-Usage" title="Beginning of this chapter or previous chapter"> &lt;&lt; </a>]</td>
+<td valign="middle" align="left">[<a href="emacs-w3m_9.html#Basic-Usage" title="Up section"> Up </a>]</td>
+<td valign="middle" align="left">[<a href="emacs-w3m_19.html#Pretty-Good-Features" title="Next chapter"> &gt;&gt; </a>]</td>
+<td valign="middle" align="left"> &nbsp; </td>
+<td valign="middle" align="left"> &nbsp; </td>
+<td valign="middle" align="left"> &nbsp; </td>
+<td valign="middle" align="left"> &nbsp; </td>
+<td valign="middle" align="left">[<a href="emacs-w3m.html#Top" title="Cover (top) of document">Top</a>]</td>
+<td valign="middle" align="left">[<a href="emacs-w3m_toc.html#SEC_Contents" title="Table of contents">Contents</a>]</td>
+<td valign="middle" align="left">[<a href="emacs-w3m_68.html#Index" title="Index">Index</a>]</td>
+<td valign="middle" align="left">[<a href="emacs-w3m_abt.html#SEC_About" title="About (help)"> ? </a>]</td>
+</tr></table>
+<a name="Filling-in-HTML-forms"></a>
+<h2 class="section">3.8 Filling in HTML forms</h2>
+
+<p>These emacs-w3m commands let you move between forms and fill in fields,
+using simple key bindings and optionally prompting you for values in
+Emacs windows or in the minibuffer.
+</p>
+<p>The main key binding to remember is <kbd>&lt;RET&gt;</kbd>.  It has different
+meanings, depending on the thing under point: for textareas, you will be
+prompted for a value in the minibuffer.  For select tags, you will be
+given a list of choices in an electric Emacs window (you can move using
+the arrow keys, and pick one with the <kbd>&lt;RET&gt;</kbd> key).  For radio
+and checkbox buttons, the <kbd>&lt;RET&gt;</kbd> key selects one of the
+elements.
+</p>
+<p>When in the minibuffer or in the electric window, you can cancel with
+the <kbd>C-c C-q</kbd> sequence.  To submit the form, use
+<kbd>C-c C-c</kbd>.
+</p>
+<dl compact="compact">
+<dt> <kbd>]</kbd></dt>
+<dd><p>Jump to the next form (<code>w3m-next-form</code>).
+</p>
+</dd>
+<dt> <kbd>[</kbd></dt>
+<dd><p>Jump to the previous form (<code>w3m-previous-form</code>).
+</p>
+</dd>
+<dt> <kbd>C-c C-c</kbd></dt>
+<dd><p>Submit form at point (<code>w3m-submit-form</code>).
+</p>
+</dd>
+<dt> <kbd>&lt;RET&gt;</kbd></dt>
+<dd><p>Edit the value of the form item under point.
+</p>
+</dd>
+<dt> <kbd>&lt;RET&gt;</kbd> <span class="roman">(w3m-form-*-keymap)</span></dt>
+<dd><p>Accept the value.
+</p>
+</dd>
+<dt> <kbd>C-c C-q</kbd> <span class="roman">(w3m-form-*-keymap)</span></dt>
+<dd><p>Quit editing the form item, leaving changes.
+</p></dd>
+</dl>
+
+<p>Unless <code>w3m-form-use-textarea-backup</code> is set to <code>nil</code>,
+emacs-w3m stores the text you input in textareas in backup files for
+later reuse.  When you start editing a form and there is backup text
+available, you will be asked whether you want to use it or not.  Files
+to save text are stored in the directory specified by the
+<code>w3m-form-textarea-directory</code> variable.
+</p>
+<hr size="6">
+<table cellpadding="1" cellspacing="1" border="0">
+<tr><td valign="middle" align="left">[<a href="emacs-w3m_16.html#Downloading" title="Previous section in reading order"> &lt; </a>]</td>
+<td valign="middle" align="left">[<a href="emacs-w3m_18.html#HTML-File-Information" title="Next section in reading order"> &gt; </a>]</td>
+<td valign="middle" align="left"> &nbsp; </td>
+<td valign="middle" align="left">[<a href="emacs-w3m_9.html#Basic-Usage" title="Beginning of this chapter or previous chapter"> &lt;&lt; </a>]</td>
+<td valign="middle" align="left">[<a href="emacs-w3m_9.html#Basic-Usage" title="Up section"> Up </a>]</td>
+<td valign="middle" align="left">[<a href="emacs-w3m_19.html#Pretty-Good-Features" title="Next chapter"> &gt;&gt; </a>]</td>
+</tr></table>
+<p>
+ <font size="-1">
+  This document was generated by <em>TSUCHIYA Masatoshi</em> on <em>January 30, 2019</em> using <a href="http://www.nongnu.org/texi2html/"><em>texi2html 1.82</em></a>.
+ </font>
+ <br>
+
+</p>
+</body>
+</html>

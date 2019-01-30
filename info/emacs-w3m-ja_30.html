@@ -1,0 +1,171 @@
+<!DOCTYPE html PUBLIC "-//W3C//DTD HTML 4.01 Transitional//EN" "http://www.w3.org/TR/html401/loose.dtd">
+<html>
+<!-- Copyright C 2000-2014 TSUCHIYA Masatoshi
+
+Permission is granted to copy, distribute and/or modify this document
+under the terms of the GNU General Public License, Version 2 or any
+later version published by the Free Software Foundation.
+
+この文書を、フリーソフトウェア財団によって発行された GNU 一般公衆利用許
+諾契約書第 2 版またはそれ以降の版のうちどれかの定める条件の下で複製、配
+布、あるいは変更することを許可します。
+
+This document is distributed in the hope that it will be useful, but
+WITHOUT ANY WARRANTY; without even the implied warranty of
+MERCHANTABILITY or FITNESS FOR A PARTICULAR PURPOSE.  See the GNU
+General Public License for more details.
+
+この文書は有用であることを願って頒布されますが、全くの無保証 です。
+商業可能性 の保証や 特定の目的への適合性 は、言外に示され
+たものも含め全く存在しません。詳しくは GNU 一般公衆利用許諾契約書をご覧
+ください。
+
+You should have received a copy of the GNU General Public License along
+with this document; see the file COPYING.  If not, write to the Free
+Software Foundation, Inc., 51 Franklin Street, Fifth Floor, Boston, MA
+02110-1301, USA.
+
+あなたはこの文書と共に、GNU 一般公衆利用許諾契約書の複製物を一部受け取っ
+たはずです。COPYING ファイルを参照してください。もし受け取っていなければ、
+フリーソフトウェア財団まで請求してください (宛先は the Free Software
+Foundation, Inc., 59 Temple Place, Suite 330, Boston, MA 02111-1307 USA)。
+
+ -->
+<!-- Created on 2019å¹´1ææ30æ¥ by texi2html 1.82
+texi2html was written by: 
+            Lionel Cons <Lionel.Cons@cern.ch> (original author)
+            Karl Berry  <karl@freefriends.org>
+            Olaf Bachmann <obachman@mathematik.uni-kl.de>
+            and many others.
+Maintained by: Many creative people.
+Send bugs and suggestions to <texi2html-bug@nongnu.org>
+-->
+<head>
+<title>Emacs-w3m &ndash; an Emacs interface to w3m &ndash;: 5. デフォルトのままでも結構良いと思うけれど</title>
+
+<meta name="description" content="Emacs-w3m &ndash; an Emacs interface to w3m &ndash;: 5. デフォルトのままでも結構良いと思うけれど">
+<meta name="keywords" content="Emacs-w3m &ndash; an Emacs interface to w3m &ndash;: 5. デフォルトのままでも結構良いと思うけれど">
+<meta name="resource-type" content="document">
+<meta name="distribution" content="global">
+<meta name="Generator" content="texi2html 1.82">
+<meta http-equiv="Content-Type" content="text/html; charset=utf-8">
+<style type="text/css">
+<!--
+a.summary-letter {text-decoration: none}
+blockquote.smallquotation {font-size: smaller}
+pre.display {font-family: serif}
+pre.format {font-family: serif}
+pre.menu-comment {font-family: serif}
+pre.menu-preformatted {font-family: serif}
+pre.smalldisplay {font-family: serif; font-size: smaller}
+pre.smallexample {font-size: smaller}
+pre.smallformat {font-family: serif; font-size: smaller}
+pre.smalllisp {font-size: smaller}
+span.roman {font-family:serif; font-weight:normal;}
+span.sansserif {font-family:sans-serif; font-weight:normal;}
+ul.toc {list-style: none}
+-->
+</style>
+
+
+</head>
+
+<body lang="ja" bgcolor="#FFFFFF" text="#000000" link="#0000FF" vlink="#800080" alink="#FF0000">
+
+<a name="Customizable-Variables"></a>
+<table cellpadding="1" cellspacing="1" border="0">
+<tr><td valign="middle" align="left">[<a href="emacs-w3m-ja_29.html#Session-Manager" title="Previous section in reading order"> &lt; </a>]</td>
+<td valign="middle" align="left">[<a href="emacs-w3m-ja_31.html#General-Variables" title="Next section in reading order"> &gt; </a>]</td>
+<td valign="middle" align="left"> &nbsp; </td>
+<td valign="middle" align="left">[<a href="emacs-w3m-ja_19.html#Pretty-Good-Features" title="Beginning of this chapter or previous chapter"> &lt;&lt; </a>]</td>
+<td valign="middle" align="left">[<a href="emacs-w3m-ja.html#Top" title="Up section">ä¸</a>]</td>
+<td valign="middle" align="left">[<a href="emacs-w3m-ja_46.html#Hooking-into-MUAs" title="Next chapter"> &gt;&gt; </a>]</td>
+<td valign="middle" align="left"> &nbsp; </td>
+<td valign="middle" align="left"> &nbsp; </td>
+<td valign="middle" align="left"> &nbsp; </td>
+<td valign="middle" align="left"> &nbsp; </td>
+<td valign="middle" align="left">[<a href="emacs-w3m-ja.html#Top" title="Cover (top) of document">åé ­</a>]</td>
+<td valign="middle" align="left">[<a href="emacs-w3m-ja_toc.html#SEC_Contents" title="Table of contents">ç®æ¬¡</a>]</td>
+<td valign="middle" align="left">[<a href="emacs-w3m-ja_68.html#Index" title="è¦åºã">è¦åºã</a>]</td>
+<td valign="middle" align="left">[<a href="emacs-w3m-ja_abt.html#SEC_About" title="About (help)"> ? </a>]</td>
+</tr></table>
+<a name="dehuorutonomamademoJie-Gou-Liang-itoSi-ukeredo"></a>
+<h1 class="chapter">5. デフォルトのままでも結構良いと思うけれど</h1>
+<a name="index-Customizing-user-options"></a>
+<a name="index-w3m_002dinit_002dfile-1"></a>
+
+<p>たくさんの emacs-w3m の変数が、Custom の仕掛けによってカスタマイズするこ
+とができます。Custom は変数を定義するための、Emacs のグラフィック・イン
+ターフェースです。Custom にはいくつかのカスタマイズのための手段があり、
+例えば単一のオプション (すなわち、Emacs Lisp 変数) のため
+の <kbd>M-x customize-option</kbd>、またはある &ldquo;group&rdquo; (この場合のグルー
+プは <code>w3m</code>) に属するすべてのオプション (変数とフェース) を見て、か
+つ変更するための <kbd>M-x customize-group</kbd> が使えます。
+</p>
+<p>あるいは (もし Custom を使いたくないのであれば)、任意の Emacs Lisp 式
+を emacs-w3m 初期設定ファイルに書き込むことができます。デフォルトのファ
+イルは &lsquo;<tt>~/.emacs-w3m</tt>&rsquo; です。例えば、
+</p>
+<table><tr><td>&nbsp;</td><td><pre class="lisp">(setq w3m-home-page &quot;http://emacs-w3m.namazu.org/&quot;)
+</pre></td></tr></table>
+
+<p>これはデフォルトのホームページを <a href="http://emacs-w3m.namazu.org/">http://emacs-w3m.namazu.org/</a> に
+設定します。シンタックスは &lsquo;<tt>.emacs</tt>&rsquo; ファイルと同じで
+す (see <a href="../emacs/Init-File.html#Init-File">(emacs)Init File</a> section &lsquo;Init File&rsquo; in <cite>The Emacs Manual</cite>)。
+</p>
+<p>気を付けなければいけないのは、外部モジュールで定義されているいくつかの変
+数が &lsquo;<tt>~/.emacs-w3m</tt>&rsquo; ファイルが読み込まれるときには未定義で、それら
+を変更できないかもしれないことです (もちろん、デフォルトの値を気にしない
+のであれば、&lsquo;<tt>~/.emacs-w3m</tt>&rsquo; ファイルで完璧に上書きしてしまうことは可
+能なのですけれどね)。変数 <code>w3m-search-engine-alist</code> は典型的な例で
+す (see section <a href="emacs-w3m-ja_36.html#Search-Variables">ウェブ検索に関連した変数</a>)。
+</p>
+<dl compact="compact">
+<dt> <code>w3m-init-file</code></dt>
+<dd><p>Emacs-w3m が起動すると、<code>w3m-init-file</code> ファイルを読み込みます。デ
+フォルト値は &lsquo;<tt>~/.emacs-w3m</tt>&rsquo; です。たぶん、あなたはこれを変更する必
+要は無いでしょう。これは普通の Emacs Lisp ファイルで、
+&lsquo;<tt>~/.emacs</tt>&rsquo; や &lsquo;<tt>site-init</tt>&rsquo; ファイルを emacs-w3m 関係のもので乱
+雑にしないようにするために使うことができます。Emacs-w3m はこれと同じ名前
+に、拡張子 &lsquo;<tt>.elc</tt>&rsquo; と &lsquo;<tt>.el</tt>&rsquo; が付いているものも (言い換えれば、
+&lsquo;<tt>~/.emacs-w3m.elc</tt>&rsquo;、&lsquo;<tt>~/.emacs-w3m.el</tt>&rsquo; およ
+び &lsquo;<tt>~/.emacs-w3m</tt>&rsquo; の順に) 調べます。
+</p></dd>
+</dl>
+
+<table class="menu" border="0" cellspacing="0">
+<tr><td align="left" valign="top"><a href="emacs-w3m-ja_31.html#General-Variables">5.1 一般的な変数</a></td><td>&nbsp;&nbsp;</td><td align="left" valign="top"></td></tr>
+<tr><td align="left" valign="top"><a href="emacs-w3m-ja_32.html#Image-Variables">5.2 画像に関連した変数</a></td><td>&nbsp;&nbsp;</td><td align="left" valign="top"></td></tr>
+<tr><td align="left" valign="top"><a href="emacs-w3m-ja_33.html#Form-Variables">5.3 フォームに関連した変数</a></td><td>&nbsp;&nbsp;</td><td align="left" valign="top"></td></tr>
+<tr><td align="left" valign="top"><a href="emacs-w3m-ja_34.html#Cookie-Variables">5.4 クッキーに関連した変数</a></td><td>&nbsp;&nbsp;</td><td align="left" valign="top"></td></tr>
+<tr><td align="left" valign="top"><a href="emacs-w3m-ja_35.html#Bookmark-Variables">5.5 ブックマークに関連した変数</a></td><td>&nbsp;&nbsp;</td><td align="left" valign="top"></td></tr>
+<tr><td align="left" valign="top"><a href="emacs-w3m-ja_36.html#Search-Variables">5.6 ウェブ検索に関連した変数</a></td><td>&nbsp;&nbsp;</td><td align="left" valign="top"></td></tr>
+<tr><td align="left" valign="top"><a href="emacs-w3m-ja_37.html#Weather-Variables">5.7 天気予報に関連した変数</a></td><td>&nbsp;&nbsp;</td><td align="left" valign="top"></td></tr>
+<tr><td align="left" valign="top"><a href="emacs-w3m-ja_38.html#Dtree-Variables">5.8 dtree に関連した変数</a></td><td>&nbsp;&nbsp;</td><td align="left" valign="top"></td></tr>
+<tr><td align="left" valign="top"><a href="emacs-w3m-ja_39.html#Antenna-Variables">5.9 アンテナに関連した変数</a></td><td>&nbsp;&nbsp;</td><td align="left" valign="top"></td></tr>
+<tr><td align="left" valign="top"><a href="emacs-w3m-ja_40.html#Perldoc-Variables">5.10 Perldoc に関連した変数</a></td><td>&nbsp;&nbsp;</td><td align="left" valign="top"></td></tr>
+<tr><td align="left" valign="top"><a href="emacs-w3m-ja_41.html#Namazu-Variables">5.11 Namazu に関連した変数</a></td><td>&nbsp;&nbsp;</td><td align="left" valign="top"></td></tr>
+<tr><td align="left" valign="top"><a href="emacs-w3m-ja_42.html#Octet-Variables">5.12 Octet に関連した変数</a></td><td>&nbsp;&nbsp;</td><td align="left" valign="top"></td></tr>
+<tr><td align="left" valign="top"><a href="emacs-w3m-ja_43.html#Session-Manager-Variables">5.13 セッションマネージャに関連した変数</a></td><td>&nbsp;&nbsp;</td><td align="left" valign="top"></td></tr>
+<tr><td align="left" valign="top"><a href="emacs-w3m-ja_44.html#Hooks">5.14 フック</a></td><td>&nbsp;&nbsp;</td><td align="left" valign="top"></td></tr>
+<tr><td align="left" valign="top"><a href="emacs-w3m-ja_45.html#Other-Variables">5.15 その他の変数</a></td><td>&nbsp;&nbsp;</td><td align="left" valign="top"></td></tr>
+</table>
+
+<hr size="6">
+<table cellpadding="1" cellspacing="1" border="0">
+<tr><td valign="middle" align="left">[<a href="emacs-w3m-ja_29.html#Session-Manager" title="Previous section in reading order"> &lt; </a>]</td>
+<td valign="middle" align="left">[<a href="emacs-w3m-ja_31.html#General-Variables" title="Next section in reading order"> &gt; </a>]</td>
+<td valign="middle" align="left"> &nbsp; </td>
+<td valign="middle" align="left">[<a href="emacs-w3m-ja_19.html#Pretty-Good-Features" title="Beginning of this chapter or previous chapter"> &lt;&lt; </a>]</td>
+<td valign="middle" align="left">[<a href="emacs-w3m-ja.html#Top" title="Up section">ä¸</a>]</td>
+<td valign="middle" align="left">[<a href="emacs-w3m-ja_46.html#Hooking-into-MUAs" title="Next chapter"> &gt;&gt; </a>]</td>
+</tr></table>
+<p>
+ <font size="-1">
+  ãã®ææ¸ã¯<em>TSUCHIYA Masatoshi</em>ã«ãã£ã¦<em>2019å¹´1ææ30æ¥</em>ã«<a href="http://www.nongnu.org/texi2html/"><em>texi2html 1.82</em></a>ãç¨ãã¦çæããã¾ããã
+ </font>
+ <br>
+
+</p>
+</body>
+</html>

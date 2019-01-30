@@ -1,0 +1,339 @@
+<!DOCTYPE html PUBLIC "-//W3C//DTD HTML 4.01 Transitional//EN" "http://www.w3.org/TR/html401/loose.dtd">
+<html>
+<!-- Copyright C 2000-2014 TSUCHIYA Masatoshi
+
+Permission is granted to copy, distribute and/or modify this document
+under the terms of the GNU General Public License, Version 2 or any
+later version published by the Free Software Foundation.
+
+This document is distributed in the hope that it will be useful, but
+WITHOUT ANY WARRANTY; without even the implied warranty of
+MERCHANTABILITY or FITNESS FOR A PARTICULAR PURPOSE.  See the GNU
+General Public License for more details.
+
+You should have received a copy of the GNU General Public License along
+with this document; see the file COPYING.  If not, write to the Free
+Software Foundation, Inc., 51 Franklin Street, Fifth Floor, Boston, MA
+02110-1301, USA.
+
+ -->
+<!-- Created on January 30, 2019 by texi2html 1.82
+texi2html was written by: 
+            Lionel Cons <Lionel.Cons@cern.ch> (original author)
+            Karl Berry  <karl@freefriends.org>
+            Olaf Bachmann <obachman@mathematik.uni-kl.de>
+            and many others.
+Maintained by: Many creative people.
+Send bugs and suggestions to <texi2html-bug@nongnu.org>
+-->
+<head>
+<title>Emacs-w3m &ndash; an Emacs interface to w3m &ndash;: 4.1 Convenient ways to search the web</title>
+
+<meta name="description" content="Emacs-w3m &ndash; an Emacs interface to w3m &ndash;: 4.1 Convenient ways to search the web">
+<meta name="keywords" content="Emacs-w3m &ndash; an Emacs interface to w3m &ndash;: 4.1 Convenient ways to search the web">
+<meta name="resource-type" content="document">
+<meta name="distribution" content="global">
+<meta name="Generator" content="texi2html 1.82">
+<meta http-equiv="Content-Type" content="text/html; charset=utf-8">
+<style type="text/css">
+<!--
+a.summary-letter {text-decoration: none}
+blockquote.smallquotation {font-size: smaller}
+pre.display {font-family: serif}
+pre.format {font-family: serif}
+pre.menu-comment {font-family: serif}
+pre.menu-preformatted {font-family: serif}
+pre.smalldisplay {font-family: serif; font-size: smaller}
+pre.smallexample {font-size: smaller}
+pre.smallformat {font-family: serif; font-size: smaller}
+pre.smalllisp {font-size: smaller}
+span.roman {font-family:serif; font-weight:normal;}
+span.sansserif {font-family:sans-serif; font-weight:normal;}
+ul.toc {list-style: none}
+-->
+</style>
+
+
+</head>
+
+<body lang="en" bgcolor="#FFFFFF" text="#000000" link="#0000FF" vlink="#800080" alink="#FF0000">
+
+<a name="Using-Search-Engines"></a>
+<table cellpadding="1" cellspacing="1" border="0">
+<tr><td valign="middle" align="left">[<a href="emacs-w3m_19.html#Pretty-Good-Features" title="Previous section in reading order"> &lt; </a>]</td>
+<td valign="middle" align="left">[<a href="#The-Search-Interface" title="Next section in reading order"> &gt; </a>]</td>
+<td valign="middle" align="left"> &nbsp; </td>
+<td valign="middle" align="left">[<a href="emacs-w3m_19.html#Pretty-Good-Features" title="Beginning of this chapter or previous chapter"> &lt;&lt; </a>]</td>
+<td valign="middle" align="left">[<a href="emacs-w3m_19.html#Pretty-Good-Features" title="Up section"> Up </a>]</td>
+<td valign="middle" align="left">[<a href="emacs-w3m_30.html#Customizable-Variables" title="Next chapter"> &gt;&gt; </a>]</td>
+<td valign="middle" align="left"> &nbsp; </td>
+<td valign="middle" align="left"> &nbsp; </td>
+<td valign="middle" align="left"> &nbsp; </td>
+<td valign="middle" align="left"> &nbsp; </td>
+<td valign="middle" align="left">[<a href="emacs-w3m.html#Top" title="Cover (top) of document">Top</a>]</td>
+<td valign="middle" align="left">[<a href="emacs-w3m_toc.html#SEC_Contents" title="Table of contents">Contents</a>]</td>
+<td valign="middle" align="left">[<a href="emacs-w3m_68.html#Index" title="Index">Index</a>]</td>
+<td valign="middle" align="left">[<a href="emacs-w3m_abt.html#SEC_About" title="About (help)"> ? </a>]</td>
+</tr></table>
+<a name="Convenient-ways-to-search-the-web"></a>
+<h2 class="section">4.1 Convenient ways to search the web</h2>
+<a name="index-Search-engines"></a>
+
+<p>Emacs-w3m comes with advanced features related to search engines, they
+are accessible through three interfaces:
+</p>
+<ul>
+<li>
+The regular search interface, invoked by the <kbd>S</kbd> key (the <kbd>s</kbd>
+key for the &lsquo;<samp>Info-like</samp>&rsquo; keymap) in any emacs-w3m buffer.  It is a
+simple interactive way to choose which search engine to use and input a
+search term; see <a href="#The-Search-Interface">How to search with emacs-w3m</a>.
+
+</li><li>
+The Quicksearch interface: it is a faster (yet more complicated) way to
+use search engines, by going to specially crafted URLs.  For more
+information about this feature, see <a href="#Quick-Searching">An alternative (and fast) way to search the web</a>.
+
+</li><li>
+The &ldquo;feeling searchy&rdquo; feature: if it&rsquo;s enabled
+(<code>w3m-enable-feeling-searchy</code>), entering words instead of a
+regular URL at the URL prompt will begin a web search for the words
+automatically.
+</li></ul>
+
+<table class="menu" border="0" cellspacing="0">
+<tr><td align="left" valign="top"><a href="#The-Search-Interface">4.1.1 How to search with emacs-w3m</a></td><td>&nbsp;&nbsp;</td><td align="left" valign="top"></td></tr>
+<tr><td align="left" valign="top"><a href="#Quick-Searching">4.1.2 An alternative (and fast) way to search the web</a></td><td>&nbsp;&nbsp;</td><td align="left" valign="top"></td></tr>
+<tr><td align="left" valign="top"><a href="#Adding-New-Search-Engines">4.1.3 Using your favorite engines</a></td><td>&nbsp;&nbsp;</td><td align="left" valign="top"></td></tr>
+</table>
+
+<hr size="6">
+<a name="The-Search-Interface"></a>
+<table cellpadding="1" cellspacing="1" border="0">
+<tr><td valign="middle" align="left">[<a href="#Using-Search-Engines" title="Previous section in reading order"> &lt; </a>]</td>
+<td valign="middle" align="left">[<a href="#Quick-Searching" title="Next section in reading order"> &gt; </a>]</td>
+<td valign="middle" align="left"> &nbsp; </td>
+<td valign="middle" align="left">[<a href="emacs-w3m_19.html#Pretty-Good-Features" title="Beginning of this chapter or previous chapter"> &lt;&lt; </a>]</td>
+<td valign="middle" align="left">[<a href="#Using-Search-Engines" title="Up section"> Up </a>]</td>
+<td valign="middle" align="left">[<a href="emacs-w3m_30.html#Customizable-Variables" title="Next chapter"> &gt;&gt; </a>]</td>
+<td valign="middle" align="left"> &nbsp; </td>
+<td valign="middle" align="left"> &nbsp; </td>
+<td valign="middle" align="left"> &nbsp; </td>
+<td valign="middle" align="left"> &nbsp; </td>
+<td valign="middle" align="left">[<a href="emacs-w3m.html#Top" title="Cover (top) of document">Top</a>]</td>
+<td valign="middle" align="left">[<a href="emacs-w3m_toc.html#SEC_Contents" title="Table of contents">Contents</a>]</td>
+<td valign="middle" align="left">[<a href="emacs-w3m_68.html#Index" title="Index">Index</a>]</td>
+<td valign="middle" align="left">[<a href="emacs-w3m_abt.html#SEC_About" title="About (help)"> ? </a>]</td>
+</tr></table>
+<a name="How-to-search-with-emacs_002dw3m"></a>
+<h3 class="subsection">4.1.1 How to search with emacs-w3m</h3>
+<a name="index-Searching"></a>
+
+<p>You can fire up the regular search interface by using the <kbd>S</kbd> key
+(the <kbd>s</kbd> key for the &lsquo;<samp>Info-like</samp>&rsquo; keymap) in an emacs-w3m
+buffer.  You will see a prompt in the minibuffer, asking for a search
+term.  Type one or several words at the prompt, then hit
+<kbd>&lt;RET&gt;</kbd>.  The result page of your search in the engine appears,
+you can then browse the results, just as if you had used the normal web
+based entry point to the engine.
+</p>
+<p>You probably noticed that you have not been given a chance to choose
+which engine you want to search with.  By default, emacs-w3m will use
+the Google search engine, you can change this behavior by customizing
+the <code>w3m-search-default-engine</code> variable (see <a href="emacs-w3m_30.html#Customizable-Variables">Customizable variables</a>), or you can specify the search engine each time you use the
+command.
+</p>
+<p>To specify which engine to use, you have to give the command a prefix
+argument (usually, this means hitting <kbd>C-u</kbd> before the command,
+e.g. <kbd>C-u S</kbd> (<kbd>C-u s</kbd> for the &lsquo;<samp>Info-like</samp>&rsquo; keymap).
+Emacs-w3m will prompt you for an engine, you can choose one by typing
+its name (completion is also available with the <kbd>&lt;TAB&gt;</kbd> key).
+Once you have made your choice, hit the <kbd>&lt;RET&gt;</kbd> key.  You can
+then type your search term, hit <kbd>&lt;RET&gt;</kbd>, and you will see the
+search results.
+</p>
+<dl compact="compact">
+<dt> <kbd>S</kbd> (Lynx-like keymap)</dt>
+<dt> <kbd>s</kbd> (Info-like keymap)</dt>
+<dd><a name="index-S-_0028Lynx_002dlike-keymap_0029"></a>
+<a name="index-s-_0028Info_002dlike-keymap_0029"></a>
+<a name="index-w3m_002dsearch"></a>
+<a name="index-w3m_002dsearch_002ddefault_002dengine"></a>
+<p>Begin a new search.  If called with a prefix argument, prompt for the
+engine to use (<code>w3m-search</code>).
+</p></dd>
+</dl>
+
+<hr size="6">
+<a name="Quick-Searching"></a>
+<table cellpadding="1" cellspacing="1" border="0">
+<tr><td valign="middle" align="left">[<a href="#The-Search-Interface" title="Previous section in reading order"> &lt; </a>]</td>
+<td valign="middle" align="left">[<a href="#Adding-New-Search-Engines" title="Next section in reading order"> &gt; </a>]</td>
+<td valign="middle" align="left"> &nbsp; </td>
+<td valign="middle" align="left">[<a href="emacs-w3m_19.html#Pretty-Good-Features" title="Beginning of this chapter or previous chapter"> &lt;&lt; </a>]</td>
+<td valign="middle" align="left">[<a href="#Using-Search-Engines" title="Up section"> Up </a>]</td>
+<td valign="middle" align="left">[<a href="emacs-w3m_30.html#Customizable-Variables" title="Next chapter"> &gt;&gt; </a>]</td>
+<td valign="middle" align="left"> &nbsp; </td>
+<td valign="middle" align="left"> &nbsp; </td>
+<td valign="middle" align="left"> &nbsp; </td>
+<td valign="middle" align="left"> &nbsp; </td>
+<td valign="middle" align="left">[<a href="emacs-w3m.html#Top" title="Cover (top) of document">Top</a>]</td>
+<td valign="middle" align="left">[<a href="emacs-w3m_toc.html#SEC_Contents" title="Table of contents">Contents</a>]</td>
+<td valign="middle" align="left">[<a href="emacs-w3m_68.html#Index" title="Index">Index</a>]</td>
+<td valign="middle" align="left">[<a href="emacs-w3m_abt.html#SEC_About" title="About (help)"> ? </a>]</td>
+</tr></table>
+<a name="An-alternative-_0028and-fast_0029-way-to-search-the-web"></a>
+<h3 class="subsection">4.1.2 An alternative (and fast) way to search the web</h3>
+<a name="index-Quick-Searching"></a>
+<a name="index-Special-URLs"></a>
+<a name="index-w3m_002duri_002dreplace_002dalist"></a>
+<a name="index-w3m_002dsearch_002dengine_002dalist"></a>
+<a name="index-w3m_002ddefault_002dcoding_002dsystem"></a>
+
+<p>If you&rsquo;re a &ldquo;Web Power User&rdquo; (and since you&rsquo;re reading this, you
+probably are), you need a quick and efficient way to perform searches.
+The Quick Searching feature is one.
+</p>
+<p>What does it do?  It lets you launch web searches by simply going to a
+special URL such as <a href="gg:emacs">gg:emacs</a>.  The advantages of this mode of
+operation are:
+</p>
+<ul>
+<li>
+It&rsquo;s fast.  You just have to type a URL to choose the engine and the
+search word(s), in one go.
+
+</li><li>
+It&rsquo;s convenient.  With this feature, you can easily open a new emacs-w3m
+tab or window, and launch a search in it, using for example, the <kbd>G</kbd>
+key to open a URL in a new window, and going to a Quicksearch URL.  You
+can also bookmark searches just by bookmarking the special Quicksearch
+URL.
+
+</li><li>
+It works with the grouping feature.  You can launch two searches at the
+same time, with a URL like <a href="group:gg:emacs&amp;ya:w3m">group:gg:emacs&amp;ya:w3m</a>.  This would
+for instance launch a search for &ldquo;emacs&rdquo; on Google and for &ldquo;w3m&rdquo; on
+Yahoo!.  See section <a href="emacs-w3m_21.html#Grouping-URLs">Visiting several web pages in one URL</a>.
+</li></ul>
+
+<p>Using it is very simple: suppose you want to search for the word &ldquo;gnu&rdquo;
+on Google and get a list of results.  Hit <kbd>g</kbd> to go to a new URL,
+and type &ldquo;gg:gnu&rdquo;.  The first part of this expression, &ldquo;gg&rdquo;
+indicates that we want to use the Google search engine.  The second term
+is the word we will be searching for.  The prefix and the search term
+must be separated by a colon.  Hit <kbd>&lt;RET&gt;</kbd>, and you will see the
+results of your search.  Note that you can input several words by
+separating them with spaces.  <kbd>&lt;SPC&gt;</kbd> is a self-inserting key in
+the minibuffer if the &ldquo;Feeling Searchy&rdquo; feature is enabled (it is by
+default; see <code>w3m-enable-feeling-searchy</code>).  If it&rsquo;s disabled,
+then hit <kbd>C-q</kbd> first, i.e. <kbd>C-q &lt;SPC&gt;</kbd>.
+</p>
+<p>The default configuration of emacs-w3m includes several prefixes you can
+use, they are defined in the <code>w3m-uri-replace-alist</code> variable.
+There&rsquo;s for example &ldquo;gg&rdquo; for Google, &ldquo;ggg&rdquo; for Google Groups, &ldquo;ya&rdquo;
+for Yahoo!, &ldquo;al&rdquo; for Altavista, &ldquo;alc&rdquo; for Eijirou on the web to name
+a few.  You can also add prefixes for the search engines you define,
+See section <a href="#Adding-New-Search-Engines">Using your favorite engines</a>.
+</p>
+<p>Instead of prefixes, you can also use full engine names in Quicksearch
+URLs, such as &ldquo;google&rdquo; or &ldquo;yahoo&rdquo;.  These names are defined in
+the <code>w3m-search-engine-alist</code> variable.
+</p>
+<hr size="6">
+<a name="Adding-New-Search-Engines"></a>
+<table cellpadding="1" cellspacing="1" border="0">
+<tr><td valign="middle" align="left">[<a href="#Quick-Searching" title="Previous section in reading order"> &lt; </a>]</td>
+<td valign="middle" align="left">[<a href="emacs-w3m_21.html#Grouping-URLs" title="Next section in reading order"> &gt; </a>]</td>
+<td valign="middle" align="left"> &nbsp; </td>
+<td valign="middle" align="left">[<a href="emacs-w3m_19.html#Pretty-Good-Features" title="Beginning of this chapter or previous chapter"> &lt;&lt; </a>]</td>
+<td valign="middle" align="left">[<a href="#Using-Search-Engines" title="Up section"> Up </a>]</td>
+<td valign="middle" align="left">[<a href="emacs-w3m_30.html#Customizable-Variables" title="Next chapter"> &gt;&gt; </a>]</td>
+<td valign="middle" align="left"> &nbsp; </td>
+<td valign="middle" align="left"> &nbsp; </td>
+<td valign="middle" align="left"> &nbsp; </td>
+<td valign="middle" align="left"> &nbsp; </td>
+<td valign="middle" align="left">[<a href="emacs-w3m.html#Top" title="Cover (top) of document">Top</a>]</td>
+<td valign="middle" align="left">[<a href="emacs-w3m_toc.html#SEC_Contents" title="Table of contents">Contents</a>]</td>
+<td valign="middle" align="left">[<a href="emacs-w3m_68.html#Index" title="Index">Index</a>]</td>
+<td valign="middle" align="left">[<a href="emacs-w3m_abt.html#SEC_About" title="About (help)"> ? </a>]</td>
+</tr></table>
+<a name="Using-your-favorite-engines"></a>
+<h3 class="subsection">4.1.3 Using your favorite engines</h3>
+<a name="index-Adding-new-search-engines"></a>
+
+<p>Emacs-w3m has a number of built-in search engines you can use.  What if
+you want to use your favorite search engine and it&rsquo;s not listed in the
+known search engines?  You have to add it to the list of search
+engines, and it&rsquo;s quite easy:
+</p>
+<ol>
+<li>
+First, you have to find what&rsquo;s the entry point of the search engine you
+want to add, for example:
+
+<p><a href="http://my.searchengine.com/?query=foobar">http://my.searchengine.com/?query=foobar</a>
+</p>
+<p>where foobar is the term you want to search for.
+</p>
+</li><li>
+Once you have this information, add this to your &lsquo;<tt>~/.emacs-w3m</tt>&rsquo;
+file:
+
+<table><tr><td>&nbsp;</td><td><pre class="lisp">(eval-after-load &quot;w3m-search&quot;
+  '(add-to-list 'w3m-search-engine-alist
+                '(&quot;My engine&quot;
+                  &quot;http://my.searchengine.com/?query=%s&quot;
+                  nil)))
+</pre></td></tr></table>
+
+<p>Replace the first field &ldquo;My engine&rdquo; with the description of your
+engine, the second field with the entry point (the &lsquo;<samp>%s</samp>&rsquo; is
+important, it will be replaced by the search term when you issue the
+search), and the third field is the encoding to use, <code>nil</code> or
+omitting this field means to use the value of
+<code>w3m-default-coding-system</code> as a regular encoding.
+</p>
+<p>For English search engines, you rarely have to worry about this.
+However, for some Japanese search engines, you may need to specify
+something (e.g. <code>euc-japan</code>) there.
+</p>
+</li><li>
+You can now use this engine to search, using the normal <kbd>S</kbd> key (the
+<kbd>s</kbd> key for the &lsquo;<samp>Info-like</samp>&rsquo; keymap) in emacs-w3m.  If you use
+this engine often, you can also add it to the Quicksearch (see
+<a href="#Quick-Searching">An alternative (and fast) way to search the web</a>) engines and give it a small prefix, by adding
+this to your &lsquo;<tt>~/.emacs-w3m</tt>&rsquo; file instead:
+
+<table><tr><td>&nbsp;</td><td><pre class="lisp">(eval-after-load &quot;w3m-search&quot;
+  '(progn
+     (add-to-list 'w3m-search-engine-alist
+                  '(&quot;My engine&quot;
+                    &quot;http://my.searchengine.com/?query=%s&quot;
+                    nil))
+     (add-to-list 'w3m-uri-replace-alist
+                  '(&quot;\\`my:&quot; w3m-search-uri-replace &quot;My engine&quot;))))
+</pre></td></tr></table>
+
+<p>This way you can also use a URL like <a href="my:foobar">my:foobar</a> to search for the
+term &ldquo;foobar&rdquo; with your engine.
+</p></li></ol>
+
+<hr size="6">
+<table cellpadding="1" cellspacing="1" border="0">
+<tr><td valign="middle" align="left">[<a href="#Quick-Searching" title="Previous section in reading order"> &lt; </a>]</td>
+<td valign="middle" align="left">[<a href="emacs-w3m_21.html#Grouping-URLs" title="Next section in reading order"> &gt; </a>]</td>
+<td valign="middle" align="left"> &nbsp; </td>
+<td valign="middle" align="left">[<a href="emacs-w3m_19.html#Pretty-Good-Features" title="Beginning of this chapter or previous chapter"> &lt;&lt; </a>]</td>
+<td valign="middle" align="left">[<a href="#Using-Search-Engines" title="Up section"> Up </a>]</td>
+<td valign="middle" align="left">[<a href="emacs-w3m_30.html#Customizable-Variables" title="Next chapter"> &gt;&gt; </a>]</td>
+</tr></table>
+<p>
+ <font size="-1">
+  This document was generated by <em>TSUCHIYA Masatoshi</em> on <em>January 30, 2019</em> using <a href="http://www.nongnu.org/texi2html/"><em>texi2html 1.82</em></a>.
+ </font>
+ <br>
+
+</p>
+</body>
+</html>

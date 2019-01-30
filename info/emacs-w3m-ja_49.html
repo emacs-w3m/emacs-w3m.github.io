@@ -1,0 +1,177 @@
+<!DOCTYPE html PUBLIC "-//W3C//DTD HTML 4.01 Transitional//EN" "http://www.w3.org/TR/html401/loose.dtd">
+<html>
+<!-- Copyright C 2000-2014 TSUCHIYA Masatoshi
+
+Permission is granted to copy, distribute and/or modify this document
+under the terms of the GNU General Public License, Version 2 or any
+later version published by the Free Software Foundation.
+
+この文書を、フリーソフトウェア財団によって発行された GNU 一般公衆利用許
+諾契約書第 2 版またはそれ以降の版のうちどれかの定める条件の下で複製、配
+布、あるいは変更することを許可します。
+
+This document is distributed in the hope that it will be useful, but
+WITHOUT ANY WARRANTY; without even the implied warranty of
+MERCHANTABILITY or FITNESS FOR A PARTICULAR PURPOSE.  See the GNU
+General Public License for more details.
+
+この文書は有用であることを願って頒布されますが、全くの無保証 です。
+商業可能性 の保証や 特定の目的への適合性 は、言外に示され
+たものも含め全く存在しません。詳しくは GNU 一般公衆利用許諾契約書をご覧
+ください。
+
+You should have received a copy of the GNU General Public License along
+with this document; see the file COPYING.  If not, write to the Free
+Software Foundation, Inc., 51 Franklin Street, Fifth Floor, Boston, MA
+02110-1301, USA.
+
+あなたはこの文書と共に、GNU 一般公衆利用許諾契約書の複製物を一部受け取っ
+たはずです。COPYING ファイルを参照してください。もし受け取っていなければ、
+フリーソフトウェア財団まで請求してください (宛先は the Free Software
+Foundation, Inc., 59 Temple Place, Suite 330, Boston, MA 02111-1307 USA)。
+
+ -->
+<!-- Created on 2019å¹´1ææ30æ¥ by texi2html 1.82
+texi2html was written by: 
+            Lionel Cons <Lionel.Cons@cern.ch> (original author)
+            Karl Berry  <karl@freefriends.org>
+            Olaf Bachmann <obachman@mathematik.uni-kl.de>
+            and many others.
+Maintained by: Many creative people.
+Send bugs and suggestions to <texi2html-bug@nongnu.org>
+-->
+<head>
+<title>Emacs-w3m &ndash; an Emacs interface to w3m &ndash;: 6.3 SEMI MUA で HTML メールを読む</title>
+
+<meta name="description" content="Emacs-w3m &ndash; an Emacs interface to w3m &ndash;: 6.3 SEMI MUA で HTML メールを読む">
+<meta name="keywords" content="Emacs-w3m &ndash; an Emacs interface to w3m &ndash;: 6.3 SEMI MUA で HTML メールを読む">
+<meta name="resource-type" content="document">
+<meta name="distribution" content="global">
+<meta name="Generator" content="texi2html 1.82">
+<meta http-equiv="Content-Type" content="text/html; charset=utf-8">
+<style type="text/css">
+<!--
+a.summary-letter {text-decoration: none}
+blockquote.smallquotation {font-size: smaller}
+pre.display {font-family: serif}
+pre.format {font-family: serif}
+pre.menu-comment {font-family: serif}
+pre.menu-preformatted {font-family: serif}
+pre.smalldisplay {font-family: serif; font-size: smaller}
+pre.smallexample {font-size: smaller}
+pre.smallformat {font-family: serif; font-size: smaller}
+pre.smalllisp {font-size: smaller}
+span.roman {font-family:serif; font-weight:normal;}
+span.sansserif {font-family:sans-serif; font-weight:normal;}
+ul.toc {list-style: none}
+-->
+</style>
+
+
+</head>
+
+<body lang="ja" bgcolor="#FFFFFF" text="#000000" link="#0000FF" vlink="#800080" alink="#FF0000">
+
+<a name="SEMI-MUAs"></a>
+<table cellpadding="1" cellspacing="1" border="0">
+<tr><td valign="middle" align="left">[<a href="emacs-w3m-ja_48.html#Mew" title="Previous section in reading order"> &lt; </a>]</td>
+<td valign="middle" align="left">[<a href="emacs-w3m-ja_50.html#VM" title="Next section in reading order"> &gt; </a>]</td>
+<td valign="middle" align="left"> &nbsp; </td>
+<td valign="middle" align="left">[<a href="emacs-w3m-ja_46.html#Hooking-into-MUAs" title="Beginning of this chapter or previous chapter"> &lt;&lt; </a>]</td>
+<td valign="middle" align="left">[<a href="emacs-w3m-ja_46.html#Hooking-into-MUAs" title="Up section">ä¸</a>]</td>
+<td valign="middle" align="left">[<a href="emacs-w3m-ja_51.html#Frequently-Asked-Questions" title="Next chapter"> &gt;&gt; </a>]</td>
+<td valign="middle" align="left"> &nbsp; </td>
+<td valign="middle" align="left"> &nbsp; </td>
+<td valign="middle" align="left"> &nbsp; </td>
+<td valign="middle" align="left"> &nbsp; </td>
+<td valign="middle" align="left">[<a href="emacs-w3m-ja.html#Top" title="Cover (top) of document">åé ­</a>]</td>
+<td valign="middle" align="left">[<a href="emacs-w3m-ja_toc.html#SEC_Contents" title="Table of contents">ç®æ¬¡</a>]</td>
+<td valign="middle" align="left">[<a href="emacs-w3m-ja_68.html#Index" title="è¦åºã">è¦åºã</a>]</td>
+<td valign="middle" align="left">[<a href="emacs-w3m-ja_abt.html#SEC_About" title="About (help)"> ? </a>]</td>
+</tr></table>
+<a name="SEMI-MUA-de-HTML-meruwoDu-mu"></a>
+<h2 class="section">6.3 <acronym>SEMI</acronym> MUA で HTML メールを読む</h2>
+
+<p>Emacs-w3m と <acronym>SEMI</acronym> MUA、例えば Wanderlust を使うことによって、
+HTML メールを人間が読めるように表示することができます。そうい
+う MUA は MIME の機能を <acronym>SEMI</acronym> (そしてさらに <acronym>FLIM</acronym>) に
+頼っているので、一般にそれを <acronym>SEMI</acronym> MUA と呼んでいます。
+<acronym>SEMI</acronym> は HTML メールの描画にデフォルトで Emacs/W3 を使いますが、
+容易に emacs-w3m で置き換えることが可能です。それによってあなたの電脳生
+活はより快適になるでしょう。
+</p>
+<p>単に以下の行を &lsquo;<tt>~/.emacs</tt>&rsquo; ファイルに入れれば良いのです:
+</p>
+<table><tr><td>&nbsp;</td><td><pre class="lisp">(require 'mime-w3m)
+</pre></td></tr></table>
+
+<p><code>mime-w3m</code> モジュールと <code>mime-w3</code> モジュールは、ご想像の通り機
+能的にほぼ同じものです (名前も似ているでしょう?)。後者
+は <acronym>SEMI</acronym> パッケージに含まれています。
+</p>
+<p>記事バッファの HTML の部分では <code>w3m-minor-mode</code> が on になって、
+emacs-w3m のと同じ主要なキーを使うことができます。例え
+ば <kbd>&lt;RET&gt;</kbd> は、現在位置のリンクが指し示すページに行きます。それ
+らのキーは変数 <code>w3m-minor-mode-command-alist</code> で定義されています。
+保安上の理由から、いくつかのコマンドはそれに似た別のコマンドで置き換えら
+れていることを心に留めておいてください。
+</p>
+<p><code>mime-w3m</code> モジュールに関連するいくつかのカスタマイズ可能な変数があ
+ります:
+</p>
+<dl compact="compact">
+<dt> <code>mime-w3m-display-inline-images</code></dt>
+<dd><p>非-<code>nil</code> だったら、画像が HTML メールにインライン表示されます。最初
+に <code>default</code> というシンボルだったら (それがデフォルトです)、この変
+数の値は、変数 <code>w3m-default-display-inline-images</code> の値で置き換えら
+れます。たぶん、あなたはこれを変更する必要は無いでしょう。
+</p>
+</dd>
+<dt> <code>mime-w3m-safe-url-regexp</code></dt>
+<dd><p>安全であると考えられる URL にマッチする正規表現です。デフォルト値
+は &lsquo;<samp>&quot;\\`cid:&quot;</samp>&rsquo; で、私たちは &lsquo;<samp>cid:</samp>&rsquo; URL によってメールに含まれ
+た画像が安全だと考えていることを意味します。悪漢による攻撃について
+は <a href="emacs-w3m-ja_47.html#Gnus">Gnus で HTML メールを読む</a> を参照してください。
+</p>
+</dd>
+<dt> <code>mime-w3m-setup-hook</code></dt>
+<dd><p><code>mime-w3m</code> モジュールと <acronym>SEMI</acronym> の協調動作を設定した直後に実
+行されるフックです。デフォルト値は <code>nil</code> です。
+</p></dd>
+</dl>
+
+<p>ところで、summary バッファにいるときでも、article バッ
+ファ (Wanderlust のコミュニティでは message バッファと呼ばれている) の画
+像表示をトグルに切り換えることができます。それらの画像が emacs-w3m によっ
+て表示される場合だけですけれどね。Wanderlust 用の例です:
+</p>
+<table><tr><td>&nbsp;</td><td><pre class="lisp">(defun wl-summary-w3m-safe-toggle-inline-images (&amp;optional arg)
+  &quot;Toggle displaying of all images in the message buffer.
+If the prefix arg is given, all images are considered to be safe.&quot;
+  (interactive &quot;P&quot;)
+  (with-current-buffer wl-message-buffer
+    (w3m-toggle-inline-images arg)))
+
+(eval-after-load &quot;wl-summary&quot;
+  '(define-key wl-summary-mode-map
+     &quot;\M-i&quot; 'wl-summary-w3m-safe-toggle-inline-images))
+</pre></td></tr></table>
+
+<hr size="6">
+<table cellpadding="1" cellspacing="1" border="0">
+<tr><td valign="middle" align="left">[<a href="emacs-w3m-ja_48.html#Mew" title="Previous section in reading order"> &lt; </a>]</td>
+<td valign="middle" align="left">[<a href="emacs-w3m-ja_50.html#VM" title="Next section in reading order"> &gt; </a>]</td>
+<td valign="middle" align="left"> &nbsp; </td>
+<td valign="middle" align="left">[<a href="emacs-w3m-ja_46.html#Hooking-into-MUAs" title="Beginning of this chapter or previous chapter"> &lt;&lt; </a>]</td>
+<td valign="middle" align="left">[<a href="emacs-w3m-ja_46.html#Hooking-into-MUAs" title="Up section">ä¸</a>]</td>
+<td valign="middle" align="left">[<a href="emacs-w3m-ja_51.html#Frequently-Asked-Questions" title="Next chapter"> &gt;&gt; </a>]</td>
+</tr></table>
+<p>
+ <font size="-1">
+  ãã®ææ¸ã¯<em>TSUCHIYA Masatoshi</em>ã«ãã£ã¦<em>2019å¹´1ææ30æ¥</em>ã«<a href="http://www.nongnu.org/texi2html/"><em>texi2html 1.82</em></a>ãç¨ãã¦çæããã¾ããã
+ </font>
+ <br>
+
+</p>
+</body>
+</html>

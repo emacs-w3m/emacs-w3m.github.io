@@ -1,0 +1,698 @@
+<!DOCTYPE html PUBLIC "-//W3C//DTD HTML 4.01 Transitional//EN" "http://www.w3.org/TR/html401/loose.dtd">
+<html>
+<!-- Copyright C 2000-2014 TSUCHIYA Masatoshi
+
+Permission is granted to copy, distribute and/or modify this document
+under the terms of the GNU General Public License, Version 2 or any
+later version published by the Free Software Foundation.
+
+This document is distributed in the hope that it will be useful, but
+WITHOUT ANY WARRANTY; without even the implied warranty of
+MERCHANTABILITY or FITNESS FOR A PARTICULAR PURPOSE.  See the GNU
+General Public License for more details.
+
+You should have received a copy of the GNU General Public License along
+with this document; see the file COPYING.  If not, write to the Free
+Software Foundation, Inc., 51 Franklin Street, Fifth Floor, Boston, MA
+02110-1301, USA.
+
+ -->
+<!-- Created on January 30, 2019 by texi2html 1.82
+texi2html was written by: 
+            Lionel Cons <Lionel.Cons@cern.ch> (original author)
+            Karl Berry  <karl@freefriends.org>
+            Olaf Bachmann <obachman@mathematik.uni-kl.de>
+            and many others.
+Maintained by: Many creative people.
+Send bugs and suggestions to <texi2html-bug@nongnu.org>
+-->
+<head>
+<title>Emacs-w3m &ndash; an Emacs interface to w3m &ndash;: 9.6 How to make a new shimbun module</title>
+
+<meta name="description" content="Emacs-w3m &ndash; an Emacs interface to w3m &ndash;: 9.6 How to make a new shimbun module">
+<meta name="keywords" content="Emacs-w3m &ndash; an Emacs interface to w3m &ndash;: 9.6 How to make a new shimbun module">
+<meta name="resource-type" content="document">
+<meta name="distribution" content="global">
+<meta name="Generator" content="texi2html 1.82">
+<meta http-equiv="Content-Type" content="text/html; charset=utf-8">
+<style type="text/css">
+<!--
+a.summary-letter {text-decoration: none}
+blockquote.smallquotation {font-size: smaller}
+pre.display {font-family: serif}
+pre.format {font-family: serif}
+pre.menu-comment {font-family: serif}
+pre.menu-preformatted {font-family: serif}
+pre.smalldisplay {font-family: serif; font-size: smaller}
+pre.smallexample {font-size: smaller}
+pre.smallformat {font-family: serif; font-size: smaller}
+pre.smalllisp {font-size: smaller}
+span.roman {font-family:serif; font-weight:normal;}
+span.sansserif {font-family:sans-serif; font-weight:normal;}
+ul.toc {list-style: none}
+-->
+</style>
+
+
+</head>
+
+<body lang="en" bgcolor="#FFFFFF" text="#000000" link="#0000FF" vlink="#800080" alink="#FF0000">
+
+<a name="Shimbun-Basics"></a>
+<table cellpadding="1" cellspacing="1" border="0">
+<tr><td valign="middle" align="left">[<a href="emacs-w3m_61.html#Misc-Sites-Supported-by-Shimbun" title="Previous section in reading order"> &lt; </a>]</td>
+<td valign="middle" align="left">[<a href="#Overview" title="Next section in reading order"> &gt; </a>]</td>
+<td valign="middle" align="left"> &nbsp; </td>
+<td valign="middle" align="left">[<a href="emacs-w3m_56.html#Shimbun-Library" title="Beginning of this chapter or previous chapter"> &lt;&lt; </a>]</td>
+<td valign="middle" align="left">[<a href="emacs-w3m_56.html#Shimbun-Library" title="Up section"> Up </a>]</td>
+<td valign="middle" align="left">[<a href="emacs-w3m_63.html#Tips" title="Next chapter"> &gt;&gt; </a>]</td>
+<td valign="middle" align="left"> &nbsp; </td>
+<td valign="middle" align="left"> &nbsp; </td>
+<td valign="middle" align="left"> &nbsp; </td>
+<td valign="middle" align="left"> &nbsp; </td>
+<td valign="middle" align="left">[<a href="emacs-w3m.html#Top" title="Cover (top) of document">Top</a>]</td>
+<td valign="middle" align="left">[<a href="emacs-w3m_toc.html#SEC_Contents" title="Table of contents">Contents</a>]</td>
+<td valign="middle" align="left">[<a href="emacs-w3m_68.html#Index" title="Index">Index</a>]</td>
+<td valign="middle" align="left">[<a href="emacs-w3m_abt.html#SEC_About" title="About (help)"> ? </a>]</td>
+</tr></table>
+<a name="How-to-make-a-new-shimbun-module"></a>
+<h2 class="section">9.6 How to make a new shimbun module</h2>
+<a name="index-shimbun_002eel"></a>
+
+<p>&lsquo;<samp>Shimbun</samp>&rsquo; is a library set of emacs-w3m that enables you to read
+certain web contents using Gnus, Wanderlust, or Mew as if they were
+email messages.  Here we will explain how to make a new &lsquo;<samp>shimbun</samp>&rsquo;
+module.
+</p>
+<table class="menu" border="0" cellspacing="0">
+<tr><td align="left" valign="top"><a href="#Overview">9.6.1 Overview</a></td><td>&nbsp;&nbsp;</td><td align="left" valign="top">
+</td></tr>
+<tr><td align="left" valign="top"><a href="#Getting-web-page-and-header-information">9.6.2 Getting web page and header information</a></td><td>&nbsp;&nbsp;</td><td align="left" valign="top">
+</td></tr>
+<tr><td align="left" valign="top"><a href="#Displaying-an-article">9.6.3 Displaying an article</a></td><td>&nbsp;&nbsp;</td><td align="left" valign="top">
+</td></tr>
+<tr><td align="left" valign="top"><a href="#Inheriting-shimbun-module">9.6.4 Inheriting shimbun module</a></td><td>&nbsp;&nbsp;</td><td align="left" valign="top">
+</td></tr>
+<tr><td align="left" valign="top"><a href="#Making-text_002fplain-articles">9.6.5 Making text/plain articles</a></td><td>&nbsp;&nbsp;</td><td align="left" valign="top">
+</td></tr>
+<tr><td align="left" valign="top"><a href="#Zenkaku-to-hankaku-conversion">9.6.6 Zenkaku to hankaku conversion</a></td><td>&nbsp;&nbsp;</td><td align="left" valign="top">
+</td></tr>
+<tr><td align="left" valign="top"><a href="#Coding-convention-of-Shimbun">9.6.7 Coding convention of Shimbun</a></td><td>&nbsp;&nbsp;</td><td align="left" valign="top">
+</td></tr>
+</table>
+
+<hr size="6">
+<a name="Overview"></a>
+<table cellpadding="1" cellspacing="1" border="0">
+<tr><td valign="middle" align="left">[<a href="#Shimbun-Basics" title="Previous section in reading order"> &lt; </a>]</td>
+<td valign="middle" align="left">[<a href="#Getting-web-page-and-header-information" title="Next section in reading order"> &gt; </a>]</td>
+<td valign="middle" align="left"> &nbsp; </td>
+<td valign="middle" align="left">[<a href="emacs-w3m_56.html#Shimbun-Library" title="Beginning of this chapter or previous chapter"> &lt;&lt; </a>]</td>
+<td valign="middle" align="left">[<a href="#Shimbun-Basics" title="Up section"> Up </a>]</td>
+<td valign="middle" align="left">[<a href="emacs-w3m_63.html#Tips" title="Next chapter"> &gt;&gt; </a>]</td>
+<td valign="middle" align="left"> &nbsp; </td>
+<td valign="middle" align="left"> &nbsp; </td>
+<td valign="middle" align="left"> &nbsp; </td>
+<td valign="middle" align="left"> &nbsp; </td>
+<td valign="middle" align="left">[<a href="emacs-w3m.html#Top" title="Cover (top) of document">Top</a>]</td>
+<td valign="middle" align="left">[<a href="emacs-w3m_toc.html#SEC_Contents" title="Table of contents">Contents</a>]</td>
+<td valign="middle" align="left">[<a href="emacs-w3m_68.html#Index" title="Index">Index</a>]</td>
+<td valign="middle" align="left">[<a href="emacs-w3m_abt.html#SEC_About" title="About (help)"> ? </a>]</td>
+</tr></table>
+<a name="Overview-1"></a>
+<h3 class="subsection">9.6.1 Overview</h3>
+
+<p>When you make a new &lsquo;<samp>shimbun</samp>&rsquo; module &lsquo;<samp>foobar</samp>&rsquo; for reading
+contents of <a href="http://www.foobar.net">http://www.foobar.net</a>, what you have to do first is
+to put the following S expressions in the first part of the
+&lsquo;<tt>sb-foobar.el</tt>&rsquo; file:
+</p>
+<table><tr><td>&nbsp;</td><td><pre class="lisp">(require 'shimbun)
+(luna-define-class shimbun-foobar (shimbun) ())
+</pre></td></tr></table>
+
+<p>We will explain what they are below, so you can understand they are just
+incantations now.  You have to use the same suffix &lsquo;<samp>foobar</samp>&rsquo; in the
+file name (&lsquo;<tt>sb-foobar.el</tt>&rsquo;) and the class name
+(&lsquo;<samp>shimbun-foobar</samp>&rsquo;) as the second argument for the
+<code>luna-define-class</code> macro.
+</p>
+<p>Major jobs of the &lsquo;<samp>shimbun-foobar</samp>&rsquo; module can be classified broadly
+into the following four categories (note that you may rephrase
+&ldquo;folder&rdquo; with &ldquo;group&rdquo; if you are a Gnus user):
+</p>
+<ol>
+<li>
+Getting a page source from <a href="http://www.foobar.net">http://www.foobar.net</a> in order to
+gather articles&rsquo; subjects etc. when a MUA opens the &lsquo;<samp>foobar</samp>&rsquo;
+folder.
+
+</li><li>
+Gathering subjects and other necessary informations from the page source
+in order to make headlines of articles and returning them as the
+structured list called <code>headers</code>.
+
+</li><li>
+Getting a page source for an article from the web site, for example,
+<a href="http://www.foobar.net/053003.html">http://www.foobar.net/053003.html</a>, when MUA requires to display
+an article in the &lsquo;<samp>foobar</samp>&rsquo; folder, and
+
+</li><li>
+Removing cruft, e.g. advertisements, from the page source and formatting
+a raw article.
+</li></ol>
+
+<p><code>shimbun-headers</code> of &lsquo;<tt>shimbun.el</tt>&rsquo; does the first job,
+<code>shimbun-get-headers</code> does the second, <code>shimbun-article</code> does
+the third and <code>shimbun-make-contents</code> does the last.
+</p>
+<p>The <code>shimbun-headers</code> method does the first job, the
+<code>shimbun-get-headers</code> method does the second, the
+<code>shimbun-article</code> method does the third and the
+<code>shimbun-make-contents</code> method does the last thing.  The default
+methods for those categories are defined in the &lsquo;<tt>shimbun.el</tt>&rsquo;
+module.
+</p>
+<p>Open the &lsquo;<tt>shimbun.el</tt>&rsquo; file.  You may see unfamiliar definitions
+like <code>luna-define-generic</code> or <code>luna-define-method</code> there.  Hm,
+they look like <code>defun</code>, don&rsquo;t you?  You may also see there&rsquo;s just a
+doc-string in the former definition and the same symbol is declared
+again in the later form.  And further, there are some symbols only
+declared by the <code>luna-define-generic</code> form, not by the
+<code>luna-define-method</code> form.  What on earth are we seeing?  Isn&rsquo;t the
+program not written in the Emacs-Lisp language?
+</p>
+<p>The truth is that the &lsquo;<samp>shimbun</samp>&rsquo; modules use the &lsquo;<tt>luna.el</tt>&rsquo;
+module provided by <acronym>FLIM</acronym> which enables you to write object
+oriented programs in the Emacs-Lisp language.
+</p>
+<p>There are method programs defined rigidly for the specific purposes in
+the &lsquo;<tt>shimbun.el</tt>&rsquo; module.  The <code>shimbun-headers</code> method gets a
+page source from a certain URL, the <code>shimbun-get-headers</code> method
+gathers subjects and other informations, etc&hellip; (see above).  They
+do routine works, so they cannot take proper method to meet various web
+contents in the world.  Eh?  Oh, you shouldn&rsquo;t believe in a heresy!
+</p>
+<p>The &lsquo;<tt>shimbun.el</tt>&rsquo; module only provides the default method functions.
+Remember the <code>defadvice</code> feature.  There are three ways to modify
+the behavior of a function: <code>:before</code>, <code>:around</code> and
+<code>:after</code>.  Similarly, each default &lsquo;<samp>shimbun</samp>&rsquo; method function
+can be modified for a certain purpose (note that the <code>:around</code>
+method-qualifier can be omitted).  And it should be written specially
+that the modification will be effective only when the specified
+&lsquo;<samp>shimbun</samp>&rsquo; module is selected.
+</p>
+<p>Now as you may have understood that the <code>luna-define-generic</code> form
+provides only a husk in a sense, the <code>luna-define-method</code> form
+defines an actual function which can be different for each
+&lsquo;<samp>shimbun</samp>&rsquo; module, and the <code>luna-define-class</code> form declares
+the &lsquo;<samp>shimbun</samp>&rsquo; class in the first part of the &lsquo;<tt>sb-foobar.el</tt>&rsquo;
+module.
+</p>
+<hr size="6">
+<a name="Getting-web-page-and-header-information"></a>
+<table cellpadding="1" cellspacing="1" border="0">
+<tr><td valign="middle" align="left">[<a href="#Overview" title="Previous section in reading order"> &lt; </a>]</td>
+<td valign="middle" align="left">[<a href="#Displaying-an-article" title="Next section in reading order"> &gt; </a>]</td>
+<td valign="middle" align="left"> &nbsp; </td>
+<td valign="middle" align="left">[<a href="emacs-w3m_56.html#Shimbun-Library" title="Beginning of this chapter or previous chapter"> &lt;&lt; </a>]</td>
+<td valign="middle" align="left">[<a href="#Shimbun-Basics" title="Up section"> Up </a>]</td>
+<td valign="middle" align="left">[<a href="emacs-w3m_63.html#Tips" title="Next chapter"> &gt;&gt; </a>]</td>
+<td valign="middle" align="left"> &nbsp; </td>
+<td valign="middle" align="left"> &nbsp; </td>
+<td valign="middle" align="left"> &nbsp; </td>
+<td valign="middle" align="left"> &nbsp; </td>
+<td valign="middle" align="left">[<a href="emacs-w3m.html#Top" title="Cover (top) of document">Top</a>]</td>
+<td valign="middle" align="left">[<a href="emacs-w3m_toc.html#SEC_Contents" title="Table of contents">Contents</a>]</td>
+<td valign="middle" align="left">[<a href="emacs-w3m_68.html#Index" title="Index">Index</a>]</td>
+<td valign="middle" align="left">[<a href="emacs-w3m_abt.html#SEC_About" title="About (help)"> ? </a>]</td>
+</tr></table>
+<a name="Getting-web-page-and-header-information-1"></a>
+<h3 class="subsection">9.6.2 Getting web page and header information</h3>
+
+<p>Let&rsquo;s identify a target web page URL to gather subjects and other
+informations first.  If a web site uses a frame, a target is only one
+of the web pages.  Second, lets create a body of the
+<code>shimbun-index-url</code> method function using the
+<code>luna-define-method</code> form in your &lsquo;<tt>sb-foobar.el</tt>&rsquo; file.  And
+make the user customizable variable <code>shimbun-foobar-groups</code>, which
+we will explain later<a name="DOCF11" href="emacs-w3m_fot.html#FOOT11">(11)</a>.
+</p>
+<table><tr><td>&nbsp;</td><td><pre class="lisp">(defvar shimbun-foobar-url &quot;http://www.foobar.net&quot;)
+
+(luna-define-method shimbun-index-url ((shimbun shimbun-foobar))
+  shimbun-foobar-url)
+
+(defvar shimbun-foobar-groups '(&quot;news&quot;))
+</pre></td></tr></table>
+
+<p>After you create a body of the <code>shimbun-index-url</code> method, the
+<code>shimbun-headers</code> method can get a web page source since the
+&lsquo;<tt>shimbun.el</tt>&rsquo; module already has the default <code>shimbun-headers</code>
+method.  After the <code>shimbun-headers</code> method gets a web page source,
+it calls the <code>shimbun-get-headers</code> method to gather headers
+information.  As the &lsquo;<tt>shimbun.el</tt>&rsquo; module does not have the
+<code>shimbun-get-headers</code> method, you have to create it in your
+&lsquo;<tt>sb-foobar.el</tt>&rsquo; file.
+</p>
+<p>Now look carefully in the page source and create the
+<code>shimbun-get-headers</code> method in your &lsquo;<tt>sb-foobar.el</tt>&rsquo; file.
+</p>
+<p>Create a regular expression that can gather headers information.
+Minimally necessary information are subject, date, author, URL and
+<code>message-id</code> of an article.  They are used in MUA as Subject, Date,
+From, Xref and Message-ID.
+</p>
+<p>If you want to make an article from a line in a web page source, like:
+</p>
+<table><tr><td>&nbsp;</td><td><pre class="example">&lt;a href=&quot;053003.html&quot;&gt;some talks on May 30(posted by Mikio &amp;lt;foo@bar.net&amp;gt;)&lt;/a&gt;
+</pre></td></tr></table>
+
+
+<p>use the following regexp:
+</p>
+<table><tr><td>&nbsp;</td><td><pre class="example">&quot;&lt;a href=\&quot;\\(\\([0-9][0-9][0-9][0-9]\\)[0-9][0-9]\\.html\\)\&quot;&gt;\\([^&lt;(]+\\)(posted by \\([^&lt;]+\\))&lt;\/a&gt;&quot;
+</pre></td></tr></table>
+
+<p>You can get a value for Xref by
+<code>(match-string 1)</code>.  You can get a value for Date by modifying
+a value of
+<code>(match-string 2)</code>.  Subject by
+<code>(match-string 3)</code> and From from
+<code>(match-string 4)</code>.  You can modify them further for showing
+additional information in MUA.
+</p>
+<p>If URL of an article is a relative path like above, use
+<code>shimbun-expand-url</code> to expand it before putting information to
+header.  If each article doesn&rsquo;t have a each unique URLs (i.e. URL of
+headers and URL of articles are just same), you have to ask Emacs to
+remember body of an article when gathering headers information, For more
+detail see the files &lsquo;<tt>sb-palmfan.el</tt>&rsquo;, &lsquo;<tt>sb-dennou.el</tt>&rsquo; and
+&lsquo;<tt>sb-tcup.el</tt>&rsquo;.
+</p>
+<p>Sometimes you cannot identify Date information when gathering headers
+information only from a web page source.  If so, leave it, just set a
+null string, <code>&quot;&quot;</code> to its value.  If you can identify Date only when
+you see contents of an article, you can set it at that time by using
+<code>shimbun-make-contents</code> method.  And you may use a fixed From for a
+web site (e.x. &quot;webmaster@foobar.net&quot;).
+</p>
+<p>Be careful when you build a message-id.  Make sure it has uniqueness
+otherwise you may not be able to read some articles in the
+&lsquo;<samp>shimbun</samp>&rsquo;<a name="DOCF12" href="emacs-w3m_fot.html#FOOT12">(12)</a>.  Assure
+uniqueness by building message-id using date information, a domain of
+the page and/or a part of URL of the page.  And use &lsquo;<samp>@</samp>&rsquo; but
+&lsquo;<samp>:</samp>&rsquo; as a part of message-id in order to display inline images.  See
+RFC2387 and RFC822 for more detail.
+</p>
+<p>Put these information to header using function
+<code>shimbun-create-header</code> of the &lsquo;<tt>shimbun.el</tt>&rsquo; module.
+</p>
+<p>A bare bone of <code>shimbun-get-headers</code> in your &lsquo;<tt>sb-foobar.el</tt>&rsquo;
+file is as follows:
+</p>
+<table><tr><td>&nbsp;</td><td><pre class="lisp">(luna-define-method shimbun-get-headers ((shimbun shimbun-foobar)
+                                         &amp;optional range)
+  (let ((regexp &quot;....&quot;)
+        subject from date id url headers)
+    ...
+    (catch 'stop
+      (while (re-search-forward regexp nil t nil)
+        ...
+        (when (shimbun-search-id shimbun id)
+          (throw 'stop nil))
+        (push (shimbun-create-header
+               0 subject from date id &quot;&quot; 0 0 url)
+              headers)))
+    headers))
+</pre></td></tr></table>
+
+<p>Note that you can access &lsquo;<samp>shimbun-foobar</samp>&rsquo; instance via temporary
+variable <code>shimbun</code> in the method.
+</p>
+<p>Now we will explain a user variable <code>shimbun-foobar-groups</code>.
+</p>
+<p>Assume that you have two groups of articles in
+<a href="http://www.foobar.net">http://www.foobar.net</a> and there are two different web pages
+for such groups in where &lsquo;<samp>shimbun</samp>&rsquo; module gathers header
+information.  For examples, there are what&rsquo;s new information of the web
+site in
+<a href="http://www.foobar.net/whatsnew/index.hmtl">http://www.foobar.net/whatsnew/index.hmtl</a>, and there are
+archive lists of email messages posted to ML in
+<a href="http://www.foobar.net/ml/index.html">http://www.foobar.net/ml/index.html</a>.  In such case you may
+want to access the group by &lsquo;<samp>shimbun</samp>&rsquo; folders
+&lsquo;<samp>foobar.whatsnew</samp>&rsquo; and &lsquo;<samp>foobar.ml</samp>&rsquo;.  If so, put the following S
+expressions to the &lsquo;<tt>sb-foobar.el</tt>&rsquo; file.
+</p>
+<table><tr><td>&nbsp;</td><td><pre class="lisp">(defvar shimbun-foobar-url &quot;http://www.foobar.net&quot;)
+
+(defvar shimbun-foobar-group-path-alist
+  '((&quot;whatsnew&quot; . &quot;/whatsnew/index.html&quot;)
+    (&quot;ml&quot; . &quot;/ml/index.html&quot;)))
+
+(defvar shimbun-foobar-groups
+  (mapcar 'car shimbun-foobar-group-path-alist))
+
+(luna-define-method shimbun-index-url ((shimbun shimbun-foobar))
+  (concat shimbun-foobar-url
+          (cdr (assoc (shimbun-current-group-internal shimbun)
+                      shimbun-foobar-group-path-alist))))
+</pre></td></tr></table>
+
+<p>You can get the current group by using
+<code>shimbun-current-group-internal</code>.  You can use it in
+<code>shimbun-get-headers</code> method (or others) in order to change its
+behavior in accordance with the current group.
+</p>
+<p>Each &lsquo;<samp>shimbun</samp>&rsquo; module needs at least one group.  There is not a
+special rule for naming a group, but if you don&rsquo;t find out a good name,
+use &lsquo;<samp>news</samp>&rsquo; or &lsquo;<samp>main</samp>&rsquo;.
+</p>
+<hr size="6">
+<a name="Displaying-an-article"></a>
+<table cellpadding="1" cellspacing="1" border="0">
+<tr><td valign="middle" align="left">[<a href="#Getting-web-page-and-header-information" title="Previous section in reading order"> &lt; </a>]</td>
+<td valign="middle" align="left">[<a href="#Inheriting-shimbun-module" title="Next section in reading order"> &gt; </a>]</td>
+<td valign="middle" align="left"> &nbsp; </td>
+<td valign="middle" align="left">[<a href="emacs-w3m_56.html#Shimbun-Library" title="Beginning of this chapter or previous chapter"> &lt;&lt; </a>]</td>
+<td valign="middle" align="left">[<a href="#Shimbun-Basics" title="Up section"> Up </a>]</td>
+<td valign="middle" align="left">[<a href="emacs-w3m_63.html#Tips" title="Next chapter"> &gt;&gt; </a>]</td>
+<td valign="middle" align="left"> &nbsp; </td>
+<td valign="middle" align="left"> &nbsp; </td>
+<td valign="middle" align="left"> &nbsp; </td>
+<td valign="middle" align="left"> &nbsp; </td>
+<td valign="middle" align="left">[<a href="emacs-w3m.html#Top" title="Cover (top) of document">Top</a>]</td>
+<td valign="middle" align="left">[<a href="emacs-w3m_toc.html#SEC_Contents" title="Table of contents">Contents</a>]</td>
+<td valign="middle" align="left">[<a href="emacs-w3m_68.html#Index" title="Index">Index</a>]</td>
+<td valign="middle" align="left">[<a href="emacs-w3m_abt.html#SEC_About" title="About (help)"> ? </a>]</td>
+</tr></table>
+<a name="Displaying-an-article-1"></a>
+<h3 class="subsection">9.6.3 Displaying an article</h3>
+
+<p><code>shimbun-article</code> method defined in the &lsquo;<tt>shimbun.el</tt>&rsquo; module
+gets URL from Xref information of header, get a web page source from the
+URL, and call <code>shimbun-make-contents</code> in working buffer of the
+source.   Major job of <code>shimbun-make-contents</code> is to process such
+HTML.  Imagine that a working buffer has a web page source of an
+article.  <code>shimbun-make-contents</code> defined in the &lsquo;<tt>shimbun.el</tt>&rsquo;
+module insert (i) header information to top of the buffer, (ii)
+&lsquo;<samp>&lt;html&gt;</samp>&rsquo;, &lsquo;<samp>&lt;body&gt;</samp>&rsquo; and etc. right after the information, and
+(iii) &lsquo;<samp>&lt;/body&gt;</samp>&rsquo; and &lsquo;<samp>&lt;/html&gt;</samp>&rsquo; to end of the buffer.  MUA
+displays an article as a HTML mail.
+</p>
+<blockquote><p>Not only HTML articles, but also articles in the &lsquo;<samp>text/plain</samp>&rsquo;
+format can be generated.  See section <a href="#Making-text_002fplain-articles">Making text/plain articles</a>.
+</p></blockquote>
+
+<p>If you don&rsquo;t want to process an article, you don&rsquo;t have to define
+<code>shimbun-make-contents</code> in the &lsquo;<tt>sb-foobar.el</tt>&rsquo; module.
+</p>
+<p>If you want to remove some part of a web page source of an article at
+its top and its end, set regexp to <code>shimbun-foobar-content-start</code>
+that matches content start and <code>shimbun-foobar-content-end</code> that
+matches content end.
+</p>
+<table><tr><td>&nbsp;</td><td><pre class="lisp">(defvar shimbun-foobar-content-start &quot;^&lt;body&gt;$&quot;)
+(defvar shimbun-foobar-content-end &quot;^&lt;\/body&gt;$&quot;)
+</pre></td></tr></table>
+
+<p><code>shimbun-clear-contents</code>, which is called by
+<code>shimbun-make-contents</code> defined in the &lsquo;<tt>shimbun.el</tt>&rsquo; module,
+will remove HTML source from <code>point-min</code> to
+<code>shimbun-foobar-content-start</code> and from
+<code>shimbun-foobar-content-end</code> to <code>point-max</code> using the regexps.
+Note that it will not remove any HTML source when either of the regexp
+searches fails.
+</p>
+<p>If you want to remove more unnecessary parts (e.x. advertisements)
+diligently, define <code>shimbun-clear-contents</code> in your new
+&lsquo;<tt>sb-foobar.el</tt>&rsquo; file as follows:
+</p>
+<table><tr><td>&nbsp;</td><td><pre class="lisp">(luna-define-method shimbun-clear-contents :around ((shimbun shimbun-foobar)
+                                                    header)
+  ;; cleaning up
+  (while (re-search-forward &quot;...&quot; nil t nil)
+    (delete-region (match-beginning 0) (match-end 0)))
+  (luna-call-next-method))
+</pre></td></tr></table>
+
+<p>For more details see <code>shimbun-make-contents</code> in the
+&lsquo;<tt>sb-ibm-dev.el</tt>&rsquo; file.
+</p>
+<p>I said in the subsection of <a href="#Getting-web-page-and-header-information">Getting web page and header information</a> that if each article doesn&rsquo;t have a each unique URLs you
+have to ask Emacs to remember body of an article when gathering headers
+information,  In such case you don&rsquo;t have to get a web page from URL of
+Xref in &lsquo;<tt>shimbun-article</tt>&rsquo; method.  Just get texts from Emacs
+memories and put them with pretty printing.  For more detail see
+definitions of &lsquo;<tt>shimbun-article</tt>&rsquo; method of &lsquo;<tt>sb-palmfan.el</tt>&rsquo;,
+&lsquo;<tt>sb-dennou.el</tt>&rsquo; or &lsquo;<tt>sb-tcup.el</tt>&rsquo;.
+</p>
+<hr size="6">
+<a name="Inheriting-shimbun-module"></a>
+<table cellpadding="1" cellspacing="1" border="0">
+<tr><td valign="middle" align="left">[<a href="#Displaying-an-article" title="Previous section in reading order"> &lt; </a>]</td>
+<td valign="middle" align="left">[<a href="#Making-text_002fplain-articles" title="Next section in reading order"> &gt; </a>]</td>
+<td valign="middle" align="left"> &nbsp; </td>
+<td valign="middle" align="left">[<a href="emacs-w3m_56.html#Shimbun-Library" title="Beginning of this chapter or previous chapter"> &lt;&lt; </a>]</td>
+<td valign="middle" align="left">[<a href="#Shimbun-Basics" title="Up section"> Up </a>]</td>
+<td valign="middle" align="left">[<a href="emacs-w3m_63.html#Tips" title="Next chapter"> &gt;&gt; </a>]</td>
+<td valign="middle" align="left"> &nbsp; </td>
+<td valign="middle" align="left"> &nbsp; </td>
+<td valign="middle" align="left"> &nbsp; </td>
+<td valign="middle" align="left"> &nbsp; </td>
+<td valign="middle" align="left">[<a href="emacs-w3m.html#Top" title="Cover (top) of document">Top</a>]</td>
+<td valign="middle" align="left">[<a href="emacs-w3m_toc.html#SEC_Contents" title="Table of contents">Contents</a>]</td>
+<td valign="middle" align="left">[<a href="emacs-w3m_68.html#Index" title="Index">Index</a>]</td>
+<td valign="middle" align="left">[<a href="emacs-w3m_abt.html#SEC_About" title="About (help)"> ? </a>]</td>
+</tr></table>
+<a name="Inheriting-shimbun-module-1"></a>
+<h3 class="subsection">9.6.4 Inheriting shimbun module</h3>
+
+<p>There are some famous mailing list manager (or archiver).
+</p>
+<ul>
+<li> Mailman
+The GNU Mailing List Manager, formerly called as &lsquo;<samp>pipermail</samp>&rsquo;.  See
+<a href="http://www.gnu.org/software/mailman/index.html">http://www.gnu.org/software/mailman/index.html</a> for detail.
+
+</li><li> MHonArc
+See <a href="http://www.oac.uci.edu/indiv/ehood/mhonarc.html">http://www.oac.uci.edu/indiv/ehood/mhonarc.html</a> for detail.
+
+</li><li> fml
+fml mailing list server/manager.  See
+<a href="http://www.fml.org/software/fml/">http://www.fml.org/software/fml/</a> for detail.
+
+</li><li> mailarc
+See <a href="http://cvs.namazu.org/mailarc/">http://cvs.namazu.org/mailarc/</a> for detail.
+</li></ul>
+
+<p>If you find out one of such mailing list managers&rsquo; names in a web page
+source when you analyze it in the step of See section <a href="#Getting-web-page-and-header-information">Getting web page and header information</a>, you are very lucky<a name="DOCF13" href="emacs-w3m_fot.html#FOOT13">(13)</a>.  The
+modules &lsquo;<tt>sb-mailman.el</tt>&rsquo;, &lsquo;<tt>sb-mhonarc.el</tt>&rsquo;, &lsquo;<tt>sb-fml.el</tt>&rsquo; and
+&lsquo;<tt>sb-mailarc.el</tt>&rsquo; have the <code>shimbun-get-headers</code> method, etc,
+already, when you write small code that is not defined in such
+&lsquo;<samp>shimbun</samp>&rsquo; modules, your new &lsquo;<tt>sb-foobar.el</tt>&rsquo; module works!
+</p>
+<p>If you use the &lsquo;<tt>sb-mailman.el</tt>&rsquo; module, write the following S
+expressions to the top of the &lsquo;<tt>sb-foobar.el</tt>&rsquo; file:
+</p>
+<table><tr><td>&nbsp;</td><td><pre class="lisp">(require 'sb-mailman)
+(luna-define-class shimbun-foobar (shimbun-mailman) ())
+</pre></td></tr></table>
+
+<p>Those above mean that &lsquo;<samp>shimbun</samp>&rsquo; module &lsquo;<samp>shimbun-foobar</samp>&rsquo;
+inherits shimbun-mailman class<a name="DOCF14" href="emacs-w3m_fot.html#FOOT14">(14)</a> and methods defined in the &lsquo;<tt>sb-mailman.el</tt>&rsquo; module
+will be used in &lsquo;<samp>shimbun-foobar</samp>&rsquo; by default.  You can overwrite
+some of parent methods, if necessary.
+</p>
+<p>See the &lsquo;<tt>sb-pilot-mailsync.el</tt>&rsquo; file as a sample that uses the
+&lsquo;<tt>sb-mailman.el</tt>&rsquo; module.  You can feel how easy to create a new
+&lsquo;<samp>shimbun</samp>&rsquo; module by using such parent modules.
+</p>
+<p>Note that there are some localized version of such mailing list manager,
+for examples, some of them show Date information in Japanese.  The
+modules &lsquo;<tt>sb-mailman.el</tt>&rsquo;, &lsquo;<tt>sb-mhonarc.el</tt>&rsquo;, &lsquo;<tt>sb-fml.el</tt>&rsquo; and
+&lsquo;<tt>sb-mailarc.el</tt>&rsquo; assumes that mailing list managers are not
+localized.
+</p>
+<p>If you want to read via &lsquo;<samp>shimbun</samp>&rsquo; a web site that uses localized
+mailing list manager, you may have to overwrite some methods in the
+parent module.
+</p>
+<hr size="6">
+<a name="Making-text_002fplain-articles"></a>
+<table cellpadding="1" cellspacing="1" border="0">
+<tr><td valign="middle" align="left">[<a href="#Inheriting-shimbun-module" title="Previous section in reading order"> &lt; </a>]</td>
+<td valign="middle" align="left">[<a href="#Zenkaku-to-hankaku-conversion" title="Next section in reading order"> &gt; </a>]</td>
+<td valign="middle" align="left"> &nbsp; </td>
+<td valign="middle" align="left">[<a href="emacs-w3m_56.html#Shimbun-Library" title="Beginning of this chapter or previous chapter"> &lt;&lt; </a>]</td>
+<td valign="middle" align="left">[<a href="#Shimbun-Basics" title="Up section"> Up </a>]</td>
+<td valign="middle" align="left">[<a href="emacs-w3m_63.html#Tips" title="Next chapter"> &gt;&gt; </a>]</td>
+<td valign="middle" align="left"> &nbsp; </td>
+<td valign="middle" align="left"> &nbsp; </td>
+<td valign="middle" align="left"> &nbsp; </td>
+<td valign="middle" align="left"> &nbsp; </td>
+<td valign="middle" align="left">[<a href="emacs-w3m.html#Top" title="Cover (top) of document">Top</a>]</td>
+<td valign="middle" align="left">[<a href="emacs-w3m_toc.html#SEC_Contents" title="Table of contents">Contents</a>]</td>
+<td valign="middle" align="left">[<a href="emacs-w3m_68.html#Index" title="Index">Index</a>]</td>
+<td valign="middle" align="left">[<a href="emacs-w3m_abt.html#SEC_About" title="About (help)"> ? </a>]</td>
+</tr></table>
+<a name="Making-text_002fplain-articles-1"></a>
+<h3 class="subsection">9.6.5 Making text/plain articles</h3>
+
+<p>Even if the MUA is reinforced by emacs-w3m so as to be able to read HTML
+articles, &lsquo;<samp>text/plain</samp>&rsquo; articles might be more convenient in some
+cases.  To make the &lsquo;<samp>sb-foobar</samp>&rsquo; module generate &lsquo;<samp>text/plain</samp>&rsquo;
+articles rather than &lsquo;<samp>text/html</samp>&rsquo; articles, there are two ways to do
+that.
+</p>
+<ul>
+<li>
+The one is to make the &lsquo;<samp>sb-foobar</samp>&rsquo; module inherit
+(see section <a href="#Inheriting-shimbun-module">Inheriting shimbun module</a>) the &lsquo;<samp>sb-text</samp>&rsquo; module.  Here&rsquo;s
+an example you may put in the beginning of the &lsquo;<samp>sb-foobar</samp>&rsquo; module.
+
+<table><tr><td>&nbsp;</td><td><pre class="lisp">(require 'sb-text)
+(luna-define-class shimbun-foobar (shimbun-text) ())
+</pre></td></tr></table>
+
+<p>The &lsquo;<samp>sb-text</samp>&rsquo; module provides the <code>shimbun-make-contents</code>
+method which generates the articles in the &lsquo;<samp>text/plain</samp>&rsquo; format.
+This will be useful for the &lsquo;<samp>shimbun</samp>&rsquo; modules handling the web
+sites which put up only text articles.
+</p>
+</li><li>
+The other is to set the <code>shimbun-foobar-prefer-text-plain</code> variable
+to non-<code>nil</code>.  This makes the <code>shimbun-make-contents</code> method
+generate the articles in the &lsquo;<samp>text/plain</samp>&rsquo; format (actually, it uses
+the functions provided by the &lsquo;<samp>sb-text</samp>&rsquo; module).  Note that this is
+effective only to the modules which inherit the default
+<code>shimbun-make-contents</code> method (especially the modules which
+inherit the &lsquo;<samp>sb-text</samp>&rsquo; module are not affected).  The advantage of
+this way is that users can easily switch &lsquo;<samp>text/plain</samp>&rsquo; articles and
+&lsquo;<samp>text/html</samp>&rsquo; articles.
+
+<p>The default value for the <code>shimbun-foobar-prefer-text-plain</code>
+variable is <code>nil</code> if it is not defined.  So, it defaults to
+<code>nil</code> in every &lsquo;<samp>shimbun</samp>&rsquo; module except for the modules
+&lsquo;<tt>sb-asahi.el</tt>&rsquo; and &lsquo;<tt>sb-yomiuri.el</tt>&rsquo;.
+</p>
+<p>In addition, you can use the variables
+<code>shimbun-foobar-text-content-start</code> and
+<code>shimbun-foobar-text-content-end</code> instead of
+<code>shimbun-foobar-content-start</code> and
+<code>shimbun-foobar-content-end</code> to extract significant text in web
+pages (see section <a href="#Displaying-an-article">Displaying an article</a>).  If the formers are not defined,
+those values default to the latter values.
+</p></li></ul>
+
+<p>Whichever the ways you use, you should note that the &lsquo;<samp>text/plain</samp>&rsquo;
+articles cannot contain images, links, etc.
+</p>
+<hr size="6">
+<a name="Zenkaku-to-hankaku-conversion"></a>
+<table cellpadding="1" cellspacing="1" border="0">
+<tr><td valign="middle" align="left">[<a href="#Making-text_002fplain-articles" title="Previous section in reading order"> &lt; </a>]</td>
+<td valign="middle" align="left">[<a href="#Coding-convention-of-Shimbun" title="Next section in reading order"> &gt; </a>]</td>
+<td valign="middle" align="left"> &nbsp; </td>
+<td valign="middle" align="left">[<a href="emacs-w3m_56.html#Shimbun-Library" title="Beginning of this chapter or previous chapter"> &lt;&lt; </a>]</td>
+<td valign="middle" align="left">[<a href="#Shimbun-Basics" title="Up section"> Up </a>]</td>
+<td valign="middle" align="left">[<a href="emacs-w3m_63.html#Tips" title="Next chapter"> &gt;&gt; </a>]</td>
+<td valign="middle" align="left"> &nbsp; </td>
+<td valign="middle" align="left"> &nbsp; </td>
+<td valign="middle" align="left"> &nbsp; </td>
+<td valign="middle" align="left"> &nbsp; </td>
+<td valign="middle" align="left">[<a href="emacs-w3m.html#Top" title="Cover (top) of document">Top</a>]</td>
+<td valign="middle" align="left">[<a href="emacs-w3m_toc.html#SEC_Contents" title="Table of contents">Contents</a>]</td>
+<td valign="middle" align="left">[<a href="emacs-w3m_68.html#Index" title="Index">Index</a>]</td>
+<td valign="middle" align="left">[<a href="emacs-w3m_abt.html#SEC_About" title="About (help)"> ? </a>]</td>
+</tr></table>
+<a name="Zenkaku-to-hankaku-conversion-1"></a>
+<h3 class="subsection">9.6.6 Zenkaku to hankaku conversion</h3>
+
+<p>&ldquo;Zenkaku&rdquo; or &ldquo;zenkaku character(s)&rdquo; is a term commonly used to call
+Japanese wide characters, and &ldquo;hankaku&rdquo; is an opposite term for
+ordinary ASCII characters.  There is a complete set of zenkaku
+characters corresponding to at least the ASCII character set.
+</p>
+<p>Some Japanese web sites tend to use zenkaku characters a lot, and those
+articles might not necessarily be comfortable to read.  If you feel so,
+you can use this feature that converts those zenkaku ASCII characters
+into hankaku.  To do that, set the <code>shimbun-foobar-japanese-hankaku</code>
+variable to <code>t</code>.  Where <code>foobar</code> is a server name to which you
+subscribe for shimbun articles.  That is, you have to use it per server.
+</p>
+<p>If you prefer to convert zenkaku to hankaku only in the body of
+articles, use the value <code>body</code> instead of <code>t</code>.  Contrarily the
+value <code>header</code> or <code>subject</code> specifies to perform it only in
+subjects.
+</p>
+<hr size="6">
+<a name="Coding-convention-of-Shimbun"></a>
+<table cellpadding="1" cellspacing="1" border="0">
+<tr><td valign="middle" align="left">[<a href="#Zenkaku-to-hankaku-conversion" title="Previous section in reading order"> &lt; </a>]</td>
+<td valign="middle" align="left">[<a href="emacs-w3m_63.html#Tips" title="Next section in reading order"> &gt; </a>]</td>
+<td valign="middle" align="left"> &nbsp; </td>
+<td valign="middle" align="left">[<a href="emacs-w3m_56.html#Shimbun-Library" title="Beginning of this chapter or previous chapter"> &lt;&lt; </a>]</td>
+<td valign="middle" align="left">[<a href="#Shimbun-Basics" title="Up section"> Up </a>]</td>
+<td valign="middle" align="left">[<a href="emacs-w3m_63.html#Tips" title="Next chapter"> &gt;&gt; </a>]</td>
+<td valign="middle" align="left"> &nbsp; </td>
+<td valign="middle" align="left"> &nbsp; </td>
+<td valign="middle" align="left"> &nbsp; </td>
+<td valign="middle" align="left"> &nbsp; </td>
+<td valign="middle" align="left">[<a href="emacs-w3m.html#Top" title="Cover (top) of document">Top</a>]</td>
+<td valign="middle" align="left">[<a href="emacs-w3m_toc.html#SEC_Contents" title="Table of contents">Contents</a>]</td>
+<td valign="middle" align="left">[<a href="emacs-w3m_68.html#Index" title="Index">Index</a>]</td>
+<td valign="middle" align="left">[<a href="emacs-w3m_abt.html#SEC_About" title="About (help)"> ? </a>]</td>
+</tr></table>
+<a name="Coding-convention-of-Shimbun-1"></a>
+<h3 class="subsection">9.6.7 Coding convention of Shimbun</h3>
+
+<ul>
+<li>
+You can use all functions defined in emacs-w3m in &lsquo;<tt>shimbun.el</tt>&rsquo;.
+
+</li><li>
+You can use no functions defined in emacs-w3m in &lsquo;<tt>sb-*.el</tt>&rsquo;.  If you
+want to use emacs-w3m functions in &lsquo;<tt>sb-*.el</tt>&rsquo;, you must add their
+stubs to &lsquo;<tt>shimbun.el</tt>&rsquo;.
+
+</li><li>
+You must avoid file names that have already used in SpeedBar.  Here is a
+list of file names used in &lsquo;<samp>speedbar-0.14beta4</samp>&rsquo;.
+
+<table>
+<tr><td width="20%">sb-ant.el</td><td width="20%">sb-html.el</td><td width="20%">sb-info.el</td><td width="20%">sb-texinfo.el</td></tr>
+<tr><td width="20%">sb-gud.el</td><td width="20%">sb-image.el</td><td width="20%">sb-rmail.el</td><td width="20%">sb-w3.el</td></tr>
+</table>
+
+</li><li>
+You should select file names which remind their referring WEB servers&rsquo;
+URIs.  It is allowed to remove country parts (Ex. jp,de,uk,etc),
+organization parts (Ex. edu,com,org,net,etc) and redundant parts
+(Ex. www) if removing does not increase vagueness.
+
+</li><li>
+You should select group names in USENET style.  It means that small
+characters are preferred in group names, and that period(.)  is
+preferred as an delimiter to show hierarchical structure in groups.
+</li></ul>
+
+<hr size="6">
+<table cellpadding="1" cellspacing="1" border="0">
+<tr><td valign="middle" align="left">[<a href="#Zenkaku-to-hankaku-conversion" title="Previous section in reading order"> &lt; </a>]</td>
+<td valign="middle" align="left">[<a href="emacs-w3m_63.html#Tips" title="Next section in reading order"> &gt; </a>]</td>
+<td valign="middle" align="left"> &nbsp; </td>
+<td valign="middle" align="left">[<a href="emacs-w3m_56.html#Shimbun-Library" title="Beginning of this chapter or previous chapter"> &lt;&lt; </a>]</td>
+<td valign="middle" align="left">[<a href="#Shimbun-Basics" title="Up section"> Up </a>]</td>
+<td valign="middle" align="left">[<a href="emacs-w3m_63.html#Tips" title="Next chapter"> &gt;&gt; </a>]</td>
+</tr></table>
+<p>
+ <font size="-1">
+  This document was generated by <em>TSUCHIYA Masatoshi</em> on <em>January 30, 2019</em> using <a href="http://www.nongnu.org/texi2html/"><em>texi2html 1.82</em></a>.
+ </font>
+ <br>
+
+</p>
+</body>
+</html>

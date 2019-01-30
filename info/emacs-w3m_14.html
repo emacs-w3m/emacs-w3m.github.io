@@ -1,0 +1,177 @@
+<!DOCTYPE html PUBLIC "-//W3C//DTD HTML 4.01 Transitional//EN" "http://www.w3.org/TR/html401/loose.dtd">
+<html>
+<!-- Copyright C 2000-2014 TSUCHIYA Masatoshi
+
+Permission is granted to copy, distribute and/or modify this document
+under the terms of the GNU General Public License, Version 2 or any
+later version published by the Free Software Foundation.
+
+This document is distributed in the hope that it will be useful, but
+WITHOUT ANY WARRANTY; without even the implied warranty of
+MERCHANTABILITY or FITNESS FOR A PARTICULAR PURPOSE.  See the GNU
+General Public License for more details.
+
+You should have received a copy of the GNU General Public License along
+with this document; see the file COPYING.  If not, write to the Free
+Software Foundation, Inc., 51 Franklin Street, Fifth Floor, Boston, MA
+02110-1301, USA.
+
+ -->
+<!-- Created on January 30, 2019 by texi2html 1.82
+texi2html was written by: 
+            Lionel Cons <Lionel.Cons@cern.ch> (original author)
+            Karl Berry  <karl@freefriends.org>
+            Olaf Bachmann <obachman@mathematik.uni-kl.de>
+            and many others.
+Maintained by: Many creative people.
+Send bugs and suggestions to <texi2html-bug@nongnu.org>
+-->
+<head>
+<title>Emacs-w3m &ndash; an Emacs interface to w3m &ndash;: 3.5 Everybody likes tabs</title>
+
+<meta name="description" content="Emacs-w3m &ndash; an Emacs interface to w3m &ndash;: 3.5 Everybody likes tabs">
+<meta name="keywords" content="Emacs-w3m &ndash; an Emacs interface to w3m &ndash;: 3.5 Everybody likes tabs">
+<meta name="resource-type" content="document">
+<meta name="distribution" content="global">
+<meta name="Generator" content="texi2html 1.82">
+<meta http-equiv="Content-Type" content="text/html; charset=utf-8">
+<style type="text/css">
+<!--
+a.summary-letter {text-decoration: none}
+blockquote.smallquotation {font-size: smaller}
+pre.display {font-family: serif}
+pre.format {font-family: serif}
+pre.menu-comment {font-family: serif}
+pre.menu-preformatted {font-family: serif}
+pre.smalldisplay {font-family: serif; font-size: smaller}
+pre.smallexample {font-size: smaller}
+pre.smallformat {font-family: serif; font-size: smaller}
+pre.smalllisp {font-size: smaller}
+span.roman {font-family:serif; font-weight:normal;}
+span.sansserif {font-family:sans-serif; font-weight:normal;}
+ul.toc {list-style: none}
+-->
+</style>
+
+
+</head>
+
+<body lang="en" bgcolor="#FFFFFF" text="#000000" link="#0000FF" vlink="#800080" alink="#FF0000">
+
+<a name="Using-Tabs"></a>
+<table cellpadding="1" cellspacing="1" border="0">
+<tr><td valign="middle" align="left">[<a href="emacs-w3m_13.html#Editing-Bookmarks" title="Previous section in reading order"> &lt; </a>]</td>
+<td valign="middle" align="left">[<a href="emacs-w3m_15.html#Working-with-buffers" title="Next section in reading order"> &gt; </a>]</td>
+<td valign="middle" align="left"> &nbsp; </td>
+<td valign="middle" align="left">[<a href="emacs-w3m_9.html#Basic-Usage" title="Beginning of this chapter or previous chapter"> &lt;&lt; </a>]</td>
+<td valign="middle" align="left">[<a href="emacs-w3m_9.html#Basic-Usage" title="Up section"> Up </a>]</td>
+<td valign="middle" align="left">[<a href="emacs-w3m_19.html#Pretty-Good-Features" title="Next chapter"> &gt;&gt; </a>]</td>
+<td valign="middle" align="left"> &nbsp; </td>
+<td valign="middle" align="left"> &nbsp; </td>
+<td valign="middle" align="left"> &nbsp; </td>
+<td valign="middle" align="left"> &nbsp; </td>
+<td valign="middle" align="left">[<a href="emacs-w3m.html#Top" title="Cover (top) of document">Top</a>]</td>
+<td valign="middle" align="left">[<a href="emacs-w3m_toc.html#SEC_Contents" title="Table of contents">Contents</a>]</td>
+<td valign="middle" align="left">[<a href="emacs-w3m_68.html#Index" title="Index">Index</a>]</td>
+<td valign="middle" align="left">[<a href="emacs-w3m_abt.html#SEC_About" title="About (help)"> ? </a>]</td>
+</tr></table>
+<a name="Everybody-likes-tabs"></a>
+<h2 class="section">3.5 Everybody likes tabs</h2>
+
+<p>Unlike most other text-based browsers, emacs-w3m has support for tabbed
+browsing.  What is tabbed browsing, you might ask?  It&rsquo;s very simple: it
+is a way to represent all active emacs-w3m buffers in a single window,
+by showing a line at the top which shows all the buffers in a simple and
+self-explaining way, each buffer being shown as a &ldquo;tab&rdquo;.  This line
+stays visible all the time and does not scroll with the rest of the
+buffer, so that you can switch to another buffer, or use the feedback it
+provides at any moment.
+</p>
+<p>The easiest way to get the feeling of it is to just try, so go on and
+open an emacs-w3m session.  If you didn&rsquo;t change anything to the
+configuration, the tabs line is active by default, it is this bright
+line at the top with a smaller rectangle that shows the title of the
+current page.  Now create another w3m buffer (with <kbd>G</kbd>, for
+example): now you have two of these rectangles.  These are tabs.
+</p>
+<p>The most obvious use of tabs is switching: by clicking with the
+<kbd>mouse-1</kbd> button on a tab, you make the buffer it represents active.
+It also works with the <kbd>mouse-2</kbd> button, or with rolling the mouse
+wheel if you are using GNU Emacs.  It&rsquo;s a very quick and easy way to
+work with several emacs-w3m buffers, you just have to point and click,
+or to roll the mouse wheel.  (Yeah yeah, I hear you.  You want to switch
+using the keyboard.  Don&rsquo;t worry, it&rsquo;s also possible.  It&rsquo;s explained in
+the next section.  Now keep quiet and read on!)
+</p>
+<p>Another nifty feature is the feedback it provides.  If you are on a
+color terminal or window system, emacs-w3m shows the text in the tab in
+different colors to show the status of the page<a name="DOCF1" href="emacs-w3m_fot.html#FOOT1">(1)</a>.  For example, when the page is being
+loaded, the text is in red, and goes back to its default color (usually
+black) when the loading is complete.  This way you can tell with a
+single glance at the tabs line if the page you&rsquo;re waiting for has
+arrived or not.
+</p>
+<p>Finally, if the web page provides a favicon, it will be shown in the
+tab as well<a name="DOCF2" href="emacs-w3m_fot.html#FOOT2">(2)</a>.  More eye-candy for the emacs-w3m user!
+</p>
+<p>User options:
+</p>
+<dl compact="compact">
+<dt> <code>w3m-use-tab</code></dt>
+<dd><a name="index-w3m_002duse_002dtab"></a>
+<p>Whether to activate tabbed browsing or not.
+</p></dd>
+</dl>
+
+<p>If you are a GNU Emacs user, the mouse wheel allows you not only to go
+to an adjacent buffer but also to move a buffer to the adjacent place.
+To do that, press and hold down the control key while you roll the mouse
+wheel on the tabs line.  There are two variables that control how
+emacs-w3m behaves by the mouse wheel:
+</p>
+<dl compact="compact">
+<dt> <code>w3m-tab-track-mouse</code></dt>
+<dd><a name="index-w3m_002dtab_002dtrack_002dmouse"></a>
+<p>This variable controls whether to make the mouse track the selected tab.
+The default value is <code>t</code>.  You may want to set this to <code>nil</code>
+if you use a proportional font for the tab faces.  See also
+<code>w3m-tab-mouse-position-adjuster</code>.
+</p>
+</dd>
+<dt> <code>w3m-tab-mouse-position-adjuster</code></dt>
+<dd><a name="index-w3m_002dtab_002dmouse_002dposition_002dadjuster"></a>
+<p>This variable contains the values used to adjust the mouse position on
+tabs when the mouse pointer tracks the selected tab.  The default value
+is <code>(0.5 . -4)</code>.  It consists of the cons of a floating point
+number <var>m</var> and an integer <var>n</var> that are applied to calculating of
+the mouse position, which is given in pixel units, as follows:
+</p>
+<table><tr><td>&nbsp;</td><td><pre class="example">(TAB_WIDTH + M) * ORDER + N
+</pre></td></tr></table>
+
+<p>Where <var>tab_width</var> is the pixel width of a tab and <var>order</var> is the
+order number in tabs.  The result is rounded towards zero.
+</p>
+<p>Note that the calculation will always fail if you use a proportional
+font for the tab faces.  See also <code>w3m-tab-track-mouse</code>.
+</p></dd>
+</dl>
+
+<hr size="6">
+<table cellpadding="1" cellspacing="1" border="0">
+<tr><td valign="middle" align="left">[<a href="emacs-w3m_13.html#Editing-Bookmarks" title="Previous section in reading order"> &lt; </a>]</td>
+<td valign="middle" align="left">[<a href="emacs-w3m_15.html#Working-with-buffers" title="Next section in reading order"> &gt; </a>]</td>
+<td valign="middle" align="left"> &nbsp; </td>
+<td valign="middle" align="left">[<a href="emacs-w3m_9.html#Basic-Usage" title="Beginning of this chapter or previous chapter"> &lt;&lt; </a>]</td>
+<td valign="middle" align="left">[<a href="emacs-w3m_9.html#Basic-Usage" title="Up section"> Up </a>]</td>
+<td valign="middle" align="left">[<a href="emacs-w3m_19.html#Pretty-Good-Features" title="Next chapter"> &gt;&gt; </a>]</td>
+</tr></table>
+<p>
+ <font size="-1">
+  This document was generated by <em>TSUCHIYA Masatoshi</em> on <em>January 30, 2019</em> using <a href="http://www.nongnu.org/texi2html/"><em>texi2html 1.82</em></a>.
+ </font>
+ <br>
+
+</p>
+</body>
+</html>

@@ -1,0 +1,157 @@
+<!DOCTYPE html PUBLIC "-//W3C//DTD HTML 4.01 Transitional//EN" "http://www.w3.org/TR/html401/loose.dtd">
+<html>
+<!-- Copyright C 2000-2014 TSUCHIYA Masatoshi
+
+Permission is granted to copy, distribute and/or modify this document
+under the terms of the GNU General Public License, Version 2 or any
+later version published by the Free Software Foundation.
+
+This document is distributed in the hope that it will be useful, but
+WITHOUT ANY WARRANTY; without even the implied warranty of
+MERCHANTABILITY or FITNESS FOR A PARTICULAR PURPOSE.  See the GNU
+General Public License for more details.
+
+You should have received a copy of the GNU General Public License along
+with this document; see the file COPYING.  If not, write to the Free
+Software Foundation, Inc., 51 Franklin Street, Fifth Floor, Boston, MA
+02110-1301, USA.
+
+ -->
+<!-- Created on January 30, 2019 by texi2html 1.82
+texi2html was written by: 
+            Lionel Cons <Lionel.Cons@cern.ch> (original author)
+            Karl Berry  <karl@freefriends.org>
+            Olaf Bachmann <obachman@mathematik.uni-kl.de>
+            and many others.
+Maintained by: Many creative people.
+Send bugs and suggestions to <texi2html-bug@nongnu.org>
+-->
+<head>
+<title>Emacs-w3m &ndash; an Emacs interface to w3m &ndash;: 5. Customizable variables</title>
+
+<meta name="description" content="Emacs-w3m &ndash; an Emacs interface to w3m &ndash;: 5. Customizable variables">
+<meta name="keywords" content="Emacs-w3m &ndash; an Emacs interface to w3m &ndash;: 5. Customizable variables">
+<meta name="resource-type" content="document">
+<meta name="distribution" content="global">
+<meta name="Generator" content="texi2html 1.82">
+<meta http-equiv="Content-Type" content="text/html; charset=utf-8">
+<style type="text/css">
+<!--
+a.summary-letter {text-decoration: none}
+blockquote.smallquotation {font-size: smaller}
+pre.display {font-family: serif}
+pre.format {font-family: serif}
+pre.menu-comment {font-family: serif}
+pre.menu-preformatted {font-family: serif}
+pre.smalldisplay {font-family: serif; font-size: smaller}
+pre.smallexample {font-size: smaller}
+pre.smallformat {font-family: serif; font-size: smaller}
+pre.smalllisp {font-size: smaller}
+span.roman {font-family:serif; font-weight:normal;}
+span.sansserif {font-family:sans-serif; font-weight:normal;}
+ul.toc {list-style: none}
+-->
+</style>
+
+
+</head>
+
+<body lang="en" bgcolor="#FFFFFF" text="#000000" link="#0000FF" vlink="#800080" alink="#FF0000">
+
+<a name="Customizable-Variables"></a>
+<table cellpadding="1" cellspacing="1" border="0">
+<tr><td valign="middle" align="left">[<a href="emacs-w3m_29.html#Session-Manager" title="Previous section in reading order"> &lt; </a>]</td>
+<td valign="middle" align="left">[<a href="emacs-w3m_31.html#General-Variables" title="Next section in reading order"> &gt; </a>]</td>
+<td valign="middle" align="left"> &nbsp; </td>
+<td valign="middle" align="left">[<a href="emacs-w3m_19.html#Pretty-Good-Features" title="Beginning of this chapter or previous chapter"> &lt;&lt; </a>]</td>
+<td valign="middle" align="left">[<a href="emacs-w3m.html#Top" title="Up section"> Up </a>]</td>
+<td valign="middle" align="left">[<a href="emacs-w3m_46.html#Hooking-into-MUAs" title="Next chapter"> &gt;&gt; </a>]</td>
+<td valign="middle" align="left"> &nbsp; </td>
+<td valign="middle" align="left"> &nbsp; </td>
+<td valign="middle" align="left"> &nbsp; </td>
+<td valign="middle" align="left"> &nbsp; </td>
+<td valign="middle" align="left">[<a href="emacs-w3m.html#Top" title="Cover (top) of document">Top</a>]</td>
+<td valign="middle" align="left">[<a href="emacs-w3m_toc.html#SEC_Contents" title="Table of contents">Contents</a>]</td>
+<td valign="middle" align="left">[<a href="emacs-w3m_68.html#Index" title="Index">Index</a>]</td>
+<td valign="middle" align="left">[<a href="emacs-w3m_abt.html#SEC_About" title="About (help)"> ? </a>]</td>
+</tr></table>
+<a name="Customizable-variables"></a>
+<h1 class="chapter">5. Customizable variables</h1>
+<a name="index-Customizing-user-options"></a>
+<a name="index-w3m_002dinit_002dfile-1"></a>
+
+<p>A lot of emacs-w3m variables are customizable via the Custom mechanism,
+a graphical Emacs interface to define user options.  Custom offers
+several methods to define your customizations, you can use for example
+<kbd>M-x customize-option</kbd> for a single option (i.e. an Emacs Lisp
+variable) or <kbd>M-x customize-group</kbd> to see all available options
+(including variables and faces) for a &ldquo;group&rdquo; and change them; in
+which case the group to use is <code>w3m</code>.
+</p>
+<p>Alternatively (if you don&rsquo;t want to use Custom), you can put arbitrary
+Emacs Lisp expressions in your emacs-w3m initialization file, which is
+&lsquo;<tt>~/.emacs-w3m</tt>&rsquo; by default.  This example:
+</p>
+<table><tr><td>&nbsp;</td><td><pre class="lisp">(setq w3m-home-page &quot;http://emacs-w3m.namazu.org/&quot;)
+</pre></td></tr></table>
+
+<p>would set the default homepage to <a href="http://emacs-w3m.namazu.org/">http://emacs-w3m.namazu.org/</a>.
+The syntax to use is the same as in your &lsquo;<tt>~/.emacs</tt>&rsquo;
+file.  See <a href="../emacs/Init-File.html#Init-File">(emacs)Init File</a> section &lsquo;Init File&rsquo; in <cite>The Emacs Manual</cite>.
+</p>
+<p>Please note that some variables from external modules could be undefined
+at the time the &lsquo;<tt>~/.emacs-w3m</tt>&rsquo; file is loaded, thus making them
+impossible to modify (of course if you don&rsquo;t care about the default
+value, you can override them completely in your
+&lsquo;<tt>~/.emacs-w3m</tt>&rsquo;) file.  The <code>w3m-search-engine-alist</code> variable
+is a typical example (see section <a href="emacs-w3m_36.html#Search-Variables">Variables related to searching the web</a>).
+</p>
+<dl compact="compact">
+<dt> <code>w3m-init-file</code></dt>
+<dd><p>When emacs-w3m starts, it will read the <code>w3m-init-file</code> file.  The
+default value is &lsquo;<tt>~/.emacs-w3m</tt>&rsquo;.  You probably don&rsquo;t need to change
+this.  This is a normal Emacs Lisp file and can be used to avoid
+cluttering your &lsquo;<tt>~/.emacs</tt>&rsquo; and &lsquo;<tt>site-init</tt>&rsquo; files with
+emacs-w3m stuff.  Emacs-w3m will also check for files with the same
+names as this, but with &lsquo;<tt>.elc</tt>&rsquo; and &lsquo;<tt>.el</tt>&rsquo; extensions (in other
+words, &lsquo;<tt>~/.emacs-w3m.elc</tt>&rsquo;, &lsquo;<tt>~/.emacs-w3m.el</tt>&rsquo; and
+&lsquo;<tt>~/.emacs-w3m</tt>&rsquo;, in this order).
+</p></dd>
+</dl>
+
+<table class="menu" border="0" cellspacing="0">
+<tr><td align="left" valign="top"><a href="emacs-w3m_31.html#General-Variables">5.1 General variables</a></td><td>&nbsp;&nbsp;</td><td align="left" valign="top"></td></tr>
+<tr><td align="left" valign="top"><a href="emacs-w3m_32.html#Image-Variables">5.2 Variables related to images</a></td><td>&nbsp;&nbsp;</td><td align="left" valign="top"></td></tr>
+<tr><td align="left" valign="top"><a href="emacs-w3m_33.html#Form-Variables">5.3 Variables related to forms</a></td><td>&nbsp;&nbsp;</td><td align="left" valign="top"></td></tr>
+<tr><td align="left" valign="top"><a href="emacs-w3m_34.html#Cookie-Variables">5.4 Variables related to cookies</a></td><td>&nbsp;&nbsp;</td><td align="left" valign="top"></td></tr>
+<tr><td align="left" valign="top"><a href="emacs-w3m_35.html#Bookmark-Variables">5.5 Variables related to bookmarks</a></td><td>&nbsp;&nbsp;</td><td align="left" valign="top"></td></tr>
+<tr><td align="left" valign="top"><a href="emacs-w3m_36.html#Search-Variables">5.6 Variables related to searching the web</a></td><td>&nbsp;&nbsp;</td><td align="left" valign="top"></td></tr>
+<tr><td align="left" valign="top"><a href="emacs-w3m_37.html#Weather-Variables">5.7 Variables related to weather information</a></td><td>&nbsp;&nbsp;</td><td align="left" valign="top"></td></tr>
+<tr><td align="left" valign="top"><a href="emacs-w3m_38.html#Dtree-Variables">5.8 Variables related to the dtree feature</a></td><td>&nbsp;&nbsp;</td><td align="left" valign="top"></td></tr>
+<tr><td align="left" valign="top"><a href="emacs-w3m_39.html#Antenna-Variables">5.9 Variables related to antenna</a></td><td>&nbsp;&nbsp;</td><td align="left" valign="top"></td></tr>
+<tr><td align="left" valign="top"><a href="emacs-w3m_40.html#Perldoc-Variables">5.10 Variables related to perldoc</a></td><td>&nbsp;&nbsp;</td><td align="left" valign="top"></td></tr>
+<tr><td align="left" valign="top"><a href="emacs-w3m_41.html#Namazu-Variables">5.11 Variables related to namazu</a></td><td>&nbsp;&nbsp;</td><td align="left" valign="top"></td></tr>
+<tr><td align="left" valign="top"><a href="emacs-w3m_42.html#Octet-Variables">5.12 Variables related to the octet feature</a></td><td>&nbsp;&nbsp;</td><td align="left" valign="top"></td></tr>
+<tr><td align="left" valign="top"><a href="emacs-w3m_43.html#Session-Manager-Variables">5.13 Variables related to session manager</a></td><td>&nbsp;&nbsp;</td><td align="left" valign="top"></td></tr>
+<tr><td align="left" valign="top"><a href="emacs-w3m_44.html#Hooks">5.14 Hooks</a></td><td>&nbsp;&nbsp;</td><td align="left" valign="top"></td></tr>
+<tr><td align="left" valign="top"><a href="emacs-w3m_45.html#Other-Variables">5.15 Other variables</a></td><td>&nbsp;&nbsp;</td><td align="left" valign="top"></td></tr>
+</table>
+
+<hr size="6">
+<table cellpadding="1" cellspacing="1" border="0">
+<tr><td valign="middle" align="left">[<a href="emacs-w3m_29.html#Session-Manager" title="Previous section in reading order"> &lt; </a>]</td>
+<td valign="middle" align="left">[<a href="emacs-w3m_31.html#General-Variables" title="Next section in reading order"> &gt; </a>]</td>
+<td valign="middle" align="left"> &nbsp; </td>
+<td valign="middle" align="left">[<a href="emacs-w3m_19.html#Pretty-Good-Features" title="Beginning of this chapter or previous chapter"> &lt;&lt; </a>]</td>
+<td valign="middle" align="left">[<a href="emacs-w3m.html#Top" title="Up section"> Up </a>]</td>
+<td valign="middle" align="left">[<a href="emacs-w3m_46.html#Hooking-into-MUAs" title="Next chapter"> &gt;&gt; </a>]</td>
+</tr></table>
+<p>
+ <font size="-1">
+  This document was generated by <em>TSUCHIYA Masatoshi</em> on <em>January 30, 2019</em> using <a href="http://www.nongnu.org/texi2html/"><em>texi2html 1.82</em></a>.
+ </font>
+ <br>
+
+</p>
+</body>
+</html>
