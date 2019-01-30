@@ -8,7 +8,7 @@ emacs-w3m.html: emacs-w3m.texi
 
 emacs-w3m-ja.html: emacs-w3m-ja.texi
 	rm -f emacs-w3m-ja.html emacs-w3m-ja_*.html
-	texi2html -split_node emacs-w3m-ja.texi
+	texi2html -split_node -lang ja emacs-w3m-ja.texi
 
 texi: emacs-w3m.texi emacs-w3m-ja.texi
 
