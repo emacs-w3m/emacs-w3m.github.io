@@ -220,8 +220,33 @@ is just to put this line into your <code>~/.emacs</code> file:
 (require 'w3m-load)
 </pre>
 </blockquote>
+<ul><table bgcolor="#DDDDDD"><tr><td>
+If you have installed emacs-w3m from MELPA, there is no
+<nobr><code>w3m-load.el</code></nobr> file initially, so we recommend using
+instead this in order to create the <nobr><code>w3m-load.el</code></nobr>
+file:
+<blockquote>
+<pre>
+(condition-case nil
+    (require 'w3m-load)
+  (file-error (require 'w3m)))
+</pre>
+</blockquote>
+Once the <nobr><code>w3m-load.el</code></nobr> file is created by
+<nobr><code>w3m.elc</code></nobr>, you may replace the above form
+with the one-line setting (if you want), i.e.:
+<blockquote>
+<pre>
+(require 'w3m-load)
+</pre>
+</blockquote>
+If the <nobr><code>w3m-load.el</code></nobr> file is not created,
+make sure if the file
+<nobr><code>~/.emacs.d/elpa/archives/melpa/archive-contents</code></nobr>
+exists.
+</td></tr></table></ul>
 <p>
-Just type <i>M-x w3m</i>, and you can use emacs-w3m.
+And then, just type <i>M-x w3m</i>, and you can use emacs-w3m.
 </p>
 <p>
 In order to handle text/html part with emacs-w3m under SEMI MUAs such as

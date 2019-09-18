@@ -227,6 +227,30 @@ Emacs-w3m にはたくさんの設定オプションがありますが、最低�
 (require 'w3m-load)
 </pre>
 </blockquote>
+<ul><table bgcolor="#DDDDDD"><tr><td>
+もし MELPA から emacs-w3m をインストールしたのであれば、最初は
+<nobr><code>w3m-load.el</code></nobr> ファイルが存在しないので、
+それを作るために以下の設定を使うことを勧めます:
+<blockquote>
+<pre>
+(condition-case nil
+    (require 'w3m-load)
+  (file-error (require 'w3m)))
+</pre>
+</blockquote>
+いったん <nobr><code>w3m-load.el</code></nobr> ファイルが
+<nobr><code>w3m.elc</code></nobr> によって作られてしまえば、
+上記のフォームを一行設定に置き換えても構いません (もしやりたければ)。
+つまりこれです:
+<blockquote>
+<pre>
+(require 'w3m-load)
+</pre>
+</blockquote>
+もし <nobr><code>w3m-load.el</code></nobr> ファイルが作られない場合は
+<nobr><code>~/.emacs.d/elpa/archives/melpa/archive-contents</code></nobr>
+というファイルが存在するかどうかを確認してください。
+</td></tr></table></ul>
 <p>
 これで単に <i>M-x w3m</i> とタイプすれば、emacs-w3m を使うことができます。
 </p>
