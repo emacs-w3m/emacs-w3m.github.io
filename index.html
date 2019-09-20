@@ -213,20 +213,31 @@ meets <a href="#requirements">the requirements</a>.
 <h2><a name="configuration">Configuration</a></h2>
 <p>
 Emacs-w3m has many configuration options, but the minimum that is required
-is just to put this line into your <code>~/.emacs</code> file:
+is just to put this line into your Emacs init file
+(<nobr><code>~/.emacs.d/init.el</code></nobr>, <code>~/.emacs</code>, etc.):
 </p>
 <blockquote>
 <pre>
 (require 'w3m-load)
 </pre>
 </blockquote>
+<ul><p>
+You may want to use <nobr><code>(require 'w3m-load nil t)</code></nobr>
+instead.  It will not stop loading the init file even if that
+<code>require</code> code causes an error because of the
+<code>w3m-load.el</code> file missing or other.
+<table bgcolor="#DDDDDD"><tr><td>
+<font color="#0000EE">Note for MELPA users:</font><br>
+The package distribution does not provide the <code>w3m-load.el</code>
+file, but it will be created when performing <code>package-install</code>
+or similar.
+</td></tr></table></ul>
 <p>
 Just type <i>M-x w3m</i>, and you can use emacs-w3m.
 </p>
 <p>
 In order to handle text/html part with emacs-w3m under SEMI MUAs such as
-Wanderlust, put the following line in your
-<code>~/.emacs</code> file:
+Wanderlust, put the following line in your Emacs init file:
 </p>
 <blockquote>
 <pre>

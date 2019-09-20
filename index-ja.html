@@ -220,20 +220,31 @@ Emacs-w3m をインストールする前に、あなたのシステムが
 <h2><a name="configuration">設定</a></h2>
 <p>
 Emacs-w3m にはたくさんの設定オプションがありますが、最低限度必要なのはこの行を
-<code>~/.emacs</code> ファイルに、ただ置いておくことです。
+Emacs の初期設定ファイル (<nobr><code>~/.emacs.d/init.el</code></nobr> または
+<code>~/.emacs</code> など) に、ただ置いておくことです。
 </p>
 <blockquote>
 <pre>
 (require 'w3m-load)
 </pre>
 </blockquote>
+<ul><p>
+代わりに <nobr><code>(require 'w3m-load nil t)</code></nobr>
+としても良いでしょう。これはもしその <code>require</code> コードが
+<code>w3m-load.el</code> が存在しないなどの理由でエラーになっても、
+初期設定ファイルの読み込みを止めません。
+<table bgcolor="#DDDDDD"><tr><td>
+<font color="#0000EE">MELPA をお使いの方へ :</font><br>
+パッケージの配布に <code>w3m-load.el</code> ファイルはありませんが、
+<code>package-install</code> などを実行するときに作成します。
+</td></tr></table></ul>
 <p>
 これで単に <i>M-x w3m</i> とタイプすれば、emacs-w3m を使うことができます。
 </p>
 <p>
 Wanderlust のような SEMI MUA に text/html
-パートを扱うことができるようにするには、以下の行を
-<code>~/.emacs</code> ファイルに追加してください。
+パートを扱うことができるようにするには、以下の行を Emacs
+の初期設定ファイルに追加してください。
 </p>
 <blockquote>
 <pre>
